@@ -1,0 +1,30 @@
+{
+  "title": "USASpending Federal Contract Award, Vendor & Grant Miner Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "keywords": {
+      "title": "Contract or Industry Keywords",
+      "type": "array",
+      "description": "Keywords to search federal awards for (e.g. [\"cloud computing\", \"cybersecurity\", \"medical\"]).",
+      "editor": "stringList",
+      "default": [
+        "cybersecurity"
+      ],
+      "prefill": [
+        "cybersecurity"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "keywords"
+  ]
+}
