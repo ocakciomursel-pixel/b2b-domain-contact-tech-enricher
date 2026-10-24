@@ -1,0 +1,32 @@
+{
+  "title": "Global Postal & ZIP Code to City, State & Coordinate Enricher Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "postalCodes": {
+      "title": "US ZIP Codes (or Country/ZIP)",
+      "type": "array",
+      "description": "US 5-digit ZIP codes (e.g. [\"90210\", \"10001\", \"78701\"]).",
+      "editor": "stringList",
+      "default": [
+        "90210",
+        "10001"
+      ],
+      "prefill": [
+        "90210",
+        "10001"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "postalCodes"
+  ]
+}
