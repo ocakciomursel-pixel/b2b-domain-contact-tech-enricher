@@ -1,0 +1,17 @@
+{
+  "name": "orcid-researcher-scientist-academic-profile-enricher",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Biotech recruiting & academic B2B lead generation: queries the ORCID v3.0 Expanded Search API for verified researchers and their affiliated institutions.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

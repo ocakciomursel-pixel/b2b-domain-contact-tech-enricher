@@ -1,0 +1,30 @@
+{
+  "title": "ORCID Global Researcher, Scientist & Academic Affiliation Finder Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Researcher Name, University, or Topic",
+      "type": "array",
+      "description": "Search terms for ORCID (e.g. [\"CRISPR\", \"Stanford\", \"Machine Learning\"]).",
+      "editor": "stringList",
+      "default": [
+        "CRISPR"
+      ],
+      "prefill": [
+        "CRISPR"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
