@@ -1,0 +1,30 @@
+{
+  "title": "OpenStreetMap Commercial POI, Address & Coordinate Extractor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Location or Commercial Venue Queries",
+      "type": "array",
+      "description": "Search queries (e.g. [\"logistics warehouse Dallas\", \"dental clinic Austin\"]).",
+      "editor": "stringList",
+      "default": [
+        "dental clinic Austin"
+      ],
+      "prefill": [
+        "dental clinic Austin"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}

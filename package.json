@@ -1,0 +1,17 @@
+{
+  "name": "openstreetmap-nominatim-commercial-poi-lead-extractor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Geospatial & local B2B lead enrichment: extracts verified physical locations, formatted addresses, OSM IDs, place classes, and GPS coordinates.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
