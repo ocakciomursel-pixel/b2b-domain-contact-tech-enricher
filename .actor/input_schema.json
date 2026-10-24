@@ -1,0 +1,32 @@
+{
+  "title": "Ad Spend Signal Detector (Meta Pixel, Google Ads, TikTok, LinkedIn) Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Company or Store Domains",
+      "type": "array",
+      "description": "Domains to scan for paid advertising pixels.",
+      "editor": "stringList",
+      "default": [
+        "shopify.com",
+        "apify.com"
+      ],
+      "prefill": [
+        "shopify.com",
+        "apify.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}

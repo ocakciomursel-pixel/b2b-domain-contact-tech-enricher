@@ -1,0 +1,17 @@
+{
+  "name": "pixel-tag-manager-ad-spend-signal-detector",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Performance marketing agency #1 lead qualifier: identifies companies actively spending on paid ads by detecting ad tracking pixels in page source.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
