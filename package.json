@@ -1,0 +1,17 @@
+{
+  "name": "nhtsa-vpic-automotive-vin-manufacturer-plant-decoder",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Automotive supply-chain & fleet intelligence: queries the official NHTSA vPIC API for registered vehicle manufacturers, makes, and corporate details.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

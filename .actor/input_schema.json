@@ -1,0 +1,30 @@
+{
+  "title": "NHTSA vPIC Automotive Manufacturer, Make & Plant Directory Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Manufacturer Name or Vehicle Type",
+      "type": "array",
+      "description": "Manufacturer search term (e.g. [\"tesla\", \"rivian\", \"ford\"]).",
+      "editor": "stringList",
+      "default": [
+        "tesla"
+      ],
+      "prefill": [
+        "tesla"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
