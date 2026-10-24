@@ -1,0 +1,28 @@
+{
+  "title": "Hacker News Tech Launch & Trend Monitor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Search Queries",
+      "type": "array",
+      "description": "Keywords to search on Hacker News (e.g. [\"Show HN: AI\", \"Show HN: SaaS\", \"MCP\"]).",
+      "editor": "stringList",
+      "prefill": [
+        "Show HN: AI",
+        "MCP"
+      ]
+    },
+    "maxStoriesPerQuery": {
+      "title": "Max Stories Per Query",
+      "type": "integer",
+      "description": "Maximum number of stories per query (1 to 100).",
+      "default": 20,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}

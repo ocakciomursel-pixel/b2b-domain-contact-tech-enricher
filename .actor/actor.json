@@ -1,0 +1,68 @@
+{
+  "actorSpecification": 1,
+  "name": "hackernews-tech-launch-lead-monitor",
+  "title": "Hacker News Show HN, Startup Launch & Tech Trend Intelligence (MCP Ready)",
+  "description": "Monitor Hacker News (Show HN, Ask HN, and top tech stories) by keyword to discover newly launched startups, founder handles, outbound domains, and community traction.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Hacker News Show HN, Startup Launch & Tech Trend Intelligence (MCP Ready)",
+      "views": {
+        "overview": {
+          "title": "Extracted Intelligence",
+          "transformation": {
+            "fields": [
+              "title",
+              "author",
+              "points",
+              "numComments",
+              "externalDomain",
+              "externalUrl",
+              "hnUrl"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "title": {
+                "label": "Story Title",
+                "format": "text"
+              },
+              "author": {
+                "label": "Founder / Author",
+                "format": "text"
+              },
+              "points": {
+                "label": "Points",
+                "format": "number"
+              },
+              "numComments": {
+                "label": "Comments",
+                "format": "number"
+              },
+              "externalDomain": {
+                "label": "Startup Domain",
+                "format": "text"
+              },
+              "externalUrl": {
+                "label": "External URL",
+                "format": "link"
+              },
+              "hnUrl": {
+                "label": "HN Discussion",
+                "format": "link"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
