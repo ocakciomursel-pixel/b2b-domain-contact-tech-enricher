@@ -59,5 +59,7 @@
         }
       }
     }
-  }
+  },
+  "seoTitle": "XML Sitemap Extractor, URL Inventory Builder & Content Freshness Tool",
+  "seoDescription": "Automatically discover robots.txt and XML sitemaps for any domain, extract complete URL lists, categorize site sections, and measure content publishing velocity."
 }
