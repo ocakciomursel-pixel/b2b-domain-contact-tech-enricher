@@ -67,7 +67,49 @@
             }
           }
         }
+      },
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "title": "domain",
+            "description": "Extracted domain"
+          },
+          "businessName": {
+            "type": "string",
+            "title": "businessName",
+            "description": "Extracted businessName"
+          },
+          "businessType": {
+            "type": "string",
+            "title": "businessType",
+            "description": "Extracted businessType"
+          },
+          "telephone": {
+            "type": "string",
+            "title": "telephone",
+            "description": "Extracted telephone"
+          },
+          "emails": {
+            "type": "array",
+            "title": "emails",
+            "description": "Extracted emails"
+          },
+          "addressLocality": {
+            "type": "string",
+            "title": "addressLocality",
+            "description": "Extracted addressLocality"
+          },
+          "aggregateRating": {
+            "type": "number",
+            "title": "aggregateRating",
+            "description": "Extracted aggregateRating"
+          }
+        }
       }
     }
-  }
+  },
+  "output": "./output_schema.json"
 }
