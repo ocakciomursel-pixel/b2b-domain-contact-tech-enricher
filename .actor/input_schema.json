@@ -1,0 +1,30 @@
+{
+  "title": "Hacker News \"Who Is Hiring\" Tech Company & Remote Lead Miner Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "keywords": {
+      "title": "Tech Stack or Role Keywords",
+      "type": "array",
+      "description": "Keywords to search in HN hiring comments (e.g. [\"REMOTE\", \"TypeScript\", \"Python\"]).",
+      "editor": "stringList",
+      "default": [
+        "REMOTE TypeScript"
+      ],
+      "prefill": [
+        "REMOTE TypeScript"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "keywords"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "hn-who-is-hiring-monthly-tech-company-lead-miner",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "High-converting recruiting & dev-agency lead source: mines Y Combinator Hacker News hiring comments for direct founder/CTO emails and open engineering roles.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
