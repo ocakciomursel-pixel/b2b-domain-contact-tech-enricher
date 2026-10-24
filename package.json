@@ -1,0 +1,17 @@
+{
+  "name": "european-employer-career-portal-job-scraper",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "European staffing & B2B sales intelligence: extracts active tech job postings and hiring companies across European tech hubs.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
