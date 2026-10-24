@@ -1,0 +1,17 @@
+{
+  "name": "us-federal-register-government-regulation-monitor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Regulatory compliance & legal intelligence: queries the official FederalRegister.gov API to track new government rules, agency notices, and publication dates.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
