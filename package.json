@@ -1,0 +1,17 @@
+{
+  "name": "commercial-coworking-office-space-schema-extractor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Commercial real estate (CRE) & B2B service lead tool: extracts office location schemas, contact emails, phone numbers, and geographic metadata from property websites.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

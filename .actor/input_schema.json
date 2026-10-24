@@ -1,0 +1,30 @@
+{
+  "title": "Coworking Space, Serviced Office & Commercial Property Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "urls": {
+      "title": "Property or Coworking Website URLs",
+      "type": "array",
+      "description": "URLs of commercial real estate or office operators.",
+      "editor": "stringList",
+      "default": [
+        "https://www.wework.com"
+      ],
+      "prefill": [
+        "https://www.wework.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "urls"
+  ]
+}
