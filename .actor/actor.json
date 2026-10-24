@@ -1,0 +1,58 @@
+{
+  "actorSpecification": 1,
+  "name": "europepmc-open-access-preprint-grant-extractor",
+  "title": "Europe PMC Biomedical Literature, Preprint & Citation Miner",
+  "description": "Global life-science & clinical literature miner: queries EMBL-EBI Europe PMC for biomedical publications, preprints, citation metrics, and author metadata.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Europe PMC Biomedical Literature, Preprint & Citation Miner",
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "target": {
+            "type": "string",
+            "title": "Target Query"
+          },
+          "extractedAt": {
+            "type": "string",
+            "title": "Extracted Timestamp"
+          }
+        }
+      },
+      "views": {
+        "overview": {
+          "title": "Extracted Intelligence",
+          "transformation": {
+            "fields": [
+              "target",
+              "extractedAt"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "target": {
+                "label": "Target",
+                "format": "text"
+              },
+              "extractedAt": {
+                "label": "Extracted At",
+                "format": "text"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

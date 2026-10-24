@@ -1,0 +1,30 @@
+{
+  "title": "Europe PMC Biomedical Literature, Preprint & Citation Miner Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Biomedical Research Queries",
+      "type": "array",
+      "description": "Keywords to search in Europe PMC (e.g. [\"oncology\", \"gene therapy\"]).",
+      "editor": "stringList",
+      "default": [
+        "oncology"
+      ],
+      "prefill": [
+        "oncology"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
