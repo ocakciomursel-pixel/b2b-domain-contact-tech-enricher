@@ -1,0 +1,39 @@
+{
+  "title": "GitHub Developer, Stargazer & Contributor Lead Enricher Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "repositories": {
+      "title": "Target GitHub Repositories (owner/repo)",
+      "type": "array",
+      "description": "List of GitHub repositories (e.g. ['apify/crawlee', 'langchain-ai/langchain']) to extract top contributors from.",
+      "editor": "stringList",
+      "prefill": [
+        "apify/crawlee"
+      ]
+    },
+    "usernames": {
+      "title": "Direct GitHub Usernames (Optional)",
+      "type": "array",
+      "description": "Optional list of specific GitHub usernames to enrich directly.",
+      "editor": "stringList",
+      "default": []
+    },
+    "maxDevelopersPerRepo": {
+      "title": "Max Developers Per Repository",
+      "type": "integer",
+      "description": "Maximum number of contributors to enrich per repository.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    },
+    "githubToken": {
+      "title": "Optional GitHub Personal Access Token (For Higher Rate Limits)",
+      "type": "string",
+      "description": "Optional GitHub token to raise API rate limits from 60 req/hr to 5,000 req/hr.",
+      "editor": "textfield",
+      "isSecret": true,
+      "default": ""
+    }
+  }
+}

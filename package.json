@@ -1,0 +1,17 @@
+{
+  "name": "github-developer-recruiter-lead-enricher",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "GitHub Developer, Stargazer & Contributor Lead Enricher Actor for Apify Store and MCP.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node src/main.js --demo"
+  },
+  "dependencies": {
+    "apify": "^3.2.6"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
