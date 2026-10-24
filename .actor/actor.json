@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "seo-technical-audit-broken-link-schema-analyzer",
-  "title": "Technical SEO, Broken Link, Schema.org & Meta Tag Auditor (MCP Ready)",
+  "title": "Technical SEO, Broken Link, Schema.org & Meta Tag Auditor",
   "description": "Perform a 40-point technical SEO & AI-readiness audit on any URL list: HTTP latency, Title/Meta lengths, Canonical & Robots directives, H1-H6 structure, Image alt coverage, Schema.org JSON-LD validation, and live broken link detection with a 0-100 SEO Score.",
   "version": "1.0",
   "buildTag": "latest",
@@ -79,7 +79,5 @@
         }
       }
     }
-  },
-  "seoTitle": "Technical SEO Audit Tool, Broken Link Checker & Schema.org Analyzer",
-  "seoDescription": "Run a 40-point technical SEO audit on any URL list: HTTP latency, Title/Meta tags, Canonical, H1-H6 headings, missing image alt text, Schema.org JSON-LD, and dead links."
+  }
 }
