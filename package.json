@@ -1,0 +1,17 @@
+{
+  "name": "itunes-mac-desktop-software-publisher-spy",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "B2B software & Mac ecosystem competitive intelligence: extracts desktop app publishers, prices, ratings, and release notes from the Mac App Store.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

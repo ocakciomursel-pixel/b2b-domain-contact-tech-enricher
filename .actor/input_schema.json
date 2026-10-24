@@ -1,0 +1,30 @@
+{
+  "title": "Mac App Store Desktop Software Publisher, Price & Rating Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Mac Software Keywords",
+      "type": "array",
+      "description": "Keywords for Mac desktop apps (e.g. [\"markdown editor\", \"video editor\", \"database\"]).",
+      "editor": "stringList",
+      "default": [
+        "markdown editor"
+      ],
+      "prefill": [
+        "markdown editor"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
