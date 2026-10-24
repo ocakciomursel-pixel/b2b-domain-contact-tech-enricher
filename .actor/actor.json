@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "ai-ready-website-to-markdown-rag-crawler",
-  "title": "AI & LLM Website to Clean Markdown, RAG Chunks & Metadata (MCP Ready)",
+  "title": "AI & LLM Website to Clean Markdown, RAG Chunks & Metadata",
   "description": "Convert any webpage or documentation site into clean LLM-ready Markdown, overlapping RAG text chunks with estimated token counts, and JSON-LD/OpenGraph metadata.",
   "version": "1.0",
   "buildTag": "latest",
@@ -64,7 +64,5 @@
         }
       }
     }
-  },
-  "seoTitle": "Website to Markdown Converter & RAG Text Chunker for LLMs & AI Agents",
-  "seoDescription": "Convert any website or documentation into clean LLM-ready Markdown, overlapping RAG chunks with token counts, and JSON-LD metadata for Claude, GPT, and LangChain."
+  }
 }
