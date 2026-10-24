@@ -57,7 +57,44 @@
             }
           }
         }
+      },
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "title": "domain",
+            "description": "Extracted domain"
+          },
+          "primarySitemapUrl": {
+            "type": "string",
+            "title": "primarySitemapUrl",
+            "description": "Extracted primarySitemapUrl"
+          },
+          "sitemapFound": {
+            "type": "boolean",
+            "title": "sitemapFound",
+            "description": "Extracted sitemapFound"
+          },
+          "childSitemapsCount": {
+            "type": "number",
+            "title": "childSitemapsCount",
+            "description": "Extracted childSitemapsCount"
+          },
+          "totalUrlsExtracted": {
+            "type": "number",
+            "title": "totalUrlsExtracted",
+            "description": "Extracted totalUrlsExtracted"
+          },
+          "topPathSections": {
+            "type": "object",
+            "title": "topPathSections",
+            "description": "Extracted topPathSections"
+          }
+        }
       }
     }
-  }
+  },
+  "output": "./output_schema.json"
 }
