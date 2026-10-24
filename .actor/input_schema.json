@@ -1,0 +1,30 @@
+{
+  "title": "RIPEstat BGP Routing, IP Prefix & Autonomous System Auditor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "resources": {
+      "title": "IP Addresses, Prefixes, or ASNs",
+      "type": "array",
+      "description": "Resources to query (e.g. [\"1.1.1.1\", \"AS13335\"]).",
+      "editor": "stringList",
+      "default": [
+        "1.1.1.1"
+      ],
+      "prefill": [
+        "1.1.1.1"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "resources"
+  ]
+}
