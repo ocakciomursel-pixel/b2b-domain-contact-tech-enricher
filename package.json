@@ -1,0 +1,17 @@
+{
+  "name": "bug-bounty-security-txt-responsible-disclosure-finder",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Cybersecurity B2B lead & bug bounty discovery tool: scans target domains for RFC 9116 security.txt files to extract security contacts, policy links, encryption keys, and hiring pages.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

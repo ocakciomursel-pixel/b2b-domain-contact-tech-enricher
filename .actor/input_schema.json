@@ -1,0 +1,32 @@
+{
+  "title": "Security.txt, Bug Bounty Program & CISO Contact Finder Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Company Domains",
+      "type": "array",
+      "description": "Domains to scan for security.txt and bug bounty disclosures.",
+      "editor": "stringList",
+      "default": [
+        "google.com",
+        "cloudflare.com"
+      ],
+      "prefill": [
+        "google.com",
+        "cloudflare.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
