@@ -1,0 +1,30 @@
+{
+  "title": "Global Air Quality (AQI, PM2.5, PM10, NO2, Ozone) Telemetry Feed Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "coordinates": {
+      "title": "Latitude,Longitude Pairs",
+      "type": "array",
+      "description": "Coordinates (e.g. [\"51.50,-0.12\", \"35.68,139.69\"]).",
+      "editor": "stringList",
+      "default": [
+        "51.50,-0.12"
+      ],
+      "prefill": [
+        "51.50,-0.12"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "coordinates"
+  ]
+}
