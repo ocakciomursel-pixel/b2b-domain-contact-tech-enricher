@@ -1,0 +1,30 @@
+{
+  "title": "NHTSA Automotive Vehicle Safety Recall & Defect Intelligence Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "makes": {
+      "title": "Vehicle Makes (2024 Model Year Check)",
+      "type": "array",
+      "description": "Vehicle manufacturer names (e.g. [\"TESLA\", \"FORD\", \"TOYOTA\"]).",
+      "editor": "stringList",
+      "default": [
+        "TESLA"
+      ],
+      "prefill": [
+        "TESLA"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "makes"
+  ]
+}
