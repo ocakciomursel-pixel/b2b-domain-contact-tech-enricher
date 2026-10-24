@@ -1,0 +1,32 @@
+{
+  "title": "Open-Meteo Commercial Weather, Wind Speed & Solar Radiation Feed Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "coordinates": {
+      "title": "Latitude,Longitude Pairs",
+      "type": "array",
+      "description": "Coordinate pairs (e.g. [\"52.52,13.41\", \"40.71,-74.01\"]).",
+      "editor": "stringList",
+      "default": [
+        "52.52,13.41",
+        "40.71,-74.01"
+      ],
+      "prefill": [
+        "52.52,13.41",
+        "40.71,-74.01"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "coordinates"
+  ]
+}

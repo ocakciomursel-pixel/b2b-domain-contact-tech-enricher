@@ -1,0 +1,17 @@
+{
+  "name": "open-meteo-commercial-weather-solar-wind-forecast",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Energy trading, agriculture & supply-chain weather telemetry: queries Open-Meteo API for live meteorological observations by coordinate.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
