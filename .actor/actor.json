@@ -62,7 +62,49 @@
             }
           }
         }
+      },
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "title": "domain",
+            "description": "Extracted domain"
+          },
+          "pricingUrl": {
+            "type": "string",
+            "title": "pricingUrl",
+            "description": "Extracted pricingUrl"
+          },
+          "hasFreeTier": {
+            "type": "boolean",
+            "title": "hasFreeTier",
+            "description": "Extracted hasFreeTier"
+          },
+          "hasEnterpriseTier": {
+            "type": "boolean",
+            "title": "hasEnterpriseTier",
+            "description": "Extracted hasEnterpriseTier"
+          },
+          "billingSignals": {
+            "type": "array",
+            "title": "billingSignals",
+            "description": "Extracted billingSignals"
+          },
+          "detectedPrices": {
+            "type": "array",
+            "title": "detectedPrices",
+            "description": "Extracted detectedPrices"
+          },
+          "planHeadings": {
+            "type": "array",
+            "title": "planHeadings",
+            "description": "Extracted planHeadings"
+          }
+        }
       }
     }
-  }
+  },
+  "output": "./output_schema.json"
 }
