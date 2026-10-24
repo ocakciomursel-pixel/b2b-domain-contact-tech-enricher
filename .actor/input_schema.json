@@ -1,0 +1,30 @@
+{
+  "title": "OpenFEMA Disaster Declaration, Flood & Property Risk Tracker Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "states": {
+      "title": "2-Letter US State Codes",
+      "type": "array",
+      "description": "US state abbreviations (e.g. [\"FL\", \"TX\", \"CA\"]).",
+      "editor": "stringList",
+      "default": [
+        "FL"
+      ],
+      "prefill": [
+        "FL"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "states"
+  ]
+}

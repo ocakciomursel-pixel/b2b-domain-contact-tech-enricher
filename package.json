@@ -1,0 +1,17 @@
+{
+  "name": "fema-disaster-flood-declaration-insurance-risk-tracker",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "PropTech, real estate & P&C insurance intelligence: queries OpenFEMA API for federal disaster declarations, hazard types, and county-level designations.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
