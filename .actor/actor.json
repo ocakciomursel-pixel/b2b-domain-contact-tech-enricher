@@ -57,7 +57,49 @@
             }
           }
         }
+      },
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "title": "domain",
+            "description": "Extracted domain"
+          },
+          "siteName": {
+            "type": "string",
+            "title": "siteName",
+            "description": "Extracted siteName"
+          },
+          "isWordPress": {
+            "type": "boolean",
+            "title": "isWordPress",
+            "description": "Extracted isWordPress"
+          },
+          "isWooCommerce": {
+            "type": "boolean",
+            "title": "isWooCommerce",
+            "description": "Extracted isWooCommerce"
+          },
+          "activeTheme": {
+            "type": "string",
+            "title": "activeTheme",
+            "description": "Extracted activeTheme"
+          },
+          "detectedPlugins": {
+            "type": "array",
+            "title": "detectedPlugins",
+            "description": "Extracted detectedPlugins"
+          },
+          "restNamespaces": {
+            "type": "array",
+            "title": "restNamespaces",
+            "description": "Extracted restNamespaces"
+          }
+        }
       }
     }
-  }
+  },
+  "output": "./output_schema.json"
 }
