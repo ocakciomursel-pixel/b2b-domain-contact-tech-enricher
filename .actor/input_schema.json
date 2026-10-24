@@ -1,0 +1,30 @@
+{
+  "title": "BigCommerce Storefront Product Catalog, Pricing & Contact Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "BigCommerce Store Domains",
+      "type": "array",
+      "description": "Store domains to inspect.",
+      "editor": "stringList",
+      "default": [
+        "skullcandy.com"
+      ],
+      "prefill": [
+        "skullcandy.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
