@@ -1,0 +1,30 @@
+{
+  "title": "SaaS Competitor Changelog, Release Notes & Feature Velocity Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "urls": {
+      "title": "Changelog or Release Page URLs",
+      "type": "array",
+      "description": "URLs of competitor changelog pages.",
+      "editor": "stringList",
+      "default": [
+        "https://apify.com/change-log"
+      ],
+      "prefill": [
+        "https://apify.com/change-log"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "urls"
+  ]
+}
