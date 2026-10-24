@@ -1,0 +1,30 @@
+{
+  "title": "CPG Grocery Product Barcode (EAN/UPC), Brand & Ingredient Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Brand Name or Food Product Category",
+      "type": "array",
+      "description": "Keywords or brands to search (e.g. [\"protein bar\", \"oat milk\", \"nestle\"]).",
+      "editor": "stringList",
+      "default": [
+        "protein bar"
+      ],
+      "prefill": [
+        "protein bar"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}

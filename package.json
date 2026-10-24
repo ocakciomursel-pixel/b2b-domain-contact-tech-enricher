@@ -1,0 +1,17 @@
+{
+  "name": "openfoodfacts-grocery-cpg-barcode-ingredient-enricher",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Retail & CPG supply-chain intelligence: extracts food & beverage product barcodes, brand manufacturers, nutrition scores, allergens, and ingredient lists.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

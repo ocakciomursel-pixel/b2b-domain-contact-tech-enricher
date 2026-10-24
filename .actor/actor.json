@@ -1,0 +1,58 @@
+{
+  "actorSpecification": 1,
+  "name": "openfoodfacts-grocery-cpg-barcode-ingredient-enricher",
+  "title": "CPG Grocery Product Barcode (EAN/UPC), Brand & Ingredient Sp",
+  "description": "Retail & CPG supply-chain intelligence: extracts food & beverage product barcodes, brand manufacturers, nutrition scores, allergens, and ingredient lists.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "CPG Grocery Product Barcode (EAN/UPC), Brand & Ingredient Sp",
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "target": {
+            "type": "string",
+            "title": "Target Query"
+          },
+          "extractedAt": {
+            "type": "string",
+            "title": "Extracted Timestamp"
+          }
+        }
+      },
+      "views": {
+        "overview": {
+          "title": "Extracted Intelligence",
+          "transformation": {
+            "fields": [
+              "target",
+              "extractedAt"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "target": {
+                "label": "Target",
+                "format": "text"
+              },
+              "extractedAt": {
+                "label": "Extracted At",
+                "format": "text"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
