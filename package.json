@@ -1,0 +1,17 @@
+{
+  "name": "openfda-adverse-drug-event-faers-pharmacovigilance",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Pharmacovigilance, medical affairs & legal mass-tort intelligence: extracts adverse drug event safety reports from the FDA FAERS database.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

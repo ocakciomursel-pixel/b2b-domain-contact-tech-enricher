@@ -1,0 +1,30 @@
+{
+  "title": "OpenFDA FAERS Adverse Drug Event & Pharmacovigilance Monitor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "drugs": {
+      "title": "Medicinal Product / Drug Names",
+      "type": "array",
+      "description": "Drug names to query adverse events for (e.g. [\"ozempic\", \"ibuprofen\"]).",
+      "editor": "stringList",
+      "default": [
+        "ibuprofen"
+      ],
+      "prefill": [
+        "ibuprofen"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "drugs"
+  ]
+}
