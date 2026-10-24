@@ -1,0 +1,17 @@
+{
+  "name": "devto-hashnode-developer-blog-author-lead-miner",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Developer advocacy (DevRel) & technical content intelligence: queries DEV.to Forem API for top technical articles, engagement metrics, and developer social profiles.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

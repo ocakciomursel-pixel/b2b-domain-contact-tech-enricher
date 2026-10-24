@@ -1,0 +1,30 @@
+{
+  "title": "DEV.to Technical Blog, Developer Author & Engagement Miner Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "tags": {
+      "title": "Technical Tags",
+      "type": "array",
+      "description": "Tags on DEV.to (e.g. [\"javascript\", \"webdev\", \"devops\"]).",
+      "editor": "stringList",
+      "default": [
+        "javascript"
+      ],
+      "prefill": [
+        "javascript"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "tags"
+  ]
+}
