@@ -1,0 +1,17 @@
+{
+  "name": "broken-social-media-link-hijack-agency-lead-finder",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Digital marketing agency prospecting tool: extracts all social media profile URLs and contact emails from target company websites.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
