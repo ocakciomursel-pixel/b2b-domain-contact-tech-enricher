@@ -1,0 +1,30 @@
+{
+  "title": "DeFi Protocol On-Chain Fee Generation & Revenue Auditor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Protocol or Chain Name (or ALL)",
+      "type": "array",
+      "description": "Protocol names (e.g. [\"Ethereum\", \"Solana\", \"Aave\", \"Lido\"]).",
+      "editor": "stringList",
+      "default": [
+        "Aave"
+      ],
+      "prefill": [
+        "Aave"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
