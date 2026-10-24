@@ -1,0 +1,17 @@
+{
+  "name": "gdpr-ccpa-cookie-banner-privacy-compliance-auditor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "LegalTech, privacy consultancy & agency lead magnet: scans target domains for Consent Management Platforms (CMPs), privacy policy URLs, DPO contacts, and analytics trackers.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
