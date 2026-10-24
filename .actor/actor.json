@@ -64,5 +64,7 @@
         }
       }
     }
-  }
+  },
+  "seoTitle": "NPM & PyPI Package Scraper | Maintainer Emails & Download Stats",
+  "seoDescription": "Extract NPM and PyPI package download volumes, maintainer direct email addresses, license types, dependency counts, and repository links for DevTools & security."
 }
