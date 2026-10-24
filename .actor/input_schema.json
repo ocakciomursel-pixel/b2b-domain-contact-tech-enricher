@@ -1,0 +1,32 @@
+{
+  "title": "Website Hreflang, Multi-Language & Localization Readiness Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Target Website Domains",
+      "type": "array",
+      "description": "Domains to audit for international hreflang tags and localization readiness.",
+      "editor": "stringList",
+      "default": [
+        "apify.com",
+        "stripe.com"
+      ],
+      "prefill": [
+        "apify.com",
+        "stripe.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
