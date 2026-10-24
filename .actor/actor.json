@@ -59,5 +59,7 @@
         }
       }
     }
-  }
+  },
+  "seoTitle": "WordPress Theme & Plugin Detector + WooCommerce Store Spy",
+  "seoDescription": "Detect active WordPress themes, installed plugins, WooCommerce e-commerce status, and exposed wp-json REST API namespaces on any list of domains."
 }
