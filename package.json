@@ -1,0 +1,17 @@
+{
+  "name": "sec-insider-trading-form4-institutional-13f-tracker",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Institutional equity research & compliance monitor: fetches official SEC EDGAR submission histories and corporate metadata.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
