@@ -1,0 +1,30 @@
+{
+  "title": "HAL Open Science Archive European Research & Lab Miner Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Research Keywords",
+      "type": "array",
+      "description": "Keywords to search in HAL archive (e.g. [\"photonics\", \"cybersecurity\"]).",
+      "editor": "stringList",
+      "default": [
+        "photonics"
+      ],
+      "prefill": [
+        "photonics"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
