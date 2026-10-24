@@ -1,0 +1,17 @@
+{
+  "name": "outdated-copyright-year-abandoned-website-lead-finder",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Web design & SEO agency lead qualifier: inspects website footers for copyright years, contact emails, phone numbers, and CMS signals.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

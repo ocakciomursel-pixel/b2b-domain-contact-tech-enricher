@@ -1,0 +1,30 @@
+{
+  "title": "Website Footer Copyright Year & Web Redesign Agency Lead Finder Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Business Domains to Check",
+      "type": "array",
+      "description": "Domains to inspect footer copyright years and contacts for.",
+      "editor": "stringList",
+      "default": [
+        "apify.com"
+      ],
+      "prefill": [
+        "apify.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
