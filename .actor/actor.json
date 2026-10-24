@@ -64,5 +64,7 @@
         }
       }
     }
-  }
+  },
+  "seoTitle": "SaaS Competitor Pricing Scraper & Plan Feature Matrix Extractor",
+  "seoDescription": "Automatically locate and analyze SaaS /pricing pages to extract price points, free trial/freemium availability, per-seat vs usage billing models, and enterprise tiers."
 }
