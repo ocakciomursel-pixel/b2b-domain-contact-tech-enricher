@@ -1,0 +1,30 @@
+{
+  "title": "Workable ATS Company Career Page & SMB Hiring Signal Scraper Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "companies": {
+      "title": "Workable Account Slugs",
+      "type": "array",
+      "description": "Company slugs on Workable (e.g. [\"workable\"]).",
+      "editor": "stringList",
+      "default": [
+        "workable"
+      ],
+      "prefill": [
+        "workable"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "companies"
+  ]
+}
