@@ -1,0 +1,30 @@
+{
+  "title": "UniProtKB Protein Accession, Gene Symbol & Organism Extractor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Protein or Gene Queries",
+      "type": "array",
+      "description": "Search terms for UniProtKB (e.g. [\"BRCA1\", \"insulin\", \"TP53\"]).",
+      "editor": "stringList",
+      "default": [
+        "BRCA1"
+      ],
+      "prefill": [
+        "BRCA1"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}

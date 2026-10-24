@@ -1,0 +1,17 @@
+{
+  "name": "uniprot-protein-sequence-gene-function-extractor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Bioinformatics & proteomics intelligence: queries the official UniProt REST API for curated protein entries, gene names, and sequence lengths.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
