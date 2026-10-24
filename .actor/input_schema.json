@@ -1,0 +1,30 @@
+{
+  "title": "CDNJS Open-Source JavaScript Library, License & Repo Enricher Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "JavaScript Library Keywords",
+      "type": "array",
+      "description": "Library names or keywords (e.g. [\"three.js\", \"chart.js\", \"gsap\"]).",
+      "editor": "stringList",
+      "default": [
+        "chart.js"
+      ],
+      "prefill": [
+        "chart.js"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
