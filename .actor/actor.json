@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "github-developer-recruiter-lead-enricher",
-  "title": "GitHub Developer, Stargazer & Contributor Lead Enricher (MCP Ready)",
+  "title": "GitHub Developer, Stargazer & Contributor Lead Enricher",
   "description": "Extract developer profiles, public commit emails, company affiliations, personal websites, X/Twitter handles, location, and hireable status from GitHub repositories or username lists.",
   "version": "1.0",
   "buildTag": "latest",
@@ -89,7 +89,5 @@
         }
       }
     }
-  },
-  "seoTitle": "GitHub Developer Scraper, Commit Email Finder & Tech Recruiter Lead Tool",
-  "seoDescription": "Extract developer profiles, verified public commit emails, company affiliations, personal websites, X/Twitter handles, location, and hireable status from GitHub repos."
+  }
 }
