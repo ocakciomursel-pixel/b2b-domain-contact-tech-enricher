@@ -1,0 +1,78 @@
+{
+  "actorSpecification": 1,
+  "name": "defi-protocol-yield-tvl-whale-intel",
+  "title": "DeFi Protocol TVL, Capital Flow & High-Yield Pool Intelligence (MCP Ready)",
+  "description": "Institutional Crypto & DeFi intelligence Actor: tracks protocol TVL, 1d/7d/30d capital inflows/outflows, multi-chain exposure, Mcap/TVL valuation multiples, and audit status via DeFiLlama.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "DeFi Protocol TVL, Capital Flow & High-Yield Pool Intelligence (MCP Ready)",
+      "views": {
+        "overview": {
+          "title": "Extracted Intelligence",
+          "transformation": {
+            "fields": [
+              "name",
+              "symbol",
+              "category",
+              "tvlUsd",
+              "change1dPct",
+              "change7dPct",
+              "mcapToTvlRatio",
+              "chains",
+              "url"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "name": {
+                "label": "Protocol",
+                "format": "text"
+              },
+              "symbol": {
+                "label": "Token",
+                "format": "text"
+              },
+              "category": {
+                "label": "Category",
+                "format": "text"
+              },
+              "tvlUsd": {
+                "label": "TVL (USD)",
+                "format": "number"
+              },
+              "change1dPct": {
+                "label": "1d Change %",
+                "format": "number"
+              },
+              "change7dPct": {
+                "label": "7d Change %",
+                "format": "number"
+              },
+              "mcapToTvlRatio": {
+                "label": "Mcap / TVL",
+                "format": "number"
+              },
+              "chains": {
+                "label": "Chains",
+                "format": "array"
+              },
+              "url": {
+                "label": "Website",
+                "format": "link"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

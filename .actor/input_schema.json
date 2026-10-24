@@ -1,0 +1,36 @@
+{
+  "title": "DeFi Protocol TVL & Capital Flow Intelligence Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "categoryFilter": {
+      "title": "DeFi Category Filter (Optional)",
+      "type": "string",
+      "description": "Optional category filter (e.g. \"Liquid Staking\", \"Dexes\", \"Lending\", \"Yield\", \"RWA\").",
+      "editor": "textfield",
+      "default": ""
+    },
+    "chainFilter": {
+      "title": "Blockchain Filter (Optional)",
+      "type": "string",
+      "description": "Optional chain filter (e.g. \"Ethereum\", \"Solana\", \"Arbitrum\", \"Base\").",
+      "editor": "textfield",
+      "default": ""
+    },
+    "minTvlUsd": {
+      "title": "Minimum TVL (USD)",
+      "type": "integer",
+      "description": "Minimum Total Value Locked in USD.",
+      "default": 10000000,
+      "minimum": 0
+    },
+    "maxProtocols": {
+      "title": "Max Protocols to Return",
+      "type": "integer",
+      "description": "Maximum number of protocols to analyze (1 to 250).",
+      "default": 25,
+      "minimum": 1,
+      "maximum": 250
+    }
+  }
+}
