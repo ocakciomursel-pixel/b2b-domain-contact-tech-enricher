@@ -1,0 +1,30 @@
+{
+  "title": "Multi-Location Franchise, Store Locator & Branch Contact Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Franchise or Multi-Location Domains",
+      "type": "array",
+      "description": "Domains of multi-location businesses.",
+      "editor": "stringList",
+      "default": [
+        "apify.com"
+      ],
+      "prefill": [
+        "apify.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "multi-location-franchise-store-locator-extractor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Multi-location retail & franchise intelligence: extracts structured contact data, phone numbers, emails, and location links from business domains.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
