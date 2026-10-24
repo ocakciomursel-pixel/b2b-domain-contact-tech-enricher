@@ -1,0 +1,17 @@
+{
+  "name": "breezyhr-jazzhr-smb-company-job-opening-scraper",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Staffing agency & HR-tech lead qualification tool: scans company career pages to identify ATS vendors, HR emails, and active job links.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
