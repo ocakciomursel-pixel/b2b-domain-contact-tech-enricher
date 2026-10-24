@@ -1,0 +1,30 @@
+{
+  "title": "Docker Hub Container Image, Pull Velocity & Publisher Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Container or Technology Keywords",
+      "type": "array",
+      "description": "Keywords to search on Docker Hub (e.g. [\"postgres\", \"redis\", \"vector\"]).",
+      "editor": "stringList",
+      "default": [
+        "postgres"
+      ],
+      "prefill": [
+        "postgres"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
