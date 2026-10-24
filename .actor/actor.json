@@ -64,5 +64,7 @@
         }
       }
     }
-  }
+  },
+  "seoTitle": "Scientific Paper Scraper, Academic Author Finder & R&D Grant Intelligence",
+  "seoDescription": "Mine OpenAlex for peer-reviewed papers, citation counts, open-access PDFs, research funding grants, and university/lab researcher leads for any scientific topic."
 }
