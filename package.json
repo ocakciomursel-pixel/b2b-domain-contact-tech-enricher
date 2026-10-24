@@ -1,0 +1,18 @@
+{
+  "name": "ats-job-board-hiring-signal-scraper",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Extract active job openings, departments, remote status, locations, and B2B hiring intent signals directly from Greenhouse and Lever company job boards.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node src/main.js --demo"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

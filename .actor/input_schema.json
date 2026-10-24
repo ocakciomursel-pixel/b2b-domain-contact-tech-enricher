@@ -1,0 +1,35 @@
+{
+  "title": "Greenhouse & Lever Job Board Scraper Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "companies": {
+      "title": "Company Board Slugs (Greenhouse / Lever)",
+      "type": "array",
+      "description": "List of company board identifiers (e.g. [\"stripe\", \"cloudflare\", \"discord\"]).",
+      "editor": "stringList",
+      "prefill": [
+        "stripe",
+        "discord"
+      ]
+    },
+    "keywordFilter": {
+      "title": "Filter by Job Title or Department Keyword",
+      "type": "string",
+      "description": "Optional case-insensitive keyword filter (e.g. \"Engineer\", \"Sales\", \"AI\").",
+      "editor": "textfield",
+      "default": ""
+    },
+    "maxJobsPerCompany": {
+      "title": "Max Jobs Per Company",
+      "type": "integer",
+      "description": "Maximum number of jobs to return per company.",
+      "default": 25,
+      "minimum": 1,
+      "maximum": 500
+    }
+  },
+  "required": [
+    "companies"
+  ]
+}

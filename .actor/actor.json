@@ -1,0 +1,73 @@
+{
+  "actorSpecification": 1,
+  "name": "ats-job-board-hiring-signal-scraper",
+  "title": "Greenhouse & Lever Company Job Board & Hiring Signal Scraper (MCP Ready)",
+  "description": "Extract active job openings, departments, remote status, locations, and B2B hiring intent signals directly from Greenhouse and Lever company job boards.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Greenhouse & Lever Company Job Board & Hiring Signal Scraper (MCP Ready)",
+      "views": {
+        "overview": {
+          "title": "Extracted Intelligence",
+          "transformation": {
+            "fields": [
+              "company",
+              "atsPlatform",
+              "title",
+              "department",
+              "location",
+              "isRemote",
+              "updatedAt",
+              "applyUrl"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "company": {
+                "label": "Company",
+                "format": "text"
+              },
+              "atsPlatform": {
+                "label": "ATS",
+                "format": "text"
+              },
+              "title": {
+                "label": "Job Title",
+                "format": "text"
+              },
+              "department": {
+                "label": "Department",
+                "format": "text"
+              },
+              "location": {
+                "label": "Location",
+                "format": "text"
+              },
+              "isRemote": {
+                "label": "Remote",
+                "format": "boolean"
+              },
+              "updatedAt": {
+                "label": "Updated At",
+                "format": "text"
+              },
+              "applyUrl": {
+                "label": "Apply URL",
+                "format": "link"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
