@@ -1,0 +1,30 @@
+{
+  "title": "B2B Sales Funnel, Calendly, HubSpot & Live Chat Widget Detector Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Target B2B Domains",
+      "type": "array",
+      "description": "Domains to scan for booking widgets and chat tools.",
+      "editor": "stringList",
+      "default": [
+        "apify.com"
+      ],
+      "prefill": [
+        "apify.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
