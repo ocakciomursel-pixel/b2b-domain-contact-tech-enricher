@@ -1,0 +1,30 @@
+{
+  "title": "SaaS Subprocessor List & Third-Party Cloud Vendor Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Target SaaS Domains",
+      "type": "array",
+      "description": "Domains to inspect for vendor and privacy disclosures.",
+      "editor": "stringList",
+      "default": [
+        "apify.com"
+      ],
+      "prefill": [
+        "apify.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
