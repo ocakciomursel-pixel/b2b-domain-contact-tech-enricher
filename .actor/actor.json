@@ -62,7 +62,44 @@
             }
           }
         }
+      },
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "podcastTitle": {
+            "type": "string",
+            "title": "podcastTitle",
+            "description": "Extracted podcastTitle"
+          },
+          "hostName": {
+            "type": "string",
+            "title": "hostName",
+            "description": "Extracted hostName"
+          },
+          "ownerEmails": {
+            "type": "array",
+            "title": "ownerEmails",
+            "description": "Extracted ownerEmails"
+          },
+          "primaryGenre": {
+            "type": "string",
+            "title": "primaryGenre",
+            "description": "Extracted primaryGenre"
+          },
+          "trackCount": {
+            "type": "number",
+            "title": "trackCount",
+            "description": "Extracted trackCount"
+          },
+          "websiteUrl": {
+            "type": "string",
+            "title": "websiteUrl",
+            "description": "Extracted websiteUrl"
+          }
+        }
       }
     }
-  }
+  },
+  "output": "./output_schema.json"
 }
