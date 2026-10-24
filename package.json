@@ -1,0 +1,17 @@
+{
+  "name": "solar-hvac-home-services-contractor-lead-enricher",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Home services B2B lead enrichment: scans contractor websites for verified emails, phone numbers, licensing mentions, and booking widgets.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Solar, HVAC, Roofing & Home Services Contractor Lead Enricher Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Contractor Domains",
+      "type": "array",
+      "description": "Domains of solar, HVAC, or roofing businesses.",
+      "editor": "stringList",
+      "default": [
+        "sunrun.com"
+      ],
+      "prefill": [
+        "sunrun.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
