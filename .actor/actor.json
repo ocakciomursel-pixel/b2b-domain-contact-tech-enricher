@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "apple-appstore-aso-competitor-review-intel",
-  "title": "Apple App Store ASO, Competitor Metadata & User Complaint Miner (MCP Ready)",
+  "title": "Apple App Store ASO, Competitor Metadata & User Complaint Mi",
   "description": "Mobile App & Gaming intelligence Actor: extracts iOS App Store ratings, version velocity, developer websites, and mines recent user reviews to identify 1-2 star bug/complaint themes.",
   "version": "1.0",
   "buildTag": "latest",
@@ -69,7 +69,5 @@
         }
       }
     }
-  },
-  "seoTitle": "Apple App Store Scraper | ASO Keyword Research & 1-Star Review Miner",
-  "seoDescription": "Extract iOS App Store ratings, version history, developer websites, and mine recent customer reviews to uncover 1-2 star bugs, paywall complaints, and feature gaps."
+  }
 }
