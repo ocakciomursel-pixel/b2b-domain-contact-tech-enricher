@@ -1,0 +1,30 @@
+{
+  "title": "OpenSky Live Commercial Aircraft, Callsign & Flight Telemetry Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "countries": {
+      "title": "Origin Country Filter (Optional)",
+      "type": "array",
+      "description": "Country names to filter aircraft by (e.g. [\"United States\", \"Germany\"]).",
+      "editor": "stringList",
+      "default": [
+        "United States"
+      ],
+      "prefill": [
+        "United States"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "countries"
+  ]
+}

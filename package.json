@@ -1,0 +1,17 @@
+{
+  "name": "opensky-live-aircraft-flight-transponder-telemetry",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Aviation logistics & airspace intelligence: queries OpenSky Network REST API for live aircraft positions, callsigns, speeds, and countries of registration.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
