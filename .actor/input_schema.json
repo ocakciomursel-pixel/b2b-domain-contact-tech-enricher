@@ -1,0 +1,32 @@
+{
+  "title": "Wikipedia & Wikidata Entity Summary, Logo & Knowledge Graph Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "entities": {
+      "title": "Entity or Company Names",
+      "type": "array",
+      "description": "Wikipedia page titles or entity names (e.g. [\"Stripe,_Inc.\", \"Cloudflare\", \"OpenAI\"]).",
+      "editor": "stringList",
+      "default": [
+        "Cloudflare",
+        "Stripe,_Inc."
+      ],
+      "prefill": [
+        "Cloudflare",
+        "Stripe,_Inc."
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "entities"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "wikipedia-wikidata-company-entity-knowledge-graph",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Entity enrichment & knowledge graph builder: retrieves verified encyclopedic summaries, Wikidata item IDs, short descriptions, and image URLs for any company, person, or concept.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
