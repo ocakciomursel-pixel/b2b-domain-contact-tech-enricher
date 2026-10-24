@@ -1,0 +1,31 @@
+{
+  "title": "Technical SEO, Broken Link & Schema.org Auditor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "urls": {
+      "title": "URLs to Audit",
+      "type": "array",
+      "description": "List of webpage URLs to run the technical SEO and broken link audit on.",
+      "editor": "stringList",
+      "prefill": [
+        "https://apify.com"
+      ]
+    },
+    "checkBrokenLinks": {
+      "title": "Verify Outbound/Internal Links for 4xx/5xx Errors",
+      "type": "boolean",
+      "description": "Test up to maxLinksToVerify links per page to detect dead/broken URLs.",
+      "default": true
+    },
+    "maxLinksToVerify": {
+      "title": "Max Links to Verify Per Page",
+      "type": "integer",
+      "description": "Maximum number of links per page to test for HTTP 4xx/5xx status.",
+      "default": 15,
+      "minimum": 0,
+      "maximum": 100
+    }
+  },
+  "required": ["urls"]
+}

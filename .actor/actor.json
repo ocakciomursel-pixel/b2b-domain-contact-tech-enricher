@@ -1,0 +1,53 @@
+{
+  "actorSpecification": 1,
+  "name": "seo-technical-audit-broken-link-schema-analyzer",
+  "title": "Technical SEO, Broken Link, Schema.org & Meta Tag Auditor (MCP Ready)",
+  "description": "Perform a 40-point technical SEO & AI-readiness audit on any URL list: HTTP latency, Title/Meta lengths, Canonical & Robots directives, H1-H6 structure, Image alt coverage, Schema.org JSON-LD validation, and live broken link detection with a 0-100 SEO Score.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Technical SEO Audit Reports",
+      "views": {
+        "overview": {
+          "title": "SEO Score & Issues Summary",
+          "transformation": {
+            "fields": [
+              "url",
+              "seoScore",
+              "statusCode",
+              "responseTimeMs",
+              "title",
+              "metaDescription",
+              "h1Count",
+              "imagesMissingAlt",
+              "brokenLinksCount",
+              "issues"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "url": { "label": "URL", "format": "link" },
+              "seoScore": { "label": "SEO Score (0-100)", "format": "number" },
+              "statusCode": { "label": "HTTP Status", "format": "number" },
+              "responseTimeMs": { "label": "Latency (ms)", "format": "number" },
+              "title": { "label": "Page Title", "format": "text" },
+              "metaDescription": { "label": "Meta Description", "format": "text" },
+              "h1Count": { "label": "H1 Count", "format": "number" },
+              "imagesMissingAlt": { "label": "Imgs Missing Alt", "format": "number" },
+              "brokenLinksCount": { "label": "Broken Links", "format": "number" },
+              "issues": { "label": "Actionable SEO Issues", "format": "array" }
+            }
+          }
+        }
+      }
+    }
+  }
+}
