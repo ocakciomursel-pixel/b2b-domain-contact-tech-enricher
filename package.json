@@ -1,0 +1,17 @@
+{
+  "name": "spf-dmarc-bimi-email-deliverability-spoofing-auditor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Cold email agency & cybersecurity lead magnet: queries DNS TXT and MX records to verify SPF, DMARC enforcement levels, and email gateway providers.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
