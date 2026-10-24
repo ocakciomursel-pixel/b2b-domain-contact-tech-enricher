@@ -1,0 +1,30 @@
+{
+  "title": "OpenLibrary ISBN, Book Publisher, Author & Edition Enricher Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Book Titles, Authors, or Subjects",
+      "type": "array",
+      "description": "Search queries for OpenLibrary (e.g. [\"artificial intelligence\", \"economics\"]).",
+      "editor": "stringList",
+      "default": [
+        "economics"
+      ],
+      "prefill": [
+        "economics"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}

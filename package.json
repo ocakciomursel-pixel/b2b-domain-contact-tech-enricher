@@ -1,0 +1,17 @@
+{
+  "name": "openlibrary-isbn-book-publisher-author-enricher",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Book publishing & catalog enrichment tool: queries OpenLibrary Search API to extract bibliographic metadata, authors, publishers, and edition histories.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
