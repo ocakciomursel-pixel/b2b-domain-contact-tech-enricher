@@ -1,0 +1,30 @@
+{
+  "title": "DefiLlama DEX On-Chain Trading Volume & 24h Market Share Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "DEX Name Filter (or ALL)",
+      "type": "array",
+      "description": "DEX protocol names (e.g. [\"Uniswap\", \"Raydium\", \"Curve\"]).",
+      "editor": "stringList",
+      "default": [
+        "Uniswap"
+      ],
+      "prefill": [
+        "Uniswap"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
