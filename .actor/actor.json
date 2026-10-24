@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "sitemap-url-inventory-content-freshness-auditor",
-  "title": "XML Sitemap URL Extractor & Content Freshness Auditor (MCP Ready)",
+  "title": "XML Sitemap URL Extractor & Content Freshness Auditor",
   "description": "Discover robots.txt and XML sitemaps for any domain, extract complete URL inventories, categorize site sections (/blog, /docs, /products), and measure content publishing velocity.",
   "version": "1.0",
   "buildTag": "latest",
@@ -59,7 +59,5 @@
         }
       }
     }
-  },
-  "seoTitle": "XML Sitemap Extractor, URL Inventory Builder & Content Freshness Tool",
-  "seoDescription": "Automatically discover robots.txt and XML sitemaps for any domain, extract complete URL lists, categorize site sections, and measure content publishing velocity."
+  }
 }
