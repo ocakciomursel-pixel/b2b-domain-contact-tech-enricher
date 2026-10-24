@@ -1,0 +1,68 @@
+{
+  "actorSpecification": 1,
+  "name": "saas-pricing-page-tier-feature-extractor",
+  "title": "SaaS Pricing Page Tier, Plan, Currency & Feature Matrix Spy (MCP Ready)",
+  "description": "Locate and analyze SaaS competitor /pricing pages to extract detected price points, billing models (per-seat, usage-based, freemium, free trial), and enterprise tiers.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "SaaS Pricing Page Tier, Plan, Currency & Feature Matrix Spy (MCP Ready)",
+      "views": {
+        "overview": {
+          "title": "Extracted Intelligence",
+          "transformation": {
+            "fields": [
+              "domain",
+              "pricingUrl",
+              "hasFreeTier",
+              "hasFreeTrial",
+              "hasEnterpriseTier",
+              "billingSignals",
+              "detectedPrices"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "domain": {
+                "label": "SaaS Domain",
+                "format": "text"
+              },
+              "pricingUrl": {
+                "label": "Pricing URL",
+                "format": "link"
+              },
+              "hasFreeTier": {
+                "label": "Free Tier",
+                "format": "boolean"
+              },
+              "hasFreeTrial": {
+                "label": "Free Trial",
+                "format": "boolean"
+              },
+              "hasEnterpriseTier": {
+                "label": "Enterprise Plan",
+                "format": "boolean"
+              },
+              "billingSignals": {
+                "label": "Billing Model Signals",
+                "format": "array"
+              },
+              "detectedPrices": {
+                "label": "Detected Price Points",
+                "format": "array"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "title": "SaaS Pricing Page Tier & Feature Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "SaaS Competitor Domains",
+      "type": "array",
+      "description": "List of SaaS domains to analyze pricing models for (e.g. [\"apify.com\", \"linear.app\", \"supabase.com\"]).",
+      "editor": "stringList",
+      "prefill": [
+        "apify.com",
+        "supabase.com"
+      ]
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
