@@ -1,0 +1,30 @@
+{
+  "title": "US NPI Registry Doctor, Clinic & Healthcare Provider Lead Finder Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "searchTerms": {
+      "title": "Taxonomy Specialty or Provider Last Name / Organization",
+      "type": "array",
+      "description": "Specialty or organization name (e.g. [\"Cardiology\", \"Dental\", \"Dermatology\"]).",
+      "editor": "stringList",
+      "default": [
+        "Cardiology"
+      ],
+      "prefill": [
+        "Cardiology"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "searchTerms"
+  ]
+}

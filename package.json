@@ -1,0 +1,17 @@
+{
+  "name": "us-npi-healthcare-provider-doctor-clinic-registry",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Healthcare B2B lead generation: queries the official US National Plan and Provider Enumeration System (NPPES NPI Registry) for verified physicians, clinics, taxonomy specialties, addresses, and phone numbers.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
