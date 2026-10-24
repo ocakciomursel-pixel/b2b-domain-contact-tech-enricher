@@ -1,0 +1,17 @@
+{
+  "name": "steam-store-pc-game-pricing-player-review-spy",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Gaming industry & publisher market intelligence: extracts Steam game pricing, active sale discounts, platform support (Windows/Mac/Linux), and store metadata.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Steam Store PC Game Pricing, Discount & Studio Intelligence Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Game Titles or Genre Keywords",
+      "type": "array",
+      "description": "Keywords to search on Steam Store (e.g. [\"cyberpunk\", \"roguelike\", \"simulator\"]).",
+      "editor": "stringList",
+      "default": [
+        "cyberpunk"
+      ],
+      "prefill": [
+        "cyberpunk"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
