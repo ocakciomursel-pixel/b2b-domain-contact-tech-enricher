@@ -1,0 +1,30 @@
+{
+  "title": "EMBL-EBI ChEMBL Bioactive Molecule & Clinical Drug Phase Miner Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Drug or Target Search Terms",
+      "type": "array",
+      "description": "Search keywords for ChEMBL molecules (e.g. [\"imatinib\", \"pembrolizumab\"]).",
+      "editor": "stringList",
+      "default": [
+        "imatinib"
+      ],
+      "prefill": [
+        "imatinib"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}

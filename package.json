@@ -1,0 +1,17 @@
+{
+  "name": "chembl-bioactive-molecule-clinical-phase-miner",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Drug discovery & biotech intelligence: queries EMBL-EBI ChEMBL REST API for bioactive compounds, clinical development phases, and molecular classifications.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
