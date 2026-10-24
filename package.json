@@ -1,0 +1,17 @@
+{
+  "name": "b2b-leadership-team-about-page-executive-finder",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "B2B executive outreach & enrichment tool: scans company domains and about pages for LinkedIn profile links, contact emails, and leadership metadata.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
