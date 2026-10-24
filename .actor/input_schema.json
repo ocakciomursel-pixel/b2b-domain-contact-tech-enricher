@@ -1,0 +1,32 @@
+{
+  "title": "RDAP & WHOIS Domain Ownership, Registrar & Expiry Auditor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Domains to Lookup",
+      "type": "array",
+      "description": "List of domains to inspect via RDAP WHOIS.",
+      "editor": "stringList",
+      "default": [
+        "google.com",
+        "cloudflare.com"
+      ],
+      "prefill": [
+        "google.com",
+        "cloudflare.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
