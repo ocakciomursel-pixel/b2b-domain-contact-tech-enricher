@@ -1,0 +1,17 @@
+{
+  "name": "squarespace-commerce-agency-local-business-spy",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "SMB & boutique brand lead generation: extracts verified emails, social links, and structured metadata from Squarespace websites.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
