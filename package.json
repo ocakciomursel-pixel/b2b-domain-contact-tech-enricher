@@ -1,0 +1,17 @@
+{
+  "name": "openfda-medical-device-510k-recall-tracker",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "MedTech B2B sales & regulatory intelligence: queries OpenFDA 510(k) clearances to extract medical device manufacturers, applicant contact details, addresses, and FDA clearance dates.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
