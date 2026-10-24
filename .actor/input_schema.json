@@ -1,0 +1,30 @@
+{
+  "title": "Rust Crates.io Package Downloads, Repository & Maintainer Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Rust Crate Keywords",
+      "type": "array",
+      "description": "Search terms on Crates.io (e.g. [\"tokio\", \"serde\", \"axum\"]).",
+      "editor": "stringList",
+      "default": [
+        "tokio"
+      ],
+      "prefill": [
+        "tokio"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}

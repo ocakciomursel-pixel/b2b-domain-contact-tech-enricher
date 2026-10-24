@@ -1,0 +1,17 @@
+{
+  "name": "rust-crates-cargo-maintainer-dependency-enricher",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Systems engineering & DevTools lead intelligence: extracts Rust crate adoption metrics, download velocity, repository URLs, and documentation links from Crates.io.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
