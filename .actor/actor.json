@@ -1,0 +1,39 @@
+{
+  "actorSpecification": 1,
+  "name": "b2b-domain-contact-tech-enricher",
+  "title": "B2B Website Contact, Email, Social & Tech Stack Enricher (MCP Ready)",
+  "description": "Extracts verified business emails, phone numbers, social profiles (LinkedIn, X, GitHub, YouTube), JSON-LD organization metadata, careers/pricing links, and technology stack signatures from any list of company domains.",
+  "version": "1.0.0",
+  "meta": {
+    "templateId": "ts-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "dockerfile": "./Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Enriched B2B Company Profiles",
+      "views": {
+        "overview": {
+          "title": "Enriched Leads Overview",
+          "transformation": {
+            "fields": [
+              "domain",
+              "companyName",
+              "emails",
+              "phones",
+              "linkedin",
+              "techStack",
+              "careersUrl",
+              "pricingUrl",
+              "statusCode"
+            ]
+          },
+          "display": {
+            "component": "table"
+          }
+        }
+      }
+    }
+  }
+}

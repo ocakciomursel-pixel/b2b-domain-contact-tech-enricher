@@ -1,0 +1,21 @@
+{
+  "name": "b2b-domain-contact-tech-enricher",
+  "version": "1.0.0",
+  "description": "Apify Pay-Per-Event Actor & CLI for B2B domain contact, social profile, JSON-LD, and tech stack enrichment.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node src/main.js --demo"
+  },
+  "keywords": [
+    "apify",
+    "actor",
+    "b2b-leads",
+    "email-extractor",
+    "tech-stack",
+    "mcp"
+  ],
+  "dependencies": {
+    "apify": "^3.2.0"
+  }
+}
