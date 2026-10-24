@@ -1,0 +1,17 @@
+{
+  "name": "ashby-company-job-board-hiring-velocity-scraper",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "B2B sales intent & recruiting intelligence: queries public AshbyHQ posting APIs for fast-growing tech startups to extract active job openings, departments, and locations.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
