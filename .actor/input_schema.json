@@ -1,0 +1,30 @@
+{
+  "title": "Global Patent Literature, Inventor & Corporate Assignee Miner Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Technology or Assignee Keywords",
+      "type": "array",
+      "description": "Patent search keywords (e.g. [\"lithium battery\", \"semiconductor lithography\"]).",
+      "editor": "stringList",
+      "default": [
+        "lithium battery"
+      ],
+      "prefill": [
+        "lithium battery"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}

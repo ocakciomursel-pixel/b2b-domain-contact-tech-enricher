@@ -1,0 +1,17 @@
+{
+  "name": "global-patent-inventor-assignee-innovation-miner",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "IP & R&D competitive intelligence: extracts published patent records, inventor lists, publication dates, and citation metrics via Europe PMC Patent index.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
