@@ -1,39 +1,80 @@
-{
-  "actorSpecification": 1,
-  "name": "b2b-domain-contact-tech-enricher",
-  "title": "B2B Domain Contact, Email, Social & Tech Stack Enricher",
-  "description": "High-speed B2B lead enrichment Actor: extracts verified business emails, phone numbers, social media profiles (LinkedIn, X, Instagram, YouTube, GitHub), and 20+ technology stack signatures from any list of company domains.",
-  "version": "1.0.0",
-  "meta": {
-    "templateId": "ts-crawlee-cheerio"
-  },
-  "input": "./input_schema.json",
-  "dockerfile": "./Dockerfile",
-  "storages": {
-    "dataset": {
-      "actorSpecification": 1,
-      "title": "Enriched B2B Company Profiles",
-      "views": {
-        "overview": {
-          "title": "Enriched Leads Overview",
-          "transformation": {
-            "fields": [
-              "domain",
-              "companyName",
-              "emails",
-              "phones",
-              "linkedin",
-              "techStack",
-              "careersUrl",
-              "pricingUrl",
-              "statusCode"
-            ]
-          },
-          "display": {
-            "component": "table"
-          }
-        }
-      }
-    }
-  }
+﻿{
+    "actorSpecification":  1,
+    "name":  "b2b-domain-contact-tech-enricher",
+    "title":  "B2B Domain Contact, Email, Social \u0026 Tech Stack Enricher",
+    "description":  "High-speed B2B lead enrichment Actor: extracts verified business emails, phone numbers, social media profiles (LinkedIn, X, Instagram, YouTube, GitHub), and 20+ technology stack signatures from any list of company domains.",
+    "version":  "1.0.0",
+    "meta":  {
+                 "templateId":  "ts-crawlee-cheerio"
+             },
+    "input":  "./input_schema.json",
+    "dockerfile":  "./Dockerfile",
+    "storages":  {
+                     "dataset":  {
+                                     "actorSpecification":  1,
+                                     "title":  "Enriched B2B Company Profiles",
+                                     "views":  {
+                                                   "overview":  {
+                                                                    "title":  "Enriched Leads Overview",
+                                                                    "transformation":  {
+                                                                                           "fields":  [
+                                                                                                          "domain",
+                                                                                                          "companyName",
+                                                                                                          "emails",
+                                                                                                          "phones",
+                                                                                                          "linkedin",
+                                                                                                          "techStack",
+                                                                                                          "careersUrl",
+                                                                                                          "pricingUrl",
+                                                                                                          "statusCode"
+                                                                                                      ]
+                                                                                       },
+                                                                    "display":  {
+                                                                                    "component":  "table"
+                                                                                }
+                                                                }
+                                               },
+                                     "fields":  {
+                                                    "properties":  {
+                                                                       "title":  {
+                                                                                     "title":  "Website Title",
+                                                                                     "description":  "Extracted page title",
+                                                                                     "type":  "string"
+                                                                                 },
+                                                                       "domain":  {
+                                                                                      "title":  "Domain",
+                                                                                      "description":  "Company domain",
+                                                                                      "type":  "string"
+                                                                                  },
+                                                                       "techStack":  {
+                                                                                         "title":  "Tech Stack",
+                                                                                         "description":  "Detected technologies",
+                                                                                         "items":  {
+                                                                                                       "type":  "string"
+                                                                                                   },
+                                                                                         "type":  "array"
+                                                                                     },
+                                                                       "phones":  {
+                                                                                      "title":  "Phones",
+                                                                                      "description":  "Extracted phone numbers",
+                                                                                      "items":  {
+                                                                                                    "type":  "string"
+                                                                                                },
+                                                                                      "type":  "array"
+                                                                                  },
+                                                                       "emails":  {
+                                                                                      "title":  "Emails",
+                                                                                      "description":  "Extracted business emails",
+                                                                                      "items":  {
+                                                                                                    "type":  "string"
+                                                                                                },
+                                                                                      "type":  "array"
+                                                                                  }
+                                                                   },
+                                                    "type":  "object",
+                                                    "":  "http://json-schema.org/draft-07/schema#"
+                                                }
+                                 }
+                 },
+    "output":  "./output_schema.json"
 }
