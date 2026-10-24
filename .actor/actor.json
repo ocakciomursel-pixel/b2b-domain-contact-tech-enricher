@@ -1,0 +1,63 @@
+{
+  "actorSpecification": 1,
+  "name": "wordpress-woocommerce-site-spy",
+  "title": "WordPress & WooCommerce Theme, Plugin & REST API Intelligence Spy (MCP Ready)",
+  "description": "Detect active WordPress themes, installed plugins, WooCommerce e-commerce status, REST API namespaces, and published metadata on any domain.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "WordPress & WooCommerce Theme, Plugin & REST API Intelligence Spy (MCP Ready)",
+      "views": {
+        "overview": {
+          "title": "Extracted Intelligence",
+          "transformation": {
+            "fields": [
+              "domain",
+              "isWordPress",
+              "isWooCommerce",
+              "activeTheme",
+              "detectedPlugins",
+              "restNamespaces"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "domain": {
+                "label": "Domain",
+                "format": "text"
+              },
+              "isWordPress": {
+                "label": "WordPress",
+                "format": "boolean"
+              },
+              "isWooCommerce": {
+                "label": "WooCommerce",
+                "format": "boolean"
+              },
+              "activeTheme": {
+                "label": "Active Theme",
+                "format": "text"
+              },
+              "detectedPlugins": {
+                "label": "Detected Plugins",
+                "format": "array"
+              },
+              "restNamespaces": {
+                "label": "REST Namespaces",
+                "format": "array"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

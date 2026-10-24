@@ -1,0 +1,20 @@
+{
+  "title": "WordPress & WooCommerce Site Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Target Domains or URLs",
+      "type": "array",
+      "description": "List of domains to inspect for WordPress themes, plugins, and WooCommerce data.",
+      "editor": "stringList",
+      "prefill": [
+        "techcrunch.com",
+        "wordpress.org"
+      ]
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
