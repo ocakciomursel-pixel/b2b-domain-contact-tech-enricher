@@ -1,0 +1,34 @@
+{
+  "title": "IANA Root Zone TLD Registry, Sponsor & NIC Operator Directory Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "tlds": {
+      "title": "Top-Level Domains (TLDs)",
+      "type": "array",
+      "description": "TLD extensions without dots (e.g. [\"com\", \"io\", \"org\", \"co\"]).",
+      "editor": "stringList",
+      "default": [
+        "com",
+        "io",
+        "org"
+      ],
+      "prefill": [
+        "com",
+        "io",
+        "org"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "tlds"
+  ]
+}
