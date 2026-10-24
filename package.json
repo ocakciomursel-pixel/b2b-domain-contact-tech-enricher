@@ -1,0 +1,17 @@
+{
+  "name": "fdic-us-bank-financial-institution-branch-directory",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Fintech B2B sales & banking intelligence: extracts FDIC-insured banks, total asset volumes, deposit figures, headquarters locations, and active status.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

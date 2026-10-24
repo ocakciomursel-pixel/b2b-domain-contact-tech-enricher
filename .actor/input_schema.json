@@ -1,0 +1,30 @@
+{
+  "title": "FDIC US Bank, Credit Union & Financial Institution Directory Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "states": {
+      "title": "US State Names",
+      "type": "array",
+      "description": "State names to filter FDIC institutions (e.g. [\"New York\", \"California\", \"Texas\"]).",
+      "editor": "stringList",
+      "default": [
+        "New York"
+      ],
+      "prefill": [
+        "New York"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "states"
+  ]
+}
