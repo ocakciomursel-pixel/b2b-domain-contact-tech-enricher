@@ -1,0 +1,32 @@
+{
+  "title": "DefiLlama Global Stablecoin Market Cap, Peg & Chain Flow Monitor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "symbols": {
+      "title": "Stablecoin Symbols (or ALL)",
+      "type": "array",
+      "description": "Stablecoin tickers (e.g. [\"USDT\", \"USDC\", \"DAI\"]).",
+      "editor": "stringList",
+      "default": [
+        "USDT",
+        "USDC"
+      ],
+      "prefill": [
+        "USDT",
+        "USDC"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "symbols"
+  ]
+}
