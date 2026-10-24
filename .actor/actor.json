@@ -34,20 +34,52 @@
           "display": {
             "component": "table",
             "properties": {
-              "url": { "label": "URL", "format": "link" },
-              "seoScore": { "label": "SEO Score (0-100)", "format": "number" },
-              "statusCode": { "label": "HTTP Status", "format": "number" },
-              "responseTimeMs": { "label": "Latency (ms)", "format": "number" },
-              "title": { "label": "Page Title", "format": "text" },
-              "metaDescription": { "label": "Meta Description", "format": "text" },
-              "h1Count": { "label": "H1 Count", "format": "number" },
-              "imagesMissingAlt": { "label": "Imgs Missing Alt", "format": "number" },
-              "brokenLinksCount": { "label": "Broken Links", "format": "number" },
-              "issues": { "label": "Actionable SEO Issues", "format": "array" }
+              "url": {
+                "label": "URL",
+                "format": "link"
+              },
+              "seoScore": {
+                "label": "SEO Score (0-100)",
+                "format": "number"
+              },
+              "statusCode": {
+                "label": "HTTP Status",
+                "format": "number"
+              },
+              "responseTimeMs": {
+                "label": "Latency (ms)",
+                "format": "number"
+              },
+              "title": {
+                "label": "Page Title",
+                "format": "text"
+              },
+              "metaDescription": {
+                "label": "Meta Description",
+                "format": "text"
+              },
+              "h1Count": {
+                "label": "H1 Count",
+                "format": "number"
+              },
+              "imagesMissingAlt": {
+                "label": "Imgs Missing Alt",
+                "format": "number"
+              },
+              "brokenLinksCount": {
+                "label": "Broken Links",
+                "format": "number"
+              },
+              "issues": {
+                "label": "Actionable SEO Issues",
+                "format": "array"
+              }
             }
           }
         }
       }
     }
-  }
+  },
+  "seoTitle": "Technical SEO Audit Tool, Broken Link Checker & Schema.org Analyzer",
+  "seoDescription": "Run a 40-point technical SEO audit on any URL list: HTTP latency, Title/Meta tags, Canonical, H1-H6 headings, missing image alt text, Schema.org JSON-LD, and dead links."
 }
