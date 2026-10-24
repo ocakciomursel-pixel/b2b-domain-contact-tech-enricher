@@ -1,0 +1,30 @@
+{
+  "title": "TVMaze Television & Streaming Show, Network & Rating Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "TV or Streaming Show Titles",
+      "type": "array",
+      "description": "Show titles to search (e.g. [\"Severance\", \"Succession\"]).",
+      "editor": "stringList",
+      "default": [
+        "Severance"
+      ],
+      "prefill": [
+        "Severance"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}

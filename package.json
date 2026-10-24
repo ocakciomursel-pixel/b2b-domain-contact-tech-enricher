@@ -1,0 +1,17 @@
+{
+  "name": "tvmaze-television-show-network-cast-schedule-spy",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Entertainment & streaming media intelligence: queries TVMaze REST API for television and streaming show metadata, ratings, networks, and external IDs.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
