@@ -1,0 +1,30 @@
+{
+  "title": "SaaS Statuspage Uptime, Component Health & Incident Monitor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "statusUrls": {
+      "title": "Status Page URLs",
+      "type": "array",
+      "description": "Status page URLs (e.g. [\"https://www.githubstatus.com\", \"https://status.npmjs.org\"]).",
+      "editor": "stringList",
+      "default": [
+        "https://www.githubstatus.com"
+      ],
+      "prefill": [
+        "https://www.githubstatus.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "statusUrls"
+  ]
+}

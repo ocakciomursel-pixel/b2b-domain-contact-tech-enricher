@@ -1,0 +1,17 @@
+{
+  "name": "saas-status-page-uptime-incident-history-monitor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "DevOps reliability & vendor risk monitoring: queries standard Statuspage JSON endpoints and status URLs to monitor third-party SaaS uptime.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
