@@ -1,0 +1,30 @@
+{
+  "title": "SmartRecruiters Enterprise Company Job Board & Hiring Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "companies": {
+      "title": "SmartRecruiters Company Identifiers",
+      "type": "array",
+      "description": "Company identifiers on SmartRecruiters (e.g. [\"Visa\", \"BoschGroup\"]).",
+      "editor": "stringList",
+      "default": [
+        "Visa"
+      ],
+      "prefill": [
+        "Visa"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "companies"
+  ]
+}
