@@ -1,0 +1,30 @@
+{
+  "title": "E-Commerce BNPL Payment (Klarna/Affirm) & Return Policy Auditor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "E-Commerce Store Domains",
+      "type": "array",
+      "description": "DTC or retail domains to scan for BNPL and shipping policies.",
+      "editor": "stringList",
+      "default": [
+        "allbirds.com"
+      ],
+      "prefill": [
+        "allbirds.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}

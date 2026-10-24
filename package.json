@@ -1,0 +1,17 @@
+{
+  "name": "ecommerce-shipping-return-policy-bnpl-payment-auditor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Fintech, payment gateway & e-commerce agency lead qualifier: detects BNPL providers, payment badges, and shipping/return policy links on DTC stores.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
