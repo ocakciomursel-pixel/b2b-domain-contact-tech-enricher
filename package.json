@@ -1,0 +1,17 @@
+{
+  "name": "b2b-partner-affiliate-program-commission-finder",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Affiliate marketing & B2B partnerships lead tool: discovers company partner/affiliate pages and detects underlying partner tracking platforms.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
