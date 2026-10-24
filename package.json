@@ -1,0 +1,17 @@
+{
+  "name": "nuget-dotnet-csharp-package-publisher-enricher",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Enterprise .NET ecosystem intelligence: queries the official NuGet Search Service API for package download statistics, author handles, and project links.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

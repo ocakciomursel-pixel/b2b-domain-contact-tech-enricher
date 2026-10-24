@@ -1,0 +1,30 @@
+{
+  "title": "NuGet .NET & C# Package Downloads, Owners & License Enricher Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "NuGet Search Terms",
+      "type": "array",
+      "description": "Keywords to search on NuGet.org (e.g. [\"newtonsoft\", \"serilog\", \"dapper\"]).",
+      "editor": "stringList",
+      "default": [
+        "serilog"
+      ],
+      "prefill": [
+        "serilog"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
