@@ -1,0 +1,30 @@
+{
+  "title": "Medium Tag & Publication Article, Author & Trend RSS Miner Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "tags": {
+      "title": "Medium Topic Tags",
+      "type": "array",
+      "description": "Topic tags on Medium (e.g. [\"saas\", \"startup\", \"programming\"]).",
+      "editor": "stringList",
+      "default": [
+        "saas"
+      ],
+      "prefill": [
+        "saas"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "tags"
+  ]
+}

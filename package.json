@@ -1,0 +1,17 @@
+{
+  "name": "medium-publication-author-article-rss-miner",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Content marketing & writer discovery tool: parses Medium RSS feeds by topic tag to extract trending articles, author profiles, tags, and publication timestamps.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
