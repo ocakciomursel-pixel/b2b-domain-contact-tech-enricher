@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "ai-ready-website-to-markdown-rag-crawler",
-  "title": "AI & LLM Website to Clean Markdown, Chunks & Metadata (MCP Ready)",
+  "title": "AI & LLM Website to Clean Markdown, RAG Chunks & Metadata (MCP Ready)",
   "description": "Convert any webpage or documentation site into clean LLM-ready Markdown, overlapping RAG text chunks with estimated token counts, and JSON-LD/OpenGraph metadata.",
   "version": "1.0",
   "buildTag": "latest",
@@ -31,17 +31,40 @@
           "display": {
             "component": "table",
             "properties": {
-              "url": { "label": "URL", "format": "link" },
-              "title": { "label": "Title", "format": "text" },
-              "estimatedTokens": { "label": "Est. Tokens", "format": "number" },
-              "chunksCount": { "label": "RAG Chunks", "format": "number" },
-              "wordCount": { "label": "Words", "format": "number" },
-              "markdown": { "label": "Clean Markdown", "format": "text" },
-              "chunks": { "label": "Chunks Array", "format": "array" }
+              "url": {
+                "label": "URL",
+                "format": "link"
+              },
+              "title": {
+                "label": "Title",
+                "format": "text"
+              },
+              "estimatedTokens": {
+                "label": "Est. Tokens",
+                "format": "number"
+              },
+              "chunksCount": {
+                "label": "RAG Chunks",
+                "format": "number"
+              },
+              "wordCount": {
+                "label": "Words",
+                "format": "number"
+              },
+              "markdown": {
+                "label": "Clean Markdown",
+                "format": "text"
+              },
+              "chunks": {
+                "label": "Chunks Array",
+                "format": "array"
+              }
             }
           }
         }
       }
     }
-  }
+  },
+  "seoTitle": "Website to Markdown Converter & RAG Text Chunker for LLMs & AI Agents",
+  "seoDescription": "Convert any website or documentation into clean LLM-ready Markdown, overlapping RAG chunks with token counts, and JSON-LD metadata for Claude, GPT, and LangChain."
 }
