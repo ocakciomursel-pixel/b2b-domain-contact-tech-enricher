@@ -1,0 +1,33 @@
+{
+  "title": "ClinicalTrials.gov & OpenFDA Drug Safety Intelligence Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "conditionsOrDrugs": {
+      "title": "Conditions, Diseases, or Drug Names",
+      "type": "array",
+      "description": "List of medical conditions, drug names, or biotech keywords (e.g. [\"semaglutide\", \"non-small cell lung cancer\"]).",
+      "editor": "stringList",
+      "prefill": [
+        "semaglutide"
+      ]
+    },
+    "maxStudiesPerQuery": {
+      "title": "Max Clinical Studies Per Query",
+      "type": "integer",
+      "description": "Maximum number of clinical trial records to enrich per query (1 to 100).",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    },
+    "enrichFdaSafety": {
+      "title": "Include OpenFDA Adverse Event Signal Counts",
+      "type": "boolean",
+      "description": "Cross-reference the query term against OpenFDA FAERS drug adverse event database.",
+      "default": true
+    }
+  },
+  "required": [
+    "conditionsOrDrugs"
+  ]
+}
