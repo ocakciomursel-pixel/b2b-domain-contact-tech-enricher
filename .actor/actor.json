@@ -87,7 +87,59 @@
             }
           }
         }
+      },
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "title": "username",
+            "description": "Extracted username"
+          },
+          "name": {
+            "type": "string",
+            "title": "name",
+            "description": "Extracted name"
+          },
+          "emails": {
+            "type": "array",
+            "title": "emails",
+            "description": "Extracted emails"
+          },
+          "company": {
+            "type": "string",
+            "title": "company",
+            "description": "Extracted company"
+          },
+          "location": {
+            "type": "string",
+            "title": "location",
+            "description": "Extracted location"
+          },
+          "hireable": {
+            "type": "boolean",
+            "title": "hireable",
+            "description": "Extracted hireable"
+          },
+          "blogUrl": {
+            "type": "string",
+            "title": "blogUrl",
+            "description": "Extracted blogUrl"
+          },
+          "followers": {
+            "type": "number",
+            "title": "followers",
+            "description": "Extracted followers"
+          },
+          "repoContributions": {
+            "type": "number",
+            "title": "repoContributions",
+            "description": "Extracted repoContributions"
+          }
+        }
       }
     }
-  }
+  },
+  "output": "./output_schema.json"
 }
