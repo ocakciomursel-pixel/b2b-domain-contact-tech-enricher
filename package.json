@@ -1,0 +1,17 @@
+{
+  "name": "crossref-doi-academic-journal-funder-enricher",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Scholarly publishing & R&D grant intelligence: queries Crossref REST API for peer-reviewed works, citation counts, funding bodies, and publisher metadata.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Crossref DOI Academic Journal, Citation & Grant Funder Enricher Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Research Topics or Keywords",
+      "type": "array",
+      "description": "Keywords to query in Crossref (e.g. [\"renewable energy\", \"semiconductor\"]).",
+      "editor": "stringList",
+      "default": [
+        "semiconductor"
+      ],
+      "prefill": [
+        "semiconductor"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
