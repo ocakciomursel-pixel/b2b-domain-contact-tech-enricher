@@ -1,0 +1,17 @@
+{
+  "name": "tech-conference-speaker-sponsor-company-extractor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Event marketing & B2B sales prospecting tool: extracts outbound sponsor/partner links, contact emails, and event metadata from conference URLs.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

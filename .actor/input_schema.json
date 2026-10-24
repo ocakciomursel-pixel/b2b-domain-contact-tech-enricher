@@ -1,0 +1,30 @@
+{
+  "title": "Event & Conference Sponsor, Exhibitor & Speaker Lead Extractor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "urls": {
+      "title": "Conference or Event Website URLs",
+      "type": "array",
+      "description": "URLs of trade shows or conferences.",
+      "editor": "stringList",
+      "default": [
+        "https://websummit.com"
+      ],
+      "prefill": [
+        "https://websummit.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "urls"
+  ]
+}
