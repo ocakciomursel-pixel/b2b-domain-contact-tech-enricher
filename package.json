@@ -1,0 +1,17 @@
+{
+  "name": "vscode-marketplace-extension-publisher-spy",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Developer tools & IDE market intelligence: extracts extension install counts, ratings, publisher identities, and source code repositories from the OpenVSX registry.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
