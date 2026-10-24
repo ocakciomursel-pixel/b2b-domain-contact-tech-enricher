@@ -62,7 +62,49 @@
             }
           }
         }
+      },
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "title": "url",
+            "description": "Extracted url"
+          },
+          "title": {
+            "type": "string",
+            "title": "title",
+            "description": "Extracted title"
+          },
+          "wordCount": {
+            "type": "number",
+            "title": "wordCount",
+            "description": "Extracted wordCount"
+          },
+          "estimatedTokens": {
+            "type": "number",
+            "title": "estimatedTokens",
+            "description": "Extracted estimatedTokens"
+          },
+          "chunksCount": {
+            "type": "number",
+            "title": "chunksCount",
+            "description": "Extracted chunksCount"
+          },
+          "markdown": {
+            "type": "string",
+            "title": "markdown",
+            "description": "Extracted markdown"
+          },
+          "chunks": {
+            "type": "array",
+            "title": "chunks",
+            "description": "Extracted chunks"
+          }
+        }
       }
     }
-  }
+  },
+  "output": "./output_schema.json"
 }
