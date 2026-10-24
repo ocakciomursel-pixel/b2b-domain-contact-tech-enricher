@@ -62,7 +62,44 @@
             }
           }
         }
+      },
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "subreddit": {
+            "type": "string",
+            "title": "subreddit",
+            "description": "Extracted subreddit"
+          },
+          "title": {
+            "type": "string",
+            "title": "title",
+            "description": "Extracted title"
+          },
+          "buyerIntentSignals": {
+            "type": "array",
+            "title": "buyerIntentSignals",
+            "description": "Extracted buyerIntentSignals"
+          },
+          "hasBuyerIntent": {
+            "type": "boolean",
+            "title": "hasBuyerIntent",
+            "description": "Extracted hasBuyerIntent"
+          },
+          "author": {
+            "type": "string",
+            "title": "author",
+            "description": "Extracted author"
+          },
+          "permalink": {
+            "type": "string",
+            "title": "permalink",
+            "description": "Extracted permalink"
+          }
+        }
       }
     }
-  }
+  },
+  "output": "./output_schema.json"
 }
