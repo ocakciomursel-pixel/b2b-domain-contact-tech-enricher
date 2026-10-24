@@ -1,0 +1,30 @@
+{
+  "title": "US NOAA National Weather Service Severe Storm & Flood Alert Feed Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "states": {
+      "title": "2-Letter US State Codes",
+      "type": "array",
+      "description": "US state codes (e.g. [\"TX\", \"FL\", \"OK\"]).",
+      "editor": "stringList",
+      "default": [
+        "TX"
+      ],
+      "prefill": [
+        "TX"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "states"
+  ]
+}

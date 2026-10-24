@@ -1,0 +1,17 @@
+{
+  "name": "noaa-national-weather-severe-storm-alert-monitor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Property restoration, roofing lead generation & logistics routing: queries NOAA NWS API for active severe weather alerts by US state.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
