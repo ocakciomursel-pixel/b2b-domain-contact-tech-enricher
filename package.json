@@ -1,0 +1,17 @@
+{
+  "name": "musicbrainz-artist-label-isrc-catalog-enricher",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Music industry, A&R & media metadata enrichment: queries MusicBrainz Web Service v2 JSON API for artist profiles, areas, life-spans, and tags.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

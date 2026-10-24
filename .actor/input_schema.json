@@ -1,0 +1,30 @@
+{
+  "title": "MusicBrainz Artist, Record Label, Country & Catalog Enricher Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Artist or Band Names",
+      "type": "array",
+      "description": "Artist names to query (e.g. [\"Daft Punk\", \"Coldplay\"]).",
+      "editor": "stringList",
+      "default": [
+        "Daft Punk"
+      ],
+      "prefill": [
+        "Daft Punk"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
