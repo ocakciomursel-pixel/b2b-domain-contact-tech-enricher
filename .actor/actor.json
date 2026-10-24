@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "shopify-store-product-contact-spy",
-  "title": "Shopify Store Product, Pricing, Stock & Merchant Contact Spy (MCP Ready)",
+  "title": "Shopify Store Product, Pricing, Stock & Merchant Contact Spy",
   "description": "Extract complete product catalogs, variants, pricing statistics, stock availability, sale discounts, vendor lists, and merchant contact/social details from any Shopify store URL.",
   "version": "1.0",
   "buildTag": "latest",
@@ -84,7 +84,5 @@
         }
       }
     }
-  },
-  "seoTitle": "Shopify Product Scraper, Price Monitor & Merchant Email Extractor",
-  "seoDescription": "Scrape any Shopify store catalog, variants, SKUs, sale prices, live inventory stock status, merchant emails, and Instagram/TikTok links without headless browsers."
+  }
 }
