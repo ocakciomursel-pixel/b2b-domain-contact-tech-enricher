@@ -1,0 +1,17 @@
+{
+  "name": "internal-external-anchor-link-equity-mapper",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Link building & technical SEO audit tool: analyzes page link equity, counting internal links, external links, nofollow ratios, and top outbound domains.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

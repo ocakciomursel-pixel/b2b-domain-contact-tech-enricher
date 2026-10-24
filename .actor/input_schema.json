@@ -1,0 +1,30 @@
+{
+  "title": "SEO Internal vs External Link Graph & Anchor Text Mapper Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "urls": {
+      "title": "Target Webpage URLs",
+      "type": "array",
+      "description": "URLs to extract internal and external link metrics from.",
+      "editor": "stringList",
+      "default": [
+        "https://apify.com"
+      ],
+      "prefill": [
+        "https://apify.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "urls"
+  ]
+}
