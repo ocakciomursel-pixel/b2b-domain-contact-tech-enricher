@@ -1,0 +1,32 @@
+{
+  "title": "Robots.txt Crawl Directive, Sitemap & Disallow Path Auditor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Domains to Audit",
+      "type": "array",
+      "description": "Domains to fetch and parse robots.txt from.",
+      "editor": "stringList",
+      "default": [
+        "apify.com",
+        "shopify.com"
+      ],
+      "prefill": [
+        "apify.com",
+        "shopify.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
