@@ -1,0 +1,17 @@
+{
+  "name": "cve-vulnerability-nvd-exploit-monitor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "DevSecOps & Vulnerability Intelligence tool: queries the official NIST National Vulnerability Database (NVD 2.0) for CVEs, CVSS severity scores, vector strings, and patch references.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

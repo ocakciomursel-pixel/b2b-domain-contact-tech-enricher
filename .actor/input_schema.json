@@ -1,0 +1,30 @@
+{
+  "title": "CVE Vulnerability, CVSS Severity & NVD Security Monitor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "keywords": {
+      "title": "Software, Vendor, or CVE Keywords",
+      "type": "array",
+      "description": "Keywords to search in the National Vulnerability Database (e.g. [\"wordpress\", \"nginx\", \"openssl\"]).",
+      "editor": "stringList",
+      "default": [
+        "nginx"
+      ],
+      "prefill": [
+        "nginx"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "keywords"
+  ]
+}
