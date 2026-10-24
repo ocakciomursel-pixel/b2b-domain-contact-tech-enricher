@@ -1,0 +1,47 @@
+{
+  "actorSpecification": 1,
+  "name": "ai-ready-website-to-markdown-rag-crawler",
+  "title": "AI & LLM Website to Clean Markdown, Chunks & Metadata (MCP Ready)",
+  "description": "Convert any webpage or documentation site into clean LLM-ready Markdown, overlapping RAG text chunks with estimated token counts, and JSON-LD/OpenGraph metadata.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "LLM Markdown & RAG Chunks",
+      "views": {
+        "overview": {
+          "title": "Extracted Markdown & Chunks",
+          "transformation": {
+            "fields": [
+              "url",
+              "title",
+              "estimatedTokens",
+              "chunksCount",
+              "wordCount",
+              "markdown",
+              "chunks"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "url": { "label": "URL", "format": "link" },
+              "title": { "label": "Title", "format": "text" },
+              "estimatedTokens": { "label": "Est. Tokens", "format": "number" },
+              "chunksCount": { "label": "RAG Chunks", "format": "number" },
+              "wordCount": { "label": "Words", "format": "number" },
+              "markdown": { "label": "Clean Markdown", "format": "text" },
+              "chunks": { "label": "Chunks Array", "format": "array" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

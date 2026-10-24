@@ -1,0 +1,47 @@
+{
+  "title": "AI & LLM Website to Clean Markdown & RAG Chunks Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "urls": {
+      "title": "Start URLs",
+      "type": "array",
+      "description": "List of webpage URLs to convert into clean Markdown and RAG-ready chunks.",
+      "editor": "stringList",
+      "prefill": [
+        "https://docs.apify.com/platform/actors"
+      ]
+    },
+    "crawlSubpages": {
+      "title": "Crawl Same-Domain Internal Links",
+      "type": "boolean",
+      "description": "Follow internal links on the same domain up to maxPagesPerStartUrl.",
+      "default": false
+    },
+    "maxPagesPerStartUrl": {
+      "title": "Max Pages Per Start URL",
+      "type": "integer",
+      "description": "Maximum number of pages to extract per start URL when crawlSubpages is enabled.",
+      "default": 5,
+      "minimum": 1,
+      "maximum": 100
+    },
+    "chunkSizeChars": {
+      "title": "RAG Chunk Size (Characters)",
+      "type": "integer",
+      "description": "Target character length per RAG text chunk.",
+      "default": 1200,
+      "minimum": 200,
+      "maximum": 8000
+    },
+    "chunkOverlapChars": {
+      "title": "RAG Chunk Overlap (Characters)",
+      "type": "integer",
+      "description": "Character overlap between consecutive chunks to preserve context.",
+      "default": 150,
+      "minimum": 0,
+      "maximum": 1000
+    }
+  },
+  "required": ["urls"]
+}

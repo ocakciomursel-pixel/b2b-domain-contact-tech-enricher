@@ -1,0 +1,18 @@
+{
+  "name": "ai-ready-website-to-markdown-rag-crawler",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Convert webpages into clean LLM-ready Markdown, overlapping RAG chunks, and structured metadata.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node src/main.js --demo"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
