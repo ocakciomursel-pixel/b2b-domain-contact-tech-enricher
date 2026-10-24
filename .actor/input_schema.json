@@ -1,0 +1,32 @@
+{
+  "title": "IP to ASN, Cloud Hosting, ISP & Geolocation Enricher Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "targets": {
+      "title": "IP Addresses or Domains",
+      "type": "array",
+      "description": "IPv4 addresses or domain names to enrich.",
+      "editor": "stringList",
+      "default": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "prefill": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "targets"
+  ]
+}

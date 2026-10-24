@@ -1,0 +1,17 @@
+{
+  "name": "ip-asn-bgp-cloud-hosting-provider-enricher",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Network & infrastructure enrichment tool: resolves domains or IPs and extracts ASN, ISP/Cloud hosting organization, country, city, coordinates, and timezone.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
