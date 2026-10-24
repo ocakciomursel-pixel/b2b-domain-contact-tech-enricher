@@ -1,0 +1,30 @@
+{
+  "title": "Apple Books & Audiobook Author, Pricing & Publisher Lead Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Book Topics or Author Keywords",
+      "type": "array",
+      "description": "Keywords to search eBooks for (e.g. [\"business strategy\", \"startup\", \"psychology\"]).",
+      "editor": "stringList",
+      "default": [
+        "business strategy"
+      ],
+      "prefill": [
+        "business strategy"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
