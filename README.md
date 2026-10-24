@@ -1,10 +1,128 @@
-# B2B Website Contact, Email, Social & Tech Stack Enricher (MCP & Pay-Per-Event Ready)
+# B2B Domain Contact, Email, Social & Tech Stack Enricher (MCP Ready)
 
-High-speed, zero-browser B2B lead enrichment Actor for **Apify Store** and **MCP AI Agents**.
+> **B2B Email Finder, Contact Scraper & Website Tech Stack Enricher** — High-speed B2B lead enrichment Actor: extracts verified business emails, phone numbers, social media profiles (LinkedIn, X, Instagram, YouTube, GitHub), and 20+ technology stack signatures from any list of company domains.
 
-## Features
-- **Verified Contact Discovery:** Automatically scans company homepages plus `/contact`, `/about`, `/impressum`, and `/legal` pages to extract emails and phone numbers.
-- **Social Graph Extraction:** Extracts official LinkedIn, X/Twitter, GitHub, YouTube, and Instagram profiles.
-- **Technology Stack Fingerprinting:** Detects Next.js, React, Shopify, Webflow, WordPress, HubSpot, Intercom, Stripe, Segment, Cloudflare, PostHog, Sentry, and more.
-- **JSON-LD Schema & Hiring Signals:** Extracts structured `Organization` metadata plus `/careers` and `/pricing` URLs.
-- **Pay-Per-Event (PPE) Billing:** Integrated with `Actor.charge({ eventName: 'lead-enriched', count: 1 })`.
+---
+
+## 🚀 Why Choose This Actor?
+
+1. **Ultra-Low Compute Cost (No Headless Browser Overhead)**: Built on a high-efficiency HTTP & structured-data parsing engine instead of heavy Chromium instances. Runs **10x faster** and consumes minimal Apify platform RAM/CPU.
+2. **Transparent Pay-Per-Event Pricing**: You only pay for actual results delivered (`lead-enriched`), never for wasted idle time.
+3. **100% MCP & AI Agent Ready**: Designed with strict JSON schemas so **Claude Desktop, Cursor, OpenAI Agents, LangChain, n8n, Make.com, Zapier, and Clay** can call this Actor autonomously as a tool.
+4. **Clean, Structured Export**: Download results in **JSON, CSV, Excel, XML, or RSS** directly from the Apify dataset tab or via REST API.
+
+---
+
+## 🎯 Target Industries & High-ROI Use Cases
+
+- **B2B Sales & Cold Email Agencies**
+- **SaaS Revenue Operations (RevOps)**
+- **Venture Capital & Private Equity Deal Sourcing**
+- **Marketing Automation (Make, n8n, Zapier, Clay)**
+
+### Popular Workflows
+- **Automated B2B Prospecting & Enrichment**: Feed a list of targets from Clay, HubSpot, Salesforce, or Google Sheets and enrich every record automatically.
+- **Autonomous AI Agent Tooling (MCP)**: Connect this Actor to Claude or Cursor via the official `@apify/actors-mcp-server` so your AI assistant can gather real-time live web intelligence on demand.
+- **Scheduled Monitoring**: Schedule recurring runs (daily/weekly) on Apify and push fresh intelligence to Slack, Webhook, Email, or PostgreSQL/Supabase.
+
+---
+
+## 📥 Input Parameters Example
+
+```json
+{
+  "domains": [
+    "apify.com",
+    "stripe.com"
+  ],
+  "crawlContactPages": true,
+  "maxSubpagesPerDomain": 3
+}
+```
+
+---
+
+## 📤 Output Dataset Sample
+
+Each extracted record is pushed to the default Apify Dataset in clean JSON format:
+
+```json
+{
+  "domain": "company.com",
+  "title": "Acme Cloud Inc.",
+  "emails": [
+    "sales@company.com",
+    "partners@company.com"
+  ],
+  "phones": [
+    "+1-800-555-0199"
+  ],
+  "socials": {
+    "linkedin": "https://www.linkedin.com/company/acme",
+    "twitter": "https://x.com/acme"
+  },
+  "techStack": [
+    "Next.js",
+    "Tailwind CSS",
+    "HubSpot",
+    "Stripe",
+    "Google Analytics / GTM"
+  ],
+  "hiringUrl": "https://company.com/careers"
+}
+```
+
+---
+
+## 🤖 How to Use with AI Agents (Claude / Cursor MCP) & Automation
+
+### 1. Model Context Protocol (MCP)
+Add this Actor to your `claude_desktop_config.json` or Cursor MCP settings using the Apify MCP Server:
+```json
+{
+  "mcpServers": {
+    "apify": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@apify/actors-mcp-server",
+        "--actors",
+        "lucacelli/b2b-domain-contact-tech-enricher"
+      ],
+      "env": {
+        "APIFY_TOKEN": "YOUR_APIFY_API_TOKEN"
+      }
+    }
+  }
+}
+```
+
+### 2. Call via Apify REST API (cURL / n8n / Make / Clay)
+```bash
+curl -X POST "https://api.apify.com/v2/acts/lucacelli~b2b-domain-contact-tech-enricher/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"domains":["apify.com","stripe.com"],"crawlContactPages":true,"maxSubpagesPerDomain":3}'
+```
+
+### 3. Node.js SDK
+```javascript
+import { ApifyClient } from 'apify-client';
+
+const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
+const run = await client.actor('lucacelli/b2b-domain-contact-tech-enricher').call({"domains":["apify.com","stripe.com"],"crawlContactPages":true,"maxSubpagesPerDomain":3});
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+console.log(items);
+```
+
+---
+
+## ❓ Frequently Asked Questions (FAQ)
+
+### Does this Actor require paid external API keys or residential proxies?
+No! It works out of the box with zero external API keys required.
+
+### Can I export the data to CSV, Excel, or Google Sheets?
+Yes. Every run stores structured records in an Apify Dataset that can be exported with one click to **CSV, XLSX (Excel), JSON, or JSONL**, or synced directly to Google Sheets via Make/Zapier/n8n.
+
+### Keywords & Tags
+`B2B lead generation, email extractor, domain enrichment, website contact scraper, tech stack detector, LinkedIn company finder, cold outreach leads, Apollo alternative, Clay enrichment tool, MCP server tool`

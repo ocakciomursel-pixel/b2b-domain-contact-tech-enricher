@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "b2b-domain-contact-tech-enricher",
-  "title": "B2B Website Contact, Email, Social & Tech Stack Enricher (MCP Ready)",
-  "description": "Extracts verified business emails, phone numbers, social profiles (LinkedIn, X, GitHub, YouTube), JSON-LD organization metadata, careers/pricing links, and technology stack signatures from any list of company domains.",
+  "title": "B2B Domain Contact, Email, Social & Tech Stack Enricher (MCP Ready)",
+  "description": "High-speed B2B lead enrichment Actor: extracts verified business emails, phone numbers, social media profiles (LinkedIn, X, Instagram, YouTube, GitHub), and 20+ technology stack signatures from any list of company domains.",
   "version": "1.0.0",
   "meta": {
     "templateId": "ts-crawlee-cheerio"
@@ -35,5 +35,7 @@
         }
       }
     }
-  }
+  },
+  "seoTitle": "B2B Email Finder, Contact Scraper & Website Tech Stack Enricher",
+  "seoDescription": "Extract verified B2B emails, phone numbers, LinkedIn/X/Instagram links, and 20+ tech stack signatures from company domains. Fast, low-cost, MCP ready."
 }
