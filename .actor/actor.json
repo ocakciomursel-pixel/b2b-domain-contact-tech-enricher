@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "local-business-hotel-restaurant-schema-extractor",
-  "title": "Local Business, Hotel, Clinic & Real Estate Schema.org Contact Extractor (MCP Ready)",
+  "title": "Local Business, Hotel, Clinic & Real Estate Schema.org Conta",
   "description": "Hospitality, Healthcare & Local Business lead Actor: extracts Schema.org LocalBusiness/Hotel/Restaurant/Clinic structured data, street addresses, GPS coordinates, ratings, phones, and emails.",
   "version": "1.0",
   "buildTag": "latest",
@@ -69,7 +69,5 @@
         }
       }
     }
-  },
-  "seoTitle": "Local Business Contact Scraper | Hotel, Clinic & Restaurant Schema Extractor",
-  "seoDescription": "Extract verified phone numbers, emails, street addresses, GPS coordinates, ratings, and price ranges from local business, hotel, restaurant, and clinic websites."
+  }
 }
