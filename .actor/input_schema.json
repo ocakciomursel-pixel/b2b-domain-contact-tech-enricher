@@ -1,0 +1,30 @@
+{
+  "title": "Maritime Shipping Carrier, Port Authority & Container Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Shipping Line or Port Domains",
+      "type": "array",
+      "description": "Domains to inspect (e.g. [\"maersk.com\"]).",
+      "editor": "stringList",
+      "default": [
+        "maersk.com"
+      ],
+      "prefill": [
+        "maersk.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
