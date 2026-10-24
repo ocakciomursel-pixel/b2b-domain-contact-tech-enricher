@@ -67,7 +67,49 @@
             }
           }
         }
+      },
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "company": {
+            "type": "string",
+            "title": "company",
+            "description": "Extracted company"
+          },
+          "atsPlatform": {
+            "type": "string",
+            "title": "atsPlatform",
+            "description": "Extracted atsPlatform"
+          },
+          "title": {
+            "type": "string",
+            "title": "title",
+            "description": "Extracted title"
+          },
+          "department": {
+            "type": "string",
+            "title": "department",
+            "description": "Extracted department"
+          },
+          "location": {
+            "type": "string",
+            "title": "location",
+            "description": "Extracted location"
+          },
+          "isRemote": {
+            "type": "boolean",
+            "title": "isRemote",
+            "description": "Extracted isRemote"
+          },
+          "applyUrl": {
+            "type": "string",
+            "title": "applyUrl",
+            "description": "Extracted applyUrl"
+          }
+        }
       }
     }
-  }
+  },
+  "output": "./output_schema.json"
 }
