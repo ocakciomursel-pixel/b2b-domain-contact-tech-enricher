@@ -1,0 +1,68 @@
+{
+  "actorSpecification": 1,
+  "name": "open-source-package-maintainer-security-intel",
+  "title": "NPM & PyPI Package Maintainer Email, Download & Supply-Chain Intelligence (MCP Ready)",
+  "description": "DevTools & Supply-Chain intelligence Actor: extracts NPM and PyPI package download volume, maintainer direct email addresses, license compliance, dependency counts, and release freshness.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "NPM & PyPI Package Maintainer Email, Download & Supply-Chain Intelligence (MCP Ready)",
+      "views": {
+        "overview": {
+          "title": "Extracted Intelligence",
+          "transformation": {
+            "fields": [
+              "ecosystem",
+              "packageName",
+              "latestVersion",
+              "license",
+              "monthlyDownloads",
+              "maintainerEmails",
+              "repositoryUrl"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "ecosystem": {
+                "label": "Ecosystem",
+                "format": "text"
+              },
+              "packageName": {
+                "label": "Package",
+                "format": "text"
+              },
+              "latestVersion": {
+                "label": "Latest Version",
+                "format": "text"
+              },
+              "license": {
+                "label": "License",
+                "format": "text"
+              },
+              "monthlyDownloads": {
+                "label": "30d Downloads",
+                "format": "number"
+              },
+              "maintainerEmails": {
+                "label": "Maintainer Emails",
+                "format": "array"
+              },
+              "repositoryUrl": {
+                "label": "Repository",
+                "format": "link"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

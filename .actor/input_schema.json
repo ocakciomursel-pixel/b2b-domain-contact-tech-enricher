@@ -1,0 +1,26 @@
+{
+  "title": "NPM & PyPI Package Maintainer & Supply-Chain Intelligence Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "npmPackages": {
+      "title": "NPM Package Names",
+      "type": "array",
+      "description": "List of NPM packages to enrich (e.g. [\"crawlee\", \"cheerio\", \"axios\"]).",
+      "editor": "stringList",
+      "prefill": [
+        "crawlee",
+        "cheerio"
+      ]
+    },
+    "pypiPackages": {
+      "title": "PyPI (Python) Package Names",
+      "type": "array",
+      "description": "List of Python PyPI packages to enrich (e.g. [\"fastapi\", \"pydantic\"]).",
+      "editor": "stringList",
+      "prefill": [
+        "fastapi"
+      ]
+    }
+  }
+}
