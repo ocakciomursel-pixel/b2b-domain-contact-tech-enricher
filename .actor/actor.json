@@ -82,7 +82,69 @@
             }
           }
         }
+      },
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "storeDomain": {
+            "type": "string",
+            "title": "storeDomain",
+            "description": "Extracted storeDomain"
+          },
+          "currency": {
+            "type": "string",
+            "title": "currency",
+            "description": "Extracted currency"
+          },
+          "productTitle": {
+            "type": "string",
+            "title": "productTitle",
+            "description": "Extracted productTitle"
+          },
+          "vendor": {
+            "type": "string",
+            "title": "vendor",
+            "description": "Extracted vendor"
+          },
+          "priceMin": {
+            "type": "number",
+            "title": "priceMin",
+            "description": "Extracted priceMin"
+          },
+          "priceMax": {
+            "type": "number",
+            "title": "priceMax",
+            "description": "Extracted priceMax"
+          },
+          "onSale": {
+            "type": "boolean",
+            "title": "onSale",
+            "description": "Extracted onSale"
+          },
+          "inStock": {
+            "type": "boolean",
+            "title": "inStock",
+            "description": "Extracted inStock"
+          },
+          "variantsCount": {
+            "type": "number",
+            "title": "variantsCount",
+            "description": "Extracted variantsCount"
+          },
+          "storeEmails": {
+            "type": "array",
+            "title": "storeEmails",
+            "description": "Extracted storeEmails"
+          },
+          "storeSocials": {
+            "type": "object",
+            "title": "storeSocials",
+            "description": "Extracted storeSocials"
+          }
+        }
       }
     }
-  }
+  },
+  "output": "./output_schema.json"
 }
