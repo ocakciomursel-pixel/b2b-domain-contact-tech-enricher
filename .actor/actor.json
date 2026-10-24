@@ -72,7 +72,49 @@
             }
           }
         }
+      },
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "name",
+            "description": "Extracted name"
+          },
+          "symbol": {
+            "type": "string",
+            "title": "symbol",
+            "description": "Extracted symbol"
+          },
+          "category": {
+            "type": "string",
+            "title": "category",
+            "description": "Extracted category"
+          },
+          "tvlUsd": {
+            "type": "number",
+            "title": "tvlUsd",
+            "description": "Extracted tvlUsd"
+          },
+          "mcapToTvlRatio": {
+            "type": "number",
+            "title": "mcapToTvlRatio",
+            "description": "Extracted mcapToTvlRatio"
+          },
+          "change1dPct": {
+            "type": "number",
+            "title": "change1dPct",
+            "description": "Extracted change1dPct"
+          },
+          "chains": {
+            "type": "array",
+            "title": "chains",
+            "description": "Extracted chains"
+          }
+        }
       }
     }
-  }
+  },
+  "output": "./output_schema.json"
 }
