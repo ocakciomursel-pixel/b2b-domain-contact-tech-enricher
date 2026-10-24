@@ -62,7 +62,44 @@
             }
           }
         }
+      },
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "title",
+            "description": "Extracted title"
+          },
+          "publicationYear": {
+            "type": "number",
+            "title": "publicationYear",
+            "description": "Extracted publicationYear"
+          },
+          "citedByCount": {
+            "type": "number",
+            "title": "citedByCount",
+            "description": "Extracted citedByCount"
+          },
+          "firstAuthor": {
+            "type": "string",
+            "title": "firstAuthor",
+            "description": "Extracted firstAuthor"
+          },
+          "institutions": {
+            "type": "array",
+            "title": "institutions",
+            "description": "Extracted institutions"
+          },
+          "isOpenAccess": {
+            "type": "boolean",
+            "title": "isOpenAccess",
+            "description": "Extracted isOpenAccess"
+          }
+        }
       }
     }
-  }
+  },
+  "output": "./output_schema.json"
 }
