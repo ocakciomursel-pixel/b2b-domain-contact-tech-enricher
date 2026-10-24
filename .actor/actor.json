@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "clinical-trials-fda-drug-safety-intel",
-  "title": "ClinicalTrials.gov & OpenFDA Drug Safety & Biotech Lead Intelligence (MCP Ready)",
+  "title": "ClinicalTrials.gov & OpenFDA Drug Safety & Biotech Lead Inte",
   "description": "Enterprise Healthcare & Pharma intelligence Actor: combines ClinicalTrials.gov API v2 and OpenFDA to extract active clinical trials, phases, lead sponsors, principal investigator contacts, and FDA adverse event safety signals.",
   "version": "1.0",
   "buildTag": "latest",
@@ -69,7 +69,5 @@
         }
       }
     }
-  },
-  "seoTitle": "ClinicalTrials.gov Scraper & OpenFDA Adverse Event Drug Safety Tool",
-  "seoDescription": "Extract clinical trials, Phase 1-4 status, pharma sponsors, principal investigator contacts, and OpenFDA FAERS drug adverse event counts for any condition or drug."
+  }
 }
