@@ -1,0 +1,30 @@
+{
+  "title": "Hex.pm Elixir & Erlang Package Downloads, License & Repo Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Elixir / Hex Package Keywords",
+      "type": "array",
+      "description": "Keywords to search on Hex.pm (e.g. [\"phoenix\", \"ecto\", \"oban\"]).",
+      "editor": "stringList",
+      "default": [
+        "phoenix"
+      ],
+      "prefill": [
+        "phoenix"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
