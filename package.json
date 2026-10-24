@@ -1,0 +1,17 @@
+{
+  "name": "ror-research-organization-institute-registry-lookup",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "R&D & institutional sales intelligence: queries the official ROR REST API for global research organizations, types, locations, and web domains.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
