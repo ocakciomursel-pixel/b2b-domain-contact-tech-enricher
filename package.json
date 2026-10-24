@@ -1,0 +1,17 @@
+{
+  "name": "woocommerce-public-store-product-catalog-scraper",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "E-commerce competitive intelligence: scans WooCommerce storefronts via public Store REST API and HTML product markup to extract product titles, prices, and URLs.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
