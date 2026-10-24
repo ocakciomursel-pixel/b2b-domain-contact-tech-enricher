@@ -1,0 +1,17 @@
+{
+  "name": "cisa-known-exploited-vulnerabilities-kev-catalog",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Enterprise SecOps & patch management feed: queries the official CISA KEV catalog for actively exploited vulnerabilities and remediation deadlines.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
