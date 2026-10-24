@@ -1,0 +1,63 @@
+{
+  "actorSpecification": 1,
+  "name": "sitemap-url-inventory-content-freshness-auditor",
+  "title": "XML Sitemap URL Extractor & Content Freshness Auditor (MCP Ready)",
+  "description": "Discover robots.txt and XML sitemaps for any domain, extract complete URL inventories, categorize site sections (/blog, /docs, /products), and measure content publishing velocity.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "XML Sitemap URL Extractor & Content Freshness Auditor (MCP Ready)",
+      "views": {
+        "overview": {
+          "title": "Extracted Intelligence",
+          "transformation": {
+            "fields": [
+              "domain",
+              "sitemapFound",
+              "totalUrlsExtracted",
+              "updatedLast30Days",
+              "topPathSections",
+              "sampleUrls"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "domain": {
+                "label": "Domain",
+                "format": "text"
+              },
+              "sitemapFound": {
+                "label": "Sitemap Found",
+                "format": "boolean"
+              },
+              "totalUrlsExtracted": {
+                "label": "URLs Extracted",
+                "format": "number"
+              },
+              "updatedLast30Days": {
+                "label": "Updated <30d",
+                "format": "number"
+              },
+              "topPathSections": {
+                "label": "Top Path Sections",
+                "format": "object"
+              },
+              "sampleUrls": {
+                "label": "Sample URLs",
+                "format": "array"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

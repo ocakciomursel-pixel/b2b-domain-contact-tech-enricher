@@ -1,0 +1,27 @@
+{
+  "title": "XML Sitemap URL Inventory & Content Freshness Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Domains to Extract Sitemaps From",
+      "type": "array",
+      "description": "List of domains (e.g. [\"apify.com\", \"cloudflare.com\"]).",
+      "editor": "stringList",
+      "prefill": [
+        "apify.com"
+      ]
+    },
+    "maxUrlsPerDomain": {
+      "title": "Max URLs to Return Per Domain",
+      "type": "integer",
+      "description": "Maximum URLs to store per domain report.",
+      "default": 200,
+      "minimum": 10,
+      "maximum": 5000
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
