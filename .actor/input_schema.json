@@ -1,0 +1,30 @@
+{
+  "title": "RubyGems Package Downloads, Authors & Repository Lead Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "RubyGem Search Keywords",
+      "type": "array",
+      "description": "Keywords to search on RubyGems.org (e.g. [\"sidekiq\", \"devise\", \"stripe\"]).",
+      "editor": "stringList",
+      "default": [
+        "sidekiq"
+      ],
+      "prefill": [
+        "sidekiq"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}

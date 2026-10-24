@@ -1,0 +1,17 @@
+{
+  "name": "rubygems-ruby-rails-gem-maintainer-lead-spy",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Ruby/Rails ecosystem & DevTools B2B intelligence: queries the official RubyGems v1 API for gem download velocity, authors, licenses, and repository links.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
