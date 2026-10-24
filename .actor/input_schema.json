@@ -1,0 +1,30 @@
+{
+  "title": "Substack Newsletter Archive, Author & Content Velocity Scraper Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "publications": {
+      "title": "Substack Subdomains or URLs",
+      "type": "array",
+      "description": "Substack publication URLs (e.g. [\"https://on.substack.com\"]).",
+      "editor": "stringList",
+      "default": [
+        "https://on.substack.com"
+      ],
+      "prefill": [
+        "https://on.substack.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "publications"
+  ]
+}
