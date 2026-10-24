@@ -1,0 +1,17 @@
+{
+  "name": "pubmed-biomedical-literature-clinical-author-miner",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Healthcare & life-sciences research tool: queries NCBI Entrez E-utilities (PubMed) to extract biomedical study metadata, journal sources, author lists, and DOIs.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

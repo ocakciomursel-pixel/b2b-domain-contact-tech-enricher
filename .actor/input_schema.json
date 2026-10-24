@@ -1,0 +1,30 @@
+{
+  "title": "PubMed NCBI Biomedical Study, Journal & Author Lead Miner Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Medical or Clinical Search Terms",
+      "type": "array",
+      "description": "PubMed search queries (e.g. [\"immunotherapy\", \"mRNA vaccine\"]).",
+      "editor": "stringList",
+      "default": [
+        "immunotherapy"
+      ],
+      "prefill": [
+        "immunotherapy"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
