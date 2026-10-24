@@ -1,0 +1,27 @@
+{
+  "title": "Apple App Store ASO & User Review Complaint Miner Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "searchTerms": {
+      "title": "App Store Search Keywords",
+      "type": "array",
+      "description": "Keywords or app names to analyze on the iOS App Store (e.g. [\"habit tracker\", \"invoice maker\"]).",
+      "editor": "stringList",
+      "prefill": [
+        "habit tracker"
+      ]
+    },
+    "maxAppsPerTerm": {
+      "title": "Max Apps Per Search Term",
+      "type": "integer",
+      "description": "Number of top apps to analyze per search keyword (1 to 25).",
+      "default": 5,
+      "minimum": 1,
+      "maximum": 25
+    }
+  },
+  "required": [
+    "searchTerms"
+  ]
+}
