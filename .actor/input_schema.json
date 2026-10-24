@@ -1,0 +1,30 @@
+{
+  "title": "Landing Page CRO, CTA, Live Chat & Conversion Funnel Auditor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "urls": {
+      "title": "Landing Page URLs",
+      "type": "array",
+      "description": "URLs to run the CRO funnel analysis on.",
+      "editor": "stringList",
+      "default": [
+        "https://apify.com"
+      ],
+      "prefill": [
+        "https://apify.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "urls"
+  ]
+}

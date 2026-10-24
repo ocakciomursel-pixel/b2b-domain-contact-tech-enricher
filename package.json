@@ -1,0 +1,17 @@
+{
+  "name": "landing-page-cro-cta-form-funnel-analyzer",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "CRO agency & growth marketing intelligence: analyzes landing pages for call-to-action density, form fields, live chat widgets, video embeds, and conversion readiness score.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

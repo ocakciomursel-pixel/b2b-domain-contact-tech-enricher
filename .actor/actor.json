@@ -1,0 +1,58 @@
+{
+  "actorSpecification": 1,
+  "name": "landing-page-cro-cta-form-funnel-analyzer",
+  "title": "Landing Page CRO, CTA, Live Chat & Conversion Funnel Auditor",
+  "description": "CRO agency & growth marketing intelligence: analyzes landing pages for call-to-action density, form fields, live chat widgets, video embeds, and conversion readiness score.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Landing Page CRO, CTA, Live Chat & Conversion Funnel Auditor",
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "target": {
+            "type": "string",
+            "title": "Target Query"
+          },
+          "extractedAt": {
+            "type": "string",
+            "title": "Extracted Timestamp"
+          }
+        }
+      },
+      "views": {
+        "overview": {
+          "title": "Extracted Intelligence",
+          "transformation": {
+            "fields": [
+              "target",
+              "extractedAt"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "target": {
+                "label": "Target",
+                "format": "text"
+              },
+              "extractedAt": {
+                "label": "Extracted At",
+                "format": "text"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
