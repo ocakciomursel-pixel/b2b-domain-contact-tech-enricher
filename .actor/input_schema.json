@@ -1,0 +1,30 @@
+{
+  "title": "DexScreener On-Chain Token Liquidity, Volume & Pair Monitor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Token Symbols, Names, or Pair Addresses",
+      "type": "array",
+      "description": "Search queries for DexScreener (e.g. [\"SOL\", \"USDC\", \"PEPE\"]).",
+      "editor": "stringList",
+      "default": [
+        "SOL"
+      ],
+      "prefill": [
+        "SOL"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}

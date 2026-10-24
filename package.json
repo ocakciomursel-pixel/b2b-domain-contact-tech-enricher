@@ -1,0 +1,17 @@
+{
+  "name": "dexscreener-onchain-token-liquidity-pair-monitor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "On-chain DeFi & DEX market intelligence: extracts live decentralized exchange trading pairs, pool liquidity in USD, 24-hour buy vs. sell transaction counts, and fully diluted valuation (FDV).",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
