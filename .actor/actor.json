@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "ats-job-board-hiring-signal-scraper",
-  "title": "Greenhouse & Lever Company Job Board & Hiring Signal Scraper (MCP Ready)",
+  "title": "Greenhouse & Lever Company Job Board & Hiring Signal Scraper",
   "description": "Extract active job openings, departments, remote status, locations, and B2B hiring intent signals directly from Greenhouse and Lever company job boards.",
   "version": "1.0",
   "buildTag": "latest",
@@ -69,7 +69,5 @@
         }
       }
     }
-  },
-  "seoTitle": "Greenhouse & Lever Job Scraper | B2B Hiring Signal & Intent Data",
-  "seoDescription": "Scrape active job openings, departments, remote status, and B2B hiring intent signals directly from Greenhouse and Lever ATS company job boards."
+  }
 }
