@@ -1,0 +1,17 @@
+{
+  "name": "wikimedia-pageviews-trending-topic-brand-demand-spy",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Alternative data & brand demand intelligence: queries the official Wikimedia Pageviews REST API to measure daily attention volume for any entity.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

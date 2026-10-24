@@ -1,0 +1,32 @@
+{
+  "title": "Wikipedia Daily Pageviews & Brand Public Attention Tracker Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "articles": {
+      "title": "Wikipedia Article Titles",
+      "type": "array",
+      "description": "Exact Wikipedia article titles (e.g. [\"Bitcoin\", \"Nvidia\", \"Shopify\"]).",
+      "editor": "stringList",
+      "default": [
+        "Nvidia",
+        "Shopify"
+      ],
+      "prefill": [
+        "Nvidia",
+        "Shopify"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "articles"
+  ]
+}
