@@ -1,0 +1,30 @@
+{
+  "title": "Vimeo Video Producer, Studio Portfolio & Metadata Enricher Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "videoUrls": {
+      "title": "Vimeo Video URLs",
+      "type": "array",
+      "description": "List of Vimeo video URLs to extract creator metadata from.",
+      "editor": "stringList",
+      "default": [
+        "https://vimeo.com/76979871"
+      ],
+      "prefill": [
+        "https://vimeo.com/76979871"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "videoUrls"
+  ]
+}
