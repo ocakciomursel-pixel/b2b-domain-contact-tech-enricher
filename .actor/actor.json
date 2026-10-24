@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "hackernews-tech-launch-lead-monitor",
-  "title": "Hacker News Show HN, Startup Launch & Tech Trend Intelligence (MCP Ready)",
+  "title": "Hacker News Show HN, Startup Launch & Tech Trend Intelligenc",
   "description": "Monitor Hacker News (Show HN, Ask HN, and top tech stories) by keyword to discover newly launched startups, founder handles, outbound domains, and community traction.",
   "version": "1.0",
   "buildTag": "latest",
@@ -64,7 +64,5 @@
         }
       }
     }
-  },
-  "seoTitle": "Hacker News Scraper | Show HN Startup Launches & Tech Trend Monitor",
-  "seoDescription": "Monitor Hacker News (Show HN, Ask HN, and tech stories) by keyword to discover newly launched startups, founder handles, outbound domains, and community traction."
+  }
 }
