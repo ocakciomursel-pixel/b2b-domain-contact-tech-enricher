@@ -1,0 +1,17 @@
+{
+  "name": "pubchem-chemical-compound-molecular-property-enricher",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Cheminformatics, chemical supply & pharma R&D tool: fetches verified physicochemical properties and structure identifiers from NCBI PubChem.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

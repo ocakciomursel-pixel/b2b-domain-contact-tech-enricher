@@ -1,0 +1,32 @@
+{
+  "title": "NCBI PubChem Chemical Compound, SMILES, Formula & Mass Enricher Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "compounds": {
+      "title": "Chemical or Drug Compound Names",
+      "type": "array",
+      "description": "Compound names (e.g. [\"aspirin\", \"caffeine\", \"metformin\"]).",
+      "editor": "stringList",
+      "default": [
+        "aspirin",
+        "caffeine"
+      ],
+      "prefill": [
+        "aspirin",
+        "caffeine"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "compounds"
+  ]
+}
