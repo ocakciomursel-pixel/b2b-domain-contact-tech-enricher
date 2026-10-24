@@ -67,7 +67,49 @@
             }
           }
         }
+      },
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "trackName": {
+            "type": "string",
+            "title": "trackName",
+            "description": "Extracted trackName"
+          },
+          "sellerName": {
+            "type": "string",
+            "title": "sellerName",
+            "description": "Extracted sellerName"
+          },
+          "averageUserRating": {
+            "type": "number",
+            "title": "averageUserRating",
+            "description": "Extracted averageUserRating"
+          },
+          "userRatingCount": {
+            "type": "number",
+            "title": "userRatingCount",
+            "description": "Extracted userRatingCount"
+          },
+          "lowStarComplaintsCount": {
+            "type": "number",
+            "title": "lowStarComplaintsCount",
+            "description": "Extracted lowStarComplaintsCount"
+          },
+          "complaintThemes": {
+            "type": "array",
+            "title": "complaintThemes",
+            "description": "Extracted complaintThemes"
+          },
+          "sellerUrl": {
+            "type": "string",
+            "title": "sellerUrl",
+            "description": "Extracted sellerUrl"
+          }
+        }
       }
     }
-  }
+  },
+  "output": "./output_schema.json"
 }
