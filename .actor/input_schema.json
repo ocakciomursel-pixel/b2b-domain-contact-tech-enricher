@@ -1,0 +1,30 @@
+{
+  "title": "Browser Add-on & Extension Active Users, Rating & Developer Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Browser Extension Keywords",
+      "type": "array",
+      "description": "Keywords to search browser add-ons for (e.g. [\"adblock\", \"password manager\", \"seo\"]).",
+      "editor": "stringList",
+      "default": [
+        "seo"
+      ],
+      "prefill": [
+        "seo"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
