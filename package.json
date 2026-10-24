@@ -1,0 +1,17 @@
+{
+  "name": "recruitee-company-career-portal-job-extractor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Recruiting agency & B2B sales intent tool: queries Recruitee public offer APIs (`<company>.recruitee.com/api/offers`) to extract active job openings.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

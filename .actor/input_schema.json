@@ -1,0 +1,30 @@
+{
+  "title": "Recruitee ATS Company Career Portal & Open Job Scraper Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "companies": {
+      "title": "Recruitee Company Subdomains",
+      "type": "array",
+      "description": "Company subdomains on Recruitee.",
+      "editor": "stringList",
+      "default": [
+        "recruitee"
+      ],
+      "prefill": [
+        "recruitee"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "companies"
+  ]
+}
