@@ -2,7 +2,7 @@
   "actorSpecification": 1,
   "name": "github-developer-recruiter-lead-enricher",
   "title": "GitHub Developer, Stargazer & Contributor Lead Enricher (MCP Ready)",
-  "description": "Extract developer profiles, public commit emails, company affiliations, personal websites, X/Twitter handles, location, and hireable status from GitHub repositories or search queries.",
+  "description": "Extract developer profiles, public commit emails, company affiliations, personal websites, X/Twitter handles, location, and hireable status from GitHub repositories or username lists.",
   "version": "1.0",
   "buildTag": "latest",
   "meta": {
@@ -36,22 +36,60 @@
           "display": {
             "component": "table",
             "properties": {
-              "username": { "label": "Username", "format": "text" },
-              "name": { "label": "Full Name", "format": "text" },
-              "emails": { "label": "Verified / Commit Emails", "format": "array" },
-              "company": { "label": "Company", "format": "text" },
-              "location": { "label": "Location", "format": "text" },
-              "hireable": { "label": "Hireable", "format": "boolean" },
-              "blogUrl": { "label": "Website / Blog", "format": "link" },
-              "twitterUsername": { "label": "X / Twitter", "format": "text" },
-              "followers": { "label": "Followers", "format": "number" },
-              "publicRepos": { "label": "Public Repos", "format": "number" },
-              "sourceRepo": { "label": "Source Repo", "format": "text" },
-              "profileUrl": { "label": "GitHub Profile", "format": "link" }
+              "username": {
+                "label": "Username",
+                "format": "text"
+              },
+              "name": {
+                "label": "Full Name",
+                "format": "text"
+              },
+              "emails": {
+                "label": "Verified / Commit Emails",
+                "format": "array"
+              },
+              "company": {
+                "label": "Company",
+                "format": "text"
+              },
+              "location": {
+                "label": "Location",
+                "format": "text"
+              },
+              "hireable": {
+                "label": "Hireable",
+                "format": "boolean"
+              },
+              "blogUrl": {
+                "label": "Website / Blog",
+                "format": "link"
+              },
+              "twitterUsername": {
+                "label": "X / Twitter",
+                "format": "text"
+              },
+              "followers": {
+                "label": "Followers",
+                "format": "number"
+              },
+              "publicRepos": {
+                "label": "Public Repos",
+                "format": "number"
+              },
+              "sourceRepo": {
+                "label": "Source Repo",
+                "format": "text"
+              },
+              "profileUrl": {
+                "label": "GitHub Profile",
+                "format": "link"
+              }
             }
           }
         }
       }
     }
-  }
+  },
+  "seoTitle": "GitHub Developer Scraper, Commit Email Finder & Tech Recruiter Lead Tool",
+  "seoDescription": "Extract developer profiles, verified public commit emails, company affiliations, personal websites, X/Twitter handles, location, and hireable status from GitHub repos."
 }
