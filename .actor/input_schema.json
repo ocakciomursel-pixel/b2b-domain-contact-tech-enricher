@@ -1,0 +1,30 @@
+{
+  "title": "Apple Music / iTunes Track, Artist, Album & Record Label Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Artist, Song, or Genre Keywords",
+      "type": "array",
+      "description": "Search keywords (e.g. [\"synthwave\", \"indie pop\"]).",
+      "editor": "stringList",
+      "default": [
+        "synthwave"
+      ],
+      "prefill": [
+        "synthwave"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "itunes-music-artist-track-chart-label-spy",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Music catalog & creator marketing tool: queries Apple iTunes Search API for music tracks, artists, albums, genres, and audio preview links.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
