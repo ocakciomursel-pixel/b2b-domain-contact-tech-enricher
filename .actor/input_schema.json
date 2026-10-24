@@ -1,0 +1,30 @@
+{
+  "title": "Crypto Market Fear & Greed Sentiment Index & Regime Feed Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "days": {
+      "title": "Historical Days Count",
+      "type": "array",
+      "description": "Number of days of sentiment history to fetch (e.g. [\"7\"]).",
+      "editor": "stringList",
+      "default": [
+        "7"
+      ],
+      "prefill": [
+        "7"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "days"
+  ]
+}
