@@ -1,0 +1,30 @@
+{
+  "title": "USGS Global Earthquake, Magnitude & Seismic Hazard Monitor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "minMagnitudes": {
+      "title": "Minimum Magnitude Threshold",
+      "type": "array",
+      "description": "Minimum earthquake magnitude (e.g. [\"4.5\"]).",
+      "editor": "stringList",
+      "default": [
+        "4.5"
+      ],
+      "prefill": [
+        "4.5"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "minMagnitudes"
+  ]
+}
