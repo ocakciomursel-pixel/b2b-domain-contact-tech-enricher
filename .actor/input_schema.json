@@ -1,0 +1,32 @@
+{
+  "title": "Homebrew macOS CLI Formula Install Analytics & Developer Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "formulas": {
+      "title": "Homebrew Formula Names",
+      "type": "array",
+      "description": "Exact Homebrew formula names (e.g. [\"ripgrep\", \"jq\", \"gh\", \"node\"]).",
+      "editor": "stringList",
+      "default": [
+        "ripgrep",
+        "jq"
+      ],
+      "prefill": [
+        "ripgrep",
+        "jq"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "formulas"
+  ]
+}
