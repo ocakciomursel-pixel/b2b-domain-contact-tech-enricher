@@ -64,5 +64,7 @@
         }
       }
     }
-  }
+  },
+  "seoTitle": "Podcast Email Finder & RSS Feed Scraper for PR & Sponsorship Outreach",
+  "seoDescription": "Search podcasts by niche keyword on Apple Podcasts, parse their RSS XML feeds, and extract verified host/producer email addresses, episode counts, and websites."
 }
