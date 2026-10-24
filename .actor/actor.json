@@ -1,0 +1,58 @@
+{
+  "actorSpecification": 1,
+  "name": "dns-caa-ns-soa-nameserver-infrastructure-mapper",
+  "title": "Bulk DNS Zone, Nameserver (NS), SOA, CAA & IPv6 Mapper",
+  "description": "Cloud infrastructure & DevSecOps mapping tool: resolves NS, CAA, A, and AAAA records to fingerprint DNS providers and certificate restrictions.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Bulk DNS Zone, Nameserver (NS), SOA, CAA & IPv6 Mapper",
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "target": {
+            "type": "string",
+            "title": "Target Query"
+          },
+          "extractedAt": {
+            "type": "string",
+            "title": "Extracted Timestamp"
+          }
+        }
+      },
+      "views": {
+        "overview": {
+          "title": "Extracted Intelligence",
+          "transformation": {
+            "fields": [
+              "target",
+              "extractedAt"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "target": {
+                "label": "Target",
+                "format": "text"
+              },
+              "extractedAt": {
+                "label": "Extracted At",
+                "format": "text"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

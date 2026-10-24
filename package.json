@@ -1,0 +1,17 @@
+{
+  "name": "dns-caa-ns-soa-nameserver-infrastructure-mapper",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Cloud infrastructure & DevSecOps mapping tool: resolves NS, CAA, A, and AAAA records to fingerprint DNS providers and certificate restrictions.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
