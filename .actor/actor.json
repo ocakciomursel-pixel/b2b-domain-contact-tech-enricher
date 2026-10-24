@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "global-news-pr-sentiment-mention-monitor",
-  "title": "Global News, PR Mention, Event Classifier & Brand Sentiment Monitor (MCP Ready)",
+  "title": "Global News, PR Mention, Event Classifier & Brand Sentiment",
   "description": "PR, Media & Financial News intelligence Actor: monitors real-time Google News RSS feeds for any company, brand, or market keyword with automated sentiment scoring and corporate event classification.",
   "version": "1.0",
   "buildTag": "latest",
@@ -64,7 +64,5 @@
         }
       }
     }
-  },
-  "seoTitle": "Google News Scraper, Brand Mention Monitor & PR Sentiment Analyzer",
-  "seoDescription": "Track real-time Google News mentions for any company, executive, or topic with automated sentiment scoring and corporate event tagging (Funding, Launch, Crisis)."
+  }
 }
