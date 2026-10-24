@@ -1,0 +1,32 @@
+{
+  "title": "Global Country Demographics, Currency, Calling Code & ISO Enricher Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "countries": {
+      "title": "Country Names",
+      "type": "array",
+      "description": "Country names (e.g. [\"Switzerland\", \"Singapore\", \"Japan\"]).",
+      "editor": "stringList",
+      "default": [
+        "Switzerland",
+        "Singapore"
+      ],
+      "prefill": [
+        "Switzerland",
+        "Singapore"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "countries"
+  ]
+}

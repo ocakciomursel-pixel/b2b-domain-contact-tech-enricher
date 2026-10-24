@@ -1,0 +1,17 @@
+{
+  "name": "country-rest-demographics-currency-border-enricher",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "International localization, fintech & ERP reference data tool: extracts structured sovereign country profiles via REST Countries v3.1 API.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
