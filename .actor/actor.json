@@ -67,7 +67,49 @@
             }
           }
         }
+      },
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "nctId": {
+            "type": "string",
+            "title": "nctId",
+            "description": "Extracted nctId"
+          },
+          "briefTitle": {
+            "type": "string",
+            "title": "briefTitle",
+            "description": "Extracted briefTitle"
+          },
+          "overallStatus": {
+            "type": "string",
+            "title": "overallStatus",
+            "description": "Extracted overallStatus"
+          },
+          "phases": {
+            "type": "array",
+            "title": "phases",
+            "description": "Extracted phases"
+          },
+          "leadSponsor": {
+            "type": "string",
+            "title": "leadSponsor",
+            "description": "Extracted leadSponsor"
+          },
+          "fdaAdverseEventsTotal": {
+            "type": "number",
+            "title": "fdaAdverseEventsTotal",
+            "description": "Extracted fdaAdverseEventsTotal"
+          },
+          "studyUrl": {
+            "type": "string",
+            "title": "studyUrl",
+            "description": "Extracted studyUrl"
+          }
+        }
       }
     }
-  }
+  },
+  "output": "./output_schema.json"
 }
