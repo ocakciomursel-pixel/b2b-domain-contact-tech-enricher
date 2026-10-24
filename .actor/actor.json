@@ -1,0 +1,68 @@
+{
+  "actorSpecification": 1,
+  "name": "global-news-pr-sentiment-mention-monitor",
+  "title": "Global News, PR Mention, Event Classifier & Brand Sentiment Monitor (MCP Ready)",
+  "description": "PR, Media & Financial News intelligence Actor: monitors real-time Google News RSS feeds for any company, brand, or market keyword with automated sentiment scoring and corporate event classification (Funding/M&A, Launch, Partnership, Crisis).",
+  "version": "1.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Global News, PR Mention, Event Classifier & Brand Sentiment Monitor (MCP Ready)",
+      "views": {
+        "overview": {
+          "title": "Extracted Intelligence",
+          "transformation": {
+            "fields": [
+              "query",
+              "title",
+              "publisher",
+              "sentimentLabel",
+              "eventCategories",
+              "publishedAt",
+              "link"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "query": {
+                "label": "Keyword",
+                "format": "text"
+              },
+              "title": {
+                "label": "Headline",
+                "format": "text"
+              },
+              "publisher": {
+                "label": "Publisher",
+                "format": "text"
+              },
+              "sentimentLabel": {
+                "label": "Sentiment",
+                "format": "text"
+              },
+              "eventCategories": {
+                "label": "Corporate Events",
+                "format": "array"
+              },
+              "publishedAt": {
+                "label": "Published At",
+                "format": "text"
+              },
+              "link": {
+                "label": "Article Link",
+                "format": "link"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

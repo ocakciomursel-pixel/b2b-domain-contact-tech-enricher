@@ -1,0 +1,18 @@
+{
+  "name": "global-news-pr-sentiment-mention-monitor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "PR, Media & Financial News intelligence Actor: monitors real-time Google News RSS feeds for any company, brand, or market keyword with automated sentiment scoring and corporate event classification (Funding/M&A, Launch, Partnership, Crisis).",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node src/main.js --demo"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

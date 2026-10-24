@@ -1,0 +1,28 @@
+{
+  "title": "Global News, PR Mention & Sentiment Monitor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "keywords": {
+      "title": "Brand, Company, or Market Keywords",
+      "type": "array",
+      "description": "List of keywords to track across global news (e.g. [\"OpenAI\", \"Stripe\", \"NVIDIA\"]).",
+      "editor": "stringList",
+      "prefill": [
+        "OpenAI",
+        "Stripe"
+      ]
+    },
+    "maxArticlesPerKeyword": {
+      "title": "Max Articles Per Keyword",
+      "type": "integer",
+      "description": "Maximum number of recent news articles to analyze per keyword (1 to 100).",
+      "default": 15,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "keywords"
+  ]
+}
