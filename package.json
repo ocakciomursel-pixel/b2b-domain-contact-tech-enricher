@@ -1,0 +1,17 @@
+{
+  "name": "pubdev-flutter-dart-mobile-package-publisher-spy",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Mobile SDK & Flutter ecosystem intelligence: queries the official Dart Pub.dev API to discover mobile packages and libraries.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
