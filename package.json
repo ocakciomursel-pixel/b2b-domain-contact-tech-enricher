@@ -1,0 +1,17 @@
+{
+  "name": "launch-library-aerospace-space-mission-tracker",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Aerospace & defense market intelligence: extracts commercial space missions, launch service providers, rocket configurations, mission statuses, and pad locations.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
