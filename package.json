@@ -1,0 +1,17 @@
+{
+  "name": "arbeitnow-europe-visa-sponsorship-job-scraper",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "European recruitment & HR market intelligence: extracts active tech job listings, company names, locations, remote status, and tags across Europe.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
