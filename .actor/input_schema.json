@@ -1,0 +1,32 @@
+{
+  "title": "ECB Central Bank Multi-Currency Forex & Cross-Rate Feed Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "baseCurrencies": {
+      "title": "Base Currencies",
+      "type": "array",
+      "description": "ISO currency codes to compute cross-rates for (e.g. [\"USD\", \"EUR\", \"GBP\"]).",
+      "editor": "stringList",
+      "default": [
+        "USD",
+        "EUR"
+      ],
+      "prefill": [
+        "USD",
+        "EUR"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "baseCurrencies"
+  ]
+}
