@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "wordpress-woocommerce-site-spy",
-  "title": "WordPress & WooCommerce Theme, Plugin & REST API Intelligence Spy (MCP Ready)",
+  "title": "WordPress & WooCommerce Theme, Plugin & REST API Intelligenc",
   "description": "Detect active WordPress themes, installed plugins, WooCommerce e-commerce status, REST API namespaces, and published metadata on any domain.",
   "version": "1.0",
   "buildTag": "latest",
@@ -59,7 +59,5 @@
         }
       }
     }
-  },
-  "seoTitle": "WordPress Theme & Plugin Detector + WooCommerce Store Spy",
-  "seoDescription": "Detect active WordPress themes, installed plugins, WooCommerce e-commerce status, and exposed wp-json REST API namespaces on any list of domains."
+  }
 }
