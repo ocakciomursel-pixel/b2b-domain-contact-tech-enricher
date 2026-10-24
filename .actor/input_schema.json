@@ -1,0 +1,30 @@
+{
+  "title": "DOAJ Open-Access Academic Journal, ISSN & Publisher Directory Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Journal Subject or Keyword",
+      "type": "array",
+      "description": "Subject keywords (e.g. [\"cardiology\", \"data science\", \"economics\"]).",
+      "editor": "stringList",
+      "default": [
+        "data science"
+      ],
+      "prefill": [
+        "data science"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "doaj-open-access-journal-publisher-directory",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Academic publishing & scholarly media intelligence: queries the official DOAJ v4 API for peer-reviewed open-access journals and publisher details.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
