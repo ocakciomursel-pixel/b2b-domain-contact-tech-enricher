@@ -1,0 +1,30 @@
+{
+  "title": "Bitcoin Mempool Fee Rate, Block Height & Network Telemetry Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "targets": {
+      "title": "Telemetry Check Identifier",
+      "type": "array",
+      "description": "Target network identifier (default [\"mainnet\"]).",
+      "editor": "stringList",
+      "default": [
+        "mainnet"
+      ],
+      "prefill": [
+        "mainnet"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "targets"
+  ]
+}

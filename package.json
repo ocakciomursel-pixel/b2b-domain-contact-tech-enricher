@@ -1,0 +1,17 @@
+{
+  "name": "bitcoin-mempool-fee-hashrate-network-telemetry",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Bitcoin infrastructure & treasury automation feed: retrieves real-time sat/vB fee estimates and block height telemetry from Mempool.space.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
