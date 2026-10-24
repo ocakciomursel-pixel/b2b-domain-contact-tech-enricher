@@ -1,0 +1,18 @@
+{
+  "name": "domain-cybersecurity-ssl-dns-vulnerability-auditor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Enterprise Cybersecurity & MSP Lead Actor: audits any domain for SPF, DMARC, MX email security providers, CAA records, HTTP security headers (HSTS, CSP, X-Frame-Options), server banner leaks, security.txt, and computes a 0-100 Security Posture Score.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node src/main.js --demo"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

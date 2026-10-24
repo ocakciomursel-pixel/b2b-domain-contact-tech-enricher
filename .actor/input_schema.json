@@ -1,0 +1,20 @@
+{
+  "title": "Domain Cybersecurity, DNS & Header Auditor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Domains to Audit",
+      "type": "array",
+      "description": "List of company domains to run the cybersecurity posture audit on.",
+      "editor": "stringList",
+      "prefill": [
+        "cloudflare.com",
+        "news.ycombinator.com"
+      ]
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}

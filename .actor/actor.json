@@ -1,0 +1,73 @@
+{
+  "actorSpecification": 1,
+  "name": "domain-cybersecurity-ssl-dns-vulnerability-auditor",
+  "title": "Domain Cybersecurity, DNS (SPF/DMARC), Email Provider & Security Header Auditor (MCP Ready)",
+  "description": "Enterprise Cybersecurity & MSP Lead Actor: audits any domain for SPF, DMARC, MX email security providers, CAA records, HTTP security headers (HSTS, CSP, X-Frame-Options), server banner leaks, security.txt, and computes a 0-100 Security Posture Score.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Domain Cybersecurity, DNS (SPF/DMARC), Email Provider & Security Header Auditor (MCP Ready)",
+      "views": {
+        "overview": {
+          "title": "Extracted Intelligence",
+          "transformation": {
+            "fields": [
+              "domain",
+              "securityScore",
+              "emailProvider",
+              "hasSpf",
+              "hasDmarc",
+              "hasHsts",
+              "hasCsp",
+              "vulnerabilities"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "domain": {
+                "label": "Domain",
+                "format": "text"
+              },
+              "securityScore": {
+                "label": "Security Score (0-100)",
+                "format": "number"
+              },
+              "emailProvider": {
+                "label": "Email Gateway / MX",
+                "format": "text"
+              },
+              "hasSpf": {
+                "label": "SPF",
+                "format": "boolean"
+              },
+              "hasDmarc": {
+                "label": "DMARC",
+                "format": "boolean"
+              },
+              "hasHsts": {
+                "label": "HSTS",
+                "format": "boolean"
+              },
+              "hasCsp": {
+                "label": "CSP",
+                "format": "boolean"
+              },
+              "vulnerabilities": {
+                "label": "Security Findings",
+                "format": "array"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
