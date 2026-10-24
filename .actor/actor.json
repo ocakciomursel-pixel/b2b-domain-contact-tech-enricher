@@ -62,7 +62,49 @@
             }
           }
         }
+      },
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "title",
+            "description": "Extracted title"
+          },
+          "isShowHN": {
+            "type": "boolean",
+            "title": "isShowHN",
+            "description": "Extracted isShowHN"
+          },
+          "author": {
+            "type": "string",
+            "title": "author",
+            "description": "Extracted author"
+          },
+          "points": {
+            "type": "number",
+            "title": "points",
+            "description": "Extracted points"
+          },
+          "numComments": {
+            "type": "number",
+            "title": "numComments",
+            "description": "Extracted numComments"
+          },
+          "externalDomain": {
+            "type": "string",
+            "title": "externalDomain",
+            "description": "Extracted externalDomain"
+          },
+          "hnUrl": {
+            "type": "string",
+            "title": "hnUrl",
+            "description": "Extracted hnUrl"
+          }
+        }
       }
     }
-  }
+  },
+  "output": "./output_schema.json"
 }
