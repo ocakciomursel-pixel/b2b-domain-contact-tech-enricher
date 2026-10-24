@@ -1,0 +1,68 @@
+{
+  "actorSpecification": 1,
+  "name": "scientific-literature-citation-author-lead-miner",
+  "title": "Scientific Literature, R&D Grant, Institution & Author Lead Miner (MCP Ready)",
+  "description": "DeepTech & Academic R&D intelligence Actor: mines OpenAlex for peer-reviewed papers, citation velocity, open-access PDFs, funding grants, and researcher institution leads.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Scientific Literature, R&D Grant, Institution & Author Lead Miner (MCP Ready)",
+      "views": {
+        "overview": {
+          "title": "Extracted Intelligence",
+          "transformation": {
+            "fields": [
+              "title",
+              "publicationYear",
+              "citedByCount",
+              "firstAuthor",
+              "institutions",
+              "openAccessPdfUrl",
+              "doiUrl"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "title": {
+                "label": "Paper Title",
+                "format": "text"
+              },
+              "publicationYear": {
+                "label": "Year",
+                "format": "number"
+              },
+              "citedByCount": {
+                "label": "Citations",
+                "format": "number"
+              },
+              "firstAuthor": {
+                "label": "Lead Researcher",
+                "format": "text"
+              },
+              "institutions": {
+                "label": "Institutions / Labs",
+                "format": "array"
+              },
+              "openAccessPdfUrl": {
+                "label": "Open Access PDF",
+                "format": "link"
+              },
+              "doiUrl": {
+                "label": "DOI Link",
+                "format": "link"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

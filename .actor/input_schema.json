@@ -1,0 +1,27 @@
+{
+  "title": "Scientific Literature & Researcher Lead Miner Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "researchTopics": {
+      "title": "Research Topics or Keywords",
+      "type": "array",
+      "description": "Scientific or technical topics to search (e.g. [\"CRISPR delivery\", \"solid state battery\", \"large language model agents\"]).",
+      "editor": "stringList",
+      "prefill": [
+        "CRISPR delivery"
+      ]
+    },
+    "maxPapersPerTopic": {
+      "title": "Max Papers Per Topic",
+      "type": "integer",
+      "description": "Number of research papers to extract per topic (1 to 100).",
+      "default": 15,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "researchTopics"
+  ]
+}
