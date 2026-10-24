@@ -1,0 +1,27 @@
+{
+  "title": "Podcast Host Direct Email & Lead Extractor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "searchKeywords": {
+      "title": "Podcast Niche Keywords",
+      "type": "array",
+      "description": "Keywords to search podcasts for (e.g. [\"saas marketing\", \"artificial intelligence\", \"ecommerce\"]).",
+      "editor": "stringList",
+      "prefill": [
+        "saas marketing"
+      ]
+    },
+    "maxPodcastsPerKeyword": {
+      "title": "Max Podcasts Per Keyword",
+      "type": "integer",
+      "description": "Number of podcasts to enrich per search keyword (1 to 50).",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 50
+    }
+  },
+  "required": [
+    "searchKeywords"
+  ]
+}

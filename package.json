@@ -1,0 +1,18 @@
+{
+  "name": "podcast-rss-host-sponsor-email-extractor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Find podcasts by niche keyword via Apple Podcasts API, parse their RSS XML feeds, and extract verified host/producer email addresses, episode counts, and website links.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node src/main.js --demo"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

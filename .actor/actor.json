@@ -1,0 +1,68 @@
+{
+  "actorSpecification": 1,
+  "name": "podcast-rss-host-sponsor-email-extractor",
+  "title": "Podcast RSS Feed, Host Direct Email & Episode Lead Extractor (MCP Ready)",
+  "description": "Find podcasts by niche keyword via Apple Podcasts API, parse their RSS XML feeds, and extract verified host/producer email addresses, episode counts, and website links.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Podcast RSS Feed, Host Direct Email & Episode Lead Extractor (MCP Ready)",
+      "views": {
+        "overview": {
+          "title": "Extracted Intelligence",
+          "transformation": {
+            "fields": [
+              "podcastTitle",
+              "hostName",
+              "ownerEmails",
+              "primaryGenre",
+              "trackCount",
+              "websiteUrl",
+              "feedUrl"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "podcastTitle": {
+                "label": "Podcast Title",
+                "format": "text"
+              },
+              "hostName": {
+                "label": "Host / Author",
+                "format": "text"
+              },
+              "ownerEmails": {
+                "label": "Direct Host Emails",
+                "format": "array"
+              },
+              "primaryGenre": {
+                "label": "Genre",
+                "format": "text"
+              },
+              "trackCount": {
+                "label": "Episodes",
+                "format": "number"
+              },
+              "websiteUrl": {
+                "label": "Website",
+                "format": "link"
+              },
+              "feedUrl": {
+                "label": "RSS Feed",
+                "format": "link"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
