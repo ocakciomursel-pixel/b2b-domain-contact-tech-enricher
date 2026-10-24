@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "scientific-literature-citation-author-lead-miner",
-  "title": "Scientific Literature, R&D Grant, Institution & Author Lead Miner (MCP Ready)",
+  "title": "Scientific Literature, R&D Grant, Institution & Author Lead",
   "description": "DeepTech & Academic R&D intelligence Actor: mines OpenAlex for peer-reviewed papers, citation velocity, open-access PDFs, funding grants, and researcher institution leads.",
   "version": "1.0",
   "buildTag": "latest",
@@ -64,7 +64,5 @@
         }
       }
     }
-  },
-  "seoTitle": "Scientific Paper Scraper, Academic Author Finder & R&D Grant Intelligence",
-  "seoDescription": "Mine OpenAlex for peer-reviewed papers, citation counts, open-access PDFs, research funding grants, and university/lab researcher leads for any scientific topic."
+  }
 }
