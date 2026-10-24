@@ -1,0 +1,17 @@
+{
+  "name": "openfda-food-dietary-supplement-recall-enforcement",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Food supply-chain, retail compliance & QA intelligence: queries OpenFDA Food Enforcement API for active product recalls and recalling firms.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
