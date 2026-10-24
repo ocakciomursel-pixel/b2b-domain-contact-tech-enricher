@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "reddit-community-pain-point-trend-miner",
-  "title": "Reddit Subreddit, Buyer Intent & Pain-Point Lead Miner (MCP Ready)",
+  "title": "Reddit Subreddit, Buyer Intent & Pain-Point Lead Miner",
   "description": "Mine Reddit subreddits for high-intent buyer questions, software alternatives discussions, pain points, upvote velocity, and engagement signals.",
   "version": "1.0",
   "buildTag": "latest",
@@ -64,7 +64,5 @@
         }
       }
     }
-  },
-  "seoTitle": "Reddit Scraper for Buyer Intent, SaaS Leads & Pain-Point Research",
-  "seoDescription": "Mine Reddit subreddits for high-intent buyer questions (\"looking for a tool\", \"alternative to\"), software recommendations, user complaints, and viral trends."
+  }
 }
