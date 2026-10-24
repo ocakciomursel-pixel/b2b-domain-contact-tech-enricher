@@ -1,0 +1,28 @@
+{
+  "title": "Reddit Subreddit & Buyer Intent Miner Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "subreddits": {
+      "title": "Subreddits to Mine",
+      "type": "array",
+      "description": "Subreddit names without r/ (e.g. [\"saas\", \"entrepreneur\", \"webdev\"]).",
+      "editor": "stringList",
+      "prefill": [
+        "saas",
+        "webdev"
+      ]
+    },
+    "maxPostsPerSubreddit": {
+      "title": "Max Posts Per Subreddit",
+      "type": "integer",
+      "description": "Maximum posts to extract per subreddit (1 to 100).",
+      "default": 20,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "subreddits"
+  ]
+}

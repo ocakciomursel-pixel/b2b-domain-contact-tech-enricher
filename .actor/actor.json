@@ -1,0 +1,68 @@
+{
+  "actorSpecification": 1,
+  "name": "reddit-community-pain-point-trend-miner",
+  "title": "Reddit Subreddit, Buyer Intent & Pain-Point Lead Miner (MCP Ready)",
+  "description": "Mine Reddit subreddits for high-intent buyer questions, software alternatives discussions, pain points, upvote velocity, and engagement signals.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Reddit Subreddit, Buyer Intent & Pain-Point Lead Miner (MCP Ready)",
+      "views": {
+        "overview": {
+          "title": "Extracted Intelligence",
+          "transformation": {
+            "fields": [
+              "subreddit",
+              "title",
+              "buyerIntentSignals",
+              "score",
+              "numComments",
+              "author",
+              "permalink"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "subreddit": {
+                "label": "Subreddit",
+                "format": "text"
+              },
+              "title": {
+                "label": "Post Title",
+                "format": "text"
+              },
+              "buyerIntentSignals": {
+                "label": "Intent Signals",
+                "format": "array"
+              },
+              "score": {
+                "label": "Upvotes",
+                "format": "number"
+              },
+              "numComments": {
+                "label": "Comments",
+                "format": "number"
+              },
+              "author": {
+                "label": "Author",
+                "format": "text"
+              },
+              "permalink": {
+                "label": "Reddit Link",
+                "format": "link"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
