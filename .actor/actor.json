@@ -1,0 +1,73 @@
+{
+  "actorSpecification": 1,
+  "name": "local-business-hotel-restaurant-schema-extractor",
+  "title": "Local Business, Hotel, Clinic & Real Estate Schema.org Contact Extractor (MCP Ready)",
+  "description": "Hospitality, Healthcare & Local Business lead Actor: extracts Schema.org LocalBusiness/Hotel/Restaurant/Clinic structured data, street addresses, GPS coordinates, ratings, opening hours, phones, and emails from business websites.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Local Business, Hotel, Clinic & Real Estate Schema.org Contact Extractor (MCP Ready)",
+      "views": {
+        "overview": {
+          "title": "Extracted Intelligence",
+          "transformation": {
+            "fields": [
+              "domain",
+              "businessName",
+              "businessType",
+              "telephone",
+              "emails",
+              "streetAddress",
+              "addressLocality",
+              "aggregateRating"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "domain": {
+                "label": "Domain",
+                "format": "text"
+              },
+              "businessName": {
+                "label": "Business Name",
+                "format": "text"
+              },
+              "businessType": {
+                "label": "Schema Type",
+                "format": "text"
+              },
+              "telephone": {
+                "label": "Phone",
+                "format": "text"
+              },
+              "emails": {
+                "label": "Emails",
+                "format": "array"
+              },
+              "streetAddress": {
+                "label": "Address",
+                "format": "text"
+              },
+              "addressLocality": {
+                "label": "City",
+                "format": "text"
+              },
+              "aggregateRating": {
+                "label": "Rating",
+                "format": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

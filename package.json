@@ -1,0 +1,18 @@
+{
+  "name": "local-business-hotel-restaurant-schema-extractor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Hospitality, Healthcare & Local Business lead Actor: extracts Schema.org LocalBusiness/Hotel/Restaurant/Clinic structured data, street addresses, GPS coordinates, ratings, opening hours, phones, and emails from business websites.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node src/main.js --demo"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

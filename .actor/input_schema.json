@@ -1,0 +1,19 @@
+{
+  "title": "Local Business, Hotel & Clinic Schema Extractor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "urls": {
+      "title": "Business Website URLs or Domains",
+      "type": "array",
+      "description": "List of local business, hotel, restaurant, clinic, or agency URLs to enrich.",
+      "editor": "stringList",
+      "prefill": [
+        "https://www.marriott.com"
+      ]
+    }
+  },
+  "required": [
+    "urls"
+  ]
+}
