@@ -1,0 +1,30 @@
+{
+  "title": "CERN Zenodo Scientific Dataset, Software & Grant Output Miner Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Dataset or Software Keywords",
+      "type": "array",
+      "description": "Keywords to search on Zenodo (e.g. [\"climate model\", \"genomics\", \"lidar\"]).",
+      "editor": "stringList",
+      "default": [
+        "lidar"
+      ],
+      "prefill": [
+        "lidar"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
