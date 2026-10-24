@@ -1,0 +1,32 @@
+{
+  "title": "Company Newsroom, Press Kit & PR Media Contact Email Finder Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Company Domains",
+      "type": "array",
+      "description": "Domains to scan for press kits and media relations contacts.",
+      "editor": "stringList",
+      "default": [
+        "apify.com",
+        "stripe.com"
+      ],
+      "prefill": [
+        "apify.com",
+        "stripe.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
