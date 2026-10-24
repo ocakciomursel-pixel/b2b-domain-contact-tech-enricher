@@ -1,0 +1,30 @@
+{
+  "title": "arXiv Scientific Preprint, PDF & Author Intelligence Miner Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "arXiv Research Queries",
+      "type": "array",
+      "description": "Search keywords for arXiv preprints (e.g. [\"quantum computing\", \"transformer\", \"robotics\"]).",
+      "editor": "stringList",
+      "default": [
+        "robotics"
+      ],
+      "prefill": [
+        "robotics"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
