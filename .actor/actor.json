@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "shopify-store-product-contact-spy",
-  "title": "Shopify Store Product, Pricing & Contact Intelligence (MCP Ready)",
-  "description": "Extract complete product catalogs, variants, pricing statistics, stock availability, vendor lists, and merchant contact/social details from any Shopify store URL without headless browser overhead.",
+  "title": "Shopify Store Product, Pricing, Stock & Merchant Contact Spy (MCP Ready)",
+  "description": "Extract complete product catalogs, variants, pricing statistics, stock availability, sale discounts, vendor lists, and merchant contact/social details from any Shopify store URL.",
   "version": "1.0",
   "buildTag": "latest",
   "meta": {
@@ -35,21 +35,56 @@
           "display": {
             "component": "table",
             "properties": {
-              "storeDomain": { "label": "Store Domain", "format": "text" },
-              "productTitle": { "label": "Product Title", "format": "text" },
-              "vendor": { "label": "Vendor", "format": "text" },
-              "productType": { "label": "Product Type", "format": "text" },
-              "priceMin": { "label": "Min Price", "format": "number" },
-              "priceMax": { "label": "Max Price", "format": "number" },
-              "inStock": { "label": "In Stock", "format": "boolean" },
-              "variantsCount": { "label": "Variants", "format": "number" },
-              "storeEmails": { "label": "Store Emails", "format": "array" },
-              "storeSocials": { "label": "Store Socials", "format": "object" },
-              "productUrl": { "label": "Product URL", "format": "link" }
+              "storeDomain": {
+                "label": "Store Domain",
+                "format": "text"
+              },
+              "productTitle": {
+                "label": "Product Title",
+                "format": "text"
+              },
+              "vendor": {
+                "label": "Vendor",
+                "format": "text"
+              },
+              "productType": {
+                "label": "Product Type",
+                "format": "text"
+              },
+              "priceMin": {
+                "label": "Min Price",
+                "format": "number"
+              },
+              "priceMax": {
+                "label": "Max Price",
+                "format": "number"
+              },
+              "inStock": {
+                "label": "In Stock",
+                "format": "boolean"
+              },
+              "variantsCount": {
+                "label": "Variants",
+                "format": "number"
+              },
+              "storeEmails": {
+                "label": "Store Emails",
+                "format": "array"
+              },
+              "storeSocials": {
+                "label": "Store Socials",
+                "format": "object"
+              },
+              "productUrl": {
+                "label": "Product URL",
+                "format": "link"
+              }
             }
           }
         }
       }
     }
-  }
+  },
+  "seoTitle": "Shopify Product Scraper, Price Monitor & Merchant Email Extractor",
+  "seoDescription": "Scrape any Shopify store catalog, variants, SKUs, sale prices, live inventory stock status, merchant emails, and Instagram/TikTok links without headless browsers."
 }
