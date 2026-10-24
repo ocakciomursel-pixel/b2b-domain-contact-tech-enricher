@@ -1,0 +1,17 @@
+{
+  "name": "sec-edgar-company-10k-8k-filing-monitor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Financial & corporate compliance intelligence: maps US public company tickers and names to official SEC EDGAR CIK identifiers and regulatory filing histories.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
