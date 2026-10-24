@@ -1,0 +1,17 @@
+{
+  "name": "ssl-certificate-transparency-subdomain-discoverer",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Attack surface & OSINT reconnaissance tool: queries Certificate Transparency (CT) logs to discover subdomains, SSL/TLS certificate issuers, validity periods, and expired certificates for any target domain.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
