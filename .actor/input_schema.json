@@ -1,0 +1,46 @@
+{
+  "title": "Shopify Store Product, Pricing & Contact Intelligence Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "stores": {
+      "title": "Shopify Store Domains or URLs",
+      "type": "array",
+      "description": "List of Shopify store domains or URLs to extract (e.g. ['allbirds.com', 'gymshark.com']).",
+      "editor": "stringList",
+      "prefill": [
+        "allbirds.com"
+      ]
+    },
+    "maxProductsPerStore": {
+      "title": "Max Products Per Store",
+      "type": "integer",
+      "description": "Maximum number of products to extract per Shopify store (1 to 2500).",
+      "default": 50,
+      "minimum": 1,
+      "maximum": 2500
+    },
+    "searchKeyword": {
+      "title": "Filter by Product Keyword (Optional)",
+      "type": "string",
+      "description": "Optional case-insensitive keyword filter applied to product title, tags, or product type.",
+      "editor": "textfield",
+      "default": ""
+    },
+    "enrichStoreContacts": {
+      "title": "Extract Merchant Contact & Social Links",
+      "type": "boolean",
+      "description": "Also scan the store homepage for merchant contact emails, social media links, and currency metadata.",
+      "default": true
+    },
+    "concurrency": {
+      "title": "Max Concurrent Stores",
+      "type": "integer",
+      "description": "Number of Shopify stores processed in parallel.",
+      "default": 4,
+      "minimum": 1,
+      "maximum": 15
+    }
+  },
+  "required": ["stores"]
+}

@@ -1,0 +1,55 @@
+{
+  "actorSpecification": 1,
+  "name": "shopify-store-product-contact-spy",
+  "title": "Shopify Store Product, Pricing & Contact Intelligence (MCP Ready)",
+  "description": "Extract complete product catalogs, variants, pricing statistics, stock availability, vendor lists, and merchant contact/social details from any Shopify store URL without headless browser overhead.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Shopify Store & Product Intelligence",
+      "views": {
+        "overview": {
+          "title": "Extracted Products & Store Info",
+          "transformation": {
+            "fields": [
+              "storeDomain",
+              "productTitle",
+              "vendor",
+              "productType",
+              "priceMin",
+              "priceMax",
+              "inStock",
+              "variantsCount",
+              "storeEmails",
+              "storeSocials",
+              "productUrl"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "storeDomain": { "label": "Store Domain", "format": "text" },
+              "productTitle": { "label": "Product Title", "format": "text" },
+              "vendor": { "label": "Vendor", "format": "text" },
+              "productType": { "label": "Product Type", "format": "text" },
+              "priceMin": { "label": "Min Price", "format": "number" },
+              "priceMax": { "label": "Max Price", "format": "number" },
+              "inStock": { "label": "In Stock", "format": "boolean" },
+              "variantsCount": { "label": "Variants", "format": "number" },
+              "storeEmails": { "label": "Store Emails", "format": "array" },
+              "storeSocials": { "label": "Store Socials", "format": "object" },
+              "productUrl": { "label": "Product URL", "format": "link" }
+            }
+          }
+        }
+      }
+    }
+  }
+}
