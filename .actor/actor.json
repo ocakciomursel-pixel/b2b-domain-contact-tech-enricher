@@ -67,7 +67,54 @@
             }
           }
         }
+      },
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "title": "domain",
+            "description": "Extracted domain"
+          },
+          "securityScore": {
+            "type": "number",
+            "title": "securityScore",
+            "description": "Extracted securityScore"
+          },
+          "emailProvider": {
+            "type": "string",
+            "title": "emailProvider",
+            "description": "Extracted emailProvider"
+          },
+          "hasSpf": {
+            "type": "boolean",
+            "title": "hasSpf",
+            "description": "Extracted hasSpf"
+          },
+          "hasDmarc": {
+            "type": "boolean",
+            "title": "hasDmarc",
+            "description": "Extracted hasDmarc"
+          },
+          "hasHsts": {
+            "type": "boolean",
+            "title": "hasHsts",
+            "description": "Extracted hasHsts"
+          },
+          "hasCsp": {
+            "type": "boolean",
+            "title": "hasCsp",
+            "description": "Extracted hasCsp"
+          },
+          "vulnerabilities": {
+            "type": "array",
+            "title": "vulnerabilities",
+            "description": "Extracted vulnerabilities"
+          }
+        }
       }
     }
-  }
+  },
+  "output": "./output_schema.json"
 }
