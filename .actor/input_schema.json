@@ -1,0 +1,30 @@
+{
+  "title": "OSV.dev Open-Source Dependency Vulnerability & Advisory Scanner Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "packages": {
+      "title": "Package Names (npm / PyPI)",
+      "type": "array",
+      "description": "Open-source package names to check (e.g. [\"lodash\", \"express\", \"urllib3\"]).",
+      "editor": "stringList",
+      "default": [
+        "lodash"
+      ],
+      "prefill": [
+        "lodash"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "packages"
+  ]
+}
