@@ -1,0 +1,17 @@
+{
+  "name": "youtube-channel-rss-video-metadata-lead-monitor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Creator economy & video marketing intelligence: extracts YouTube video titles, creator channel names, channel links, and high-res thumbnails with zero API key setup.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

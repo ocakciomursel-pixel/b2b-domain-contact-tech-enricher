@@ -1,0 +1,30 @@
+{
+  "title": "YouTube Video & Channel Metadata, Thumbnail & Creator Enricher Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "videoUrls": {
+      "title": "YouTube Video URLs",
+      "type": "array",
+      "description": "List of YouTube video URLs to enrich.",
+      "editor": "stringList",
+      "default": [
+        "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      ],
+      "prefill": [
+        "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "videoUrls"
+  ]
+}
