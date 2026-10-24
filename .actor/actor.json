@@ -77,7 +77,59 @@
             }
           }
         }
+      },
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "title": "url",
+            "description": "Extracted url"
+          },
+          "seoScore": {
+            "type": "number",
+            "title": "seoScore",
+            "description": "Extracted seoScore"
+          },
+          "statusCode": {
+            "type": "number",
+            "title": "statusCode",
+            "description": "Extracted statusCode"
+          },
+          "responseTimeMs": {
+            "type": "number",
+            "title": "responseTimeMs",
+            "description": "Extracted responseTimeMs"
+          },
+          "title": {
+            "type": "string",
+            "title": "title",
+            "description": "Extracted title"
+          },
+          "h1Count": {
+            "type": "number",
+            "title": "h1Count",
+            "description": "Extracted h1Count"
+          },
+          "imagesMissingAlt": {
+            "type": "number",
+            "title": "imagesMissingAlt",
+            "description": "Extracted imagesMissingAlt"
+          },
+          "brokenLinksCount": {
+            "type": "number",
+            "title": "brokenLinksCount",
+            "description": "Extracted brokenLinksCount"
+          },
+          "issues": {
+            "type": "array",
+            "title": "issues",
+            "description": "Extracted issues"
+          }
+        }
       }
     }
-  }
+  },
+  "output": "./output_schema.json"
 }
