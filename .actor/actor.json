@@ -62,7 +62,44 @@
             }
           }
         }
+      },
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "title": "query",
+            "description": "Extracted query"
+          },
+          "title": {
+            "type": "string",
+            "title": "title",
+            "description": "Extracted title"
+          },
+          "publisher": {
+            "type": "string",
+            "title": "publisher",
+            "description": "Extracted publisher"
+          },
+          "sentimentLabel": {
+            "type": "string",
+            "title": "sentimentLabel",
+            "description": "Extracted sentimentLabel"
+          },
+          "eventCategories": {
+            "type": "array",
+            "title": "eventCategories",
+            "description": "Extracted eventCategories"
+          },
+          "publishedAt": {
+            "type": "string",
+            "title": "publishedAt",
+            "description": "Extracted publishedAt"
+          }
+        }
       }
     }
-  }
+  },
+  "output": "./output_schema.json"
 }
