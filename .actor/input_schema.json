@@ -1,0 +1,30 @@
+{
+  "title": "Global 100% Remote Tech Job & Hiring Company Lead Scraper Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "categories": {
+      "title": "Job Category Filter",
+      "type": "array",
+      "description": "Job category keywords (e.g. [\"software-dev\", \"marketing\", \"sales\"]).",
+      "editor": "stringList",
+      "default": [
+        "software-dev"
+      ],
+      "prefill": [
+        "software-dev"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "categories"
+  ]
+}
