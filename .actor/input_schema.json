@@ -1,0 +1,30 @@
+{
+  "title": "Hugging Face Model Hub Downloads, License & Publisher Tracker Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Model Search Keywords",
+      "type": "array",
+      "description": "Keywords to search on Hugging Face Hub (e.g. [\"llama\", \"whisper\", \"embedding\"]).",
+      "editor": "stringList",
+      "default": [
+        "embedding"
+      ],
+      "prefill": [
+        "embedding"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}

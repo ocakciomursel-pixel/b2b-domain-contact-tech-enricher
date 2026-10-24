@@ -1,0 +1,17 @@
+{
+  "name": "huggingface-ai-model-dataset-org-intelligence",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Machine learning ecosystem intelligence: queries Hugging Face Hub API to track model adoption, download velocity, community likes, task categories, and publisher organizations.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
