@@ -1,0 +1,30 @@
+{
+  "title": "Packagist PHP & Laravel Composer Package Downloads & Repo Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "PHP / Laravel Package Keywords",
+      "type": "array",
+      "description": "Keywords to search on Packagist (e.g. [\"laravel\", \"symfony\", \"guzzle\"]).",
+      "editor": "stringList",
+      "default": [
+        "laravel"
+      ],
+      "prefill": [
+        "laravel"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "packagist-php-laravel-composer-maintainer-spy",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "PHP/Laravel developer ecosystem intelligence: queries Packagist Search API for package download totals, community favorites, and source repositories.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
