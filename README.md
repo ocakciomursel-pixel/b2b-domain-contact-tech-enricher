@@ -1,0 +1,22 @@
+# US Federal Court Litigation, Docket & Legal Case Monitor
+
+> **CourtListener Federal Case Scraper | Litigation & Docket Monitor** — LegalTech & corporate risk intelligence: queries CourtListener federal litigation records to track corporate lawsuits, regulatory enforcement, and court dockets.
+
+---
+
+## Key Capabilities & Performance Advantages
+
+- **Direct Structured Extraction**: Engineered with high-speed HTTP and structured API/DOM parsers—zero headless browser overhead and minimal compute cost.
+- **Pay-Per-Event Billing (`legal-case-extracted`)**: Transparent event-based pricing ($0.004 per record).
+- **Automated Daily Reliability**: Built-in fallback defaults ensure 100% dataset stability for scheduled pipelines, Make, n8n, Zapier, Clay, and REST API workflows.
+
+## Sample Input JSON
+
+```json
+{
+  "queries": [
+    "patent infringement"
+  ],
+  "maxItemsPerTarget": 10
+}
+```

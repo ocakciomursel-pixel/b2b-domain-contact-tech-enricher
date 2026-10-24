@@ -1,0 +1,30 @@
+{
+  "title": "US Federal Court Litigation, Docket & Legal Case Monitor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Company Names or Legal Keywords",
+      "type": "array",
+      "description": "Corporate names or legal topics (e.g. [\"antitrust\", \"patent infringement\"]).",
+      "editor": "stringList",
+      "default": [
+        "patent infringement"
+      ],
+      "prefill": [
+        "patent infringement"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
