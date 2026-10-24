@@ -1,0 +1,17 @@
+{
+  "name": "crypto-exchange-spot-funding-arbitrage-scanner",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Digital asset market intelligence: extracts live spot prices, 24h volume-to-market-cap ratios, supply inflation metrics, and all-time-high drawdown percentages for top crypto assets.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

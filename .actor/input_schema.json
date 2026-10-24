@@ -1,0 +1,30 @@
+{
+  "title": "Crypto Market Cap, Volume, ATH Drawdown & Valuation Scanner Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "currencies": {
+      "title": "Base Quote Currency",
+      "type": "array",
+      "description": "Quote currency code (e.g. [\"usd\"]).",
+      "editor": "stringList",
+      "default": [
+        "usd"
+      ],
+      "prefill": [
+        "usd"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "currencies"
+  ]
+}
