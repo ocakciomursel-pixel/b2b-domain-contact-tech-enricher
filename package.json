@@ -1,0 +1,17 @@
+{
+  "name": "openfda-drug-ndc-label-manufacturer-directory",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Pharmaceutical supply-chain & B2B intelligence: extracts registered drug products, labeler company names, generic/brand names, dosage forms, and active ingredients from the FDA NDC Directory.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "OpenFDA Pharmaceutical NDC Directory & Drug Manufacturer Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Drug Name, Ingredient, or Pharma Company",
+      "type": "array",
+      "description": "Search terms for the FDA NDC Directory (e.g. [\"ibuprofen\", \"amoxicillin\"]).",
+      "editor": "stringList",
+      "default": [
+        "ibuprofen"
+      ],
+      "prefill": [
+        "ibuprofen"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
