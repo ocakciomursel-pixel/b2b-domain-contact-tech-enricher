@@ -1,0 +1,17 @@
+{
+  "name": "epa-environmental-facility-compliance-registry",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Industrial B2B sales & environmental compliance lead tool: extracts registered US industrial facilities, physical addresses, and state locations.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

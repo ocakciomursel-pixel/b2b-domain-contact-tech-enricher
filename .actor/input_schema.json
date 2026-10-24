@@ -1,0 +1,30 @@
+{
+  "title": "US Industrial Facility, Manufacturing & Environmental Registry Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "stateCodes": {
+      "title": "US State Codes",
+      "type": "array",
+      "description": "2-letter US state codes (e.g. [\"TX\", \"CA\", \"OH\"]).",
+      "editor": "stringList",
+      "default": [
+        "TX"
+      ],
+      "prefill": [
+        "TX"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "stateCodes"
+  ]
+}
