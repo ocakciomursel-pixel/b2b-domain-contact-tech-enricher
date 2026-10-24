@@ -1,0 +1,34 @@
+{
+  "title": "World Bank Global Macroeconomic & Country GDP Risk Enricher Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "countryCodes": {
+      "title": "ISO Country Codes (or ALL)",
+      "type": "array",
+      "description": "ISO country codes (e.g. [\"US\", \"DE\", \"TR\", \"GB\"]).",
+      "editor": "stringList",
+      "default": [
+        "US",
+        "DE",
+        "GB"
+      ],
+      "prefill": [
+        "US",
+        "DE",
+        "GB"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "countryCodes"
+  ]
+}
