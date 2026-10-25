@@ -3,7 +3,7 @@
   "name": "itunes-music-artist-track-chart-label-spy",
   "title": "Apple Music / iTunes Track, Artist, Album & Record Label Spy",
   "description": "Music catalog & creator marketing tool: queries Apple iTunes Search API for music tracks, artists, albums, genres, and audio preview links.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
