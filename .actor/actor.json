@@ -3,7 +3,7 @@
   "name": "sitemap-url-inventory-content-freshness-auditor",
   "title": "XML Sitemap URL Extractor & Content Freshness Auditor",
   "description": "Discover robots.txt and XML sitemaps for any domain, extract complete URL inventories, categorize site sections (/blog, /docs, /products), and measure content publishing velocity.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -16,7 +16,7 @@
       "title": "XML Sitemap URL Extractor & Content Freshness Auditor (MCP Ready)",
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "transformation": {
             "fields": [
               "domain",

@@ -10,6 +10,9 @@
       "editor": "stringList",
       "prefill": [
         "apify.com"
+      ],
+      "default": [
+        "apify.com"
       ]
     },
     "maxUrlsPerDomain": {
