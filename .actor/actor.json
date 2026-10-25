@@ -3,7 +3,7 @@
   "name": "openfda-drug-ndc-label-manufacturer-directory",
   "title": "OpenFDA Pharmaceutical NDC Directory & Drug Manufacturer Spy",
   "description": "Pharmaceutical supply-chain & B2B intelligence: extracts registered drug products, labeler company names, generic/brand names, dosage forms, and active ingredients from the FDA NDC Directory.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
