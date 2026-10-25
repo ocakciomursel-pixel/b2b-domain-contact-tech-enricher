@@ -3,7 +3,7 @@
   "name": "woocommerce-public-store-product-catalog-scraper",
   "title": "WooCommerce Store Product Catalog, SKU & Pricing Extractor",
   "description": "E-commerce competitive intelligence: scans WooCommerce storefronts via public Store REST API and HTML product markup to extract product titles, prices, and URLs.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
