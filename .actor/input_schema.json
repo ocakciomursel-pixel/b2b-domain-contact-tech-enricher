@@ -11,6 +11,10 @@
       "prefill": [
         "apify.com",
         "supabase.com"
+      ],
+      "default": [
+        "apify.com",
+        "supabase.com"
       ]
     }
   },

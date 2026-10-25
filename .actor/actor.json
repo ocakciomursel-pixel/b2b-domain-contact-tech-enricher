@@ -3,7 +3,7 @@
   "name": "saas-pricing-page-tier-feature-extractor",
   "title": "SaaS Pricing Page Tier, Plan, Currency & Feature Matrix Spy",
   "description": "Locate and analyze SaaS competitor /pricing pages to extract detected price points, billing models (per-seat, usage-based, freemium, free trial), and enterprise tiers.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -16,7 +16,7 @@
       "title": "SaaS Pricing Page Tier, Plan, Currency & Feature Matrix Spy (MCP Ready)",
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "transformation": {
             "fields": [
               "domain",
