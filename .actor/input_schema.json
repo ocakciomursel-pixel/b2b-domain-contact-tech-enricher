@@ -1,0 +1,30 @@
+{
+  "title": "OpenFDA MAUDE Medical Device Adverse Event & Malfunction Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Device Generic or Brand Name",
+      "type": "array",
+      "description": "Medical device keywords (e.g. [\"pacemaker\", \"insulin pump\"]).",
+      "editor": "stringList",
+      "default": [
+        "pacemaker"
+      ],
+      "prefill": [
+        "pacemaker"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
