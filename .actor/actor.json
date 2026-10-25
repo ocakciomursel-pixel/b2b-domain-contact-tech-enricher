@@ -3,7 +3,7 @@
   "name": "b2b-leadership-team-about-page-executive-finder",
   "title": "Company About Page, Leadership Team & LinkedIn Profile Finde",
   "description": "B2B executive outreach & enrichment tool: scans company domains and about pages for LinkedIn profile links, contact emails, and leadership metadata.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
