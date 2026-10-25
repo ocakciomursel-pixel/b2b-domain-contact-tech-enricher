@@ -11,6 +11,10 @@
       "prefill": [
         "cloudflare.com",
         "news.ycombinator.com"
+      ],
+      "default": [
+        "cloudflare.com",
+        "news.ycombinator.com"
       ]
     }
   },
