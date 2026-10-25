@@ -1,0 +1,30 @@
+{
+  "title": "Browser Extension Publisher Website, Privacy & Contact Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Extension Publisher Domains",
+      "type": "array",
+      "description": "Domains of browser extension publishers.",
+      "editor": "stringList",
+      "default": [
+        "grammarly.com"
+      ],
+      "prefill": [
+        "grammarly.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
