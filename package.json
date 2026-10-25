@@ -1,0 +1,17 @@
+{
+  "name": "pwa-manifest-json-service-worker-mobile-readiness-spy",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Mobile web & app agency prospecting tool: checks target domains for mobile responsiveness tags and Progressive Web App (PWA) readiness.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
