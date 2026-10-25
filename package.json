@@ -1,0 +1,17 @@
+{
+  "name": "hardware-iot-telecom-vendor-compliance-enricher",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Electronics supply-chain & industrial B2B prospecting tool: extracts contact emails, phone numbers, and portal links from hardware vendor domains.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "IoT, Hardware & Electronics Manufacturer Lead Enricher Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Hardware Manufacturer Domains",
+      "type": "array",
+      "description": "Domains of electronics or IoT manufacturers.",
+      "editor": "stringList",
+      "default": [
+        "arduino.cc"
+      ],
+      "prefill": [
+        "arduino.cc"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
