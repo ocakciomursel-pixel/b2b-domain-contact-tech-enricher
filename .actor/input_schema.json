@@ -1,0 +1,32 @@
+{
+  "title": "Bulk Email Verifier (Syntax, Live DNS MX, Disposable & Role) Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "emails": {
+      "title": "Email Addresses to Verify",
+      "type": "array",
+      "description": "List of email addresses to validate.",
+      "editor": "stringList",
+      "default": [
+        "support@apify.com",
+        "info@cloudflare.com"
+      ],
+      "prefill": [
+        "support@apify.com",
+        "info@cloudflare.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "emails"
+  ]
+}

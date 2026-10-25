@@ -1,0 +1,17 @@
+{
+  "name": "bulk-email-syntax-mx-disposable-role-verifier",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Essential cold email deliverability hygiene tool: validates email syntax, detects role accounts (info@, admin@) and temp-mail providers, and verifies live DNS MX records.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

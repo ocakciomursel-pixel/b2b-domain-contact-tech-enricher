@@ -1,0 +1,13 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Bulk Email Verifier (Syntax, Live DNS MX, Disposable & Role) Output",
+  "description": "Structured dataset records produced by this Actor run.",
+  "properties": {
+    "dataset": {
+      "type": "string",
+      "title": "Results Dataset (JSON Items)",
+      "description": "Link to the extracted JSON items stored in the default dataset",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    }
+  }
+}
