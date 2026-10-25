@@ -3,7 +3,7 @@
   "name": "open-graph-twitter-card-social-preview-validator",
   "title": "Bulk Open Graph (OG), Twitter Card & Social Share Validator",
   "description": "Social media marketing & SEO QA tool: extracts Open Graph tags, Twitter Card metadata, canonical links, and social share image URLs.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
