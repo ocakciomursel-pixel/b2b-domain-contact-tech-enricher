@@ -3,7 +3,7 @@
   "name": "us-irs-990-nonprofit-foundation-revenue-officer-miner",
   "title": "US IRS Form 990 Nonprofit, Foundation & Grantmaker Directory",
   "description": "Nonprofit B2B sales, fundraising & grant intelligence: queries the ProPublica Nonprofit Explorer API for IRS Form 990 organizations.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
