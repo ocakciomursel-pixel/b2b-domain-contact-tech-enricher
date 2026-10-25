@@ -1,0 +1,17 @@
+{
+  "name": "b2b-saas-monthly-tech-spend-score-estimator",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "High-ticket B2B lead scoring tool: detects premium analytics, CRM, support, and infrastructure scripts to classify prospects into Low, Mid, or Enterprise SaaS spend tiers.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
