@@ -3,7 +3,7 @@
   "name": "b2b-case-study-customer-logo-testimonial-extractor",
   "title": "B2B Competitor Case Study, Client Logo & Testimonial Spy",
   "description": "Account-based marketing (ABM) & competitive conquesting tool: extracts customer case study links, client mentions, and social proof from B2B websites.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
