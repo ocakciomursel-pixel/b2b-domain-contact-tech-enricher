@@ -3,7 +3,7 @@
   "name": "cpsc-consumer-product-safety-recall-hazard-tracker",
   "title": "US CPSC Consumer Product Safety Recall & Injury Hazard Track",
   "description": "E-commerce marketplace compliance & product liability law intelligence: queries the official SaferProducts.gov CPSC Recall REST API.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
