@@ -1,0 +1,30 @@
+{
+  "title": "Shopify App & E-Commerce Tech Partner Lead Enricher Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Partner or App Developer Domains",
+      "type": "array",
+      "description": "Domains of Shopify app developers or partners (e.g. [\"klaviyo.com\", \"Judge.me\"]).",
+      "editor": "stringList",
+      "default": [
+        "klaviyo.com"
+      ],
+      "prefill": [
+        "klaviyo.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
