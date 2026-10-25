@@ -1,0 +1,30 @@
+{
+  "title": "Event, Conference & Ticketing (Eventbrite/Luma) Schema Extractor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "urls": {
+      "title": "Event or Conference Page URLs",
+      "type": "array",
+      "description": "URLs of event pages.",
+      "editor": "stringList",
+      "default": [
+        "https://websummit.com"
+      ],
+      "prefill": [
+        "https://websummit.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "urls"
+  ]
+}
