@@ -3,7 +3,7 @@
   "name": "master-360-b2b-company-deep-dossier-enricher",
   "title": "360° B2B Company Master Dossier (Contacts + DNS + Tech + Ads",
   "description": "Flagship All-in-One B2B Master Enricher: executes parallel webpage parsing, DNS DoH resolution, ad pixel detection, and sales stack fingerprinting in one unified record.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
