@@ -1,0 +1,30 @@
+{
+  "title": "360° Biotech & R&D Topic Dossier (PubMed + Patents + OpenAlex) Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Biotech, Drug, or Deep-Tech Topics",
+      "type": "array",
+      "description": "Research topics (e.g. [\"GLP-1\", \"CRISPR\", \"solid state battery\"]).",
+      "editor": "stringList",
+      "default": [
+        "GLP-1"
+      ],
+      "prefill": [
+        "GLP-1"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "master-360-scientific-biotech-literature-patent-dossier",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Executive R&D & biotech intelligence aggregator: combines peer-reviewed literature, patent filings, and citation metrics for any target molecule or technology.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

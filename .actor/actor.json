@@ -1,0 +1,58 @@
+{
+  "actorSpecification": 1,
+  "name": "master-360-scientific-biotech-literature-patent-dossier",
+  "title": "360° Biotech & R&D Topic Dossier (PubMed + Patents + OpenAle",
+  "description": "Executive R&D & biotech intelligence aggregator: combines peer-reviewed literature, patent filings, and citation metrics for any target molecule or technology.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "360° Biotech & R&D Topic Dossier (PubMed + Patents + OpenAle",
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "target": {
+            "type": "string",
+            "title": "Target Query"
+          },
+          "extractedAt": {
+            "type": "string",
+            "title": "Extracted Timestamp"
+          }
+        }
+      },
+      "views": {
+        "overview": {
+          "title": "Extracted Intelligence",
+          "transformation": {
+            "fields": [
+              "target",
+              "extractedAt"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "target": {
+                "label": "Target",
+                "format": "text"
+              },
+              "extractedAt": {
+                "label": "Extracted At",
+                "format": "text"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
