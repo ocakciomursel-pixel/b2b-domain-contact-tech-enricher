@@ -1,0 +1,17 @@
+{
+  "name": "bulk-url-redirect-chain-301-unshortener-auditor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "SEO migration, affiliate link auditing & data cleaning tool: follows redirects to capture the final landing URL, status code, and page title.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

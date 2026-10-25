@@ -1,0 +1,32 @@
+{
+  "title": "Bulk URL Unshortener, Final Destination & HTTP Status Checker Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "urls": {
+      "title": "URLs to Resolve",
+      "type": "array",
+      "description": "List of URLs to check redirects and final destinations for.",
+      "editor": "stringList",
+      "default": [
+        "https://apify.com",
+        "https://github.com"
+      ],
+      "prefill": [
+        "https://apify.com",
+        "https://github.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "urls"
+  ]
+}
