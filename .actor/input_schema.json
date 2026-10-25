@@ -1,0 +1,30 @@
+{
+  "title": "Atlassian Marketplace (Jira & Confluence) App & Vendor Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Atlassian App Keywords",
+      "type": "array",
+      "description": "Keywords to search on Atlassian Marketplace (e.g. [\"time tracking\", \"diagram\", \"security\"]).",
+      "editor": "stringList",
+      "default": [
+        "time tracking"
+      ],
+      "prefill": [
+        "time tracking"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
