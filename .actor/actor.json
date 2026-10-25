@@ -3,7 +3,7 @@
   "name": "ashby-company-job-board-hiring-velocity-scraper",
   "title": "AshbyHQ Startup Job Board, Compensation & Hiring Signal Scra",
   "description": "B2B sales intent & recruiting intelligence: queries public AshbyHQ posting APIs for fast-growing tech startups to extract active job openings, departments, and locations.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
