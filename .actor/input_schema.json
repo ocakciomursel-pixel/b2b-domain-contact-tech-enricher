@@ -1,0 +1,30 @@
+{
+  "title": "Automated Schema.org JSON-LD Markup Auditor & Code Generator Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "urls": {
+      "title": "Target Webpage URLs",
+      "type": "array",
+      "description": "URLs to audit and generate JSON-LD schema for.",
+      "editor": "stringList",
+      "default": [
+        "https://apify.com"
+      ],
+      "prefill": [
+        "https://apify.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "urls"
+  ]
+}

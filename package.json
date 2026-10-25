@@ -1,0 +1,17 @@
+{
+  "name": "automated-json-ld-schema-org-markup-generator",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "SEO agency automation tool: audits existing structured data on a URL and generates ready-to-paste Schema.org JSON-LD markup.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
