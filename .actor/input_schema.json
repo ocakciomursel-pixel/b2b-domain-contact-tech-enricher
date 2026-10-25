@@ -1,0 +1,30 @@
+{
+  "title": "WordPress.org Plugin Directory, Active Installs & Author Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Plugin Search Keywords",
+      "type": "array",
+      "description": "Keywords to search in WordPress.org plugins (e.g. [\"woocommerce\", \"seo\", \"booking\"]).",
+      "editor": "stringList",
+      "default": [
+        "booking"
+      ],
+      "prefill": [
+        "booking"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}

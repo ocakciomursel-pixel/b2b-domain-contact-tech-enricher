@@ -1,0 +1,17 @@
+{
+  "name": "wordpress-plugin-directory-author-install-spy",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "WordPress ecosystem & B2B SaaS lead intelligence: extracts plugin active installations, download counts, ratings, support activity, and author links.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
