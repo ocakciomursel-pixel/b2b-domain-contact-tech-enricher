@@ -3,7 +3,7 @@
   "name": "dns-caa-ns-soa-nameserver-infrastructure-mapper",
   "title": "Bulk DNS Zone, Nameserver (NS), SOA, CAA & IPv6 Mapper",
   "description": "Cloud infrastructure & DevSecOps mapping tool: resolves NS, CAA, A, and AAAA records to fingerprint DNS providers and certificate restrictions.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
