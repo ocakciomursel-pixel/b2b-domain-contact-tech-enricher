@@ -3,7 +3,7 @@
   "name": "remotive-remote-tech-job-company-lead-scraper",
   "title": "Global 100% Remote Tech Job & Hiring Company Lead Scraper",
   "description": "Remote recruiting & B2B agency lead generation: extracts verified remote job postings, hiring company names, categories, salary tags, and application URLs.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
