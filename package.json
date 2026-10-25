@@ -1,0 +1,17 @@
+{
+  "name": "eu-vies-vat-company-tax-registration-validator",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Cross-border e-commerce & B2B billing compliance utility: validates VAT number structures, country prefixes, and corporate metadata.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

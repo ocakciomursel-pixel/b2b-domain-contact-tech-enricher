@@ -1,0 +1,32 @@
+{
+  "title": "International VAT / Tax ID Format & Corporate Domain Auditor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "vatNumbers": {
+      "title": "VAT Numbers (with 2-Letter Country Prefix)",
+      "type": "array",
+      "description": "VAT IDs to validate (e.g. [\"DE123456789\", \"FR12345678901\", \"NL123456789B01\"]).",
+      "editor": "stringList",
+      "default": [
+        "DE123456789",
+        "NL123456789B01"
+      ],
+      "prefill": [
+        "DE123456789",
+        "NL123456789B01"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "vatNumbers"
+  ]
+}
