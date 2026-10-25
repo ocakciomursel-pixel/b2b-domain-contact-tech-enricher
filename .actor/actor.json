@@ -3,7 +3,7 @@
   "name": "global-news-pr-sentiment-mention-monitor",
   "title": "Global News, PR Mention, Event Classifier & Brand Sentiment",
   "description": "PR, Media & Financial News intelligence Actor: monitors real-time Google News RSS feeds for any company, brand, or market keyword with automated sentiment scoring and corporate event classification.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -16,7 +16,7 @@
       "title": "Global News, PR Mention, Event Classifier & Brand Sentiment Monitor (MCP Ready)",
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "transformation": {
             "fields": [
               "query",

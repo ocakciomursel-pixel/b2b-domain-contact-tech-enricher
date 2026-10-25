@@ -11,6 +11,10 @@
       "prefill": [
         "OpenAI",
         "Stripe"
+      ],
+      "default": [
+        "OpenAI",
+        "Stripe"
       ]
     },
     "maxArticlesPerKeyword": {
