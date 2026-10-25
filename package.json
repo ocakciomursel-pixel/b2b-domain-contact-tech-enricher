@@ -1,0 +1,17 @@
+{
+  "name": "dental-medical-clinic-patient-booking-software-spy",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Healthcare marketing agency & practice management SaaS lead tool: detects online scheduling tools and contact points on clinic websites.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
