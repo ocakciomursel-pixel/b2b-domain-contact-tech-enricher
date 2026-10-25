@@ -3,7 +3,7 @@
   "name": "scientific-literature-citation-author-lead-miner",
   "title": "Scientific Literature, R&D Grant, Institution & Author Lead",
   "description": "DeepTech & Academic R&D intelligence Actor: mines OpenAlex for peer-reviewed papers, citation velocity, open-access PDFs, funding grants, and researcher institution leads.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -16,7 +16,7 @@
       "title": "Scientific Literature, R&D Grant, Institution & Author Lead Miner (MCP Ready)",
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "transformation": {
             "fields": [
               "title",

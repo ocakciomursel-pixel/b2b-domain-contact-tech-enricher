@@ -10,6 +10,9 @@
       "editor": "stringList",
       "prefill": [
         "CRISPR delivery"
+      ],
+      "default": [
+        "CRISPR delivery"
       ]
     },
     "maxPapersPerTopic": {
