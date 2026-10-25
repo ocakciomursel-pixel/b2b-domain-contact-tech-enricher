@@ -1,0 +1,17 @@
+{
+  "name": "company-name-to-official-domain-logo-clearbit-resolver",
+  "version": "1.0.0",
+  "type": "module",
+  "description": " #1 CRM data enrichment utility: resolves unformatted company names into verified corporate domains and logo URLs via autocomplete intelligence.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

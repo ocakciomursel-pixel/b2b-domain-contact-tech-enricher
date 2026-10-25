@@ -1,0 +1,34 @@
+{
+  "title": "Bulk Company Name to Official Website Domain & Logo Resolver Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "companyNames": {
+      "title": "Company or Brand Names",
+      "type": "array",
+      "description": "List of company names to resolve to domains (e.g. [\"Stripe\", \"Datadog\", \"Figma\"]).",
+      "editor": "stringList",
+      "default": [
+        "Stripe",
+        "Datadog",
+        "Figma"
+      ],
+      "prefill": [
+        "Stripe",
+        "Datadog",
+        "Figma"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "companyNames"
+  ]
+}
