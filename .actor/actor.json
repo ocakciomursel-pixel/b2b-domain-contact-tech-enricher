@@ -3,7 +3,7 @@
   "name": "bulk-phone-number-e164-whatsapp-link-formatter",
   "title": "Bulk Phone Number to E.164, Country & WhatsApp Link Generato",
   "description": "CRM hygiene & WhatsApp sales outreach utility: normalizes phone numbers into E.164 format and builds direct click-to-chat WhatsApp URLs.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
