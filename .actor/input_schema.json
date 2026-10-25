@@ -1,0 +1,30 @@
+{
+  "title": "CPA, Accounting & Tax Advisory Firm Portal & Contact Enricher Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "CPA or Accounting Firm Domains",
+      "type": "array",
+      "description": "Domains of accounting or advisory firms.",
+      "editor": "stringList",
+      "default": [
+        "bdo.com"
+      ],
+      "prefill": [
+        "bdo.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
