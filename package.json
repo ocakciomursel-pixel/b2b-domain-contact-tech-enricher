@@ -1,0 +1,17 @@
+{
+  "name": "cpsc-consumer-product-safety-recall-hazard-tracker",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "E-commerce marketplace compliance & product liability law intelligence: queries the official SaferProducts.gov CPSC Recall REST API.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

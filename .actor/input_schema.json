@@ -1,0 +1,30 @@
+{
+  "title": "US CPSC Consumer Product Safety Recall & Injury Hazard Tracker Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Product Type or Keyword",
+      "type": "array",
+      "description": "Product keywords (e.g. [\"battery\", \"stroller\", \"charger\"]).",
+      "editor": "stringList",
+      "default": [
+        "battery"
+      ],
+      "prefill": [
+        "battery"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
