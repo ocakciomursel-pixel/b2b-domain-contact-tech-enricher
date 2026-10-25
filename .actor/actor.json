@@ -3,7 +3,7 @@
   "name": "robots-txt-crawl-budget-disallow-directive-auditor",
   "title": "Robots.txt Crawl Directive, Sitemap & Disallow Path Auditor",
   "description": "Technical SEO & reconnaissance tool: parses robots.txt files to extract declared XML sitemaps, user-agent rules, and disallowed directories.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
