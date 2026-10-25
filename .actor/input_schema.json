@@ -1,0 +1,32 @@
+{
+  "title": "Cold Email Personalization Hook, Value Prop & News Extractor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Prospect Company Domains",
+      "type": "array",
+      "description": "Domains to extract cold email personalization context from.",
+      "editor": "stringList",
+      "default": [
+        "apify.com",
+        "linear.app"
+      ],
+      "prefill": [
+        "apify.com",
+        "linear.app"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
