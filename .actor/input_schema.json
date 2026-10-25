@@ -1,0 +1,32 @@
+{
+  "title": "Bulk Active Website vs Parked / For-Sale / Dead Domain Checker Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Domains to Check",
+      "type": "array",
+      "description": "Domains to test for active website vs parked/dead status.",
+      "editor": "stringList",
+      "default": [
+        "apify.com",
+        "example.com"
+      ],
+      "prefill": [
+        "apify.com",
+        "example.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
