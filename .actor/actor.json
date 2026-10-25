@@ -2,8 +2,8 @@
   "actorSpecification": 1,
   "name": "github-developer-recruiter-lead-enricher",
   "title": "GitHub Developer, Stargazer & Contributor Lead Enricher",
-  "description": "Extract developer profiles, public commit emails, company affiliations, personal websites, X/Twitter handles, location, and hireable status from GitHub repositories or username lists.",
-  "version": "1.0",
+  "description": "Extract developer profiles, public commit emails, top programming languages, candidate scores (0-100), seniority tiers, company affiliations, personal websites, X/Twitter handles, location, and recruiter outreach hooks from GitHub repositories or username lists.",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -13,77 +13,49 @@
   "storages": {
     "dataset": {
       "actorSpecification": 1,
-      "title": "GitHub Developer Leads",
+      "title": "GitHub Developer Leads & Candidate Scores",
       "views": {
         "overview": {
-          "title": "Enriched Developer Profiles",
+          "title": "Enriched Developer Profiles & Technical Stack",
           "transformation": {
             "fields": [
               "username",
               "name",
+              "candidateScore",
+              "seniorityTier",
               "emails",
+              "topLanguages",
+              "totalStarsEarned",
+              "repoContributions",
               "company",
               "location",
               "hireable",
               "blogUrl",
               "twitterUsername",
               "followers",
-              "publicRepos",
-              "sourceRepo",
+              "recruiterOutreachHook",
               "profileUrl"
             ]
           },
           "display": {
             "component": "table",
             "properties": {
-              "username": {
-                "label": "Username",
-                "format": "text"
-              },
-              "name": {
-                "label": "Full Name",
-                "format": "text"
-              },
-              "emails": {
-                "label": "Verified / Commit Emails",
-                "format": "array"
-              },
-              "company": {
-                "label": "Company",
-                "format": "text"
-              },
-              "location": {
-                "label": "Location",
-                "format": "text"
-              },
-              "hireable": {
-                "label": "Hireable",
-                "format": "boolean"
-              },
-              "blogUrl": {
-                "label": "Website / Blog",
-                "format": "link"
-              },
-              "twitterUsername": {
-                "label": "X / Twitter",
-                "format": "text"
-              },
-              "followers": {
-                "label": "Followers",
-                "format": "number"
-              },
-              "publicRepos": {
-                "label": "Public Repos",
-                "format": "number"
-              },
-              "sourceRepo": {
-                "label": "Source Repo",
-                "format": "text"
-              },
-              "profileUrl": {
-                "label": "GitHub Profile",
-                "format": "link"
-              }
+              "username": { "label": "Username", "format": "text" },
+              "name": { "label": "Full Name", "format": "text" },
+              "candidateScore": { "label": "Candidate Score (0-100)", "format": "number" },
+              "seniorityTier": { "label": "Seniority Tier", "format": "text" },
+              "emails": { "label": "Verified / Commit Emails", "format": "array" },
+              "topLanguages": { "label": "Top Languages", "format": "array" },
+              "totalStarsEarned": { "label": "Total Stars", "format": "number" },
+              "repoContributions": { "label": "Repo Commits", "format": "number" },
+              "company": { "label": "Company", "format": "text" },
+              "location": { "label": "Location", "format": "text" },
+              "hireable": { "label": "Hireable", "format": "boolean" },
+              "blogUrl": { "label": "Website / Blog", "format": "link" },
+              "twitterUsername": { "label": "X / Twitter", "format": "text" },
+              "followers": { "label": "Followers", "format": "number" },
+              "recruiterOutreachHook": { "label": "Recruiter Outreach Hook", "format": "text" },
+              "profileUrl": { "label": "GitHub Profile", "format": "link" }
             }
           }
         }
@@ -92,51 +64,20 @@
         "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
         "properties": {
-          "username": {
-            "type": "string",
-            "title": "username",
-            "description": "Extracted username"
-          },
-          "name": {
-            "type": "string",
-            "title": "name",
-            "description": "Extracted name"
-          },
-          "emails": {
-            "type": "array",
-            "title": "emails",
-            "description": "Extracted emails"
-          },
-          "company": {
-            "type": "string",
-            "title": "company",
-            "description": "Extracted company"
-          },
-          "location": {
-            "type": "string",
-            "title": "location",
-            "description": "Extracted location"
-          },
-          "hireable": {
-            "type": "boolean",
-            "title": "hireable",
-            "description": "Extracted hireable"
-          },
-          "blogUrl": {
-            "type": "string",
-            "title": "blogUrl",
-            "description": "Extracted blogUrl"
-          },
-          "followers": {
-            "type": "number",
-            "title": "followers",
-            "description": "Extracted followers"
-          },
-          "repoContributions": {
-            "type": "number",
-            "title": "repoContributions",
-            "description": "Extracted repoContributions"
-          }
+          "username": { "type": "string", "title": "username", "description": "Extracted username" },
+          "name": { "type": "string", "title": "name", "description": "Extracted name" },
+          "candidateScore": { "type": "number", "title": "candidateScore", "description": "Candidate Score (0-100)" },
+          "seniorityTier": { "type": "string", "title": "seniorityTier", "description": "Estimated engineering seniority tier" },
+          "emails": { "type": "array", "title": "emails", "description": "Extracted emails" },
+          "topLanguages": { "type": "array", "title": "topLanguages", "description": "Top programming languages" },
+          "totalStarsEarned": { "type": "number", "title": "totalStarsEarned", "description": "Total stars earned on repos" },
+          "company": { "type": "string", "title": "company", "description": "Extracted company" },
+          "location": { "type": "string", "title": "location", "description": "Extracted location" },
+          "hireable": { "type": "boolean", "title": "hireable", "description": "Extracted hireable" },
+          "blogUrl": { "type": "string", "title": "blogUrl", "description": "Extracted blogUrl" },
+          "followers": { "type": "number", "title": "followers", "description": "Extracted followers" },
+          "repoContributions": { "type": "number", "title": "repoContributions", "description": "Extracted repoContributions" },
+          "recruiterOutreachHook": { "type": "string", "title": "recruiterOutreachHook", "description": "Personalized outreach message" }
         }
       }
     }
