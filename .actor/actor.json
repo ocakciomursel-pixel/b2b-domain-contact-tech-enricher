@@ -3,7 +3,7 @@
   "name": "http-security-headers-csp-hsts-cors-auditor",
   "title": "HTTP Security Headers (CSP, HSTS, X-Frame, CORS) Auditor",
   "description": "Penetration testing & cybersecurity consultancy lead generator: grades target domains on HTTP response security headers and missing protections.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
