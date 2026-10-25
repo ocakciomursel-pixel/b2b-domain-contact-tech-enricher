@@ -3,7 +3,7 @@
   "name": "smartrecruiters-enterprise-job-opening-scraper",
   "title": "SmartRecruiters Enterprise Company Job Board & Hiring Spy",
   "description": "Enterprise B2B sales intent & recruiting tool: queries SmartRecruiters public posting APIs to extract corporate job openings, locations, and departments.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
