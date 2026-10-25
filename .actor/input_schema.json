@@ -1,0 +1,30 @@
+{
+  "title": "WordPress.org Theme Directory, Downloads & Studio Lead Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Theme Search Keywords",
+      "type": "array",
+      "description": "Keywords to search WordPress themes for (e.g. [\"ecommerce\", \"minimal\", \"agency\"]).",
+      "editor": "stringList",
+      "default": [
+        "ecommerce"
+      ],
+      "prefill": [
+        "ecommerce"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
