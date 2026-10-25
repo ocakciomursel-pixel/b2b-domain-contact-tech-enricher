@@ -1,0 +1,30 @@
+{
+  "title": "Website Response Time (TTFB), HTML Payload & Script Bloat Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "urls": {
+      "title": "Target URLs",
+      "type": "array",
+      "description": "URLs to measure response time and asset counts for.",
+      "editor": "stringList",
+      "default": [
+        "https://apify.com"
+      ],
+      "prefill": [
+        "https://apify.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "urls"
+  ]
+}
