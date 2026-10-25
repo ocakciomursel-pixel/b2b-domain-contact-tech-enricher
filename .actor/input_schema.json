@@ -1,0 +1,32 @@
+{
+  "title": "360° DTC E-Commerce Brand Dossier (Contacts + Ads + Payments) Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "E-Commerce Store Domains",
+      "type": "array",
+      "description": "DTC or retail store domains to generate 360° dossiers for.",
+      "editor": "stringList",
+      "default": [
+        "allbirds.com",
+        "gymshark.com"
+      ],
+      "prefill": [
+        "allbirds.com",
+        "gymshark.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}

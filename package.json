@@ -1,0 +1,17 @@
+{
+  "name": "master-360-ecommerce-dtc-brand-intelligence-dossier",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "All-in-one e-commerce agency & investor due-diligence engine: combines contact extraction, paid ad pixel verification, payment gateway detection, and robots.txt sitemaps.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
