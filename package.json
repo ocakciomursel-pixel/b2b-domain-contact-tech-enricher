@@ -1,0 +1,17 @@
+{
+  "name": "b2b-contact-page-form-field-mailto-extractor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "High-precision B2B contact discovery: checks homepage and contact paths to extract direct email addresses, phone links, and form action URLs.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

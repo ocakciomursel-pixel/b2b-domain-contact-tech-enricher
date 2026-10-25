@@ -1,0 +1,30 @@
+{
+  "title": "B2B Contact Page, Mailto, Phone & Support Portal Extractor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Company Domains",
+      "type": "array",
+      "description": "Domains to extract contact page details from.",
+      "editor": "stringList",
+      "default": [
+        "apify.com"
+      ],
+      "prefill": [
+        "apify.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
