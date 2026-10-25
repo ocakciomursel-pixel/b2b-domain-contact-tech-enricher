@@ -3,7 +3,7 @@
   "name": "openfda-medical-device-510k-recall-tracker",
   "title": "OpenFDA Medical Device 510(k) Clearance & Applicant Lead Spy",
   "description": "MedTech B2B sales & regulatory intelligence: queries OpenFDA 510(k) clearances to extract medical device manufacturers, applicant contact details, addresses, and FDA clearance dates.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
