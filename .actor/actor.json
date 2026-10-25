@@ -3,7 +3,7 @@
   "name": "arbeitnow-europe-visa-sponsorship-job-scraper",
   "title": "European Tech Job, Remote Work & Visa Sponsorship Lead Scrap",
   "description": "European recruitment & HR market intelligence: extracts active tech job listings, company names, locations, remote status, and tags across Europe.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
