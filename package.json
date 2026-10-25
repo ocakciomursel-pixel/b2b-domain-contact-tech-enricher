@@ -1,0 +1,17 @@
+{
+  "name": "bulk-domain-to-company-name-social-handle-resolver",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Account enrichment utility: extracts official social media profile handles and canonical brand names from company domains.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
