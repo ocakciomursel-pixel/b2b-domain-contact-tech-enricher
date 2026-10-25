@@ -1,0 +1,32 @@
+{
+  "title": "360° Cybersecurity Attack Surface, DNS, SSL & Security.txt Dossier Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Target Domains to Audit",
+      "type": "array",
+      "description": "Domains for 360° cybersecurity attack surface analysis.",
+      "editor": "stringList",
+      "default": [
+        "cloudflare.com",
+        "apify.com"
+      ],
+      "prefill": [
+        "cloudflare.com",
+        "apify.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
