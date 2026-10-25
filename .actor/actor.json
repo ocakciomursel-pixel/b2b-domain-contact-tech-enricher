@@ -3,7 +3,7 @@
   "name": "openalex-academic-author-hindex-citation-lead-miner",
   "title": "OpenAlex Scientific Author H-Index, Citation & Affiliation M",
   "description": "Deep-tech recruiting & KOL (Key Opinion Leader) identification: extracts researcher H-index impact metrics and current institutional affiliations.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
