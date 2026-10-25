@@ -1,0 +1,17 @@
+{
+  "name": "openalex-academic-author-hindex-citation-lead-miner",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Deep-tech recruiting & KOL (Key Opinion Leader) identification: extracts researcher H-index impact metrics and current institutional affiliations.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "OpenAlex Scientific Author H-Index, Citation & Affiliation Miner Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Researcher Names",
+      "type": "array",
+      "description": "Full names of researchers or authors (e.g. [\"Yoshua Bengio\", \"Jennifer Doudna\"]).",
+      "editor": "stringList",
+      "default": [
+        "Jennifer Doudna"
+      ],
+      "prefill": [
+        "Jennifer Doudna"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
