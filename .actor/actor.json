@@ -1,0 +1,58 @@
+{
+  "actorSpecification": 1,
+  "name": "restaurant-pos-toast-opentable-doordash-link-detector",
+  "title": "Restaurant POS (Toast/Square), OpenTable & Delivery Detector",
+  "description": "Hospitality SaaS & restaurant marketing agency #1 lead qualifier: detects POS ordering links, reservation widgets, and contact details on restaurant sites.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Restaurant POS (Toast/Square), OpenTable & Delivery Detector",
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "target": {
+            "type": "string",
+            "title": "Target Query"
+          },
+          "extractedAt": {
+            "type": "string",
+            "title": "Extracted Timestamp"
+          }
+        }
+      },
+      "views": {
+        "overview": {
+          "title": "Extracted Intelligence",
+          "transformation": {
+            "fields": [
+              "target",
+              "extractedAt"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "target": {
+                "label": "Target",
+                "format": "text"
+              },
+              "extractedAt": {
+                "label": "Extracted At",
+                "format": "text"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
