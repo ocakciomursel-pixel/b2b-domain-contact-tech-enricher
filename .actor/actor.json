@@ -3,7 +3,7 @@
   "name": "wikimedia-pageviews-trending-topic-brand-demand-spy",
   "title": "Wikipedia Daily Pageviews & Brand Public Attention Tracker",
   "description": "Alternative data & brand demand intelligence: queries the official Wikimedia Pageviews REST API to measure daily attention volume for any entity.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
