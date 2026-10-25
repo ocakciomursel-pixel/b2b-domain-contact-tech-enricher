@@ -3,7 +3,7 @@
   "name": "domain-parked-expired-for-sale-squatter-detector",
   "title": "Bulk Active Website vs Parked / For-Sale / Dead Domain Check",
   "description": "Lead list pre-cleaning & domain acquisition tool: detects whether domains host live websites or are parked/for-sale/unreachable.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
