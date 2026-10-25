@@ -3,7 +3,7 @@
   "name": "bitcoin-mempool-fee-hashrate-network-telemetry",
   "title": "Bitcoin Mempool Fee Rate, Block Height & Network Telemetry",
   "description": "Bitcoin infrastructure & treasury automation feed: retrieves real-time sat/vB fee estimates and block height telemetry from Mempool.space.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
