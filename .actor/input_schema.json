@@ -1,0 +1,30 @@
+{
+  "title": "Auto Dealership Website Contact, Chat & Financing Widget Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Auto Dealership Domains",
+      "type": "array",
+      "description": "Domains of car dealerships.",
+      "editor": "stringList",
+      "default": [
+        "carmax.com"
+      ],
+      "prefill": [
+        "carmax.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
