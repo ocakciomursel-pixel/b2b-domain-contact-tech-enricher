@@ -3,7 +3,7 @@
   "name": "zenodo-scientific-dataset-research-software-miner",
   "title": "CERN Zenodo Scientific Dataset, Software & Grant Output Mine",
   "description": "Open-science & R&D dataset intelligence: queries the official CERN Zenodo REST API for published datasets, research software, authors, and DOIs.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
