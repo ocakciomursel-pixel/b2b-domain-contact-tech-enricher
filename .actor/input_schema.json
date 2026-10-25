@@ -10,6 +10,9 @@
       "editor": "stringList",
       "prefill": [
         "https://www.marriott.com"
+      ],
+      "default": [
+        "https://www.marriott.com"
       ]
     }
   },
