@@ -3,7 +3,7 @@
   "name": "vscode-marketplace-extension-publisher-spy",
   "title": "VS Code & OpenVSX Extension Publisher, Downloads & Repo Spy",
   "description": "Developer tools & IDE market intelligence: extracts extension install counts, ratings, publisher identities, and source code repositories from the OpenVSX registry.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
