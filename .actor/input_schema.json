@@ -11,6 +11,10 @@
       "prefill": [
         "techcrunch.com",
         "wordpress.org"
+      ],
+      "default": [
+        "techcrunch.com",
+        "wordpress.org"
       ]
     }
   },
