@@ -1,0 +1,17 @@
+{
+  "name": "us-irs-990-nonprofit-foundation-revenue-officer-miner",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Nonprofit B2B sales, fundraising & grant intelligence: queries the ProPublica Nonprofit Explorer API for IRS Form 990 organizations.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

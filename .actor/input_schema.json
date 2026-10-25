@@ -1,0 +1,30 @@
+{
+  "title": "US IRS Form 990 Nonprofit, Foundation & Grantmaker Directory Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Nonprofit Name or Keyword",
+      "type": "array",
+      "description": "Keywords to search US nonprofits (e.g. [\"medical research\", \"education foundation\"]).",
+      "editor": "stringList",
+      "default": [
+        "medical research"
+      ],
+      "prefill": [
+        "medical research"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
