@@ -3,7 +3,7 @@
   "name": "sec-insider-trading-form4-institutional-13f-tracker",
   "title": "SEC EDGAR Corporate Filing, 10-K, 8-K & Form 4 Submission Sp",
   "description": "Institutional equity research & compliance monitor: fetches official SEC EDGAR submission histories and corporate metadata.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
