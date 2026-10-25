@@ -1,0 +1,30 @@
+{
+  "title": "OpenAlex Global Science Funder, Grant Agency & Foundation Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Funder or Grant Agency Keywords",
+      "type": "array",
+      "description": "Search keywords for research funders (e.g. [\"National Science\", \"Wellcome\", \"Horizon\"]).",
+      "editor": "stringList",
+      "default": [
+        "Wellcome"
+      ],
+      "prefill": [
+        "Wellcome"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
