@@ -1,0 +1,30 @@
+{
+  "title": "GLEIF Global LEI Corporate Entity, BIC & Legal Address Lookup Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "companies": {
+      "title": "Legal Company Names",
+      "type": "array",
+      "description": "Company names to search in GLEIF (e.g. [\"Siemens\", \"Barclays\", \"Toyota\"]).",
+      "editor": "stringList",
+      "default": [
+        "Siemens"
+      ],
+      "prefill": [
+        "Siemens"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "companies"
+  ]
+}
