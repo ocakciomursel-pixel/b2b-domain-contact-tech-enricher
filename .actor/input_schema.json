@@ -1,0 +1,30 @@
+{
+  "title": "CRM App Ecosystem & RevOps Integration Partner Enricher Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "B2B SaaS Domains",
+      "type": "array",
+      "description": "SaaS domains to inspect for CRM integrations and partner contacts.",
+      "editor": "stringList",
+      "default": [
+        "aircall.io"
+      ],
+      "prefill": [
+        "aircall.io"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}

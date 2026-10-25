@@ -1,0 +1,17 @@
+{
+  "name": "hubspot-salesforce-crm-app-partner-extractor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "RevOps & B2B SaaS alliance intelligence: identifies CRM integration mentions, partner program links, and B2B contact emails on SaaS websites.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
