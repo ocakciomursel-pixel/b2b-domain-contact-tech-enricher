@@ -11,6 +11,10 @@
       "prefill": [
         "stripe",
         "discord"
+      ],
+      "default": [
+        "stripe",
+        "discord"
       ]
     },
     "keywordFilter": {
