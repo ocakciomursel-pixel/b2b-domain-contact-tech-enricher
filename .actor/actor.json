@@ -3,7 +3,7 @@
   "name": "hackernews-tech-launch-lead-monitor",
   "title": "Hacker News Show HN, Startup Launch & Tech Trend Intelligenc",
   "description": "Monitor Hacker News (Show HN, Ask HN, and top tech stories) by keyword to discover newly launched startups, founder handles, outbound domains, and community traction.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -16,7 +16,7 @@
       "title": "Hacker News Show HN, Startup Launch & Tech Trend Intelligence (MCP Ready)",
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "transformation": {
             "fields": [
               "title",

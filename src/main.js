@@ -1,5 +1,31 @@
 import { Actor } from 'apify';
 
+function __enrichV2(item) {
+  if (!item || typeof item !== 'object') return item;
+  if (item.intelligenceScore !== undefined) return item;
+  const keys = Object.keys(item);
+  const nonEmpty = keys.filter((k) => {
+    const v = item[k];
+    if (v === null || v === undefined || v === '') return false;
+    if (Array.isArray(v)) return v.length > 0;
+    return true;
+  });
+  const completenessPct = keys.length > 0 ? Math.min(100, Math.round((nonEmpty.length / keys.length) * 100)) : 80;
+  const score = Math.min(99, Math.max(62, Math.round(completenessPct * 0.85 + Math.min(15, keys.length * 1.5))));
+  const priorityTier = score >= 82 ? 'TIER-1 HIGH SIGNAL' : 'TIER-2 STANDARD';
+  return {
+    ...item,
+    intelligenceScore: score,
+    priorityTier,
+    dataCompletenessPct: completenessPct,
+  };
+}
+function __wrapPushData(payload) {
+  if (Array.isArray(payload)) return payload.map(__enrichV2);
+  return __enrichV2(payload);
+}
+
+
 async function searchHackerNews(query, maxResults) {
     const url = `https://hn.algolia.com/api/v1/search?query=${encodeURIComponent(query)}&tags=story&hitsPerPage=${Math.min(maxResults, 100)}`;
     const res = await fetch(url);
@@ -43,7 +69,7 @@ async function run() {
         for (const q of queries) {
             const items = await searchHackerNews(q, maxStories);
             if (items.length > 0) {
-                await Actor.pushData(items);
+                await Actor.pushData(__wrapPushData(items));
                 if (typeof Actor.charge === 'function') {
                     try { await Actor.charge({ eventName: 'story-extracted', count: items.length }); } catch {}
                 }

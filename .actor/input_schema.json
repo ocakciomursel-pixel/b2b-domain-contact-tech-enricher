@@ -11,6 +11,10 @@
       "prefill": [
         "Show HN: AI",
         "MCP"
+      ],
+      "default": [
+        "Show HN: AI",
+        "MCP"
       ]
     },
     "maxStoriesPerQuery": {
