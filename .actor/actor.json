@@ -3,7 +3,7 @@
   "name": "website-internationalization-hreflang-localization-auditor",
   "title": "Website Hreflang, Multi-Language & Localization Readiness Sp",
   "description": "Translation agency & international SEO lead tool: extracts hreflang language-region tags, HTML lang attributes, and localization software footprints from any domain.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
