@@ -1,80 +1,107 @@
-﻿{
-    "actorSpecification":  1,
-    "name":  "b2b-domain-contact-tech-enricher",
-    "title":  "B2B Domain Contact, Email, Social \u0026 Tech Stack Enricher",
-    "description":  "High-speed B2B lead enrichment Actor: extracts verified business emails, phone numbers, social media profiles (LinkedIn, X, Instagram, YouTube, GitHub), and 20+ technology stack signatures from any list of company domains.",
-    "version":  "1.0.0",
-    "meta":  {
-                 "templateId":  "ts-crawlee-cheerio"
-             },
-    "input":  "./input_schema.json",
-    "dockerfile":  "./Dockerfile",
-    "storages":  {
-                     "dataset":  {
-                                     "actorSpecification":  1,
-                                     "title":  "Enriched B2B Company Profiles",
-                                     "views":  {
-                                                   "overview":  {
-                                                                    "title":  "Enriched Leads Overview",
-                                                                    "transformation":  {
-                                                                                           "fields":  [
-                                                                                                          "domain",
-                                                                                                          "companyName",
-                                                                                                          "emails",
-                                                                                                          "phones",
-                                                                                                          "linkedin",
-                                                                                                          "techStack",
-                                                                                                          "careersUrl",
-                                                                                                          "pricingUrl",
-                                                                                                          "statusCode"
-                                                                                                      ]
-                                                                                       },
-                                                                    "display":  {
-                                                                                    "component":  "table"
-                                                                                }
-                                                                }
-                                               },
-                                     "fields":  {
-                                                    "properties":  {
-                                                                       "title":  {
-                                                                                     "title":  "Website Title",
-                                                                                     "description":  "Extracted page title",
-                                                                                     "type":  "string"
-                                                                                 },
-                                                                       "domain":  {
-                                                                                      "title":  "Domain",
-                                                                                      "description":  "Company domain",
-                                                                                      "type":  "string"
-                                                                                  },
-                                                                       "techStack":  {
-                                                                                         "title":  "Tech Stack",
-                                                                                         "description":  "Detected technologies",
-                                                                                         "items":  {
-                                                                                                       "type":  "string"
-                                                                                                   },
-                                                                                         "type":  "array"
-                                                                                     },
-                                                                       "phones":  {
-                                                                                      "title":  "Phones",
-                                                                                      "description":  "Extracted phone numbers",
-                                                                                      "items":  {
-                                                                                                    "type":  "string"
-                                                                                                },
-                                                                                      "type":  "array"
-                                                                                  },
-                                                                       "emails":  {
-                                                                                      "title":  "Emails",
-                                                                                      "description":  "Extracted business emails",
-                                                                                      "items":  {
-                                                                                                    "type":  "string"
-                                                                                                },
-                                                                                      "type":  "array"
-                                                                                  }
-                                                                   },
-                                                    "type":  "object",
-                                                    "":  "http://json-schema.org/draft-07/schema#"
-                                                }
-                                 }
-                 },
-    "output":  "./output_schema.json"
+{
+  "actorSpecification": 1,
+  "name": "b2b-domain-contact-tech-enricher",
+  "title": "B2B Domain Contact, Email, DNS & Tech Stack Enricher",
+  "description": "Enterprise B2B lead enrichment Actor: extracts verified business emails, phone numbers, live MX/SPF/DMARC email provider intelligence, 38+ SaaS & Ad Pixel signatures, B2B Lead Scores (0-100), SaaS Spend Tiers, and personalized cold email icebreakers from any list of company domains.",
+  "version": "2.0.0",
+  "meta": {
+    "templateId": "ts-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "dockerfile": "./Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Enriched B2B Company Dossiers",
+      "views": {
+        "overview": {
+          "title": "Enriched Leads & Tech Intelligence",
+          "transformation": {
+            "fields": [
+              "domain",
+              "companyName",
+              "leadScore",
+              "estimatedSaaSSpendTier",
+              "emails",
+              "phones",
+              "emailProvider",
+              "hasSpf",
+              "hasDmarc",
+              "linkedin",
+              "twitter",
+              "adPixelsDetected",
+              "techStack",
+              "coldEmailIcebreaker",
+              "careersUrl",
+              "pricingUrl"
+            ]
+          },
+          "display": {
+            "component": "table"
+          }
+        }
+      },
+      "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "domain": {
+            "title": "Domain",
+            "description": "Company domain",
+            "type": "string"
+          },
+          "companyName": {
+            "title": "Company Name",
+            "description": "Extracted company or brand name",
+            "type": "string"
+          },
+          "leadScore": {
+            "title": "Lead Score (0-100)",
+            "description": "Composite B2B lead readiness score",
+            "type": "number"
+          },
+          "estimatedSaaSSpendTier": {
+            "title": "Est. SaaS Spend Tier",
+            "description": "Estimated monthly software/ad spend tier",
+            "type": "string"
+          },
+          "emails": {
+            "title": "Emails",
+            "description": "Extracted or MX-verified business emails",
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "phones": {
+            "title": "Phones",
+            "description": "Extracted phone numbers",
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "emailProvider": {
+            "title": "Email Infrastructure",
+            "description": "Detected MX mail provider (Google Workspace, Microsoft 365, etc.)",
+            "type": "string"
+          },
+          "adPixelsDetected": {
+            "title": "Active Ad Pixels",
+            "description": "Detected paid acquisition pixels",
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "techStack": {
+            "title": "Tech Stack",
+            "description": "Detected technologies",
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "coldEmailIcebreaker": {
+            "title": "Cold Email Icebreaker",
+            "description": "Personalized outreach opening line",
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "output": "./output_schema.json"
 }

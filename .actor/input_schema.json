@@ -1,14 +1,15 @@
 {
-  "title": "B2B Website Contact & Tech Stack Enricher Input",
+  "title": "B2B Website Contact, DNS & Tech Stack Enricher Input",
   "type": "object",
   "schemaVersion": 1,
   "properties": {
     "domains": {
       "title": "Company Domains or URLs",
       "type": "array",
-      "description": "List of company domains or URLs to enrich (e.g., ['stripe.com', 'https://linear.app']).",
+      "description": "List of company domains or URLs to enrich (e.g., ['apify.com', 'shopify.com', 'linear.app']).",
       "editor": "stringList",
-      "prefill": ["apify.com", "ycombinator.com"]
+      "default": ["apify.com", "shopify.com", "linear.app"],
+      "prefill": ["apify.com", "shopify.com", "linear.app"]
     },
     "crawlContactPages": {
       "title": "Follow Contact / About / Legal Pages",
