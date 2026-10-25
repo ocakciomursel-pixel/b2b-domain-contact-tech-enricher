@@ -1,0 +1,30 @@
+{
+  "title": "OpenFDA Pharmaceutical Drug Recall & Enforcement Report Tracker Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Drug or Manufacturer Keyword",
+      "type": "array",
+      "description": "Search keywords for drug enforcement recalls (e.g. [\"sterile\", \"tablet\"]).",
+      "editor": "stringList",
+      "default": [
+        "tablet"
+      ],
+      "prefill": [
+        "tablet"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
