@@ -3,7 +3,7 @@
   "name": "podcast-rss-host-sponsor-email-extractor",
   "title": "Podcast RSS Feed, Host Direct Email & Episode Lead Extractor",
   "description": "Find podcasts by niche keyword via Apple Podcasts API, parse their RSS XML feeds, and extract verified host/producer email addresses, episode counts, and website links.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -16,7 +16,7 @@
       "title": "Podcast RSS Feed, Host Direct Email & Episode Lead Extractor (MCP Ready)",
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "transformation": {
             "fields": [
               "podcastTitle",

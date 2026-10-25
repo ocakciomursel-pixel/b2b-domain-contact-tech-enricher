@@ -10,6 +10,9 @@
       "editor": "stringList",
       "prefill": [
         "saas marketing"
+      ],
+      "default": [
+        "saas marketing"
       ]
     },
     "maxPodcastsPerKeyword": {
