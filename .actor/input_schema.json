@@ -1,0 +1,30 @@
+{
+  "title": "360° Crypto & DeFi Token Dossier (DEX Pairs + Fees + Sentiment) Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "tokens": {
+      "title": "Token Symbols or Names",
+      "type": "array",
+      "description": "Crypto token symbols (e.g. [\"SOL\", \"AAVE\", \"UNI\"]).",
+      "editor": "stringList",
+      "default": [
+        "AAVE"
+      ],
+      "prefill": [
+        "AAVE"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "tokens"
+  ]
+}
