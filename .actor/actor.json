@@ -3,7 +3,7 @@
   "name": "reddit-community-pain-point-trend-miner",
   "title": "Reddit Subreddit, Buyer Intent & Pain-Point Lead Miner",
   "description": "Mine Reddit subreddits for high-intent buyer questions, software alternatives discussions, pain points, upvote velocity, and engagement signals.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -16,7 +16,7 @@
       "title": "Reddit Subreddit, Buyer Intent & Pain-Point Lead Miner (MCP Ready)",
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "transformation": {
             "fields": [
               "subreddit",

@@ -11,6 +11,10 @@
       "prefill": [
         "saas",
         "webdev"
+      ],
+      "default": [
+        "saas",
+        "webdev"
       ]
     },
     "maxPostsPerSubreddit": {
