@@ -1,0 +1,17 @@
+{
+  "name": "master-360-b2b-company-deep-dossier-enricher",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Flagship All-in-One B2B Master Enricher: executes parallel webpage parsing, DNS DoH resolution, ad pixel detection, and sales stack fingerprinting in one unified record.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
