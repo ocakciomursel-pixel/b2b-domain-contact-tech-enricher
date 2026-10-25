@@ -1,0 +1,17 @@
+{
+  "name": "website-accessibility-wcag-aria-alt-tag-auditor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Web agency & ADA/WCAG compliance consultancy lead magnet: scans target URLs for accessibility gaps and overlay widgets.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

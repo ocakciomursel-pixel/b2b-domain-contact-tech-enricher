@@ -1,0 +1,30 @@
+{
+  "title": "WCAG Accessibility, Missing Image Alt & ARIA Compliance Auditor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "urls": {
+      "title": "Webpage URLs to Audit",
+      "type": "array",
+      "description": "URLs to check for WCAG and HTML accessibility signals.",
+      "editor": "stringList",
+      "default": [
+        "https://apify.com"
+      ],
+      "prefill": [
+        "https://apify.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "urls"
+  ]
+}
