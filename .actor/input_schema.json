@@ -1,0 +1,30 @@
+{
+  "title": "OpenAlex Global University & Research Institution Citation Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Institution or University Names",
+      "type": "array",
+      "description": "Institution search terms (e.g. [\"MIT\", \"ETH Zurich\", \"Oxford\"]).",
+      "editor": "stringList",
+      "default": [
+        "ETH Zurich"
+      ],
+      "prefill": [
+        "ETH Zurich"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
