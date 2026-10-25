@@ -3,7 +3,7 @@
   "name": "cisa-known-exploited-vulnerabilities-kev-catalog",
   "title": "US CISA Known Exploited Vulnerabilities (KEV) Catalog Monito",
   "description": "Enterprise SecOps & patch management feed: queries the official CISA KEV catalog for actively exploited vulnerabilities and remediation deadlines.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
