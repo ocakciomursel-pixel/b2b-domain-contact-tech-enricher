@@ -1,15 +1,22 @@
 {
-  "title": "AI & LLM Website to Clean Markdown & RAG Chunks Input",
+  "title": "Website to Clean Markdown, RAG Chunks & llms.txt Input",
   "type": "object",
   "schemaVersion": 1,
   "properties": {
     "urls": {
       "title": "Start URLs",
       "type": "array",
-      "description": "List of webpage URLs to convert into clean Markdown and RAG-ready chunks.",
+      "description": "List of webpage URLs to convert into clean Markdown, section-aware RAG chunks, and llms.txt entries.",
       "editor": "stringList",
+      "default": [
+        "https://docs.apify.com/platform/actors",
+        "https://docs.apify.com/sdk/js",
+        "https://crawlee.dev"
+      ],
       "prefill": [
-        "https://docs.apify.com/platform/actors"
+        "https://docs.apify.com/platform/actors",
+        "https://docs.apify.com/sdk/js",
+        "https://crawlee.dev"
       ]
     },
     "crawlSubpages": {

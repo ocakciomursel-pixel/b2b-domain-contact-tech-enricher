@@ -1,9 +1,9 @@
 {
   "actorSpecification": 1,
   "name": "ai-ready-website-to-markdown-rag-crawler",
-  "title": "AI & LLM Website to Clean Markdown, RAG Chunks & Metadata",
-  "description": "Convert any webpage or documentation site into clean LLM-ready Markdown, overlapping RAG text chunks with estimated token counts, and JSON-LD/OpenGraph metadata.",
-  "version": "1.0",
+  "title": "Website to Clean Markdown, Vector RAG Chunks & llms.txt",
+  "description": "Convert any webpage or documentation site into clean structured Markdown, section-aware overlapping RAG text chunks with estimated token counts, H1-H3 outlines, quality scores, and ready-to-use llms.txt index entries.",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -13,17 +13,22 @@
   "storages": {
     "dataset": {
       "actorSpecification": 1,
-      "title": "LLM Markdown & RAG Chunks",
+      "title": "Clean Markdown & Vector RAG Chunks",
       "views": {
         "overview": {
-          "title": "Extracted Markdown & Chunks",
+          "title": "Extracted Markdown, Chunks & Quality Metrics",
           "transformation": {
             "fields": [
               "url",
               "title",
+              "contentQualityScore",
+              "readingTimeMinutes",
               "estimatedTokens",
               "chunksCount",
               "wordCount",
+              "codeBlocksCount",
+              "headingsOutline",
+              "llmsTxtEntry",
               "markdown",
               "chunks"
             ]
@@ -31,34 +36,18 @@
           "display": {
             "component": "table",
             "properties": {
-              "url": {
-                "label": "URL",
-                "format": "link"
-              },
-              "title": {
-                "label": "Title",
-                "format": "text"
-              },
-              "estimatedTokens": {
-                "label": "Est. Tokens",
-                "format": "number"
-              },
-              "chunksCount": {
-                "label": "RAG Chunks",
-                "format": "number"
-              },
-              "wordCount": {
-                "label": "Words",
-                "format": "number"
-              },
-              "markdown": {
-                "label": "Clean Markdown",
-                "format": "text"
-              },
-              "chunks": {
-                "label": "Chunks Array",
-                "format": "array"
-              }
+              "url": { "label": "URL", "format": "link" },
+              "title": { "label": "Title", "format": "text" },
+              "contentQualityScore": { "label": "Quality Score (0-100)", "format": "number" },
+              "readingTimeMinutes": { "label": "Read Time (min)", "format": "number" },
+              "estimatedTokens": { "label": "Est. Tokens", "format": "number" },
+              "chunksCount": { "label": "RAG Chunks", "format": "number" },
+              "wordCount": { "label": "Words", "format": "number" },
+              "codeBlocksCount": { "label": "Code Blocks", "format": "number" },
+              "headingsOutline": { "label": "H1-H3 Outline", "format": "array" },
+              "llmsTxtEntry": { "label": "llms.txt Entry", "format": "text" },
+              "markdown": { "label": "Clean Markdown", "format": "text" },
+              "chunks": { "label": "Chunks Array", "format": "array" }
             }
           }
         }
@@ -67,41 +56,18 @@
         "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
         "properties": {
-          "url": {
-            "type": "string",
-            "title": "url",
-            "description": "Extracted url"
-          },
-          "title": {
-            "type": "string",
-            "title": "title",
-            "description": "Extracted title"
-          },
-          "wordCount": {
-            "type": "number",
-            "title": "wordCount",
-            "description": "Extracted wordCount"
-          },
-          "estimatedTokens": {
-            "type": "number",
-            "title": "estimatedTokens",
-            "description": "Extracted estimatedTokens"
-          },
-          "chunksCount": {
-            "type": "number",
-            "title": "chunksCount",
-            "description": "Extracted chunksCount"
-          },
-          "markdown": {
-            "type": "string",
-            "title": "markdown",
-            "description": "Extracted markdown"
-          },
-          "chunks": {
-            "type": "array",
-            "title": "chunks",
-            "description": "Extracted chunks"
-          }
+          "url": { "type": "string", "title": "url", "description": "Extracted url" },
+          "title": { "type": "string", "title": "title", "description": "Extracted title" },
+          "contentQualityScore": { "type": "number", "title": "contentQualityScore", "description": "Content Quality Score (0-100)" },
+          "readingTimeMinutes": { "type": "number", "title": "readingTimeMinutes", "description": "Estimated reading time in minutes" },
+          "wordCount": { "type": "number", "title": "wordCount", "description": "Extracted wordCount" },
+          "estimatedTokens": { "type": "number", "title": "estimatedTokens", "description": "Extracted estimatedTokens" },
+          "chunksCount": { "type": "number", "title": "chunksCount", "description": "Extracted chunksCount" },
+          "codeBlocksCount": { "type": "number", "title": "codeBlocksCount", "description": "Number of code blocks" },
+          "headingsOutline": { "type": "array", "title": "headingsOutline", "description": "H1-H3 document outline" },
+          "llmsTxtEntry": { "type": "string", "title": "llmsTxtEntry", "description": "Formatted llms.txt line" },
+          "markdown": { "type": "string", "title": "markdown", "description": "Extracted markdown" },
+          "chunks": { "type": "array", "title": "chunks", "description": "Extracted chunks" }
         }
       }
     }
