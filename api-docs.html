@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucacelli B2B & Web Intelligence Micro-API Gateway — OpenAPI 3.0 Explorer</title>
+  <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5.17.14/swagger-ui.css" />
+  <style>
+    body { margin: 0; background: #fafafa; font-family: system-ui, -apple-system, sans-serif; }
+    .topbar-custom { background: #090d16; color: #fff; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; }
+    .topbar-custom a { color: #38bdf8; text-decoration: none; font-weight: 600; margin-left: 18px; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="topbar-custom">
+    <div><strong>Lucacelli 20-Endpoint B2B & Web Intelligence Micro-API Gateway (V2.0)</strong></div>
+    <div>
+      <a href="./index.html">← Back to Storefront</a>
+      <a href="./openapi.json" target="_blank">Raw OpenAPI 3.0 JSON</a>
+      <a href="https://apify.com/lucacelli" target="_blank">200+ Cloud Diagnostics CLI Tools ↗</a>
+    </div>
+  </div>
+  
+  <div style="background:#111827;color:#fff;padding:18px 24px;border-bottom:1px solid #1e293b;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+    <div>
+      <strong style="color:#38bdf8;font-size:15px;">Instant API Key Subscriptions (Auto-Provisioned via Polar):</strong>
+      <span style="color:#94a3b8;font-size:13px;margin-left:8px;">Includes instant API License Key & 20 Production Endpoints</span>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <a href="https://buy.polar.sh/polar_cl_CEeOEPWzLmBO44wiRwDKeRqEiVMkg9UZ2KDcg2YPybU" target="_blank" style="background:#0284c7;color:#fff;padding:8px 14px;border-radius:6px;text-decoration:none;font-weight:700;font-size:13px;">Subscribe PRO ($9.99/mo) →</a>
+      <a href="https://buy.polar.sh/polar_cl_vpoXSY0jLO7kbo2UTWbllEz9rhnB1iUjQbg5b1LAk55" target="_blank" style="background:#16a34a;color:#fff;padding:8px 14px;border-radius:6px;text-decoration:none;font-weight:700;font-size:13px;">Subscribe ULTRA ($29.99/mo) →</a>
+      <a href="https://buy.polar.sh/polar_cl_FJWZW2txbghv4VMmVKyzybdtnFO2y5KjbofCb3IKOL7" target="_blank" style="background:#7c3aed;color:#fff;padding:8px 14px;border-radius:6px;text-decoration:none;font-weight:700;font-size:13px;">Subscribe MEGA ($99/mo) →</a>
+    </div>
+  </div>
+  <div id="swagger-ui"></div>
+  <script src="https://unpkg.com/swagger-ui-dist@5.17.14/swagger-ui-bundle.js"></script>
+  <script>
+    window.onload = () => {
+      window.ui = SwaggerUIBundle({
+        url: './openapi.json',
+        dom_id: '#swagger-ui',
+        deepLinking: true,
+      });
+    };
+  </script>
+</body>
+</html>

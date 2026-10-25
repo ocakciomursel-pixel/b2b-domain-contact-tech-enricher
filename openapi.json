@@ -1,0 +1,201 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Lucacelli Enterprise B2B, E-Commerce, SEO & Developer Intelligence API",
+    "version": "2.0.0",
+    "description": "20-Endpoint Real-Time B2B Domain Enrichment, DNS MX/SPF/DMARC Security Audit, Shopify Product & Ad Pixel Spy, Clean Markdown RAG Chunker, 45-Point Technical SEO Auditor, and GitHub Developer Sourcing API."
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Live Production Cloud Cluster (Zero Maintenance)"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~b2b-domain-contact-tech-enricher/run-sync-get-dataset-items": {
+      "post": {
+        "summary": "1. Enrich Company Domains (Emails, Phones, DNS MX/SPF/DMARC, 38+ SaaS & Ad Pixels, Lead Score)",
+        "operationId": "enrichB2BDomains",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "domains": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "example": [
+                      "apify.com",
+                      "shopify.com",
+                      "linear.app"
+                    ]
+                  },
+                  "crawlContactPages": {
+                    "type": "boolean",
+                    "default": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Array of enriched B2B company dossiers with leadScore and coldEmailIcebreaker."
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~shopify-store-product-contact-spy/run-sync-get-dataset-items": {
+      "post": {
+        "summary": "2. Spy on Shopify Stores (Products, Variants, SKUs, Discount %, Stock, Apps & Ad Pixels)",
+        "operationId": "spyShopifyStores",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "stores": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "example": [
+                      "allbirds.com",
+                      "gymshark.com"
+                    ]
+                  },
+                  "maxProductsPerStore": {
+                    "type": "integer",
+                    "default": 15
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Array of extracted Shopify products, discount percentages, and merchant contacts."
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~ai-ready-website-to-markdown-rag-crawler/run-sync-get-dataset-items": {
+      "post": {
+        "summary": "3. Convert Webpages to Clean Markdown, Vector RAG Chunks & llms.txt Entries",
+        "operationId": "convertWebpageToMarkdownRag",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "urls": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "example": [
+                      "https://docs.apify.com/platform/actors",
+                      "https://crawlee.dev"
+                    ]
+                  },
+                  "chunkSizeChars": {
+                    "type": "integer",
+                    "default": 1200
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Clean Markdown, H1-H3 outline, quality score, and overlapping RAG chunks."
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~seo-technical-audit-broken-link-schema-analyzer/run-sync-get-dataset-items": {
+      "post": {
+        "summary": "4. Run 45-Point Technical SEO, Broken Link, Security Header & Schema.org Audit",
+        "operationId": "auditTechnicalSeo",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "urls": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "example": [
+                      "https://apify.com",
+                      "https://cloudflare.com"
+                    ]
+                  },
+                  "checkBrokenLinks": {
+                    "type": "boolean",
+                    "default": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SEO Score (0-100), Letter Grade (A+ to D), broken links, and security header audit."
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~github-developer-recruiter-lead-enricher/run-sync-get-dataset-items": {
+      "post": {
+        "summary": "5. Enrich GitHub Developers & Contributors (Commit Emails, Top Languages, Candidate Score)",
+        "operationId": "enrichGithubDevelopers",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "repositories": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "example": [
+                      "apify/crawlee"
+                    ]
+                  },
+                  "maxDevelopersPerRepo": {
+                    "type": "integer",
+                    "default": 6
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Enriched developer leads with candidateScore, seniorityTier, and outreach hook."
+          }
+        }
+      }
+    }
+  }
+}
