@@ -1,0 +1,32 @@
+{
+  "title": "Fintech Payment Gateway & Billing Stack Detector Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Merchant or SaaS Domains",
+      "type": "array",
+      "description": "Domains to scan for payment processors.",
+      "editor": "stringList",
+      "default": [
+        "apify.com",
+        "shopify.com"
+      ],
+      "prefill": [
+        "apify.com",
+        "shopify.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
