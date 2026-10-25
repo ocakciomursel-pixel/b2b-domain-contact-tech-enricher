@@ -10,6 +10,9 @@
       "editor": "stringList",
       "prefill": [
         "semaglutide"
+      ],
+      "default": [
+        "semaglutide"
       ]
     },
     "maxStudiesPerQuery": {
