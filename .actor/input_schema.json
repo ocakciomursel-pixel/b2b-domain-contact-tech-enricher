@@ -1,15 +1,22 @@
 {
-  "title": "Technical SEO, Broken Link & Schema.org Auditor Input",
+  "title": "Technical SEO, Broken Link, Security & Schema.org Auditor Input",
   "type": "object",
   "schemaVersion": 1,
   "properties": {
     "urls": {
       "title": "URLs to Audit",
       "type": "array",
-      "description": "List of webpage URLs to run the technical SEO and broken link audit on.",
+      "description": "List of webpage URLs to run the 45-point technical SEO, security header, and broken link audit on.",
       "editor": "stringList",
+      "default": [
+        "https://apify.com",
+        "https://news.ycombinator.com",
+        "https://cloudflare.com"
+      ],
       "prefill": [
-        "https://apify.com"
+        "https://apify.com",
+        "https://news.ycombinator.com",
+        "https://cloudflare.com"
       ]
     },
     "checkBrokenLinks": {
@@ -22,7 +29,7 @@
       "title": "Max Links to Verify Per Page",
       "type": "integer",
       "description": "Maximum number of links per page to test for HTTP 4xx/5xx status.",
-      "default": 15,
+      "default": 10,
       "minimum": 0,
       "maximum": 100
     }

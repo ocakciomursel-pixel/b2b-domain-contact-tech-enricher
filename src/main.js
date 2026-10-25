@@ -10,16 +10,21 @@ async function fetchTimed(url, timeoutMs = 15000, method = 'GET') {
             method,
             signal: controller.signal,
             headers: {
-                'User-Agent': 'Mozilla/5.0 (compatible; Technical-SEO-Auditor/1.0; +https://apify.com)',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
                 'Accept': 'text/html,application/xhtml+xml,*/*;q=0.8',
             },
         });
         const text = method === 'GET' ? await res.text() : '';
+        const headers = {};
+        res.headers.forEach((v, k) => {
+            headers[k.toLowerCase()] = v;
+        });
         return {
             ok: res.ok,
             status: res.status,
             responseTimeMs: Date.now() - start,
             finalUrl: res.url || url,
+            headers,
             text,
         };
     } catch (err) {
@@ -28,6 +33,7 @@ async function fetchTimed(url, timeoutMs = 15000, method = 'GET') {
             status: 0,
             responseTimeMs: Date.now() - start,
             finalUrl: url,
+            headers: {},
             text: '',
             error: err.message,
         };
@@ -36,15 +42,30 @@ async function fetchTimed(url, timeoutMs = 15000, method = 'GET') {
     }
 }
 
+function computeGrade(score) {
+    if (score >= 92) return 'A+';
+    if (score >= 82) return 'A';
+    if (score >= 70) return 'B';
+    if (score >= 55) return 'C';
+    return 'D';
+}
+
 async function auditUrl(rawUrl, options) {
     const normalized = /^https?:\/\//i.test(rawUrl) ? rawUrl : `https://${rawUrl}`;
-    const res = await fetchTimed(normalized, 15000, 'GET');
+    const parsedOrigin = new URL(normalized).origin;
+
+    const [res, robotsRes, llmsRes] = await Promise.all([
+        fetchTimed(normalized, 15000, 'GET'),
+        fetchTimed(`${parsedOrigin}/robots.txt`, 6000, 'GET'),
+        fetchTimed(`${parsedOrigin}/llms.txt`, 6000, 'GET'),
+    ]);
 
     if (!res.ok || !res.text) {
         return {
             url: normalized,
             reachable: false,
             seoScore: 0,
+            seoGrade: 'F',
             statusCode: res.status,
             responseTimeMs: res.responseTimeMs,
             issues: [`CRITICAL: Page unreachable or returned HTTP ${res.status}`],
@@ -99,6 +120,9 @@ async function auditUrl(rawUrl, options) {
         const t = $(el).text().replace(/\s+/g, ' ').trim();
         if (t) h1s.push(t);
     });
+    const h2Count = $('h2').length;
+    const h3Count = $('h3').length;
+
     if (h1s.length === 0) {
         issues.push('HIGH: Missing H1 heading on page');
         score -= 12;
@@ -123,6 +147,7 @@ async function auditUrl(rawUrl, options) {
 
     const ogTitle = $('meta[property="og:title"]').attr('content') || null;
     const ogImage = $('meta[property="og:image"]').attr('content') || null;
+    const twitterCard = $('meta[name="twitter:card"]').attr('content') || null;
     if (!ogTitle || !ogImage) {
         issues.push('LOW: Incomplete OpenGraph tags (og:title or og:image missing)');
         score -= 4;
@@ -132,9 +157,9 @@ async function auditUrl(rawUrl, options) {
     $('script[type="application/ld+json"]').each((_, el) => {
         try {
             const parsed = JSON.parse($(el).html() || '{}');
-            const items = Array.isArray(parsed) ? parsed : [parsed];
+            const items = Array.isArray(parsed) ? parsed : parsed['@graph'] ? parsed['@graph'] : [parsed];
             for (const item of items) {
-                if (item['@type']) schemaTypes.push(item['@type']);
+                if (item && item['@type']) schemaTypes.push(item['@type']);
             }
         } catch {
             issues.push('MEDIUM: Malformed JSON-LD Schema.org block detected');
@@ -146,29 +171,51 @@ async function auditUrl(rawUrl, options) {
         score -= 5;
     }
 
-    const links = new Set();
+    const hasRobotsTxt = robotsRes.ok && robotsRes.text.length > 10;
+    const hasLlmsTxt = llmsRes.ok && llmsRes.text.length > 20 && !/<html/i.test(llmsRes.text.slice(0, 100));
+    if (!hasRobotsTxt) {
+        issues.push('LOW: Missing or unreachable /robots.txt file');
+        score -= 3;
+    }
+
+    const hasHsts = Boolean(res.headers['strict-transport-security']);
+    const hasCsp = Boolean(res.headers['content-security-policy']);
+    const hasXFrameOptions = Boolean(res.headers['x-frame-options']);
+    if (!hasHsts) {
+        issues.push('LOW: Missing Strict-Transport-Security (HSTS) security header');
+        score -= 2;
+    }
+
+    const finalHost = new URL(res.finalUrl).hostname;
+    const internalLinks = new Set();
+    const externalLinks = new Set();
+
     $('a[href]').each((_, el) => {
         const href = $(el).attr('href');
         if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
         try {
-            const abs = new URL(href, res.finalUrl).toString();
-            if (/^https?:\/\//i.test(abs)) links.add(abs);
+            const absObj = new URL(href, res.finalUrl);
+            if (/^https?:$/i.test(absObj.protocol)) {
+                if (absObj.hostname === finalHost) internalLinks.add(absObj.toString());
+                else externalLinks.add(absObj.toString());
+            }
         } catch {
             // ignore
         }
     });
 
+    const allLinks = [...internalLinks, ...externalLinks];
     const brokenLinks = [];
     if (options.checkBrokenLinks !== false && options.maxLinksToVerify > 0) {
-        const sample = [...links].slice(0, options.maxLinksToVerify);
+        const sample = allLinks.slice(0, options.maxLinksToVerify);
         const checks = await Promise.all(
             sample.map(async (linkUrl) => {
-                const r = await fetchTimed(linkUrl, 8000, 'GET');
+                const r = await fetchTimed(linkUrl, 7000, 'GET');
                 return { linkUrl, status: r.status, ok: r.ok };
             })
         );
         for (const c of checks) {
-            if (c.status >= 400 || c.status === 0) {
+            if ((c.status >= 400 && c.status !== 403 && c.status !== 429) || c.status === 0) {
                 brokenLinks.push({ url: c.linkUrl, statusCode: c.status });
             }
         }
@@ -183,10 +230,22 @@ async function auditUrl(rawUrl, options) {
         score -= 6;
     }
 
+    const finalScore = Math.max(0, score);
+    const recommendedJsonLdSchema = schemaTypes.length === 0
+        ? {
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: title || finalHost,
+            description: metaDescription || undefined,
+            url: res.finalUrl,
+        }
+        : null;
+
     return {
         url: res.finalUrl,
         reachable: true,
-        seoScore: Math.max(0, score),
+        seoScore: finalScore,
+        seoGrade: computeGrade(finalScore),
         statusCode: res.status,
         responseTimeMs: res.responseTimeMs,
         title,
@@ -195,15 +254,26 @@ async function auditUrl(rawUrl, options) {
         metaDescriptionLength,
         canonical,
         robotsMeta,
+        hasRobotsTxt,
+        hasLlmsTxt,
+        hasHsts,
+        hasCsp,
+        hasXFrameOptions,
+        twitterCard,
         h1Count: h1s.length,
+        h2Count,
+        h3Count,
         h1Texts: h1s.slice(0, 5),
         totalImages,
         imagesMissingAlt,
         schemaTypes,
-        totalLinksFound: links.size,
+        internalLinksCount: internalLinks.size,
+        externalLinksCount: externalLinks.size,
+        totalLinksFound: allLinks.length,
         brokenLinksCount: brokenLinks.length,
         brokenLinks,
         issues,
+        recommendedJsonLdSchema,
         auditedAt: new Date().toISOString(),
     };
 }
@@ -222,9 +292,13 @@ async function run() {
         const input = (await Actor.getInput()) || {};
         const urls = Array.isArray(input.urls) && input.urls.length > 0
             ? input.urls
-            : ['https://apify.com'];
+            : [
+                'https://apify.com',
+                'https://news.ycombinator.com',
+                'https://cloudflare.com',
+            ];
         const checkBrokenLinks = input.checkBrokenLinks !== false;
-        const maxLinksToVerify = Math.min(Math.max(Number(input.maxLinksToVerify) || 15, 0), 100);
+        const maxLinksToVerify = Math.min(Math.max(Number(input.maxLinksToVerify) || 10, 0), 100);
 
         for (const url of urls) {
             const report = await auditUrl(url, { checkBrokenLinks, maxLinksToVerify });
