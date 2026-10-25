@@ -13,6 +13,26 @@ const SOCIAL_PATTERNS = {
     linkedin: /https?:\/\/(?:[a-z]{2,3}\.)?linkedin\.com\/(?:company|in)\/[A-Za-z0-9_-]+/gi,
 };
 
+const SHOPIFY_APP_SIGNATURES = [
+    { name: 'Meta Pixel', pattern: /connect\.facebook\.net|fbq\(/i },
+    { name: 'TikTok Pixel', pattern: /analytics\.tiktok\.com/i },
+    { name: 'Klaviyo', pattern: /klaviyo\.com|_learnq/i },
+    { name: 'Gorgias Support', pattern: /gorgias\.chat|gorgias\.io/i },
+    { name: 'Yotpo Reviews', pattern: /yotpo\.com/i },
+    { name: 'Judge.me Reviews', pattern: /judge\.me/i },
+    { name: 'Loox Reviews', pattern: /loox\.io/i },
+    { name: 'Okendo Reviews', pattern: /okendo\.io/i },
+    { name: 'Recharge Subscriptions', pattern: /rechargepayments\.com|rc_container/i },
+    { name: 'Klarna BNPL', pattern: /klarna\.com|klarnaservices/i },
+    { name: 'Afterpay BNPL', pattern: /afterpay\.com/i },
+    { name: 'Affirm BNPL', pattern: /affirm\.com/i },
+    { name: 'Attentive SMS', pattern: /attn\.tv|attentivemobile/i },
+    { name: 'Postscript SMS', pattern: /postscript\.io/i },
+    { name: 'Elevar Tracking', pattern: /getelevar\.com/i },
+    { name: 'Google Tag Manager', pattern: /googletagmanager\.com\/gtm\.js/i },
+    { name: 'Triple Whale', pattern: /triplewhale\.com/i },
+];
+
 function normalizeBaseUrl(raw) {
     const trimmed = String(raw || '').trim();
     if (!trimmed) return null;
@@ -32,7 +52,7 @@ async function fetchUrl(url, timeoutMs = 15000) {
         const res = await fetch(url, {
             signal: controller.signal,
             headers: {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
                 'Accept': 'application/json,text/html;q=0.9,*/*;q=0.8',
             },
         });
@@ -49,8 +69,10 @@ async function extractStoreMetadata(baseUrl) {
     const res = await fetchUrl(baseUrl);
     const emails = new Set();
     const socials = {};
-    let currency = null;
+    const installedApps = [];
+    let currency = 'USD';
     let storeTitle = null;
+    let themeName = null;
 
     if (res.ok && res.text) {
         const $ = cheerio.load(res.text);
@@ -60,6 +82,17 @@ async function extractStoreMetadata(baseUrl) {
             || res.text.match(/"currencyCode"\s*:\s*"([A-Z]{3})"/i);
         if (currencyMatch) {
             currency = currencyMatch[1];
+        }
+
+        const themeMatch = res.text.match(/Shopify\.theme\s*=\s*\{[^}]*"name"\s*:\s*"([^"]+)"/i);
+        if (themeMatch) {
+            themeName = themeMatch[1];
+        }
+
+        for (const sig of SHOPIFY_APP_SIGNATURES) {
+            if (sig.pattern.test(res.text)) {
+                installedApps.push(sig.name);
+            }
         }
 
         const rawEmails = res.text.match(EMAIL_REGEX) || [];
@@ -81,8 +114,11 @@ async function extractStoreMetadata(baseUrl) {
     return {
         storeTitle,
         currency,
+        themeName,
+        storeAppsAndPixels: installedApps,
         storeEmails: [...emails].slice(0, 10),
         storeSocials: socials,
+        homeHtml: res.text || '',
     };
 }
 
@@ -91,12 +127,12 @@ async function processShopifyStore(rawStore, options) {
     if (!baseUrl) return [];
 
     const storeDomain = new URL(baseUrl).hostname.replace(/^www\./i, '');
-    const maxProducts = options.maxProductsPerStore || 50;
+    const maxProducts = options.maxProductsPerStore || 20;
     const keyword = (options.searchKeyword || '').trim().toLowerCase();
 
     const storeMeta = options.enrichStoreContacts !== false
         ? await extractStoreMetadata(baseUrl)
-        : { storeTitle: null, currency: null, storeEmails: [], storeSocials: {} };
+        : { storeTitle: null, currency: 'USD', themeName: null, storeAppsAndPixels: [], storeEmails: [], storeSocials: {}, homeHtml: '' };
 
     const products = [];
     let page = 1;
@@ -139,26 +175,36 @@ async function processShopifyStore(rawStore, options) {
             const priceMin = prices.length ? Math.min(...prices) : null;
             const priceMax = prices.length ? Math.max(...prices) : null;
             const compareAtMax = comparePrices.length ? Math.max(...comparePrices) : null;
-            const inStock = variants.some((v) => Boolean(v.available));
+            const onSale = Boolean(compareAtMax && priceMin && compareAtMax > priceMin);
+            const discountPct = onSale
+                ? Math.round(((compareAtMax - priceMin) / compareAtMax) * 100)
+                : 0;
+            const availableVariantsCount = variants.filter((v) => Boolean(v.available)).length;
+            const inStock = availableVariantsCount > 0;
+            const skuList = variants.map((v) => v.sku).filter(Boolean).slice(0, 15);
             const images = Array.isArray(p.images) ? p.images.map((img) => img.src).filter(Boolean) : [];
 
             products.push({
                 storeDomain,
                 storeTitle: storeMeta.storeTitle,
                 currency: storeMeta.currency,
+                themeName: storeMeta.themeName,
                 productId: p.id,
                 productTitle: title,
                 handle: p.handle,
                 productUrl: `${baseUrl}/products/${p.handle}`,
                 vendor,
                 productType,
-                tags,
+                tags: tags.slice(0, 20),
                 priceMin,
                 priceMax,
                 compareAtMax,
-                onSale: Boolean(compareAtMax && priceMin && compareAtMax > priceMin),
+                onSale,
+                discountPct,
                 inStock,
+                availableVariantsCount,
                 variantsCount: variants.length,
+                skuList,
                 variants: variants.slice(0, 25).map((v) => ({
                     id: v.id,
                     title: v.title,
@@ -171,6 +217,7 @@ async function processShopifyStore(rawStore, options) {
                 imagesCount: images.length,
                 publishedAt: p.published_at || null,
                 updatedAt: p.updated_at || null,
+                storeAppsAndPixels: storeMeta.storeAppsAndPixels,
                 storeEmails: storeMeta.storeEmails,
                 storeSocials: storeMeta.storeSocials,
                 scrapedAt: new Date().toISOString(),
@@ -200,8 +247,8 @@ async function run() {
         const input = (await Actor.getInput()) || {};
         const stores = Array.isArray(input.stores) && input.stores.length > 0
             ? input.stores
-            : ['allbirds.com'];
-        const maxProductsPerStore = Number(input.maxProductsPerStore) || 50;
+            : ['allbirds.com', 'gymshark.com'];
+        const maxProductsPerStore = Number(input.maxProductsPerStore) || 15;
         const searchKeyword = String(input.searchKeyword || '');
         const enrichStoreContacts = input.enrichStoreContacts !== false;
         const concurrency = Math.min(Math.max(Number(input.concurrency) || 4, 1), 15);

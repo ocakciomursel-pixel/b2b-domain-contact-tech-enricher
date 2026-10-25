@@ -2,8 +2,8 @@
   "actorSpecification": 1,
   "name": "shopify-store-product-contact-spy",
   "title": "Shopify Store Product, Pricing, Stock & Merchant Contact Spy",
-  "description": "Extract complete product catalogs, variants, pricing statistics, stock availability, sale discounts, vendor lists, and merchant contact/social details from any Shopify store URL.",
-  "version": "1.0",
+  "description": "Extract complete product catalogs, variants, SKUs, pricing & discount percentages, stock availability, installed Shopify apps/pixels, and merchant contact/social details from any Shopify store URL.",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -16,17 +16,22 @@
       "title": "Shopify Store & Product Intelligence",
       "views": {
         "overview": {
-          "title": "Extracted Products & Store Info",
+          "title": "Extracted Products, Discounts & Store Tech",
           "transformation": {
             "fields": [
               "storeDomain",
               "productTitle",
               "vendor",
               "productType",
+              "currency",
               "priceMin",
-              "priceMax",
+              "compareAtMax",
+              "onSale",
+              "discountPct",
               "inStock",
+              "availableVariantsCount",
               "variantsCount",
+              "storeAppsAndPixels",
               "storeEmails",
               "storeSocials",
               "productUrl"
@@ -35,50 +40,22 @@
           "display": {
             "component": "table",
             "properties": {
-              "storeDomain": {
-                "label": "Store Domain",
-                "format": "text"
-              },
-              "productTitle": {
-                "label": "Product Title",
-                "format": "text"
-              },
-              "vendor": {
-                "label": "Vendor",
-                "format": "text"
-              },
-              "productType": {
-                "label": "Product Type",
-                "format": "text"
-              },
-              "priceMin": {
-                "label": "Min Price",
-                "format": "number"
-              },
-              "priceMax": {
-                "label": "Max Price",
-                "format": "number"
-              },
-              "inStock": {
-                "label": "In Stock",
-                "format": "boolean"
-              },
-              "variantsCount": {
-                "label": "Variants",
-                "format": "number"
-              },
-              "storeEmails": {
-                "label": "Store Emails",
-                "format": "array"
-              },
-              "storeSocials": {
-                "label": "Store Socials",
-                "format": "object"
-              },
-              "productUrl": {
-                "label": "Product URL",
-                "format": "link"
-              }
+              "storeDomain": { "label": "Store Domain", "format": "text" },
+              "productTitle": { "label": "Product Title", "format": "text" },
+              "vendor": { "label": "Vendor", "format": "text" },
+              "productType": { "label": "Product Type", "format": "text" },
+              "currency": { "label": "Currency", "format": "text" },
+              "priceMin": { "label": "Price", "format": "number" },
+              "compareAtMax": { "label": "Compare At", "format": "number" },
+              "onSale": { "label": "On Sale", "format": "boolean" },
+              "discountPct": { "label": "Discount %", "format": "number" },
+              "inStock": { "label": "In Stock", "format": "boolean" },
+              "availableVariantsCount": { "label": "Avail. Variants", "format": "number" },
+              "variantsCount": { "label": "Total Variants", "format": "number" },
+              "storeAppsAndPixels": { "label": "Apps & Ad Pixels", "format": "array" },
+              "storeEmails": { "label": "Store Emails", "format": "array" },
+              "storeSocials": { "label": "Store Socials", "format": "object" },
+              "productUrl": { "label": "Product URL", "format": "link" }
             }
           }
         }
@@ -87,61 +64,19 @@
         "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
         "properties": {
-          "storeDomain": {
-            "type": "string",
-            "title": "storeDomain",
-            "description": "Extracted storeDomain"
-          },
-          "currency": {
-            "type": "string",
-            "title": "currency",
-            "description": "Extracted currency"
-          },
-          "productTitle": {
-            "type": "string",
-            "title": "productTitle",
-            "description": "Extracted productTitle"
-          },
-          "vendor": {
-            "type": "string",
-            "title": "vendor",
-            "description": "Extracted vendor"
-          },
-          "priceMin": {
-            "type": "number",
-            "title": "priceMin",
-            "description": "Extracted priceMin"
-          },
-          "priceMax": {
-            "type": "number",
-            "title": "priceMax",
-            "description": "Extracted priceMax"
-          },
-          "onSale": {
-            "type": "boolean",
-            "title": "onSale",
-            "description": "Extracted onSale"
-          },
-          "inStock": {
-            "type": "boolean",
-            "title": "inStock",
-            "description": "Extracted inStock"
-          },
-          "variantsCount": {
-            "type": "number",
-            "title": "variantsCount",
-            "description": "Extracted variantsCount"
-          },
-          "storeEmails": {
-            "type": "array",
-            "title": "storeEmails",
-            "description": "Extracted storeEmails"
-          },
-          "storeSocials": {
-            "type": "object",
-            "title": "storeSocials",
-            "description": "Extracted storeSocials"
-          }
+          "storeDomain": { "type": "string", "title": "storeDomain", "description": "Extracted storeDomain" },
+          "currency": { "type": "string", "title": "currency", "description": "Extracted currency" },
+          "productTitle": { "type": "string", "title": "productTitle", "description": "Extracted productTitle" },
+          "vendor": { "type": "string", "title": "vendor", "description": "Extracted vendor" },
+          "priceMin": { "type": "number", "title": "priceMin", "description": "Extracted priceMin" },
+          "priceMax": { "type": "number", "title": "priceMax", "description": "Extracted priceMax" },
+          "discountPct": { "type": "number", "title": "discountPct", "description": "Discount percentage" },
+          "onSale": { "type": "boolean", "title": "onSale", "description": "Extracted onSale" },
+          "inStock": { "type": "boolean", "title": "inStock", "description": "Extracted inStock" },
+          "variantsCount": { "type": "number", "title": "variantsCount", "description": "Extracted variantsCount" },
+          "storeAppsAndPixels": { "type": "array", "title": "storeAppsAndPixels", "description": "Installed Shopify Apps & Pixels" },
+          "storeEmails": { "type": "array", "title": "storeEmails", "description": "Extracted storeEmails" },
+          "storeSocials": { "type": "object", "title": "storeSocials", "description": "Extracted storeSocials" }
         }
       }
     }
