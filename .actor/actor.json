@@ -3,7 +3,7 @@
   "name": "gleif-global-lei-corporate-entity-ownership-lookup",
   "title": "GLEIF Global LEI Corporate Entity, BIC & Legal Address Looku",
   "description": "Banking KYB, institutional onboarding & compliance intelligence: queries the official GLEIF v1 API for verified global corporate legal entities.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
