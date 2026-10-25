@@ -3,7 +3,7 @@
   "name": "nhtsa-vpic-automotive-vin-manufacturer-plant-decoder",
   "title": "NHTSA vPIC Automotive Manufacturer, Make & Plant Directory",
   "description": "Automotive supply-chain & fleet intelligence: queries the official NHTSA vPIC API for registered vehicle manufacturers, makes, and corporate details.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
