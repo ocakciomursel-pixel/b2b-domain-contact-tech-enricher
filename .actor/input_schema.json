@@ -1,0 +1,30 @@
+{
+  "title": "US CFPB Bank, Fintech & Crypto Consumer Complaint Miner Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Financial Company or Issue Keywords",
+      "type": "array",
+      "description": "Company names or financial issues (e.g. [\"coinbase\", \"wells fargo\", \"zelle\"]).",
+      "editor": "stringList",
+      "default": [
+        "coinbase"
+      ],
+      "prefill": [
+        "coinbase"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "queries"
+  ]
+}
