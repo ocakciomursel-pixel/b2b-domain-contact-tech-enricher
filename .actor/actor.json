@@ -3,7 +3,7 @@
   "name": "breezyhr-jazzhr-smb-company-job-opening-scraper",
   "title": "SMB Career Page & Hiring Velocity Lead Enricher",
   "description": "Staffing agency & HR-tech lead qualification tool: scans company career pages to identify ATS vendors, HR emails, and active job links.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
