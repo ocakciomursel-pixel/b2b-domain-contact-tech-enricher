@@ -3,7 +3,7 @@
   "name": "apple-appstore-aso-competitor-review-intel",
   "title": "Apple App Store ASO, Competitor Metadata & User Complaint Mi",
   "description": "Mobile App & Gaming intelligence Actor: extracts iOS App Store ratings, version velocity, developer websites, and mines recent user reviews to identify 1-2 star bug/complaint themes.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -16,7 +16,7 @@
       "title": "Apple App Store ASO, Competitor Metadata & User Complaint Miner (MCP Ready)",
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "transformation": {
             "fields": [
               "trackName",
