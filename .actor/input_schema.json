@@ -1,0 +1,30 @@
+{
+  "title": "Real Estate Brokerage IDX/MLS Tech, Agent Email & Phone Spy Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Real Estate Brokerage Domains",
+      "type": "array",
+      "description": "Domains of real estate agencies or property managers.",
+      "editor": "stringList",
+      "default": [
+        "compass.com"
+      ],
+      "prefill": [
+        "compass.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}

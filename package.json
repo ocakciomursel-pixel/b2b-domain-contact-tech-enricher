@@ -1,0 +1,17 @@
+{
+  "name": "real-estate-brokerage-idx-mls-tech-lead-enricher",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "PropTech B2B sales & real estate marketing agency lead tool: extracts contact emails, phone numbers, and social links from brokerage domains.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
