@@ -3,7 +3,7 @@
   "name": "forex-central-bank-exchange-rate-historical-feed",
   "title": "ECB Central Bank Multi-Currency Forex & Cross-Rate Feed",
   "description": "Automated treasury & accounting FX feed: retrieves official daily reference exchange rates across 30+ global currencies from European Central Bank data.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
