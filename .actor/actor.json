@@ -3,7 +3,7 @@
   "name": "master-360-crypto-defi-token-onchain-market-dossier",
   "title": "360° Crypto & DeFi Token Dossier (DEX Pairs + Fees + Sentime",
   "description": "Institutional digital asset research aggregator: merges on-chain DEX pair liquidity/volume telemetry with macro crypto sentiment indicators.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
