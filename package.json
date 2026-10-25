@@ -1,0 +1,17 @@
+{
+  "name": "zapier-make-n8n-automation-integration-spy",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Automation agency & DevTools prospecting tool: checks SaaS domains for developer docs, API references, and workflow automation links.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
