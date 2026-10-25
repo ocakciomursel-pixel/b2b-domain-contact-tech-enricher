@@ -1,0 +1,32 @@
+{
+  "title": "Bulk Phone Number to E.164, Country & WhatsApp Link Generator Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "phoneNumbers": {
+      "title": "Raw Phone Numbers",
+      "type": "array",
+      "description": "Phone numbers to normalize (e.g. [\"+1 (415) 555-2671\", \"+44 20 7946 0958\"]).",
+      "editor": "stringList",
+      "default": [
+        "+1 (415) 555-2671",
+        "+44 20 7946 0958"
+      ],
+      "prefill": [
+        "+1 (415) 555-2671",
+        "+44 20 7946 0958"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "phoneNumbers"
+  ]
+}
