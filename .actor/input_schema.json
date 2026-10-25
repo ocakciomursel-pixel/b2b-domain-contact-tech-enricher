@@ -1,0 +1,32 @@
+{
+  "title": "llms.txt Validator & Automated Website llms.txt Map Generator Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Target Domains",
+      "type": "array",
+      "description": "Domains to check and generate llms.txt maps for.",
+      "editor": "stringList",
+      "default": [
+        "apify.com",
+        "cloudflare.com"
+      ],
+      "prefill": [
+        "apify.com",
+        "cloudflare.com"
+      ]
+    },
+    "maxItemsPerTarget": {
+      "title": "Max Items Per Target",
+      "type": "integer",
+      "description": "Maximum number of records to extract per target query.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "domains"
+  ]
+}
