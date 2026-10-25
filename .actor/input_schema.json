@@ -11,6 +11,10 @@
       "prefill": [
         "crawlee",
         "cheerio"
+      ],
+      "default": [
+        "crawlee",
+        "cheerio"
       ]
     },
     "pypiPackages": {
@@ -19,6 +23,9 @@
       "description": "List of Python PyPI packages to enrich (e.g. [\"fastapi\", \"pydantic\"]).",
       "editor": "stringList",
       "prefill": [
+        "fastapi"
+      ],
+      "default": [
         "fastapi"
       ]
     }

@@ -3,7 +3,7 @@
   "name": "open-source-package-maintainer-security-intel",
   "title": "NPM & PyPI Package Maintainer Email, Download & Supply-Chain",
   "description": "DevTools & Supply-Chain intelligence Actor: extracts NPM and PyPI package download volume, maintainer direct email addresses, license compliance, dependency counts, and release freshness.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -16,7 +16,7 @@
       "title": "NPM & PyPI Package Maintainer Email, Download & Supply-Chain Intelligence (MCP Ready)",
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "transformation": {
             "fields": [
               "ecosystem",
