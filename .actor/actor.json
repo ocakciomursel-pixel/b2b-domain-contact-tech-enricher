@@ -3,7 +3,7 @@
   "name": "class-action-mass-tort-law-firm-intake-monitor",
   "title": "Mass Tort & Class Action Law Firm Practice & Intake Spy",
   "description": "Legal marketing agency & litigation finance intelligence: extracts intake phone numbers, emails, and conversion widgets from law firm domains.",
-  "version": "1.0",
+  "version": "2.0",
   "buildTag": "latest",
   "meta": {
     "templateId": "js-crawlee-cheerio"
@@ -31,25 +31,9 @@
       },
       "views": {
         "overview": {
-          "title": "Extracted Intelligence",
-          "transformation": {
-            "fields": [
-              "target",
-              "extractedAt"
-            ]
-          },
+          "title": "Extracted Enterprise Intelligence (V2.0)",
           "display": {
-            "component": "table",
-            "properties": {
-              "target": {
-                "label": "Target",
-                "format": "text"
-              },
-              "extractedAt": {
-                "label": "Extracted At",
-                "format": "text"
-              }
-            }
+            "component": "table"
           }
         }
       }
