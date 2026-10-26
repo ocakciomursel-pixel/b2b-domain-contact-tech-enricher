@@ -1,0 +1,92 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "B2B Domain Contact, Email, DNS & Tech Stack Enricher — Apify Cloud Action API",
+    "version": "3.0.0",
+    "description": "Extract decision-maker emails, phone numbers, social links, DNS MX/SPF/DMARC records, and 38+ technology signatures from any list of company domains. Import this schema directly into ChatGPT Custom GPT Actions, Dify.ai, Relevance AI, Flowise, or n8n. Store URL: https://apify.com/lucacelli/b2b-domain-contact-tech-enricher"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Apify Production Cloud API v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~b2b-domain-contact-tech-enricher/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_b2b_domain_contact_tech_enricher",
+        "summary": "B2B Domain Contact, Email, DNS & Tech Stack Enricher ($0.80 / 1,000 domains)",
+        "description": "Extract decision-maker emails, phone numbers, social links, DNS MX/SPF/DMARC records, and 38+ technology signatures from any list of company domains. Synchronous REST execution returning structured JSON dataset items directly.",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "YOUR_APIFY_API_TOKEN"
+            },
+            "description": "Your Apify API Token (Get $5/month free credit at https://apify.com/lucacelli)"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "domains": [
+                    "stripe.com",
+                    "shopify.com",
+                    "hubspot.com",
+                    "linear.app",
+                    "vercel.com",
+                    "supabase.com",
+                    "retool.com",
+                    "intercom.com",
+                    "webflow.com",
+                    "notion.so"
+                  ],
+                  "crawlContactPages": true,
+                  "maxPagesPerDomain": 3
+                }
+              },
+              "example": {
+                "domains": [
+                  "stripe.com",
+                  "shopify.com",
+                  "hubspot.com",
+                  "linear.app",
+                  "vercel.com",
+                  "supabase.com",
+                  "retool.com",
+                  "intercom.com",
+                  "webflow.com",
+                  "notion.so"
+                ],
+                "crawlContactPages": true,
+                "maxPagesPerDomain": 3
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Array of extracted and enriched intelligence records from Apify dataset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

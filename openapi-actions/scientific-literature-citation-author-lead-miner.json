@@ -1,0 +1,76 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Scientific Paper, Author Email & Lab Research Lead Miner — Apify Cloud Action API",
+    "version": "3.0.0",
+    "description": "Mine peer-reviewed research papers, university lab affiliations, citation velocity, DOIs, and corresponding author leads. Import this schema directly into ChatGPT Custom GPT Actions, Dify.ai, Relevance AI, Flowise, or n8n. Store URL: https://apify.com/lucacelli/scientific-literature-citation-author-lead-miner"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Apify Production Cloud API v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~scientific-literature-citation-author-lead-miner/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_scientific_literature_citation_author_lead_miner",
+        "summary": "Scientific Paper, Author Email & Lab Research Lead Miner ($0.50 / 1,000 papers)",
+        "description": "Mine peer-reviewed research papers, university lab affiliations, citation velocity, DOIs, and corresponding author leads. Synchronous REST execution returning structured JSON dataset items directly.",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "YOUR_APIFY_API_TOKEN"
+            },
+            "description": "Your Apify API Token (Get $5/month free credit at https://apify.com/lucacelli)"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "searchQueries": [
+                    "CRISPR base editing delivery",
+                    "mRNA lipid nanoparticle formulation",
+                    "spatial transcriptomics"
+                  ],
+                  "maxPapers": 15
+                }
+              },
+              "example": {
+                "searchQueries": [
+                  "CRISPR base editing delivery",
+                  "mRNA lipid nanoparticle formulation",
+                  "spatial transcriptomics"
+                ],
+                "maxPapers": 15
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Array of extracted and enriched intelligence records from Apify dataset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

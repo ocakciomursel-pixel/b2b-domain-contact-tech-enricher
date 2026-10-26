@@ -1,0 +1,88 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "WordPress & WooCommerce Theme, Plugin & Agency Lead Spy — Apify Cloud Action API",
+    "version": "3.0.0",
+    "description": "Detect active WordPress themes, installed plugins, WooCommerce store status, and wp-json REST namespaces on any list of domains. Import this schema directly into ChatGPT Custom GPT Actions, Dify.ai, Relevance AI, Flowise, or n8n. Store URL: https://apify.com/lucacelli/wordpress-woocommerce-site-spy"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Apify Production Cloud API v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~wordpress-woocommerce-site-spy/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_wordpress_woocommerce_site_spy",
+        "summary": "WordPress & WooCommerce Theme, Plugin & Agency Lead Spy ($0.80 / 1,000 sites)",
+        "description": "Detect active WordPress themes, installed plugins, WooCommerce store status, and wp-json REST namespaces on any list of domains. Synchronous REST execution returning structured JSON dataset items directly.",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "YOUR_APIFY_API_TOKEN"
+            },
+            "description": "Your Apify API Token (Get $5/month free credit at https://apify.com/lucacelli)"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "domains": [
+                    "techcrunch.com",
+                    "wordpress.org",
+                    "woocommerce.com",
+                    "yoast.com",
+                    "wpbeginner.com",
+                    "kinsta.com",
+                    "wpengine.com",
+                    "smashingmagazine.com",
+                    "css-tricks.com",
+                    "elementor.com"
+                  ]
+                }
+              },
+              "example": {
+                "domains": [
+                  "techcrunch.com",
+                  "wordpress.org",
+                  "woocommerce.com",
+                  "yoast.com",
+                  "wpbeginner.com",
+                  "kinsta.com",
+                  "wpengine.com",
+                  "smashingmagazine.com",
+                  "css-tricks.com",
+                  "elementor.com"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Array of extracted and enriched intelligence records from Apify dataset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

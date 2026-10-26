@@ -1,0 +1,92 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Technical SEO, Broken Link, Schema.org & Security Auditor — Apify Cloud Action API",
+    "version": "3.0.0",
+    "description": "Run a 45-point technical SEO, Core Web Vitals response latency, Schema.org JSON-LD, OpenGraph, security headers, and broken link audit on any URL list. Import this schema directly into ChatGPT Custom GPT Actions, Dify.ai, Relevance AI, Flowise, or n8n. Store URL: https://apify.com/lucacelli/seo-technical-audit-broken-link-schema-analyzer"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Apify Production Cloud API v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~seo-technical-audit-broken-link-schema-analyzer/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_seo_technical_audit_broken_link_schema_analyzer",
+        "summary": "Technical SEO, Broken Link, Schema.org & Security Auditor ($0.80 / 1,000 pages)",
+        "description": "Run a 45-point technical SEO, Core Web Vitals response latency, Schema.org JSON-LD, OpenGraph, security headers, and broken link audit on any URL list. Synchronous REST execution returning structured JSON dataset items directly.",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "YOUR_APIFY_API_TOKEN"
+            },
+            "description": "Your Apify API Token (Get $5/month free credit at https://apify.com/lucacelli)"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "urls": [
+                    "https://apify.com",
+                    "https://stripe.com",
+                    "https://shopify.com",
+                    "https://cloudflare.com",
+                    "https://vercel.com",
+                    "https://linear.app",
+                    "https://supabase.com",
+                    "https://webflow.com",
+                    "https://notion.so",
+                    "https://github.com"
+                  ],
+                  "checkBrokenLinks": true,
+                  "maxLinksToVerifyPerPage": 15
+                }
+              },
+              "example": {
+                "urls": [
+                  "https://apify.com",
+                  "https://stripe.com",
+                  "https://shopify.com",
+                  "https://cloudflare.com",
+                  "https://vercel.com",
+                  "https://linear.app",
+                  "https://supabase.com",
+                  "https://webflow.com",
+                  "https://notion.so",
+                  "https://github.com"
+                ],
+                "checkBrokenLinks": true,
+                "maxLinksToVerifyPerPage": 15
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Array of extracted and enriched intelligence records from Apify dataset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

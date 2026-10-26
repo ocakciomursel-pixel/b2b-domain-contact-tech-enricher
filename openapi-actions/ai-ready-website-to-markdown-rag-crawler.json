@@ -1,0 +1,90 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Website to Clean Markdown, Vector RAG Chunks & llms.txt — Apify Cloud Action API",
+    "version": "3.0.0",
+    "description": "Convert any documentation site or URL list into clean LLM-ready Markdown, overlapping token-counted RAG vector chunks, and llms.txt index blocks. Import this schema directly into ChatGPT Custom GPT Actions, Dify.ai, Relevance AI, Flowise, or n8n. Store URL: https://apify.com/lucacelli/ai-ready-website-to-markdown-rag-crawler"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Apify Production Cloud API v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~ai-ready-website-to-markdown-rag-crawler/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_ai_ready_website_to_markdown_rag_crawler",
+        "summary": "Website to Clean Markdown, Vector RAG Chunks & llms.txt ($0.50 / 1,000 pages)",
+        "description": "Convert any documentation site or URL list into clean LLM-ready Markdown, overlapping token-counted RAG vector chunks, and llms.txt index blocks. Synchronous REST execution returning structured JSON dataset items directly.",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "YOUR_APIFY_API_TOKEN"
+            },
+            "description": "Your Apify API Token (Get $5/month free credit at https://apify.com/lucacelli)"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "urls": [
+                    "https://docs.apify.com/platform/actors",
+                    "https://docs.apify.com/platform/storages",
+                    "https://docs.apify.com/platform/integrations",
+                    "https://docs.apify.com/sdk/js",
+                    "https://docs.apify.com/api/v2",
+                    "https://crawlee.dev/docs/quick-start",
+                    "https://modelcontextprotocol.io/introduction",
+                    "https://openai.com/policies/usage-policies"
+                  ],
+                  "chunkSizeTokens": 500,
+                  "chunkOverlapTokens": 50,
+                  "generateLlmsTxtEntry": true
+                }
+              },
+              "example": {
+                "urls": [
+                  "https://docs.apify.com/platform/actors",
+                  "https://docs.apify.com/platform/storages",
+                  "https://docs.apify.com/platform/integrations",
+                  "https://docs.apify.com/sdk/js",
+                  "https://docs.apify.com/api/v2",
+                  "https://crawlee.dev/docs/quick-start",
+                  "https://modelcontextprotocol.io/introduction",
+                  "https://openai.com/policies/usage-policies"
+                ],
+                "chunkSizeTokens": 500,
+                "chunkOverlapTokens": 50,
+                "generateLlmsTxtEntry": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Array of extracted and enriched intelligence records from Apify dataset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

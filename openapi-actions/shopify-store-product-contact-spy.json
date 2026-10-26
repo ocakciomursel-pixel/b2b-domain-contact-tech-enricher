@@ -1,0 +1,78 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Shopify Store Product, Pricing, Stock & Merchant Contact Spy — Apify Cloud Action API",
+    "version": "3.0.0",
+    "description": "Scrape Shopify storefront product catalogs, SKUs, variant prices, stock availability, installed Shopify apps, and merchant contact details. Import this schema directly into ChatGPT Custom GPT Actions, Dify.ai, Relevance AI, Flowise, or n8n. Store URL: https://apify.com/lucacelli/shopify-store-product-contact-spy"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Apify Production Cloud API v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~shopify-store-product-contact-spy/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_shopify_store_product_contact_spy",
+        "summary": "Shopify Store Product, Pricing, Stock & Merchant Contact Spy ($0.50 / 1,000 products)",
+        "description": "Scrape Shopify storefront product catalogs, SKUs, variant prices, stock availability, installed Shopify apps, and merchant contact details. Synchronous REST execution returning structured JSON dataset items directly.",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "YOUR_APIFY_API_TOKEN"
+            },
+            "description": "Your Apify API Token (Get $5/month free credit at https://apify.com/lucacelli)"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "stores": [
+                    "gymshark.com",
+                    "allbirds.com",
+                    "brooklinen.com"
+                  ],
+                  "maxProductsPerStore": 25,
+                  "extractMerchantContacts": true
+                }
+              },
+              "example": {
+                "stores": [
+                  "gymshark.com",
+                  "allbirds.com",
+                  "brooklinen.com"
+                ],
+                "maxProductsPerStore": 25,
+                "extractMerchantContacts": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Array of extracted and enriched intelligence records from Apify dataset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

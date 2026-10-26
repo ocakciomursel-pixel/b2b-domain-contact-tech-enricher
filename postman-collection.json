@@ -1,0 +1,548 @@
+{
+  "info": {
+    "name": "Lucacelli Apify Store — 14 B2B, SEO & AI Cloud Scrapers (REST API Collection)",
+    "description": "Import this collection into Postman, Insomnia, Hoppscotch, or Bruno to run all 14 live @lucacelli Apify Cloud Actors synchronously. Get your free $5/mo Apify API token at https://apify.com/lucacelli",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "APIFY_TOKEN",
+      "value": "YOUR_APIFY_API_TOKEN",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Google Maps Scraper: Places, Emails, Contacts & Reviews Pro ($1.50/1,000 places)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"searchQueries\": [\n    \"dentist in Miami FL\",\n    \"medspa in Austin TX\",\n    \"roofing contractor in Dallas TX\"\n  ],\n  \"maxPlacesPerQuery\": 20,\n  \"enrichWebsiteData\": true\n}"
+        },
+        "url": {
+          "raw": "https://api.apify.com/v2/acts/lucacelli~google-maps-scraper-places-emails-contacts-reviews/run-sync-get-dataset-items?token={{APIFY_TOKEN}}",
+          "protocol": "https",
+          "host": [
+            "api",
+            "apify",
+            "com"
+          ],
+          "path": [
+            "v2",
+            "acts",
+            "lucacelli~google-maps-scraper-places-emails-contacts-reviews",
+            "run-sync-get-dataset-items"
+          ],
+          "query": [
+            {
+              "key": "token",
+              "value": "{{APIFY_TOKEN}}"
+            }
+          ]
+        },
+        "description": "Extract local businesses from Google Maps with verified website emails, phone numbers, social profiles, DNS MX/DMARC, and 38+ tech stack detections.\n\nApify Store Page: https://apify.com/lucacelli/google-maps-scraper-places-emails-contacts-reviews"
+      }
+    },
+    {
+      "name": "B2B Domain Contact, Email, DNS & Tech Stack Enricher ($0.80/1,000 domains)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"domains\": [\n    \"stripe.com\",\n    \"shopify.com\",\n    \"hubspot.com\",\n    \"linear.app\",\n    \"vercel.com\",\n    \"supabase.com\",\n    \"retool.com\",\n    \"intercom.com\",\n    \"webflow.com\",\n    \"notion.so\"\n  ],\n  \"crawlContactPages\": true,\n  \"maxPagesPerDomain\": 3\n}"
+        },
+        "url": {
+          "raw": "https://api.apify.com/v2/acts/lucacelli~b2b-domain-contact-tech-enricher/run-sync-get-dataset-items?token={{APIFY_TOKEN}}",
+          "protocol": "https",
+          "host": [
+            "api",
+            "apify",
+            "com"
+          ],
+          "path": [
+            "v2",
+            "acts",
+            "lucacelli~b2b-domain-contact-tech-enricher",
+            "run-sync-get-dataset-items"
+          ],
+          "query": [
+            {
+              "key": "token",
+              "value": "{{APIFY_TOKEN}}"
+            }
+          ]
+        },
+        "description": "Extract decision-maker emails, phone numbers, social links, DNS MX/SPF/DMARC records, and 38+ technology signatures from any list of company domains.\n\nApify Store Page: https://apify.com/lucacelli/b2b-domain-contact-tech-enricher"
+      }
+    },
+    {
+      "name": "Shopify Store Product, Pricing, Stock & Merchant Contact Spy ($0.50/1,000 products)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"stores\": [\n    \"gymshark.com\",\n    \"allbirds.com\",\n    \"brooklinen.com\"\n  ],\n  \"maxProductsPerStore\": 25,\n  \"extractMerchantContacts\": true\n}"
+        },
+        "url": {
+          "raw": "https://api.apify.com/v2/acts/lucacelli~shopify-store-product-contact-spy/run-sync-get-dataset-items?token={{APIFY_TOKEN}}",
+          "protocol": "https",
+          "host": [
+            "api",
+            "apify",
+            "com"
+          ],
+          "path": [
+            "v2",
+            "acts",
+            "lucacelli~shopify-store-product-contact-spy",
+            "run-sync-get-dataset-items"
+          ],
+          "query": [
+            {
+              "key": "token",
+              "value": "{{APIFY_TOKEN}}"
+            }
+          ]
+        },
+        "description": "Scrape Shopify storefront product catalogs, SKUs, variant prices, stock availability, installed Shopify apps, and merchant contact details.\n\nApify Store Page: https://apify.com/lucacelli/shopify-store-product-contact-spy"
+      }
+    },
+    {
+      "name": "Website to Clean Markdown, Vector RAG Chunks & llms.txt ($0.50/1,000 pages)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"urls\": [\n    \"https://docs.apify.com/platform/actors\",\n    \"https://docs.apify.com/platform/storages\",\n    \"https://docs.apify.com/platform/integrations\",\n    \"https://docs.apify.com/sdk/js\",\n    \"https://docs.apify.com/api/v2\",\n    \"https://crawlee.dev/docs/quick-start\",\n    \"https://modelcontextprotocol.io/introduction\",\n    \"https://openai.com/policies/usage-policies\"\n  ],\n  \"chunkSizeTokens\": 500,\n  \"chunkOverlapTokens\": 50,\n  \"generateLlmsTxtEntry\": true\n}"
+        },
+        "url": {
+          "raw": "https://api.apify.com/v2/acts/lucacelli~ai-ready-website-to-markdown-rag-crawler/run-sync-get-dataset-items?token={{APIFY_TOKEN}}",
+          "protocol": "https",
+          "host": [
+            "api",
+            "apify",
+            "com"
+          ],
+          "path": [
+            "v2",
+            "acts",
+            "lucacelli~ai-ready-website-to-markdown-rag-crawler",
+            "run-sync-get-dataset-items"
+          ],
+          "query": [
+            {
+              "key": "token",
+              "value": "{{APIFY_TOKEN}}"
+            }
+          ]
+        },
+        "description": "Convert any documentation site or URL list into clean LLM-ready Markdown, overlapping token-counted RAG vector chunks, and llms.txt index blocks.\n\nApify Store Page: https://apify.com/lucacelli/ai-ready-website-to-markdown-rag-crawler"
+      }
+    },
+    {
+      "name": "Technical SEO, Broken Link, Schema.org & Security Auditor ($0.80/1,000 pages)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"urls\": [\n    \"https://apify.com\",\n    \"https://stripe.com\",\n    \"https://shopify.com\",\n    \"https://cloudflare.com\",\n    \"https://vercel.com\",\n    \"https://linear.app\",\n    \"https://supabase.com\",\n    \"https://webflow.com\",\n    \"https://notion.so\",\n    \"https://github.com\"\n  ],\n  \"checkBrokenLinks\": true,\n  \"maxLinksToVerifyPerPage\": 15\n}"
+        },
+        "url": {
+          "raw": "https://api.apify.com/v2/acts/lucacelli~seo-technical-audit-broken-link-schema-analyzer/run-sync-get-dataset-items?token={{APIFY_TOKEN}}",
+          "protocol": "https",
+          "host": [
+            "api",
+            "apify",
+            "com"
+          ],
+          "path": [
+            "v2",
+            "acts",
+            "lucacelli~seo-technical-audit-broken-link-schema-analyzer",
+            "run-sync-get-dataset-items"
+          ],
+          "query": [
+            {
+              "key": "token",
+              "value": "{{APIFY_TOKEN}}"
+            }
+          ]
+        },
+        "description": "Run a 45-point technical SEO, Core Web Vitals response latency, Schema.org JSON-LD, OpenGraph, security headers, and broken link audit on any URL list.\n\nApify Store Page: https://apify.com/lucacelli/seo-technical-audit-broken-link-schema-analyzer"
+      }
+    },
+    {
+      "name": "GitHub Developer, Stargazer & Contributor Lead Enricher ($0.80/1,000 developers)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"repositories\": [\n    \"apify/crawlee\",\n    \"langchain-ai/langchain\",\n    \"n8n-io/n8n\"\n  ],\n  \"maxDevelopersPerRepo\": 10,\n  \"usernames\": [\n    \"jlowin\",\n    \"unclecode\"\n  ]\n}"
+        },
+        "url": {
+          "raw": "https://api.apify.com/v2/acts/lucacelli~github-developer-recruiter-lead-enricher/run-sync-get-dataset-items?token={{APIFY_TOKEN}}",
+          "protocol": "https",
+          "host": [
+            "api",
+            "apify",
+            "com"
+          ],
+          "path": [
+            "v2",
+            "acts",
+            "lucacelli~github-developer-recruiter-lead-enricher",
+            "run-sync-get-dataset-items"
+          ],
+          "query": [
+            {
+              "key": "token",
+              "value": "{{APIFY_TOKEN}}"
+            }
+          ]
+        },
+        "description": "Extract active open-source contributors, public commit emails, top programming languages, candidate seniority scores, and recruiter outreach hooks.\n\nApify Store Page: https://apify.com/lucacelli/github-developer-recruiter-lead-enricher"
+      }
+    },
+    {
+      "name": "Greenhouse & Lever Company Job Board & Hiring Signal Scraper ($0.50/1,000 jobs)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"greenhouseBoards\": [\n    \"stripe\",\n    \"cloudflare\",\n    \"vercel\",\n    \"airtable\",\n    \"figma\"\n  ],\n  \"leverBoards\": [\n    \"palantir\",\n    \"netflix\"\n  ],\n  \"maxJobsPerCompany\": 25\n}"
+        },
+        "url": {
+          "raw": "https://api.apify.com/v2/acts/lucacelli~ats-job-board-hiring-signal-scraper/run-sync-get-dataset-items?token={{APIFY_TOKEN}}",
+          "protocol": "https",
+          "host": [
+            "api",
+            "apify",
+            "com"
+          ],
+          "path": [
+            "v2",
+            "acts",
+            "lucacelli~ats-job-board-hiring-signal-scraper",
+            "run-sync-get-dataset-items"
+          ],
+          "query": [
+            {
+              "key": "token",
+              "value": "{{APIFY_TOKEN}}"
+            }
+          ]
+        },
+        "description": "Scrape active job openings, engineering/sales department growth velocity, remote flags, and tech stack hiring signals from Greenhouse and Lever ATS boards.\n\nApify Store Page: https://apify.com/lucacelli/ats-job-board-hiring-signal-scraper"
+      }
+    },
+    {
+      "name": "Reddit Subreddit, Buyer Intent & Pain-Point Lead Miner ($0.50/1,000 posts)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"subreddits\": [\n    \"SaaS\",\n    \"Entrepreneur\",\n    \"smallbusiness\",\n    \"startups\",\n    \"agency\"\n  ],\n  \"intentKeywords\": [\n    \"looking for\",\n    \"alternative to\",\n    \"recommend a tool\",\n    \"how do you automate\"\n  ],\n  \"maxPostsPerSubreddit\": 15\n}"
+        },
+        "url": {
+          "raw": "https://api.apify.com/v2/acts/lucacelli~reddit-community-pain-point-trend-miner/run-sync-get-dataset-items?token={{APIFY_TOKEN}}",
+          "protocol": "https",
+          "host": [
+            "api",
+            "apify",
+            "com"
+          ],
+          "path": [
+            "v2",
+            "acts",
+            "lucacelli~reddit-community-pain-point-trend-miner",
+            "run-sync-get-dataset-items"
+          ],
+          "query": [
+            {
+              "key": "token",
+              "value": "{{APIFY_TOKEN}}"
+            }
+          ]
+        },
+        "description": "Mine targeted Reddit communities for high-intent B2B buyer questions, competitor switching signals, and SaaS pain points.\n\nApify Store Page: https://apify.com/lucacelli/reddit-community-pain-point-trend-miner"
+      }
+    },
+    {
+      "name": "WordPress & WooCommerce Theme, Plugin & Agency Lead Spy ($0.80/1,000 sites)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"domains\": [\n    \"techcrunch.com\",\n    \"wordpress.org\",\n    \"woocommerce.com\",\n    \"yoast.com\",\n    \"wpbeginner.com\",\n    \"kinsta.com\",\n    \"wpengine.com\",\n    \"smashingmagazine.com\",\n    \"css-tricks.com\",\n    \"elementor.com\"\n  ]\n}"
+        },
+        "url": {
+          "raw": "https://api.apify.com/v2/acts/lucacelli~wordpress-woocommerce-site-spy/run-sync-get-dataset-items?token={{APIFY_TOKEN}}",
+          "protocol": "https",
+          "host": [
+            "api",
+            "apify",
+            "com"
+          ],
+          "path": [
+            "v2",
+            "acts",
+            "lucacelli~wordpress-woocommerce-site-spy",
+            "run-sync-get-dataset-items"
+          ],
+          "query": [
+            {
+              "key": "token",
+              "value": "{{APIFY_TOKEN}}"
+            }
+          ]
+        },
+        "description": "Detect active WordPress themes, installed plugins, WooCommerce store status, and wp-json REST namespaces on any list of domains.\n\nApify Store Page: https://apify.com/lucacelli/wordpress-woocommerce-site-spy"
+      }
+    },
+    {
+      "name": "Hacker News Launch, Show HN & Tech Founder Lead Monitor ($0.50/1,000 stories)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"queries\": [\n    \"Show HN: AI\",\n    \"MCP\",\n    \"Show HN: SaaS\"\n  ],\n  \"maxStoriesPerQuery\": 15\n}"
+        },
+        "url": {
+          "raw": "https://api.apify.com/v2/acts/lucacelli~hackernews-tech-launch-lead-monitor/run-sync-get-dataset-items?token={{APIFY_TOKEN}}",
+          "protocol": "https",
+          "host": [
+            "api",
+            "apify",
+            "com"
+          ],
+          "path": [
+            "v2",
+            "acts",
+            "lucacelli~hackernews-tech-launch-lead-monitor",
+            "run-sync-get-dataset-items"
+          ],
+          "query": [
+            {
+              "key": "token",
+              "value": "{{APIFY_TOKEN}}"
+            }
+          ]
+        },
+        "description": "Monitor Hacker News (Show HN, Ask HN, Frontpage) for newly launched startups, founder handles, outbound domains, and community traction.\n\nApify Store Page: https://apify.com/lucacelli/hackernews-tech-launch-lead-monitor"
+      }
+    },
+    {
+      "name": "XML Sitemap URL Inventory, SEO Freshness & Content Auditor ($0.50/1,000 sitemaps)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"domains\": [\n    \"apify.com\",\n    \"cloudflare.com\",\n    \"stripe.com\",\n    \"shopify.com\",\n    \"vercel.com\",\n    \"supabase.com\"\n  ],\n  \"maxUrlsSample\": 25\n}"
+        },
+        "url": {
+          "raw": "https://api.apify.com/v2/acts/lucacelli~sitemap-url-inventory-content-freshness-auditor/run-sync-get-dataset-items?token={{APIFY_TOKEN}}",
+          "protocol": "https",
+          "host": [
+            "api",
+            "apify",
+            "com"
+          ],
+          "path": [
+            "v2",
+            "acts",
+            "lucacelli~sitemap-url-inventory-content-freshness-auditor",
+            "run-sync-get-dataset-items"
+          ],
+          "query": [
+            {
+              "key": "token",
+              "value": "{{APIFY_TOKEN}}"
+            }
+          ]
+        },
+        "description": "Parse XML Sitemaps and Sitemap Indexes to audit total indexed URL counts, 30/90-day content freshness velocity, and top URL path structures.\n\nApify Store Page: https://apify.com/lucacelli/sitemap-url-inventory-content-freshness-auditor"
+      }
+    },
+    {
+      "name": "SaaS Pricing Page, Plan Tiers & Competitor Feature Spy ($0.80/1,000 pages)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"pricingUrls\": [\n    \"https://apify.com/pricing\",\n    \"https://stripe.com/pricing\",\n    \"https://linear.app/pricing\",\n    \"https://vercel.com/pricing\",\n    \"https://supabase.com/pricing\",\n    \"https://webflow.com/pricing\",\n    \"https://notion.so/pricing\",\n    \"https://hubspot.com/pricing\"\n  ]\n}"
+        },
+        "url": {
+          "raw": "https://api.apify.com/v2/acts/lucacelli~saas-pricing-page-tier-feature-extractor/run-sync-get-dataset-items?token={{APIFY_TOKEN}}",
+          "protocol": "https",
+          "host": [
+            "api",
+            "apify",
+            "com"
+          ],
+          "path": [
+            "v2",
+            "acts",
+            "lucacelli~saas-pricing-page-tier-feature-extractor",
+            "run-sync-get-dataset-items"
+          ],
+          "query": [
+            {
+              "key": "token",
+              "value": "{{APIFY_TOKEN}}"
+            }
+          ]
+        },
+        "description": "Extract SaaS competitor pricing pages, plan tier names, monthly/annual price points, free trial flags, and enterprise sales gating signals.\n\nApify Store Page: https://apify.com/lucacelli/saas-pricing-page-tier-feature-extractor"
+      }
+    },
+    {
+      "name": "ClinicalTrials.gov & OpenFDA Biotech / Pharma Lead Enricher ($0.80/1,000 trials)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"conditions\": [\n    \"oncology immunotherapy\",\n    \"GLP-1 obesity\",\n    \"CRISPR gene therapy\"\n  ],\n  \"maxStudies\": 15\n}"
+        },
+        "url": {
+          "raw": "https://api.apify.com/v2/acts/lucacelli~clinical-trials-fda-drug-safety-intel/run-sync-get-dataset-items?token={{APIFY_TOKEN}}",
+          "protocol": "https",
+          "host": [
+            "api",
+            "apify",
+            "com"
+          ],
+          "path": [
+            "v2",
+            "acts",
+            "lucacelli~clinical-trials-fda-drug-safety-intel",
+            "run-sync-get-dataset-items"
+          ],
+          "query": [
+            {
+              "key": "token",
+              "value": "{{APIFY_TOKEN}}"
+            }
+          ]
+        },
+        "description": "Extract active Phase I-IV clinical trials, lead biotech/pharma sponsors, principal investigators, and OpenFDA regulatory safety intelligence.\n\nApify Store Page: https://apify.com/lucacelli/clinical-trials-fda-drug-safety-intel"
+      }
+    },
+    {
+      "name": "Scientific Paper, Author Email & Lab Research Lead Miner ($0.50/1,000 papers)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"searchQueries\": [\n    \"CRISPR base editing delivery\",\n    \"mRNA lipid nanoparticle formulation\",\n    \"spatial transcriptomics\"\n  ],\n  \"maxPapers\": 15\n}"
+        },
+        "url": {
+          "raw": "https://api.apify.com/v2/acts/lucacelli~scientific-literature-citation-author-lead-miner/run-sync-get-dataset-items?token={{APIFY_TOKEN}}",
+          "protocol": "https",
+          "host": [
+            "api",
+            "apify",
+            "com"
+          ],
+          "path": [
+            "v2",
+            "acts",
+            "lucacelli~scientific-literature-citation-author-lead-miner",
+            "run-sync-get-dataset-items"
+          ],
+          "query": [
+            {
+              "key": "token",
+              "value": "{{APIFY_TOKEN}}"
+            }
+          ]
+        },
+        "description": "Mine peer-reviewed research papers, university lab affiliations, citation velocity, DOIs, and corresponding author leads.\n\nApify Store Page: https://apify.com/lucacelli/scientific-literature-citation-author-lead-miner"
+      }
+    }
+  ]
+}

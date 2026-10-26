@@ -1,0 +1,88 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Greenhouse & Lever Company Job Board & Hiring Signal Scraper — Apify Cloud Action API",
+    "version": "3.0.0",
+    "description": "Scrape active job openings, engineering/sales department growth velocity, remote flags, and tech stack hiring signals from Greenhouse and Lever ATS boards. Import this schema directly into ChatGPT Custom GPT Actions, Dify.ai, Relevance AI, Flowise, or n8n. Store URL: https://apify.com/lucacelli/ats-job-board-hiring-signal-scraper"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Apify Production Cloud API v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~ats-job-board-hiring-signal-scraper/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_ats_job_board_hiring_signal_scraper",
+        "summary": "Greenhouse & Lever Company Job Board & Hiring Signal Scraper ($0.50 / 1,000 jobs)",
+        "description": "Scrape active job openings, engineering/sales department growth velocity, remote flags, and tech stack hiring signals from Greenhouse and Lever ATS boards. Synchronous REST execution returning structured JSON dataset items directly.",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "YOUR_APIFY_API_TOKEN"
+            },
+            "description": "Your Apify API Token (Get $5/month free credit at https://apify.com/lucacelli)"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "greenhouseBoards": [
+                    "stripe",
+                    "cloudflare",
+                    "vercel",
+                    "airtable",
+                    "figma"
+                  ],
+                  "leverBoards": [
+                    "palantir",
+                    "netflix"
+                  ],
+                  "maxJobsPerCompany": 25
+                }
+              },
+              "example": {
+                "greenhouseBoards": [
+                  "stripe",
+                  "cloudflare",
+                  "vercel",
+                  "airtable",
+                  "figma"
+                ],
+                "leverBoards": [
+                  "palantir",
+                  "netflix"
+                ],
+                "maxJobsPerCompany": 25
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Array of extracted and enriched intelligence records from Apify dataset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

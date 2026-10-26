@@ -1,0 +1,78 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Google Maps Scraper: Places, Emails, Contacts & Reviews Pro — Apify Cloud Action API",
+    "version": "3.0.0",
+    "description": "Extract local businesses from Google Maps with verified website emails, phone numbers, social profiles, DNS MX/DMARC, and 38+ tech stack detections. Import this schema directly into ChatGPT Custom GPT Actions, Dify.ai, Relevance AI, Flowise, or n8n. Store URL: https://apify.com/lucacelli/google-maps-scraper-places-emails-contacts-reviews"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Apify Production Cloud API v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~google-maps-scraper-places-emails-contacts-reviews/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_google_maps_scraper_places_emails_contacts_reviews",
+        "summary": "Google Maps Scraper: Places, Emails, Contacts & Reviews Pro ($1.50 / 1,000 places)",
+        "description": "Extract local businesses from Google Maps with verified website emails, phone numbers, social profiles, DNS MX/DMARC, and 38+ tech stack detections. Synchronous REST execution returning structured JSON dataset items directly.",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "YOUR_APIFY_API_TOKEN"
+            },
+            "description": "Your Apify API Token (Get $5/month free credit at https://apify.com/lucacelli)"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "searchQueries": [
+                    "dentist in Miami FL",
+                    "medspa in Austin TX",
+                    "roofing contractor in Dallas TX"
+                  ],
+                  "maxPlacesPerQuery": 20,
+                  "enrichWebsiteData": true
+                }
+              },
+              "example": {
+                "searchQueries": [
+                  "dentist in Miami FL",
+                  "medspa in Austin TX",
+                  "roofing contractor in Dallas TX"
+                ],
+                "maxPlacesPerQuery": 20,
+                "enrichWebsiteData": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Array of extracted and enriched intelligence records from Apify dataset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
