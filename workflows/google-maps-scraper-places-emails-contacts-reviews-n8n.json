@@ -1,0 +1,67 @@
+{
+  "name": "Automated Google Maps Scraper: Places, Emails, Contacts & Reviews Pro Pipeline (via Apify Cloud @lucacelli)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24
+            }
+          ]
+        }
+      },
+      "name": "Daily Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~google-maps-scraper-places-emails-contacts-reviews/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $env.APIFY_TOKEN }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"queries\": [\n    \"dentist in Miami, FL\",\n    \"medspa in Austin, TX\"\n  ],\n  \"maxPlacesPerQuery\": 50,\n  \"enrichWebsiteContacts\": true,\n  \"verifyEmailDns\": true\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "name": "Run Apify Actor ($1.50/1k)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        500,
+        300
+      ],
+      "notesInFlow": true,
+      "notes": "Powered by https://apify.com/lucacelli/google-maps-scraper-places-emails-contacts-reviews ($1.50 per 1,000 places)"
+    }
+  ],
+  "connections": {
+    "Daily Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Run Apify Actor ($1.50/1k)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

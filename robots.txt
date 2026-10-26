@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /vault/
-
 Sitemap: https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/sitemap.xml

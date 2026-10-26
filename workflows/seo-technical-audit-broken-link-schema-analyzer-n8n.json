@@ -1,0 +1,67 @@
+{
+  "name": "Automated Technical SEO, Broken Link, Schema.org & Security Auditor Pipeline (via Apify Cloud @lucacelli)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24
+            }
+          ]
+        }
+      },
+      "name": "Daily Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~seo-technical-audit-broken-link-schema-analyzer/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $env.APIFY_TOKEN }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"urls\": [\n    \"https://apify.com\",\n    \"https://cloudflare.com\"\n  ],\n  \"checkBrokenLinks\": true\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "name": "Run Apify Actor ($0.80/1k)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        500,
+        300
+      ],
+      "notesInFlow": true,
+      "notes": "Powered by https://apify.com/lucacelli/seo-technical-audit-broken-link-schema-analyzer ($0.80 per 1,000 pages)"
+    }
+  ],
+  "connections": {
+    "Daily Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Run Apify Actor ($0.80/1k)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

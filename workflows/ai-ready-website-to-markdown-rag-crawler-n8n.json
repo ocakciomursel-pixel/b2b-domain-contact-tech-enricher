@@ -1,0 +1,67 @@
+{
+  "name": "Automated Website to Clean Markdown, Vector RAG Chunks & llms.txt Pipeline (via Apify Cloud @lucacelli)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24
+            }
+          ]
+        }
+      },
+      "name": "Daily Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~ai-ready-website-to-markdown-rag-crawler/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $env.APIFY_TOKEN }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"startUrls\": [\n    \"https://docs.apify.com\",\n    \"https://modelcontextprotocol.io\"\n  ],\n  \"chunkSizeTokens\": 500\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "name": "Run Apify Actor ($0.50/1k)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        500,
+        300
+      ],
+      "notesInFlow": true,
+      "notes": "Powered by https://apify.com/lucacelli/ai-ready-website-to-markdown-rag-crawler ($0.50 per 1,000 pages)"
+    }
+  ],
+  "connections": {
+    "Daily Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Run Apify Actor ($0.50/1k)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

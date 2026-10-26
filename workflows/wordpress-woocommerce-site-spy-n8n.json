@@ -1,0 +1,67 @@
+{
+  "name": "Automated WordPress & WooCommerce Theme, Plugin & Agency Lead Spy Pipeline (via Apify Cloud @lucacelli)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24
+            }
+          ]
+        }
+      },
+      "name": "Daily Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~wordpress-woocommerce-site-spy/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $env.APIFY_TOKEN }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"domains\": [\n    \"techcrunch.com\",\n    \"woocommerce.com\"\n  ],\n  \"detectPlugins\": true\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "name": "Run Apify Actor ($0.80/1k)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        500,
+        300
+      ],
+      "notesInFlow": true,
+      "notes": "Powered by https://apify.com/lucacelli/wordpress-woocommerce-site-spy ($0.80 per 1,000 sites)"
+    }
+  ],
+  "connections": {
+    "Daily Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Run Apify Actor ($0.80/1k)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
