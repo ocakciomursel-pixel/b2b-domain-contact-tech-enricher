@@ -11,12 +11,26 @@
       "default": [
         "https://apify.com",
         "https://news.ycombinator.com",
-        "https://cloudflare.com"
+        "https://cloudflare.com",
+        "https://vercel.com",
+        "https://supabase.com",
+        "https://linear.app",
+        "https://stripe.com",
+        "https://posthog.com",
+        "https://cal.com",
+        "https://dub.co"
       ],
       "prefill": [
         "https://apify.com",
         "https://news.ycombinator.com",
-        "https://cloudflare.com"
+        "https://cloudflare.com",
+        "https://vercel.com",
+        "https://supabase.com",
+        "https://linear.app",
+        "https://stripe.com",
+        "https://posthog.com",
+        "https://cal.com",
+        "https://dub.co"
       ]
     },
     "checkBrokenLinks": {
@@ -34,5 +48,7 @@
       "maximum": 100
     }
   },
-  "required": ["urls"]
+  "required": [
+    "urls"
+  ]
 }
