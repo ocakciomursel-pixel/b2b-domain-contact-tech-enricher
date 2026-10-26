@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Import WordPress & WooCommerce Theme, Plugin & Agency Lead Spy Directly into Google Sheets (Free Apps Script + $5 Apify Credit)</title>
+  <meta name="description" content="Copy-paste our 30-line Google Apps Script (Code.gs) to pull live data from WordPress & WooCommerce Theme, Plugin & Agency Lead Spy ($0.80/1k sites) straight into Google Sheets without coding." />
+  <link rel="canonical" href="https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/integrations/google-sheets-wordpress-woocommerce-site-spy-apps-script-template.html" />
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background: #090d16; color: #f1f5f9; line-height: 1.6; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 48px 20px 80px; }
+    .pill { display: inline-block; background: rgba(74, 222, 128, 0.14); border: 1px solid rgba(74, 222, 128, 0.35); color: #4ade80; font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 999px; margin-bottom: 14px; }
+    h1 { font-size: 32px; color: #fff; margin: 0 0 12px; line-height: 1.25; }
+    p.lead { font-size: 17px; color: #94a3b8; margin: 0 0 24px; }
+    .cta-bar { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+    .btn { background: #16a34a; color: #fff; text-decoration: none; padding: 13px 22px; border-radius: 8px; font-weight: 700; font-size: 14px; display: inline-block; }
+    .btn.blue { background: #0284c7; }
+    .btn.sec { background: #1e293b; border: 1px solid #334155; color: #e2e8f0; }
+    .box { background: #111827; border: 1px solid #1e293b; border-radius: 10px; padding: 24px; margin-bottom: 24px; }
+    h2 { font-size: 20px; color: #38bdf8; margin-top: 0; }
+    pre { background: #090d16; border: 1px solid #1e293b; padding: 14px; border-radius: 8px; overflow-x: auto; color: #4ade80; font-size: 12px; }
+    a { color: #38bdf8; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <span class="pill">GOOGLE SHEETS AUTOMATION • $0.80 / 1,000 SITES • $5 FREE APIFY CREDIT</span>
+    <h1>How to Import WordPress & WooCommerce Theme, Plugin & Agency Lead Spy Directly into Google Sheets (Free Apps Script + $5 Apify Credit)</h1>
+    <p class="lead">Copy-paste our 30-line Google Apps Script (Code.gs) to pull live data from WordPress & WooCommerce Theme, Plugin & Agency Lead Spy ($0.80/1k sites) straight into Google Sheets without coding.</p>
+    <div class="cta-bar">
+      <a class="btn" href="https://apify.com/lucacelli/wordpress-woocommerce-site-spy" target="_blank" rel="noopener">🚀 Get Your Free $5 Apify Token & Run Actor →</a>
+      <a class="btn blue" href="../workflows/chained-3x-pipeline-n8n.json" download>⚡ Download 3x Chained n8n Workflow</a>
+      <a class="btn sec" href="../index.html">← Back to 14-Actor API Playground</a>
+    </div>
+
+    <div class="box">
+      <h2>📊 Copy-Paste Google Sheets Apps Script (Extensions → Apps Script)</h2>
+      <pre>/**
+ * ============================================================================
+ * 📊 WordPress & WooCommerce Theme, Plugin & Agency Lead Spy — Official Google Sheets Integration (Apps Script)
+ * ============================================================================
+ * Run https://apify.com/lucacelli/wordpress-woocommerce-site-spy ($0.80 / 1,000 sites) directly inside Google Sheets!
+ *
+ * HOW TO INSTALL (30 SECONDS):
+ * 1. Open any Google Sheet -&gt; Click "Extensions" -&gt; "Apps Script"
+ * 2. Paste this code and replace YOUR_APIFY_TOKEN_HERE with your Apify API Token
+ *    (Get $5.00/mo free credit at: https://apify.com/lucacelli/wordpress-woocommerce-site-spy)
+ * 3. Click Save & Reload your Google Sheet -&gt; Use the "⚡ Apify Cloud Data" menu!
+ */
+
+const APIFY_TOKEN = 'YOUR_APIFY_TOKEN_HERE';
+const ACTOR_ENDPOINT = 'https://api.apify.com/v2/acts/lucacelli~wordpress-woocommerce-site-spy/run-sync-get-dataset-items';
+
+function onOpen() {
+  SpreadsheetApp.getUi()
+    .createMenu('⚡ Apify Cloud Data (@lucacelli)')
+    .addItem('🚀 Run WordPress & WooCommerce Theme, Plugin ...', 'runApifyActorToSheet')
+    .addToUi();
+}
+
+function runApifyActorToSheet() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const payload = {
+  "domains": [
+    "techcrunch.com",
+    "woocommerce.com"
+  ],
+  "detectPlugins": true
+};
+
+  const options = {
+    method: 'post',
+    contentType: 'application/json',
+    payload: JSON.stringify(payload),
+    muteHttpExceptions: true
+  };
+
+  const response = UrlFetchApp.fetch(ACTOR_ENDPOINT + '?token=' + encodeURIComponent(APIFY_TOKEN), options);
+  const rows = JSON.parse(response.getContentText());
+
+  if (!Array.isArray(rows) || rows.length === 0) {
+    SpreadsheetApp.getUi().alert('No records returned or check your APIFY_TOKEN.');
+    return;
+  }
+
+  const headers = Object.keys(rows[0]);
+  sheet.clear();
+  sheet.appendRow(headers);
+
+  const matrix = rows.map(r =&gt; headers.map(h =&gt; {
+    const val = r[h];
+    return typeof val === 'object' && val !== null ? JSON.stringify(val) : (val ?? '');
+  }));
+
+  sheet.getRange(2, 1, matrix.length, headers.length).setValues(matrix);
+  SpreadsheetApp.getUi().alert('✅ Successfully imported ' + rows.length + ' records from Apify Cloud!');
+}
+</pre>
+    </div>
+
+    <div class="box">
+      <h2>🧱 Clay.com HTTP API Enrichment Column Configuration</h2>
+      <pre>{
+  "platform": "Clay.com HTTP API Enrichment Column",
+  "actorTitle": "WordPress & WooCommerce Theme, Plugin & Agency Lead Spy",
+  "actorStoreUrl": "https://apify.com/lucacelli/wordpress-woocommerce-site-spy",
+  "costComparison": "$0.0008 per site ($0.80/1k) vs. $0.10–$0.50 per row in native Clay credits (98% savings)",
+  "httpApiConfiguration": {
+    "method": "POST",
+    "endpoint": "https://api.apify.com/v2/acts/lucacelli~wordpress-woocommerce-site-spy/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "bodyTemplate": {
+      "domains": [
+        "techcrunch.com",
+        "woocommerce.com"
+      ],
+      "detectPlugins": true
+    }
+  }
+}</pre>
+    </div>
+
+    <div class="box">
+      <h2>🐍 LangChain / CrewAI / OpenAI Agent Tool (Python)</h2>
+      <pre>"""
+WordPress & WooCommerce Theme, Plugin & Agency Lead Spy — LangChain, CrewAI & OpenAI Assistants Tool
+Official Apify Actor: https://apify.com/lucacelli/wordpress-woocommerce-site-spy ($0.80 / 1,000 sites)
+"""
+import os
+import requests
+from typing import Dict, Any, List
+
+APIFY_TOKEN = os.getenv("APIFY_TOKEN", "YOUR_APIFY_TOKEN")
+ENDPOINT = "https://api.apify.com/v2/acts/lucacelli~wordpress-woocommerce-site-spy/run-sync-get-dataset-items"
+
+def run_wordpress_woocommerce_site_spy(custom_input: Dict[str, Any] = None) -> List[Dict[str, Any]]:
+    """
+    Executes WordPress & WooCommerce Theme, Plugin & Agency Lead Spy on Apify Cloud ($0.80/1k sites).
+    Detect active WordPress themes, installed plugins, WooCommerce cart status, exposed wp-json REST API namespaces, and agency contact details across any list of domains.
+    """
+    default_payload = {
+    "domains": [
+        "techcrunch.com",
+        "woocommerce.com"
+    ],
+    "detectPlugins": True
+}
+    payload = custom_input if custom_input else default_payload
+    res = requests.post(f"{ENDPOINT}?token={APIFY_TOKEN}", json=payload, timeout=300)
+    res.raise_for_status()
+    return res.json()
+</pre>
+    </div>
+  </div>
+</body>
+</html>

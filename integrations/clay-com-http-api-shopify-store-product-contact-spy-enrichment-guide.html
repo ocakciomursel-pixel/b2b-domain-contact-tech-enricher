@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clay.com HTTP API Guide: Cut Enrichment Costs by 98% with Shopify Store Product, Pricing, Stock & Merchant Contact Spy ($0.0005/product)</title>
+  <meta name="description" content="Stop burning expensive Clay credits! Connect Shopify Store Product, Pricing, Stock & Merchant Contact Spy to Clay's HTTP API column for just $0.50 per 1,000 products (plus $5.00/mo free Apify credit)." />
+  <link rel="canonical" href="https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/integrations/clay-com-http-api-shopify-store-product-contact-spy-enrichment-guide.html" />
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background: #090d16; color: #f1f5f9; line-height: 1.6; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 48px 20px 80px; }
+    .pill { display: inline-block; background: rgba(74, 222, 128, 0.14); border: 1px solid rgba(74, 222, 128, 0.35); color: #4ade80; font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 999px; margin-bottom: 14px; }
+    h1 { font-size: 32px; color: #fff; margin: 0 0 12px; line-height: 1.25; }
+    p.lead { font-size: 17px; color: #94a3b8; margin: 0 0 24px; }
+    .cta-bar { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+    .btn { background: #16a34a; color: #fff; text-decoration: none; padding: 13px 22px; border-radius: 8px; font-weight: 700; font-size: 14px; display: inline-block; }
+    .btn.blue { background: #0284c7; }
+    .btn.sec { background: #1e293b; border: 1px solid #334155; color: #e2e8f0; }
+    .box { background: #111827; border: 1px solid #1e293b; border-radius: 10px; padding: 24px; margin-bottom: 24px; }
+    h2 { font-size: 20px; color: #38bdf8; margin-top: 0; }
+    pre { background: #090d16; border: 1px solid #1e293b; padding: 14px; border-radius: 8px; overflow-x: auto; color: #4ade80; font-size: 12px; }
+    a { color: #38bdf8; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <span class="pill">CLAY.COM OUTBOUND & REVOPS • $0.50 / 1,000 PRODUCTS • $5 FREE APIFY CREDIT</span>
+    <h1>Clay.com HTTP API Guide: Cut Enrichment Costs by 98% with Shopify Store Product, Pricing, Stock & Merchant Contact Spy ($0.0005/product)</h1>
+    <p class="lead">Stop burning expensive Clay credits! Connect Shopify Store Product, Pricing, Stock & Merchant Contact Spy to Clay's HTTP API column for just $0.50 per 1,000 products (plus $5.00/mo free Apify credit).</p>
+    <div class="cta-bar">
+      <a class="btn" href="https://apify.com/lucacelli/shopify-store-product-contact-spy" target="_blank" rel="noopener">🚀 Get Your Free $5 Apify Token & Run Actor →</a>
+      <a class="btn blue" href="../workflows/chained-3x-pipeline-n8n.json" download>⚡ Download 3x Chained n8n Workflow</a>
+      <a class="btn sec" href="../index.html">← Back to 14-Actor API Playground</a>
+    </div>
+
+    <div class="box">
+      <h2>📊 Copy-Paste Google Sheets Apps Script (Extensions → Apps Script)</h2>
+      <pre>/**
+ * ============================================================================
+ * 📊 Shopify Store Product, Pricing, Stock & Merchant Contact Spy — Official Google Sheets Integration (Apps Script)
+ * ============================================================================
+ * Run https://apify.com/lucacelli/shopify-store-product-contact-spy ($0.50 / 1,000 products) directly inside Google Sheets!
+ *
+ * HOW TO INSTALL (30 SECONDS):
+ * 1. Open any Google Sheet -&gt; Click "Extensions" -&gt; "Apps Script"
+ * 2. Paste this code and replace YOUR_APIFY_TOKEN_HERE with your Apify API Token
+ *    (Get $5.00/mo free credit at: https://apify.com/lucacelli/shopify-store-product-contact-spy)
+ * 3. Click Save & Reload your Google Sheet -&gt; Use the "⚡ Apify Cloud Data" menu!
+ */
+
+const APIFY_TOKEN = 'YOUR_APIFY_TOKEN_HERE';
+const ACTOR_ENDPOINT = 'https://api.apify.com/v2/acts/lucacelli~shopify-store-product-contact-spy/run-sync-get-dataset-items';
+
+function onOpen() {
+  SpreadsheetApp.getUi()
+    .createMenu('⚡ Apify Cloud Data (@lucacelli)')
+    .addItem('🚀 Run Shopify Store Product, Pricing, Stock ...', 'runApifyActorToSheet')
+    .addToUi();
+}
+
+function runApifyActorToSheet() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const payload = {
+  "storeUrls": [
+    "https://gymshark.com",
+    "https://allbirds.com"
+  ],
+  "maxProductsPerStore": 100
+};
+
+  const options = {
+    method: 'post',
+    contentType: 'application/json',
+    payload: JSON.stringify(payload),
+    muteHttpExceptions: true
+  };
+
+  const response = UrlFetchApp.fetch(ACTOR_ENDPOINT + '?token=' + encodeURIComponent(APIFY_TOKEN), options);
+  const rows = JSON.parse(response.getContentText());
+
+  if (!Array.isArray(rows) || rows.length === 0) {
+    SpreadsheetApp.getUi().alert('No records returned or check your APIFY_TOKEN.');
+    return;
+  }
+
+  const headers = Object.keys(rows[0]);
+  sheet.clear();
+  sheet.appendRow(headers);
+
+  const matrix = rows.map(r =&gt; headers.map(h =&gt; {
+    const val = r[h];
+    return typeof val === 'object' && val !== null ? JSON.stringify(val) : (val ?? '');
+  }));
+
+  sheet.getRange(2, 1, matrix.length, headers.length).setValues(matrix);
+  SpreadsheetApp.getUi().alert('✅ Successfully imported ' + rows.length + ' records from Apify Cloud!');
+}
+</pre>
+    </div>
+
+    <div class="box">
+      <h2>🧱 Clay.com HTTP API Enrichment Column Configuration</h2>
+      <pre>{
+  "platform": "Clay.com HTTP API Enrichment Column",
+  "actorTitle": "Shopify Store Product, Pricing, Stock & Merchant Contact Spy",
+  "actorStoreUrl": "https://apify.com/lucacelli/shopify-store-product-contact-spy",
+  "costComparison": "$0.0005 per product ($0.50/1k) vs. $0.10–$0.50 per row in native Clay credits (98% savings)",
+  "httpApiConfiguration": {
+    "method": "POST",
+    "endpoint": "https://api.apify.com/v2/acts/lucacelli~shopify-store-product-contact-spy/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "bodyTemplate": {
+      "storeUrls": [
+        "https://gymshark.com",
+        "https://allbirds.com"
+      ],
+      "maxProductsPerStore": 100
+    }
+  }
+}</pre>
+    </div>
+
+    <div class="box">
+      <h2>🐍 LangChain / CrewAI / OpenAI Agent Tool (Python)</h2>
+      <pre>"""
+Shopify Store Product, Pricing, Stock & Merchant Contact Spy — LangChain, CrewAI & OpenAI Assistants Tool
+Official Apify Actor: https://apify.com/lucacelli/shopify-store-product-contact-spy ($0.50 / 1,000 products)
+"""
+import os
+import requests
+from typing import Dict, Any, List
+
+APIFY_TOKEN = os.getenv("APIFY_TOKEN", "YOUR_APIFY_TOKEN")
+ENDPOINT = "https://api.apify.com/v2/acts/lucacelli~shopify-store-product-contact-spy/run-sync-get-dataset-items"
+
+def run_shopify_store_product_contact_spy(custom_input: Dict[str, Any] = None) -> List[Dict[str, Any]]:
+    """
+    Executes Shopify Store Product, Pricing, Stock & Merchant Contact Spy on Apify Cloud ($0.50/1k products).
+    Scrape complete Shopify product catalogs, variants, SKUs, sale discounts, live stock availability, installed Shopify apps/pixels, and merchant emails & social links without expensive headless browsers.
+    """
+    default_payload = {
+    "storeUrls": [
+        "https://gymshark.com",
+        "https://allbirds.com"
+    ],
+    "maxProductsPerStore": 100
+}
+    payload = custom_input if custom_input else default_payload
+    res = requests.post(f"{ENDPOINT}?token={APIFY_TOKEN}", json=payload, timeout=300)
+    res.raise_for_status()
+    return res.json()
+</pre>
+    </div>
+  </div>
+</body>
+</html>
