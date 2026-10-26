@@ -458,7 +458,7 @@ async function run() {
     const input = (await Actor.getInput()) || {};
     const domains = Array.isArray(input.domains) && input.domains.length > 0
       ? input.domains
-      : ['apify.com', 'shopify.com', 'linear.app'];
+      : ["apify.com","shopify.com","linear.app","stripe.com","vercel.com","supabase.com","posthog.com","cal.com","dub.co","resend.com"];
     for (const domain of domains) {
       const record = await enrichDomain(domain, input);
       await Actor.pushData(record);
@@ -476,7 +476,7 @@ async function run() {
 
   // Standalone CLI / Demo mode
   const demoDomains = process.argv.slice(2).filter((a) => !a.startsWith('--'));
-  const targets = demoDomains.length > 0 ? demoDomains : ['apify.com', 'shopify.com', 'linear.app'];
+  const targets = demoDomains.length > 0 ? demoDomains : ["apify.com","shopify.com","linear.app","stripe.com","vercel.com","supabase.com","posthog.com","cal.com","dub.co","resend.com"];
   const results = [];
   for (const d of targets) {
     const res = await enrichDomain(d, { maxPagesPerDomain: 2, requestTimeoutSecs: 10 });

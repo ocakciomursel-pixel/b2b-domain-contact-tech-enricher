@@ -8,8 +8,30 @@
       "type": "array",
       "description": "List of company domains or URLs to enrich (e.g., ['apify.com', 'shopify.com', 'linear.app']).",
       "editor": "stringList",
-      "default": ["apify.com", "shopify.com", "linear.app"],
-      "prefill": ["apify.com", "shopify.com", "linear.app"]
+      "default": [
+        "apify.com",
+        "shopify.com",
+        "linear.app",
+        "stripe.com",
+        "vercel.com",
+        "supabase.com",
+        "posthog.com",
+        "cal.com",
+        "dub.co",
+        "resend.com"
+      ],
+      "prefill": [
+        "apify.com",
+        "shopify.com",
+        "linear.app",
+        "stripe.com",
+        "vercel.com",
+        "supabase.com",
+        "posthog.com",
+        "cal.com",
+        "dub.co",
+        "resend.com"
+      ]
     },
     "crawlContactPages": {
       "title": "Follow Contact / About / Legal Pages",
@@ -34,5 +56,7 @@
       "maximum": 60
     }
   },
-  "required": ["domains"]
+  "required": [
+    "domains"
+  ]
 }
