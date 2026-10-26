@@ -9,12 +9,24 @@
       "description": "List of SaaS domains to analyze pricing models for (e.g. [\"apify.com\", \"linear.app\", \"supabase.com\"]).",
       "editor": "stringList",
       "prefill": [
-        "apify.com",
-        "supabase.com"
+        "supabase.com",
+        "linear.app",
+        "vercel.com",
+        "posthog.com",
+        "resend.com",
+        "dub.co",
+        "cal.com",
+        "loops.so"
       ],
       "default": [
-        "apify.com",
-        "supabase.com"
+        "supabase.com",
+        "linear.app",
+        "vercel.com",
+        "posthog.com",
+        "resend.com",
+        "dub.co",
+        "cal.com",
+        "loops.so"
       ]
     }
   },
