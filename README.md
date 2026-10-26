@@ -1,115 +1,110 @@
-# XML Sitemap URL Extractor & Content Freshness Auditor (MCP Ready)
+# XML Sitemap URL Inventory, SEO Freshness & Content Auditor
 
-> **XML Sitemap Extractor, URL Inventory Builder & Content Freshness Tool** — Discover robots.txt and XML sitemaps for any domain, extract complete URL inventories, categorize site sections (/blog, /docs, /products), and measure content publishing velocity.
-
----
-
-## 🚀 Why Choose This Actor?
-
-1. **Ultra-Low Compute Cost (No Headless Browser Overhead)**: Built on a high-efficiency HTTP & structured-data parsing engine instead of heavy Chromium instances. Runs **10x faster** and consumes minimal Apify platform RAM/CPU.
-2. **Transparent Pay-Per-Event Pricing**: You only pay for actual results delivered (`sitemap-analyzed`), never for wasted idle time.
-3. **100% MCP & AI Agent Ready**: Designed with strict JSON schemas so **Claude Desktop, Cursor, OpenAI Agents, LangChain, n8n, Make.com, Zapier, and Clay** can call this Actor autonomously as a tool.
-4. **Clean, Structured Export**: Download results in **JSON, CSV, Excel, XML, or RSS** directly from the Apify dataset tab or via REST API.
+> 🎁 **RUN FOR FREE WITH YOUR $5.00 APIFY MONTHLY CREDIT:** Every Apify account automatically receives **$5.00 in free platform usage every month** — enough to extract **3,300 to 10,000 verified records every single month for $0.00 out of pocket!** Click the green **Start** button above to test immediately.
 
 ---
 
-## 🎯 Target Industries & High-ROI Use Cases
+## ⚡ Why Choose `lucacelli/sitemap-url-inventory-content-freshness-auditor` Over Visualping / Screaming Frog ($49+/mo)?
 
-- **SEO & Content Strategy Teams**
-- **AI RAG Crawling & Indexing Pipelines**
-- **Competitive Intelligence Analysts**
-- **Website Migration & QA Engineers**
+- **Ultra-Low Pay-Per-Result Pricing:** Just **$0.50 per 1,000 URLs** (`$0.0005/URL`) with **$0 monthly subscription** and **$0 hidden add-on charges**.
+- **100% Automation & AI-Agent Ready:** Native synchronous REST API endpoint (`/run-sync-get-dataset-items`) for **n8n**, **Make.com**, **Clay.com**, **LangChain**, and **Claude Desktop / Cursor MCP**.
+- **Structured JSON, CSV & Excel Output:** Clean, normalized fields ready for immediate CRM or database ingestion.
 
-### Popular Workflows
-- **Automated B2B Prospecting & Enrichment**: Feed a list of targets from Clay, HubSpot, Salesforce, or Google Sheets and enrich every record automatically.
-- **Autonomous AI Agent Tooling (MCP)**: Connect this Actor to Claude or Cursor via the official `@apify/actors-mcp-server` so your AI assistant can gather real-time live web intelligence on demand.
-- **Scheduled Monitoring**: Schedule recurring runs (daily/weekly) on Apify and push fresh intelligence to Slack, Webhook, Email, or PostgreSQL/Supabase.
-
----
-
-## 📥 Input Parameters Example
-
-```json
-{
-  "domains": [
-    "apify.com"
-  ],
-  "maxUrlsPerDomain": 200
-}
-```
+| Metric | **This Actor (`lucacelli/sitemap-url-inventory-content-freshness-auditor`)** | **Visualping / Screaming Frog ($49+/mo)** |
+| :--- | :--- | :--- |
+| **Effective Price per 1,000 URLs** | **$0.50 / 1,000 URLs** | $49–$299/month mandatory subscription |
+| **Free Monthly Allowance** | **Up to 10,000 items/mo free (via $5 Apify credit)** | Trial / Credit Card Wall |
+| **n8n / Make / Clay / Claude MCP** | **Native 1-Click Support** | Expensive Enterprise API add-on |
 
 ---
 
-## 📤 Output Dataset Sample
+## 🔗 3x Power Combo: Chain With Our Other Cloud Actors for Full-Funnel Automation
 
-Each extracted record is pushed to the default Apify Dataset in clean JSON format:
+Multiply your ROI by chaining **`lucacelli/sitemap-url-inventory-content-freshness-auditor`** with our companion Cloud Actors in **n8n**, **Make.com**, or **Clay**:
 
-```json
-{
-  "domain": "apify.com",
-  "primarySitemapUrl": "https://apify.com/sitemap.xml",
-  "sitemapFound": true,
-  "childSitemapsCount": 18,
-  "totalUrlsExtracted": 1605,
-  "topPathSections": {
-    "/store": 928,
-    "/ideas": 176,
-    "/integrations": 108
-  }
-}
-```
+1. **Step 1 — Discover Local Businesses & Websites:** **[Google Maps Scraper: Places, Emails, Contacts & Reviews Pro ($1.50/1k)](https://apify.com/lucacelli/google-maps-scraper-places-emails-contacts-reviews)**
+2. **Step 2 — Enrich Domains, Verified Emails, DNS MX/DMARC & 38+ Tech Signatures:** **[B2B Domain Contact, Email, DNS & Tech Stack Enricher ($0.80/1k)](https://apify.com/lucacelli/b2b-domain-contact-tech-enricher)**
+3. **Step 3 — Audit 45-Point Technical SEO, JSON-LD Schema & Broken Links:** **[Technical SEO, Broken Link, Schema.org & Security Auditor ($0.80/1k)](https://apify.com/lucacelli/seo-technical-audit-broken-link-schema-analyzer)**
+
+👉 **[Download Ready-to-Import 3x Chained n8n Workflow JSON →](https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/workflows/chained-3x-pipeline-n8n.json)**
 
 ---
 
-## 🤖 How to Use with AI Agents (Claude / Cursor MCP) & Automation
+## 🤖 Use as a 5-in-1 AI Agent Tool in Claude Desktop, Cursor & Windsurf (MCP)
 
-### 1. Model Context Protocol (MCP)
-Add this Actor to your `claude_desktop_config.json` or Cursor MCP settings using the Apify MCP Server:
+Paste this into your `claude_desktop_config.json` or Cursor MCP settings to give your AI assistant simultaneous access to **XML Sitemap URL Inventory, SEO Freshness & Content Auditor** plus our top B2B intelligence Actors:
+
 ```json
 {
   "mcpServers": {
-    "apify": {
+    "lucacelli-b2b-cloud-suite": {
       "command": "npx",
       "args": [
         "-y",
         "@apify/actors-mcp-server",
         "--actors",
-        "lucacelli/sitemap-url-inventory-content-freshness-auditor"
+        "lucacelli/sitemap-url-inventory-content-freshness-auditor,lucacelli/google-maps-scraper-places-emails-contacts-reviews,lucacelli/b2b-domain-contact-tech-enricher,lucacelli/shopify-store-product-contact-spy,lucacelli/ai-ready-website-to-markdown-rag-crawler"
       ],
       "env": {
-        "APIFY_TOKEN": "YOUR_APIFY_API_TOKEN"
+        "APIFY_TOKEN": "YOUR_APIFY_TOKEN_HERE"
       }
     }
   }
 }
 ```
 
-### 2. Call via Apify REST API (cURL / n8n / Make / Clay)
+---
+
+## 🚀 Synchronous REST API, Python & Node.js Quickstart
+
+### 1. Synchronous HTTP POST (n8n / Make.com / Clay / cURL)
+
 ```bash
 curl -X POST "https://api.apify.com/v2/acts/lucacelli~sitemap-url-inventory-content-freshness-auditor/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"domains":["apify.com"],"maxUrlsPerDomain":200}'
+  -d '{
+  "domains": [
+    "apify.com",
+    "vercel.com"
+  ],
+  "maxUrlsPerDomain": 200
+}'
 ```
 
-### 3. Node.js SDK
-```javascript
-import { ApifyClient } from 'apify-client';
+### 2. Python (`apify-client`)
 
-const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
-const run = await client.actor('lucacelli/sitemap-url-inventory-content-freshness-auditor').call({"domains":["apify.com"],"maxUrlsPerDomain":200});
-const { items } = await client.dataset(run.defaultDatasetId).listItems();
-console.log(items);
+```python
+from apify_client import ApifyClient
+
+client = ApifyClient("YOUR_APIFY_TOKEN")
+run = client.actor("lucacelli/sitemap-url-inventory-content-freshness-auditor").call(run_input={
+    "domains": [
+        "apify.com",
+        "vercel.com"
+    ],
+    "maxUrlsPerDomain": 200
+})
+for item in client.dataset(run["defaultDatasetId"]).iterate_items():
+    print(item)
 ```
 
 ---
 
-## ❓ Frequently Asked Questions (FAQ)
+## 🌐 Complete Suite of 14 Live Cloud Actors by [@lucacelli](https://apify.com/lucacelli)
 
-### Does this Actor require paid external API keys or residential proxies?
-No! It works out of the box with zero external API keys required.
-
-### Can I export the data to CSV, Excel, or Google Sheets?
-Yes. Every run stores structured records in an Apify Dataset that can be exported with one click to **CSV, XLSX (Excel), JSON, or JSONL**, or synced directly to Google Sheets via Make/Zapier/n8n.
-
-### Keywords & Tags
-`Sitemap URL extractor, XML sitemap parser, website URL inventory, competitor content velocity, RAG URL discovery, SEO site architecture analyzer`
+| Cloud Actor | Price | Legacy Tool Replaced | Open in Apify Store |
+| :--- | :--- | :--- | :--- |
+| **[Google Maps Scraper: Places, Emails, Contacts & Reviews Pro](https://apify.com/lucacelli/google-maps-scraper-places-emails-contacts-reviews)** | **$1.50 / 1k places** | *Outscraper / PhantomBuster ($49–$199/mo)* | [🚀 Run Actor →](https://apify.com/lucacelli/google-maps-scraper-places-emails-contacts-reviews) |
+| **[B2B Domain Contact, Email, DNS & Tech Stack Enricher](https://apify.com/lucacelli/b2b-domain-contact-tech-enricher)** | **$0.80 / 1k domains** | *Apollo.io / BuiltWith / Hunter ($99–$295/mo)* | [🚀 Run Actor →](https://apify.com/lucacelli/b2b-domain-contact-tech-enricher) |
+| **[Shopify Store Product, Pricing, Stock & Merchant Contact Spy](https://apify.com/lucacelli/shopify-store-product-contact-spy)** | **$0.50 / 1k products** | *Koala Inspector / Commerce Inspector ($49–$99/mo)* | [🚀 Run Actor →](https://apify.com/lucacelli/shopify-store-product-contact-spy) |
+| **[Website to Clean Markdown, Vector RAG Chunks & llms.txt](https://apify.com/lucacelli/ai-ready-website-to-markdown-rag-crawler)** | **$0.50 / 1k pages** | *Firecrawl / Jina Reader API ($19–$99/mo)* | [🚀 Run Actor →](https://apify.com/lucacelli/ai-ready-website-to-markdown-rag-crawler) |
+| **[Technical SEO, Broken Link, Schema.org & Security Auditor](https://apify.com/lucacelli/seo-technical-audit-broken-link-schema-analyzer)** | **$0.80 / 1k pages** | *Screaming Frog / Ahrefs Site Audit ($99–$249/mo)* | [🚀 Run Actor →](https://apify.com/lucacelli/seo-technical-audit-broken-link-schema-analyzer) |
+| **[GitHub Developer, Stargazer & Contributor Lead Enricher](https://apify.com/lucacelli/github-developer-recruiter-lead-enricher)** | **$0.80 / 1k developers** | *SeekOut / Gem / Clay ($149–$499/mo)* | [🚀 Run Actor →](https://apify.com/lucacelli/github-developer-recruiter-lead-enricher) |
+| **[Greenhouse & Lever Company Job Board & Hiring Signal Scraper](https://apify.com/lucacelli/ats-job-board-hiring-signal-scraper)** | **$0.50 / 1k jobs** | *Clay Hiring Signals / LoneScale ($149+/mo)* | [🚀 Run Actor →](https://apify.com/lucacelli/ats-job-board-hiring-signal-scraper) |
+| **[Reddit Subreddit, Buyer Intent & Pain-Point Lead Miner](https://apify.com/lucacelli/reddit-community-pain-point-trend-miner)** | **$0.50 / 1k posts** | *GummySearch / Syften ($29–$79/mo)* | [🚀 Run Actor →](https://apify.com/lucacelli/reddit-community-pain-point-trend-miner) |
+| **[WordPress & WooCommerce Theme, Plugin & Agency Lead Spy](https://apify.com/lucacelli/wordpress-woocommerce-site-spy)** | **$0.80 / 1k sites** | *Wappalyzer / BuiltWith ($99+/mo)* | [🚀 Run Actor →](https://apify.com/lucacelli/wordpress-woocommerce-site-spy) |
+| **[Hacker News Launch, Show HN & Tech Founder Lead Monitor](https://apify.com/lucacelli/hackernews-tech-launch-lead-monitor)** | **$0.50 / 1k storys** | *Harmonic.ai / PitchBook Alerts ($200+/mo)* | [🚀 Run Actor →](https://apify.com/lucacelli/hackernews-tech-launch-lead-monitor) |
+| **[XML Sitemap URL Inventory, SEO Freshness & Content Auditor](https://apify.com/lucacelli/sitemap-url-inventory-content-freshness-auditor)** | **$0.50 / 1k URLs** | *Visualping / Screaming Frog ($49+/mo)* | [🚀 Run Actor →](https://apify.com/lucacelli/sitemap-url-inventory-content-freshness-auditor) |
+| **[SaaS Pricing Page, Plan Tiers & Competitor Feature Spy](https://apify.com/lucacelli/saas-pricing-page-tier-feature-extractor)** | **$0.80 / 1k pages** | *Klue / Crayon ($500+/mo)* | [🚀 Run Actor →](https://apify.com/lucacelli/saas-pricing-page-tier-feature-extractor) |
+| **[ClinicalTrials.gov & OpenFDA Biotech / Pharma Lead Enricher](https://apify.com/lucacelli/clinical-trials-fda-drug-safety-intel)** | **$0.80 / 1k trials** | *Citeline / GlobalData Pharma ($500+/mo)* | [🚀 Run Actor →](https://apify.com/lucacelli/clinical-trials-fda-drug-safety-intel) |
+| **[Scientific Paper, Author Email & Lab Research Lead Miner](https://apify.com/lucacelli/scientific-literature-citation-author-lead-miner)** | **$0.50 / 1k papers** | *Dimensions.ai / SciLeads ($300+/mo)* | [🚀 Run Actor →](https://apify.com/lucacelli/scientific-literature-citation-author-lead-miner) |
