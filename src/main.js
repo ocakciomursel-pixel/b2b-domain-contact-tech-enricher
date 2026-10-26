@@ -80,7 +80,7 @@ async function run() {
     await Actor.init();
     try {
         const input = (await Actor.getInput()) || {};
-        const domains = Array.isArray(input.domains) && input.domains.length ? input.domains : ['techcrunch.com'];
+        const domains = Array.isArray(input.domains) && input.domains.length ? input.domains : ["techcrunch.com","wordpress.org","woocommerce.com","yoast.com","wpbeginner.com","kinsta.com","wpengine.com","smashingmagazine.com","css-tricks.com","elementor.com"];
         for (const d of domains) {
             const report = await inspectSite(d);
             if (report) {

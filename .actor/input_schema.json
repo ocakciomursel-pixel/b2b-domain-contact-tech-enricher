@@ -10,11 +10,27 @@
       "editor": "stringList",
       "prefill": [
         "techcrunch.com",
-        "wordpress.org"
+        "wordpress.org",
+        "woocommerce.com",
+        "yoast.com",
+        "wpbeginner.com",
+        "kinsta.com",
+        "wpengine.com",
+        "smashingmagazine.com",
+        "css-tricks.com",
+        "elementor.com"
       ],
       "default": [
         "techcrunch.com",
-        "wordpress.org"
+        "wordpress.org",
+        "woocommerce.com",
+        "yoast.com",
+        "wpbeginner.com",
+        "kinsta.com",
+        "wpengine.com",
+        "smashingmagazine.com",
+        "css-tricks.com",
+        "elementor.com"
       ]
     }
   },
