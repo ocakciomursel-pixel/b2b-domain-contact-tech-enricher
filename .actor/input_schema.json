@@ -9,10 +9,20 @@
       "description": "List of domains (e.g. [\"apify.com\", \"cloudflare.com\"]).",
       "editor": "stringList",
       "prefill": [
-        "apify.com"
+        "apify.com",
+        "crawlee.dev",
+        "vercel.com",
+        "supabase.com",
+        "linear.app",
+        "posthog.com"
       ],
       "default": [
-        "apify.com"
+        "apify.com",
+        "crawlee.dev",
+        "vercel.com",
+        "supabase.com",
+        "linear.app",
+        "posthog.com"
       ]
     },
     "maxUrlsPerDomain": {

@@ -103,7 +103,7 @@ async function run() {
     await Actor.init();
     try {
         const input = (await Actor.getInput()) || {};
-        const domains = Array.isArray(input.domains) && input.domains.length ? input.domains : ['apify.com'];
+        const domains = Array.isArray(input.domains) && input.domains.length ? input.domains : ["apify.com","crawlee.dev","vercel.com","supabase.com","linear.app","posthog.com"];
         const maxUrls = Number(input.maxUrlsPerDomain) || 200;
         for (const d of domains) {
             const report = await analyzeDomainSitemap(d, maxUrls);
