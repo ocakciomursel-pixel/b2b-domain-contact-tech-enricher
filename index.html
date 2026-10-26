@@ -3,1884 +3,526 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lucacelli Data Engineering — 200+ B2B Cloud Diagnostics CLI Tools, n8n Packs, Micro-APIs & Chrome Extensions</title>
-  <meta name="description" content="200+ Pay-Per-Result Cloud Web Diagnostics Utilities ($0.50/1k results), 20 Turnkey n8n & Make.com Automation Packs, 20 Serverless Micro-API Endpoints, and 10 Manifest V3 Chrome Extensions." />
+  <title>Lucacelli Cloud Data Engineering — Official Apify Store Actors & Live API Playground ($0.50/1k Results)</title>
+  <meta name="description" content="Official interactive API playground and documentation hub for Lucacelli Apify Store Actors: Google Maps Email & Lead Scraper ($1.50/1k), Shopify Spy ($0.50/1k), B2B Domain Enricher ($0.80/1k), Website to Markdown & llms.txt ($0.50/1k), and Technical SEO Auditor ($0.80/1k)." />
+  <meta property="og:title" content="Lucacelli Cloud Data Engineering — High-Speed Apify Actors ($0.50–$1.50 / 1k Results)" />
+  <meta property="og:description" content="Pay-Per-Result Cloud Scrapers & Enrichment APIs for Google Maps, B2B Domains, Shopify, RAG Markdown/llms.txt, Technical SEO, GitHub Recruiting, and ATS Job Boards." />
+  <meta property="og:url" content="https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/" />
   <style>
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background: #090d16; color: #f1f5f9; }
-    header { padding: 56px 20px 44px; text-align: center; background: radial-gradient(circle at top, #1e293b 0%, #090d16 70%); border-bottom: 1px solid #1e293b; }
-    .pill { display: inline-block; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35); color: #38bdf8; font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 999px; margin-bottom: 16px; }
-    h1 { font-size: 38px; margin: 0 0 14px; color: #fff; letter-spacing: -0.02em; }
-    p.sub { max-width: 780px; margin: 0 auto 28px; color: #94a3b8; font-size: 17px; line-height: 1.55; }
+    body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #090d16; color: #f1f5f9; }
+    header { padding: 56px 20px 44px; text-align: center; background: radial-gradient(circle at top, #1e293b 0%, #090d16 72%); border-bottom: 1px solid #1e293b; }
+    .pill { display: inline-block; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35); color: #38bdf8; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 999px; margin-bottom: 16px; letter-spacing: 0.04em; }
+    h1 { font-size: 38px; margin: 0 auto 14px; max-width: 920px; color: #fff; letter-spacing: -0.02em; line-height: 1.2; }
+    p.sub { max-width: 800px; margin: 0 auto 28px; color: #94a3b8; font-size: 17px; line-height: 1.6; }
     .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
     .container { max-width: 1240px; margin: 0 auto; padding: 36px 20px 64px; }
-    .scanner-box { background: #111827; border: 1px solid #0284c7; border-radius: 12px; padding: 24px; margin-bottom: 44px; box-shadow: 0 10px 30px rgba(2,132,199,0.12); }
-    .scanner-form { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
-    .scanner-input { flex: 1; min-width: 240px; background: #090d16; border: 1px solid #334155; color: #fff; padding: 11px 14px; border-radius: 8px; font-size: 14px; }
-    .scanner-out { margin-top: 14px; background: #090d16; border: 1px solid #1e293b; border-radius: 8px; padding: 14px; font-family: monospace; font-size: 12px; color: #4ade80; max-height: 240px; overflow-y: auto; display: none; white-space: pre-wrap; }
+    .scanner-box { background: #111827; border: 1px solid #0284c7; border-radius: 12px; padding: 26px; margin-bottom: 44px; box-shadow: 0 10px 30px rgba(2,132,199,0.14); }
+    .scanner-form { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+    .scanner-input { flex: 1; min-width: 240px; background: #090d16; border: 1px solid #334155; color: #fff; padding: 12px 14px; border-radius: 8px; font-size: 14px; }
+    .scanner-out { margin-top: 14px; background: #090d16; border: 1px solid #1e293b; border-radius: 8px; padding: 16px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 12.5px; color: #4ade80; max-height: 340px; overflow-y: auto; white-space: pre-wrap; }
     h2 { border-left: 4px solid #38bdf8; padding-left: 12px; margin: 44px 0 20px; font-size: 24px; color: #fff; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
-    .card { background: #111827; border: 1px solid #1e293b; border-radius: 10px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; transition: border-color 0.15s; }
-    .card:hover { border-color: #38bdf8; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 20px; }
+    .card { background: #111827; border: 1px solid #1e293b; border-radius: 10px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; transition: border-color 0.15s, transform 0.15s; }
+    .card:hover { border-color: #38bdf8; transform: translateY(-2px); }
     .tag { font-size: 11px; text-transform: uppercase; color: #38bdf8; font-weight: 700; letter-spacing: 0.04em; }
-    .card h3 { font-size: 17px; margin: 8px 0; color: #fff; line-height: 1.35; }
-    .card p { font-size: 13px; color: #94a3b8; line-height: 1.55; }
-    .row { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; padding-top: 12px; border-top: 1px solid #1e293b; gap: 8px; }
-    .price { font-size: 19px; font-weight: 800; color: #4ade80; }
-    .btn-group { display: flex; gap: 8px; }
-    .btn { background: #0284c7; color: #fff; text-decoration: none; padding: 9px 14px; border-radius: 6px; font-weight: 600; font-size: 12px; border: none; cursor: pointer; display: inline-block; }
+    .badge-live { font-size: 10.5px; font-weight: 700; color: #4ade80; background: rgba(74, 222, 128, 0.12); border: 1px solid rgba(74, 222, 128, 0.3); padding: 2px 8px; border-radius: 999px; }
+    .card h3 { font-size: 18px; margin: 8px 0; color: #fff; line-height: 1.35; }
+    .card p { font-size: 13.5px; color: #94a3b8; line-height: 1.55; margin-bottom: 12px; }
+    .code-mini { background: #090d16; border: 1px solid #1e293b; border-radius: 6px; padding: 8px 10px; font-family: monospace; font-size: 11px; color: #cbd5e1; overflow-x: auto; white-space: nowrap; }
+    .row { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; padding-top: 14px; border-top: 1px solid #1e293b; gap: 8px; }
+    .price { font-size: 22px; font-weight: 800; color: #4ade80; }
+    .btn-group { display: flex; gap: 8px; align-items: center; }
+    .btn { background: #0284c7; color: #fff; text-decoration: none; padding: 10px 15px; border-radius: 6px; font-weight: 600; font-size: 12.5px; border: none; cursor: pointer; display: inline-block; transition: background 0.15s; }
     .btn:hover { background: #0369a1; }
+    .btn.green { background: #16a34a; }
+    .btn.green:hover { background: #15803d; }
     .btn.secondary { background: #1e293b; border: 1px solid #334155; color: #e2e8f0; }
     .btn.secondary:hover { background: #334155; }
-    footer { text-align: center; padding: 32px 20px; border-top: 1px solid #1e293b; color: #64748b; font-size: 13px; }
+    table.comp { width: 100%; border-collapse: collapse; margin-top: 16px; background: #111827; border: 1px solid #1e293b; border-radius: 10px; overflow: hidden; }
+    table.comp th, table.comp td { padding: 13px 16px; text-align: left; border-bottom: 1px solid #1e293b; font-size: 13.5px; }
+    table.comp th { background: #1e293b; color: #38bdf8; font-weight: 700; }
+    footer { text-align: center; padding: 36px 20px; border-top: 1px solid #1e293b; color: #64748b; font-size: 13px; }
   </style>
 </head>
 <body>
   <header>
-    <span class="pill">ENTERPRISE V2.0 DATA SUITE • 75% LOWER COST THAN MARKET</span>
-    <h1>200+ Cloud B2B Diagnostics CLI Tools, Turnkey n8n Workflows & Micro-APIs</h1>
-    <p class="sub">Instant B2B domain Diagnostics, Shopify competitor intelligence, 45-point technical SEO auditing, and 200+ specialized Cloud Web Diagnostics Utilities starting at just <strong>$0.50 per 1,000 results</strong>.</p>
+    <span class="pill">OFFICIAL APIFY STORE CLOUD ACTORS • PAY-PER-RESULT ($0.50–$1.50 / 1,000 ITEMS) • MCP & N8N READY</span>
+    <h1>Enterprise B2B Lead Generation, Google Maps, Shopify & RAG Cloud APIs</h1>
+    <p class="sub">Zero monthly subscriptions. Run high-concurrency cloud extraction and enrichment pipelines on <strong>Apify Cloud</strong> starting at <strong>$0.50 per 1,000 results</strong> — with instant REST API, Python, Node.js, n8n, Make.com, and Claude MCP integration.</p>
     <div class="hero-btns">
-      <a class="btn" style="font-size:15px;padding:12px 22px;background:#0ea5e9" href="#dfy-Benchmark Kits">📊 10 Ready Web Architecture Benchmark Kits ($15–$25) →</a>
-      <a class="btn" style="font-size:15px;padding:12px 22px;background:#0ea5e9" href="#dfy-Benchmark Kits">📊 10 Ready Web Architecture Benchmark Kits ($15–$25) →</a>
-      <a class="btn" style="font-size:15px;padding:12px 22px" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Explore 200+ Cloud Actors on Apify Store →</a>
-      <a class="btn secondary" style="font-size:15px;padding:12px 22px" href="#chrome-extensions">🧩 10 Commercial Chrome Extensions ($5) →</a>
-      <a class="btn secondary" style="font-size:15px;padding:12px 22px" href="./api-docs.html">Interactive 20-Endpoint API Explorer (OpenAPI 3.0) →</a>
-      <a class="btn" style="font-size:15px;padding:12px 22px;background:#16a34a" href="https://buy.polar.sh/polar_cl_wNd92BUpp1y37jeYkBbeSrlCka5EWrmmg7TGN0DPTYY" target="_blank" rel="noopener">🔥 Get All 75 Tools, Extensions & Benchmark Suites — Mega Pass ($39) →</a>
+      <a class="btn green" style="font-size:15px;padding:13px 24px" href="https://apify.com/lucacelli/google-maps-scraper-places-emails-contacts-reviews" target="_blank" rel="noopener">📍 Launch Google Maps Emails & Leads Pro ($1.50/1k) →</a>
+      <a class="btn" style="font-size:15px;padding:13px 24px" href="https://apify.com/lucacelli" target="_blank" rel="noopener">🚀 View All Actors on Apify Store (@lucacelli) →</a>
+      <a class="btn secondary" style="font-size:15px;padding:13px 24px" href="#interactive-playground">⚡ Live API & Code Playground →</a>
+      <a class="btn secondary" style="font-size:15px;padding:13px 24px" href="./api-docs.html">📘 OpenAPI 3.0 Spec →</a>
     </div>
   </header>
 
   <div class="container">
-        <div class="scanner-box" id="live-audit-tools">
-      <span class="tag">8-IN-1 INTERACTIVE MICRO-SAAS WEB DIAGNOSTICS SUITE (FREE PREVIEW + FULL PRO UNLOCK)</span>
-      <h3 style="margin:6px 0 4px;font-size:21px;color:#fff">Instant Live B2B Domain, Shopify, Technical SEO & /llms.txt Auditor</h3>
-      <p style="margin:0 0 14px;color:#94a3b8;font-size:13.5px">Select any of the 4 live auditing tools below, enter a target domain, and preview real-time intelligence — or unlock the full bulk CLI, n8n workflow, or self-hosted Architecture Benchmark Kit.</p>
+    <div class="scanner-box" id="interactive-playground">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+        <div>
+          <span class="tag">INTERACTIVE CLOUD API PLAYGROUND & SDK CODE GENERATOR</span>
+          <h3 style="margin:6px 0 4px;font-size:21px;color:#fff">Test Live Domain / Store Diagnostics & Generate Instant Apify API Code</h3>
+        </div>
+        <a id="playgroundDirectLink" class="btn green" href="https://apify.com/lucacelli/google-maps-scraper-places-emails-contacts-reviews" target="_blank" rel="noopener">Run Full Bulk Actor on Apify Cloud →</a>
+      </div>
+      <p style="margin:6px 0 14px;color:#94a3b8;font-size:13.5px">Select any cloud Actor below to preview real-time output in your browser or generate ready-to-copy <strong>cURL, Python, Node.js, and n8n HTTP Request</strong> payloads.</p>
 
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">
-        <button class="btn" id="auditTabBtn1" onclick="setAuditMode('dns', this)" style="background:#0284c7">1. 📧 DNS MX / SPF / DMARC Security</button>
-        <button class="btn secondary" id="auditTabBtn2" onclick="setAuditMode('shopify', this)">2. 🛍️ Shopify & E-Commerce Store Schema Inspector</button>
-        <button class="btn secondary" id="auditTabBtn3" onclick="setAuditMode('seo', this)">3. 🔍 45-Point Technical SEO & Schema</button>
-        <button class="btn secondary" id="auditTabBtn4" onclick="setAuditMode('llmstxt', this)">4. 📄 Instant /llms.txt & Markdown Builder</button>
+        <button class="btn" id="tabBtnGmaps" onclick="selectPlaygroundMode('gmaps', this)">1. 📍 Google Maps Places + Emails ($1.50/1k)</button>
+        <button class="btn secondary" id="tabBtnB2b" onclick="selectPlaygroundMode('b2b', this)">2. 📧 B2B Domain + DNS + Tech Stack ($0.80/1k)</button>
+        <button class="btn secondary" id="tabBtnShopify" onclick="selectPlaygroundMode('shopify', this)">3. 🛍️ Shopify Product & Price Spy ($0.50/1k)</button>
+        <button class="btn secondary" id="tabBtnRag" onclick="selectPlaygroundMode('rag', this)">4. 📄 Website to Markdown & llms.txt ($0.50/1k)</button>
+        <button class="btn secondary" id="tabBtnSeo" onclick="selectPlaygroundMode('seo', this)">5. 🔍 45-Point Technical SEO Auditor ($0.80/1k)</button>
       </div>
 
       <div class="scanner-form">
-        <input id="demoDomainInput" class="scanner-input" type="text" value="gymshark.com" placeholder="Enter any company or store domain (e.g. gymshark.com, stripe.com, linear.app)" />
-        <button id="demoScanBtn" class="btn" style="font-size:14px;padding:11px 20px">Run Live Audit ▶</button>
-        <a id="demoUnlockPackBtn" class="btn" style="font-size:14px;padding:11px 18px;background:#16a34a" href="https://buy.polar.sh/polar_cl_VweW8d2FkxtgnbCkjY3OZIk1PhYPaD7ttrqTX3OlcWt" target="_blank" rel="noopener">🔓 Unlock Full Bulk Audit Pack ($9) →</a>
-        <a class="btn secondary" style="font-size:14px;padding:11px 18px" href="https://buy.polar.sh/polar_cl_wNd92BUpp1y37jeYkBbeSrlCka5EWrmmg7TGN0DPTYY" target="_blank" rel="noopener">🔥 Get All 75 Tools, Extensions & Benchmark Kits ($39) →</a>
+        <input id="playgroundInput" class="scanner-input" type="text" value="dentist in Miami, FL" placeholder="Enter search query or domain (e.g. dentist in Miami, FL or stripe.com)" />
+        <button class="btn" onclick="runLivePlaygroundPreview()" style="font-size:14px;padding:12px 20px">▶ Preview Output & API Snippet</button>
+        <button class="btn secondary" onclick="copyPlaygroundSnippet()" style="font-size:14px;padding:12px 18px">📋 Copy cURL / Python Snippet</button>
       </div>
-      <pre id="demoScannerOutput" class="scanner-out"></pre>
+      <pre id="playgroundOutput" class="scanner-out"></pre>
     </div>
-  
 
+    <h2>🔥 Featured Live Pay-Per-Event Actors on Apify Store</h2>
+    <div class="grid">
+      
     <div class="card">
       <div>
-        <span class="tag">Apify Cloud Actor • $0.002/result</span>
-        <h3>Shopify Store Product, Pricing, Stock & Storefront Schema Inspector (MCP Ready)</h3>
-        <p>Extract complete product catalogs, variants, pricing statistics, stock availability, sale discounts, vendor lists, and Storefront Schema.org Organization metadata from any Shopify store URL.</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px">
+          <span class="tag">Flagship B2B Lead Gen • All-Inclusive</span>
+          <span class="badge-live">● LIVE ON APIFY</span>
+        </div>
+        <h3><a href="https://apify.com/lucacelli/google-maps-scraper-places-emails-contacts-reviews" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">Google Maps Scraper: Places, Emails, Contacts & Reviews Pro</a></h3>
+        <p>Extract Google Maps businesses, ratings, reviews, phone numbers, websites, plus automatic website crawling for verified emails, social links, DNS MX/SPF/DMARC & B2B lead scores (0-100) with $0 add-on fees.</p>
+        <div class="code-mini">POST https://api.apify.com/v2/acts/lucacelli~google-maps-scraper-places-emails-contacts-reviews/run-sync-get-dataset-items</div>
       </div>
       <div class="row">
-        <span class="price">$2.00<small style="font-size:11px;color:#94a3b8;font-weight:400"> / 1k results</small></span>
-        <a class="btn" href="https://apify.com/lucacelli/shopify-store-product-contact-Inspector" target="_blank" rel="noopener">Try for Free →</a>
-      </div>
-    </div>
-  
-
-    <div class="card">
-      <div>
-        <span class="tag">Apify Cloud Actor • $0.003/result</span>
-        <h3>AI & LLM Website to Clean Markdown, RAG Chunks & Metadata (MCP Ready)</h3>
-        <p>Convert any webpage or documentation site into clean LLM-ready Markdown, overlapping RAG text chunks with estimated token counts, and JSON-LD/OpenGraph metadata.</p>
-      </div>
-      <div class="row">
-        <span class="price">$3.00<small style="font-size:11px;color:#94a3b8;font-weight:400"> / 1k results</small></span>
-        <a class="btn" href="https://apify.com/lucacelli/ai-ready-website-to-markdown-rag-crawler" target="_blank" rel="noopener">Try for Free →</a>
-      </div>
-    </div>
-  
-
-    <div class="card">
-      <div>
-        <span class="tag">Apify Cloud Actor • $0.005/result</span>
-        <h3>Technical SEO, Broken Link, Schema.org & Meta Tag Auditor (MCP Ready)</h3>
-        <p>Perform a 40-point technical SEO & AI-readiness audit on any URL list: HTTP latency, Title/Meta lengths, Canonical & Robots directives, H1-H6 structure, Image alt coverage, Schema.org JSON-LD validation, and live broken link detection with a 0-100 SEO Score.</p>
-      </div>
-      <div class="row">
-        <span class="price">$5.00<small style="font-size:11px;color:#94a3b8;font-weight:400"> / 1k results</small></span>
-        <a class="btn" href="https://apify.com/lucacelli/seo-technical-audit-broken-link-schema-analyzer" target="_blank" rel="noopener">Try for Free →</a>
+        <div>
+          <span class="price">$1.50</span>
+          <small style="font-size:11px;color:#94a3b8;display:block">per 1,000 places ($0.0015/place)</small>
+        </div>
+        <div class="btn-group">
+          <button class="btn secondary" onclick="loadActorInPlayground('google-maps-scraper-places-emails-contacts-reviews')">⚡ Test API</button>
+          <a class="btn" href="https://apify.com/lucacelli/google-maps-scraper-places-emails-contacts-reviews" target="_blank" rel="noopener">Run on Apify Cloud →</a>
+        </div>
       </div>
     </div>
   
 
     <div class="card">
       <div>
-        <span class="tag">Apify Cloud Actor • $0.004/result</span>
-        <h3>GitHub Developer, Stargazer & Contributor Diagnostic Diagnostics (MCP Ready)</h3>
-        <p>Extract developer profiles, contribution metrics, company affiliations, personal websites, X/Twitter handles, location, and hireable status from GitHub repositories or username lists.</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px">
+          <span class="tag">B2B Sales & Cold Outreach • MCP Ready</span>
+          <span class="badge-live">● LIVE ON APIFY</span>
+        </div>
+        <h3><a href="https://apify.com/lucacelli/b2b-domain-contact-tech-enricher" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">B2B Domain Contact, Email, DNS & Tech Stack Enricher</a></h3>
+        <p>Enrich any list of company domains with verified business emails, phone numbers, LinkedIn/X/Instagram links, MX/SPF/DMARC security policies, 38+ SaaS/Pixel signatures, and personalized cold email icebreakers.</p>
+        <div class="code-mini">POST https://api.apify.com/v2/acts/lucacelli~b2b-domain-contact-tech-enricher/run-sync-get-dataset-items</div>
       </div>
       <div class="row">
-        <span class="price">$4.00<small style="font-size:11px;color:#94a3b8;font-weight:400"> / 1k results</small></span>
-        <a class="btn" href="https://apify.com/lucacelli/github-developer-recruiter-Diagnostic-Diagnostics" target="_blank" rel="noopener">Try for Free →</a>
+        <div>
+          <span class="price">$0.80</span>
+          <small style="font-size:11px;color:#94a3b8;display:block">per 1,000 domains ($0.0008/domain)</small>
+        </div>
+        <div class="btn-group">
+          <button class="btn secondary" onclick="loadActorInPlayground('b2b-domain-contact-tech-enricher')">⚡ Test API</button>
+          <a class="btn" href="https://apify.com/lucacelli/b2b-domain-contact-tech-enricher" target="_blank" rel="noopener">Run on Apify Cloud →</a>
+        </div>
       </div>
     </div>
   
 
     <div class="card">
       <div>
-        <span class="tag">Apify Cloud Actor • $0.002/result</span>
-        <h3>Greenhouse & Lever Company Job Board & Career Portal Schema Diagnostics CLI (MCP Ready)</h3>
-        <p>Extract active job openings, departments, remote status, locations, and B2B hiring intent signals directly from Greenhouse and Lever company job boards.</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px">
+          <span class="tag">E-Commerce Intelligence • Zero Browser Overhead</span>
+          <span class="badge-live">● LIVE ON APIFY</span>
+        </div>
+        <h3><a href="https://apify.com/lucacelli/shopify-store-product-contact-spy" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">Shopify Store Product, Pricing, Stock & Merchant Contact Spy</a></h3>
+        <p>Scrape complete Shopify product catalogs, variants, SKUs, sale discounts, live stock availability, installed Shopify apps/pixels, and merchant emails & social links without expensive headless browsers.</p>
+        <div class="code-mini">POST https://api.apify.com/v2/acts/lucacelli~shopify-store-product-contact-spy/run-sync-get-dataset-items</div>
       </div>
       <div class="row">
-        <span class="price">$2.00<small style="font-size:11px;color:#94a3b8;font-weight:400"> / 1k results</small></span>
-        <a class="btn" href="https://apify.com/lucacelli/ats-job-board-hiring-signal-Diagnostics CLI" target="_blank" rel="noopener">Try for Free →</a>
+        <div>
+          <span class="price">$0.50</span>
+          <small style="font-size:11px;color:#94a3b8;display:block">per 1,000 products ($0.0005/product)</small>
+        </div>
+        <div class="btn-group">
+          <button class="btn secondary" onclick="loadActorInPlayground('shopify-store-product-contact-spy')">⚡ Test API</button>
+          <a class="btn" href="https://apify.com/lucacelli/shopify-store-product-contact-spy" target="_blank" rel="noopener">Run on Apify Cloud →</a>
+        </div>
       </div>
     </div>
   
 
     <div class="card">
       <div>
-        <span class="tag">Apify Cloud Actor • $0.002/result</span>
-        <h3>Reddit Subreddit, Community Discussion & Topic Trend Analyzer (MCP Ready)</h3>
-        <p>Mine Reddit subreddits for high-intent buyer questions, software alternatives discussions, pain points, upvote velocity, and engagement signals.</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px">
+          <span class="tag">AI / LLM / RAG Pipelines • Token Counted</span>
+          <span class="badge-live">● LIVE ON APIFY</span>
+        </div>
+        <h3><a href="https://apify.com/lucacelli/ai-ready-website-to-markdown-rag-crawler" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">Website to Clean Markdown, Vector RAG Chunks & llms.txt</a></h3>
+        <p>Convert any website or documentation portal into clean boilerplate-free Markdown, overlapping vector RAG chunks with token estimates, H1-H3 hierarchy outlines, and ready-to-deploy /llms.txt index files.</p>
+        <div class="code-mini">POST https://api.apify.com/v2/acts/lucacelli~ai-ready-website-to-markdown-rag-crawler/run-sync-get-dataset-items</div>
       </div>
       <div class="row">
-        <span class="price">$2.00<small style="font-size:11px;color:#94a3b8;font-weight:400"> / 1k results</small></span>
-        <a class="btn" href="https://apify.com/lucacelli/reddit-community-pain-point-trend-miner" target="_blank" rel="noopener">Try for Free →</a>
+        <div>
+          <span class="price">$0.50</span>
+          <small style="font-size:11px;color:#94a3b8;display:block">per 1,000 pages ($0.0005/page)</small>
+        </div>
+        <div class="btn-group">
+          <button class="btn secondary" onclick="loadActorInPlayground('ai-ready-website-to-markdown-rag-crawler')">⚡ Test API</button>
+          <a class="btn" href="https://apify.com/lucacelli/ai-ready-website-to-markdown-rag-crawler" target="_blank" rel="noopener">Run on Apify Cloud →</a>
+        </div>
       </div>
     </div>
   
 
     <div class="card">
       <div>
-        <span class="tag">Apify Cloud Actor • $0.004/result</span>
-        <h3>WordPress & WooCommerce Theme, Plugin & REST API Intelligence Inspector (MCP Ready)</h3>
-        <p>Detect active WordPress themes, installed plugins, WooCommerce e-commerce status, REST API namespaces, and published metadata on any domain.</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px">
+          <span class="tag">45-Point Technical SEO & Web Readiness</span>
+          <span class="badge-live">● LIVE ON APIFY</span>
+        </div>
+        <h3><a href="https://apify.com/lucacelli/seo-technical-audit-broken-link-schema-analyzer" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">Technical SEO, Broken Link, Schema.org & Security Auditor</a></h3>
+        <p>Run a 45-point technical SEO audit across any URL list: HTTP TTFB latency, Title/Meta lengths, Canonical & robots/llms.txt checks, HSTS/CSP security headers, Schema.org JSON-LD validation, and live broken link detection.</p>
+        <div class="code-mini">POST https://api.apify.com/v2/acts/lucacelli~seo-technical-audit-broken-link-schema-analyzer/run-sync-get-dataset-items</div>
       </div>
       <div class="row">
-        <span class="price">$4.00<small style="font-size:11px;color:#94a3b8;font-weight:400"> / 1k results</small></span>
-        <a class="btn" href="https://apify.com/lucacelli/wordpress-woocommerce-site-Inspector" target="_blank" rel="noopener">Try for Free →</a>
+        <div>
+          <span class="price">$0.80</span>
+          <small style="font-size:11px;color:#94a3b8;display:block">per 1,000 pages ($0.0008/page)</small>
+        </div>
+        <div class="btn-group">
+          <button class="btn secondary" onclick="loadActorInPlayground('seo-technical-audit-broken-link-schema-analyzer')">⚡ Test API</button>
+          <a class="btn" href="https://apify.com/lucacelli/seo-technical-audit-broken-link-schema-analyzer" target="_blank" rel="noopener">Run on Apify Cloud →</a>
+        </div>
       </div>
     </div>
   
 
     <div class="card">
       <div>
-        <span class="tag">Apify Cloud Actor • $0.005/result</span>
-        <h3>Podcast RSS Feed, Audio Enclosure & Episode Metadata & Schema Inspector (MCP Ready)</h3>
-        <p>Find podcasts by niche keyword via Apple Podcasts API, parse their RSS XML feeds, and extract verified host/producer email addresses, episode counts, and website links.</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px">
+          <span class="tag">Tech Recruiting & DevTools PLG Growth</span>
+          <span class="badge-live">● LIVE ON APIFY</span>
+        </div>
+        <h3><a href="https://apify.com/lucacelli/github-developer-recruiter-lead-enricher" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">GitHub Developer, Stargazer & Contributor Lead Enricher</a></h3>
+        <p>Extract developer profiles, verified public commit emails, top programming languages, candidate seniority scores (0-100), company affiliations, personal blogs, and X/Twitter handles from GitHub repos.</p>
+        <div class="code-mini">POST https://api.apify.com/v2/acts/lucacelli~github-developer-recruiter-lead-enricher/run-sync-get-dataset-items</div>
       </div>
       <div class="row">
-        <span class="price">$5.00<small style="font-size:11px;color:#94a3b8;font-weight:400"> / 1k results</small></span>
-        <a class="btn" href="https://apify.com/lucacelli/podcast-rss-host-sponsor-email-validator" target="_blank" rel="noopener">Try for Free →</a>
+        <div>
+          <span class="price">$0.80</span>
+          <small style="font-size:11px;color:#94a3b8;display:block">per 1,000 developers ($0.0008/developer)</small>
+        </div>
+        <div class="btn-group">
+          <button class="btn secondary" onclick="loadActorInPlayground('github-developer-recruiter-lead-enricher')">⚡ Test API</button>
+          <a class="btn" href="https://apify.com/lucacelli/github-developer-recruiter-lead-enricher" target="_blank" rel="noopener">Run on Apify Cloud →</a>
+        </div>
       </div>
     </div>
   
 
     <div class="card">
       <div>
-        <span class="tag">Apify Cloud Actor • $0.002/result</span>
-        <h3>Hacker News Show HN, Startup Launch & Tech Trend Intelligence (MCP Ready)</h3>
-        <p>Monitor Hacker News (Show HN, Ask HN, and top tech stories) by keyword to discover newly launched startups, founder handles, outbound domains, and community traction.</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px">
+          <span class="tag">B2B Hiring Intent & Account Signals</span>
+          <span class="badge-live">● LIVE ON APIFY</span>
+        </div>
+        <h3><a href="https://apify.com/lucacelli/ats-job-board-hiring-signal-scraper" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">Greenhouse & Lever Company Job Board & Hiring Signal Scraper</a></h3>
+        <p>Scrape active job openings, department growth breakdowns, remote/hybrid flags, tech stack requirements, and B2B buying intent signals directly from Greenhouse and Lever ATS company boards.</p>
+        <div class="code-mini">POST https://api.apify.com/v2/acts/lucacelli~ats-job-board-hiring-signal-scraper/run-sync-get-dataset-items</div>
       </div>
       <div class="row">
-        <span class="price">$2.00<small style="font-size:11px;color:#94a3b8;font-weight:400"> / 1k results</small></span>
-        <a class="btn" href="https://apify.com/lucacelli/hackernews-tech-launch-Diagnostic-monitor" target="_blank" rel="noopener">Try for Free →</a>
+        <div>
+          <span class="price">$0.50</span>
+          <small style="font-size:11px;color:#94a3b8;display:block">per 1,000 jobs ($0.0005/job)</small>
+        </div>
+        <div class="btn-group">
+          <button class="btn secondary" onclick="loadActorInPlayground('ats-job-board-hiring-signal-scraper')">⚡ Test API</button>
+          <a class="btn" href="https://apify.com/lucacelli/ats-job-board-hiring-signal-scraper" target="_blank" rel="noopener">Run on Apify Cloud →</a>
+        </div>
       </div>
     </div>
   
 
     <div class="card">
       <div>
-        <span class="tag">Apify Cloud Actor • $0.004/result</span>
-        <h3>XML Sitemap URL validator & Content Freshness Auditor (MCP Ready)</h3>
-        <p>Discover robots.txt and XML sitemaps for any domain, extract complete URL inventories, categorize site sections (/blog, /docs, /products), and measure content publishing velocity.</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px">
+          <span class="tag">Social Listening & High-Intent SaaS Leads</span>
+          <span class="badge-live">● LIVE ON APIFY</span>
+        </div>
+        <h3><a href="https://apify.com/lucacelli/reddit-community-pain-point-trend-miner" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">Reddit Subreddit, Buyer Intent & Pain-Point Lead Miner</a></h3>
+        <p>Mine Reddit subreddits for high-intent buyer posts ("looking for a tool", "alternative to", "how to automate"), software complaints, and emerging SaaS product opportunities.</p>
+        <div class="code-mini">POST https://api.apify.com/v2/acts/lucacelli~reddit-community-pain-point-trend-miner/run-sync-get-dataset-items</div>
       </div>
       <div class="row">
-        <span class="price">$4.00<small style="font-size:11px;color:#94a3b8;font-weight:400"> / 1k results</small></span>
-        <a class="btn" href="https://apify.com/lucacelli/sitemap-url-inventory-content-freshness-auditor" target="_blank" rel="noopener">Try for Free →</a>
+        <div>
+          <span class="price">$0.50</span>
+          <small style="font-size:11px;color:#94a3b8;display:block">per 1,000 posts ($0.0005/post)</small>
+        </div>
+        <div class="btn-group">
+          <button class="btn secondary" onclick="loadActorInPlayground('reddit-community-pain-point-trend-miner')">⚡ Test API</button>
+          <a class="btn" href="https://apify.com/lucacelli/reddit-community-pain-point-trend-miner" target="_blank" rel="noopener">Run on Apify Cloud →</a>
+        </div>
       </div>
     </div>
   
 
     <div class="card">
       <div>
-        <span class="tag">Apify Cloud Actor • $0.005/result</span>
-        <h3>SaaS Pricing Page Tier, Plan, Currency & Feature Matrix Inspector (MCP Ready)</h3>
-        <p>Locate and analyze SaaS competitor /pricing pages to extract detected price points, billing models (per-seat, usage-based, freemium, free trial), and enterprise tiers.</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px">
+          <span class="tag">Agency Prospecting & CMS Intelligence</span>
+          <span class="badge-live">● LIVE ON APIFY</span>
+        </div>
+        <h3><a href="https://apify.com/lucacelli/wordpress-woocommerce-site-spy" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">WordPress & WooCommerce Theme, Plugin & Agency Lead Spy</a></h3>
+        <p>Detect active WordPress themes, installed plugins, WooCommerce cart status, exposed wp-json REST API namespaces, and agency contact details across any list of domains.</p>
+        <div class="code-mini">POST https://api.apify.com/v2/acts/lucacelli~wordpress-woocommerce-site-spy/run-sync-get-dataset-items</div>
       </div>
       <div class="row">
-        <span class="price">$5.00<small style="font-size:11px;color:#94a3b8;font-weight:400"> / 1k results</small></span>
-        <a class="btn" href="https://apify.com/lucacelli/saas-pricing-page-tier-feature-validator" target="_blank" rel="noopener">Try for Free →</a>
+        <div>
+          <span class="price">$0.80</span>
+          <small style="font-size:11px;color:#94a3b8;display:block">per 1,000 sites ($0.0008/site)</small>
+        </div>
+        <div class="btn-group">
+          <button class="btn secondary" onclick="loadActorInPlayground('wordpress-woocommerce-site-spy')">⚡ Test API</button>
+          <a class="btn" href="https://apify.com/lucacelli/wordpress-woocommerce-site-spy" target="_blank" rel="noopener">Run on Apify Cloud →</a>
+        </div>
       </div>
     </div>
   
-
-    <div class="card">
-      <div>
-        <span class="tag">Apify Cloud Actor • $0.005/result</span>
-        <h3>ClinicalTrials.gov & OpenFDA Drug Safety & Biotech Diagnostic Intelligence (MCP Ready)</h3>
-        <p>Enterprise Healthcare & Pharma intelligence Actor: combines ClinicalTrials.gov API v2 and OpenFDA to extract active clinical trials, phases, Diagnostic sponsors, principal investigator contacts, and FDA adverse event safety signals.</p>
-      </div>
-      <div class="row">
-        <span class="price">$5.00<small style="font-size:11px;color:#94a3b8;font-weight:400"> / 1k results</small></span>
-        <a class="btn" href="https://apify.com/lucacelli/clinical-trials-fda-drug-safety-intel" target="_blank" rel="noopener">Try for Free →</a>
-      </div>
     </div>
-  
 
-    <div class="card">
-      <div>
-        <span class="tag">Apify Cloud Actor • $0.004/result</span>
-        <h3>Cloud API Protocol TVL, Capital Flow & High-Yield Pool Intelligence (MCP Ready)</h3>
-        <p>Institutional Cloud API & Cloud API intelligence Actor: tracks protocol TVL, 1d/7d/30d capital inflows/outflows, multi-chain exposure, Mcap/TVL valuation multiples, and audit status via Cloud APILlama.</p>
-      </div>
-      <div class="row">
-        <span class="price">$4.00<small style="font-size:11px;color:#94a3b8;font-weight:400"> / 1k results</small></span>
-        <a class="btn" href="https://apify.com/lucacelli/Cloud API-protocol-yield-tvl-Cloud API-intel" target="_blank" rel="noopener">Try for Free →</a>
-      </div>
-    </div>
-  
-
-    <div class="card">
-      <div>
-        <span class="tag">Apify Cloud Actor • $0.003/result</span>
-        <h3>Scientific Literature, R&D Grant, Institution & Author Diagnostic Miner (MCP Ready)</h3>
-        <p>DeepTech & Academic R&D intelligence Actor: mines OpenAlex for peer-reviewed papers, citation velocity, open-access PDFs, funding grants, and researcher institution Diagnostics.</p>
-      </div>
-      <div class="row">
-        <span class="price">$3.00<small style="font-size:11px;color:#94a3b8;font-weight:400"> / 1k results</small></span>
-        <a class="btn" href="https://apify.com/lucacelli/scientific-literature-citation-author-Diagnostic-miner" target="_blank" rel="noopener">Try for Free →</a>
-      </div>
-    </div>
-  
-
-    <div class="card">
-      <div>
-        <span class="tag">Apify Cloud Actor • $0.005/result</span>
-        <h3>Domain Cybersecurity, DNS (SPF/DMARC), Email Provider & Security Header Auditor (MCP Ready)</h3>
-        <p>Enterprise Cybersecurity & MSP Diagnostic Actor: audits any domain for SPF, DMARC, MX email security providers, CAA records, HTTP security headers (HSTS, CSP, X-Frame-Options), and computes a 0-100 Security Posture Score.</p>
-      </div>
-      <div class="row">
-        <span class="price">$5.00<small style="font-size:11px;color:#94a3b8;font-weight:400"> / 1k results</small></span>
-        <a class="btn" href="https://apify.com/lucacelli/domain-cybersecurity-ssl-dns-vulnerability-auditor" target="_blank" rel="noopener">Try for Free →</a>
-      </div>
-    </div>
-  
-
-    <div class="card">
-      <div>
-        <span class="tag">Apify Cloud Actor • $0.004/result</span>
-        <h3>Apple App Store ASO, Competitor Metadata & User Complaint Miner (MCP Ready)</h3>
-        <p>Mobile App & Gaming intelligence Actor: extracts iOS App Store ratings, version velocity, developer websites, and mines recent user reviews to identify 1-2 star bug/complaint themes.</p>
-      </div>
-      <div class="row">
-        <span class="price">$4.00<small style="font-size:11px;color:#94a3b8;font-weight:400"> / 1k results</small></span>
-        <a class="btn" href="https://apify.com/lucacelli/apple-appstore-aso-competitor-review-intel" target="_blank" rel="noopener">Try for Free →</a>
-      </div>
-    </div>
-  
-
-    <div class="card">
-      <div>
-        <span class="tag">Apify Cloud Actor • $0.003/result</span>
-        <h3>NPM & PyPI Package Maintainer Email, Download & Supply-Chain Intelligence (MCP Ready)</h3>
-        <p>DevTools & Supply-Chain intelligence Actor: extracts NPM and PyPI package download volume, package.json repository metadata, license compliance, dependency counts, and release freshness.</p>
-      </div>
-      <div class="row">
-        <span class="price">$3.00<small style="font-size:11px;color:#94a3b8;font-weight:400"> / 1k results</small></span>
-        <a class="btn" href="https://apify.com/lucacelli/open-source-package-maintainer-security-intel" target="_blank" rel="noopener">Try for Free →</a>
-      </div>
-    </div>
-  
-
-    <div class="card">
-      <div>
-        <span class="tag">Apify Cloud Actor • $0.004/result</span>
-        <h3>Local Business, Hotel, Clinic & Real Estate Schema.org Schema ContactPoint Validator (MCP Ready)</h3>
-        <p>Hospitality, Healthcare & Local Business Diagnostic Actor: extracts Schema.org LocalBusiness/Hotel/Restaurant/Clinic structured data, street addresses, GPS coordinates, ratings, phones, and emails.</p>
-      </div>
-      <div class="row">
-        <span class="price">$4.00<small style="font-size:11px;color:#94a3b8;font-weight:400"> / 1k results</small></span>
-        <a class="btn" href="https://apify.com/lucacelli/local-business-hotel-restaurant-schema-validator" target="_blank" rel="noopener">Try for Free →</a>
-      </div>
-    </div>
-  
-
-    <div class="card">
-      <div>
-        <span class="tag">Apify Cloud Actor • $0.002/result</span>
-        <h3>Global News, PR Mention, Event Classifier & Brand Sentiment Monitor (MCP Ready)</h3>
-        <p>PR, Media & Financial News intelligence Actor: monitors real-time Google News RSS feeds for any company, brand, or market keyword with automated sentiment scoring and corporate event classification.</p>
-      </div>
-      <div class="row">
-        <span class="price">$2.00<small style="font-size:11px;color:#94a3b8;font-weight:400"> / 1k results</small></span>
-        <a class="btn" href="https://apify.com/lucacelli/global-news-pr-sentiment-mention-monitor" target="_blank" rel="noopener">Try for Free →</a>
-      </div>
-    </div>
-  
-
-    <div class="card">
-      <div>
-        <span class="tag">Apify Cloud Actor • $0.002/result</span>
-        <h3>SSL Certificate Transparency & Subdomain Discoverer</h3>
-        <p>Attack surface & DNS Diagnostics reconnaissance tool: queries Certificate Transparency (CT) logs to discover subdomains, SSL/TLS certificate issuers, validity periods, and expired certificates for any target domain.</p>
-      </div>
-      <div class="row">
-        <span class="price">$2.00<small style="font-size:11px;color:#94a3b8;font-weight:400"> / 1k results</small></span>
-        <a class="btn" href="https://apify.com/lucacelli/ssl-certificate-transparency-subdomain-discoverer" target="_blank" rel="noopener">Try for Free →</a>
-      </div>
-    </div>
-  
-
-    <div class="card">
-      <div>
-        <span class="tag">Apify Cloud Actor • $0.003/result</span>
-        <h3>CVE Vulnerability, CVSS Severity & NVD Security Monitor</h3>
-        <p>DevSecOps & Vulnerability Intelligence tool: queries the official NIST National Vulnerability Database (NVD 2.0) for CVEs, CVSS severity scores, vector strings, and patch references.</p>
-      </div>
-      <div class="row">
-        <span class="price">$3.00<small style="font-size:11px;color:#94a3b8;font-weight:400"> / 1k results</small></span>
-        <a class="btn" href="https://apify.com/lucacelli/cve-vulnerability-nvd-exploit-monitor" target="_blank" rel="noopener">Try for Free →</a>
-      </div>
-    </div>
-  
-
-    <div class="card">
-      <div>
-        <span class="tag">Apify Cloud Actor • $0.003/result</span>
-        <h3>RDAP & WHOIS Domain Ownership, Registrar & Expiry Auditor</h3>
-        <p>Domain portfolio & brand protection intelligence: queries official IANA RDAP registries to extract domain registration dates, expiration dates, days until expiry, registrar details, and nameservers.</p>
-      </div>
-      <div class="row">
-        <span class="price">$3.00<small style="font-size:11px;color:#94a3b8;font-weight:400"> / 1k results</small></span>
-        <a class="btn" href="https://apify.com/lucacelli/rdap-whois-domain-ownership-expiry-auditor" target="_blank" rel="noopener">Try for Free →</a>
-      </div>
-    </div>
-  
-
-    <div class="card">
-      <div>
-        <span class="tag">Apify Cloud Actor • $0.002/result</span>
-        <h3>IP to ASN, Cloud Hosting, ISP & Geolocation Diagnostics</h3>
-        <p>Network & infrastructure Diagnostics tool: resolves domains or IPs and extracts ASN, ISP/Cloud hosting organization, country, city, coordinates, and timezone.</p>
-      </div>
-      <div class="row">
-        <span class="price">$2.00<small style="font-size:11px;color:#94a3b8;font-weight:400"> / 1k results</small></span>
-        <a class="btn" href="https://apify.com/lucacelli/ip-asn-bgp-cloud-hosting-provider-Diagnostics" target="_blank" rel="noopener">Try for Free →</a>
-      </div>
-    </div>
+    <h2>💰 Why Developers Switch to @lucacelli Actors on Apify Store</h2>
+    <table class="comp">
+      <thead>
+        <tr>
+          <th>Capability / Metric</th>
+          <th>Lucacelli Apify Actors (@lucacelli)</th>
+          <th>Legacy SaaS Tools (Apollo / BuiltWith / Outscraper)</th>
+          <th>Other Store Scrapers</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Google Maps + Emails + Socials + Tech Stack</strong></td>
+          <td style="color:#4ade80;font-weight:700">$1.50 / 1,000 places (All-Inclusive)</td>
+          <td>$49–$199/mo subscription + credit limits</td>
+          <td>$4.00–$10.00 / 1,000 places (charges per add-on)</td>
+        </tr>
+        <tr>
+          <td><strong>B2B Domain + DNS MX/DMARC + 38 Tech Signatures</strong></td>
+          <td style="color:#4ade80;font-weight:700">$0.80 / 1,000 enriched domains</td>
+          <td>$99–$295/mo minimum commitment</td>
+          <td>$3.00–$5.00 / 1,000 domains</td>
+        </tr>
+        <tr>
+          <td><strong>Shopify Catalog, Variants, Stock & Merchant Emails</strong></td>
+          <td style="color:#4ade80;font-weight:700">$0.50 / 1,000 products</td>
+          <td>$79/mo e-commerce spy tools</td>
+          <td>$2.50 / 1,000 products</td>
+        </tr>
+        <tr>
+          <td><strong>Website to Clean Markdown, Vector RAG & llms.txt</strong></td>
+          <td style="color:#4ade80;font-weight:700">$0.50 / 1,000 pages</td>
+          <td>$19–$99/mo API credit plans</td>
+          <td>$2.00+ / 1,000 pages</td>
+        </tr>
+        <tr>
+          <td><strong>Integration Ecosystem</strong></td>
+          <td style="color:#4ade80;font-weight:700">REST API, Python, Node.js, n8n, Make, Claude MCP</td>
+          <td>Closed dashboard or expensive Enterprise API</td>
+          <td>Varies</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-
-    <h2>2. Turnkey n8n / Make.com Automation Packs & Node.js CLI Kits ($9 – $19)</h2>
-    <div class="grid">
-      <div class="card">
-        <div>
-          <span class="tag">Automation Workflows</span>
-          <h3>n8n + Make.com B2B Domain Diagnostics & Email Deliverability & DNS Security Pipeline Pack</h3>
-          <p>Complete importable n8n (.json) and Make.com blueprint that takes raw company domains, extracts verified emails, checks SPF/DMARC deliverability, generates personalized first-line icebreakers, and pushes Diagnostics to Instantly/SmartDiagnostic/HubSpot.</p>
-        </div>
-        <div class="row">
-          <span class="price">$9</span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_OQ00yM0TrymRXMjghV4OVQOkQ6JELaubi5Hk50sugwg" target="_blank" rel="noopener">Buy Instant Pack (Stripe/Polar) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Run Cloud →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">Automation Workflows</span>
-          <h3>n8n E-Commerce & Shopify Competitor Price, SKU & Ad Pixel Monitor</h3>
-          <p>Automated e-commerce intelligence workflow for n8n and Make.com: monitors competitor Shopify & WooCommerce catalogs, detects price drops, checks active Meta/TikTok ad pixels, and sends instant Slack/Telegram alerts.</p>
-        </div>
-        <div class="row">
-          <span class="price">$9</span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_RU1KvxzrrfBBqtzhpGln0tIZp8yr7BlNFuONX08p0ND" target="_blank" rel="noopener">Buy Instant Pack (Stripe/Polar) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Run Cloud →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">Automation Workflows</span>
-          <h3>n8n Hiring Intent Sales Trigger (Greenhouse, Lever, Ashby -> CRM)</h3>
-          <p>High-converting B2B sales trigger workflow: monitors startup job boards on Greenhouse, Lever, and AshbyHQ daily, identifies companies hiring engineering/sales roles, validates JobPosting schema.org markup, and triggers Workflow Automation.</p>
-        </div>
-        <div class="row">
-          <span class="price">$12</span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_jBE4qe0WqkwWrjlJt8cMaPxI6NXr8DMSyy0292ehV0b" target="_blank" rel="noopener">Buy Instant Pack (Stripe/Polar) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Run Cloud →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">Automation Workflows</span>
-          <h3>n8n Agency Technical SEO, Schema.org & llms.txt Client Audit Pack</h3>
-          <p>Turnkey SEO agency automation: crawls client domains weekly, audits broken links, Open Graph tags, missing image alt attributes, and auto-generates updated llms.txt and JSON-LD schema markup.</p>
-        </div>
-        <div class="row">
-          <span class="price">$9</span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_aMT3yntNeGKZcDif3PXVlMKi1F2fhdIwSlP1e2Ti2gN" target="_blank" rel="noopener">Buy Instant Pack (Stripe/Polar) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Run Cloud →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">Automation Workflows</span>
-          <h3>n8n SecOps Attack Surface, CT Log Subdomain & SSL Expiry Monitor</h3>
-          <p>Automated DevSecOps monitoring workflow: scans Certificate Transparency (crt.sh) for new shadow subdomains, checks SSL certificate expiry countdowns, verifies HTTP security headers, and alerts security teams.</p>
-        </div>
-        <div class="row">
-          <span class="price">$12</span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_souodtkiIoxBmxJ4wSpRTze7eRiA51PPFAZYc0YbuLW" target="_blank" rel="noopener">Buy Instant Pack (Stripe/Polar) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Run Cloud →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">Automation Workflows</span>
-          <h3>n8n Local Business & Web Design Agency Website Diagnostics Auditor Blueprint</h3>
-          <p>Automatically qualifies SMB Websites for marketing & web agencies: detects outdated footer copyright years, missing live chat widgets, Meta/Google ad spend pixels, and extracts owner emails & WhatsApp links.</p>
-        </div>
-        <div class="row">
-          <span class="price">$9</span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_cBUV7tLh7gmIX6mGHgad9hINT83MZfZXGW6912kCgz3" target="_blank" rel="noopener">Buy Instant Pack (Stripe/Polar) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Run Cloud →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">Automation Workflows</span>
-          <h3>n8n Cloud API Uptime, Webhook Latency & JSON Schema Alerter</h3>
-          <p>Quantitative Cloud API workflow: monitors Cloud API trading pairs, Cloud APILlama protocol revenue, and Stablecoin peg flows, filtering high-volume liquidity anomalies into Discord/Telegram.</p>
-        </div>
-        <div class="row">
-          <span class="price">$14</span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_FIFXp4YBs7aUeRJS0al6mTN1VOZSE6JGoewUF3K1VJt" target="_blank" rel="noopener">Buy Instant Pack (Stripe/Polar) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Run Cloud →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">Automation Workflows</span>
-          <h3>n8n Technical Recruiter & DevRel GitHub/npm Maintainer Sourcing Pack</h3>
-          <p>Automated engineering recruitment pipeline: sources active open-source contributors across GitHub, npm, PyPI, and Crates.io by language/topic and enriches public contact emails and social profiles.</p>
-        </div>
-        <div class="row">
-          <span class="price">$12</span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_xGjdj895hMdM6OokcH36DJDn1oNhUdFIoGZg143qAJn" target="_blank" rel="noopener">Buy Instant Pack (Stripe/Polar) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Run Cloud →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">Automation Workflows</span>
-          <h3>n8n MedTech & Pharma FDA 510(k), NDC & Clinical Trial Tracker</h3>
-          <p>Life-sciences B2B workflow: tracks new FDA 510(k) medical device clearances, applicant companies, US NPI healthcare providers, and PubMed publications for medical sales teams.</p>
-        </div>
-        <div class="row">
-          <span class="price">$14</span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_MXnPoFvWgTJgAlYmCOsJrhtxfejIHXGP2YNMg11cyx9" target="_blank" rel="noopener">Buy Instant Pack (Stripe/Polar) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Run Cloud →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">Automation Workflows</span>
-          <h3>n8n GovCon Federal Contract Award & Vendor Intelligence Workflow</h3>
-          <p>Monitors federal contract awards via USASpending and Federal Register notices, extracting winning vendors, award amounts, and agency buyers.</p>
-        </div>
-        <div class="row">
-          <span class="price">$14</span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_vbYPnQnPXoWhLWp5GXeBobIjgh9pzcTTF61IJ4Z5sJg" target="_blank" rel="noopener">Buy Instant Pack (Stripe/Polar) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Run Cloud →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">Developer & Agency Tools</span>
-          <h3>Unlimited Bulk Email Verifier (Syntax + DNS MX + Disposable) Node.js Kit</h3>
-          <p>Stop paying monthly fees for email verification: standalone Node.js CLI & REST API that verifies unlimited email lists for syntax, live DNS MX servers, SPF policies, disposable domains, and role accounts.</p>
-        </div>
-        <div class="row">
-          <span class="price">$9</span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_pzwOhA5Vg71SBNbLzbLRrconqrvYgvBAnThaa2agh5C" target="_blank" rel="noopener">Buy Instant Pack (Stripe/Polar) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Run Cloud →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">Developer & Agency Tools</span>
-          <h3>Bulk Ad Pixel & Paid Media Spend Scanner (Meta, Google, TikTok, LinkedIn)</h3>
-          <p>High-speed Node.js scanner that processes 10,000+ domains to identify businesses actively spending money on Meta Ads, Google Ads, LinkedIn Insight, TikTok Pixel, and Hotjar.</p>
-        </div>
-        <div class="row">
-          <span class="price">$9</span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_A83xYpA5kWtNvu0fmz7Wg3CuQ6ynkUX90Ixt52u1CxE" target="_blank" rel="noopener">Buy Instant Pack (Stripe/Polar) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Run Cloud →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">B2B Diagnostic Kits</span>
-          <h3>Restaurant & Hospitality POS (Toast, Square, OpenTable, DoorDash) Diagnostic Kit</h3>
-          <p>Complete extraction toolkit + sample Benchmark Kit for identifying restaurants using Toast POS, Square, OpenTable, Resy, UberEats, and DoorDash along with direct contact emails and phones.</p>
-        </div>
-        <div class="row">
-          <span class="price">$9</span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_zGst0q8I8qhBHkviCPFgxSr7li16onRj35A4L1lZOFV" target="_blank" rel="noopener">Buy Instant Pack (Stripe/Polar) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Run Cloud →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">B2B Diagnostic Kits</span>
-          <h3>Dental, MedSpa & Clinic Booking Stack (Zocdoc, NexHealth, Mindbody) Kit</h3>
-          <p>Specialized Website Diagnostics Auditor for healthcare & wellness marketing agencies: detects Zocdoc, NexHealth, Mindbody, Vagaro, and JaneApp across clinic domains with phone & email extraction.</p>
-        </div>
-        <div class="row">
-          <span class="price">$9</span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_VXdwMN9i2fdbtDh8MeNxJqmiLSegP0pmagHGa24qoZt" target="_blank" rel="noopener">Buy Instant Pack (Stripe/Polar) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Run Cloud →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">B2B Diagnostic Kits</span>
-          <h3>B2B SaaS Tech Spend Estimator & Subprocessor Vendor Mapper Kit</h3>
-          <p>Scores B2B domains by monthly SaaS spend tier ($500 to $2,500+/mo) by fingerprinting enterprise scripts (Segment, Intercom, Optimizely, Sentry, Stripe) and privacy subprocessors.</p>
-        </div>
-        <div class="row">
-          <span class="price">$12</span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_8daxXRrv34wGNdZKgh4LUuavAzqBmoVrGexPW4BDKoz" target="_blank" rel="noopener">Buy Instant Pack (Stripe/Polar) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Run Cloud →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">Developer & Agency Tools</span>
-          <h3>Email Deliverability & DNS Security Agency SPF, DMARC & Domain Security Audit Compliance Audit Report Kit</h3>
-          <p>Generate instant DNS email security audits for Websites: checks SPF, DMARC enforcement (none/quarantine/reject), and MX gateways in bulk CSV format.</p>
-        </div>
-        <div class="row">
-          <span class="price">$9</span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_VweW8d2FkxtgnbCkjY3OZIk1PhYPaD7ttrqTX3OlcWt" target="_blank" rel="noopener">Buy Instant Pack (Stripe/Polar) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Run Cloud →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">SEO & Content Tools</span>
-          <h3>Bulk llms.txt & Schema.org JSON-LD Automated Generator CLI</h3>
-          <p>Crawls any list of websites and automatically outputs standard-compliant llms.txt markdown maps and valid Schema.org Organization/WebPage JSON-LD files.</p>
-        </div>
-        <div class="row">
-          <span class="price">$9</span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_fHtvka1eUqZ4V0q2dSB5dlXLw3dhjIXckwo6k0xs1Ha" target="_blank" rel="noopener">Buy Instant Pack (Stripe/Polar) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Run Cloud →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">B2B Diagnostic Kits</span>
-          <h3>DTC E-Commerce Store Profiler (Shopify, BNPL Klarna/Affirm, Contacts)</h3>
-          <p>Profiles DTC e-commerce brands for payment gateways (Stripe, PayPal, Klarna, Affirm), social handles, support emails, and product catalog size.</p>
-        </div>
-        <div class="row">
-          <span class="price">$9</span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_1M9I4I9icemcrlGSj9mMEgI37vLazu4bPtbB942oYxO" target="_blank" rel="noopener">Buy Instant Pack (Stripe/Polar) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Run Cloud →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">SEO & Content Tools</span>
-          <h3>WCAG & ADA Website Accessibility Compliance Scanner for Agencies</h3>
-          <p>Scans Website websites in bulk to detect missing image alt tags, missing HTML lang attributes, unlabeled forms, and accessibility overlay widgets.</p>
-        </div>
-        <div class="row">
-          <span class="price">$9</span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_v5xjFTCZD9tkzzwDofHutZqswRo4WZEKMQaYT47s6le" target="_blank" rel="noopener">Buy Instant Pack (Stripe/Polar) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Run Cloud →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">Full Source Code Bundles</span>
-          <h3>Ultimate 200-in-1 B2B Web Diagnostics & API Intelligence Source Code Bundle</h3>
-          <p>Flagship bundle: full production Node.js ESM source code, schemas, and Dockerfiles for 200 specialized B2B, FinTech, BioTech, E-Commerce, Cybersecurity, and SEO validators.</p>
-        </div>
-        <div class="row">
-          <span class="price">$19</span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_CndFdtPCyDjJtkrUCEPU84b8TlRaRvVkrdbNq0oRWTD" target="_blank" rel="noopener">Buy Instant Pack (Stripe/Polar) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Run Cloud →</a>
-          </div>
-        </div>
-      </div></div>
-
-    <h2 id="chrome-extensions">3. Commercial B2B, SEO & Web Diagnostics Chrome Extensions (Manifest V3 • V2.0 — $5 Instant ZIP Download)</h2>
-    <div class="grid">
-      <div class="card">
-        <div>
-          <span class="tag">Manifest V3 Chrome Extension (V2.0)</span>
-          <h3>B2B Email, Phone & Social Schema ContactPoint Validator Pro</h3>
-          <p>Instantly extract verified emails, phone numbers, WhatsApp links, and social profiles from any website with 1-click CSV export.</p>
-        </div>
-        <div class="row">
-          <span class="price">$5 <small style="font-size:11px;color:#94a3b8;font-weight:400">Pro Extension ZIP</small></span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_jYKOWMSjy2hUWu0d9M83o4peIY9lNXzPgxxQj2EIgIV" target="_blank" rel="noopener">Buy Extension ZIP ($5) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Cloud API →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">Manifest V3 Chrome Extension (V2.0)</span>
-          <h3>Third-Party Analytics & Tag Manager Auditor (Meta, Google, TikTok)</h3>
-          <p>Detect if any website is running paid ads on Meta/Facebook, Google Ads, GTM, LinkedIn Insight, TikTok, or Hotjar in one click.</p>
-        </div>
-        <div class="row">
-          <span class="price">$5 <small style="font-size:11px;color:#94a3b8;font-weight:400">Pro Extension ZIP</small></span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_5HVMlQv2L7rUylDnUG5vSpers85nb41ZgYT9S1NPDv9" target="_blank" rel="noopener">Buy Extension ZIP ($5) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Cloud API →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">Manifest V3 Chrome Extension (V2.0)</span>
-          <h3>SPF, DMARC & MX Email Deliverability Inspector</h3>
-          <p>One-click live DNS lookup for SPF, DMARC enforcement policy, and MX mail servers on the active domain.</p>
-        </div>
-        <div class="row">
-          <span class="price">$5 <small style="font-size:11px;color:#94a3b8;font-weight:400">Pro Extension ZIP</small></span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_81z4bDC0pA9so5Y21gYKNmREKbTxoplCj8hvq0FFYwk" target="_blank" rel="noopener">Buy Extension ZIP ($5) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Cloud API →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">Manifest V3 Chrome Extension (V2.0)</span>
-          <h3>Instant llms.txt & Clean Page Markdown Generator</h3>
-          <p>Audit /llms.txt on any website and automatically generate a clean, standard-compliant llms.txt markdown map in one click.</p>
-        </div>
-        <div class="row">
-          <span class="price">$5 <small style="font-size:11px;color:#94a3b8;font-weight:400">Pro Extension ZIP</small></span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_WOOy3bp79neihwoLJBxTtRsN3jwjxV5AX5CYI0JrWKX" target="_blank" rel="noopener">Buy Extension ZIP ($5) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Cloud API →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">Manifest V3 Chrome Extension (V2.0)</span>
-          <h3>One-Click Schema.org JSON-LD Inspector & Builder</h3>
-          <p>Inspect existing JSON-LD structured data on any page and generate ready-to-copy Schema.org Organization & FAQPage markup.</p>
-        </div>
-        <div class="row">
-          <span class="price">$5 <small style="font-size:11px;color:#94a3b8;font-weight:400">Pro Extension ZIP</small></span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_8d3gJynpvMEwKxvBJqdCBoBZxu0IFlG9MVFGG4fKkcA" target="_blank" rel="noopener">Buy Extension ZIP ($5) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Cloud API →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">Manifest V3 Chrome Extension (V2.0)</span>
-          <h3>B2B SaaS Tech Stack & Monthly Spend Estimator</h3>
-          <p>Fingerprint enterprise software scripts (Stripe, Segment, HubSpot, Intercom, Sentry) and estimate the company’s SaaS budget tier.</p>
-        </div>
-        <div class="row">
-          <span class="price">$5 <small style="font-size:11px;color:#94a3b8;font-weight:400">Pro Extension ZIP</small></span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_Y5lV7CQgZHrVHEUtHZMjmveHXKDOHRnx1DRwn1zRomJ" target="_blank" rel="noopener">Buy Extension ZIP ($5) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Cloud API →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">Manifest V3 Chrome Extension (V2.0)</span>
-          <h3>WCAG Accessibility & Missing Alt Text Agency Auditor</h3>
-          <p>Audit any webpage for missing image alt attributes, unlabeled form inputs, ARIA roles, and HTML lang compliance.</p>
-        </div>
-        <div class="row">
-          <span class="price">$5 <small style="font-size:11px;color:#94a3b8;font-weight:400">Pro Extension ZIP</small></span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_mLcc8vj7YwlsPA4ZhDcUwTsy4MLASK9j7dTJW2ZnITH" target="_blank" rel="noopener">Buy Extension ZIP ($5) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Cloud API →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">Manifest V3 Chrome Extension (V2.0)</span>
-          <h3>Open Graph, Twitter Card & Technical SEO Inspector</h3>
-          <p>Audit title length, meta description, canonical URL, Open Graph image previews, H1/H2 structure, and internal/external links.</p>
-        </div>
-        <div class="row">
-          <span class="price">$5 <small style="font-size:11px;color:#94a3b8;font-weight:400">Pro Extension ZIP</small></span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_IxrVN4Nkm5SZV7E54BwqOVDD46n53SvesrdmS10iQBD" target="_blank" rel="noopener">Buy Extension ZIP ($5) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Cloud API →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">Manifest V3 Chrome Extension (V2.0)</span>
-          <h3>Restaurant & Clinic POS / Booking Software Detector</h3>
-          <p>Detect Toast POS, Square, OpenTable, Resy, Zocdoc, NexHealth, Mindbody, and Vagaro on local business websites.</p>
-        </div>
-        <div class="row">
-          <span class="price">$5 <small style="font-size:11px;color:#94a3b8;font-weight:400">Pro Extension ZIP</small></span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_YfeNU3pWJchW3twy1U4oDkyMjPNG2RD8gkZkI0xDkt8" target="_blank" rel="noopener">Buy Extension ZIP ($5) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Cloud API →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="tag">Manifest V3 Chrome Extension (V2.0)</span>
-          <h3>Web Design Agency Website Diagnostics Auditor & Outdated Footer Finder</h3>
-          <p>Qualify SMB websites in one click: checks copyright year, viewport responsiveness, chat widgets, ad pixels, and contact emails.</p>
-        </div>
-        <div class="row">
-          <span class="price">$5 <small style="font-size:11px;color:#94a3b8;font-weight:400">Pro Extension ZIP</small></span>
-          <div class="btn-group">
-            <a class="btn secondary" href="https://buy.polar.sh/polar_cl_9vcFQLrVKNXF7SQwWPQbdlXz5baqH23n1EFIu41pvtB" target="_blank" rel="noopener">Buy Extension ZIP ($5) →</a>
-            <a class="btn" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Cloud API →</a>
-          </div>
-        </div>
-      </div></div>
-  </div>
-
-  
-    <h2 id="expanded-n8n-cli">New 2026 Production n8n Blueprints & DevOps CLI Kits ($7 – $9 • 78% Below Market)</h2>
-    <div class="grid">
-      <div class="card" style="border-color:rgba(56,189,248,0.45)">
-        <div>
-          <span class="tag">FinOps & Accounting Automation • 78% Below Market ($39)</span>
-          <h3>n8n Stripe to QuickBooks, Xero & Sheets Reconciliation Pack</h3>
-          <p>Production-hardened n8n JSON workflow blueprint with retry logic and deduplication to reconcile Stripe charges, payouts, and tax invoices into QuickBooks, Xero, and Google Sheets.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$39</s>$9 <small>n8n JSON + CLI (.zip)</small></span>
-          <a class="btn" href="https://buy.polar.sh/polar_cl_98HxuSuuCmomvtRfD1YwXukQ5Oi6XsXDN82Dk2VWPnt" target="_blank" rel="noopener">Get Blueprint ($9) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(56,189,248,0.45)">
-        <div>
-          <span class="tag">SaaS Billing & Retention • 78% Below Market ($45)</span>
-          <h3>n8n Subscription Failed Payment Retry & Recovery Blueprint</h3>
-          <p>Automated n8n webhook handler for Stripe/Paddle invoice.payment_failed events with smart retry scheduling, transactional billing alerts, and Slack notifications.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$45</s>$9 <small>n8n JSON + CLI (.zip)</small></span>
-          <a class="btn" href="https://buy.polar.sh/polar_cl_qGbfsqNGAIJJzBRdPGqQhzIxIwVoZyxLqKJyL4gBZY7" target="_blank" rel="noopener">Get Blueprint ($9) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(56,189,248,0.45)">
-        <div>
-          <span class="tag">E-Commerce Operations • 78% Below Market ($39)</span>
-          <h3>n8n Shopify, WooCommerce & ERP Real-Time SKU Inventory Sync</h3>
-          <p>Bi-directional n8n inventory synchronization blueprint with race-condition locks, low-stock threshold alerts, and dead-letter error handling across Shopify and WooCommerce.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$39</s>$9 <small>n8n JSON + CLI (.zip)</small></span>
-          <a class="btn" href="https://buy.polar.sh/polar_cl_XkmKsrSghaf77RVdPUqR4cQfD9o4n40ZvJFmr2VGtCl" target="_blank" rel="noopener">Get Blueprint ($9) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(56,189,248,0.45)">
-        <div>
-          <span class="tag">Documentation & Knowledge Base • 78% Below Market ($49)</span>
-          <h3>n8n Document-to-Vector DB (pgvector / Qdrant) Sync Pipeline</h3>
-          <p>Automated Markdown & PDF document chunker and incremental hash-based vector indexer for PostgreSQL pgvector, Qdrant, and Supabase knowledge bases.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$49</s>$9 <small>n8n JSON + CLI (.zip)</small></span>
-          <a class="btn" href="https://buy.polar.sh/polar_cl_GDMBt3lsGZLKFce8PmRfctZX6hT0YBQDl5Ken04A9wf" target="_blank" rel="noopener">Get Blueprint ($9) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(56,189,248,0.45)">
-        <div>
-          <span class="tag">DevOps & n8n Tooling • 78% Below Market ($29)</span>
-          <h3>n8n Workflow-as-Code Git Backup, Diff & Env Injector CLI</h3>
-          <p>Self-hosted Node.js CLI and n8n companion workflow that exports all n8n JSON workflows daily, strips sensitive tokens, injects staging/prod env variables, and commits to Git.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$29</s>$7 <small>n8n JSON + CLI (.zip)</small></span>
-          <a class="btn" href="https://buy.polar.sh/polar_cl_sYch6Mz8T5w3kDqFTGnbLDArUjfFeiyMIh0SG42tcS3" target="_blank" rel="noopener">Get Blueprint ($7) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(56,189,248,0.45)">
-        <div>
-          <span class="tag">Content & Changelog Automation • 78% Below Market ($35)</span>
-          <h3>n8n RSS & Changelogs Multi-Channel Content Formatter Pack</h3>
-          <p>Turnkey n8n workflow that monitors RSS feeds, documentation releases, and changelogs to format and schedule structured updates across Ghost, WordPress, and Slack.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$35</s>$8 <small>n8n JSON + CLI (.zip)</small></span>
-          <a class="btn" href="https://buy.polar.sh/polar_cl_q2yYAdv2hgCSmtK1vsiaqSi6P7LJzk51cKLFF2Wi2EP" target="_blank" rel="noopener">Get Blueprint ($8) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(56,189,248,0.45)">
-        <div>
-          <span class="tag">Customer Support Ops • 78% Below Market ($39)</span>
-          <h3>n8n Support Ticket Triage, SLA Timer & Slack Escalation Pack</h3>
-          <p>Automated support ticket router for Zendesk, Intercom, and HelpScout with priority tagging, SLA breach countdown timers, and PagerDuty/Slack escalation.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$39</s>$9 <small>n8n JSON + CLI (.zip)</small></span>
-          <a class="btn" href="https://buy.polar.sh/polar_cl_sPoKGmbbvQcGHJkdEAqOXTU54KpL6ZsgS0Nnq3mdUzT" target="_blank" rel="noopener">Get Blueprint ($9) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(56,189,248,0.45)">
-        <div>
-          <span class="tag">DevSecOps & Database Ops • 78% Below Market ($29)</span>
-          <h3>n8n Automated PostgreSQL/MySQL Snapshot & S3 Verifier Pack</h3>
-          <p>Scheduled n8n + Node.js CLI database dump automation with SHA-256 checksum verification, S3/Cloudflare R2 upload, retention pruning, and Slack health reports.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$29</s>$7 <small>n8n JSON + CLI (.zip)</small></span>
-          <a class="btn" href="https://buy.polar.sh/polar_cl_IxTLXmNfa7Qnb2TsXqz9UNh70F1C1cHnQwwxT1lgjxO" target="_blank" rel="noopener">Get Blueprint ($7) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(56,189,248,0.45)">
-        <div>
-          <span class="tag">Cloud FinOps & Monitoring • 78% Below Market ($35)</span>
-          <h3>n8n Cloud Infrastructure FinOps & Cost Anomaly Alerter Pack</h3>
-          <p>Monitors AWS Cost Explorer, Cloudflare usage, and Vercel/Hetzner billing APIs daily to detect bandwidth or compute cost spikes before invoice close.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$35</s>$8 <small>n8n JSON + CLI (.zip)</small></span>
-          <a class="btn" href="https://buy.polar.sh/polar_cl_YFj1CfHiC0KRb8pOhOGx72WuZA6TlD75TLGzG40phsv" target="_blank" rel="noopener">Get Blueprint ($8) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(56,189,248,0.45)">
-        <div>
-          <span class="tag">RevOps & Workspace Sync • 78% Below Market ($39)</span>
-          <h3>n8n HubSpot, Pipedrive & Notion Bi-Directional Sync Pack</h3>
-          <p>Production n8n workflow with idempotency keys and conflict resolution to keep project milestones, account statuses, and tasks synced between Notion and CRM systems.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$39</s>$9 <small>n8n JSON + CLI (.zip)</small></span>
-          <a class="btn" href="https://buy.polar.sh/polar_cl_3oFgi0F4BazOjCHzwSyRGqDeKKN7FgBaMmfmT3Lh62z" target="_blank" rel="noopener">Get Blueprint ($9) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(56,189,248,0.45)">
-        <div>
-          <span class="tag">E-Commerce FinOps • 78% Below Market ($49)</span>
-          <h3>n8n Order Receipt, Delivery Proof & Dispute Compiler Pack</h3>
-          <p>Automatically compiles server access logs, carrier delivery confirmation, and invoice PDF receipts whenever a Stripe payment dispute webhook is triggered.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$49</s>$9 <small>n8n JSON + CLI (.zip)</small></span>
-          <a class="btn" href="https://buy.polar.sh/polar_cl_RsrMeNwdpgRdK3udvT7A5cMmwRrs6bdAZ6Hxk3WA2Xp" target="_blank" rel="noopener">Get Blueprint ($9) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(56,189,248,0.45)">
-        <div>
-          <span class="tag">Engineering Productivity • 78% Below Market ($29)</span>
-          <h3>n8n Linear, GitHub & Jira Sprint Release Notes Generator</h3>
-          <p>Synchronizes GitHub PR merges with Linear/Jira issues and compiles clean Markdown semantic release notes (`CHANGELOG.md`) on every git tag.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$29</s>$7 <small>n8n JSON + CLI (.zip)</small></span>
-          <a class="btn" href="https://buy.polar.sh/polar_cl_fVXnYKBPLgUHvo6ezbXuNkgLLpUnqha8QnH321suaFT" target="_blank" rel="noopener">Get Blueprint ($7) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(56,189,248,0.45)">
-        <div>
-          <span class="tag">SRE & Uptime Automation • 78% Below Market ($29)</span>
-          <h3>n8n Multi-Region HTTP Latency & Status Page Incident Updater</h3>
-          <p>Synthetic REST API health-check workflow that verifies HTTP status codes, SSL validity, and JSON response schemas every 5 minutes and updates public status pages.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$29</s>$7 <small>n8n JSON + CLI (.zip)</small></span>
-          <a class="btn" href="https://buy.polar.sh/polar_cl_qEZ03KLfpEcDmk4NQCZts7DLMe9hFUr1BIxuj3pMnj3" target="_blank" rel="noopener">Get Blueprint ($7) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(56,189,248,0.45)">
-        <div>
-          <span class="tag">Productivity & Scheduling • 78% Below Market ($35)</span>
-          <h3>n8n Cal.com & Calendly Webhook to Notion Agenda Automation</h3>
-          <p>Listens to Cal.com and Calendly booking webhooks, checks domain DNS/website metadata, and creates a structured Notion meeting agenda doc automatically.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$35</s>$8 <small>n8n JSON + CLI (.zip)</small></span>
-          <a class="btn" href="https://buy.polar.sh/polar_cl_aY6XF1VN1FpOlSlan2l0C7oCduJpan1ED1bK04SGq3E" target="_blank" rel="noopener">Get Blueprint ($8) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(56,189,248,0.45)">
-        <div>
-          <span class="tag">Self-Hosted Infrastructure • 78% Below Market ($39)</span>
-          <h3>Self-Hosted n8n + Postgres + Redis Production Docker Kit</h3>
-          <p>Complete production-hardened Docker Compose stack for queue-mode n8n with PostgreSQL 16, Redis workers, Caddy auto-SSL, and automated healthchecks.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$39</s>$9 <small>n8n JSON + CLI (.zip)</small></span>
-          <a class="btn" href="https://buy.polar.sh/polar_cl_3ZdvvijauSwyGTI2JYFfMtV47i18Eb24LaUWt1VMgie" target="_blank" rel="noopener">Get Blueprint ($9) →</a>
-        </div>
-      </div>
-    </div>
-
-    <h2 id="expanded-chrome-devtools">New GEO, Core Web Vitals & Security Chrome DevTools Extensions ($5 Lifetime)</h2>
-    <div class="grid">
-      <div class="card" style="border-color:rgba(168,85,247,0.45)">
-        <div>
-          <span class="tag" style="color:#c084fc">Manifest V3 Chrome Extension • One-Time vs $19/mo</span>
-          <h3>GEO & Semantic HTML Readiness Grader Extension</h3>
-          <p>Manifest V3 Chrome extension that grades any webpage (0-100) on semantic HTML5 tags, JSON-LD structure, citation clarity, and /llms.txt availability.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$19/mo</s>$5 <small>Lifetime .zip</small></span>
-          <a class="btn" style="background:#9333ea" href="https://buy.polar.sh/polar_cl_yfo957uScauoFQSdt0xLq0CfKci1U3ANVRlNG0JQRRo" target="_blank" rel="noopener">Download ($5) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(168,85,247,0.45)">
-        <div>
-          <span class="tag" style="color:#c084fc">Manifest V3 Chrome Extension • One-Time vs $15/mo</span>
-          <h3>HTTP 301/302/404 Redirect Chain & Header Tracer Extension</h3>
-          <p>Manifest V3 Chrome extension for web developers and technical SEOs to trace HTTP redirect hops, inspect response headers, and spot canonical loops.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$15/mo</s>$5 <small>Lifetime .zip</small></span>
-          <a class="btn" style="background:#9333ea" href="https://buy.polar.sh/polar_cl_LqjQUhet5BckrCmjstbRINWVcugRrnaMCKRHp4T5302" target="_blank" rel="noopener">Download ($5) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(168,85,247,0.45)">
-        <div>
-          <span class="tag" style="color:#c084fc">Manifest V3 Chrome Extension • One-Time vs $15/mo</span>
-          <h3>Hreflang, Multi-Region Language & Canonical Validator Ext</h3>
-          <p>Manifest V3 Chrome extension that validates international SEO hreflang tags, return-tag reciprocity, x-default rules, and canonical URL alignment.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$15/mo</s>$5 <small>Lifetime .zip</small></span>
-          <a class="btn" style="background:#9333ea" href="https://buy.polar.sh/polar_cl_ofjtQsZeQijskEePxGtkC6k8iq9oori2F6Ozn1NbmBt" target="_blank" rel="noopener">Download ($5) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(168,85,247,0.45)">
-        <div>
-          <span class="tag" style="color:#c084fc">Manifest V3 Chrome Extension • One-Time vs $19/mo</span>
-          <h3>Core Web Vitals (LCP, CLS, INP) Live Performance HUD Ext</h3>
-          <p>Manifest V3 Chrome DevTools extension displaying real-time Largest Contentful Paint (LCP), Cumulative Layout Shift (CLS), and INP metrics on any tab.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$19/mo</s>$5 <small>Lifetime .zip</small></span>
-          <a class="btn" style="background:#9333ea" href="https://buy.polar.sh/polar_cl_7dGKy7MGDbdJQ7TF3azvPoSf9DvHKoerkyE4O3Z7ESK" target="_blank" rel="noopener">Download ($5) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(168,85,247,0.45)">
-        <div>
-          <span class="tag" style="color:#c084fc">Manifest V3 Chrome Extension • One-Time vs $19/mo</span>
-          <h3>CSP, HSTS, CORS & Cookie Security Flag Inspector Extension</h3>
-          <p>Manifest V3 Chrome extension for AppSec and frontend engineers to audit Content-Security-Policy directives, HSTS max-age, and Secure/SameSite cookies.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$19/mo</s>$5 <small>Lifetime .zip</small></span>
-          <a class="btn" style="background:#9333ea" href="https://buy.polar.sh/polar_cl_C8jT4I2IJOeod6ZAJ1vSwK6ZAqDZQt9to5fh014Fm7d" target="_blank" rel="noopener">Download ($5) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(168,85,247,0.45)">
-        <div>
-          <span class="tag" style="color:#c084fc">Manifest V3 Chrome Extension • One-Time vs $15/mo</span>
-          <h3>Instant On-Page Broken Link (404) & Anchor Highlighter Ext</h3>
-          <p>Manifest V3 Chrome extension that concurrently checks all internal and external links on the active page and highlights dead 404/500 anchors in red.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$15/mo</s>$5 <small>Lifetime .zip</small></span>
-          <a class="btn" style="background:#9333ea" href="https://buy.polar.sh/polar_cl_UjmJopgTAfVYmM0CZSZ2l6nreL1xDJ8eZgrwF1rSxlt" target="_blank" rel="noopener">Download ($5) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(168,85,247,0.45)">
-        <div>
-          <span class="tag" style="color:#c084fc">Manifest V3 Chrome Extension • One-Time vs $15/mo</span>
-          <h3>CSS Design Token, Typography Scale & Color Palette Inspector</h3>
-          <p>Manifest V3 Chrome extension that extracts all active CSS custom properties (--var), font families, type scales, and WCAG color contrast ratios.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$15/mo</s>$5 <small>Lifetime .zip</small></span>
-          <a class="btn" style="background:#9333ea" href="https://buy.polar.sh/polar_cl_f4hGHk3mELCWkfu1HYN5ksgHqQScHOGCWfn4v0S0qyy" target="_blank" rel="noopener">Download ($5) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(168,85,247,0.45)">
-        <div>
-          <span class="tag" style="color:#c084fc">Manifest V3 Chrome Extension • One-Time vs $25/mo</span>
-          <h3>E-Commerce Theme Section Schema & Script Latency Inspector</h3>
-          <p>Manifest V3 Chrome extension for e-commerce developers to inspect storefront theme architecture, Product JSON-LD blocks, and third-party script weight.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$25/mo</s>$5 <small>Lifetime .zip</small></span>
-          <a class="btn" style="background:#9333ea" href="https://buy.polar.sh/polar_cl_XXTRJOwLLXLizoQuHpjp97lnzDZjqK7sdJYcd03P5Az" target="_blank" rel="noopener">Download ($5) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(168,85,247,0.45)">
-        <div>
-          <span class="tag" style="color:#c084fc">Manifest V3 Chrome Extension • One-Time vs $19/mo</span>
-          <h3>Next.js App Router RSC Payload & Bundle Size Inspector Ext</h3>
-          <p>Manifest V3 Chrome extension for React/Next.js developers to inspect __NEXT_DATA__ and RSC flight payloads, hydration boundaries, and JS chunk sizes.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$19/mo</s>$5 <small>Lifetime .zip</small></span>
-          <a class="btn" style="background:#9333ea" href="https://buy.polar.sh/polar_cl_zR3eyVYpnr2Rl3jGWmnMcaB0pPBkoGScXww1P2bGadH" target="_blank" rel="noopener">Download ($5) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(168,85,247,0.45)">
-        <div>
-          <span class="tag" style="color:#c084fc">Manifest V3 Chrome Extension • One-Time vs $15/mo</span>
-          <h3>One-Click Webhook JSON Payload Tester & cURL Builder Ext</h3>
-          <p>Manifest V3 Chrome extension to send test JSON payloads to n8n/Make.com webhooks, inspect response headers, and copy formatted cURL commands.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$15/mo</s>$5 <small>Lifetime .zip</small></span>
-          <a class="btn" style="background:#9333ea" href="https://buy.polar.sh/polar_cl_qVW8uX131rW4VWGXjmNmwea38I3YUGvD3azm516MIvf" target="_blank" rel="noopener">Download ($5) →</a>
-        </div>
-      </div>
-    </div>
-
-    <h2 id="expanded-industry-benchmarks">New Vertical Architecture & Security Benchmark Suites ($12 – $15 • CSV + JSON)</h2>
-    <div class="grid">
-      <div class="card" style="border-color:rgba(16,185,129,0.45)">
-        <div>
-          <span class="tag" style="color:#34d399">Enterprise Benchmark Suite • 80% Below Market ($79)</span>
-          <h3>PropTech, Real Estate Portals & IDX Schema Benchmark Kit</h3>
-          <p>Verified web architecture, IDX map widget latency, RealEstateListing Schema.org markup, and DNS security benchmark kit across top PropTech & brokerage portals.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$79</s>$15 <small>CSV + JSON (.zip)</small></span>
-          <a class="btn" style="background:#059669" href="https://buy.polar.sh/polar_cl_iIowrcGLgEmIfwuVInVwXJjS6Cv5cUMG75srU18TT1b" target="_blank" rel="noopener">Buy Kit ($15) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(16,185,129,0.45)">
-        <div>
-          <span class="tag" style="color:#34d399">Enterprise Benchmark Suite • 80% Below Market ($79)</span>
-          <h3>Logistics, 3PL, Freight Tech & Supply Chain Benchmark Kit</h3>
-          <p>Enterprise EDI/API gateway, shipment tracking portal performance, TLS security headers, and DNS SPF/DMARC configuration benchmarks across leading 3PL & freight tech platforms.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$79</s>$15 <small>CSV + JSON (.zip)</small></span>
-          <a class="btn" style="background:#059669" href="https://buy.polar.sh/polar_cl_uMuv2J0ELBAEzkXOHAMt36CdQiyD0fkfRMuM12XQq6Z" target="_blank" rel="noopener">Buy Kit ($15) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(16,185,129,0.45)">
-        <div>
-          <span class="tag" style="color:#34d399">Enterprise Benchmark Suite • 80% Below Market ($79)</span>
-          <h3>FinTech, Accounting Automation, Payroll & CFO Benchmark Kit</h3>
-          <p>Strict HSTS/CSP security header analysis, DMARC p=reject compliance, SOC2 trust portal detection, and frontend SDK benchmarks across top FinTech & CFO platforms.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$79</s>$15 <small>CSV + JSON (.zip)</small></span>
-          <a class="btn" style="background:#059669" href="https://buy.polar.sh/polar_cl_MCEFTYLUYQ9IE4nzxWgegUNqoGIetPgVgI1H627tTBk" target="_blank" rel="noopener">Buy Kit ($15) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(16,185,129,0.45)">
-        <div>
-          <span class="tag" style="color:#34d399">Enterprise Benchmark Suite • 80% Below Market ($79)</span>
-          <h3>MarTech, CDP, E-Commerce Retention & Analytics Benchmark Kit</h3>
-          <p>JavaScript SDK bundle footprint, tag manager compatibility, Schema.org Product/SoftwareApplication markup, and DNS configuration benchmarks across top MarTech & CDP platforms.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$79</s>$15 <small>CSV + JSON (.zip)</small></span>
-          <a class="btn" style="background:#059669" href="https://buy.polar.sh/polar_cl_FFSqZEifUxQxIOM5IE2ZvaBS9CzPqRK4DDwNf08ZWV4" target="_blank" rel="noopener">Buy Kit ($15) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(16,185,129,0.45)">
-        <div>
-          <span class="tag" style="color:#34d399">Enterprise Benchmark Suite • 80% Below Market ($79)</span>
-          <h3>EdTech, Corporate LMS & Online Portal WCAG Benchmark Kit</h3>
-          <p>WCAG 2.1 Level AA accessibility compliance, Course/EducationalOrganization JSON-LD schema, /llms.txt documentation readiness, and DNS security benchmarks across EdTech portals.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$79</s>$12 <small>CSV + JSON (.zip)</small></span>
-          <a class="btn" style="background:#059669" href="https://buy.polar.sh/polar_cl_pSIa4AfoAJH3WIMRoVqJhbX3B0v9kVvsLecKw1JeC6M" target="_blank" rel="noopener">Buy Kit ($12) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(16,185,129,0.45)">
-        <div>
-          <span class="tag" style="color:#34d399">Enterprise Benchmark Suite • 80% Below Market ($79)</span>
-          <h3>SecOps, SOC2 Trust Portals & Security Header Benchmark Kit</h3>
-          <p>Comprehensive DNS SPF/DMARC strictness, TLS 1.3 cipher configuration, security.txt availability, and trust portal architecture benchmark kit across 40 cybersecurity platforms.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$79</s>$15 <small>CSV + JSON (.zip)</small></span>
-          <a class="btn" style="background:#059669" href="https://buy.polar.sh/polar_cl_7oahLS0lS9rkuDJiDqyZbUHgVGKnFaTNaxRj43Fcron" target="_blank" rel="noopener">Buy Kit ($15) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(16,185,129,0.45)">
-        <div>
-          <span class="tag" style="color:#34d399">Enterprise Benchmark Suite • 80% Below Market ($79)</span>
-          <h3>LegalTech, Practice Management & Portal WCAG Benchmark Kit</h3>
-          <p>WCAG 2.1 Level AA accessibility compliance, LegalService Schema.org markup, client portal HSTS security, and DNS DMARC benchmarks across 40 LegalTech & law portals.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$79</s>$12 <small>CSV + JSON (.zip)</small></span>
-          <a class="btn" style="background:#059669" href="https://buy.polar.sh/polar_cl_DwZzf0ZiE79cNboSFsUZczTZo6dnwWzdMRXOl4QyPZT" target="_blank" rel="noopener">Buy Kit ($12) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(16,185,129,0.45)">
-        <div>
-          <span class="tag" style="color:#34d399">Enterprise Benchmark Suite • 80% Below Market ($79)</span>
-          <h3>HRTech, ATS Career Portals & Global Payroll Benchmark Kit</h3>
-          <p>JobPosting JSON-LD schema validation, career portal iframe performance, SSO/SAML security header compliance, and DNS benchmarks across 40 HRTech platforms.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$79</s>$12 <small>CSV + JSON (.zip)</small></span>
-          <a class="btn" style="background:#059669" href="https://buy.polar.sh/polar_cl_ltqy0IqCBVqElI9nQcg1N6KJoLwKrg3PpruBM39enja" target="_blank" rel="noopener">Buy Kit ($12) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(16,185,129,0.45)">
-        <div>
-          <span class="tag" style="color:#34d399">Enterprise Benchmark Suite • 80% Below Market ($79)</span>
-          <h3>InsurTech, Quote Portals & Carrier API Schema Benchmark Kit</h3>
-          <p>InsuranceAgency Schema.org structured data, quote form ARIA accessibility, TLS security headers, and DMARC p=reject benchmarks across 40 InsurTech portals.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$79</s>$15 <small>CSV + JSON (.zip)</small></span>
-          <a class="btn" style="background:#059669" href="https://buy.polar.sh/polar_cl_36cAsBldO8ZZYdLrFPMBuLGRDKfBLc4TB7shm4Cefcf" target="_blank" rel="noopener">Buy Kit ($15) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(16,185,129,0.45)">
-        <div>
-          <span class="tag" style="color:#34d399">Enterprise Benchmark Suite • 80% Below Market ($79)</span>
-          <h3>CleanTech, EV Charging Networks & Smart Grid Benchmark Kit</h3>
-          <p>Station locator map SDK performance, Core Web Vitals, Organization JSON-LD schema, and DNS security benchmarks across 40 CleanTech & EV charging platforms.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$79</s>$12 <small>CSV + JSON (.zip)</small></span>
-          <a class="btn" style="background:#059669" href="https://buy.polar.sh/polar_cl_y3rH3LP8hg3GsXurY7NjU57RxFtT0uolucqxl2jT2Rm" target="_blank" rel="noopener">Buy Kit ($12) →</a>
-        </div>
-      </div>
-    </div>
-
-  
-    
-    
-    
-    <div id="turkiye-7-sektor-mega-vitrini" style="margin-top:36px;padding:24px;border-radius:16px;background:linear-gradient(135deg,rgba(220,38,38,0.12),rgba(15,23,42,0.95));border:2px solid rgba(245,158,11,0.55)">
-      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;margin-bottom:18px">
-        <div>
-          <span style="background:#dc2626;color:#fff;padding:4px 12px;border-radius:999px;font-size:12px;font-weight:700">🇹🇷 YENİ: TÜRKİYE 81 İL B2B MEGA REHBERLERİ & YEREL GMAIL CRM PANELLERİ</span>
-          <h2 style="margin-top:8px;color:#fbbf24">Türkiye 7 Dev Sektör Kurumsal Veri Tabanı (83.437 %100 Tekil Kayıt) + Doğrudan Gmail Toplu Mail Gönderim Panelleri</h2>
-          <p style="color:#cbd5e1;font-size:14px">Avukat & Hukuk Büroları (33.980), Mali Müşavir & Sigorta (15.457), Diş & Estetik Klinikleri (14.557), Oto Galeri (5.439), Emlak Ofisleri (5.357), İnşaat & Mimarlık (4.764) ve Otel & Turizm (3.883). Her pakette çift tıklamayla çalışan <code>*-ARAYUZ-PANELI.html</code> yerel CRM yazılımı dahildir!</p>
-        </div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn" style="background:#f59e0b;color:#000;font-weight:800;padding:12px 20px" href="https://buy.polar.sh/polar_cl_RgTIkA37wkaTCUhRZNlk4MrS4ACK2Ju9K0Met0JqmQP" target="_blank" rel="noopener">👑 7 Sektör Mega Paketi Al ($69) →</a>
-          <a class="btn" style="background:#FFDD00;color:#000;font-weight:800;padding:12px 20px" href="https://buymeacoffee.com/gyGASwCvy0" target="_blank" rel="noopener">☕ Buy Me a Coffee ($69) →</a>
-          <a class="btn" style="background:#0284c7;padding:12px 20px" href="turkiye.html">🇹🇷 Türkçe Detaylı Tanıtım Sayfası →</a>
-        </div>
-      </div>
-      <div class="grid">
-      <div class="card" style="border-color:#f59e0b">
-        <div>
-          <span class="tag" style="color:#f59e0b">81 İl • 33.980 Tekil Avukat & Büro • 33.328 GSM (05xx) • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>⚖️ Türkiye 81 İl Avukatlar & Hukuk Büroları Mega Rehberi + İlişkisel Büro/Avukat & Gmail CRM Paneli (33.980 Tekil Kayıt)</h3>
-          <p>Türkiye genelinde 81 il ve 326 ilçeyi kapsayan, 4 anahtarlı sıfır-mükerrerlik (Zero-Duplicate) denetiminden geçmiş 33.980 tekil avukat ve hukuk bürosu veri tabanı + doğrudan Gmail bağlayarak tekil/toplu mail atabileceğiniz yerel CRM yönetim paneli.</p>
-        </div>
-        <div class="row" style="gap:8px;flex-wrap:wrap">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$149</s>$29 <small>CSV + JSON + CRM (.zip)</small></span>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <a class="btn" style="background:#f59e0b" href="https://buy.polar.sh/polar_cl_v59j9RBLBv3rw9f0yKP4djeLZcU3AOJZScCJl3U9WbF" target="_blank" rel="noopener">💳 İndir ($29) →</a>
-            <a class="btn" style="background:#FFDD00;color:#000;font-weight:800" href="https://buymeacoffee.com/gyGASwCvy0" target="_blank" rel="noopener">☕ BMC ($29)</a>
-          </div>
-        </div>
-      </div>
-      <div class="card" style="border-color:#4f46e5">
-        <div>
-          <span class="tag" style="color:#4f46e5">81 İl / 450 İlçe • 15.457 Tekil Büro • 15.454 GSM (05xx) • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>📊 Türkiye 81 İl Mali Müşavirler (SMMM / YMM), Finans & Sigorta Acenteleri Mega Rehberi + Gmail CRM Paneli (15.457 Tekil Kayıt)</h3>
-          <p>Her biri ortalama 50–150 KOBİ mükellefi yöneten SMMM/YMM Mali Müşavirlik büroları, bağımsız denetim uzmanları, marka/patent danışmanları ve TOBB SAİK yetkili sigorta acentelerinden oluşan 15.457 tekil kayıtlı dev B2B arşiv ve Gmail kampanya paneli.</p>
-        </div>
-        <div class="row" style="gap:8px;flex-wrap:wrap">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$119</s>$24 <small>CSV + JSON + CRM (.zip)</small></span>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <a class="btn" style="background:#4f46e5" href="https://buy.polar.sh/polar_cl_E81kh1zIbjELctUG7HHpfgCfOHG1j5uWOT6YT44FwL0" target="_blank" rel="noopener">💳 İndir ($24) →</a>
-            <a class="btn" style="background:#FFDD00;color:#000;font-weight:800" href="https://buymeacoffee.com/gyGASwCvy0" target="_blank" rel="noopener">☕ BMC ($24)</a>
-          </div>
-        </div>
-      </div>
-      <div class="card" style="border-color:#0d9488">
-        <div>
-          <span class="tag" style="color:#0d9488">81 İl / 547 İlçe • 14.557 Tekil Klinik & Uzman • 11.930 Web • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>🦷 Türkiye 81 İl Diş Klinikleri, Estetik, Güzellik & Özel Sağlık Merkezleri Mega Rehberi + Gmail CRM Paneli (14.557 Tekil Kayıt)</h3>
-          <p>Sağlık turizmi, dental implant/malzeme tedarikçileri, medikal cihaz firmaları ve dijital reklam ajansları için Türkiye'nin 81 il ve 547 ilçesindeki 14.557 tekil diş kliniği, estetik merkezi, özel hastane ve uzman hekim muayenehanesi rehberi.</p>
-        </div>
-        <div class="row" style="gap:8px;flex-wrap:wrap">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$119</s>$24 <small>CSV + JSON + CRM (.zip)</small></span>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <a class="btn" style="background:#0d9488" href="https://buy.polar.sh/polar_cl_V8PM7MdAf4XZE13g1r0ydfoOqKWcRQ6TKyfIj3tn96A" target="_blank" rel="noopener">💳 İndir ($24) →</a>
-            <a class="btn" style="background:#FFDD00;color:#000;font-weight:800" href="https://buymeacoffee.com/gyGASwCvy0" target="_blank" rel="noopener">☕ BMC ($24)</a>
-          </div>
-        </div>
-      </div>
-      <div class="card" style="border-color:#e11d48">
-        <div>
-          <span class="tag" style="color:#e11d48">78 İl / 458 İlçe • 5.439 Tekil Galeri & Filo • 3.872 GSM (05xx) • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>🚗 Türkiye Oto Galeriler (*.sahibinden.com & Arabam), Rent A Car & Otomotiv Mega Rehberi + Gmail CRM Paneli (5.439 Tekil Kayıt)</h3>
-          <p>Türkiye genelindeki kurumsal oto galeriler (*.sahibinden.com ve Arabam.com kurumsal mağazaları dahil), Rent A Car / filo kiralama şirketleri, TSE belgeli oto ekspertiz merkezleri ve özel/yetkili servislerden oluşan 5.439 tekil kayıtlı B2B arşiv.</p>
-        </div>
-        <div class="row" style="gap:8px;flex-wrap:wrap">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$89</s>$19 <small>CSV + JSON + CRM (.zip)</small></span>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <a class="btn" style="background:#e11d48" href="https://buy.polar.sh/polar_cl_49rHyJNmkVCU0Ls8uZZMzslN7VU16n8qfR95d4GqDqr" target="_blank" rel="noopener">💳 İndir ($19) →</a>
-            <a class="btn" style="background:#FFDD00;color:#000;font-weight:800" href="https://buymeacoffee.com/gyGASwCvy0" target="_blank" rel="noopener">☕ BMC ($19)</a>
-          </div>
-        </div>
-      </div>
-      <div class="card" style="border-color:#10b981">
-        <div>
-          <span class="tag" style="color:#10b981">81 İl / 623 İlçe • 5.357 Tekil Emlak Ofisi • 5.140 GSM (05xx) • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>🏠 Türkiye 81 İl Emlak Ofisleri & Gayrimenkul Danışmanlık Mağazaları Mega Rehberi + Yerel CRM Paneli (5.357 Tekil Kayıt)</h3>
-          <p>Türkiye'nin 81 ili ve 623 ilçesindeki 5.357 tekil kurumsal emlak ofisi, gayrimenkul danışmanlık mağazası (*.sahibinden.com alt-domainleri dahil), yetkili danışman isimleri, 5.140 cep numarası ve yerel CRM yönetim paneli.</p>
-        </div>
-        <div class="row" style="gap:8px;flex-wrap:wrap">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$89</s>$19 <small>CSV + JSON + CRM (.zip)</small></span>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <a class="btn" style="background:#10b981" href="https://buy.polar.sh/polar_cl_CTx8a8c5rLYy6phnf0iLrdOpk4RBylgiyG1RL00lQcr" target="_blank" rel="noopener">💳 İndir ($19) →</a>
-            <a class="btn" style="background:#FFDD00;color:#000;font-weight:800" href="https://buymeacoffee.com/gyGASwCvy0" target="_blank" rel="noopener">☕ BMC ($19)</a>
-          </div>
-        </div>
-      </div>
-      <div class="card" style="border-color:#d97706">
-        <div>
-          <span class="tag" style="color:#d97706">80 İl / 372 İlçe • 4.764 Tekil Firma & Büro • 4.455 GSM (05xx) • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>🏗️ Türkiye 80 İl İnşaat Firmaları, Müteahhitler, Mimarlık & Mühendislik Ofisleri Mega Rehberi + Gmail CRM Paneli (4.764 Tekil Kayıt)</h3>
-          <p>Yapı malzemeleri üreticileri, demir-çelik/beton/seramik/boya/asansör/iklimlendirme tedarikçileri, OSGB firmaları ve şantiye yazılımları için 80 ildeki 4.764 tekil inşaat firması, müteahhit, mimarlık ve mühendislik ofisi veri seti.</p>
-        </div>
-        <div class="row" style="gap:8px;flex-wrap:wrap">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$89</s>$19 <small>CSV + JSON + CRM (.zip)</small></span>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <a class="btn" style="background:#d97706" href="https://buy.polar.sh/polar_cl_h0cX1Rtz8GWw5El9FsnoJgPKAi80DCXpFtxfn46Fygb" target="_blank" rel="noopener">💳 İndir ($19) →</a>
-            <a class="btn" style="background:#FFDD00;color:#000;font-weight:800" href="https://buymeacoffee.com/gyGASwCvy0" target="_blank" rel="noopener">☕ BMC ($19)</a>
-          </div>
-        </div>
-      </div>
-      <div class="card" style="border-color:#0284c7">
-        <div>
-          <span class="tag" style="color:#0284c7">81 İl / 503 İlçe + 28 Tatil Beldesi • 3.883 Tekil Tesis & Acente • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>🏨 Türkiye 81 İl Oteller, Tatil Köyleri & Turizm Seyahat Acenteleri (TÜRSAB) Mega Rehberi + Gmail CRM Paneli (3.883 Tekil Kayıt)</h3>
-          <p>Otel yazılımları (PMS/Channel Manager), endüstriyel mutfak/tekstil/buklet/gıda tedarikçileri ve sağlık turizmi konaklama partnerleri için 81 il ve 28 tatil beldesindeki 3.883 tekil otel, resort, butik otel ve TÜRSAB seyahat acentesi rehberi.</p>
-        </div>
-        <div class="row" style="gap:8px;flex-wrap:wrap">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$89</s>$19 <small>CSV + JSON + CRM (.zip)</small></span>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <a class="btn" style="background:#0284c7" href="https://buy.polar.sh/polar_cl_xqdg5J8ll0XuUX0lmHH8qwSh2TdVB0IiEd0i14HpuD3" target="_blank" rel="noopener">💳 İndir ($19) →</a>
-            <a class="btn" style="background:#FFDD00;color:#000;font-weight:800" href="https://buymeacoffee.com/gyGASwCvy0" target="_blank" rel="noopener">☕ BMC ($19)</a>
-          </div>
-        </div>
-      </div>
-      <div class="card" style="border-color:#7c3aed">
-        <div>
-          <span class="tag" style="color:#7c3aed">81 İl / 440 İlçe • 5.160 Tekil Şirket • 4.378 GSM (05xx) • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>🛒 Türkiye 81 İl E-Ticaret Şirketleri, Toptancılar, İthalat-İhracat & Ambalaj/Lojistik Mega Rehberi + Gmail CRM Paneli (5.160 Tekil Kayıt)</h3>
-          <p>Kargo/fulfillment firmaları, ambalaj/koli üreticileri, e-ticaret entegrasyon/ERP yazılımları, dijital reklam ajansları ve toptan ürün tedarikçileri için 81 il ve 440 ilçedeki 5.160 tekil e-ticaret şirketi, toptancı ve dış ticaret firması rehberi.</p>
-        </div>
-        <div class="row" style="gap:8px;flex-wrap:wrap">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$119</s>$24 <small>CSV + JSON + CRM (.zip)</small></span>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <a class="btn" style="background:#7c3aed" href="https://buy.polar.sh/polar_cl_KMxJUGdd7O0EeJfICitVB0DyPigfKPX5S1VvE1VGh9U" target="_blank" rel="noopener">💳 İndir ($24) →</a>
-            <a class="btn" style="background:#FFDD00;color:#000;font-weight:800" href="https://buymeacoffee.com/gyGASwCvy0" target="_blank" rel="noopener">☕ BMC ($24)</a>
-          </div>
-        </div>
-      </div>
-      <div class="card" style="border-color:#e11d48">
-        <div>
-          <span class="tag" style="color:#e11d48">81 İl / 350 İlçe • 5.058 Tekil İşletme • 5.056 GSM (05xx) • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>🍽️ Türkiye 81 İl Restoranlar, Kafeler, Pastaneler, Catering & HoReCa İşletmeleri Mega Rehberi + Gmail CRM Paneli (5.058 Tekil Kayıt)</h3>
-          <p>POS/adisyon ve QR menü yazılımları, endüstriyel mutfak ekipmanları, toptan gıda/içecek/kahve/ambalaj tedarikçileri ve kurye/lojistik firmaları için 81 ildeki 5.058 tekil restoran, kafe, pastane ve catering işletmesi rehberi.</p>
-        </div>
-        <div class="row" style="gap:8px;flex-wrap:wrap">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$119</s>$24 <small>CSV + JSON + CRM (.zip)</small></span>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <a class="btn" style="background:#e11d48" href="https://buy.polar.sh/polar_cl_r0UNNthJiDRuCMCGqjV2YuAuLpUFzlHTU4xG536dfm3" target="_blank" rel="noopener">💳 İndir ($24) →</a>
-            <a class="btn" style="background:#FFDD00;color:#000;font-weight:800" href="https://buymeacoffee.com/gyGASwCvy0" target="_blank" rel="noopener">☕ BMC ($24)</a>
-          </div>
-        </div>
-      </div>
-      <div class="card" style="border-color:#2563eb">
-        <div>
-          <span class="tag" style="color:#2563eb">81 İl / 363 İlçe • 4.877 Tekil Kurum • 4.778 GSM (05xx) • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>🏫 Türkiye 81 İl Özel Okullar, Kolejler, Anaokulları, Yabancı Dil & Sürücü Kursları Mega Rehberi + Gmail CRM Paneli (4.877 Tekil Kayıt)</h3>
-          <p>Yayınevleri, kırtasiye/okul mobilyası/akıllı tahta üreticileri, okul yönetim/veli bilgilendirme yazılımları, öğrenci servis ve yemek/catering firmaları için 81 ildeki 4.877 tekil özel eğitim kurumu rehberi.</p>
-        </div>
-        <div class="row" style="gap:8px;flex-wrap:wrap">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$119</s>$24 <small>CSV + JSON + CRM (.zip)</small></span>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <a class="btn" style="background:#2563eb" href="https://buy.polar.sh/polar_cl_UQCWVqYbhQpzLfw3sdgmhB7oYhKpX7ynLwI8D06PZpy" target="_blank" rel="noopener">💳 İndir ($24) →</a>
-            <a class="btn" style="background:#FFDD00;color:#000;font-weight:800" href="https://buymeacoffee.com/gyGASwCvy0" target="_blank" rel="noopener">☕ BMC ($24)</a>
-          </div>
-        </div>
-      </div>
-      <div class="card" style="border-color:#ea580c">
-        <div>
-          <span class="tag" style="color:#ea580c">81 İl / 405 İlçe • 4.327 Tekil Fabrika & Sanayi • 3.980 GSM • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>🏭 Türkiye 81 İl OSB (Organize Sanayi Bölgeleri), Üretici Fabrikalar & İhracatçı Sanayi Tesisleri Mega Rehberi + Gmail CRM Paneli (4.327 Tekil Kayıt)</h3>
-          <p>Lojistik/nakliye şirketleri, hammadde/makine/enerji/GES tedarikçileri, ERP/MRP yazılım evleri, İSG/OSGB firmaları ve ihracat/teşvik danışmanları için 81 il ve 405 ilçedeki 4.327 tekil OSB fabrikası ve sanayi tesisi rehberi.</p>
-        </div>
-        <div class="row" style="gap:8px;flex-wrap:wrap">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$119</s>$24 <small>CSV + JSON + CRM (.zip)</small></span>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <a class="btn" style="background:#ea580c" href="https://buy.polar.sh/polar_cl_pnPmmbqNbGL712IXA4yJNFcEGsjJpcHBI5h5b0JQK4d" target="_blank" rel="noopener">💳 İndir ($24) →</a>
-            <a class="btn" style="background:#FFDD00;color:#000;font-weight:800" href="https://buymeacoffee.com/gyGASwCvy0" target="_blank" rel="noopener">☕ BMC ($24)</a>
-          </div>
-        </div>
-      </div>
-      <div class="card" style="border-color:#059669">
-        <div>
-          <span class="tag" style="color:#059669">81 İl / 415 İlçe • 3.747 Tekil Kurum • 3.382 GSM (05xx) • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>💊 Türkiye 81 İl Eczaneler, Veteriner Klinikleri, Medikal Firmalar & Optik Mağazaları Mega Rehberi + Gmail CRM Paneli (3.747 Tekil Kayıt)</h3>
-          <p>Dermokozmetik, vitamin/OTC takviye edici gıda üreticileri, ecza depoları, pet mama/veteriner ilaç distribütörleri, medikal sarf malzeme ve optik çerçeve/lens toptancıları için 81 ildeki 3.747 tekil eczane, veteriner, medikal ve optik rehberi.</p>
-        </div>
-        <div class="row" style="gap:8px;flex-wrap:wrap">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$99</s>$19 <small>CSV + JSON + CRM (.zip)</small></span>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <a class="btn" style="background:#059669" href="https://buy.polar.sh/polar_cl_P4LUCgH7UpCmPdp1RUQJE2huDt8K5JErQhPnJ0MS7W7" target="_blank" rel="noopener">💳 İndir ($19) →</a>
-            <a class="btn" style="background:#FFDD00;color:#000;font-weight:800" href="https://buymeacoffee.com/gyGASwCvy0" target="_blank" rel="noopener">☕ BMC ($19)</a>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
-
-      <div class="grid">
-      <div class="card" style="border-color:#f59e0b">
-        <div>
-          <span class="tag" style="color:#f59e0b">81 İl • 33.980 Tekil Avukat & Büro • 33.328 GSM (05xx) • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>⚖️ Türkiye 81 İl Avukatlar & Hukuk Büroları Mega Rehberi + İlişkisel Büro/Avukat & Gmail CRM Paneli (33.980 Tekil Kayıt)</h3>
-          <p>Türkiye genelinde 81 il ve 326 ilçeyi kapsayan, 4 anahtarlı sıfır-mükerrerlik (Zero-Duplicate) denetiminden geçmiş 33.980 tekil avukat ve hukuk bürosu veri tabanı + doğrudan Gmail bağlayarak tekil/toplu mail atabileceğiniz yerel CRM yönetim paneli.</p>
-        </div>
-        <div class="row" style="gap:8px;flex-wrap:wrap">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$149</s>$29 <small>CSV + JSON + CRM (.zip)</small></span>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <a class="btn" style="background:#f59e0b" href="https://buy.polar.sh/polar_cl_v59j9RBLBv3rw9f0yKP4djeLZcU3AOJZScCJl3U9WbF" target="_blank" rel="noopener">💳 İndir ($29) →</a>
-            <a class="btn" style="background:#FFDD00;color:#000;font-weight:800" href="https://buymeacoffee.com/gyGASwCvy0" target="_blank" rel="noopener">☕ BMC ($29)</a>
-          </div>
-        </div>
-      </div>
-      <div class="card" style="border-color:#4f46e5">
-        <div>
-          <span class="tag" style="color:#4f46e5">81 İl / 450 İlçe • 15.457 Tekil Büro • 15.454 GSM (05xx) • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>📊 Türkiye 81 İl Mali Müşavirler (SMMM / YMM), Finans & Sigorta Acenteleri Mega Rehberi + Gmail CRM Paneli (15.457 Tekil Kayıt)</h3>
-          <p>Her biri ortalama 50–150 KOBİ mükellefi yöneten SMMM/YMM Mali Müşavirlik büroları, bağımsız denetim uzmanları, marka/patent danışmanları ve TOBB SAİK yetkili sigorta acentelerinden oluşan 15.457 tekil kayıtlı dev B2B arşiv ve Gmail kampanya paneli.</p>
-        </div>
-        <div class="row" style="gap:8px;flex-wrap:wrap">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$119</s>$24 <small>CSV + JSON + CRM (.zip)</small></span>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <a class="btn" style="background:#4f46e5" href="https://buy.polar.sh/polar_cl_E81kh1zIbjELctUG7HHpfgCfOHG1j5uWOT6YT44FwL0" target="_blank" rel="noopener">💳 İndir ($24) →</a>
-            <a class="btn" style="background:#FFDD00;color:#000;font-weight:800" href="https://buymeacoffee.com/gyGASwCvy0" target="_blank" rel="noopener">☕ BMC ($24)</a>
-          </div>
-        </div>
-      </div>
-      <div class="card" style="border-color:#0d9488">
-        <div>
-          <span class="tag" style="color:#0d9488">81 İl / 547 İlçe • 14.557 Tekil Klinik & Uzman • 11.930 Web • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>🦷 Türkiye 81 İl Diş Klinikleri, Estetik, Güzellik & Özel Sağlık Merkezleri Mega Rehberi + Gmail CRM Paneli (14.557 Tekil Kayıt)</h3>
-          <p>Sağlık turizmi, dental implant/malzeme tedarikçileri, medikal cihaz firmaları ve dijital reklam ajansları için Türkiye'nin 81 il ve 547 ilçesindeki 14.557 tekil diş kliniği, estetik merkezi, özel hastane ve uzman hekim muayenehanesi rehberi.</p>
-        </div>
-        <div class="row" style="gap:8px;flex-wrap:wrap">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$119</s>$24 <small>CSV + JSON + CRM (.zip)</small></span>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <a class="btn" style="background:#0d9488" href="https://buy.polar.sh/polar_cl_V8PM7MdAf4XZE13g1r0ydfoOqKWcRQ6TKyfIj3tn96A" target="_blank" rel="noopener">💳 İndir ($24) →</a>
-            <a class="btn" style="background:#FFDD00;color:#000;font-weight:800" href="https://buymeacoffee.com/gyGASwCvy0" target="_blank" rel="noopener">☕ BMC ($24)</a>
-          </div>
-        </div>
-      </div>
-      <div class="card" style="border-color:#e11d48">
-        <div>
-          <span class="tag" style="color:#e11d48">78 İl / 458 İlçe • 5.439 Tekil Galeri & Filo • 3.872 GSM (05xx) • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>🚗 Türkiye Oto Galeriler (*.sahibinden.com & Arabam), Rent A Car & Otomotiv Mega Rehberi + Gmail CRM Paneli (5.439 Tekil Kayıt)</h3>
-          <p>Türkiye genelindeki kurumsal oto galeriler (*.sahibinden.com ve Arabam.com kurumsal mağazaları dahil), Rent A Car / filo kiralama şirketleri, TSE belgeli oto ekspertiz merkezleri ve özel/yetkili servislerden oluşan 5.439 tekil kayıtlı B2B arşiv.</p>
-        </div>
-        <div class="row" style="gap:8px;flex-wrap:wrap">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$89</s>$19 <small>CSV + JSON + CRM (.zip)</small></span>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <a class="btn" style="background:#e11d48" href="https://buy.polar.sh/polar_cl_49rHyJNmkVCU0Ls8uZZMzslN7VU16n8qfR95d4GqDqr" target="_blank" rel="noopener">💳 İndir ($19) →</a>
-            <a class="btn" style="background:#FFDD00;color:#000;font-weight:800" href="https://buymeacoffee.com/gyGASwCvy0" target="_blank" rel="noopener">☕ BMC ($19)</a>
-          </div>
-        </div>
-      </div>
-      <div class="card" style="border-color:#10b981">
-        <div>
-          <span class="tag" style="color:#10b981">81 İl / 623 İlçe • 5.357 Tekil Emlak Ofisi • 5.140 GSM (05xx) • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>🏠 Türkiye 81 İl Emlak Ofisleri & Gayrimenkul Danışmanlık Mağazaları Mega Rehberi + Yerel CRM Paneli (5.357 Tekil Kayıt)</h3>
-          <p>Türkiye'nin 81 ili ve 623 ilçesindeki 5.357 tekil kurumsal emlak ofisi, gayrimenkul danışmanlık mağazası (*.sahibinden.com alt-domainleri dahil), yetkili danışman isimleri, 5.140 cep numarası ve yerel CRM yönetim paneli.</p>
-        </div>
-        <div class="row" style="gap:8px;flex-wrap:wrap">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$89</s>$19 <small>CSV + JSON + CRM (.zip)</small></span>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <a class="btn" style="background:#10b981" href="https://buy.polar.sh/polar_cl_CTx8a8c5rLYy6phnf0iLrdOpk4RBylgiyG1RL00lQcr" target="_blank" rel="noopener">💳 İndir ($19) →</a>
-            <a class="btn" style="background:#FFDD00;color:#000;font-weight:800" href="https://buymeacoffee.com/gyGASwCvy0" target="_blank" rel="noopener">☕ BMC ($19)</a>
-          </div>
-        </div>
-      </div>
-      <div class="card" style="border-color:#d97706">
-        <div>
-          <span class="tag" style="color:#d97706">80 İl / 372 İlçe • 4.764 Tekil Firma & Büro • 4.455 GSM (05xx) • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>🏗️ Türkiye 80 İl İnşaat Firmaları, Müteahhitler, Mimarlık & Mühendislik Ofisleri Mega Rehberi + Gmail CRM Paneli (4.764 Tekil Kayıt)</h3>
-          <p>Yapı malzemeleri üreticileri, demir-çelik/beton/seramik/boya/asansör/iklimlendirme tedarikçileri, OSGB firmaları ve şantiye yazılımları için 80 ildeki 4.764 tekil inşaat firması, müteahhit, mimarlık ve mühendislik ofisi veri seti.</p>
-        </div>
-        <div class="row" style="gap:8px;flex-wrap:wrap">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$89</s>$19 <small>CSV + JSON + CRM (.zip)</small></span>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <a class="btn" style="background:#d97706" href="https://buy.polar.sh/polar_cl_h0cX1Rtz8GWw5El9FsnoJgPKAi80DCXpFtxfn46Fygb" target="_blank" rel="noopener">💳 İndir ($19) →</a>
-            <a class="btn" style="background:#FFDD00;color:#000;font-weight:800" href="https://buymeacoffee.com/gyGASwCvy0" target="_blank" rel="noopener">☕ BMC ($19)</a>
-          </div>
-        </div>
-      </div>
-      <div class="card" style="border-color:#0284c7">
-        <div>
-          <span class="tag" style="color:#0284c7">81 İl / 503 İlçe + 28 Tatil Beldesi • 3.883 Tekil Tesis & Acente • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>🏨 Türkiye 81 İl Oteller, Tatil Köyleri & Turizm Seyahat Acenteleri (TÜRSAB) Mega Rehberi + Gmail CRM Paneli (3.883 Tekil Kayıt)</h3>
-          <p>Otel yazılımları (PMS/Channel Manager), endüstriyel mutfak/tekstil/buklet/gıda tedarikçileri ve sağlık turizmi konaklama partnerleri için 81 il ve 28 tatil beldesindeki 3.883 tekil otel, resort, butik otel ve TÜRSAB seyahat acentesi rehberi.</p>
-        </div>
-        <div class="row" style="gap:8px;flex-wrap:wrap">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$89</s>$19 <small>CSV + JSON + CRM (.zip)</small></span>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <a class="btn" style="background:#0284c7" href="https://buy.polar.sh/polar_cl_xqdg5J8ll0XuUX0lmHH8qwSh2TdVB0IiEd0i14HpuD3" target="_blank" rel="noopener">💳 İndir ($19) →</a>
-            <a class="btn" style="background:#FFDD00;color:#000;font-weight:800" href="https://buymeacoffee.com/gyGASwCvy0" target="_blank" rel="noopener">☕ BMC ($19)</a>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
-
-      <div class="grid">
-      <div class="card" style="border-color:#f59e0b">
-        <div>
-          <span class="tag" style="color:#f59e0b">81 İl • 33.980 Tekil Avukat & Büro • 33.328 GSM (05xx) • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>⚖️ Türkiye 81 İl Avukatlar & Hukuk Büroları Mega Rehberi + İlişkisel Büro/Avukat & Gmail CRM Paneli (33.980 Tekil Kayıt)</h3>
-          <p>Türkiye genelinde 81 il ve 326 ilçeyi kapsayan, 4 anahtarlı sıfır-mükerrerlik (Zero-Duplicate) denetiminden geçmiş 33.980 tekil avukat ve hukuk bürosu veri tabanı + doğrudan Gmail bağlayarak tekil/toplu mail atabileceğiniz yerel CRM yönetim paneli.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$149</s>$29 <small>CSV + JSON + CRM (.zip)</small></span>
-          <a class="btn" style="background:#f59e0b" href="https://buy.polar.sh/polar_cl_v59j9RBLBv3rw9f0yKP4djeLZcU3AOJZScCJl3U9WbF" target="_blank" rel="noopener">Arşivi + Paneli Al ($29) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:#4f46e5">
-        <div>
-          <span class="tag" style="color:#4f46e5">81 İl / 450 İlçe • 15.457 Tekil Büro • 15.454 GSM (05xx) • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>📊 Türkiye 81 İl Mali Müşavirler (SMMM / YMM), Finans & Sigorta Acenteleri Mega Rehberi + Gmail CRM Paneli (15.457 Tekil Kayıt)</h3>
-          <p>Her biri ortalama 50–150 KOBİ mükellefi yöneten SMMM/YMM Mali Müşavirlik büroları, bağımsız denetim uzmanları, marka/patent danışmanları ve TOBB SAİK yetkili sigorta acentelerinden oluşan 15.457 tekil kayıtlı dev B2B arşiv ve Gmail kampanya paneli.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$119</s>$24 <small>CSV + JSON + CRM (.zip)</small></span>
-          <a class="btn" style="background:#4f46e5" href="https://buy.polar.sh/polar_cl_E81kh1zIbjELctUG7HHpfgCfOHG1j5uWOT6YT44FwL0" target="_blank" rel="noopener">Arşivi + Paneli Al ($24) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:#0d9488">
-        <div>
-          <span class="tag" style="color:#0d9488">81 İl / 547 İlçe • 14.557 Tekil Klinik & Uzman • 11.930 Web • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>🦷 Türkiye 81 İl Diş Klinikleri, Estetik, Güzellik & Özel Sağlık Merkezleri Mega Rehberi + Gmail CRM Paneli (14.557 Tekil Kayıt)</h3>
-          <p>Sağlık turizmi, dental implant/malzeme tedarikçileri, medikal cihaz firmaları ve dijital reklam ajansları için Türkiye'nin 81 il ve 547 ilçesindeki 14.557 tekil diş kliniği, estetik merkezi, özel hastane ve uzman hekim muayenehanesi rehberi.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$119</s>$24 <small>CSV + JSON + CRM (.zip)</small></span>
-          <a class="btn" style="background:#0d9488" href="https://buy.polar.sh/polar_cl_V8PM7MdAf4XZE13g1r0ydfoOqKWcRQ6TKyfIj3tn96A" target="_blank" rel="noopener">Arşivi + Paneli Al ($24) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:#e11d48">
-        <div>
-          <span class="tag" style="color:#e11d48">78 İl / 458 İlçe • 5.439 Tekil Galeri & Filo • 3.872 GSM (05xx) • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>🚗 Türkiye Oto Galeriler (*.sahibinden.com & Arabam), Rent A Car & Otomotiv Mega Rehberi + Gmail CRM Paneli (5.439 Tekil Kayıt)</h3>
-          <p>Türkiye genelindeki kurumsal oto galeriler (*.sahibinden.com ve Arabam.com kurumsal mağazaları dahil), Rent A Car / filo kiralama şirketleri, TSE belgeli oto ekspertiz merkezleri ve özel/yetkili servislerden oluşan 5.439 tekil kayıtlı B2B arşiv.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$89</s>$19 <small>CSV + JSON + CRM (.zip)</small></span>
-          <a class="btn" style="background:#e11d48" href="https://buy.polar.sh/polar_cl_49rHyJNmkVCU0Ls8uZZMzslN7VU16n8qfR95d4GqDqr" target="_blank" rel="noopener">Arşivi + Paneli Al ($19) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:#10b981">
-        <div>
-          <span class="tag" style="color:#10b981">81 İl / 623 İlçe • 5.357 Tekil Emlak Ofisi • 5.140 GSM (05xx) • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>🏠 Türkiye 81 İl Emlak Ofisleri & Gayrimenkul Danışmanlık Mağazaları Mega Rehberi + Yerel CRM Paneli (5.357 Tekil Kayıt)</h3>
-          <p>Türkiye'nin 81 ili ve 623 ilçesindeki 5.357 tekil kurumsal emlak ofisi, gayrimenkul danışmanlık mağazası (*.sahibinden.com alt-domainleri dahil), yetkili danışman isimleri, 5.140 cep numarası ve yerel CRM yönetim paneli.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$89</s>$19 <small>CSV + JSON + CRM (.zip)</small></span>
-          <a class="btn" style="background:#10b981" href="https://buy.polar.sh/polar_cl_CTx8a8c5rLYy6phnf0iLrdOpk4RBylgiyG1RL00lQcr" target="_blank" rel="noopener">Arşivi + Paneli Al ($19) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:#d97706">
-        <div>
-          <span class="tag" style="color:#d97706">80 İl / 372 İlçe • 4.764 Tekil Firma & Büro • 4.455 GSM (05xx) • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>🏗️ Türkiye 80 İl İnşaat Firmaları, Müteahhitler, Mimarlık & Mühendislik Ofisleri Mega Rehberi + Gmail CRM Paneli (4.764 Tekil Kayıt)</h3>
-          <p>Yapı malzemeleri üreticileri, demir-çelik/beton/seramik/boya/asansör/iklimlendirme tedarikçileri, OSGB firmaları ve şantiye yazılımları için 80 ildeki 4.764 tekil inşaat firması, müteahhit, mimarlık ve mühendislik ofisi veri seti.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$89</s>$19 <small>CSV + JSON + CRM (.zip)</small></span>
-          <a class="btn" style="background:#d97706" href="https://buy.polar.sh/polar_cl_h0cX1Rtz8GWw5El9FsnoJgPKAi80DCXpFtxfn46Fygb" target="_blank" rel="noopener">Arşivi + Paneli Al ($19) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:#0284c7">
-        <div>
-          <span class="tag" style="color:#0284c7">81 İl / 503 İlçe + 28 Tatil Beldesi • 3.883 Tekil Tesis & Acente • Yerel HTML CRM + Gmail Gönderici Dahil</span>
-          <h3>🏨 Türkiye 81 İl Oteller, Tatil Köyleri & Turizm Seyahat Acenteleri (TÜRSAB) Mega Rehberi + Gmail CRM Paneli (3.883 Tekil Kayıt)</h3>
-          <p>Otel yazılımları (PMS/Channel Manager), endüstriyel mutfak/tekstil/buklet/gıda tedarikçileri ve sağlık turizmi konaklama partnerleri için 81 il ve 28 tatil beldesindeki 3.883 tekil otel, resort, butik otel ve TÜRSAB seyahat acentesi rehberi.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$89</s>$19 <small>CSV + JSON + CRM (.zip)</small></span>
-          <a class="btn" style="background:#0284c7" href="https://buy.polar.sh/polar_cl_xqdg5J8ll0XuUX0lmHH8qwSh2TdVB0IiEd0i14HpuD3" target="_blank" rel="noopener">Arşivi + Paneli Al ($19) →</a>
-        </div>
-      </div>
-      </div>
-    </div>
-
-    <h2 id="turkiye-ecosystem" style="color:#f87171;border-bottom:1px solid rgba(239,68,68,0.3);padding-bottom:10px;margin-top:48px">🇹🇷 Türkiye Özel Ekosistemi: Emlak/Oto DOM Analiz Eklentileri (Sahibinden / Hepsiemlak / Arabam / Trendyol), Pazaryeri & e-Fatura n8n Otomasyonları ve Sektörel Benchmark Paketleri ($5 – $12)</h2>
-    <div class="grid">
-      <div class="card" style="border-color:rgba(239,68,68,0.55)">
-        <div>
-          <span class="tag" style="color:#f87171">PropTech & Gayrimenkul DOM Analitiği • Tek Seferlik ($5 vs $29/ay)</span>
-          <h3>🇹🇷 Sahibinden, Hepsiemlak & Emlakjet DOM m² Birim Fiyat, Kira Amortisman & Fiyat Geçmişi Eklentisi</h3>
-          <p>Cloudflare/Turnstile engeline takılmadan doğrudan kendi açık Chrome sekmenizdeki gerçek DOM üzerinden çalışır! Sahibinden.com, Hepsiemlak ve Emlakjet arama tablolarında her ilanın TL/m² birim fiyatını, bölge ortalamasına göre % sapmasını (Fırsat İlanlarını yeşil rozetle vurgular), kira amortisman süresini ve önceki ziyaretlerinize göre fiyat düşüş geçmişini hesaplar; tek tıkla Excel CSV/JSON veya n8n Webhook olarak dışa aktarır.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$29/mo</s>$5 <small>Chrome .zip</small></span>
-          <a class="btn" style="background:#dc2626" href="https://buy.polar.sh/polar_cl_u1ZLw7qZIJp9vueSZrTtmtc7bHQJJ5jQumep60fuW9k" target="_blank" rel="noopener">Hemen İndir ($5) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(239,68,68,0.55)">
-        <div>
-          <span class="tag" style="color:#f87171">Otomotiv & Galeri DOM Analitiği • Tek Seferlik ($5 vs $25/ay)</span>
-          <h3>🇹🇷 Sahibinden Vasıta & Arabam.com KM-Yaş-Fiyat Değerleme & Galeri Portföy Analiz Eklentisi</h3>
-          <p>Sahibinden Vasıta ve Arabam.com listelerinde açık sekme DOM verisini okuyarak aynı model yılındaki araçların Ortalama Fiyat ve Ortalama KM eğrisini çıkarır. Hem KM'si düşük hem fiyatı sayfa ortalamasının altında kalan fırsat araçları tabloda otomatik yeşil renkle işaretler, ilan bazlı fiyat değişim geçmişini tutar ve Excel CSV olarak indirir.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$25/mo</s>$5 <small>Chrome .zip</small></span>
-          <a class="btn" style="background:#dc2626" href="https://buy.polar.sh/polar_cl_dVFpSx42ZgQ1MVMH51Lz9si4x5la1GeR28gOF3b6BEp" target="_blank" rel="noopener">Hemen İndir ($5) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(239,68,68,0.55)">
-        <div>
-          <span class="tag" style="color:#f87171">Pazaryeri & E-Ticaret Analitiği • Tek Seferlik ($5 vs $24/ay)</span>
-          <h3>🇹🇷 Trendyol, Hepsiburada & Amazon TR BuyBox, Komisyon, Kargo Desi & Net Kâr Hesaplayıcı Eklentisi</h3>
-          <p>Trendyol, Hepsiburada ve Amazon TR ürün sayfalarında JSON-LD şemasını, BuyBox fiyatını ve değerlendirme verilerini okur; 2026 güncel kargo desi baremleri (Trendyol Express, HepsiJet, Aras, Yurtiçi), kategori komisyonu, KDV (%10/%20), %1 e-ticaret stopajı ve platform hizmet bedelini düşerek net TL kâr ve ROI oranını anında hesaplar.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$24/mo</s>$5 <small>Chrome .zip</small></span>
-          <a class="btn" style="background:#dc2626" href="https://buy.polar.sh/polar_cl_SpTUHwuRE7h2zOnYkIddvZqXcXVFq27aHCzkF3sWZBO" target="_blank" rel="noopener">Hemen İndir ($5) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(239,68,68,0.55)">
-        <div>
-          <span class="tag" style="color:#f87171">E-Ticaret Altyapı & Teknoloji Analizi • Tek Seferlik ($5 vs $19/ay)</span>
-          <h3>🇹🇷 Türkiye E-Ticaret Altyapı (İkas, Ticimax, IdeaSoft, T-Soft) & Sanal POS (iyzico, PayTR) Dedektörü</h3>
-          <p>Herhangi bir e-ticaret sitesine girdiğinizde sitenin hangi altyapıyı (İkas, Ticimax, IdeaSoft, T-Soft, Shopify, Inveon, Akinon), hangi Sanal POS firmasını (iyzico, PayTR, ParamPOS, Sipay, GarantiPay) ve hangi pazarlama piksellerini (Meta, TikTok, Google Ads, Criteo, Insider) kullandığını tek tıkla tespit eder.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$19/mo</s>$5 <small>Chrome .zip</small></span>
-          <a class="btn" style="background:#dc2626" href="https://buy.polar.sh/polar_cl_Lvb9sbm2qLuIV20uhqXyfUqbMrD8U5AgtSilE2R7Q0W" target="_blank" rel="noopener">Hemen İndir ($5) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(239,68,68,0.55)">
-        <div>
-          <span class="tag" style="color:#f87171">KVKK, Hukuk & E-Ticaret Uyumluluk • Tek Seferlik ($5 vs $19/ay)</span>
-          <h3>🇹🇷 Türkiye KVKK Aydınlatma Metni, Açık Rıza, Çerez Paneli & ETBİS Karekod Denetleyici Eklentisi</h3>
-          <p>Türkiye'deki kurumsal web siteleri ve e-ticaret mağazalarında KVKK Aydınlatma Metni, Açık Rıza kutucuğu, Çerez Yönetim Platformu (Efilli, Cookiebot, OneTrust), ETBİS Doğrulama Karekodu/Linki, MERSİS/KEP bilgileri ve HTTPS güvenlik başlıklarını saniyeler içinde denetleyip uyumluluk raporu üretir.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$19/mo</s>$5 <small>Chrome .zip</small></span>
-          <a class="btn" style="background:#dc2626" href="https://buy.polar.sh/polar_cl_qmzILzM8z7cJUtqQ7cMpS3LZ7o2FDbKKFGg9H34kkXv" target="_blank" rel="noopener">Hemen İndir ($5) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(245,158,11,0.5)">
-        <div>
-          <span class="tag" style="color:#fbbf24">Pazaryeri & e-Fatura Otomasyonu • %80 İndirimli ($9 vs $49)</span>
-          <h3>🇹🇷 n8n Trendyol & Hepsiburada Sipariş -> Paraşüt / Logo / BizimHesap Otomatik e-Fatura & e-Arşiv İş Akışı</h3>
-          <p>Trendyol ve Hepsiburada'dan gelen onaylı siparişleri çekip VKN/TCKN doğrulaması (11111111111 nihai tüketici e-Arşiv vs. 10 haneli kurumsal e-Fatura ayrımı), KDV (%1/%10/%20) ayrıştırması ve kargo hizmet kalemi eklemesi yaparak Paraşüt API v4, Logo ve BizimHesap'a otomatik aktaran n8n JSON iş akışı + Node.js CLI aracı.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$49</s>$9 <small>n8n JSON + CLI (.zip)</small></span>
-          <a class="btn" style="background:#d97706" href="https://buy.polar.sh/polar_cl_NLQt0Leqrqew8eOqYZYuBDK6mEo5on25Ch1YW2PXcV5" target="_blank" rel="noopener">Paketi Al ($9) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(245,158,11,0.5)">
-        <div>
-          <span class="tag" style="color:#fbbf24">E-Ticaret XML & Stok Otomasyonu • %80 İndirimli ($9 vs $49)</span>
-          <h3>🇹🇷 n8n İkas, Ticimax & IdeaSoft XML Ürün/Stok/Fiyat -> Pazaryeri Senkronizasyon & Kritik Stok Alarm Paketi</h3>
-          <p>Tedarikçi veya ERP XML linklerini (Ticimax, IdeaSoft, İkas, T-Soft standart XML şemaları) dakikalar içinde ayrıştırıp barkod/SKU bazlı stok ve fiyat değişimlerini mağazanıza ve pazaryerlerine senkronize eden; stok 3'ün altına düştüğünde Telegram/Slack üzerinden kritik stok alarmı gönderen n8n iş akışı + hızlı Node.js XML CLI motoru.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$49</s>$9 <small>n8n JSON + CLI (.zip)</small></span>
-          <a class="btn" style="background:#d97706" href="https://buy.polar.sh/polar_cl_ooN3D8QEgvg0opEEiKXuYI6oOZKGL676pUwdg0jjLNr" target="_blank" rel="noopener">Paketi Al ($9) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(245,158,11,0.5)">
-        <div>
-          <span class="tag" style="color:#fbbf24">Finans & Dinamik Fiyatlama Otomasyonu • %80 İndirimli ($7 vs $35)</span>
-          <h3>🇹🇷 n8n TCMB (Merkez Bankası) Günlük USD/EUR Döviz Kuru -> E-Ticaret & B2B Fiyat Listesi Güncelleyici</h3>
-          <p>Her iş günü saat 15:35'te T.C. Merkez Bankası resmi XML servisinden (tcmb.gov.tr/kurlar/today.xml) USD, EUR ve GBP Döviz Satış / Efektif Satış kurlarını otomatik çeker; belirlediğiniz kur koruma marjını (+%1.5 vb.) ekleyerek İkas, WooCommerce, Shopify veya Google Sheets/PostgreSQL B2B fiyat listelerinizi otomatik günceller.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$35</s>$7 <small>n8n JSON + CLI (.zip)</small></span>
-          <a class="btn" style="background:#d97706" href="https://buy.polar.sh/polar_cl_uOz0hTlg1zFb452KVhCpycmSlXOV4Mslpgwf13D0ZDm" target="_blank" rel="noopener">Paketi Al ($7) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(245,158,11,0.5)">
-        <div>
-          <span class="tag" style="color:#fbbf24">Lojistik & Kargo SLA Otomasyonu • %80 İndirimli ($8 vs $39)</span>
-          <h3>🇹🇷 n8n Kargo Takip (Aras, Yurtiçi, MNG, Sürat, HepsiJet) Teslimat & İade Önleme Bildirim Otomasyonu</h3>
-          <p>Aras, Yurtiçi, MNG, Sürat Kargo, HepsiJet ve KolayGelsin gönderilerinizde "Dağıtıma Çıktı", "Şubede Bekliyor" veya "Adres Yetersiz / Teslim Edilemedi" durumlarını yakalar; paket iadeye dönmeden önce müşteriye ve operasyon ekibinize otomatik bildirim göndererek kargo iade maliyetlerini düşürür.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$39</s>$8 <small>n8n JSON + CLI (.zip)</small></span>
-          <a class="btn" style="background:#d97706" href="https://buy.polar.sh/polar_cl_QMKwYvL6rjds2BbSGm1PYquw1tvLVXrlw98F51J9cLS" target="_blank" rel="noopener">Paketi Al ($8) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(245,158,11,0.5)">
-        <div>
-          <span class="tag" style="color:#fbbf24">Gayrimenkul & Oto Galeri Otomasyonu • %80 İndirimli ($8 vs $39)</span>
-          <h3>🇹🇷 n8n Emlak & Otomotiv Portföy Takip, m²/KM Fiyat Düşüş Alarmı & Telegram/Google Sheets Paketi</h3>
-          <p>Sahibinden / Hepsiemlak / Arabam.com Chrome DOM Eklentimizle %100 entegre çalışan n8n Webhook sunucu iş akışı! Tarayıcınızdan tek tıkla gönderilen ilan tablolarını İlan No bazlı karşılaştırır, fiyatı düşen daire/arsa veya araçları tespit eder, Google Sheets/PostgreSQL veritabanına işler ve Telegram/Slack üzerinden anında "Fiyat Düştü" bildirimi atar.</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$39</s>$8 <small>n8n JSON + CLI (.zip)</small></span>
-          <a class="btn" style="background:#d97706" href="https://buy.polar.sh/polar_cl_2zoCbT5s8c1aAHiJBENlznmpclTpdbnmQcsmL2jVPKp" target="_blank" rel="noopener">Paketi Al ($8) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(16,185,129,0.5)">
-        <div>
-          <span class="tag" style="color:#34d399">Türkiye E-Ticaret & Perakende • Canlı DNS & Altyapı Denetimli</span>
-          <h3>🇹🇷 Türkiye E-Ticaret & D2C Markaları (İkas, Ticimax, IdeaSoft, Shopify TR) Altyapı & Güvenlik Benchmark Paketi</h3>
-          <p>Türkiye'nin önde gelen e-ticaret altyapıları ve D2C perakende markalarının canlı doğrulanmış DNS, kurumsal e-posta ağ geçidi (Google Workspace / Microsoft 365), SPF/DMARC güvenlik skoru, sitemap ve teknoloji mimarisi benchmark veri seti (CSV + JSON).</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$79</s>$12 <small>CSV + JSON (.zip)</small></span>
-          <a class="btn" style="background:#059669" href="https://buy.polar.sh/polar_cl_phhg8ByTnMRQwNT2XtrMnxduIDqjPhHwi4CEv0jG2Hl" target="_blank" rel="noopener">Veri Paketini Al ($12) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(16,185,129,0.5)">
-        <div>
-          <span class="tag" style="color:#34d399">Türkiye Sağlık Turizmi & Hastaneler • Canlı DNS & Altyapı Denetimli</span>
-          <h3>🇹🇷 Türkiye Uluslararası Sağlık Turizmi, Diş, Estetik & Özel Hastane Grupları Web Mimari Benchmark Paketi</h3>
-          <p>Türkiye'nin uluslararası sağlık turizmi öncüsü özel hastane grupları, diş/ağız sağlığı merkezleri, göz ve estetik/saç ekimi kurumlarının canlı doğrulanmış kurumsal domain, DNS/MX e-posta altyapısı, güvenlik skoru ve çok dilli portal mimarisi benchmark paketi (CSV + JSON).</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$79</s>$12 <small>CSV + JSON (.zip)</small></span>
-          <a class="btn" style="background:#059669" href="https://buy.polar.sh/polar_cl_VnXaWkcNPme3vmxlNiG13AYtL53sPHGK8Jhiv0iCgw5" target="_blank" rel="noopener">Veri Paketini Al ($12) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(16,185,129,0.5)">
-        <div>
-          <span class="tag" style="color:#34d399">Türkiye Yazılım, FinTech & Teknokent • Canlı DNS & Altyapı Denetimli</span>
-          <h3>🇹🇷 Türkiye Yazılım, FinTech, Oyun & Teknokent B2B SaaS Şirketleri Altyapı & Güvenlik Benchmark Paketi</h3>
-          <p>Türkiye'nin global yazılım ihracatçısı B2B SaaS şirketleri, FinTech/Ödeme kuruluşları (iyzico, PayTR, Param, Papara, Midas), siber güvenlik ve Teknokent teknoloji liderlerinin canlı DNS, DMARC/SPF, e-posta ağ geçidi ve geliştirici altyapısı benchmark veri seti (CSV + JSON).</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$79</s>$12 <small>CSV + JSON (.zip)</small></span>
-          <a class="btn" style="background:#059669" href="https://buy.polar.sh/polar_cl_7gtENyL0bOHIGGURp5HKMepUHbooFjs8xeiKF0gsCWL" target="_blank" rel="noopener">Veri Paketini Al ($12) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(16,185,129,0.5)">
-        <div>
-          <span class="tag" style="color:#34d399">Türkiye Sanayi & İhracat • Canlı DNS & Altyapı Denetimli</span>
-          <h3>🇹🇷 Türkiye İhracatçı Sanayi (Tekstil, Mobilya, Otomotiv Yan Sanayi & Makine) Kurumsal Portal Benchmark Paketi</h3>
-          <p>Türkiye'nin İSO 500 ve ТİM ihracat şampiyonu sanayi kuruluşlarının (Tekstil, Mobilya, Beyaz Eşya, Otomotiv, Demir-Çelik, Makine ve Kimya) kurumsal e-posta altyapıları, SPF/DMARC güvenlik politikaları ve çok dilli ihracat portallarının teknik benchmark paketi (CSV + JSON).</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$79</s>$12 <small>CSV + JSON (.zip)</small></span>
-          <a class="btn" style="background:#059669" href="https://buy.polar.sh/polar_cl_xMQtFXqPLaUAG5B8FkEsXbEeaZIJ0dhEHVGku3AtRF3" target="_blank" rel="noopener">Veri Paketini Al ($12) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(16,185,129,0.5)">
-        <div>
-          <span class="tag" style="color:#34d399">Türkiye Turizm & Konaklama • Canlı DNS & Altyapı Denetimli</span>
-          <h3>🇹🇷 Türkiye Turizm, Otel Zincirleri & Rezervasyon Portalları (Antalya/Bodrum/İstanbul) Benchmark Paketi</h3>
-          <p>Türkiye'nin önde gelen 5 yıldızlı otel zincirleri (Antalya, Bodrum, İstanbul, Kapadokya), seyahat acenteleri (OTA) ve havayolu/rezervasyon portallarının canlı DNS, e-posta güvenliği, rezervasyon motoru ve Schema.org yapısal veri benchmark paketi (CSV + JSON).</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$79</s>$12 <small>CSV + JSON (.zip)</small></span>
-          <a class="btn" style="background:#059669" href="https://buy.polar.sh/polar_cl_FLFmj32nz9iLViFa3t6G74YTVPLwzAnm06INa4Tsd5U" target="_blank" rel="noopener">Veri Paketini Al ($12) →</a>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(16,185,129,0.5)">
-        <div>
-          <span class="tag" style="color:#34d399">Türkiye İnşaat, GYO & Emlak • Canlı DNS & Altyapı Denetimli</span>
-          <h3>🇹🇷 Türkiye İnşaat, GYO (Gayrimenkul Yatırım Ortaklığı) & Konut Geliştirme Projeleri Web Benchmark Paketi</h3>
-          <p>Türkiye'nin en büyük Gayrimenkul Yatırım Ortaklıkları (Emlak Konut GYO, Torunlar, Sinpaş, Nef, Ağaoğlu, Rönesans, Limak, ENKA), ulusal emlak portalları ve franchise gayrimenkul ağlarının canlı doğrulanmış DNS, kurumsal iletişim ağ geçidi ve güvenlik benchmark veri seti (CSV + JSON).</p>
-        </div>
-        <div class="row">
-          <span class="price"><s style="color:#64748b;font-size:13px;margin-right:6px">$79</s>$12 <small>CSV + JSON (.zip)</small></span>
-          <a class="btn" style="background:#059669" href="https://buy.polar.sh/polar_cl_xKcQdWkSotmwJRDX2ZnFn2ujwhbd6OnLs1OB736428r" target="_blank" rel="noopener">Veri Paketini Al ($12) →</a>
-        </div>
-      </div>
-    </div>
 
   <footer>
-    Lucacelli Data Engineering • <a href="https://apify.com/lucacelli" style="color:#38bdf8">Apify Store Portfolio</a> • <a href="./api-docs.html" style="color:#38bdf8">OpenAPI 3.0 Spec</a> • <a href="#chrome-extensions" style="color:#38bdf8">10 Chrome Extensions ($5)</a> • <a href="https://buy.polar.sh/polar_cl_wNd92BUpp1y37jeYkBbeSrlCka5EWrmmg7TGN0DPTYY" style="color:#4ade80;font-weight:700">All-in-One Agency Mega Pass ($39)</a>
+    <p><strong>Lucacelli Cloud Data Engineering</strong> • Official Apify Store Publisher (<a href="https://apify.com/lucacelli" style="color:#38bdf8">@lucacelli</a>)</p>
+    <p>All cloud execution, scheduling, proxies, webhooks, and billing are powered securely by <a href="https://apify.com/lucacelli" style="color:#38bdf8">Apify Cloud</a>.</p>
   </footer>
 
-      <script>
-    let CURRENT_AUDIT_MODE = 'dns';
-    const MODE_UNLOCK_LINKS = {
-      dns: { text: '🔓 Unlock Bulk SPF/DMARC & Email Verifier Pack ($9) →', url: 'https://buy.polar.sh/polar_cl_VweW8d2FkxtgnbCkjY3OZIk1PhYPaD7ttrqTX3OlcWt' },
-      shopify: { text: '🔓 Unlock Shopify Competitor Inspector n8n + DTC Benchmark Kit ($19) →', url: 'https://buy.polar.sh/polar_cl_e6aFOfXrdn6LRMeDHSjTvG00BdNELPRRc9qwW3OW23T' },
-      seo: { text: '🔓 Unlock 45-Point Technical SEO & Schema Agency Pack ($9) →', url: 'https://buy.polar.sh/polar_cl_aMT3yntNeGKZcDif3PXVlMKi1F2fhdIwSlP1e2Ti2gN' },
-      llmstxt: { text: '🔓 Unlock Bulk /llms.txt & JSON-LD Builder CLI ($9) →', url: 'https://buy.polar.sh/polar_cl_fHtvka1eUqZ4V0q2dSB5dlXLw3dhjIXckwo6k0xs1Ha' },
+  <script>
+    const MODES = {
+      gmaps: {
+        actor: 'google-maps-scraper-places-emails-contacts-reviews',
+        url: 'https://apify.com/lucacelli/google-maps-scraper-places-emails-contacts-reviews',
+        defaultVal: 'dentist in Miami, FL',
+        buildPayload: (val) => ({
+          queries: [val || 'dentist in Miami, FL'],
+          maxPlacesPerQuery: 50,
+          enrichWebsiteContacts: true,
+          verifyEmailDns: true
+        }),
+        sampleResult: (val) => ({
+          query: val || 'dentist in Miami, FL',
+          title: 'Brickell Dental Care & Orthodontics',
+          category: 'Dental Clinic',
+          rating: 4.9,
+          reviewsCount: 342,
+          phone: '+1 305-555-0192',
+          website: 'https://brickelldentalexample.com',
+          emails: ['info@brickelldentalexample.com', 'appointments@brickelldentalexample.com'],
+          emailGateway: 'Google Workspace (Strict SPF + DMARC)',
+          socials: { instagram: 'https://instagram.com/brickelldental', facebook: 'https://facebook.com/brickelldental' },
+          techStack: ['WordPress', 'Google Tag Manager', 'Meta Pixel', 'Stripe'],
+          b2bLeadScore: 94,
+          costUsd: 0.0015
+        })
+      },
+      b2b: {
+        actor: 'b2b-domain-contact-tech-enricher',
+        url: 'https://apify.com/lucacelli/b2b-domain-contact-tech-enricher',
+        defaultVal: 'stripe.com',
+        buildPayload: (val) => ({
+          domains: [val.replace(/^https?:\/\//, '').split('/')[0] || 'stripe.com'],
+          extractEmails: true,
+          detectTechStack: true
+        }),
+        sampleResult: (val) => ({
+          domain: val.replace(/^https?:\/\//, '').split('/')[0] || 'stripe.com',
+          emails: ['sales@' + (val.replace(/^https?:\/\//, '').split('/')[0] || 'stripe.com'), 'press@' + (val.replace(/^https?:\/\//, '').split('/')[0] || 'stripe.com')],
+          mxProvider: 'Google Workspace',
+          spfPolicy: 'Strict (-all)',
+          dmarcPolicy: 'reject',
+          techStack: ['Next.js', 'React', 'Cloudflare', 'Segment', 'Google Analytics 4'],
+          b2bLeadScore: 92,
+          costUsd: 0.0008
+        })
+      },
+      shopify: {
+        actor: 'shopify-store-product-contact-spy',
+        url: 'https://apify.com/lucacelli/shopify-store-product-contact-spy',
+        defaultVal: 'https://gymshark.com',
+        buildPayload: (val) => ({
+          storeUrls: [val.startsWith('http') ? val : 'https://' + val],
+          maxProductsPerStore: 100
+        }),
+        sampleResult: (val) => ({
+          storeUrl: val.startsWith('http') ? val : 'https://' + val,
+          productTitle: 'Vital Seamless 2.0 Leggings',
+          vendor: 'Gymshark',
+          priceUsd: 54.00,
+          inStock: true,
+          variantsCount: 6,
+          merchantEmails: ['support@gymshark.com'],
+          installedApps: ['Klaviyo', 'Gorgias', 'Yotpo', 'Meta Pixel', 'TikTok Pixel'],
+          costUsd: 0.0005
+        })
+      },
+      rag: {
+        actor: 'ai-ready-website-to-markdown-rag-crawler',
+        url: 'https://apify.com/lucacelli/ai-ready-website-to-markdown-rag-crawler',
+        defaultVal: 'https://modelcontextprotocol.io',
+        buildPayload: (val) => ({
+          startUrls: [val.startsWith('http') ? val : 'https://' + val],
+          chunkSizeTokens: 500
+        }),
+        sampleResult: (val) => ({
+          url: val.startsWith('http') ? val : 'https://' + val,
+          title: 'Documentation & Architecture Overview',
+          estimatedTokens: 412,
+          qualityScore: 96,
+          llmsTxtEntry: '- [Documentation Overview](' + (val.startsWith('http') ? val : 'https://' + val) + '): Clean structured RAG documentation.',
+          markdownPreview: '# Documentation Overview\n\nClean boilerplate-stripped Markdown ready for vector embedding...',
+          costUsd: 0.0005
+        })
+      },
+      seo: {
+        actor: 'seo-technical-audit-broken-link-schema-analyzer',
+        url: 'https://apify.com/lucacelli/seo-technical-audit-broken-link-schema-analyzer',
+        defaultVal: 'https://cloudflare.com',
+        buildPayload: (val) => ({
+          urls: [val.startsWith('http') ? val : 'https://' + val],
+          checkBrokenLinks: true
+        }),
+        sampleResult: (val) => ({
+          url: val.startsWith('http') ? val : 'https://' + val,
+          httpStatus: 200,
+          seoScore: 95,
+          letterGrade: 'A',
+          canonicalPresent: true,
+          jsonLdSchemas: ['Organization', 'WebSite'],
+          securityHeaders: { hsts: true, csp: true, xFrameOptions: true },
+          brokenLinksCount: 0,
+          costUsd: 0.0008
+        })
+      }
     };
 
-    function setAuditMode(mode, btn) {
-      CURRENT_AUDIT_MODE = mode;
-      ['auditTabBtn1','auditTabBtn2','auditTabBtn3','auditTabBtn4'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) { el.className = 'btn secondary'; el.style.background = ''; }
-      });
-      if (btn) { btn.className = 'btn'; btn.style.background = '#0284c7'; }
-      const unlockBtn = document.getElementById('demoUnlockPackBtn');
-      if (unlockBtn && MODE_UNLOCK_LINKS[mode]) {
-        unlockBtn.textContent = MODE_UNLOCK_LINKS[mode].text;
-        unlockBtn.href = MODE_UNLOCK_LINKS[mode].url;
-      }
-      document.getElementById('demoScanBtn').click();
+    let currentMode = 'gmaps';
+
+    function selectPlaygroundMode(mode, btn) {
+      currentMode = mode;
+      document.querySelectorAll('[id^="tabBtn"]').forEach(b => b.className = 'btn secondary');
+      if (btn) btn.className = 'btn';
+      const cfg = MODES[mode];
+      document.getElementById('playgroundInput').value = cfg.defaultVal;
+      document.getElementById('playgroundDirectLink').href = cfg.url;
+      runLivePlaygroundPreview();
     }
 
-    document.getElementById('demoScanBtn').addEventListener('click', async () => {
-      const raw = document.getElementById('demoDomainInput').value.trim().replace(/^https?:\/\//i, '').split('/')[0].replace(/^www\./i, '');
-      const out = document.getElementById('demoScannerOutput');
-      out.style.display = 'block';
-      out.textContent = 'Running live ' + CURRENT_AUDIT_MODE.toUpperCase() + ' audit on ' + raw + '...';
-
-      try {
-        const [mxR, txtR, dmarcR] = await Promise.all([
-          fetch('https://dns.google/resolve?name=' + encodeURIComponent(raw) + '&type=MX').then(r => r.json()).catch(() => ({})),
-          fetch('https://dns.google/resolve?name=' + encodeURIComponent(raw) + '&type=TXT').then(r => r.json()).catch(() => ({})),
-          fetch('https://dns.google/resolve?name=_dmarc.' + encodeURIComponent(raw) + '&type=TXT').then(r => r.json()).catch(() => ({})),
-        ]);
-        const mx = (mxR.Answer || []).map(a => a.data);
-        const txt = (txtR.Answer || []).map(a => a.data);
-        const dmarc = (dmarcR.Answer || []).map(a => a.data);
-        const joinedMx = mx.join(' ').toLowerCase();
-        let provider = 'Custom / Direct MX';
-        if (joinedMx.includes('google')) provider = 'Google Workspace';
-        else if (joinedMx.includes('outlook')) provider = 'Microsoft 365';
-        else if (joinedMx.includes('pphosted')) provider = 'Proofpoint Enterprise';
-        else if (joinedMx.includes('mimecast')) provider = 'Mimecast Security';
-        else if (joinedMx.includes('cloudflare')) provider = 'Cloudflare Email';
-
-        if (CURRENT_AUDIT_MODE === 'dns') {
-          out.textContent = JSON.stringify({
-            auditMode: '1. DNS MX, SPF, DMARC & Email Deliverability Security',
-            domain: raw,
-            emailGatewayProvider: provider,
-            hasSpfPolicy: txt.some(t => /v=spf1/i.test(t)),
-            hasDmarcPolicy: dmarc.some(t => /v=DMARC1/i.test(t)),
-            dmarcRecord: dmarc[0] || 'MISSING (High Spoofing Risk)',
-            mxServers: mx.slice(0, 5),
-            verifiedRoleTargets: ['hello@' + raw, 'sales@' + raw, 'partnerships@' + raw, 'press@' + raw],
-            unlockFullBulkPack: MODE_UNLOCK_LINKS.dns.url,
-          }, null, 2);
-        } else if (CURRENT_AUDIT_MODE === 'shopify') {
-          out.textContent = JSON.stringify({
-            auditMode: '2. Shopify & DTC E-Commerce Competitor Intelligence Preview',
-            storeDomain: raw,
-            catalogEndpoint: 'https://' + raw + '/products.json?limit=250',
-            emailProvider: provider,
-            detectedVerificationSignals: txt.filter(t => /shopify|klaviyo|facebook|google-site-verification|stripe/i.test(t)).slice(0, 6),
-            estimatedStoreTier: 'Growth / Enterprise DTC',
-            recommendedContacts: ['support@' + raw, 'partnerships@' + raw, 'wholesale@' + raw],
-            unlockFullShopifyInspectorAndBenchmark Kit: MODE_UNLOCK_LINKS.shopify.url,
-          }, null, 2);
-        } else if (CURRENT_AUDIT_MODE === 'seo') {
-          const hasGoogleVer = txt.some(t => /google-site-verification/i.test(t));
-          const hasSpf = txt.some(t => /v=spf1/i.test(t));
-          out.textContent = JSON.stringify({
-            auditMode: '3. 45-Point Technical SEO, Schema.org & Domain Authority Audit Preview',
-            domain: raw,
-            canonicalRoot: 'https://' + raw + '/',
-            sitemapEndpoint: 'https://' + raw + '/robots.txt & /sitemap.xml',
-            googleSearchConsoleVerifiedInDns: hasGoogleVer,
-            domainTrustScore: (hasGoogleVer ? 50 : 30) + (hasSpf ? 42 : 20),
-            recommendedSchemaTypes: ['Organization', 'WebSite', 'BreadcrumbList', 'FAQPage'],
-            unlockFull45PointSeoCrawlerPack: MODE_UNLOCK_LINKS.seo.url,
-          }, null, 2);
-        } else {
-          const llmsPreview = [
-            '# ' + raw.toUpperCase() + ' — Official /llms.txt Documentation & Context Map',
-            '',
-            '> Auto-generated LLM & RAG readiness map for https://' + raw,
-            '',
-            '## Core Sections',
-            '- [Homepage](https://' + raw + '/): Primary product & company overview',
-            '- [Documentation / API](https://' + raw + '/docs): Technical guides & endpoints',
-            '- [Pricing & Plans](https://' + raw + '/pricing): Commercial tiers & enterprise options',
-            '- [Contact & Sales](mailto:sales@' + raw + '): Direct B2B inquiries',
-          ].join('\n');
-          out.textContent = llmsPreview + '\n\n// 🔓 Unlock Bulk /llms.txt + JSON-LD Generator CLI ($9): ' + MODE_UNLOCK_LINKS.llmstxt.url;
-        }
-      } catch (e) {
-        out.textContent = 'Error: ' + e.message;
+    function loadActorInPlayground(actorName) {
+      const entry = Object.entries(MODES).find(([k, v]) => v.actor === actorName);
+      if (entry) {
+        selectPlaygroundMode(entry[0], document.getElementById('tabBtn' + entry[0].charAt(0).toUpperCase() + entry[0].slice(1)));
+        document.getElementById('interactive-playground').scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.open('https://apify.com/lucacelli/' + actorName, '_blank');
       }
+    }
+
+    async function runLivePlaygroundPreview() {
+      const cfg = MODES[currentMode];
+      const val = document.getElementById('playgroundInput').value.trim() || cfg.defaultVal;
+      const payload = cfg.buildPayload(val);
+      const sample = cfg.sampleResult(val);
+
+      // If B2B or SEO mode, also fetch real live DNS records via Google DoH for instant real data!
+      if (currentMode === 'b2b' || currentMode === 'seo') {
+        const cleanDom = val.replace(/^https?:\/\//, '').split('/')[0];
+        try {
+          const [mxRes, txtRes] = await Promise.all([
+            fetch('https://dns.google/resolve?name=' + encodeURIComponent(cleanDom) + '&type=MX').then(r => r.json()).catch(() => null),
+            fetch('https://dns.google/resolve?name=' + encodeURIComponent(cleanDom) + '&type=TXT').then(r => r.json()).catch(() => null)
+          ]);
+          if (mxRes?.Answer?.length) {
+            sample.liveDnsMxRecords = mxRes.Answer.map(a => a.data);
+          }
+          if (txtRes?.Answer?.length) {
+            const spf = txtRes.Answer.map(a => a.data).find(d => d.includes('v=spf1'));
+            if (spf) sample.liveSpfRecord = spf;
+          }
+        } catch {}
+      }
+
+      const text = [
+        '// 1. RUN SYNCHRONOUSLY VIA APIFY CLOUD REST API:',
+        'curl -X POST "https://api.apify.com/v2/acts/lucacelli~' + cfg.actor + '/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN" \\',
+        '  -H "Content-Type: application/json" \\',
+        "  -d '" + JSON.stringify(payload) + "'",
+        '',
+        '// 2. SAMPLE STRUCTURED JSON OUTPUT (' + cfg.url + '):',
+        JSON.stringify(sample, null, 2)
+      ].join('\n');
+
+      const out = document.getElementById('playgroundOutput');
+      out.style.display = 'block';
+      out.textContent = text;
+    }
+
+    function copyPlaygroundSnippet() {
+      const out = document.getElementById('playgroundOutput').textContent;
+      navigator.clipboard.writeText(out);
+      alert('Copied Apify Cloud API cURL snippet & sample output to clipboard!');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      runLivePlaygroundPreview();
     });
   </script>
 </body>
