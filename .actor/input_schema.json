@@ -11,12 +11,22 @@
       "default": [
         "https://docs.apify.com/platform/actors",
         "https://docs.apify.com/sdk/js",
-        "https://crawlee.dev"
+        "https://crawlee.dev",
+        "https://modelcontextprotocol.io/introduction",
+        "https://hono.dev",
+        "https://orm.drizzle.team",
+        "https://zod.dev",
+        "https://trpc.io"
       ],
       "prefill": [
         "https://docs.apify.com/platform/actors",
         "https://docs.apify.com/sdk/js",
-        "https://crawlee.dev"
+        "https://crawlee.dev",
+        "https://modelcontextprotocol.io/introduction",
+        "https://hono.dev",
+        "https://orm.drizzle.team",
+        "https://zod.dev",
+        "https://trpc.io"
       ]
     },
     "crawlSubpages": {
@@ -50,5 +60,7 @@
       "maximum": 1000
     }
   },
-  "required": ["urls"]
+  "required": [
+    "urls"
+  ]
 }
