@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5-in-1 Claude Desktop & Cursor MCP Server for Google Maps, Shopify, SEO & B2B Leads</title>
+  <meta name="description" content="5-in-1 Claude Desktop & Cursor MCP Server for Google Maps, Shopify, SEO & B2B Leads. Built for AI Agent & MCP Power Users. Run on Apify Cloud at $1.50 per 1,000 places ($5 free monthly credit included). Includes 1-click n8n & Claude MCP templates." />
+  <link rel="canonical" href="https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/use-cases/claude-desktop-cursor-mcp-server-for-b2b-lead-generation.html" />
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background: #090d16; color: #f1f5f9; line-height: 1.6; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 48px 20px 80px; }
+    .pill { display: inline-block; background: rgba(56, 189, 248, 0.14); border: 1px solid rgba(56, 189, 248, 0.35); color: #38bdf8; font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 999px; margin-bottom: 14px; }
+    h1 { font-size: 33px; color: #fff; margin: 0 0 12px; line-height: 1.25; }
+    p.lead { font-size: 17px; color: #94a3b8; margin: 0 0 24px; }
+    .cta-bar { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+    .btn { background: #16a34a; color: #fff; text-decoration: none; padding: 13px 22px; border-radius: 8px; font-weight: 700; font-size: 14px; display: inline-block; }
+    .btn.blue { background: #0284c7; }
+    .btn.sec { background: #1e293b; border: 1px solid #334155; color: #e2e8f0; }
+    .box { background: #111827; border: 1px solid #1e293b; border-radius: 10px; padding: 24px; margin-bottom: 24px; }
+    h2 { font-size: 21px; color: #38bdf8; margin-top: 0; }
+    pre { background: #090d16; border: 1px solid #1e293b; padding: 14px; border-radius: 8px; overflow-x: auto; color: #4ade80; font-size: 12.5px; }
+    a { color: #38bdf8; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <span class="pill">AI AGENT & MCP POWER USERS • $1.50 / 1,000 PLACES • $5 FREE MONTHLY CREDIT</span>
+    <h1>5-in-1 Claude Desktop & Cursor MCP Server for Google Maps, Shopify, SEO & B2B Leads</h1>
+    <p class="lead">Extract Google Maps businesses, ratings, review counts, phone numbers, websites, plus automatic website crawling for verified emails, social links, DNS MX/SPF/DMARC & B2B lead scores (0-100) with $0 add-on fees. Engineered specifically for <strong>AI Agent & MCP Power Users</strong> teams replacing <strong>Outscraper / PhantomBuster ($49–$199/mo)</strong>.</p>
+    <div class="cta-bar">
+      <a class="btn" href="https://apify.com/lucacelli/google-maps-scraper-places-emails-contacts-reviews" target="_blank" rel="noopener">🚀 Run Free on Apify Cloud ($5 Credit Included) →</a>
+      <a class="btn blue" href="../workflows/chained-3x-pipeline-n8n.json" download>⚡ Download 3x Chained n8n Workflow (.json)</a>
+      <a class="btn sec" href="../index.html">← Interactive 14-Actor API Playground</a>
+    </div>
+
+    <div class="box">
+      <h2>💰 Interactive Cost Calculator: Google Maps Scraper: Places, Emails, Contacts & Reviews Pro vs. Outscraper / PhantomBuster ($49–$199/mo)</h2>
+      <p>Enter monthly volume of places to compare:</p>
+      <input id="volInput" type="number" value="10000" min="1000" step="1000" oninput="calcRoi()" style="background:#090d16;border:1px solid #38bdf8;color:#fff;padding:10px 14px;border-radius:6px;font-size:16px;width:220px" />
+      <div id="roiOut" style="margin-top:14px;font-size:16px;color:#4ade80;font-weight:700"></div>
+    </div>
+
+    <div class="box">
+      <h2>⚡ Synchronous REST API Call (n8n / Make.com / Clay / Python)</h2>
+      <pre>curl -X POST "https://api.apify.com/v2/acts/lucacelli~google-maps-scraper-places-emails-contacts-reviews/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "queries": [
+    "dentist in Miami, FL",
+    "medspa in Austin, TX"
+  ],
+  "maxPlacesPerQuery": 50,
+  "enrichWebsiteContacts": true,
+  "verifyEmailDns": true
+}'</pre>
+    </div>
+
+    <div class="box">
+      <h2>🤖 5-in-1 Claude Desktop & Cursor MCP Server Configuration</h2>
+      <pre>{
+  "mcpServers": {
+    "lucacelli-b2b-cloud-suite": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@apify/actors-mcp-server",
+        "--actors",
+        "lucacelli/google-maps-scraper-places-emails-contacts-reviews,lucacelli/b2b-domain-contact-tech-enricher,lucacelli/shopify-store-product-contact-spy,lucacelli/ai-ready-website-to-markdown-rag-crawler,lucacelli/seo-technical-audit-broken-link-schema-analyzer"
+      ],
+      "env": {
+        "APIFY_TOKEN": "YOUR_APIFY_TOKEN_HERE"
+      }
+    }
+  }
+}</pre>
+    </div>
+
+    <div class="box">
+      <h2>🔗 Related Industry Automation Blueprints</h2>
+      <ul>
+        <li><a href="./outscraper-alternative-google-maps-email-scraper-api.html">Best Outscraper Alternative: Google Maps Email & Contact Scraper ($1.50/1k)</a></li>
+        <li><a href="./google-maps-lead-scraper-for-dentists-medspas-clinics.html">Google Maps Lead & Email Scraper for Dental Clinics, MedSpas & Healthcare</a></li>
+        <li><a href="./google-maps-scraper-for-real-estate-roofing-contractors.html">Google Maps Phone & Email Extractor for Real Estate, Roofing & Home Services</a></li>
+        <li><a href="./n8n-google-maps-to-cold-email-instantly-smartlead-workflow.html">Automated n8n Workflow: Google Maps Scraper to Instantly.ai / Smartlead Cold Email</a></li>
+        <li><a href="./apollo-io-alternative-b2b-domain-email-tech-stack-api.html">Cheapest Apollo.io & BuiltWith Alternative: B2B Domain, Email & Tech Stack API ($0.80/1k)</a></li>
+        <li><a href="./bulk-dns-mx-spf-dmarc-security-auditor-for-msps.html">Bulk DNS MX, SPF & DMARC Email Security Auditor API for MSPs & Cybersecurity Agencies</a></li>
+        <li><a href="./builtwith-wappalyzer-alternative-saas-pixel-detector-api.html">BuiltWith & Wappalyzer API Alternative: Detect 38+ SaaS & Ad Pixels ($0.80/1k Domains)</a></li>
+        <li><a href="./shopify-competitor-price-monitoring-inventory-tracker-api.html">Shopify Competitor Price Monitoring, Stock Availability & SKU Scraper API ($0.50/1k)</a></li>
+        <li><a href="./extract-shopify-merchant-emails-instagram-tiktok-leads.html">How to Extract Verified Shopify Store Owner Emails, Instagram & TikTok Handles at Scale</a></li>
+        <li><a href="./firecrawl-jina-reader-alternative-website-to-markdown-rag.html">Firecrawl & Jina Reader Alternative: Website to Clean Markdown & Vector RAG Chunks ($0.50/1k)</a></li>
+        <li><a href="./automatic-llms-txt-generator-api-for-documentation-sites.html">Automated /llms.txt Generator & Documentation Crawler for Claude, ChatGPT & Cursor</a></li>
+        <li><a href="./screaming-frog-cloud-alternative-45-point-technical-seo-api.html">Cloud Screaming Frog Alternative: 45-Point Technical SEO, JSON-LD & Broken Link API ($0.80/1k)</a></li>
+        <li><a href="./automated-broken-link-and-schema-org-validator-for-n8n.html">Automated Broken Link Checker & Schema.org JSON-LD Validator for n8n & Make.com</a></li>
+        <li><a href="./github-stargazer-contributor-email-scraper-for-devtools-plg.html">GitHub Stargazer & Contributor Email Scraper for DevTools PLG Sales ($0.80/1k)</a></li>
+        <li><a href="./find-verified-developer-commit-emails-from-github-repos.html">How to Extract Verified Developer Commit Emails & Seniority Scores from GitHub Repositories</a></li>
+        <li><a href="./greenhouse-lever-job-board-hiring-intent-scraper-for-clay.html">Greenhouse & Lever ATS Job Scraper: Feed B2B Hiring Intent Signals into Clay & n8n ($0.50/1k)</a></li>
+        <li><a href="./gummysearch-alternative-reddit-buyer-intent-lead-miner-api.html">GummySearch Alternative: Reddit Buyer Intent, Pain-Point & SaaS Lead Miner API ($0.50/1k)</a></li>
+        <li><a href="./wordpress-woocommerce-plugin-theme-vulnerability-lead-spy.html">WordPress Theme, Plugin & WooCommerce Store Spy API for Web Design Agencies ($0.80/1k)</a></li>
+        <li><a href="./show-hn-hackernews-startup-launch-founder-lead-scraper.html">Hacker News (Show HN) Startup Launch & Founder Lead Monitor API for VCs & DevTools ($0.50/1k)</a></li>
+        <li><a href="./xml-sitemap-url-inventory-and-content-freshness-spy-api.html">Competitor XML Sitemap URL Inventory & Content Publishing Velocity Auditor ($0.50/1k)</a></li>
+        <li><a href="./saas-competitor-pricing-page-tier-and-feature-matrix-spy.html">SaaS Competitor Pricing Page, Plan Tiers & Feature Matrix Scraper API ($0.80/1k)</a></li>
+        <li><a href="./clinicaltrials-gov-openfda-biotech-pharma-sponsor-leads.html">ClinicalTrials.gov & OpenFDA Scraper: Extract Biotech Sponsors & Principal Investigators ($0.80/1k)</a></li>
+        <li><a href="./academic-paper-principal-investigator-lab-lead-miner-api.html">Academic Research Paper, University Lab & Author Lead Miner API ($0.50/1k)</a></li>
+        <li><a href="./claude-desktop-cursor-mcp-server-for-b2b-lead-generation.html">5-in-1 Claude Desktop & Cursor MCP Server for Google Maps, Shopify, SEO & B2B Leads</a></li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    function calcRoi() {
+      const v = Number(document.getElementById('volInput').value || 10000);
+      const unitPrice = 0.0015;
+      const rawCost = v * unitPrice;
+      const afterFreeCredit = Math.max(0, rawCost - 5.00);
+      document.getElementById('roiOut').textContent =
+        'Your Net Monthly Cost on Apify: $' + afterFreeCredit.toFixed(2) +
+        ' (after $5.00 free monthly Apify credit) vs. $99.00–$299.00/mo on legacy SaaS tools!';
+    }
+    calcRoi();
+  </script>
+</body>
+</html>

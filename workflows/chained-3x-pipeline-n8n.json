@@ -1,0 +1,134 @@
+{
+  "name": "3x Chained Agency Lead Machine: Google Maps -> B2B Domain DNS/Tech Enricher -> 45-Point SEO Audit (@lucacelli)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24
+            }
+          ]
+        }
+      },
+      "name": "1. Daily Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        180,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~google-maps-scraper-places-emails-contacts-reviews/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $env.APIFY_TOKEN }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"dentist in Miami, FL\"],\"maxPlacesPerQuery\":25,\"enrichWebsiteContacts\":true}"
+      },
+      "name": "2. Scrape Google Maps + Emails ($1.50/1k)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        440,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~b2b-domain-contact-tech-enricher/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $env.APIFY_TOKEN }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\"domains\": [\"{{ $json.website }}\"], \"extractEmails\": true, \"detectTechStack\": true}"
+      },
+      "name": "3. Enrich Domain DNS MX/DMARC & Tech Stack ($0.80/1k)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        720,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~seo-technical-audit-broken-link-schema-analyzer/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $env.APIFY_TOKEN }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\"urls\": [\"{{ $json.url }}\"], \"checkBrokenLinks\": true}"
+      },
+      "name": "4. Run 45-Point Technical SEO & Broken Link Audit ($0.80/1k)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1000,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "1. Daily Trigger": {
+      "main": [
+        [
+          {
+            "node": "2. Scrape Google Maps + Emails ($1.50/1k)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2. Scrape Google Maps + Emails ($1.50/1k)": {
+      "main": [
+        [
+          {
+            "node": "3. Enrich Domain DNS MX/DMARC & Tech Stack ($0.80/1k)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "3. Enrich Domain DNS MX/DMARC & Tech Stack ($0.80/1k)": {
+      "main": [
+        [
+          {
+            "node": "4. Run 45-Point Technical SEO & Broken Link Audit ($0.80/1k)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
