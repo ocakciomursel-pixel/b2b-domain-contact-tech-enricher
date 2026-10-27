@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "sitemap-url-inventory-content-freshness-auditor",
-  "title": "XML Sitemap URL Extractor & Content Freshness Auditor",
+  "title": "XML Sitemap URL Inventory, SEO Freshness & Content Auditor",
   "description": "Discover robots.txt and XML sitemaps for any domain, extract complete URL inventories, categorize site sections (/blog, /docs, /products), and measure content publishing velocity.",
   "version": "2.0",
   "buildTag": "latest",
