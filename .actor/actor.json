@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "apple-appstore-aso-competitor-review-intel",
-  "title": "Apple App Store ASO, Competitor Metadata & User Complaint Mi",
+  "title": "Apple App Store ASO, Competitor Metadata & Review Miner",
   "description": "Mobile App & Gaming intelligence Actor: extracts iOS App Store ratings, version velocity, developer websites, and mines recent user reviews to identify 1-2 star bug/complaint themes.",
   "version": "2.0",
   "buildTag": "latest",
