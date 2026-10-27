@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "defi-protocol-yield-tvl-whale-intel",
-  "title": "DeFi Protocol TVL, Capital Flow & High-Yield Pool Intelligen",
+  "title": "DeFi Protocol TVL, Capital Flow & Yield Pool Intelligence",
   "description": "Institutional Crypto & DeFi intelligence Actor: tracks protocol TVL, 1d/7d/30d capital inflows/outflows, multi-chain exposure, Mcap/TVL valuation multiples, and audit status via DeFiLlama.",
   "version": "2.0",
   "buildTag": "latest",
