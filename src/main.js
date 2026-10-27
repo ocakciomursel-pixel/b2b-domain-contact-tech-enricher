@@ -110,7 +110,7 @@ async function run() {
             if (jobs.length > 0) {
                 await Actor.pushData(__wrapPushData(jobs));
                 if (typeof Actor.charge === 'function') {
-                    try { await Actor.charge({ eventName: 'job-extracted', count: jobs.length  }); try { await Actor.charge({ eventName: 'deep-verification-enrichment', count: jobs.length  }); await Actor.charge({ eventName: 'ai-intelligence-priority-scoring', count: jobs.length  }); } catch {} } catch {}
+                    try { await Actor.charge({ eventName: 'job-extracted', count: jobs.length  }); } catch {}
                 }
             }
         }
