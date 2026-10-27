@@ -387,6 +387,146 @@
       .product-tile-light, .product-tile-parchment, .product-tile-dark, .product-tile-dark-2 { padding: 48px 18px; }
     }
 
+    /* ==========================================================================
+       APPLE CUPERTINO MOTION & CHOREOGRAPHY SYSTEM (HIG + IMPECCABLE ANIMATE)
+       ========================================================================== */
+    @keyframes appleKeynoteIn {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, 22px, 0) scale(0.985);
+      }
+      100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+    }
+
+    @keyframes appleStudioUnfold {
+      0% {
+        opacity: 0;
+        transform: perspective(1200px) rotateX(6deg) translate3d(0, 28px, 0) scale(0.975);
+      }
+      100% {
+        opacity: 1;
+        transform: perspective(1200px) rotateX(0deg) translate3d(0, 0, 0) scale(1);
+      }
+    }
+
+    @keyframes appleRowCascade {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, 10px, 0);
+      }
+      100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    @keyframes appleStickyRise {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+      }
+      100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    /* Keynote Hero Stagger Entrance */
+    .hero-display {
+      animation: appleKeynoteIn 0.72s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .lead-copy {
+      animation: appleKeynoteIn 0.72s cubic-bezier(0.16, 1, 0.3, 1) 0.09s both;
+    }
+    .cta-pair {
+      animation: appleKeynoteIn 0.72s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+    }
+    .studio-display-frame {
+      animation: appleStudioUnfold 0.86s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      transform-style: preserve-3d;
+    }
+
+    /* Progressive Scroll-Reveal Choreography (visible by default if JS disabled) */
+    html.motion-ready .apple-reveal {
+      opacity: 0;
+      transform: translate3d(0, 24px, 0) scale(0.985);
+      transition:
+        opacity 0.68s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.68s cubic-bezier(0.16, 1, 0.3, 1);
+      transition-delay: var(--stagger-ms, 0ms);
+    }
+    html.motion-ready .apple-reveal.is-visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    /* Tactile Store Utility Card & Configurator Chip Micro-Interactions */
+    .store-utility-card, .card {
+      transition:
+        transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .store-utility-card:hover, .card:hover {
+      transform: translate3d(0, -4px, 0);
+      border-color: var(--primary-focus);
+    }
+    .configurator-option-chip {
+      cursor: pointer;
+      transition:
+        transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+        background-color 0.22s ease;
+    }
+    .configurator-option-chip:hover {
+      transform: translate3d(0, -2px, 0);
+      border-color: var(--primary);
+    }
+    .configurator-option-chip:active {
+      transform: scale(0.97);
+    }
+
+    /* Button Tactile Physics */
+    .btn-pill, .btn-pill-secondary, .btn-pearl-capsule, .btn-dark-utility {
+      transition:
+        transform 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+    }
+    .btn-pill:hover, .btn-pill-secondary:hover, .btn-pearl-capsule:hover {
+      transform: scale(1.025);
+    }
+    .btn-pill:active, .btn-pill-secondary:active, .btn-pearl-capsule:active, .btn-dark-utility:active {
+      transform: scale(0.95);
+    }
+
+    /* Animated Table Row & Console Stream Transitions */
+    .apple-row-anim {
+      animation: appleRowCascade 0.42s cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: var(--row-delay, 0ms);
+    }
+    .view-pane-fade {
+      animation: appleRowCascade 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    /* Accessibility: Respect Reduced Motion (Apple HIG + Impeccable) */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      html.motion-ready .apple-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+
 
     body {
       background: var(--canvas-parchment);
@@ -515,22 +655,27 @@
       border-bottom: 1px solid var(--divider-soft);
     }
     .segmented-pills {
-      display: inline-flex;
+      position: relative;
+      display: inline-grid;
+      grid-template-columns: 1fr 1fr;
       background: var(--canvas-parchment);
       padding: 4px;
       border-radius: var(--rounded-pill);
     }
     .seg-btn {
+      position: relative;
+      z-index: 2;
       background: transparent;
       color: var(--ink-muted-80);
       border: none;
       border-radius: var(--rounded-pill);
-      padding: 7px 16px;
+      padding: 7px 18px;
       font-family: var(--font-text);
       font-size: 14px;
       font-weight: 600;
       cursor: pointer;
       line-height: 1.35;
+      transition: color 0.24s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.24s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .seg-btn.active {
       background: var(--canvas);
@@ -587,6 +732,7 @@
       align-items: center;
       justify-content: center;
       padding: 0 22px;
+      animation: appleStickyRise 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
     }
     .sticky-inner {
       max-width: 1180px;
@@ -831,6 +977,58 @@ linear.app</textarea>
       </div>
     </div>
   </footer>
+  <script>
+    (function initAppleMotion() {
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      document.documentElement.classList.add('motion-ready');
+
+      const targets = document.querySelectorAll(
+        '.store-utility-card, .configurator-option-chip, .dual-tile, .product-tile-dark .tile-inner, .card'
+      );
+      targets.forEach((el, idx) => {
+        el.classList.add('apple-reveal');
+        el.style.setProperty('--stagger-ms', ((idx % 6) * 45) + 'ms');
+      });
+
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+        targets.forEach(el => io.observe(el));
+      } else {
+        targets.forEach(el => el.classList.add('is-visible'));
+      }
+
+      // Subtle Apple 3D Hardware Tilt on Studio Showcase Frame
+      const studioFrame = document.querySelector('.studio-display-frame');
+      if (studioFrame) {
+        studioFrame.addEventListener('mousemove', (e) => {
+          const rect = studioFrame.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5;
+          const y = (e.clientY - rect.top) / rect.height - 0.5;
+          studioFrame.style.transform =
+            'perspective(1200px) rotateY(' + (x * 2.4).toFixed(2) + 'deg) rotateX(' + (-y * 2.4).toFixed(2) + 'deg) translate3d(0, -2px, 0)';
+        });
+        studioFrame.addEventListener('mouseleave', () => {
+          studioFrame.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg) translate3d(0, 0, 0)';
+        });
+      }
+
+      // Interactive Configurator Option Chip Selection Ring
+      const chips = document.querySelectorAll('.configurator-option-chip');
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          chips.forEach(c => c.classList.remove('selected'));
+          chip.classList.add('selected');
+        });
+      });
+    })();
+  </script>
 
   <script>
     const ACTORS = [
@@ -1083,8 +1281,14 @@ linear.app</textarea>
 
     function switchOutputView(mode) {
       const isTable = mode === 'table';
-      document.getElementById('tableView').style.display = isTable ? 'block' : 'none';
-      document.getElementById('jsonView').style.display = isTable ? 'none' : 'block';
+      const tv = document.getElementById('tableView');
+      const jv = document.getElementById('jsonView');
+      tv.style.display = isTable ? 'block' : 'none';
+      jv.style.display = isTable ? 'none' : 'block';
+      const activePane = isTable ? tv : jv;
+      activePane.classList.remove('view-pane-fade');
+      void activePane.offsetWidth;
+      activePane.classList.add('view-pane-fade');
       document.getElementById('tabTableBtn').classList.toggle('active', isTable);
       document.getElementById('tabJsonBtn').classList.toggle('active', !isTable);
     }
@@ -1094,13 +1298,13 @@ linear.app</textarea>
         tableBody.innerHTML = '<tr><td colspan="5" style="color:var(--ink-muted-48);">No records returned.</td></tr>';
         return;
       }
-      tableBody.innerHTML = rows.map(r => {
+      tableBody.innerHTML = rows.map((r, i) => {
         const name = r.title || r.domain || r.username || r.company || r.nctId || r.keyword || r.target || 'Record';
         const cat = r.emailSecurityGrade || r.categoryName || r.hiringVelocitySignal || r.overallStatus || (r.publicationYear ? 'Published ' + r.publicationYear : 'Verified');
         const details = r.address || (r.detectedTechStack ? r.detectedTechStack.join(', ') : '') || r.briefTitle || r.blogUrl || r.url || (r.sampleOpenings ? r.sampleOpenings.map(o => o.title).join('; ') : '') || '-';
         const contacts = (r.emails ? r.emails.slice(0, 2).join(', ') : '') || (r.suggestedContacts ? r.suggestedContacts.join(', ') : '') || r.LeadAuthors || r.leadSponsor || r.location || '-';
         const countVal = r.totalOpenJobs ?? r.publicRepos ?? r.citedByCount ?? r.points ?? r.txtRecordCount ?? 1;
-        return '<tr>' +
+        return '<tr class="apple-row-anim" style="--row-delay:' + Math.min(i * 40, 280) + 'ms;">' +
           '<td><strong>' + String(name).replace(/</g, '&lt;') + '</strong></td>' +
           '<td>' + String(cat).replace(/</g, '&lt;') + '</td>' +
           '<td>' + String(details).slice(0, 90).replace(/</g, '&lt;') + '</td>' +
