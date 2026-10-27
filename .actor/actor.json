@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "scientific-literature-citation-author-lead-miner",
-  "title": "Scientific Literature, R&D Grant, Institution & Author Lead",
+  "title": "Scientific Paper, Author Email & Lab Research Lead Miner",
   "description": "DeepTech & Academic R&D intelligence Actor: mines OpenAlex for peer-reviewed papers, citation velocity, open-access PDFs, funding grants, and researcher institution leads.",
   "version": "2.0",
   "buildTag": "latest",
