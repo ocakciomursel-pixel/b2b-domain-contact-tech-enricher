@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "global-news-pr-sentiment-mention-monitor",
-  "title": "Global News, PR Mention, Event Classifier & Brand Sentiment",
+  "title": "Global News, PR Mention, Event & Brand Sentiment Monitor",
   "description": "PR, Media & Financial News intelligence Actor: monitors real-time Google News RSS feeds for any company, brand, or market keyword with automated sentiment scoring and corporate event classification.",
   "version": "2.0",
   "buildTag": "latest",
