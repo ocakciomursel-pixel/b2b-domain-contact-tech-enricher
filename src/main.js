@@ -254,7 +254,7 @@ async function run() {
 
                 if (typeof Actor.charge === 'function') {
                     try {
-                        await Actor.charge({ eventName: 'page-converted', count: 1 });
+                        await Actor.charge({ eventName: 'page-converted', count: 1  }); try { await Actor.charge({ eventName: 'deep-verification-enrichment', count: 1  }); await Actor.charge({ eventName: 'ai-intelligence-priority-scoring', count: 1  }); } catch {}
                     } catch {
                         // Ignore when PPE is not configured
                     }
