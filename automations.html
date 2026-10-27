@@ -3,171 +3,552 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>n8n, Make.com, Clay &amp; Claude MCP Blueprints | Lucacelli Cloud</title>
+  <title>n8n, Make.com, Clay &amp; Claude MCP Blueprints — Lucacelli</title>
   <meta name="description" content="Download token-injected n8n workflows, 3x chained B2B pipelines, Make.com scenarios, Clay.com HTTP columns, and Claude Desktop MCP configs for all 14 @lucacelli Apify Actors." />
   <link rel="canonical" href="https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/automations.html" />
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-  <link href="https://api.fontshare.com/v2/css?f[]=gambarino@400&f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
+    
     :root {
-      --bg: #1c1c1c;
-      --surface: #262626;
-      --ink: #f1f1ef;
-      --muted: #a3a49e;
-      --accent: #8fa68e;
-      --accent-ink: #1c1c1c;
+      --primary: #0066cc;
+      --primary-focus: #0071e3;
+      --primary-on-dark: #2997ff;
+      --ink: #1d1d1f;
+      --body: #1d1d1f;
+      --body-on-dark: #ffffff;
+      --body-muted: #cccccc;
+      --ink-muted-80: #333333;
+      --ink-muted-48: #7a7a7a;
+      --divider-soft: #f0f0f0;
+      --hairline: #e0e0e0;
+      --canvas: #ffffff;
+      --canvas-parchment: #f5f5f7;
+      --surface-pearl: #fafafc;
+      --surface-tile-1: #272729;
+      --surface-tile-2: #2a2a2c;
+      --surface-tile-3: #252527;
+      --surface-black: #000000;
+      --surface-chip-translucent: rgba(210, 210, 215, 0.64);
+      --on-primary: #ffffff;
+      --on-dark: #ffffff;
+      --rounded-none: 0px;
+      --rounded-xs: 5px;
+      --rounded-sm: 8px;
+      --rounded-md: 11px;
+      --rounded-lg: 18px;
+      --rounded-pill: 9999px;
+      --product-shadow: 3px 5px 30px 0 rgba(0, 0, 0, 0.22);
+      --font-display: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Inter", system-ui, sans-serif;
+      --font-text: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Inter", system-ui, sans-serif;
     }
     * { box-sizing: border-box; }
-    ::selection { background: var(--accent); color: var(--accent-ink); }
-    body {
+    ::selection { background: var(--primary); color: var(--on-primary); }
+    html, body {
       margin: 0;
-      background: var(--bg);
+      padding: 0;
+      background: var(--canvas);
       color: var(--ink);
-      font-family: "General Sans", system-ui, sans-serif;
-      font-size: 16px;
-      line-height: 1.55;
+      font-family: var(--font-text);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.47;
+      letter-spacing: -0.374px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     h1, h2, h3 {
-      font-family: "Gambarino", Georgia, serif;
-      font-weight: 400;
-      letter-spacing: -0.02em;
-      line-height: 1.3;
+      font-family: var(--font-display);
+      font-weight: 600;
       margin: 0;
+      letter-spacing: -0.28px;
+      line-height: 1.32;
     }
-    .wrap { max-width: 1240px; margin: 0 auto; padding: 32px 3vw 96px; }
-    .top-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 56px; }
-    .top-bar a { color: var(--muted); text-decoration: none; font-size: 15px; }
-    .top-bar a:hover { color: var(--ink); }
-    .hero-h1 { font-size: clamp(42px, 6.8vw, 92px); max-width: 15ch; margin-bottom: 24px; }
-    .hero-sub { font-size: 19px; color: var(--muted); max-width: 62ch; margin-bottom: 36px; }
-    .token-panel {
-      background: var(--surface);
-      padding: 24px 28px;
-      margin-bottom: 36px;
+    p { margin: 0; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    :focus-visible { outline: 2px solid var(--primary-focus); outline-offset: 2px; }
+
+    /* Component: global-nav (44px, #000000) */
+    .global-nav {
+      background: var(--surface-black);
+      color: var(--on-dark);
+      height: 44px;
       display: flex;
-      gap: 18px;
       align-items: center;
-      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0 22px;
+      font-family: var(--font-text);
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.35;
+      letter-spacing: -0.12px;
+    }
+    .global-nav-inner {
+      max-width: 1024px;
+      width: 100%;
+      display: flex;
+      align-items: center;
       justify-content: space-between;
+      gap: 20px;
     }
-    input.token-input {
-      flex: 1;
-      min-width: 260px;
-      background: var(--bg);
-      border: 1px solid #3d3d3d;
-      color: var(--ink);
-      padding: 12px 14px;
-      font-family: inherit;
-      font-size: 15px;
+    .global-nav a {
+      color: rgba(255, 255, 255, 0.88);
+      text-decoration: none;
+      transition: color 0.15s ease;
+      white-space: nowrap;
     }
-    .btn {
+    .global-nav a:hover {
+      color: var(--on-dark);
+      text-decoration: none;
+    }
+    .global-brand {
       display: inline-flex;
       align-items: center;
-      min-height: 40px;
-      padding: 0 16px;
-      background: var(--accent);
-      color: var(--accent-ink);
-      font-family: inherit;
-      font-size: 14px;
-      font-weight: 500;
+      gap: 8px;
+      font-weight: 600;
+      color: var(--on-dark) !important;
+      font-size: 13px;
+    }
+
+    /* Component: sub-nav-frosted (52px, sticky frosted parchment) */
+    .sub-nav-frosted {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      height: 52px;
+      background: rgba(245, 245, 247, 0.82);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 22px;
+    }
+    .sub-nav-inner {
+      max-width: 1024px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .sub-nav-title {
+      font-family: var(--font-display);
+      font-size: 21px;
+      font-weight: 600;
+      line-height: 1.32;
+      letter-spacing: 0.231px;
+      color: var(--ink);
+      text-decoration: none !important;
+    }
+    .sub-nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 12px;
+    }
+    .sub-nav-actions a.sub-link {
+      color: var(--ink-muted-80);
       text-decoration: none;
+      font-size: 12px;
+    }
+    .sub-nav-actions a.sub-link:hover {
+      color: var(--primary);
+    }
+
+    /* Component: button-primary & button-secondary-pill */
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary);
+      color: var(--on-primary) !important;
+      font-family: var(--font-text);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.35;
+      letter-spacing: -0.374px;
+      border-radius: var(--rounded-pill);
+      padding: 11px 22px;
+      border: 1px solid var(--primary);
+      cursor: pointer;
+      text-decoration: none !important;
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+    .btn-pill:active { transform: scale(0.95); }
+    .btn-pill-sm {
+      font-size: 12px;
+      padding: 6px 14px;
+      letter-spacing: -0.12px;
+    }
+    .btn-pill-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      color: var(--primary) !important;
+      font-family: var(--font-text);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.35;
+      letter-spacing: -0.374px;
+      border-radius: var(--rounded-pill);
+      padding: 11px 22px;
+      border: 1px solid var(--primary);
+      cursor: pointer;
+      text-decoration: none !important;
+      transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+    }
+    .btn-pill-secondary:hover {
+      background: var(--primary);
+      color: var(--on-primary) !important;
+    }
+    .btn-pill-secondary:active { transform: scale(0.95); }
+    .btn-pill-on-dark {
+      border-color: var(--primary-on-dark);
+      color: var(--primary-on-dark) !important;
+    }
+    .btn-pill-on-dark:hover {
+      background: var(--primary-on-dark);
+      color: var(--surface-black) !important;
+    }
+    .btn-dark-utility {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--ink);
+      color: var(--on-dark) !important;
+      font-family: var(--font-text);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.35;
+      letter-spacing: -0.224px;
+      border-radius: var(--rounded-sm);
+      padding: 8px 15px;
       border: none;
       cursor: pointer;
+      text-decoration: none !important;
+      transition: transform 0.15s ease;
     }
-    .btn-surface {
-      background: var(--bg);
+    .btn-dark-utility:active { transform: scale(0.95); }
+    .btn-pearl-capsule {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface-pearl);
+      color: var(--ink-muted-80) !important;
+      font-family: var(--font-text);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.35;
+      letter-spacing: -0.224px;
+      border-radius: var(--rounded-md);
+      padding: 8px 14px;
+      border: 1px solid var(--hairline);
+      cursor: pointer;
+      text-decoration: none !important;
+      transition: transform 0.15s ease;
+    }
+    .btn-pearl-capsule:active { transform: scale(0.95); }
+
+    /* Alternating Full-Bleed Tiles */
+    .product-tile-light {
+      background: var(--canvas);
       color: var(--ink);
+      padding: 80px 22px;
+      text-align: center;
     }
-    .btn-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
-    .preview-panel {
-      display: none;
-      background: var(--surface);
+    .product-tile-parchment {
+      background: var(--canvas-parchment);
+      color: var(--ink);
+      padding: 80px 22px;
+      text-align: center;
+    }
+    .product-tile-dark {
+      background: var(--surface-tile-1);
+      color: var(--on-dark);
+      padding: 80px 22px;
+      text-align: center;
+    }
+    .product-tile-dark-2 {
+      background: var(--surface-tile-2);
+      color: var(--on-dark);
+      padding: 80px 22px;
+      text-align: center;
+    }
+    .tile-inner {
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+    .tile-wide {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .hero-display {
+      font-family: var(--font-display);
+      font-size: clamp(38px, 5vw, 56px);
+      font-weight: 600;
+      line-height: 1.32;
+      letter-spacing: -0.28px;
+      margin-bottom: 12px;
+    }
+    .display-lg {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 3.8vw, 40px);
+      font-weight: 600;
+      line-height: 1.32;
+      letter-spacing: -0.2px;
+      margin-bottom: 10px;
+    }
+    .lead-copy {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 2.4vw, 28px);
+      font-weight: 400;
+      line-height: 1.36;
+      letter-spacing: 0.196px;
+      max-width: 680px;
+      margin: 0 auto 24px;
+    }
+    .cta-pair {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 44px;
+    }
+
+    /* Store Utility Card (#ffffff, 18px radius, 1px solid #e0e0e0) */
+    .store-utility-card {
+      background: var(--canvas);
+      color: var(--ink);
+      border: 1px solid var(--hairline);
+      border-radius: var(--rounded-lg);
       padding: 24px;
-      margin-bottom: 36px;
+      text-align: left;
     }
-    pre.modal-code {
-      background: var(--bg);
-      padding: 18px;
+
+    /* Apple Footer (#f5f5f7, 64px vertical padding) */
+    .apple-footer {
+      background: var(--canvas-parchment);
+      color: var(--ink-muted-80);
+      padding: 64px 22px;
+      font-size: 12px;
+      line-height: 1.45;
+      letter-spacing: -0.12px;
+      border-top: 1px solid var(--hairline);
+    }
+    .apple-footer-inner {
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+    .footer-note {
+      color: var(--ink-muted-48);
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .footer-columns {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    .footer-col-title {
+      font-size: 14px;
+      font-weight: 600;
       color: var(--ink);
-      font-size: 13px;
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+    .footer-col a {
+      display: block;
+      color: var(--ink-muted-80);
+      font-size: 14px;
+      line-height: 2.1;
+      text-decoration: none;
+    }
+    .footer-col a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+    .footer-legal {
+      padding-top: 20px;
+      border-top: 1px solid var(--hairline);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--ink-muted-48);
+    }
+    @media (max-width: 834px) {
+      .global-nav-links-hide { display: none; }
+      .footer-columns { grid-template-columns: repeat(2, 1fr); }
+      .product-tile-light, .product-tile-parchment, .product-tile-dark, .product-tile-dark-2 { padding: 48px 18px; }
+    }
+
+    .search-pill-bar {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    input.apple-search-input {
+      flex: 1;
+      min-width: 280px;
+      height: 44px;
+      background: var(--canvas);
+      color: var(--ink);
+      border: 1px solid rgba(0, 0, 0, 0.14);
+      border-radius: var(--rounded-pill);
+      padding: 10px 20px;
+      font-family: var(--font-text);
+      font-size: 17px;
+      line-height: 1.4;
+    }
+    .bp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 20px;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .bp-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    pre.bp-preview {
+      background: var(--surface-tile-1);
+      color: var(--on-dark);
+      padding: 20px;
+      border-radius: var(--rounded-md);
       overflow-x: auto;
       max-height: 360px;
-      margin: 14px 0 0 0;
-    }
-    table.bp-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-variant-numeric: tabular-nums;
-    }
-    table.bp-table th {
+      font-size: 13px;
+      line-height: 1.5;
       text-align: left;
-      color: var(--muted);
-      font-weight: 500;
-      padding: 14px 12px;
-      border-bottom: 1px solid #333333;
-      font-size: 14px;
-    }
-    table.bp-table td {
-      padding: 18px 12px;
-      border-bottom: 1px solid #292929;
-      vertical-align: top;
+      margin-top: 16px;
     }
   </style>
 </head>
 <body>
-  <div class="wrap" data-ui="automation-hub">
-    <nav class="top-bar">
-      <a href="./index.html" style="color:var(--ink);font-weight:600;">Lucacelli Cloud Intelligence</a>
-      <div style="display:flex;gap:20px;flex-wrap:wrap;">
-        <a href="./plugin-demo.html">WordPress &amp; Chrome Workbench</a>
-        <a href="./sheets-addon.html">Google Sheets Formulas</a>
-        <a href="./catalog-200.html">200-Actor Catalog</a>
-        <a href="https://apify.com/lucacelli" target="_blank" rel="noopener">Apify Store (@lucacelli)</a>
-      </div>
-    </nav>
-
-    <h1 class="hero-h1">Ready-to-import workflow blueprints.</h1>
-    <p class="hero-sub">
-      Paste your Apify API token below to pre-configure every downloaded n8n workflow, 3-step chained enrichment pipeline, Make.com scenario, Clay.com HTTP column, and Claude Desktop MCP config.
-    </p>
-
-    <div class="token-panel">
-      <div>
-        <strong>Client-Side Token Auto-Injector</strong>
-        <div style="color:var(--muted);font-size:14px;">Your token stays in your browser and is written directly into downloaded JSON blueprints.</div>
-      </div>
-      <input id="userApifyToken" class="token-input" type="text" value="YOUR_APIFY_API_TOKEN" placeholder="apify_api_..." />
+  
+  <header class="global-nav">
+    <div class="global-nav-inner">
+      <a class="global-brand" href="./index.html" aria-label="Lucacelli Home">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1L14.5 4.75V11.25L8 15L1.5 11.25V4.75L8 1Z"/></svg>
+        <span>Lucacelli</span>
+      </a>
+      <a href="./index.html" class="global-nav-links-hide">Store</a>
+      <a href="./plugin-demo.html">Workbench</a>
+      <a href="./sheets-addon.html">Sheets Formulas</a>
+      <a href="./automations.html" class="global-nav-links-hide">n8n &amp; Make</a>
+      <a href="./catalog-200.html" class="global-nav-links-hide">200 Actors</a>
+      <a href="./api-docs.html" class="global-nav-links-hide">OpenAPI</a>
+      <a href="https://apify.com/lucacelli" target="_blank" rel="noopener">Apify (@lucacelli)</a>
     </div>
+  </header>
+  <nav class="sub-nav-frosted" aria-label="Product navigation">
+    <div class="sub-nav-inner">
+      <a class="sub-nav-title" href="./index.html">Automation Blueprints</a>
+      <div class="sub-nav-actions">
+        <a class="sub-link global-nav-links-hide" href="./downloads/lucacelli-b2b-lead-seo-cloud-suite.zip" download>WordPress Plugin v2.0</a>
+        <a class="sub-link global-nav-links-hide" href="./downloads/lucacelli-b2b-cloud-chrome-extension.zip" download>Chrome Extension v3.0</a>
+        <a class="btn-pill btn-pill-sm" href="./plugin-demo.html">Open Workbench</a>
+      </div>
+    </div>
+  </nav>
 
-    <div id="previewBox" class="preview-panel">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
-        <strong id="previewTitle">Generated Blueprint JSON</strong>
-        <div style="display:flex;gap:10px;">
-          <button class="btn" type="button" onclick="copyCurrentPreview()">Copy JSON</button>
-          <button class="btn btn-surface" type="button" onclick="downloadCurrentPreview()">Download .json File</button>
+  <section class="product-tile-light">
+    <div class="tile-inner">
+      <h1 class="hero-display">Workflow blueprints. Ready in one click.</h1>
+      <p class="lead-copy" style="color:var(--ink-muted-80);">
+        Paste your Apify API token below to pre-configure every downloaded n8n workflow, 3-step chained pipeline, Make.com scenario, Clay HTTP column, and Claude Desktop MCP config.
+      </p>
+      <div class="search-pill-bar">
+        <input id="userApifyToken" class="apple-search-input" type="text" value="YOUR_APIFY_API_TOKEN" placeholder="Paste apify_api_... token for auto-injection" />
+      </div>
+    </div>
+  </section>
+
+  <section class="product-tile-parchment">
+    <div class="tile-wide" data-ui="apple-blueprints">
+      <div id="previewBox" class="store-utility-card" style="display:none;max-width:1180px;margin:0 auto 28px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+          <strong id="previewTitle" style="font-size:17px;">Generated Blueprint JSON</strong>
+          <div style="display:flex;gap:10px;">
+            <button class="btn-pill btn-pill-sm" type="button" onclick="copyCurrentPreview()">Copy JSON</button>
+            <button class="btn-pearl-capsule" type="button" onclick="downloadCurrentPreview()">Download .json File</button>
+          </div>
+        </div>
+        <pre class="bp-preview"><code id="previewContent"></code></pre>
+      </div>
+
+      <div id="actorsGrid" class="bp-grid"></div>
+    </div>
+  </section>
+
+  
+  <footer class="apple-footer">
+    <div class="apple-footer-inner">
+      <p class="footer-note">
+        1. Every free Apify account includes $5.00 in monthly renewable platform credit. At $0.50 per 1,000 results, your first 10,000 enriched B2B domains, SEO audits, or RAG Markdown pages each month are $0.00. All 14 public actors under @lucacelli use transparent single-event pricing with zero hidden platform counters.
+      </p>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <div class="footer-col-title">Shop &amp; Explore</div>
+          <a href="./index.html">Lucacelli Cloud Store</a>
+          <a href="./plugin-demo.html">Studio Workbench</a>
+          <a href="./sheets-addon.html">Google Sheets Add-On</a>
+          <a href="./automations.html">n8n &amp; Make Blueprints</a>
+          <a href="./catalog-200.html">200-Actor Master Catalog</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Flagship Cloud Actors</div>
+          <a href="https://apify.com/lucacelli/b2b-domain-contact-tech-enricher" target="_blank" rel="noopener">Domain Contact Enricher</a>
+          <a href="https://apify.com/lucacelli/google-maps-scraper-places-emails-contacts-reviews" target="_blank" rel="noopener">Google Maps Scraper</a>
+          <a href="https://apify.com/lucacelli/shopify-store-product-contact-spy" target="_blank" rel="noopener">Shopify Merchant Spy</a>
+          <a href="https://apify.com/lucacelli/wordpress-woocommerce-site-spy" target="_blank" rel="noopener">WordPress &amp; Woo Spy</a>
+          <a href="https://apify.com/lucacelli/seo-technical-audit-broken-link-schema-analyzer" target="_blank" rel="noopener">Technical SEO Auditor</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Compare &amp; Switch</div>
+          <a href="./alternatives/outscraper-alternative.html">Outscraper Alternative</a>
+          <a href="./alternatives/clay-alternative.html">Clay.com Alternative</a>
+          <a href="./alternatives/builtwith-alternative.html">BuiltWith Alternative</a>
+          <a href="./alternatives/hunter-io-alternative.html">Hunter.io Alternative</a>
+          <a href="./turkiye.html">Turkiye B2B Rehberi</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">For Developers</div>
+          <a href="./api-docs.html">OpenAPI 3.0 Explorer</a>
+          <a href="./openapi.json">openapi.json</a>
+          <a href="./postman-collection.json">Postman Collection v2.1</a>
+          <a href="./llms.txt">llms.txt</a>
+          <a href="https://github.com/ocakciomursel-pixel" target="_blank" rel="noopener">GitHub Repositories</a>
         </div>
       </div>
-      <pre class="modal-code"><code id="previewContent"></code></pre>
+      <div class="footer-legal">
+        <span>Copyright © 2026 Lucacelli Cloud Intelligence. Built with Apple DESIGN.md (awesome-design-md).</span>
+        <span>Single-Event Transparent Cloud Pricing ($0.50–$1.50 / 1,000 results)</span>
+      </div>
     </div>
-
-    <table class="bp-table">
-      <thead>
-        <tr>
-          <th>Public Actor</th>
-          <th>Rate</th>
-          <th>Download or Preview Blueprint</th>
-        </tr>
-      </thead>
-      <tbody id="actorsGrid"></tbody>
-    </table>
-  </div>
+  </footer>
 
   <script>
     const ACTORS = [
   {
     "slug": "b2b-domain-contact-tech-enricher",
     "title": "B2B Domain Contact, Email, DNS & Tech Stack Enricher",
+    "shortName": "Domain Enricher Pro",
     "price": "$0.50 / 1,000 results",
     "input": {
       "domains": [
@@ -180,7 +561,8 @@
   },
   {
     "slug": "google-maps-scraper-places-emails-contacts-reviews",
-    "title": "Google Maps Scraper: Places, Emails, Contacts & Reviews Pro",
+    "title": "Google Maps Scraper: Places, Emails, Contacts & Reviews",
+    "shortName": "Google Maps Lead Engine",
     "price": "$1.50 / 1,000 results",
     "input": {
       "searchStringsArray": [
@@ -192,105 +574,113 @@
   },
   {
     "slug": "shopify-store-product-contact-spy",
-    "title": "Shopify Store Product, Pricing, Stock & Merchant Contact Spy",
+    "title": "Shopify Store Product, Pricing, Stock & Merchant Spy",
+    "shortName": "Shopify Merchant Spy",
     "price": "$0.80 / 1,000 results",
     "input": {
       "domains": [
         "gymshark.com",
         "allbirds.com"
       ],
-      "maxProductsPerStore": 5
+      "maxProductsPerStore": 10
     }
   },
   {
     "slug": "wordpress-woocommerce-site-spy",
-    "title": "WordPress & WooCommerce Theme, Plugin & Agency Lead Spy",
+    "title": "WordPress, WooCommerce, Theme & Plugin Detector Spy",
+    "shortName": "WordPress & Woo Spy",
     "price": "$0.80 / 1,000 results",
     "input": {
       "domains": [
         "techcrunch.com",
-        "yoast.com",
-        "woocommerce.com"
+        "sony.com"
       ]
     }
   },
   {
     "slug": "seo-technical-audit-broken-link-schema-analyzer",
-    "title": "Technical SEO, Broken Link, Schema.org & Security Auditor",
+    "title": "Technical SEO Audit, Broken Link, Schema & Meta Analyzer",
+    "shortName": "Technical SEO Auditor",
     "price": "$0.50 / 1,000 results",
     "input": {
       "urls": [
         "https://stripe.com",
-        "https://cloudflare.com"
+        "https://shopify.com"
       ]
     }
   },
   {
     "slug": "ai-ready-website-to-markdown-rag-crawler",
     "title": "Website to Clean Markdown, Vector RAG Chunks & llms.txt",
+    "shortName": "AI Markdown & RAG Crawler",
     "price": "$0.50 / 1,000 results",
     "input": {
       "urls": [
-        "https://stripe.com/docs",
-        "https://docs.apify.com"
-      ]
+        "https://stripe.com/docs"
+      ],
+      "chunkSize": 1000
     }
   },
   {
     "slug": "saas-pricing-page-tier-feature-extractor",
     "title": "SaaS Pricing Page, Plan Tiers & Competitor Feature Spy",
+    "shortName": "SaaS Pricing & Tier Spy",
     "price": "$0.80 / 1,000 results",
     "input": {
       "urls": [
-        "https://stripe.com/pricing",
-        "https://linear.app/pricing"
+        "https://linear.app/pricing",
+        "https://vercel.com/pricing"
       ]
     }
   },
   {
     "slug": "sitemap-url-inventory-content-freshness-auditor",
-    "title": "XML Sitemap URL Inventory, SEO Freshness & Content Auditor",
+    "title": "Sitemap XML URL Inventory & Content Freshness Auditor",
+    "shortName": "Sitemap & Freshness Auditor",
     "price": "$0.50 / 1,000 results",
     "input": {
       "domains": [
-        "apify.com",
-        "cloudflare.com"
+        "cloudflare.com",
+        "vercel.com"
       ],
-      "maxUrlsPerDomain": 25
+      "maxUrlsPerDomain": 50
     }
   },
   {
     "slug": "github-developer-recruiter-lead-enricher",
-    "title": "GitHub Developer, Stargazer & Contributor Lead Enricher",
-    "price": "$1.50 / 1,000 results",
+    "title": "GitHub Developer, Maintainer & Technical Recruiter Enricher",
+    "shortName": "GitHub Recruiter Enricher",
+    "price": "$0.80 / 1,000 results",
     "input": {
       "usernames": [
-        "sindresorhus",
         "torvalds",
-        "yyx990803"
+        "gaearon",
+        "sindresorhus"
       ]
     }
   },
   {
     "slug": "ats-job-board-hiring-signal-scraper",
-    "title": "Greenhouse & Lever Company Job Board & Hiring Signal Scraper",
-    "price": "$1.50 / 1,000 results",
+    "title": "Greenhouse, Lever & Ashby Job Board Hiring Signal Scraper",
+    "shortName": "ATS Hiring Signal Scraper",
+    "price": "$0.80 / 1,000 results",
     "input": {
       "companies": [
         "stripe",
-        "cloudflare",
-        "figma"
+        "airbnb",
+        "cloudflare"
       ],
       "maxJobsPerCompany": 5
     }
   },
   {
     "slug": "reddit-community-pain-point-trend-miner",
-    "title": "Reddit Subreddit, Buyer Intent & Pain-Point Lead Miner",
-    "price": "$0.80 / 1,000 results",
+    "title": "Reddit Community Pain-Point, Buying Intent & Trend Miner",
+    "shortName": "Reddit Buying Intent Miner",
+    "price": "$0.50 / 1,000 results",
     "input": {
       "subreddits": [
-        "SaaS",
+        "saas",
         "entrepreneur"
       ],
       "limitPerSubreddit": 5
@@ -298,8 +688,9 @@
   },
   {
     "slug": "hackernews-tech-launch-lead-monitor",
-    "title": "Hacker News Launch, Show HN & Tech Founder Lead Monitor",
-    "price": "$0.80 / 1,000 results",
+    "title": "HackerNews Show HN, Tech Launch & Founder Monitor",
+    "shortName": "HackerNews Launch Monitor",
+    "price": "$0.50 / 1,000 results",
     "input": {
       "keywords": [
         "Show HN",
@@ -311,11 +702,11 @@
   {
     "slug": "scientific-literature-citation-author-lead-miner",
     "title": "Scientific Paper, Author Email & Lab Research Lead Miner",
-    "price": "$1.50 / 1,000 results",
+    "shortName": "Scientific Literature Miner",
+    "price": "$0.50 / 1,000 results",
     "input": {
       "queries": [
-        "CRISPR gene editing",
-        "mRNA lipid nanoparticle"
+        "CRISPR gene editing"
       ],
       "maxResultsPerQuery": 5
     }
@@ -323,11 +714,11 @@
   {
     "slug": "clinical-trials-fda-drug-safety-intel",
     "title": "ClinicalTrials.gov & OpenFDA Biotech / Pharma Lead Enricher",
-    "price": "$1.50 / 1,000 results",
+    "shortName": "Clinical Trials & FDA Intel",
+    "price": "$0.80 / 1,000 results",
     "input": {
       "conditions": [
-        "nsclc",
-        "glioblastoma"
+        "non-small cell lung cancer"
       ],
       "maxTrialsPerCondition": 5
     }
@@ -379,7 +770,7 @@
       if (type === 'n8n-3x') {
         currentFileName = actor.slug + '-3x-chained-pipeline-n8n.json';
         return JSON.stringify({
-          name: '3x Chained B2B Pipeline (' + actor.slug + ' to Domain Enricher to SEO Audit)',
+          name: '3x Chained B2B Pipeline (' + actor.slug + ' to Domain Enricher)',
           nodes: [
             {
               parameters: { method: 'POST', url: endpoint, sendBody: true, specifyBody: 'json', jsonBody: JSON.stringify(actor.input, null, 2) },
@@ -455,19 +846,20 @@
     }
 
     document.getElementById('actorsGrid').innerHTML = ACTORS.map((a, idx) =>
-      '<tr>' +
-        '<td><strong>' + a.title + '</strong><div style="color:var(--muted);font-size:13px;">lucacelli/' + a.slug + '</div></td>' +
-        '<td style="white-space:nowrap;">' + a.price + '</td>' +
-        '<td>' +
-          '<div class="btn-row" style="margin-top:0;">' +
-            '<button class="btn" type="button" onclick="showBlueprint(' + idx + ', 'n8n')">n8n Workflow</button>' +
-            '<button class="btn btn-surface" type="button" onclick="showBlueprint(' + idx + ', 'n8n-3x')">3x Pipeline</button>' +
-            '<button class="btn btn-surface" type="button" onclick="showBlueprint(' + idx + ', 'make')">Make.com</button>' +
-            '<button class="btn btn-surface" type="button" onclick="showBlueprint(' + idx + ', 'clay')">Clay HTTP</button>' +
-            '<button class="btn btn-surface" type="button" onclick="showBlueprint(' + idx + ', 'mcp')">Claude MCP</button>' +
-          '</div>' +
-        '</td>' +
-      '</tr>'
+      '<div class="store-utility-card">' +
+        '<div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--ink-muted-48);margin-bottom:6px;">' +
+          '<span>lucacelli/' + a.slug + '</span>' +
+          '<span style="color:var(--primary);font-weight:600;">' + a.price + '</span>' +
+        '</div>' +
+        '<h2 style="font-size:19px;margin-bottom:10px;">' + a.shortName + '</h2>' +
+        '<div class="bp-actions">' +
+          '<button class="btn-pill btn-pill-sm" type="button" onclick="showBlueprint(' + idx + ', 'n8n')">n8n</button>' +
+          '<button class="btn-pearl-capsule" type="button" onclick="showBlueprint(' + idx + ', 'n8n-3x')">3x Pipeline</button>' +
+          '<button class="btn-pearl-capsule" type="button" onclick="showBlueprint(' + idx + ', 'make')">Make.com</button>' +
+          '<button class="btn-pearl-capsule" type="button" onclick="showBlueprint(' + idx + ', 'clay')">Clay HTTP</button>' +
+          '<button class="btn-pearl-capsule" type="button" onclick="showBlueprint(' + idx + ', 'mcp')">Claude MCP</button>' +
+        '</div>' +
+      '</div>'
     ).join('');
   </script>
 </body>

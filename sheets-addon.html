@@ -3,149 +3,498 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Google Sheets B2B Enrichment &amp; Google Maps Formulas | Lucacelli</title>
+  <title>Google Sheets Formulas — Lucacelli Cloud Intelligence</title>
   <meta name="description" content="Enrich domains and scrape Google Maps directly inside Google Sheets using =LUCACELLI_ENRICH(), =LUCACELLI_GMAPS(), and =LUCACELLI_SHOPIFY()." />
   <link rel="canonical" href="https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/sheets-addon.html" />
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-  <link href="https://api.fontshare.com/v2/css?f[]=gambarino@400&f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
+    
     :root {
-      --bg: #1c1c1c;
-      --surface: #262626;
-      --ink: #f1f1ef;
-      --muted: #a3a49e;
-      --accent: #8fa68e;
-      --accent-ink: #1c1c1c;
-      --field-1: #c8c5ba;
-      --field-1-ink: #1c1c1c;
+      --primary: #0066cc;
+      --primary-focus: #0071e3;
+      --primary-on-dark: #2997ff;
+      --ink: #1d1d1f;
+      --body: #1d1d1f;
+      --body-on-dark: #ffffff;
+      --body-muted: #cccccc;
+      --ink-muted-80: #333333;
+      --ink-muted-48: #7a7a7a;
+      --divider-soft: #f0f0f0;
+      --hairline: #e0e0e0;
+      --canvas: #ffffff;
+      --canvas-parchment: #f5f5f7;
+      --surface-pearl: #fafafc;
+      --surface-tile-1: #272729;
+      --surface-tile-2: #2a2a2c;
+      --surface-tile-3: #252527;
+      --surface-black: #000000;
+      --surface-chip-translucent: rgba(210, 210, 215, 0.64);
+      --on-primary: #ffffff;
+      --on-dark: #ffffff;
+      --rounded-none: 0px;
+      --rounded-xs: 5px;
+      --rounded-sm: 8px;
+      --rounded-md: 11px;
+      --rounded-lg: 18px;
+      --rounded-pill: 9999px;
+      --product-shadow: 3px 5px 30px 0 rgba(0, 0, 0, 0.22);
+      --font-display: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Inter", system-ui, sans-serif;
+      --font-text: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Inter", system-ui, sans-serif;
     }
     * { box-sizing: border-box; }
-    ::selection { background: var(--accent); color: var(--accent-ink); }
-    body {
+    ::selection { background: var(--primary); color: var(--on-primary); }
+    html, body {
       margin: 0;
-      background: var(--bg);
+      padding: 0;
+      background: var(--canvas);
       color: var(--ink);
-      font-family: "General Sans", system-ui, sans-serif;
+      font-family: var(--font-text);
       font-size: 17px;
-      line-height: 1.55;
+      font-weight: 400;
+      line-height: 1.47;
+      letter-spacing: -0.374px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     h1, h2, h3 {
-      font-family: "Gambarino", Georgia, serif;
-      font-weight: 400;
-      letter-spacing: -0.02em;
-      line-height: 1.3;
+      font-family: var(--font-display);
+      font-weight: 600;
       margin: 0;
+      letter-spacing: -0.28px;
+      line-height: 1.32;
     }
-    .wrap { max-width: 1200px; margin: 0 auto; padding: 32px 3vw 96px; }
-    .top-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 64px; }
-    .top-bar a { color: var(--muted); text-decoration: none; font-size: 15px; }
-    .top-bar a:hover { color: var(--ink); }
-    .hero-h1 { font-size: clamp(44px, 7.2vw, 98px); max-width: 14ch; margin-bottom: 28px; }
-    .hero-sub { font-size: 20px; color: var(--muted); max-width: 58ch; margin-bottom: 32px; }
-    .btn {
+    p { margin: 0; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    :focus-visible { outline: 2px solid var(--primary-focus); outline-offset: 2px; }
+
+    /* Component: global-nav (44px, #000000) */
+    .global-nav {
+      background: var(--surface-black);
+      color: var(--on-dark);
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 22px;
+      font-family: var(--font-text);
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.35;
+      letter-spacing: -0.12px;
+    }
+    .global-nav-inner {
+      max-width: 1024px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .global-nav a {
+      color: rgba(255, 255, 255, 0.88);
+      text-decoration: none;
+      transition: color 0.15s ease;
+      white-space: nowrap;
+    }
+    .global-nav a:hover {
+      color: var(--on-dark);
+      text-decoration: none;
+    }
+    .global-brand {
       display: inline-flex;
       align-items: center;
-      min-height: 46px;
+      gap: 8px;
+      font-weight: 600;
+      color: var(--on-dark) !important;
+      font-size: 13px;
+    }
+
+    /* Component: sub-nav-frosted (52px, sticky frosted parchment) */
+    .sub-nav-frosted {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      height: 52px;
+      background: rgba(245, 245, 247, 0.82);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 0 22px;
-      background: var(--accent);
-      color: var(--accent-ink);
-      font-weight: 500;
-      font-size: 16px;
+    }
+    .sub-nav-inner {
+      max-width: 1024px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .sub-nav-title {
+      font-family: var(--font-display);
+      font-size: 21px;
+      font-weight: 600;
+      line-height: 1.32;
+      letter-spacing: 0.231px;
+      color: var(--ink);
+      text-decoration: none !important;
+    }
+    .sub-nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 12px;
+    }
+    .sub-nav-actions a.sub-link {
+      color: var(--ink-muted-80);
       text-decoration: none;
+      font-size: 12px;
+    }
+    .sub-nav-actions a.sub-link:hover {
+      color: var(--primary);
+    }
+
+    /* Component: button-primary & button-secondary-pill */
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary);
+      color: var(--on-primary) !important;
+      font-family: var(--font-text);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.35;
+      letter-spacing: -0.374px;
+      border-radius: var(--rounded-pill);
+      padding: 11px 22px;
+      border: 1px solid var(--primary);
+      cursor: pointer;
+      text-decoration: none !important;
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+    .btn-pill:active { transform: scale(0.95); }
+    .btn-pill-sm {
+      font-size: 12px;
+      padding: 6px 14px;
+      letter-spacing: -0.12px;
+    }
+    .btn-pill-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      color: var(--primary) !important;
+      font-family: var(--font-text);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.35;
+      letter-spacing: -0.374px;
+      border-radius: var(--rounded-pill);
+      padding: 11px 22px;
+      border: 1px solid var(--primary);
+      cursor: pointer;
+      text-decoration: none !important;
+      transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+    }
+    .btn-pill-secondary:hover {
+      background: var(--primary);
+      color: var(--on-primary) !important;
+    }
+    .btn-pill-secondary:active { transform: scale(0.95); }
+    .btn-pill-on-dark {
+      border-color: var(--primary-on-dark);
+      color: var(--primary-on-dark) !important;
+    }
+    .btn-pill-on-dark:hover {
+      background: var(--primary-on-dark);
+      color: var(--surface-black) !important;
+    }
+    .btn-dark-utility {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--ink);
+      color: var(--on-dark) !important;
+      font-family: var(--font-text);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.35;
+      letter-spacing: -0.224px;
+      border-radius: var(--rounded-sm);
+      padding: 8px 15px;
       border: none;
       cursor: pointer;
+      text-decoration: none !important;
+      transition: transform 0.15s ease;
     }
-    .btn-surface { background: var(--surface); color: var(--ink); }
-    .formula-list {
-      margin: 80px 0;
+    .btn-dark-utility:active { transform: scale(0.95); }
+    .btn-pearl-capsule {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface-pearl);
+      color: var(--ink-muted-80) !important;
+      font-family: var(--font-text);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.35;
+      letter-spacing: -0.224px;
+      border-radius: var(--rounded-md);
+      padding: 8px 14px;
+      border: 1px solid var(--hairline);
+      cursor: pointer;
+      text-decoration: none !important;
+      transition: transform 0.15s ease;
+    }
+    .btn-pearl-capsule:active { transform: scale(0.95); }
+
+    /* Alternating Full-Bleed Tiles */
+    .product-tile-light {
+      background: var(--canvas);
+      color: var(--ink);
+      padding: 80px 22px;
+      text-align: center;
+    }
+    .product-tile-parchment {
+      background: var(--canvas-parchment);
+      color: var(--ink);
+      padding: 80px 22px;
+      text-align: center;
+    }
+    .product-tile-dark {
+      background: var(--surface-tile-1);
+      color: var(--on-dark);
+      padding: 80px 22px;
+      text-align: center;
+    }
+    .product-tile-dark-2 {
+      background: var(--surface-tile-2);
+      color: var(--on-dark);
+      padding: 80px 22px;
+      text-align: center;
+    }
+    .tile-inner {
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+    .tile-wide {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .hero-display {
+      font-family: var(--font-display);
+      font-size: clamp(38px, 5vw, 56px);
+      font-weight: 600;
+      line-height: 1.32;
+      letter-spacing: -0.28px;
+      margin-bottom: 12px;
+    }
+    .display-lg {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 3.8vw, 40px);
+      font-weight: 600;
+      line-height: 1.32;
+      letter-spacing: -0.2px;
+      margin-bottom: 10px;
+    }
+    .lead-copy {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 2.4vw, 28px);
+      font-weight: 400;
+      line-height: 1.36;
+      letter-spacing: 0.196px;
+      max-width: 680px;
+      margin: 0 auto 24px;
+    }
+    .cta-pair {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 44px;
+    }
+
+    /* Store Utility Card (#ffffff, 18px radius, 1px solid #e0e0e0) */
+    .store-utility-card {
+      background: var(--canvas);
+      color: var(--ink);
+      border: 1px solid var(--hairline);
+      border-radius: var(--rounded-lg);
+      padding: 24px;
+      text-align: left;
+    }
+
+    /* Apple Footer (#f5f5f7, 64px vertical padding) */
+    .apple-footer {
+      background: var(--canvas-parchment);
+      color: var(--ink-muted-80);
+      padding: 64px 22px;
+      font-size: 12px;
+      line-height: 1.45;
+      letter-spacing: -0.12px;
+      border-top: 1px solid var(--hairline);
+    }
+    .apple-footer-inner {
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+    .footer-note {
+      color: var(--ink-muted-48);
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .footer-columns {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    .footer-col-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+    .footer-col a {
+      display: block;
+      color: var(--ink-muted-80);
+      font-size: 14px;
+      line-height: 2.1;
+      text-decoration: none;
+    }
+    .footer-col a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+    .footer-legal {
+      padding-top: 20px;
+      border-top: 1px solid var(--hairline);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--ink-muted-48);
+    }
+    @media (max-width: 834px) {
+      .global-nav-links-hide { display: none; }
+      .footer-columns { grid-template-columns: repeat(2, 1fr); }
+      .product-tile-light, .product-tile-parchment, .product-tile-dark, .product-tile-dark-2 { padding: 48px 18px; }
+    }
+
+    .formula-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      gap: 20px;
+      max-width: 1024px;
+      margin: 0 auto;
     }
-    .formula-block {
-      background: var(--surface);
-      padding: 28px;
-    }
-    .formula-block h2 { font-size: 32px; margin-bottom: 12px; }
-    .formula-block pre {
-      background: var(--bg);
-      padding: 12px 14px;
-      color: var(--accent);
-      overflow-x: auto;
-      margin: 0 0 12px 0;
+    .formula-code {
+      background: var(--canvas-parchment);
+      color: var(--primary);
+      padding: 12px 16px;
+      border-radius: var(--rounded-sm);
       font-size: 14px;
+      margin: 12px 0;
+      overflow-x: auto;
     }
-    .formula-block p { margin: 0; color: var(--muted); font-size: 15px; }
-    .code-section {
-      background: var(--surface);
-      padding: 36px;
-    }
-    .code-section h2 { font-size: 38px; margin-bottom: 16px; }
-    pre.script-box {
-      background: var(--bg);
-      padding: 20px;
+    pre.gs-box {
+      background: var(--surface-tile-1);
+      color: var(--on-dark);
+      padding: 24px;
+      border-radius: var(--rounded-lg);
       overflow-x: auto;
       max-height: 440px;
       font-size: 13px;
-      color: var(--ink);
+      line-height: 1.5;
+      text-align: left;
     }
-    @media (max-width: 820px) {
-      .formula-list { grid-template-columns: 1fr; }
+    @media (max-width: 834px) {
+      .formula-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <nav class="top-bar">
-      <a href="./index.html" style="color:var(--ink);font-weight:600;">Lucacelli Cloud Intelligence</a>
-      <div style="display:flex;gap:20px;flex-wrap:wrap;">
-        <a href="./plugin-demo.html">WordPress &amp; Chrome Workbench</a>
-        <a href="./automations.html">n8n &amp; Make Blueprints</a>
-        <a href="https://apify.com/lucacelli" target="_blank" rel="noopener">Apify Store (@lucacelli)</a>
-      </div>
-    </nav>
-
-    <h1 class="hero-h1">Spreadsheet cells that enrich the web.</h1>
-    <p class="hero-sub">
-      Install one Apps Script file in Google Sheets to call all 14 public @lucacelli Apify Store actors directly from spreadsheet cells using your renewable $5.00 monthly credit.
-    </p>
-    <div style="display:flex;gap:14px;flex-wrap:wrap;">
-      <a href="./downloads/lucacelli-google-sheets-addon.gs" download class="btn">Download Google Sheets Script (.gs)</a>
-      <button type="button" class="btn btn-surface" id="copyGsBtn" onclick="copyGsCode()">Copy Apps Script Code</button>
+  
+  <header class="global-nav">
+    <div class="global-nav-inner">
+      <a class="global-brand" href="./index.html" aria-label="Lucacelli Home">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1L14.5 4.75V11.25L8 15L1.5 11.25V4.75L8 1Z"/></svg>
+        <span>Lucacelli</span>
+      </a>
+      <a href="./index.html" class="global-nav-links-hide">Store</a>
+      <a href="./plugin-demo.html">Workbench</a>
+      <a href="./sheets-addon.html">Sheets Formulas</a>
+      <a href="./automations.html" class="global-nav-links-hide">n8n &amp; Make</a>
+      <a href="./catalog-200.html" class="global-nav-links-hide">200 Actors</a>
+      <a href="./api-docs.html" class="global-nav-links-hide">OpenAPI</a>
+      <a href="https://apify.com/lucacelli" target="_blank" rel="noopener">Apify (@lucacelli)</a>
     </div>
+  </header>
+  <nav class="sub-nav-frosted" aria-label="Product navigation">
+    <div class="sub-nav-inner">
+      <a class="sub-nav-title" href="./index.html">Google Sheets Add-On</a>
+      <div class="sub-nav-actions">
+        <a class="sub-link global-nav-links-hide" href="./downloads/lucacelli-b2b-lead-seo-cloud-suite.zip" download>WordPress Plugin v2.0</a>
+        <a class="sub-link global-nav-links-hide" href="./downloads/lucacelli-b2b-cloud-chrome-extension.zip" download>Chrome Extension v3.0</a>
+        <a class="btn-pill btn-pill-sm" href="./downloads/lucacelli-google-sheets-addon.gs">Download .gs Script</a>
+      </div>
+    </div>
+  </nav>
 
-    <section class="formula-list" data-ui="formula-reference">
-      <div class="formula-block">
-        <h2>Domain Contact &amp; Tech Stack</h2>
-        <pre><code>=LUCACELLI_ENRICH(A2)</code></pre>
-        <p>Returns verified emails, phone numbers, detected SaaS stack, and SPF security status for the domain in cell A2 ($0.50/1k).</p>
+  <section class="product-tile-light">
+    <div class="tile-inner">
+      <h1 class="hero-display">Spreadsheet cells that enrich the web.</h1>
+      <p class="lead-copy" style="color:var(--ink-muted-80);">
+        Install one Apps Script file in 30 seconds to call all 14 public @lucacelli Apify Store actors directly from Google Sheets using your $5.00 monthly credit.
+      </p>
+      <div class="cta-pair" style="margin-bottom:0;">
+        <a class="btn-pill" href="./downloads/lucacelli-google-sheets-addon.gs" download>Download Google Sheets Script (.gs)</a>
+        <button type="button" class="btn-pill-secondary" id="copyGsBtn" onclick="copyGsCode()">Copy Apps Script Code</button>
       </div>
-      <div class="formula-block">
-        <h2>Google Maps Lead Table</h2>
-        <pre><code>=LUCACELLI_GMAPS("dentists in Austin", 10)</code></pre>
-        <p>Populates multi-row business names, phone numbers, websites, ratings, and street addresses directly into your sheet ($1.50/1k).</p>
-      </div>
-      <div class="formula-block">
-        <h2>Shopify &amp; WordPress Spy</h2>
-        <pre><code>=LUCACELLI_SHOPIFY(A2)</code></pre>
-        <p>Extracts Shopify product counts, average pricing, or WordPress theme and plugin detections ($0.80/1k).</p>
-      </div>
-      <div class="formula-block">
-        <h2>Technical SEO &amp; Schema Audit</h2>
-        <pre><code>=LUCACELLI_SEO(A2)</code></pre>
-        <p>Audits any URL for HTTP status, title length, word count, Schema.org types, and broken links ($0.50/1k).</p>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="code-section">
-      <h2>Thirty-second setup in Google Sheets</h2>
-      <ol style="color:var(--muted);margin-bottom:24px;">
-        <li>Open any Google Sheet and select Extensions then Apps Script.</li>
-        <li>Paste the code below into Code.gs and save the project.</li>
-        <li>Reload your sheet, open the Lucacelli B2B Cloud menu, and set your free Apify API token.</li>
-      </ol>
-      <pre class="script-box"><code id="gsCodeBlock">/**
+  <section class="product-tile-parchment">
+    <div class="formula-grid" data-ui="sheets-formulas">
+      <div class="store-utility-card">
+        <h2 style="font-size:21px;">Domain Contact &amp; Tech Stack</h2>
+        <pre class="formula-code"><code>=LUCACELLI_ENRICH(A2)</code></pre>
+        <p style="font-size:14px;color:var(--ink-muted-80);">Returns verified emails, phone numbers, detected SaaS stack, and SPF security status for the domain in cell A2 ($0.50/1k).</p>
+      </div>
+      <div class="store-utility-card">
+        <h2 style="font-size:21px;">Google Maps Lead Table</h2>
+        <pre class="formula-code"><code>=LUCACELLI_GMAPS("dentists in turkey", 10)</code></pre>
+        <p style="font-size:14px;color:var(--ink-muted-80);">Populates multi-row business names, phone numbers, websites, ratings, and street addresses directly into your sheet ($1.50/1k).</p>
+      </div>
+      <div class="store-utility-card">
+        <h2 style="font-size:21px;">Shopify &amp; WordPress Spy</h2>
+        <pre class="formula-code"><code>=LUCACELLI_SHOPIFY(A2)</code></pre>
+        <p style="font-size:14px;color:var(--ink-muted-80);">Extracts Shopify product counts, average pricing, or WordPress theme and plugin detections ($0.80/1k).</p>
+      </div>
+      <div class="store-utility-card">
+        <h2 style="font-size:21px;">Technical SEO &amp; Schema Audit</h2>
+        <pre class="formula-code"><code>=LUCACELLI_SEO(A2)</code></pre>
+        <p style="font-size:14px;color:var(--ink-muted-80);">Audits any URL for HTTP status, title length, word count, Schema.org types, and broken links ($0.50/1k).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="product-tile-light">
+    <div class="tile-inner">
+      <h2 class="display-lg">Thirty-second setup in Google Sheets.</h2>
+      <p style="color:var(--ink-muted-80);max-width:640px;margin:0 auto 28px;">
+        Open any Google Sheet, choose Extensions &gt; Apps Script, paste the code below into Code.gs, and save.
+      </p>
+      <pre class="gs-box"><code id="gsCodeBlock">/**
  * ============================================================================
  * LUCACELLI B2B CLOUD — GOOGLE SHEETS™ CUSTOM FORMULAS &amp; SIDEBAR ADD-ON
  * ============================================================================
@@ -346,14 +695,62 @@ function enrichSelectedRows() {
   }
 }
 </code></pre>
-    </section>
-  </div>
+    </div>
+  </section>
+
+  
+  <footer class="apple-footer">
+    <div class="apple-footer-inner">
+      <p class="footer-note">
+        1. Every free Apify account includes $5.00 in monthly renewable platform credit. At $0.50 per 1,000 results, your first 10,000 enriched B2B domains, SEO audits, or RAG Markdown pages each month are $0.00. All 14 public actors under @lucacelli use transparent single-event pricing with zero hidden platform counters.
+      </p>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <div class="footer-col-title">Shop &amp; Explore</div>
+          <a href="./index.html">Lucacelli Cloud Store</a>
+          <a href="./plugin-demo.html">Studio Workbench</a>
+          <a href="./sheets-addon.html">Google Sheets Add-On</a>
+          <a href="./automations.html">n8n &amp; Make Blueprints</a>
+          <a href="./catalog-200.html">200-Actor Master Catalog</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Flagship Cloud Actors</div>
+          <a href="https://apify.com/lucacelli/b2b-domain-contact-tech-enricher" target="_blank" rel="noopener">Domain Contact Enricher</a>
+          <a href="https://apify.com/lucacelli/google-maps-scraper-places-emails-contacts-reviews" target="_blank" rel="noopener">Google Maps Scraper</a>
+          <a href="https://apify.com/lucacelli/shopify-store-product-contact-spy" target="_blank" rel="noopener">Shopify Merchant Spy</a>
+          <a href="https://apify.com/lucacelli/wordpress-woocommerce-site-spy" target="_blank" rel="noopener">WordPress &amp; Woo Spy</a>
+          <a href="https://apify.com/lucacelli/seo-technical-audit-broken-link-schema-analyzer" target="_blank" rel="noopener">Technical SEO Auditor</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Compare &amp; Switch</div>
+          <a href="./alternatives/outscraper-alternative.html">Outscraper Alternative</a>
+          <a href="./alternatives/clay-alternative.html">Clay.com Alternative</a>
+          <a href="./alternatives/builtwith-alternative.html">BuiltWith Alternative</a>
+          <a href="./alternatives/hunter-io-alternative.html">Hunter.io Alternative</a>
+          <a href="./turkiye.html">Turkiye B2B Rehberi</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">For Developers</div>
+          <a href="./api-docs.html">OpenAPI 3.0 Explorer</a>
+          <a href="./openapi.json">openapi.json</a>
+          <a href="./postman-collection.json">Postman Collection v2.1</a>
+          <a href="./llms.txt">llms.txt</a>
+          <a href="https://github.com/ocakciomursel-pixel" target="_blank" rel="noopener">GitHub Repositories</a>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <span>Copyright © 2026 Lucacelli Cloud Intelligence. Built with Apple DESIGN.md (awesome-design-md).</span>
+        <span>Single-Event Transparent Cloud Pricing ($0.50–$1.50 / 1,000 results)</span>
+      </div>
+    </div>
+  </footer>
+
   <script>
     function copyGsCode() {
       const code = document.getElementById('gsCodeBlock').innerText;
       navigator.clipboard.writeText(code);
       const btn = document.getElementById('copyGsBtn');
-      btn.textContent = 'Copied Apps Script to Clipboard';
+      btn.textContent = 'Copied to Clipboard';
       setTimeout(() => { btn.textContent = 'Copy Apps Script Code'; }, 2000);
     }
   </script>
