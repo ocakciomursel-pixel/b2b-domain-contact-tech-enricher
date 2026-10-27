@@ -1,0 +1,53 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Local Business, Hotel, Clinic & Schema Contact Extractor",
+    "description": "Hospitality, Healthcare & Local Business lead Actor: extracts Schema.org LocalBusiness/Hotel/Restaurant/Clinic structured data, street addresses, GPS coordinates, ratings, phones, and emails.",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~local-business-hotel-restaurant-schema-extractor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_local_business_hotel_restaurant_schema_extractor",
+        "summary": "Local Business Contact Scraper: Hotel, Clinic & Schema API",
+        "description": "Extract verified phone numbers, emails, street addresses, GPS coordinates, ratings & Schema.org data from hotel, clinic & local sites ($0.50/1k sites).",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Your Apify API Token"
+          }
+        ],
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "urls": [
+                    "https://www.marriott.com"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted JSON dataset array"
+          }
+        }
+      }
+    }
+  }
+}

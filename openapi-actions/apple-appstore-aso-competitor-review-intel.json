@@ -1,0 +1,55 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Apple App Store ASO, Competitor Metadata & Review Miner",
+    "description": "Mobile App & Gaming intelligence Actor: extracts iOS App Store ratings, version velocity, developer websites, and mines recent user reviews to identify 1-2 star bug/complaint themes.",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~apple-appstore-aso-competitor-review-intel/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_apple_appstore_aso_competitor_review_intel",
+        "summary": "Apple App Store Scraper: ASO Keywords & Review Miner API",
+        "description": "Extract iOS App Store ratings, version history, publisher contacts & 1-star user review pain points for ASO and mobile product research ($0.50/1k apps).",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Your Apify API Token"
+          }
+        ],
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "searchTerms": [
+                    "habit tracker",
+                    "invoice maker"
+                  ],
+                  "maxAppsPerTerm": 5
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted JSON dataset array"
+          }
+        }
+      }
+    }
+  }
+}
