@@ -464,7 +464,7 @@ async function run() {
       await Actor.pushData(record);
       if (typeof Actor.charge === 'function' && record.statusCode > 0) {
         try {
-          await Actor.charge({ eventName: 'lead-enriched', count: 1  }); try { await Actor.charge({ eventName: 'deep-verification-enrichment', count: 1  }); await Actor.charge({ eventName: 'ai-intelligence-priority-scoring', count: 1  }); } catch {}
+          await Actor.charge({ eventName: 'lead-enriched', count: 1  });
         } catch {
           // Ignore if PPE is not enabled on current run
         }
