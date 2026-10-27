@@ -1,246 +1,793 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Live Demo — Lucacelli B2B Lead Finder, Google Maps &amp; Technical SEO WordPress Suite</title>
-  <meta name="description" content="Test the Hybrid WordPress Plugin v2.0 PRO & Chrome Extension v3.0 live in your browser. Includes Local Instant Scanner + 14 Public Apify Cloud Scrapers with $5.00/month free credit." />
+  <title>Lucacelli Workbench: WordPress Plugin, Chrome Extension &amp; Apify Cloud</title>
+  <meta name="description" content="Interactive B2B domain diagnostic and 14-actor Apify Cloud extraction terminal. Includes installable WordPress Plugin v2.0, Chrome Extension v3.0, and Google Sheets formulas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --ground: #171719;
+      --surface: #131217;
+      --raised: #212023;
+      --border: #222224;
+      --rule: #1b1a1f;
+      --control: #3a3a3e;
+      --text: #ffffff;
+      --muted: #94969c;
+      --accent: #4a8ad6;
+      --positive: #44a282;
+      --negative: #e5566f;
+      --warning: #d9a441;
+      --radius-card: 6px;
+      --radius-control: 4px;
+      --gap: 24px;
+      --pad: 32px;
+      --control-height: 36px;
+      --fs-title: 26px;
+      --fs-section: 20px;
+      --fs-kpi: 22px;
+      --fs-body: 14px;
+      --fs-small: 12px;
+    }
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background: #090d16; color: #f1f5f9; }
-    .top { background: #111827; border-bottom: 1px solid #1e293b; padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; position: sticky; top: 0; z-index: 50; }
-    .wrap { max-width: 1260px; margin: 0 auto; padding: 20px 20px 64px; }
-    .hero-card { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 1px solid #38bdf8; border-radius: 14px; padding: 20px 24px; margin-bottom: 18px; }
-    .pill { display: inline-block; background: rgba(74, 222, 128, 0.15); border: 1px solid #4ade80; color: #4ade80; padding: 4px 12px; border-radius: 999px; font-size: 11.5px; font-weight: 700; margin-bottom: 6px; }
-    .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 16px; margin-bottom: 16px; }
-    .panel { background: #111827; border: 1px solid #1e293b; border-radius: 12px; padding: 18px; }
-    .panel h3 { margin: 0 0 6px; color: #fff; font-size: 17px; }
-    label.lbl { display: block; font-size: 11.5px; font-weight: 700; color: #94a3b8; margin-top: 8px; margin-bottom: 4px; }
-    input, select, textarea { width: 100%; background: #090d16; border: 1px solid #334155; color: #fff; padding: 9px 12px; border-radius: 8px; font-size: 13px; font-family: inherit; }
-    textarea { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; resize: vertical; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: #0284c7; color: #fff; padding: 10px 16px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13px; border: none; cursor: pointer; margin-top: 10px; transition: all 0.15s ease; }
-    .btn:hover { filter: brightness(1.12); transform: translateY(-1px); }
-    .btn.green { background: #16a34a; }
-    .btn.indigo { background: #4f46e5; }
-    .btn.sec { background: #1e293b; border: 1px solid #334155; color: #e2e8f0; }
-    .status-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; background: #0f172a; border: 1px solid #38bdf8; border-radius: 10px; padding: 10px 14px; margin-bottom: 10px; }
-    .status-badge { font-weight: 800; font-size: 13px; color: #4ade80; }
-    pre { background: #050811; border: 1px solid #334155; border-radius: 10px; padding: 14px; color: #4ade80; font-size: 12.5px; overflow-x: auto; max-height: 420px; margin: 0; line-height: 1.5; }
-    .inline-msg { margin-top: 8px; padding: 8px 10px; border-radius: 7px; font-size: 12px; font-weight: 700; display: none; }
-    .flash { animation: pulseBorder 0.9s ease; }
-    @keyframes pulseBorder {
-      0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.85); border-color: #4ade80; }
-      100% { box-shadow: 0 0 0 16px rgba(74, 222, 128, 0); border-color: #334155; }
+    ::selection { background: var(--accent); color: var(--text); }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--ground);
+      color: var(--text);
+      font-family: "Public Sans", system-ui, -apple-system, sans-serif;
+      font-size: var(--fs-body);
+      line-height: 1.5;
+      caret-color: var(--accent);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
+    a:hover { color: var(--accent); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    .shell {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      min-height: 100svh;
+    }
+    .rail {
+      background: var(--surface);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 16px 0;
+      gap: 12px;
+    }
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      background: var(--raised);
+      border-bottom: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--text);
+      text-decoration: none;
+      margin-bottom: 12px;
+    }
+    .rail-link {
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      text-decoration: none;
+      border-left: 2px solid transparent;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+    .rail-link:hover, .rail-link.active {
+      color: var(--text);
+      border-left-color: var(--accent);
+      background: var(--raised);
+    }
+    .rail-sep {
+      width: 20px;
+      height: 2px;
+      background: var(--raised);
+      margin: 4px 0;
+    }
+
+    .canvas {
+      max-width: 1240px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 28px var(--pad) 64px;
+    }
+
+    .title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .title-row h1 {
+      font-size: var(--fs-title);
+      font-weight: 600;
+      margin: 0 0 4px 0;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+    }
+    .title-sub {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+    .top-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      height: var(--control-height);
+      padding: 0 14px;
+      border-radius: var(--radius-control);
+      background: var(--raised);
+      color: var(--text);
+      border: none;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+    }
+    .btn:hover {
+      background: var(--control);
+      color: var(--text);
+    }
+    .btn-primary {
+      background: var(--text);
+      color: var(--ground);
+      font-weight: 600;
+    }
+    .btn-primary:hover {
+      background: #e2e4e9;
+      color: var(--ground);
+    }
+    .btn-accent {
+      background: var(--raised);
+      color: var(--text);
+      border-bottom: 2px solid var(--accent);
+      font-weight: 600;
+    }
+
+    .kpi-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: var(--ground);
+      border-radius: var(--radius-card);
+      margin-bottom: var(--gap);
+      font-variant-numeric: tabular-nums;
+    }
+    .kpi-cell {
+      background: var(--surface);
+      padding: 16px 20px;
+    }
+    .kpi-cell.active-kpi {
+      border-bottom: 2px solid var(--accent);
+    }
+    .kpi-label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .kpi-val {
+      font-size: var(--fs-kpi);
+      font-weight: 600;
+      color: var(--text);
+    }
+    .kpi-unit {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 400;
+      margin-left: 4px;
+    }
+
+    .workbench-grid {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: var(--gap);
+      align-items: stretch;
+      margin-bottom: var(--gap);
+    }
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+    }
+    .card-head h2 {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.35;
+      margin: 0;
+    }
+    .card-meta {
+      font-size: 12px;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+    .card-desc {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0 0 16px 0;
+    }
+    .field {
+      margin-bottom: 14px;
+    }
+    .field label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    input, select, textarea {
+      width: 100%;
+      background: var(--ground);
+      border: 1px solid var(--control);
+      border-radius: var(--radius-control);
+      color: var(--text);
+      padding: 9px 12px;
+      font-family: inherit;
+      font-size: 13px;
+      font-variant-numeric: tabular-nums;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--accent);
+      outline: none;
+    }
+    .card-foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-top: 12px;
+      margin-top: auto;
+    }
+    .inline-status {
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--positive);
+      font-variant-numeric: tabular-nums;
+      min-height: 18px;
+    }
+
+    .terminal-card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 22px;
+    }
+    .tab-bar {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 16px;
+    }
+    .tab-item {
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 0;
+      cursor: pointer;
+    }
+    .tab-item.active {
+      color: var(--text);
+      border-bottom-color: var(--accent);
+    }
+    .data-table-wrap {
+      overflow-x: auto;
+      margin-bottom: 16px;
+    }
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      font-variant-numeric: tabular-nums;
+    }
+    table.data-table th {
+      text-align: left;
+      color: var(--muted);
+      font-weight: 500;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    table.data-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--rule);
+      color: var(--text);
+    }
+    table.data-table th.num, table.data-table td.num {
+      text-align: right;
+    }
+    pre.code-out {
+      background: var(--ground);
+      border-radius: var(--radius-control);
+      padding: 16px;
+      color: var(--text);
+      font-size: 12px;
+      overflow-x: auto;
+      max-height: 360px;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 900px) {
+      .shell { grid-template-columns: 1fr; }
+      .rail {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px;
+      }
+      .brand-mark { margin-bottom: 0; }
+      .rail-sep { display: none; }
+      .kpi-strip { grid-template-columns: repeat(2, 1fr); }
+      .workbench-grid { grid-template-columns: 1fr; }
+      .canvas { padding: 20px 16px 48px; }
     }
   </style>
 </head>
 <body>
-  <div class="top">
-    <div><strong>Lucacelli B2B Lead &amp; SEO WordPress Plugin v3.0 — Live Interactive Admin Demo</strong></div>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;font-size:13px;">
-      <a href="./downloads/lucacelli-b2b-lead-seo-cloud-suite.zip" download style="color:#4ade80;font-weight:700;text-decoration:none;">⬇️ Download WordPress Plugin (.zip)</a>
-      <a href="./downloads/lucacelli-b2b-cloud-chrome-extension.zip" download style="color:#a5b4fc;font-weight:700;text-decoration:none;">🧩 Download Chrome Ext v3.0 (.zip)</a>
-      <a href="./sheets-addon.html" style="color:#38bdf8;font-weight:700;text-decoration:none;">📊 Google Sheets Formulas</a>
-      <a href="./index.html" style="color:#94a3b8;text-decoration:none;">← Back to Main Hub</a>
-    </div>
-  </div>
+  <div class="shell" data-ui="workbench">
+    <nav class="rail" aria-label="Primary workbench navigation">
+      <a href="./index.html" class="brand-mark" title="Lucacelli Cloud Intelligence">LC</a>
+      <a href="./plugin-demo.html" class="rail-link active" title="WordPress &amp; Cloud Workbench" aria-label="WordPress and Cloud Workbench">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      </a>
+      <a href="./sheets-addon.html" class="rail-link" title="Google Sheets Formulas" aria-label="Google Sheets Formulas">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3h18v18H3zM3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+      </a>
+      <a href="./automations.html" class="rail-link" title="n8n, Make &amp; Clay Blueprints" aria-label="Automation Blueprints">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><path d="M8.5 7.5L10.5 15M15.5 7.5L13.5 15"/></svg>
+      </a>
+      <div class="rail-sep"></div>
+      <a href="./catalog-200.html" class="rail-link" title="200 Cloud Actors Catalog" aria-label="200 Cloud Actors Catalog">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </a>
+      <a href="./api-docs.html" class="rail-link" title="OpenAPI 3.0 &amp; Swagger" aria-label="OpenAPI Reference">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+      </a>
+    </nav>
 
-  <div class="wrap">
-    <div class="hero-card">
-      <span class="pill">100% TRANSPARENT HYBRID ENGINE • $5.00 FREE MONTHLY APIFY CLOUD CREDIT INCLUDED</span>
-      <h1 style="margin:4px 0 8px;font-size:26px;color:#fff;">Lucacelli B2B Lead Finder, Google Maps &amp; Technical SEO WordPress Suite</h1>
-      <p style="margin:0 0 14px;color:#cbd5e1;font-size:14px;line-height:1.55;">
-        <strong>Why agencies love this plugin:</strong> Single-domain checks run locally on your server with <strong>zero API key required (Engine 1)</strong>. When you need bulk extraction (100 to 100,000 Google Maps leads, B2B domains, or Shopify products), switch to <strong>Engine 2 (Apify Cloud Bulk Mode)</strong> — where every free Apify account includes <strong>$5.00 in free monthly credit automatically renewed every month (3,333 to 10,000 free records/month)</strong>!
-      </p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <a class="btn green" style="margin-top:0;" href="./downloads/lucacelli-b2b-lead-seo-cloud-suite.zip" download>⬇️ Download Installable WordPress Plugin (.zip)</a>
-        <a class="btn indigo" style="margin-top:0;" href="./downloads/lucacelli-b2b-cloud-chrome-extension.zip" download>🧩 Download Chrome Extension v3.0 (.zip)</a>
-        <a class="btn sec" style="margin-top:0;" href="./sheets-addon.html">📊 Google Sheets™ (=LUCACELLI_ENRICH)</a>
-        <a class="btn" style="margin-top:0;" href="https://console.apify.com/settings/integrations" target="_blank">🔑 Claim Free $5.00/Mo Apify API Key →</a>
-      </div>
-    </div>
-
-    <div class="grid2">
-      <!-- ENGINE 1 -->
-      <div class="panel" style="border-color:#0284c7;">
-        <span style="color:#38bdf8;font-size:11px;font-weight:800;">ENGINE 1 • ZERO API KEY REQUIRED (100% FREE FOREVER)</span>
-        <h3>⚡ Local Instant Domain &amp; SEO Diagnostic</h3>
-        <p style="color:#94a3b8;font-size:12.5px;margin:4px 0 8px;">Works without an Apify key or even if your monthly $5 cloud credit is full. Never stops working.</p>
-        <label class="lbl">Domain to Scan:</label>
-        <input id="demoLocalDomain" type="text" value="stripe.com" placeholder="Enter domain (e.g. stripe.com)" />
-        <div style="display:flex;gap:8px;flex-wrap:wrap;">
-          <button class="btn" id="btnLocalScan" type="button" onclick="runDemoLocal()">▶ Run Instant Local Scan</button>
-          <button class="btn sec" type="button" onclick="document.getElementById('demoLocalDomain').value='shopify.com';runDemoLocal();">Try shopify.com</button>
+    <main class="canvas">
+      <header class="title-row">
+        <div>
+          <h1>Hybrid WordPress Plugin, Chrome Extension &amp; Apify Cloud Workbench</h1>
+          <p class="title-sub">Single-domain diagnostics run locally at zero cost; bulk extractions run on 14 public Apify Store actors with $5.00 monthly free credit.</p>
         </div>
-        <div id="localInlineStatus" class="inline-msg" style="background:rgba(2,132,199,0.18);border:1px solid #38bdf8;color:#38bdf8;"></div>
-      </div>
+        <div class="top-actions">
+          <a class="btn btn-primary" href="./downloads/lucacelli-b2b-lead-seo-cloud-suite.zip" download>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
+            Download WordPress Plugin (.zip)
+          </a>
+          <a class="btn btn-accent" href="./downloads/lucacelli-b2b-cloud-chrome-extension.zip" download>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+            Download Chrome Extension v3.0 (.zip)
+          </a>
+          <a class="btn" href="./sheets-addon.html">Google Sheets Formulas</a>
+          <a class="btn" href="https://console.apify.com/settings/integrations" target="_blank" rel="noopener">Get Free $5/Mo Token</a>
+        </div>
+      </header>
 
-      <!-- ENGINE 2 -->
-      <div class="panel" style="border-color:#16a34a;">
-        <span style="color:#4ade80;font-size:11px;font-weight:800;">ENGINE 2 • $5.00/MONTH FREE CLOUD CREDIT (14 LIVE ACTORS)</span>
-        <h3>☁️ Apify Cloud Bulk Extraction (14 Live Actors)</h3>
-        <p style="color:#94a3b8;font-size:12.5px;margin:4px 0 6px;">100% transparent single-event pricing ($0.50–$1.50 / 1,000 items). Click <strong>🚀 Run Cloud Extraction / Preview</strong> with or without a token to execute a live extraction right now!</p>
-        <label class="lbl">Select Live Cloud Actor (@lucacelli):</label>
-        <select id="demoActorSelect" onchange="updateDemoActor()"></select>
-        <label class="lbl">Bulk Targets / Search Queries (1 per line):</label>
-        <textarea id="demoBulkTargets" rows="2">stripe.com
+      <section class="kpi-strip" aria-label="Platform capacity metrics">
+        <div class="kpi-cell active-kpi">
+          <div class="kpi-label">Monthly Free Cloud Allowance</div>
+          <div class="kpi-val">$5.00<span class="kpi-unit">/ month renewed</span></div>
+        </div>
+        <div class="kpi-cell">
+          <div class="kpi-label">Included Free Enrichments</div>
+          <div class="kpi-val">10,000<span class="kpi-unit">domains / mo</span></div>
+        </div>
+        <div class="kpi-cell">
+          <div class="kpi-label">Public Store Actors</div>
+          <div class="kpi-val">14<span class="kpi-unit">live endpoints</span></div>
+        </div>
+        <div class="kpi-cell">
+          <div class="kpi-label">Single-Event Rate</div>
+          <div class="kpi-val">$0.50<span class="kpi-unit">to $1.50 / 1k</span></div>
+        </div>
+      </section>
+
+      <section class="workbench-grid" aria-label="Dual extraction engines">
+        <div class="card">
+          <div>
+            <div class="card-head">
+              <h2>Engine 1: Local Instant Domain Diagnostic</h2>
+              <span class="card-meta">0 credits / request</span>
+            </div>
+            <p class="card-desc">Resolves live DNS TXT, MX, A, SPF, and DMARC records plus cloud vendor verification signatures directly in the browser or WordPress PHP.</p>
+            <div class="field">
+              <label for="demoLocalDomain">
+                <span>Target Domain</span>
+                <span>No API key required</span>
+              </label>
+              <input id="demoLocalDomain" type="text" value="stripe.com" placeholder="stripe.com" />
+            </div>
+            <div class="field">
+              <label for="demoLocalPreset"><span>Quick Preset Target</span></label>
+              <select id="demoLocalPreset" onchange="document.getElementById('demoLocalDomain').value=this.value;runDemoLocal();">
+                <option value="stripe.com">stripe.com (Payment Infrastructure)</option>
+                <option value="shopify.com">shopify.com (Commerce Platform)</option>
+                <option value="cloudflare.com">cloudflare.com (Edge Network)</option>
+                <option value="linear.app">linear.app (Product Management)</option>
+              </select>
+            </div>
+            <div id="localInlineStatus" class="inline-status">Ready for instant local inspection.</div>
+          </div>
+          <div class="card-foot">
+            <button class="btn btn-primary" id="btnLocalScan" type="button" onclick="runDemoLocal()">Run Instant Local Scan</button>
+            <span class="card-meta">Engine 1 Active</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div>
+            <div class="card-head">
+              <h2>Engine 2: Apify Cloud Bulk Extraction</h2>
+              <span class="card-meta" id="selectedActorRate">$0.50 / 1,000 results</span>
+            </div>
+            <p class="card-desc">Executes live multi-target extraction across all 14 public @lucacelli actors. Leave the token field blank for an immediate live browser extraction, or paste your Apify token for full cloud scale.</p>
+            <div class="field">
+              <label for="demoActorSelect">
+                <span>Public Apify Store Actor (@lucacelli)</span>
+                <span id="selectedActorQuota">10,000 domains / mo free</span>
+              </label>
+              <select id="demoActorSelect" onchange="updateDemoActor()"></select>
+            </div>
+            <div class="field">
+              <label for="demoBulkTargets">
+                <span>Bulk Targets or Search Queries (One per line)</span>
+                <span>Auto-formatted payload</span>
+              </label>
+              <textarea id="demoBulkTargets" rows="3">stripe.com
 shopify.com
 linear.app</textarea>
-        <label class="lbl">Optional Apify API Token (Leave empty for instant live browser extraction):</label>
-        <input id="demoApifyToken" type="password" placeholder="Optional: Paste Apify API Token (or leave empty and click Green Button below)" />
-        <div style="display:flex;gap:8px;flex-wrap:wrap;">
-          <button class="btn green" id="btnCloudRun" type="button" onclick="runDemoCloud()">🚀 Run Cloud Extraction / Preview</button>
-          <a id="demoStoreLink" class="btn sec" href="https://apify.com/lucacelli/b2b-domain-contact-tech-enricher" target="_blank">Open Actor on Apify Store ↗</a>
+            </div>
+            <div class="field">
+              <label for="demoApifyToken">
+                <span>Apify API Token (Optional for live preview)</span>
+                <a href="https://console.apify.com/settings/integrations" target="_blank" rel="noopener">Get apify_api_ token</a>
+              </label>
+              <input id="demoApifyToken" type="password" placeholder="Leave blank for live browser extraction, or paste apify_api_..." />
+            </div>
+            <div id="cloudInlineStatus" class="inline-status">Ready to execute live extraction.</div>
+          </div>
+          <div class="card-foot">
+            <button class="btn btn-primary" id="btnCloudRun" type="button" onclick="runDemoCloud()">Run Cloud Extraction / Preview</button>
+            <a id="demoStoreLink" class="btn" href="https://apify.com/lucacelli/b2b-domain-contact-tech-enricher" target="_blank" rel="noopener">Open Actor on Apify Store</a>
+          </div>
         </div>
-        <div id="cloudInlineStatus" class="inline-msg" style="background:rgba(22,163,74,0.18);border:1px solid #4ade80;color:#4ade80;"></div>
-      </div>
-    </div>
+      </section>
 
-    <!-- LIVE OUTPUT CONSOLE -->
-    <div class="panel" id="consolePanel">
-      <div class="status-bar">
-        <span class="status-badge" id="consoleStatus">🟢 Ready — Click "▶ Run Instant Local Scan" or "🚀 Run Cloud Extraction / Preview" above!</span>
-        <div style="display:flex;gap:8px;">
-          <button class="btn sec" style="margin-top:0;padding:6px 12px;font-size:12px;" type="button" onclick="copyConsoleJson()">📋 Copy JSON</button>
-          <button class="btn green" style="margin-top:0;padding:6px 12px;font-size:12px;" type="button" onclick="exportConsoleCsv()">⬇️ Export CSV</button>
+      <section class="terminal-card" id="consolePanel" aria-label="Extraction output">
+        <div class="card-head">
+          <div>
+            <h2 id="consoleStatus">Live Extraction Output</h2>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <button class="btn" type="button" onclick="copyConsoleJson()">Copy JSON</button>
+            <button class="btn btn-accent" type="button" onclick="exportConsoleCsv()">Export CSV</button>
+          </div>
         </div>
-      </div>
-      <pre id="demoConsole"></pre>
-    </div>
+
+        <div class="tab-bar" role="tablist">
+          <button class="tab-item active" id="tabTableBtn" type="button" onclick="switchOutputView('table')">Structured Dataset Table</button>
+          <button class="tab-item" id="tabJsonBtn" type="button" onclick="switchOutputView('json')">Raw JSON Payload</button>
+        </div>
+
+        <div id="tableView" class="data-table-wrap">
+          <table class="data-table" id="resultsTable">
+            <thead>
+              <tr>
+                <th>Target / Name</th>
+                <th>Category / Grade</th>
+                <th>Primary Details</th>
+                <th>Contacts / Location</th>
+                <th class="num">Records</th>
+              </tr>
+            </thead>
+            <tbody id="resultsTableBody">
+              <tr>
+                <td colspan="5" style="color:var(--muted);">Click "Run Instant Local Scan" or "Run Cloud Extraction / Preview" to populate live records.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="jsonView" style="display:none;">
+          <pre class="code-out"><code id="demoConsole"></code></pre>
+        </div>
+      </section>
+    </main>
   </div>
 
   <script>
     const ACTORS = [
-      {
-        slug: "b2b-domain-contact-tech-enricher",
-        title: "B2B Domain Contact, Email, DNS & Tech Stack Enricher",
-        price: "$0.50 / 1,000 results",
-        freeMonthlyQuota: "10,000 enriched domains / mo FREE",
-        inputType: "domains",
-        sampleText: "stripe.com\nshopify.com\nlinear.app"
-      },
-      {
-        slug: "google-maps-scraper-places-emails-contacts-reviews",
-        title: "Google Maps Scraper: Places, Emails, Contacts & Reviews Pro",
-        price: "$1.50 / 1,000 results",
-        freeMonthlyQuota: "3,333 Google Maps leads / mo FREE",
-        inputType: "queries",
-        sampleText: "dentists in Austin TX\ncoffee shops in Seattle WA"
-      },
-      {
-        slug: "shopify-store-product-contact-spy",
-        title: "Shopify Store Product, Pricing, Stock & Merchant Contact Spy",
-        price: "$0.80 / 1,000 results",
-        freeMonthlyQuota: "6,250 Shopify stores / mo FREE",
-        inputType: "domains",
-        sampleText: "gymshark.com\nallbirds.com"
-      },
-      {
-        slug: "wordpress-woocommerce-site-spy",
-        title: "WordPress & WooCommerce Theme, Plugin & Agency Lead Spy",
-        price: "$0.80 / 1,000 results",
-        freeMonthlyQuota: "6,250 WP/WooCommerce audits / mo FREE",
-        inputType: "domains",
-        sampleText: "techcrunch.com\nyoast.com\nwoocommerce.com"
-      },
-      {
-        slug: "seo-technical-audit-broken-link-schema-analyzer",
-        title: "Technical SEO, Broken Link, Schema.org & Security Auditor",
-        price: "$0.50 / 1,000 results",
-        freeMonthlyQuota: "10,000 technical SEO audits / mo FREE",
-        inputType: "urls",
-        sampleText: "https://stripe.com\nhttps://cloudflare.com"
-      },
-      {
-        slug: "ai-ready-website-to-markdown-rag-crawler",
-        title: "Website to Clean Markdown, Vector RAG Chunks & llms.txt",
-        price: "$0.50 / 1,000 results",
-        freeMonthlyQuota: "10,000 AI Markdown pages / mo FREE",
-        inputType: "urls",
-        sampleText: "https://stripe.com/docs\nhttps://docs.apify.com"
-      },
-      {
-        slug: "saas-pricing-page-tier-feature-extractor",
-        title: "SaaS Pricing Page, Plan Tiers & Competitor Feature Spy",
-        price: "$0.80 / 1,000 results",
-        freeMonthlyQuota: "6,250 SaaS pricing pages / mo FREE",
-        inputType: "urls",
-        sampleText: "https://stripe.com/pricing\nhttps://linear.app/pricing"
-      },
-      {
-        slug: "sitemap-url-inventory-content-freshness-auditor",
-        title: "XML Sitemap URL Inventory, SEO Freshness & Content Auditor",
-        price: "$0.50 / 1,000 results",
-        freeMonthlyQuota: "10,000 sitemap audits / mo FREE",
-        inputType: "domains",
-        sampleText: "apify.com\ncloudflare.com"
-      },
-      {
-        slug: "github-developer-recruiter-lead-enricher",
-        title: "GitHub Developer, Stargazer & Contributor Lead Enricher",
-        price: "$1.50 / 1,000 results",
-        freeMonthlyQuota: "3,333 developer profiles / mo FREE",
-        inputType: "usernames",
-        sampleText: "sindresorhus\ntorvalds\nyyx990803"
-      },
-      {
-        slug: "ats-job-board-hiring-signal-scraper",
-        title: "Greenhouse & Lever Company Job Board & Hiring Signal Scraper",
-        price: "$1.50 / 1,000 results",
-        freeMonthlyQuota: "3,333 company hiring signals / mo FREE",
-        inputType: "companies",
-        sampleText: "stripe\ncloudflare\nfigma"
-      },
-      {
-        slug: "reddit-community-pain-point-trend-miner",
-        title: "Reddit Subreddit, Buyer Intent & Pain-Point Lead Miner",
-        price: "$0.80 / 1,000 results",
-        freeMonthlyQuota: "6,250 Reddit buyer-intent posts / mo FREE",
-        inputType: "subreddits",
-        sampleText: "SaaS\nentrepreneur"
-      },
-      {
-        slug: "hackernews-tech-launch-lead-monitor",
-        title: "Hacker News Launch, Show HN & Tech Founder Lead Monitor",
-        price: "$0.80 / 1,000 results",
-        freeMonthlyQuota: "6,250 HackerNews founder leads / mo FREE",
-        inputType: "keywords",
-        sampleText: "Show HN\nAI agent"
-      },
-      {
-        slug: "scientific-literature-citation-author-lead-miner",
-        title: "Scientific Paper, Author Email & Lab Research Lead Miner",
-        price: "$1.50 / 1,000 results",
-        freeMonthlyQuota: "3,333 academic/biotech leads / mo FREE",
-        inputType: "queries",
-        sampleText: "CRISPR gene editing\nmRNA lipid nanoparticle"
-      },
-      {
-        slug: "clinical-trials-fda-drug-safety-intel",
-        title: "ClinicalTrials.gov & OpenFDA Biotech / Pharma Lead Enricher",
-        price: "$1.50 / 1,000 results",
-        freeMonthlyQuota: "3,333 clinical trial & FDA records / mo FREE",
-        inputType: "conditions",
-        sampleText: "nsclc\nglioblastoma"
-      }
-    ];
+  {
+    "slug": "b2b-domain-contact-tech-enricher",
+    "title": "B2B Domain Contact, Email, DNS & Tech Stack Enricher",
+    "price": "$0.50 / 1,000 results",
+    "freeMonthlyQuota": "10,000 domains / mo free",
+    "inputType": "domains",
+    "sampleText": "stripe.com\nshopify.com\nlinear.app",
+    "samplePayload": {
+      "domains": [
+        "stripe.com",
+        "shopify.com",
+        "linear.app"
+      ],
+      "crawlContactPages": true
+    }
+  },
+  {
+    "slug": "google-maps-scraper-places-emails-contacts-reviews",
+    "title": "Google Maps Scraper: Places, Emails, Contacts & Reviews Pro",
+    "price": "$1.50 / 1,000 results",
+    "freeMonthlyQuota": "3,333 places / mo free",
+    "inputType": "queries",
+    "sampleText": "dentists in turkey\ncoffee shops in seattle",
+    "samplePayload": {
+      "searchStringsArray": [
+        "dentist"
+      ],
+      "locationQuery": "Turkey",
+      "maxCrawledPlacesPerSearch": 10
+    }
+  },
+  {
+    "slug": "shopify-store-product-contact-spy",
+    "title": "Shopify Store Product, Pricing, Stock & Merchant Contact Spy",
+    "price": "$0.80 / 1,000 results",
+    "freeMonthlyQuota": "6,250 stores / mo free",
+    "inputType": "domains",
+    "sampleText": "gymshark.com\nallbirds.com",
+    "samplePayload": {
+      "domains": [
+        "gymshark.com",
+        "allbirds.com"
+      ],
+      "maxProductsPerStore": 5
+    }
+  },
+  {
+    "slug": "wordpress-woocommerce-site-spy",
+    "title": "WordPress & WooCommerce Theme, Plugin & Agency Lead Spy",
+    "price": "$0.80 / 1,000 results",
+    "freeMonthlyQuota": "6,250 sites / mo free",
+    "inputType": "domains",
+    "sampleText": "techcrunch.com\nyoast.com\nwoocommerce.com",
+    "samplePayload": {
+      "domains": [
+        "techcrunch.com",
+        "yoast.com",
+        "woocommerce.com"
+      ]
+    }
+  },
+  {
+    "slug": "seo-technical-audit-broken-link-schema-analyzer",
+    "title": "Technical SEO, Broken Link, Schema.org & Security Auditor",
+    "price": "$0.50 / 1,000 results",
+    "freeMonthlyQuota": "10,000 pages / mo free",
+    "inputType": "urls",
+    "sampleText": "https://stripe.com\nhttps://cloudflare.com",
+    "samplePayload": {
+      "urls": [
+        "https://stripe.com",
+        "https://cloudflare.com"
+      ]
+    }
+  },
+  {
+    "slug": "ai-ready-website-to-markdown-rag-crawler",
+    "title": "Website to Clean Markdown, Vector RAG Chunks & llms.txt",
+    "price": "$0.50 / 1,000 results",
+    "freeMonthlyQuota": "10,000 pages / mo free",
+    "inputType": "urls",
+    "sampleText": "https://stripe.com/docs\nhttps://docs.apify.com",
+    "samplePayload": {
+      "urls": [
+        "https://stripe.com/docs",
+        "https://docs.apify.com"
+      ]
+    }
+  },
+  {
+    "slug": "saas-pricing-page-tier-feature-extractor",
+    "title": "SaaS Pricing Page, Plan Tiers & Competitor Feature Spy",
+    "price": "$0.80 / 1,000 results",
+    "freeMonthlyQuota": "6,250 pages / mo free",
+    "inputType": "urls",
+    "sampleText": "https://stripe.com/pricing\nhttps://linear.app/pricing",
+    "samplePayload": {
+      "urls": [
+        "https://stripe.com/pricing",
+        "https://linear.app/pricing"
+      ]
+    }
+  },
+  {
+    "slug": "sitemap-url-inventory-content-freshness-auditor",
+    "title": "XML Sitemap URL Inventory, SEO Freshness & Content Auditor",
+    "price": "$0.50 / 1,000 results",
+    "freeMonthlyQuota": "10,000 sitemaps / mo free",
+    "inputType": "domains",
+    "sampleText": "apify.com\ncloudflare.com",
+    "samplePayload": {
+      "domains": [
+        "apify.com",
+        "cloudflare.com"
+      ],
+      "maxUrlsPerDomain": 25
+    }
+  },
+  {
+    "slug": "github-developer-recruiter-lead-enricher",
+    "title": "GitHub Developer, Stargazer & Contributor Lead Enricher",
+    "price": "$1.50 / 1,000 results",
+    "freeMonthlyQuota": "3,333 profiles / mo free",
+    "inputType": "usernames",
+    "sampleText": "sindresorhus\ntorvalds\nyyx990803",
+    "samplePayload": {
+      "usernames": [
+        "sindresorhus",
+        "torvalds",
+        "yyx990803"
+      ]
+    }
+  },
+  {
+    "slug": "ats-job-board-hiring-signal-scraper",
+    "title": "Greenhouse & Lever Company Job Board & Hiring Signal Scraper",
+    "price": "$1.50 / 1,000 results",
+    "freeMonthlyQuota": "3,333 companies / mo free",
+    "inputType": "companies",
+    "sampleText": "stripe\ncloudflare\nfigma",
+    "samplePayload": {
+      "companies": [
+        "stripe",
+        "cloudflare",
+        "figma"
+      ],
+      "maxJobsPerCompany": 5
+    }
+  },
+  {
+    "slug": "reddit-community-pain-point-trend-miner",
+    "title": "Reddit Subreddit, Buyer Intent & Pain-Point Lead Miner",
+    "price": "$0.80 / 1,000 results",
+    "freeMonthlyQuota": "6,250 posts / mo free",
+    "inputType": "subreddits",
+    "sampleText": "SaaS\nentrepreneur",
+    "samplePayload": {
+      "subreddits": [
+        "SaaS",
+        "entrepreneur"
+      ],
+      "limitPerSubreddit": 5
+    }
+  },
+  {
+    "slug": "hackernews-tech-launch-lead-monitor",
+    "title": "Hacker News Launch, Show HN & Tech Founder Lead Monitor",
+    "price": "$0.80 / 1,000 results",
+    "freeMonthlyQuota": "6,250 launches / mo free",
+    "inputType": "keywords",
+    "sampleText": "Show HN\nAI agent",
+    "samplePayload": {
+      "keywords": [
+        "Show HN",
+        "AI agent"
+      ],
+      "hitsPerKeyword": 5
+    }
+  },
+  {
+    "slug": "scientific-literature-citation-author-lead-miner",
+    "title": "Scientific Paper, Author Email & Lab Research Lead Miner",
+    "price": "$1.50 / 1,000 results",
+    "freeMonthlyQuota": "3,333 papers / mo free",
+    "inputType": "queries",
+    "sampleText": "CRISPR gene editing\nmRNA lipid nanoparticle",
+    "samplePayload": {
+      "queries": [
+        "CRISPR gene editing",
+        "mRNA lipid nanoparticle"
+      ],
+      "maxResultsPerQuery": 5
+    }
+  },
+  {
+    "slug": "clinical-trials-fda-drug-safety-intel",
+    "title": "ClinicalTrials.gov & OpenFDA Biotech / Pharma Lead Enricher",
+    "price": "$1.50 / 1,000 results",
+    "freeMonthlyQuota": "3,333 trials / mo free",
+    "inputType": "conditions",
+    "sampleText": "nsclc\nglioblastoma",
+    "samplePayload": {
+      "conditions": [
+        "nsclc",
+        "glioblastoma"
+      ],
+      "maxTrialsPerCondition": 5
+    }
+  }
+];
 
     let latestRows = [];
     const sel = document.getElementById('demoActorSelect');
     const targetsEl = document.getElementById('demoBulkTargets');
     const outEl = document.getElementById('demoConsole');
     const statusEl = document.getElementById('consoleStatus');
-    const consolePanel = document.getElementById('consolePanel');
     const localInline = document.getElementById('localInlineStatus');
     const cloudInline = document.getElementById('cloudInlineStatus');
+    const tableBody = document.getElementById('resultsTableBody');
 
-    sel.innerHTML = ACTORS.map((a, i) => `<option value="${i}">${a.title} (${a.price} — ${a.freeMonthlyQuota})</option>`).join('');
+    sel.innerHTML = ACTORS.map((a, i) => '<option value="' + i + '">' + a.title + ' (' + a.price + ')</option>').join('');
 
-    function flashConsole() {
-      consolePanel.classList.remove('flash');
-      void consolePanel.offsetWidth;
-      consolePanel.classList.add('flash');
-      consolePanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    function switchOutputView(mode) {
+      const isTable = mode === 'table';
+      document.getElementById('tableView').style.display = isTable ? 'block' : 'none';
+      document.getElementById('jsonView').style.display = isTable ? 'none' : 'block';
+      document.getElementById('tabTableBtn').classList.toggle('active', isTable);
+      document.getElementById('tabJsonBtn').classList.toggle('active', !isTable);
+    }
+
+    function renderTableRows(rows) {
+      if (!Array.isArray(rows) || !rows.length) {
+        tableBody.innerHTML = '<tr><td colspan="5" style="color:var(--muted);">No records returned.</td></tr>';
+        return;
+      }
+      tableBody.innerHTML = rows.map(r => {
+        const name = r.title || r.domain || r.username || r.company || r.nctId || r.keyword || r.target || 'Record';
+        const cat = r.emailSecurityGrade || r.categoryName || r.hiringVelocitySignal || r.overallStatus || (r.publicationYear ? 'Published ' + r.publicationYear : 'Verified');
+        const details = r.address || (r.detectedTechStack ? r.detectedTechStack.join(', ') : '') || r.briefTitle || r.blogUrl || r.url || (r.sampleOpenings ? r.sampleOpenings.map(o => o.title).join('; ') : '') || '-';
+        const contacts = (r.emails ? r.emails.slice(0, 2).join(', ') : '') || (r.suggestedContacts ? r.suggestedContacts.join(', ') : '') || r.LeadAuthors || r.leadSponsor || r.location || '-';
+        const countVal = r.totalOpenJobs ?? r.publicRepos ?? r.citedByCount ?? r.points ?? r.txtRecordCount ?? 1;
+        return '<tr>' +
+          '<td><strong>' + String(name).replace(/</g, '&lt;') + '</strong></td>' +
+          '<td>' + String(cat).replace(/</g, '&lt;') + '</td>' +
+          '<td>' + String(details).slice(0, 90).replace(/</g, '&lt;') + '</td>' +
+          '<td>' + String(contacts).slice(0, 60).replace(/</g, '&lt;') + '</td>' +
+          '<td class="num">' + Number(countVal || 1).toLocaleString('en-US') + '</td>' +
+        '</tr>';
+      }).join('');
     }
 
     function buildPayload(actor, lines) {
@@ -270,17 +817,17 @@ linear.app</textarea>
       const a = ACTORS[sel.value || 0];
       targetsEl.value = a.sampleText;
       document.getElementById('demoStoreLink').href = 'https://apify.com/lucacelli/' + a.slug;
+      document.getElementById('selectedActorRate').textContent = a.price;
+      document.getElementById('selectedActorQuota').textContent = a.freeMonthlyQuota;
       const lines = targetsEl.value.split(/\r?\n/).map(s => s.trim()).filter(Boolean);
-      cloudInline.style.display = 'none';
-      statusEl.textContent = `📌 Selected: ${a.title} — Click "🚀 Run Cloud Extraction / Preview" to execute live!`;
+      statusEl.textContent = 'Ready: ' + a.title;
       outEl.textContent = JSON.stringify({
-        readyToExecute: true,
         actor: 'lucacelli/' + a.slug,
         title: a.title,
-        transparentPrice: a.price + ' (Single All-Inclusive Event — Zero Hidden Fees)',
-        includedWithFreeApifyTier: a.freeMonthlyQuota + ' ($5.00/month free credit renewed monthly)',
+        singleEventPrice: a.price,
+        freeMonthlyQuota: a.freeMonthlyQuota,
         endpoint: 'https://api.apify.com/v2/acts/lucacelli~' + a.slug + '/run-sync-get-dataset-items',
-        sampleInputPayload: buildPayload(a, lines)
+        inputPayload: buildPayload(a, lines)
       }, null, 2);
     }
 
@@ -314,8 +861,8 @@ linear.app</textarea>
 
       return {
         domain: d,
-        emails: [`contact@${d}`, `sales@${d}`, `info@${d}`, `support@${d}`],
-        emailSecurityGrade: (spf && dmarc) ? "A+ (SPF + DMARC Active)" : (spf ? "B (SPF Active)" : "D (Missing SPF/DMARC)"),
+        emails: ['contact@' + d, 'sales@' + d, 'info@' + d],
+        emailSecurityGrade: (spf && dmarc) ? 'A+ (SPF + DMARC)' : (spf ? 'B (SPF Only)' : 'D (Unprotected)'),
         hasSpfRecord: Boolean(spf),
         spfRecord: spf,
         hasDmarcRecord: Boolean(dmarc),
@@ -330,25 +877,20 @@ linear.app</textarea>
     async function runDemoLocal() {
       const btn = document.getElementById('btnLocalScan');
       const d = document.getElementById('demoLocalDomain').value.trim();
-      btn.textContent = '⏳ Scanning Live...';
-      localInline.style.display = 'block';
-      localInline.textContent = '⏳ Running live DNS, MX, SPF, DMARC & Tech Stack scan on ' + d + '...';
-      statusEl.textContent = '⏳ Engine 1 Running on ' + d + '...';
+      btn.textContent = 'Scanning...';
+      localInline.textContent = 'Querying live DNS, MX, SPF, and DMARC records for ' + d + '...';
 
       try {
         const res = await enrichDomainLive(d);
-        res.engine = 'Engine 1 — Local Instant Scanner (100% Free Forever, Zero API Key Required)';
-        res.scannedAt = new Date().toISOString();
         latestRows = [res];
+        renderTableRows(latestRows);
         outEl.textContent = JSON.stringify(res, null, 2);
-        statusEl.textContent = `✅ Engine 1 Complete: ${res.domain} (${res.emailSecurityGrade}, ${res.mailServersMX.length} MX servers)`;
-        localInline.textContent = `✅ Done! Found ${res.mailServersMX.length} MX servers, ${res.detectedTechStack.length} tech signals & Grade ${res.emailSecurityGrade}. See JSON below ↓`;
-        flashConsole();
+        statusEl.textContent = 'Engine 1 Output: ' + res.domain + ' (' + res.emailSecurityGrade + ')';
+        localInline.textContent = 'Completed: ' + res.mailServersMX.length + ' MX servers, ' + res.detectedTechStack.length + ' tech signals.';
       } catch (e) {
-        outEl.textContent = 'Error: ' + e.message;
-        localInline.textContent = '❌ Error: ' + e.message;
+        localInline.textContent = 'Error: ' + e.message;
       } finally {
-        btn.textContent = '▶ Run Instant Local Scan';
+        btn.textContent = 'Run Instant Local Scan';
       }
     }
 
@@ -359,14 +901,12 @@ linear.app</textarea>
           const r = await fetch('https://api.github.com/users/' + encodeURIComponent(u)).then(x => x.json()).catch(() => ({}));
           out.push({
             username: r.login || u,
-            fullName: r.name || '',
-            company: r.company || '',
+            title: r.name || r.login || u,
+            company: r.company || 'Independent',
             blogUrl: r.blog || '',
             location: r.location || '',
-            bio: r.bio || '',
             publicRepos: r.public_repos || 0,
-            followers: r.followers || 0,
-            profileUrl: r.html_url || ('https://github.com/' + u)
+            followers: r.followers || 0
           });
         }
         return out;
@@ -379,9 +919,10 @@ linear.app</textarea>
           const jobs = (r.jobs || []).slice(0, 4);
           out.push({
             company: c,
+            title: c.toUpperCase() + ' Job Board',
             totalOpenJobs: (r.jobs || []).length,
-            hiringVelocitySignal: (r.jobs || []).length > 20 ? 'HIGH GROWTH HIRING' : 'ACTIVE',
-            sampleOpenings: jobs.map(j => ({ title: j.title, location: j.location?.name, url: j.absolute_url }))
+            hiringVelocitySignal: (r.jobs || []).length > 20 ? 'High Hiring Velocity' : 'Active Hiring',
+            sampleOpenings: jobs.map(j => ({ title: j.title, location: j.location?.name }))
           });
         }
         return out;
@@ -392,7 +933,7 @@ linear.app</textarea>
         for (const kw of lines.slice(0, 2)) {
           const r = await fetch('https://hn.algolia.com/api/v1/search?query=' + encodeURIComponent(kw) + '&hitsPerPage=4').then(x => x.json()).catch(() => ({}));
           for (const h of (r.hits || [])) {
-            out.push({ keyword: kw, title: h.title, url: h.url, author: h.author, points: h.points, comments: h.num_comments, createdAt: h.created_at });
+            out.push({ keyword: kw, title: h.title, url: h.url, location: 'by ' + h.author, points: h.points });
           }
         }
         return out;
@@ -402,11 +943,10 @@ linear.app</textarea>
         const q = lines[0] || 'CRISPR';
         const r = await fetch('https://api.openalex.org/works?search=' + encodeURIComponent(q) + '&per-page=5').then(x => x.json()).catch(() => ({}));
         return (r.results || []).map(w => ({
-          query: q,
           title: w.title,
           publicationYear: w.publication_year,
           citedByCount: w.cited_by_count,
-          doi: w.doi,
+          url: w.doi,
           LeadAuthors: (w.authorships || []).slice(0, 3).map(a => a.author?.display_name).join(', ')
         }));
       }
@@ -415,8 +955,8 @@ linear.app</textarea>
         const cond = lines[0] || 'nsclc';
         const r = await fetch('https://clinicaltrials.gov/api/v2/studies?query.cond=' + encodeURIComponent(cond) + '&pageSize=5').then(x => x.json()).catch(() => ({}));
         return (r.studies || []).map(s => ({
-          condition: cond,
           nctId: s.protocolSection?.identificationModule?.nctId,
+          title: s.protocolSection?.identificationModule?.nctId,
           briefTitle: s.protocolSection?.identificationModule?.briefTitle,
           overallStatus: s.protocolSection?.statusModule?.overallStatus,
           leadSponsor: s.protocolSection?.sponsorCollaboratorsModule?.leadSponsor?.name
@@ -442,7 +982,6 @@ linear.app</textarea>
           const features = Array.isArray(r.features) ? r.features : [];
           features.forEach((f, idx) => {
             const p = f.properties || {};
-            const coords = f.geometry?.coordinates || [0, 0];
             const bName = p.name || normalized;
             const slugDom = bName.toLowerCase().replace(/ğ/g,'g').replace(/ü/g,'u').replace(/ş/g,'s').replace(/ı/g,'i').replace(/ö/g,'o').replace(/ç/g,'c').replace(/[^a-z0-9]+/g, '').slice(0, 18) || 'clinic';
             const cc = (p.countrycode || 'com').toLowerCase() === 'tr' ? '.com.tr' : '.com';
@@ -453,21 +992,14 @@ linear.app</textarea>
               title: bName,
               categoryName: p.osm_value || p.osm_key || 'Local Business',
               address: addrParts.join(', '),
-              city: p.city || p.district || '',
-              state: p.state || '',
-              countryCode: p.countrycode || '',
-              postalCode: p.postcode || '',
-              location: { lat: coords[1], lng: coords[0] },
-              suggestedDomain: `${slugDom}${cc}`,
-              suggestedContacts: [`info@${slugDom}${cc}`, `iletisim@${slugDom}${cc}`],
-              googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(bName + ' ' + addrParts.join(' '))
+              suggestedContacts: ['info@' + slugDom + cc, 'contact@' + slugDom + cc],
+              txtRecordCount: 1
             });
           });
         }
         return out;
       }
 
-      // Default: run live multi-domain DNS/MX/SPF/DMARC/Tech enrichment across entered lines
       const results = [];
       for (const item of lines.slice(0, 5)) {
         const enriched = await enrichDomainLive(item);
@@ -487,42 +1019,32 @@ linear.app</textarea>
       const lines = targetsEl.value.split(/\r?\n/).map(s => s.trim()).filter(Boolean);
       const payload = buildPayload(a, lines);
 
-      btn.textContent = '⏳ Running Extraction...';
-      cloudInline.style.display = 'block';
+      btn.textContent = 'Running...';
 
       if (!token) {
-        cloudInline.textContent = `⏳ Executing Live Preview for ${a.title} on ${lines.length} target(s)...`;
-        statusEl.textContent = `⏳ Running Live Extraction Preview: lucacelli/${a.slug}...`;
+        cloudInline.textContent = 'Running live extraction for ' + a.title + ' (' + lines.length + ' targets)...';
         try {
           const liveItems = await runLiveBrowserFallbackForActor(a, lines);
           latestRows = liveItems;
-          const output = {
-            status: "SUCCEEDED (LIVE INTERACTIVE EXTRACTION)",
-            actor: "lucacelli/" + a.slug,
-            transparentBilling: a.price + " (Single All-Inclusive Event — Zero Hidden Counters)",
-            freeCreditAllowance: a.freeMonthlyQuota + " with free $5.00/mo Apify Token",
+          renderTableRows(latestRows);
+          outEl.textContent = JSON.stringify({
+            status: 'SUCCEEDED',
+            actor: 'lucacelli/' + a.slug,
+            singleEventPricing: a.price,
             itemsReturned: liveItems.length,
             datasetItems: liveItems
-          };
-          outEl.textContent = JSON.stringify(output, null, 2);
-          statusEl.textContent = `✅ Live Extraction Succeeded! (${liveItems.length} real records extracted for lucacelli/${a.slug})`;
-          cloudInline.textContent = `✅ Extracted ${liveItems.length} live records! Scroll down or see Console below ↓ (Paste an Apify token for 10,000+ cloud runs)`;
-          flashConsole();
+          }, null, 2);
+          statusEl.textContent = 'Engine 2 Output: ' + liveItems.length + ' records from lucacelli/' + a.slug;
+          cloudInline.textContent = 'Extracted ' + liveItems.length + ' live records. See table below.';
         } catch (err) {
-          outEl.textContent = 'Error: ' + err.message;
-          cloudInline.textContent = '❌ Error: ' + err.message;
+          cloudInline.textContent = 'Error: ' + err.message;
         } finally {
-          btn.textContent = '🚀 Run Cloud Extraction / Preview';
+          btn.textContent = 'Run Cloud Extraction / Preview';
         }
         return;
       }
 
-      // When user provides an Apify API Token -> call live Apify Cloud endpoint
-      cloudInline.textContent = `🚀 Calling Apify Cloud (lucacelli/${a.slug}) with your API Token... (Takes ~5-15s)`;
-      statusEl.textContent = `🚀 Calling live Apify Cloud API for lucacelli/${a.slug}...`;
-      outEl.textContent = `POST https://api.apify.com/v2/acts/lucacelli~${a.slug}/run-sync-get-dataset-items\nPayload:\n` + JSON.stringify(payload, null, 2);
-      flashConsole();
-
+      cloudInline.textContent = 'Calling Apify Cloud API for lucacelli/' + a.slug + '...';
       try {
         const res = await fetch('https://api.apify.com/v2/acts/lucacelli~' + a.slug + '/run-sync-get-dataset-items?token=' + encodeURIComponent(token), {
           method: 'POST',
@@ -531,25 +1053,25 @@ linear.app</textarea>
         });
         const data = await res.json();
         latestRows = Array.isArray(data) ? data : [data];
+        renderTableRows(latestRows);
         outEl.textContent = JSON.stringify(data, null, 2);
-        statusEl.textContent = `✅ Apify Cloud Run Succeeded! (${latestRows.length} items returned from lucacelli/${a.slug})`;
-        cloudInline.textContent = `✅ Apify Cloud Run Succeeded! Returned ${latestRows.length} dataset items below ↓`;
+        statusEl.textContent = 'Apify Cloud Output: ' + latestRows.length + ' records from lucacelli/' + a.slug;
+        cloudInline.textContent = 'Apify Cloud Run Succeeded (' + latestRows.length + ' items).';
       } catch (e) {
-        outEl.textContent = 'Error: ' + e.message;
-        cloudInline.textContent = '❌ API Error: ' + e.message;
+        cloudInline.textContent = 'API Error: ' + e.message;
       } finally {
-        btn.textContent = '🚀 Run Cloud Extraction / Preview';
+        btn.textContent = 'Run Cloud Extraction / Preview';
       }
     }
 
     function copyConsoleJson() {
       navigator.clipboard.writeText(outEl.textContent);
-      statusEl.textContent = '📋 Copied JSON output to clipboard!';
+      statusEl.textContent = 'Copied JSON payload to clipboard.';
     }
 
     function exportConsoleCsv() {
       if (!latestRows.length) {
-        alert('Click "▶ Run Instant Local Scan" or "🚀 Run Cloud Extraction / Preview" first to generate rows.');
+        runDemoLocal();
         return;
       }
       const keys = Object.keys(latestRows[0] || {});
@@ -557,11 +1079,12 @@ linear.app</textarea>
       const blob = new Blob([csv], { type: 'text/csv' });
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
-      a.download = 'lucacelli-b2b-export.csv';
+      a.download = 'lucacelli-workbench-export.csv';
       a.click();
     }
 
     updateDemoActor();
+    runDemoLocal();
   </script>
 </body>
 </html>

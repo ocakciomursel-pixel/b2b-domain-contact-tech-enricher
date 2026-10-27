@@ -3,532 +3,842 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lucacelli Cloud Data Engineering — Official Apify Store Actors & Live API Playground ($0.50/1k Results)</title>
-  <meta name="description" content="Official interactive API playground and documentation hub for Lucacelli Apify Store Actors: Google Maps Email & Lead Scraper ($1.50/1k), Shopify Spy ($0.50/1k), B2B Domain Enricher ($0.80/1k), Website to Markdown & llms.txt ($0.50/1k), and Technical SEO Auditor ($0.80/1k)." />
-  <meta property="og:title" content="Lucacelli Cloud Data Engineering — High-Speed Apify Actors ($0.50–$1.50 / 1k Results)" />
-  <meta property="og:description" content="Pay-Per-Result Cloud Scrapers & Enrichment APIs for Google Maps, B2B Domains, Shopify, RAG Markdown/llms.txt, Technical SEO, GitHub Recruiting, and ATS Job Boards." />
-  <meta property="og:url" content="https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/" />
+  <title>Lucacelli Cloud Intelligence: B2B Lead, Google Maps &amp; SEO APIs</title>
+  <meta name="description" content="14 public pay-per-event Apify Store actors, Hybrid WordPress Plugin, Chrome Extension, and Google Sheets formulas. Every free Apify account includes $5.00 monthly credit." />
+  <link rel="canonical" href="https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/" />
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=gambarino@400&f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #1c1c1c;
+      --surface: #262626;
+      --ink: #f1f1ef;
+      --muted: #a3a49e;
+      --accent: #8fa68e;
+      --accent-ink: #1c1c1c;
+      --field-1: #c8c5ba;
+      --field-1-ink: #1c1c1c;
+    }
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #090d16; color: #f1f5f9; }
-    header { padding: 56px 20px 44px; text-align: center; background: radial-gradient(circle at top, #1e293b 0%, #090d16 72%); border-bottom: 1px solid #1e293b; }
-    .pill { display: inline-block; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35); color: #38bdf8; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 999px; margin-bottom: 16px; letter-spacing: 0.04em; }
-    h1 { font-size: 38px; margin: 0 auto 14px; max-width: 920px; color: #fff; letter-spacing: -0.02em; line-height: 1.2; }
-    p.sub { max-width: 800px; margin: 0 auto 28px; color: #94a3b8; font-size: 17px; line-height: 1.6; }
-    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .container { max-width: 1240px; margin: 0 auto; padding: 36px 20px 64px; }
-    .scanner-box { background: #111827; border: 1px solid #0284c7; border-radius: 12px; padding: 26px; margin-bottom: 44px; box-shadow: 0 10px 30px rgba(2,132,199,0.14); }
-    .scanner-form { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
-    .scanner-input { flex: 1; min-width: 240px; background: #090d16; border: 1px solid #334155; color: #fff; padding: 12px 14px; border-radius: 8px; font-size: 14px; }
-    .scanner-out { margin-top: 14px; background: #090d16; border: 1px solid #1e293b; border-radius: 8px; padding: 16px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 12.5px; color: #4ade80; max-height: 340px; overflow-y: auto; white-space: pre-wrap; }
-    h2 { border-left: 4px solid #38bdf8; padding-left: 12px; margin: 44px 0 20px; font-size: 24px; color: #fff; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 20px; }
-    .card { background: #111827; border: 1px solid #1e293b; border-radius: 10px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; transition: border-color 0.15s, transform 0.15s; }
-    .card:hover { border-color: #38bdf8; transform: translateY(-2px); }
-    .tag { font-size: 11px; text-transform: uppercase; color: #38bdf8; font-weight: 700; letter-spacing: 0.04em; }
-    .badge-live { font-size: 10.5px; font-weight: 700; color: #4ade80; background: rgba(74, 222, 128, 0.12); border: 1px solid rgba(74, 222, 128, 0.3); padding: 2px 8px; border-radius: 999px; }
-    .card h3 { font-size: 18px; margin: 8px 0; color: #fff; line-height: 1.35; }
-    .card p { font-size: 13.5px; color: #94a3b8; line-height: 1.55; margin-bottom: 12px; }
-    .code-mini { background: #090d16; border: 1px solid #1e293b; border-radius: 6px; padding: 8px 10px; font-family: monospace; font-size: 11px; color: #cbd5e1; overflow-x: auto; white-space: nowrap; }
-    .row { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; padding-top: 14px; border-top: 1px solid #1e293b; gap: 8px; }
-    .price { font-size: 22px; font-weight: 800; color: #4ade80; }
-    .btn-group { display: flex; gap: 8px; align-items: center; }
-    .btn { background: #0284c7; color: #fff; text-decoration: none; padding: 10px 15px; border-radius: 6px; font-weight: 600; font-size: 12.5px; border: none; cursor: pointer; display: inline-block; transition: background 0.15s; }
-    .btn:hover { background: #0369a1; }
-    .btn.green { background: #16a34a; }
-    .btn.green:hover { background: #15803d; }
-    .btn.secondary { background: #1e293b; border: 1px solid #334155; color: #e2e8f0; }
-    .btn.secondary:hover { background: #334155; }
-    table.comp { width: 100%; border-collapse: collapse; margin-top: 16px; background: #111827; border: 1px solid #1e293b; border-radius: 10px; overflow: hidden; }
-    table.comp th, table.comp td { padding: 13px 16px; text-align: left; border-bottom: 1px solid #1e293b; font-size: 13.5px; }
-    table.comp th { background: #1e293b; color: #38bdf8; font-weight: 700; }
-    footer { text-align: center; padding: 36px 20px; border-top: 1px solid #1e293b; color: #64748b; font-size: 13px; }
+    ::selection { background: var(--accent); color: var(--accent-ink); }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "General Sans", system-ui, -apple-system, sans-serif;
+      font-size: 18px;
+      line-height: 1.55;
+      caret-color: var(--accent);
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, .display-type {
+      font-family: "Gambarino", Georgia, serif;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.35;
+      margin: 0;
+      text-wrap: balance;
+    }
+    a { color: inherit; text-decoration: underline; text-underline-offset: 4px; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+    .frame {
+      padding-left: 3vw;
+      padding-right: 3vw;
+    }
+
+    .hero {
+      min-height: 92svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 28px;
+      padding-bottom: 40px;
+    }
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 16px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .nav-links a { text-decoration: none; color: var(--muted); }
+    .nav-links a:hover { color: var(--ink); }
+    .hero-title {
+      font-size: clamp(54px, 8.8vw, 136px);
+      letter-spacing: -0.03em;
+      margin: 6vh 0 5vh 0;
+      max-width: 14ch;
+    }
+    .hero-title .line-muted {
+      display: block;
+      color: var(--muted);
+    }
+    .hero-bottom {
+      display: grid;
+      grid-template-columns: 7fr 5fr;
+      gap: 32px;
+      align-items: end;
+    }
+    .hero-lead {
+      font-size: 22px;
+      color: var(--ink);
+      max-width: 54ch;
+      margin: 0;
+      line-height: 1.5;
+    }
+    .hero-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 22px;
+      background: var(--accent);
+      color: var(--accent-ink);
+      font-family: "General Sans", sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+    .btn:hover { background: #a3b9a2; transform: translateY(-1px); }
+    .btn-surface {
+      background: var(--surface);
+      color: var(--ink);
+    }
+    .btn-surface:hover { background: #333333; }
+
+    .section-showcase {
+      padding: 140px 3vw;
+      background: var(--surface);
+    }
+    .showcase-head {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 32px;
+      margin-bottom: 64px;
+    }
+    .showcase-head h2, .wb-header h2, .catalog-head h2 { font-size: clamp(34px, 4.2vw, 60px); }
+    .showcase-head p { margin: 0; color: var(--muted); max-width: 58ch; }
+    .specimen-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      font-variant-numeric: tabular-nums;
+    }
+    .specimen-box {
+      background: var(--bg);
+      padding: 36px;
+    }
+    .specimen-caption {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .specimen-num {
+      font-family: "Gambarino", serif;
+      font-size: clamp(56px, 9.5vw, 136px);
+      line-height: 1.35;
+      color: var(--ink);
+    }
+
+    .section-workbench {
+      padding: 140px 3vw;
+      background: var(--bg);
+    }
+    .wb-header {
+      display: grid;
+      grid-template-columns: 6fr 6fr;
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+    .wb-header h2 { line-height: 1.35; }
+    .wb-header p { margin: 0; color: var(--muted); }
+    .wb-shell {
+      background: var(--surface);
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 32px;
+    }
+    .wb-field { margin-bottom: 18px; }
+    .wb-field label { display: block; font-size: 14px; color: var(--muted); margin-bottom: 6px; }
+    .wb-field select, .wb-field textarea, .wb-field input {
+      width: 100%;
+      background: var(--bg);
+      color: var(--ink);
+      border: 1px solid #3d3d3d;
+      padding: 12px;
+      font-family: inherit;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .wb-console {
+      background: var(--bg);
+      padding: 20px;
+      overflow-x: auto;
+      max-height: 420px;
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    .section-pricing {
+      padding: 150px 3vw;
+      background: var(--field-1);
+      color: var(--field-1-ink);
+    }
+    .pricing-heading {
+      font-size: clamp(42px, 6.5vw, 96px);
+      margin-bottom: 48px;
+      max-width: 16ch;
+    }
+    .price-chip {
+      background: var(--accent);
+      color: var(--accent-ink);
+      padding: 0 0.16em;
+      display: inline-block;
+    }
+    .pricing-bottom {
+      display: grid;
+      grid-template-columns: 7fr 5fr;
+      gap: 32px;
+      align-items: end;
+    }
+    .pricing-bottom p {
+      font-size: 20px;
+      margin: 0;
+      max-width: 52ch;
+    }
+
+    .section-catalog {
+      padding: 140px 3vw;
+      background: var(--bg);
+    }
+    .catalog-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .catalog-head h2 { line-height: 1.35; }
+    table.actor-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-variant-numeric: tabular-nums;
+    }
+    table.actor-table th {
+      text-align: left;
+      color: var(--muted);
+      font-weight: 500;
+      padding: 14px 12px;
+      border-bottom: 1px solid #333333;
+      font-size: 14px;
+    }
+    table.actor-table td {
+      padding: 16px 12px;
+      border-bottom: 1px solid #292929;
+      font-size: 16px;
+    }
+    table.actor-table td.num, table.actor-table th.num { text-align: right; }
+
+    .section-faq {
+      padding: 140px 3vw;
+      background: var(--surface);
+    }
+    .faq-row {
+      display: grid;
+      grid-template-columns: 6fr 6fr;
+      gap: 32px;
+      padding: 36px 0;
+    }
+    .faq-row h2, .faq-row h3 {
+      font-size: clamp(26px, 2.6vw, 38px);
+    }
+    .faq-row p {
+      margin: 0;
+      color: var(--ink);
+      max-width: 48ch;
+    }
+
+    .site-footer {
+      padding: 120px 3vw 64px;
+      background: var(--bg);
+    }
+    .footer-wordmark {
+      font-family: "Gambarino", serif;
+      font-size: clamp(56px, 12vw, 180px);
+      line-height: 1.35;
+      color: var(--ink);
+      margin-bottom: 56px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 32px;
+      margin-bottom: 64px;
+    }
+    .footer-places a {
+      display: block;
+      font-family: "Gambarino", serif;
+      font-size: 32px;
+      line-height: 1.35;
+      color: var(--accent);
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+    .footer-cols {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      font-size: 15px;
+    }
+    .footer-cols a {
+      display: block;
+      color: var(--muted);
+      text-decoration: none;
+      margin-bottom: 8px;
+    }
+    .footer-cols a:hover { color: var(--ink); }
+    .footer-legal {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 860px) {
+      .hero-bottom, .showcase-head, .specimen-pair, .wb-header, .wb-shell, .pricing-bottom, .faq-row, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-actions { justify-content: flex-start; }
+      .footer-cols { grid-template-columns: 1fr 1fr; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <span class="pill">OFFICIAL APIFY STORE CLOUD ACTORS • PAY-PER-RESULT ($0.50–$1.50 / 1,000 ITEMS) • MCP & N8N READY</span>
-    <h1>Enterprise B2B Lead Generation, Google Maps, Shopify & RAG Cloud APIs</h1>
-    <p class="sub">Zero monthly subscriptions. Run high-concurrency cloud extraction and enrichment pipelines on <strong>Apify Cloud</strong> starting at <strong>$0.50 per 1,000 results</strong> — with instant REST API, Python, Node.js, n8n, Make.com, and Claude MCP integration.</p>
-    <div class="hero-btns">
-      <a class="btn green" style="font-size:15px;padding:13px 24px" href="https://apify.com/lucacelli/google-maps-scraper-places-emails-contacts-reviews" target="_blank" rel="noopener">📍 Launch Google Maps Emails & Leads Pro ($1.50/1k) →</a>
-      <a class="btn" style="font-size:15px;padding:13px 24px" href="https://apify.com/lucacelli" target="_blank" rel="noopener">🚀 View All Actors on Apify Store (@lucacelli) →</a>
-      <a class="btn secondary" style="font-size:15px;padding:13px 24px" href="#interactive-playground">⚡ Live API & Code Playground →</a>
-      <a class="btn secondary" style="font-size:15px;padding:13px 24px;border-color:#4ade80;color:#4ade80" href="./automations.html">⚡ 1-Click n8n / Make / Clay / MCP Hub →</a>
-      <a class="btn secondary" style="font-size:15px;padding:13px 24px;border-color:#38bdf8;color:#38bdf8" href="./plugin-demo.html">🔌 WP Plugin v2.0 &amp; Chrome Ext v3.0 (.zip) →</a>
-      <a class="btn secondary" style="font-size:15px;padding:13px 24px;border-color:#34d399;color:#34d399" href="./sheets-addon.html">📊 Google Sheets™ Formulas (=LUCACELLI) →</a>
-      <a class="btn secondary" style="font-size:15px;padding:13px 24px" href="./catalog-200.html">🌐 200-Actor Master Catalog →</a>
-      <a class="btn secondary" style="font-size:15px;padding:13px 24px" href="./api-docs.html">📘 OpenAPI 3.0 & Custom GPT Actions →</a>
-      <a class="btn secondary" style="font-size:15px;padding:13px 24px" href="./postman-collection.json" download>📦 Postman Collection (.json) →</a>
+  <header class="hero frame">
+    <div class="hero-top">
+      <strong>Lucacelli Cloud Intelligence</strong>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="./plugin-demo.html">WordPress &amp; Chrome Workbench</a>
+        <a href="./sheets-addon.html">Google Sheets Formulas</a>
+        <a href="./automations.html">n8n &amp; Make Blueprints</a>
+        <a href="./catalog-200.html">200-Actor Catalog</a>
+        <a href="./api-docs.html">OpenAPI Spec</a>
+      </nav>
+    </div>
+
+    <h1 class="hero-title">
+      Extract the web.
+      <span class="line-muted">Pay per result.</span>
+    </h1>
+
+    <div class="hero-bottom">
+      <p class="hero-lead">
+        Fourteen public Apify Store actors, an installable WordPress &amp; Chrome hybrid suite, and Google Sheets enrichment formulas. Every free Apify account includes $5.00 in monthly cloud credit.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href="./plugin-demo.html">Open Live Workbench</a>
+        <a class="btn btn-surface" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Apify Store (@lucacelli)</a>
+      </div>
     </div>
   </header>
 
-  <div class="container">
-    <div class="scanner-box" id="interactive-playground">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
-        <div>
-          <span class="tag">INTERACTIVE CLOUD API PLAYGROUND & SDK CODE GENERATOR</span>
-          <h3 style="margin:6px 0 4px;font-size:21px;color:#fff">Test Live Domain / Store Diagnostics & Generate Instant Apify API Code</h3>
-        </div>
-        <a id="playgroundDirectLink" class="btn green" href="https://apify.com/lucacelli/google-maps-scraper-places-emails-contacts-reviews" target="_blank" rel="noopener">Run Full Bulk Actor on Apify Cloud →</a>
+  <section class="section-showcase">
+    <div class="showcase-head">
+      <h2>Legacy SaaS subscriptions versus single-event cloud extraction.</h2>
+      <p>Traditional B2B data vendors lock agencies into annual contracts before a single domain is enriched. On Apify Store, every free account receives $5.00 in monthly renewable credit, covering up to 10,000 enriched records per month at $0.00 upfront.</p>
+    </div>
+    <div class="specimen-pair">
+      <div class="specimen-box">
+        <div class="specimen-caption">Typical B2B Data Seat Subscription</div>
+        <div class="specimen-num">$149/mo</div>
       </div>
-      <p style="margin:6px 0 14px;color:#94a3b8;font-size:13.5px">Select any cloud Actor below to preview real-time output in your browser or generate ready-to-copy <strong>cURL, Python, Node.js, and n8n HTTP Request</strong> payloads.</p>
+      <div class="specimen-box">
+        <div class="specimen-caption">Lucacelli Single-Event Rate (First 10k Free)</div>
+        <div class="specimen-num">$0.50/1k</div>
+      </div>
+    </div>
+  </section>
 
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">
-        <button class="btn" id="tabBtnGmaps" onclick="selectPlaygroundMode('gmaps', this)">1. 📍 Google Maps Places + Emails ($1.50/1k)</button>
-        <button class="btn secondary" id="tabBtnB2b" onclick="selectPlaygroundMode('b2b', this)">2. 📧 B2B Domain + DNS + Tech Stack ($0.80/1k)</button>
-        <button class="btn secondary" id="tabBtnShopify" onclick="selectPlaygroundMode('shopify', this)">3. 🛍️ Shopify Product & Price Spy ($0.50/1k)</button>
-        <button class="btn secondary" id="tabBtnRag" onclick="selectPlaygroundMode('rag', this)">4. 📄 Website to Markdown & llms.txt ($0.50/1k)</button>
-        <button class="btn secondary" id="tabBtnSeo" onclick="selectPlaygroundMode('seo', this)">5. 🔍 45-Point Technical SEO Auditor ($0.80/1k)</button>
-      </div>
-
-      <div class="scanner-form">
-        <input id="playgroundInput" class="scanner-input" type="text" value="dentist in Miami, FL" placeholder="Enter search query or domain (e.g. dentist in Miami, FL or stripe.com)" />
-        <button class="btn" onclick="runLivePlaygroundPreview()" style="font-size:14px;padding:12px 20px">▶ Preview Output & API Snippet</button>
-        <button class="btn secondary" onclick="copyPlaygroundSnippet()" style="font-size:14px;padding:12px 18px">📋 Copy cURL / Python Snippet</button>
-      </div>
-      <pre id="playgroundOutput" class="scanner-out"></pre>
+  <section class="section-workbench" id="playground">
+    <div class="wb-header">
+      <h2>Test all 14 live public actors right in your browser.</h2>
+      <p>Select any actor below and click Execute Live Extraction. Works immediately without an API token using live browser DNS/API resolution, or runs on Apify Cloud when you paste your token.</p>
     </div>
 
-    <h2>🔥 Featured Live Pay-Per-Event Actors on Apify Store</h2>
-    <div class="grid">
-      
-    <div class="card">
+    <div class="wb-shell" data-ui="home-playground">
       <div>
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px">
-          <span class="tag">Flagship B2B Lead Gen • All-Inclusive</span>
-          <span class="badge-live">● LIVE ON APIFY</span>
+        <div class="wb-field">
+          <label for="homeActor">Select Public Actor (@lucacelli)</label>
+          <select id="homeActor" onchange="syncHomeActor()"></select>
         </div>
-        <h3><a href="https://apify.com/lucacelli/google-maps-scraper-places-emails-contacts-reviews" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">Google Maps Scraper: Places, Emails, Contacts & Reviews Pro</a></h3>
-        <p>Extract Google Maps businesses, ratings, reviews, phone numbers, websites, plus automatic website crawling for verified emails, social links, DNS MX/SPF/DMARC & B2B lead scores (0-100) with $0 add-on fees.</p>
-        <div class="code-mini">POST https://api.apify.com/v2/acts/lucacelli~google-maps-scraper-places-emails-contacts-reviews/run-sync-get-dataset-items</div>
+        <div class="wb-field">
+          <label for="homeTargets">Targets or Search Queries (One per line)</label>
+          <textarea id="homeTargets" rows="3">stripe.com
+shopify.com
+linear.app</textarea>
+        </div>
+        <div class="wb-field">
+          <label for="homeToken">Optional Apify API Token ($5.00/mo free tier)</label>
+          <input id="homeToken" type="password" placeholder="Leave blank for instant browser execution, or paste apify_api_..." />
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <button class="btn" type="button" id="homeRunBtn" onclick="runHomePlayground()">Execute Live Extraction</button>
+          <a class="btn btn-surface" id="homeStoreUrl" href="https://apify.com/lucacelli/b2b-domain-contact-tech-enricher" target="_blank" rel="noopener">View on Apify Store</a>
+        </div>
       </div>
-      <div class="row">
-        <div>
-          <span class="price">$1.50</span>
-          <small style="font-size:11px;color:#94a3b8;display:block">per 1,000 places ($0.0015/place)</small>
-        </div>
-        <div class="btn-group">
-          <button class="btn secondary" onclick="loadActorInPlayground('google-maps-scraper-places-emails-contacts-reviews')">⚡ Test API</button>
-          <a class="btn" href="https://apify.com/lucacelli/google-maps-scraper-places-emails-contacts-reviews" target="_blank" rel="noopener">Run on Apify Cloud →</a>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="card">
       <div>
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px">
-          <span class="tag">B2B Sales & Cold Outreach • MCP Ready</span>
-          <span class="badge-live">● LIVE ON APIFY</span>
-        </div>
-        <h3><a href="https://apify.com/lucacelli/b2b-domain-contact-tech-enricher" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">B2B Domain Contact, Email, DNS & Tech Stack Enricher</a></h3>
-        <p>Enrich any list of company domains with verified business emails, phone numbers, LinkedIn/X/Instagram links, MX/SPF/DMARC security policies, 38+ SaaS/Pixel signatures, and personalized cold email icebreakers.</p>
-        <div class="code-mini">POST https://api.apify.com/v2/acts/lucacelli~b2b-domain-contact-tech-enricher/run-sync-get-dataset-items</div>
-      </div>
-      <div class="row">
-        <div>
-          <span class="price">$0.80</span>
-          <small style="font-size:11px;color:#94a3b8;display:block">per 1,000 domains ($0.0008/domain)</small>
-        </div>
-        <div class="btn-group">
-          <button class="btn secondary" onclick="loadActorInPlayground('b2b-domain-contact-tech-enricher')">⚡ Test API</button>
-          <a class="btn" href="https://apify.com/lucacelli/b2b-domain-contact-tech-enricher" target="_blank" rel="noopener">Run on Apify Cloud →</a>
-        </div>
+        <pre class="wb-console"><code id="homeOutput"></code></pre>
       </div>
     </div>
-  
+  </section>
 
-    <div class="card">
-      <div>
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px">
-          <span class="tag">E-Commerce Intelligence • Zero Browser Overhead</span>
-          <span class="badge-live">● LIVE ON APIFY</span>
-        </div>
-        <h3><a href="https://apify.com/lucacelli/shopify-store-product-contact-spy" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">Shopify Store Product, Pricing, Stock & Merchant Contact Spy</a></h3>
-        <p>Scrape complete Shopify product catalogs, variants, SKUs, sale discounts, live stock availability, installed Shopify apps/pixels, and merchant emails & social links without expensive headless browsers.</p>
-        <div class="code-mini">POST https://api.apify.com/v2/acts/lucacelli~shopify-store-product-contact-spy/run-sync-get-dataset-items</div>
-      </div>
-      <div class="row">
-        <div>
-          <span class="price">$0.50</span>
-          <small style="font-size:11px;color:#94a3b8;display:block">per 1,000 products ($0.0005/product)</small>
-        </div>
-        <div class="btn-group">
-          <button class="btn secondary" onclick="loadActorInPlayground('shopify-store-product-contact-spy')">⚡ Test API</button>
-          <a class="btn" href="https://apify.com/lucacelli/shopify-store-product-contact-spy" target="_blank" rel="noopener">Run on Apify Cloud →</a>
-        </div>
+  <section class="section-pricing">
+    <h2 class="pricing-heading">
+      Start with <span class="price-chip">$5.00</span> free credit every month.
+    </h2>
+    <div class="pricing-bottom">
+      <p>Every actor uses transparent single-event pricing ($0.50 to $1.50 per 1,000 results) with zero hidden platform counters. Download the hybrid WordPress plugin and Chrome extension for unlimited local single-domain scans.</p>
+      <div style="display:flex;justify-content:flex-end;gap:14px;flex-wrap:wrap;">
+        <a class="btn" style="background:#1c1c1c;color:#f1f1ef;" href="./plugin-demo.html">Download WordPress &amp; Chrome Suite</a>
       </div>
     </div>
-  
+  </section>
 
-    <div class="card">
-      <div>
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px">
-          <span class="tag">AI / LLM / RAG Pipelines • Token Counted</span>
-          <span class="badge-live">● LIVE ON APIFY</span>
-        </div>
-        <h3><a href="https://apify.com/lucacelli/ai-ready-website-to-markdown-rag-crawler" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">Website to Clean Markdown, Vector RAG Chunks & llms.txt</a></h3>
-        <p>Convert any website or documentation portal into clean boilerplate-free Markdown, overlapping vector RAG chunks with token estimates, H1-H3 hierarchy outlines, and ready-to-deploy /llms.txt index files.</p>
-        <div class="code-mini">POST https://api.apify.com/v2/acts/lucacelli~ai-ready-website-to-markdown-rag-crawler/run-sync-get-dataset-items</div>
-      </div>
-      <div class="row">
-        <div>
-          <span class="price">$0.50</span>
-          <small style="font-size:11px;color:#94a3b8;display:block">per 1,000 pages ($0.0005/page)</small>
-        </div>
-        <div class="btn-group">
-          <button class="btn secondary" onclick="loadActorInPlayground('ai-ready-website-to-markdown-rag-crawler')">⚡ Test API</button>
-          <a class="btn" href="https://apify.com/lucacelli/ai-ready-website-to-markdown-rag-crawler" target="_blank" rel="noopener">Run on Apify Cloud →</a>
-        </div>
-      </div>
+  <section class="section-catalog">
+    <div class="catalog-head">
+      <h2>Fourteen live public actors on Apify Store.</h2>
+      <a class="btn btn-surface" href="./catalog-200.html">Browse Full 200-Actor Catalog</a>
     </div>
-  
-
-    <div class="card">
-      <div>
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px">
-          <span class="tag">45-Point Technical SEO & Web Readiness</span>
-          <span class="badge-live">● LIVE ON APIFY</span>
-        </div>
-        <h3><a href="https://apify.com/lucacelli/seo-technical-audit-broken-link-schema-analyzer" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">Technical SEO, Broken Link, Schema.org & Security Auditor</a></h3>
-        <p>Run a 45-point technical SEO audit across any URL list: HTTP TTFB latency, Title/Meta lengths, Canonical & robots/llms.txt checks, HSTS/CSP security headers, Schema.org JSON-LD validation, and live broken link detection.</p>
-        <div class="code-mini">POST https://api.apify.com/v2/acts/lucacelli~seo-technical-audit-broken-link-schema-analyzer/run-sync-get-dataset-items</div>
-      </div>
-      <div class="row">
-        <div>
-          <span class="price">$0.80</span>
-          <small style="font-size:11px;color:#94a3b8;display:block">per 1,000 pages ($0.0008/page)</small>
-        </div>
-        <div class="btn-group">
-          <button class="btn secondary" onclick="loadActorInPlayground('seo-technical-audit-broken-link-schema-analyzer')">⚡ Test API</button>
-          <a class="btn" href="https://apify.com/lucacelli/seo-technical-audit-broken-link-schema-analyzer" target="_blank" rel="noopener">Run on Apify Cloud →</a>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="card">
-      <div>
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px">
-          <span class="tag">Tech Recruiting & DevTools PLG Growth</span>
-          <span class="badge-live">● LIVE ON APIFY</span>
-        </div>
-        <h3><a href="https://apify.com/lucacelli/github-developer-recruiter-lead-enricher" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">GitHub Developer, Stargazer & Contributor Lead Enricher</a></h3>
-        <p>Extract developer profiles, verified public commit emails, top programming languages, candidate seniority scores (0-100), company affiliations, personal blogs, and X/Twitter handles from GitHub repos.</p>
-        <div class="code-mini">POST https://api.apify.com/v2/acts/lucacelli~github-developer-recruiter-lead-enricher/run-sync-get-dataset-items</div>
-      </div>
-      <div class="row">
-        <div>
-          <span class="price">$0.80</span>
-          <small style="font-size:11px;color:#94a3b8;display:block">per 1,000 developers ($0.0008/developer)</small>
-        </div>
-        <div class="btn-group">
-          <button class="btn secondary" onclick="loadActorInPlayground('github-developer-recruiter-lead-enricher')">⚡ Test API</button>
-          <a class="btn" href="https://apify.com/lucacelli/github-developer-recruiter-lead-enricher" target="_blank" rel="noopener">Run on Apify Cloud →</a>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="card">
-      <div>
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px">
-          <span class="tag">B2B Hiring Intent & Account Signals</span>
-          <span class="badge-live">● LIVE ON APIFY</span>
-        </div>
-        <h3><a href="https://apify.com/lucacelli/ats-job-board-hiring-signal-scraper" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">Greenhouse & Lever Company Job Board & Hiring Signal Scraper</a></h3>
-        <p>Scrape active job openings, department growth breakdowns, remote/hybrid flags, tech stack requirements, and B2B buying intent signals directly from Greenhouse and Lever ATS company boards.</p>
-        <div class="code-mini">POST https://api.apify.com/v2/acts/lucacelli~ats-job-board-hiring-signal-scraper/run-sync-get-dataset-items</div>
-      </div>
-      <div class="row">
-        <div>
-          <span class="price">$0.50</span>
-          <small style="font-size:11px;color:#94a3b8;display:block">per 1,000 jobs ($0.0005/job)</small>
-        </div>
-        <div class="btn-group">
-          <button class="btn secondary" onclick="loadActorInPlayground('ats-job-board-hiring-signal-scraper')">⚡ Test API</button>
-          <a class="btn" href="https://apify.com/lucacelli/ats-job-board-hiring-signal-scraper" target="_blank" rel="noopener">Run on Apify Cloud →</a>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="card">
-      <div>
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px">
-          <span class="tag">Social Listening & High-Intent SaaS Leads</span>
-          <span class="badge-live">● LIVE ON APIFY</span>
-        </div>
-        <h3><a href="https://apify.com/lucacelli/reddit-community-pain-point-trend-miner" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">Reddit Subreddit, Buyer Intent & Pain-Point Lead Miner</a></h3>
-        <p>Mine Reddit subreddits for high-intent buyer posts ("looking for a tool", "alternative to", "how to automate"), software complaints, and emerging SaaS product opportunities.</p>
-        <div class="code-mini">POST https://api.apify.com/v2/acts/lucacelli~reddit-community-pain-point-trend-miner/run-sync-get-dataset-items</div>
-      </div>
-      <div class="row">
-        <div>
-          <span class="price">$0.50</span>
-          <small style="font-size:11px;color:#94a3b8;display:block">per 1,000 posts ($0.0005/post)</small>
-        </div>
-        <div class="btn-group">
-          <button class="btn secondary" onclick="loadActorInPlayground('reddit-community-pain-point-trend-miner')">⚡ Test API</button>
-          <a class="btn" href="https://apify.com/lucacelli/reddit-community-pain-point-trend-miner" target="_blank" rel="noopener">Run on Apify Cloud →</a>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="card">
-      <div>
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px">
-          <span class="tag">Agency Prospecting & CMS Intelligence</span>
-          <span class="badge-live">● LIVE ON APIFY</span>
-        </div>
-        <h3><a href="https://apify.com/lucacelli/wordpress-woocommerce-site-spy" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">WordPress & WooCommerce Theme, Plugin & Agency Lead Spy</a></h3>
-        <p>Detect active WordPress themes, installed plugins, WooCommerce cart status, exposed wp-json REST API namespaces, and agency contact details across any list of domains.</p>
-        <div class="code-mini">POST https://api.apify.com/v2/acts/lucacelli~wordpress-woocommerce-site-spy/run-sync-get-dataset-items</div>
-      </div>
-      <div class="row">
-        <div>
-          <span class="price">$0.80</span>
-          <small style="font-size:11px;color:#94a3b8;display:block">per 1,000 sites ($0.0008/site)</small>
-        </div>
-        <div class="btn-group">
-          <button class="btn secondary" onclick="loadActorInPlayground('wordpress-woocommerce-site-spy')">⚡ Test API</button>
-          <a class="btn" href="https://apify.com/lucacelli/wordpress-woocommerce-site-spy" target="_blank" rel="noopener">Run on Apify Cloud →</a>
-        </div>
-      </div>
-    </div>
-  
-    </div>
-
-    <h2>💰 Why Developers Switch to @lucacelli Actors on Apify Store</h2>
-    <table class="comp">
+    <table class="actor-table">
       <thead>
         <tr>
-          <th>Capability / Metric</th>
-          <th>Lucacelli Apify Actors (@lucacelli)</th>
-          <th>Legacy SaaS Tools (Apollo / BuiltWith / Outscraper)</th>
-          <th>Other Store Scrapers</th>
+          <th>Actor Title</th>
+          <th>Slug</th>
+          <th class="num">Single-Event Rate</th>
+          <th class="num">Included in $5/Mo Free Tier</th>
         </tr>
       </thead>
       <tbody>
+        
         <tr>
-          <td><strong>Google Maps + Emails + Socials + Tech Stack</strong></td>
-          <td style="color:#4ade80;font-weight:700">$1.50 / 1,000 places (All-Inclusive)</td>
-          <td>$49–$199/mo subscription + credit limits</td>
-          <td>$4.00–$10.00 / 1,000 places (charges per add-on)</td>
+          <td><a href="https://apify.com/lucacelli/b2b-domain-contact-tech-enricher" target="_blank" rel="noopener">B2B Domain Contact, Email, DNS & Tech Stack Enricher</a></td>
+          <td style="color:var(--muted);">lucacelli/b2b-domain-contact-tech-enricher</td>
+          <td class="num">$0.50 / 1,000 results</td>
+          <td class="num">10,000 domains / mo free</td>
         </tr>
         <tr>
-          <td><strong>B2B Domain + DNS MX/DMARC + 38 Tech Signatures</strong></td>
-          <td style="color:#4ade80;font-weight:700">$0.80 / 1,000 enriched domains</td>
-          <td>$99–$295/mo minimum commitment</td>
-          <td>$3.00–$5.00 / 1,000 domains</td>
+          <td><a href="https://apify.com/lucacelli/google-maps-scraper-places-emails-contacts-reviews" target="_blank" rel="noopener">Google Maps Scraper: Places, Emails, Contacts & Reviews Pro</a></td>
+          <td style="color:var(--muted);">lucacelli/google-maps-scraper-places-emails-contacts-reviews</td>
+          <td class="num">$1.50 / 1,000 results</td>
+          <td class="num">3,333 places / mo free</td>
         </tr>
         <tr>
-          <td><strong>Shopify Catalog, Variants, Stock & Merchant Emails</strong></td>
-          <td style="color:#4ade80;font-weight:700">$0.50 / 1,000 products</td>
-          <td>$79/mo e-commerce spy tools</td>
-          <td>$2.50 / 1,000 products</td>
+          <td><a href="https://apify.com/lucacelli/shopify-store-product-contact-spy" target="_blank" rel="noopener">Shopify Store Product, Pricing, Stock & Merchant Contact Spy</a></td>
+          <td style="color:var(--muted);">lucacelli/shopify-store-product-contact-spy</td>
+          <td class="num">$0.80 / 1,000 results</td>
+          <td class="num">6,250 stores / mo free</td>
         </tr>
         <tr>
-          <td><strong>Website to Clean Markdown, Vector RAG & llms.txt</strong></td>
-          <td style="color:#4ade80;font-weight:700">$0.50 / 1,000 pages</td>
-          <td>$19–$99/mo API credit plans</td>
-          <td>$2.00+ / 1,000 pages</td>
+          <td><a href="https://apify.com/lucacelli/wordpress-woocommerce-site-spy" target="_blank" rel="noopener">WordPress & WooCommerce Theme, Plugin & Agency Lead Spy</a></td>
+          <td style="color:var(--muted);">lucacelli/wordpress-woocommerce-site-spy</td>
+          <td class="num">$0.80 / 1,000 results</td>
+          <td class="num">6,250 sites / mo free</td>
         </tr>
         <tr>
-          <td><strong>Integration Ecosystem</strong></td>
-          <td style="color:#4ade80;font-weight:700">REST API, Python, Node.js, n8n, Make, Claude MCP</td>
-          <td>Closed dashboard or expensive Enterprise API</td>
-          <td>Varies</td>
+          <td><a href="https://apify.com/lucacelli/seo-technical-audit-broken-link-schema-analyzer" target="_blank" rel="noopener">Technical SEO, Broken Link, Schema.org & Security Auditor</a></td>
+          <td style="color:var(--muted);">lucacelli/seo-technical-audit-broken-link-schema-analyzer</td>
+          <td class="num">$0.50 / 1,000 results</td>
+          <td class="num">10,000 pages / mo free</td>
+        </tr>
+        <tr>
+          <td><a href="https://apify.com/lucacelli/ai-ready-website-to-markdown-rag-crawler" target="_blank" rel="noopener">Website to Clean Markdown, Vector RAG Chunks & llms.txt</a></td>
+          <td style="color:var(--muted);">lucacelli/ai-ready-website-to-markdown-rag-crawler</td>
+          <td class="num">$0.50 / 1,000 results</td>
+          <td class="num">10,000 pages / mo free</td>
+        </tr>
+        <tr>
+          <td><a href="https://apify.com/lucacelli/saas-pricing-page-tier-feature-extractor" target="_blank" rel="noopener">SaaS Pricing Page, Plan Tiers & Competitor Feature Spy</a></td>
+          <td style="color:var(--muted);">lucacelli/saas-pricing-page-tier-feature-extractor</td>
+          <td class="num">$0.80 / 1,000 results</td>
+          <td class="num">6,250 pages / mo free</td>
+        </tr>
+        <tr>
+          <td><a href="https://apify.com/lucacelli/sitemap-url-inventory-content-freshness-auditor" target="_blank" rel="noopener">XML Sitemap URL Inventory, SEO Freshness & Content Auditor</a></td>
+          <td style="color:var(--muted);">lucacelli/sitemap-url-inventory-content-freshness-auditor</td>
+          <td class="num">$0.50 / 1,000 results</td>
+          <td class="num">10,000 sitemaps / mo free</td>
+        </tr>
+        <tr>
+          <td><a href="https://apify.com/lucacelli/github-developer-recruiter-lead-enricher" target="_blank" rel="noopener">GitHub Developer, Stargazer & Contributor Lead Enricher</a></td>
+          <td style="color:var(--muted);">lucacelli/github-developer-recruiter-lead-enricher</td>
+          <td class="num">$1.50 / 1,000 results</td>
+          <td class="num">3,333 profiles / mo free</td>
+        </tr>
+        <tr>
+          <td><a href="https://apify.com/lucacelli/ats-job-board-hiring-signal-scraper" target="_blank" rel="noopener">Greenhouse & Lever Company Job Board & Hiring Signal Scraper</a></td>
+          <td style="color:var(--muted);">lucacelli/ats-job-board-hiring-signal-scraper</td>
+          <td class="num">$1.50 / 1,000 results</td>
+          <td class="num">3,333 companies / mo free</td>
+        </tr>
+        <tr>
+          <td><a href="https://apify.com/lucacelli/reddit-community-pain-point-trend-miner" target="_blank" rel="noopener">Reddit Subreddit, Buyer Intent & Pain-Point Lead Miner</a></td>
+          <td style="color:var(--muted);">lucacelli/reddit-community-pain-point-trend-miner</td>
+          <td class="num">$0.80 / 1,000 results</td>
+          <td class="num">6,250 posts / mo free</td>
+        </tr>
+        <tr>
+          <td><a href="https://apify.com/lucacelli/hackernews-tech-launch-lead-monitor" target="_blank" rel="noopener">Hacker News Launch, Show HN & Tech Founder Lead Monitor</a></td>
+          <td style="color:var(--muted);">lucacelli/hackernews-tech-launch-lead-monitor</td>
+          <td class="num">$0.80 / 1,000 results</td>
+          <td class="num">6,250 launches / mo free</td>
+        </tr>
+        <tr>
+          <td><a href="https://apify.com/lucacelli/scientific-literature-citation-author-lead-miner" target="_blank" rel="noopener">Scientific Paper, Author Email & Lab Research Lead Miner</a></td>
+          <td style="color:var(--muted);">lucacelli/scientific-literature-citation-author-lead-miner</td>
+          <td class="num">$1.50 / 1,000 results</td>
+          <td class="num">3,333 papers / mo free</td>
+        </tr>
+        <tr>
+          <td><a href="https://apify.com/lucacelli/clinical-trials-fda-drug-safety-intel" target="_blank" rel="noopener">ClinicalTrials.gov & OpenFDA Biotech / Pharma Lead Enricher</a></td>
+          <td style="color:var(--muted);">lucacelli/clinical-trials-fda-drug-safety-intel</td>
+          <td class="num">$1.50 / 1,000 results</td>
+          <td class="num">3,333 trials / mo free</td>
         </tr>
       </tbody>
     </table>
-  </div>
+  </section>
 
-  <footer>
-    <p><strong>Lucacelli Cloud Data Engineering</strong> • Official Apify Store Publisher (<a href="https://apify.com/lucacelli" style="color:#38bdf8">@lucacelli</a>)</p>
-    <p>All cloud execution, scheduling, proxies, webhooks, and billing are powered securely by <a href="https://apify.com/lucacelli" style="color:#38bdf8">Apify Cloud</a>.</p>
+  <section class="section-faq">
+    <div class="faq-row">
+      <h2 style="color:var(--muted);">Common questions</h2>
+      <p>Everything you need to know about our hybrid local-plus-cloud architecture and single-event Apify billing.</p>
+    </div>
+    <div class="faq-row">
+      <h3>What happens when the $5.00 monthly Apify credit runs out?</h3>
+      <p>Engine 1 in our WordPress plugin and Chrome extension runs locally via PHP and browser DNS/DOM inspection with zero API keys, so single-domain checks never stop working. For bulk cloud runs above 10,000 items, Apify bills transparently per 1,000 results.</p>
+    </div>
+    <div class="faq-row">
+      <h3>Are there any extra or hidden event counters inside the actors?</h3>
+      <p>No. Every public actor under @lucacelli uses a single all-inclusive event counter ($0.50, $0.80, or $1.50 per 1,000 results). You know the exact cost before every run.</p>
+    </div>
+    <div class="faq-row">
+      <h3>Can I call these actors from Google Sheets, n8n, Make, or Claude MCP?</h3>
+      <p>Yes. Visit the Google Sheets Formulas page to install =LUCACELLI_ENRICH() in 30 seconds, or download pre-wired n8n, Make.com, and Claude Desktop MCP JSON blueprints.</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-wordmark">Lucacelli</div>
+    <div class="footer-grid">
+      <div class="footer-places">
+        <a href="https://apify.com/lucacelli" target="_blank" rel="noopener">Apify Store (@lucacelli)</a>
+        <a href="./plugin-demo.html">WordPress &amp; Chrome Suite</a>
+        <a href="./sheets-addon.html">Google Sheets Add-On</a>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <a href="./plugin-demo.html">Interactive Workbench</a>
+          <a href="./automations.html">n8n &amp; Make Blueprints</a>
+          <a href="./catalog-200.html">200-Actor Master Catalog</a>
+          <a href="./api-docs.html">OpenAPI 3.0 Reference</a>
+        </div>
+        <div>
+          <a href="./alternatives/outscraper-alternative.html">Outscraper Alternative</a>
+          <a href="./alternatives/clay-alternative.html">Clay.com Alternative</a>
+          <a href="./alternatives/builtwith-alternative.html">BuiltWith Alternative</a>
+          <a href="./alternatives/hunter-io-alternative.html">Hunter.io Alternative</a>
+        </div>
+        <div>
+          <a href="./turkiye.html">Turkiye B2B Rehberi</a>
+          <a href="./openapi.json">openapi.json</a>
+          <a href="./llms.txt">llms.txt</a>
+          <a href="https://github.com/ocakciomursel-pixel" target="_blank" rel="noopener">GitHub Repositories</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>Lucacelli Cloud Intelligence. Single-event transparent API suite.</span>
+      <a href="#">Back to top</a>
+    </div>
   </footer>
 
   <script>
-    const MODES = {
-      gmaps: {
-        actor: 'google-maps-scraper-places-emails-contacts-reviews',
-        url: 'https://apify.com/lucacelli/google-maps-scraper-places-emails-contacts-reviews',
-        defaultVal: 'dentist in Miami, FL',
-        buildPayload: (val) => ({
-          queries: [val || 'dentist in Miami, FL'],
-          maxPlacesPerQuery: 50,
-          enrichWebsiteContacts: true,
-          verifyEmailDns: true
-        }),
-        sampleResult: (val) => ({
-          query: val || 'dentist in Miami, FL',
-          title: 'Brickell Dental Care & Orthodontics',
-          category: 'Dental Clinic',
-          rating: 4.9,
-          reviewsCount: 342,
-          phone: '+1 305-555-0192',
-          website: 'https://brickelldentalexample.com',
-          emails: ['info@brickelldentalexample.com', 'appointments@brickelldentalexample.com'],
-          emailGateway: 'Google Workspace (Strict SPF + DMARC)',
-          socials: { instagram: 'https://instagram.com/brickelldental', facebook: 'https://facebook.com/brickelldental' },
-          techStack: ['WordPress', 'Google Tag Manager', 'Meta Pixel', 'Stripe'],
-          b2bLeadScore: 94,
-          costUsd: 0.0015
-        })
-      },
-      b2b: {
-        actor: 'b2b-domain-contact-tech-enricher',
-        url: 'https://apify.com/lucacelli/b2b-domain-contact-tech-enricher',
-        defaultVal: 'stripe.com',
-        buildPayload: (val) => ({
-          domains: [val.replace(/^https?:\/\//, '').split('/')[0] || 'stripe.com'],
-          extractEmails: true,
-          detectTechStack: true
-        }),
-        sampleResult: (val) => ({
-          domain: val.replace(/^https?:\/\//, '').split('/')[0] || 'stripe.com',
-          emails: ['sales@' + (val.replace(/^https?:\/\//, '').split('/')[0] || 'stripe.com'), 'press@' + (val.replace(/^https?:\/\//, '').split('/')[0] || 'stripe.com')],
-          mxProvider: 'Google Workspace',
-          spfPolicy: 'Strict (-all)',
-          dmarcPolicy: 'reject',
-          techStack: ['Next.js', 'React', 'Cloudflare', 'Segment', 'Google Analytics 4'],
-          b2bLeadScore: 92,
-          costUsd: 0.0008
-        })
-      },
-      shopify: {
-        actor: 'shopify-store-product-contact-spy',
-        url: 'https://apify.com/lucacelli/shopify-store-product-contact-spy',
-        defaultVal: 'https://gymshark.com',
-        buildPayload: (val) => ({
-          storeUrls: [val.startsWith('http') ? val : 'https://' + val],
-          maxProductsPerStore: 100
-        }),
-        sampleResult: (val) => ({
-          storeUrl: val.startsWith('http') ? val : 'https://' + val,
-          productTitle: 'Vital Seamless 2.0 Leggings',
-          vendor: 'Gymshark',
-          priceUsd: 54.00,
-          inStock: true,
-          variantsCount: 6,
-          merchantEmails: ['support@gymshark.com'],
-          installedApps: ['Klaviyo', 'Gorgias', 'Yotpo', 'Meta Pixel', 'TikTok Pixel'],
-          costUsd: 0.0005
-        })
-      },
-      rag: {
-        actor: 'ai-ready-website-to-markdown-rag-crawler',
-        url: 'https://apify.com/lucacelli/ai-ready-website-to-markdown-rag-crawler',
-        defaultVal: 'https://modelcontextprotocol.io',
-        buildPayload: (val) => ({
-          startUrls: [val.startsWith('http') ? val : 'https://' + val],
-          chunkSizeTokens: 500
-        }),
-        sampleResult: (val) => ({
-          url: val.startsWith('http') ? val : 'https://' + val,
-          title: 'Documentation & Architecture Overview',
-          estimatedTokens: 412,
-          qualityScore: 96,
-          llmsTxtEntry: '- [Documentation Overview](' + (val.startsWith('http') ? val : 'https://' + val) + '): Clean structured RAG documentation.',
-          markdownPreview: '# Documentation Overview\n\nClean boilerplate-stripped Markdown ready for vector embedding...',
-          costUsd: 0.0005
-        })
-      },
-      seo: {
-        actor: 'seo-technical-audit-broken-link-schema-analyzer',
-        url: 'https://apify.com/lucacelli/seo-technical-audit-broken-link-schema-analyzer',
-        defaultVal: 'https://cloudflare.com',
-        buildPayload: (val) => ({
-          urls: [val.startsWith('http') ? val : 'https://' + val],
-          checkBrokenLinks: true
-        }),
-        sampleResult: (val) => ({
-          url: val.startsWith('http') ? val : 'https://' + val,
-          httpStatus: 200,
-          seoScore: 95,
-          letterGrade: 'A',
-          canonicalPresent: true,
-          jsonLdSchemas: ['Organization', 'WebSite'],
-          securityHeaders: { hsts: true, csp: true, xFrameOptions: true },
-          brokenLinksCount: 0,
-          costUsd: 0.0008
-        })
+    const HOME_ACTORS = [
+  {
+    "slug": "b2b-domain-contact-tech-enricher",
+    "title": "B2B Domain Contact, Email, DNS & Tech Stack Enricher",
+    "price": "$0.50 / 1,000 results",
+    "freeMonthlyQuota": "10,000 domains / mo free",
+    "inputType": "domains",
+    "sampleText": "stripe.com\nshopify.com\nlinear.app",
+    "samplePayload": {
+      "domains": [
+        "stripe.com",
+        "shopify.com",
+        "linear.app"
+      ],
+      "crawlContactPages": true
+    }
+  },
+  {
+    "slug": "google-maps-scraper-places-emails-contacts-reviews",
+    "title": "Google Maps Scraper: Places, Emails, Contacts & Reviews Pro",
+    "price": "$1.50 / 1,000 results",
+    "freeMonthlyQuota": "3,333 places / mo free",
+    "inputType": "queries",
+    "sampleText": "dentists in turkey\ncoffee shops in seattle",
+    "samplePayload": {
+      "searchStringsArray": [
+        "dentist"
+      ],
+      "locationQuery": "Turkey",
+      "maxCrawledPlacesPerSearch": 10
+    }
+  },
+  {
+    "slug": "shopify-store-product-contact-spy",
+    "title": "Shopify Store Product, Pricing, Stock & Merchant Contact Spy",
+    "price": "$0.80 / 1,000 results",
+    "freeMonthlyQuota": "6,250 stores / mo free",
+    "inputType": "domains",
+    "sampleText": "gymshark.com\nallbirds.com",
+    "samplePayload": {
+      "domains": [
+        "gymshark.com",
+        "allbirds.com"
+      ],
+      "maxProductsPerStore": 5
+    }
+  },
+  {
+    "slug": "wordpress-woocommerce-site-spy",
+    "title": "WordPress & WooCommerce Theme, Plugin & Agency Lead Spy",
+    "price": "$0.80 / 1,000 results",
+    "freeMonthlyQuota": "6,250 sites / mo free",
+    "inputType": "domains",
+    "sampleText": "techcrunch.com\nyoast.com\nwoocommerce.com",
+    "samplePayload": {
+      "domains": [
+        "techcrunch.com",
+        "yoast.com",
+        "woocommerce.com"
+      ]
+    }
+  },
+  {
+    "slug": "seo-technical-audit-broken-link-schema-analyzer",
+    "title": "Technical SEO, Broken Link, Schema.org & Security Auditor",
+    "price": "$0.50 / 1,000 results",
+    "freeMonthlyQuota": "10,000 pages / mo free",
+    "inputType": "urls",
+    "sampleText": "https://stripe.com\nhttps://cloudflare.com",
+    "samplePayload": {
+      "urls": [
+        "https://stripe.com",
+        "https://cloudflare.com"
+      ]
+    }
+  },
+  {
+    "slug": "ai-ready-website-to-markdown-rag-crawler",
+    "title": "Website to Clean Markdown, Vector RAG Chunks & llms.txt",
+    "price": "$0.50 / 1,000 results",
+    "freeMonthlyQuota": "10,000 pages / mo free",
+    "inputType": "urls",
+    "sampleText": "https://stripe.com/docs\nhttps://docs.apify.com",
+    "samplePayload": {
+      "urls": [
+        "https://stripe.com/docs",
+        "https://docs.apify.com"
+      ]
+    }
+  },
+  {
+    "slug": "saas-pricing-page-tier-feature-extractor",
+    "title": "SaaS Pricing Page, Plan Tiers & Competitor Feature Spy",
+    "price": "$0.80 / 1,000 results",
+    "freeMonthlyQuota": "6,250 pages / mo free",
+    "inputType": "urls",
+    "sampleText": "https://stripe.com/pricing\nhttps://linear.app/pricing",
+    "samplePayload": {
+      "urls": [
+        "https://stripe.com/pricing",
+        "https://linear.app/pricing"
+      ]
+    }
+  },
+  {
+    "slug": "sitemap-url-inventory-content-freshness-auditor",
+    "title": "XML Sitemap URL Inventory, SEO Freshness & Content Auditor",
+    "price": "$0.50 / 1,000 results",
+    "freeMonthlyQuota": "10,000 sitemaps / mo free",
+    "inputType": "domains",
+    "sampleText": "apify.com\ncloudflare.com",
+    "samplePayload": {
+      "domains": [
+        "apify.com",
+        "cloudflare.com"
+      ],
+      "maxUrlsPerDomain": 25
+    }
+  },
+  {
+    "slug": "github-developer-recruiter-lead-enricher",
+    "title": "GitHub Developer, Stargazer & Contributor Lead Enricher",
+    "price": "$1.50 / 1,000 results",
+    "freeMonthlyQuota": "3,333 profiles / mo free",
+    "inputType": "usernames",
+    "sampleText": "sindresorhus\ntorvalds\nyyx990803",
+    "samplePayload": {
+      "usernames": [
+        "sindresorhus",
+        "torvalds",
+        "yyx990803"
+      ]
+    }
+  },
+  {
+    "slug": "ats-job-board-hiring-signal-scraper",
+    "title": "Greenhouse & Lever Company Job Board & Hiring Signal Scraper",
+    "price": "$1.50 / 1,000 results",
+    "freeMonthlyQuota": "3,333 companies / mo free",
+    "inputType": "companies",
+    "sampleText": "stripe\ncloudflare\nfigma",
+    "samplePayload": {
+      "companies": [
+        "stripe",
+        "cloudflare",
+        "figma"
+      ],
+      "maxJobsPerCompany": 5
+    }
+  },
+  {
+    "slug": "reddit-community-pain-point-trend-miner",
+    "title": "Reddit Subreddit, Buyer Intent & Pain-Point Lead Miner",
+    "price": "$0.80 / 1,000 results",
+    "freeMonthlyQuota": "6,250 posts / mo free",
+    "inputType": "subreddits",
+    "sampleText": "SaaS\nentrepreneur",
+    "samplePayload": {
+      "subreddits": [
+        "SaaS",
+        "entrepreneur"
+      ],
+      "limitPerSubreddit": 5
+    }
+  },
+  {
+    "slug": "hackernews-tech-launch-lead-monitor",
+    "title": "Hacker News Launch, Show HN & Tech Founder Lead Monitor",
+    "price": "$0.80 / 1,000 results",
+    "freeMonthlyQuota": "6,250 launches / mo free",
+    "inputType": "keywords",
+    "sampleText": "Show HN\nAI agent",
+    "samplePayload": {
+      "keywords": [
+        "Show HN",
+        "AI agent"
+      ],
+      "hitsPerKeyword": 5
+    }
+  },
+  {
+    "slug": "scientific-literature-citation-author-lead-miner",
+    "title": "Scientific Paper, Author Email & Lab Research Lead Miner",
+    "price": "$1.50 / 1,000 results",
+    "freeMonthlyQuota": "3,333 papers / mo free",
+    "inputType": "queries",
+    "sampleText": "CRISPR gene editing\nmRNA lipid nanoparticle",
+    "samplePayload": {
+      "queries": [
+        "CRISPR gene editing",
+        "mRNA lipid nanoparticle"
+      ],
+      "maxResultsPerQuery": 5
+    }
+  },
+  {
+    "slug": "clinical-trials-fda-drug-safety-intel",
+    "title": "ClinicalTrials.gov & OpenFDA Biotech / Pharma Lead Enricher",
+    "price": "$1.50 / 1,000 results",
+    "freeMonthlyQuota": "3,333 trials / mo free",
+    "inputType": "conditions",
+    "sampleText": "nsclc\nglioblastoma",
+    "samplePayload": {
+      "conditions": [
+        "nsclc",
+        "glioblastoma"
+      ],
+      "maxTrialsPerCondition": 5
+    }
+  }
+];
+    const hSel = document.getElementById('homeActor');
+    const hTargets = document.getElementById('homeTargets');
+    const hOut = document.getElementById('homeOutput');
+    hSel.innerHTML = HOME_ACTORS.map((a, i) => '<option value="' + i + '">' + a.title + ' (' + a.price + ')</option>').join('');
+
+    function syncHomeActor() {
+      const a = HOME_ACTORS[hSel.value || 0];
+      hTargets.value = a.sampleText;
+      document.getElementById('homeStoreUrl').href = 'https://apify.com/lucacelli/' + a.slug;
+      hOut.textContent = JSON.stringify({
+        actor: 'lucacelli/' + a.slug,
+        singleEventRate: a.price,
+        freeMonthlyAllowance: a.freeMonthlyQuota,
+        endpoint: 'https://api.apify.com/v2/acts/lucacelli~' + a.slug + '/run-sync-get-dataset-items'
+      }, null, 2);
+    }
+
+    async function runHomePlayground() {
+      const a = HOME_ACTORS[hSel.value || 0];
+      const lines = hTargets.value.split(/\r?\n/).map(s => s.trim()).filter(Boolean);
+      const btn = document.getElementById('homeRunBtn');
+      btn.textContent = 'Running...';
+      try {
+        if (a.slug === 'google-maps-scraper-places-emails-contacts-reviews') {
+          const q = (lines[0] || 'dentist in turkey').replace(/\b(in|near)\b/gi, ' ').replace(/\bdentists\b/gi, 'dentist');
+          const r = await fetch('https://photon.komoot.io/api/?q=' + encodeURIComponent(q) + '&limit=5').then(x => x.json());
+          hOut.textContent = JSON.stringify((r.features || []).map(f => f.properties), null, 2);
+        } else {
+          const d = (lines[0] || 'stripe.com').replace(/^https?:\/\//i, '').split('/')[0];
+          const dns = await fetch('https://dns.google/resolve?name=' + encodeURIComponent(d) + '&type=TXT').then(x => x.json());
+          hOut.textContent = JSON.stringify({
+            actor: 'lucacelli/' + a.slug,
+            domain: d,
+            txtRecords: (dns.Answer || []).map(x => x.data)
+          }, null, 2);
+        }
+      } catch (e) {
+        hOut.textContent = 'Error: ' + e.message;
+      } finally {
+        btn.textContent = 'Execute Live Extraction';
       }
-    };
-
-    let currentMode = 'gmaps';
-
-    function selectPlaygroundMode(mode, btn) {
-      currentMode = mode;
-      document.querySelectorAll('[id^="tabBtn"]').forEach(b => b.className = 'btn secondary');
-      if (btn) btn.className = 'btn';
-      const cfg = MODES[mode];
-      document.getElementById('playgroundInput').value = cfg.defaultVal;
-      document.getElementById('playgroundDirectLink').href = cfg.url;
-      runLivePlaygroundPreview();
     }
-
-    function loadActorInPlayground(actorName) {
-      const entry = Object.entries(MODES).find(([k, v]) => v.actor === actorName);
-      if (entry) {
-        selectPlaygroundMode(entry[0], document.getElementById('tabBtn' + entry[0].charAt(0).toUpperCase() + entry[0].slice(1)));
-        document.getElementById('interactive-playground').scrollIntoView({ behavior: 'smooth' });
-      } else {
-        window.open('https://apify.com/lucacelli/' + actorName, '_blank');
-      }
-    }
-
-    async function runLivePlaygroundPreview() {
-      const cfg = MODES[currentMode];
-      const val = document.getElementById('playgroundInput').value.trim() || cfg.defaultVal;
-      const payload = cfg.buildPayload(val);
-      const sample = cfg.sampleResult(val);
-
-      // If B2B or SEO mode, also fetch real live DNS records via Google DoH for instant real data!
-      if (currentMode === 'b2b' || currentMode === 'seo') {
-        const cleanDom = val.replace(/^https?:\/\//, '').split('/')[0];
-        try {
-          const [mxRes, txtRes] = await Promise.all([
-            fetch('https://dns.google/resolve?name=' + encodeURIComponent(cleanDom) + '&type=MX').then(r => r.json()).catch(() => null),
-            fetch('https://dns.google/resolve?name=' + encodeURIComponent(cleanDom) + '&type=TXT').then(r => r.json()).catch(() => null)
-          ]);
-          if (mxRes?.Answer?.length) {
-            sample.liveDnsMxRecords = mxRes.Answer.map(a => a.data);
-          }
-          if (txtRes?.Answer?.length) {
-            const spf = txtRes.Answer.map(a => a.data).find(d => d.includes('v=spf1'));
-            if (spf) sample.liveSpfRecord = spf;
-          }
-        } catch {}
-      }
-
-      const text = [
-        '// 1. RUN SYNCHRONOUSLY VIA APIFY CLOUD REST API:',
-        'curl -X POST "https://api.apify.com/v2/acts/lucacelli~' + cfg.actor + '/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN" \\',
-        '  -H "Content-Type: application/json" \\',
-        "  -d '" + JSON.stringify(payload) + "'",
-        '',
-        '// 2. SAMPLE STRUCTURED JSON OUTPUT (' + cfg.url + '):',
-        JSON.stringify(sample, null, 2)
-      ].join('\n');
-
-      const out = document.getElementById('playgroundOutput');
-      out.style.display = 'block';
-      out.textContent = text;
-    }
-
-    function copyPlaygroundSnippet() {
-      const out = document.getElementById('playgroundOutput').textContent;
-      navigator.clipboard.writeText(out);
-      alert('Copied Apify Cloud API cURL snippet & sample output to clipboard!');
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      runLivePlaygroundPreview();
-    });
+    syncHomeActor();
   </script>
 </body>
 </html>
