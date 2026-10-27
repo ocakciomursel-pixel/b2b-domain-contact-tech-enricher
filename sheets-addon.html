@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google Sheets™ B2B Enrichment & Google Maps Formulas (=LUCACELLI_ENRICH) | Clay.com Alternative</title>
+  <meta name="description" content="Turn Google Sheets into a Clay.com & Apollo alternative using =LUCACELLI_ENRICH(), =LUCACELLI_GMAPS(), =LUCACELLI_SHOPIFY(), and =LUCACELLI_SEO(). Powered by $5/month free Apify Cloud credit." />
+  <link rel="canonical" href="https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/sheets-addon.html" />
+  <style>
+    :root { --bg:#070a12; --card:#0f172a; --border:#1e293b; --emerald:#10b981; --indigo:#6366f1; --text:#f8fafc; --muted:#94a3b8; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+    .container { max-width:1180px; margin:0 auto; padding:28px 20px 80px; }
+    .nav { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; padding-bottom:20px; border-bottom:1px solid var(--border); }
+    .nav a { color:#38bdf8; text-decoration:none; font-weight:700; font-size:14px; }
+    .hero { text-align:center; padding:40px 16px 26px; }
+    .badge { display:inline-block; background:rgba(16,185,129,0.15); color:#34d399; border:1px solid rgba(16,185,129,0.4); padding:6px 16px; border-radius:999px; font-size:12px; font-weight:800; margin-bottom:14px; }
+    h1 { font-size:clamp(26px,4vw,42px); font-weight:900; margin:0 0 14px; }
+    .sub { color:var(--muted); max-width:820px; margin:0 auto 24px; font-size:17px; }
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 22px; border-radius:10px; font-weight:800; font-size:14px; text-decoration:none; cursor:pointer; border:none; }
+    .btn-green { background:linear-gradient(135deg,#10b981,#059669); color:#042f2e; }
+    .btn-indigo { background:linear-gradient(135deg,#6366f1,#4f46e5); color:#fff; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:18px; margin:26px 0; }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:22px; }
+    code.formula { display:block; background:#020617; color:#34d399; padding:10px 12px; border-radius:8px; font-family:monospace; font-size:13px; margin:8px 0; border:1px solid #1e293b; }
+    pre { background:#020617; color:#a7f3d0; padding:16px; border-radius:10px; border:1px solid #1e293b; overflow:auto; max-height:420px; font-size:12px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="nav">
+      <a href="./index.html">← Interactive API Playground</a>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <a href="./plugin-demo.html">🔌 WP Plugin &amp; Chrome Ext v3.0 (.ZIP)</a>
+        <a href="./automations.html">⚡ n8n / Make / Clay Blueprints</a>
+        <a href="https://apify.com/lucacelli" target="_blank" style="color:#34d399;">🚀 Apify Store (@lucacelli) ↗</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="badge">📊 CLAY.COM ALTERNATIVE IN GOOGLE SHEETS™ — $5.00/MO FREE CLOUD CREDIT INCLUDED</div>
+      <h1>Google Sheets™ B2B Enrichment &amp; Google Maps Custom Formulas</h1>
+      <p class="sub">
+        Why pay $149–$800/month for Clay.com? Install our free 1-file Google Apps Script in 30 seconds and run <code>=LUCACELLI_ENRICH(A2)</code>, <code>=LUCACELLI_GMAPS("dentists in Austin", 10)</code>, and <code>=LUCACELLI_SHOPIFY(A2)</code> across hundreds of rows using your renewable <strong>$5.00/month free Apify Cloud credit</strong>.
+      </p>
+      <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
+        <a href="./downloads/lucacelli-google-sheets-addon.gs" download class="btn btn-green">⬇️ Download Google Sheets Script (.GS)</a>
+        <button onclick="copyGsCode()" class="btn btn-indigo" id="copyGsBtn">📋 Copy Apps Script Code (1-Click)</button>
+        <a href="https://console.apify.com/settings/integrations" target="_blank" class="btn" style="background:#1e293b;color:#f8fafc;border:1px solid #334155;">🔑 Get Free $5/Mo Apify Token ↗</a>
+      </div>
+    </section>
+
+    <div class="grid">
+      <div class="card">
+        <h3 style="margin-top:0;color:#34d399;">1. Domain Contact &amp; Tech Enricher</h3>
+        <code class="formula">=LUCACELLI_ENRICH(A2)</code>
+        <p style="color:var(--muted);font-size:13.5px;margin:0;">Returns Emails, Phone Numbers, Detected SaaS Tech Stack, SPF Status &amp; Page Title for any domain cell ($0.50/1k — 10,000 domains/mo FREE).</p>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0;color:#38bdf8;">2. Google Maps Lead Table Generator</h3>
+        <code class="formula">=LUCACELLI_GMAPS("dentists in Miami", 10)</code>
+        <p style="color:var(--muted);font-size:13.5px;margin:0;">Populates an entire multi-row table of Business Name, Phone, Email/Website, Rating &amp; Address right inside Google Sheets ($1.50/1k).</p>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0;color:#a5b4fc;">3. Shopify &amp; WordPress Spy Formulas</h3>
+        <code class="formula">=LUCACELLI_SHOPIFY(A2)</code>
+        <code class="formula">=LUCACELLI_WP_SPY(A2)</code>
+        <p style="color:var(--muted);font-size:13.5px;margin:0;">Detects Shopify product counts, average prices, WordPress themes, active plugins &amp; WooCommerce signals ($0.80/1k).</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0;">⚡ 30-Second Installation in Google Sheets™</h2>
+      <ol style="color:#cbd5e1;font-size:14px;">
+        <li>Open any Google Sheet and click <strong>Extensions → Apps Script</strong>.</li>
+        <li>Paste the code below into <code>Code.gs</code> and press <strong>Ctrl+S (Save)</strong>.</li>
+        <li>Refresh your Google Sheet, click <strong>⚡ Lucacelli B2B Cloud → 🔑 Set Free Apify API Token</strong>, and paste your <code>apify_api_...</code> token.</li>
+        <li>Type <code>=LUCACELLI_ENRICH("stripe.com")</code> in any cell and drag down across 100+ rows!</li>
+      </ol>
+      <pre id="gsCodeBlock">/**
+ * ============================================================================
+ * LUCACELLI B2B CLOUD — GOOGLE SHEETS™ CUSTOM FORMULAS &amp; SIDEBAR ADD-ON
+ * ============================================================================
+ * Powered by https://apify.com/lucacelli (Includes $5.00/Month Free Apify Credit)
+ * Transparent Single-Event Pricing ($0.50 - $1.50 per 1,000 results).
+ *
+ * HOW TO INSTALL IN 30 SECONDS:
+ * 1. Open any Google Sheet -&gt; Extensions -&gt; Apps Script.
+ * 2. Paste this entire file into Code.gs and click Save (Ctrl+S).
+ * 3. Reload your Google Sheet -&gt; Click "⚡ Lucacelli B2B Cloud" -&gt; "Set Apify API Token".
+ * 4. Use formulas in any cell:
+ *    =LUCACELLI_ENRICH("stripe.com")
+ *    =LUCACELLI_SEO("https://stripe.com")
+ *    =LUCACELLI_WP_SPY("techcrunch.com")
+ *    =LUCACELLI_SHOPIFY("gymshark.com")
+ *    =LUCACELLI_GMAPS("dentists in Austin TX", 5)
+ */
+
+function onOpen() {
+  SpreadsheetApp.getUi()
+    .createMenu('⚡ Lucacelli B2B Cloud')
+    .addItem('🔑 Set Free Apify API Token ($5/Mo Credit)', 'setLucacelliApiToken')
+    .addItem('🚀 Enrich Selected Domain Cells', 'enrichSelectedRows')
+    .addSeparator()
+    .addItem('🌐 Open @lucacelli Apify Store (14 Live Actors)', 'openStoreInfo')
+    .addToUi();
+}
+
+function setLucacelliApiToken() {
+  var ui = SpreadsheetApp.getUi();
+  var res = ui.prompt(
+    'Lucacelli B2B Cloud — Set Apify API Token',
+    'Paste your Apify API token (apify_api_...). Every free Apify account includes $5.00/month in renewable credit (https://console.apify.com/settings/integrations):',
+    ui.ButtonSet.OK_CANCEL
+  );
+  if (res.getSelectedButton() === ui.Button.OK) {
+    PropertiesService.getUserProperties().setProperty('LUCACELLI_APIFY_TOKEN', res.getResponseText().trim());
+    ui.alert('✅ Apify Token saved! You can now use =LUCACELLI_ENRICH(A2), =LUCACELLI_GMAPS(), =LUCACELLI_SEO(), etc.');
+  }
+}
+
+function openStoreInfo() {
+  SpreadsheetApp.getUi().alert('Visit https://apify.com/lucacelli to view all 14 Public B2B &amp; AI Actors.');
+}
+
+function callLucacelliActor_(actorSlug, payload, tokenOverride) {
+  var token = tokenOverride || PropertiesService.getUserProperties().getProperty('LUCACELLI_APIFY_TOKEN');
+  if (!token) {
+    return [['ERROR: Click "⚡ Lucacelli B2B Cloud -&gt; Set Free Apify API Token" or pass token as 2nd parameter']];
+  }
+  var url = 'https://api.apify.com/v2/acts/lucacelli~' + encodeURIComponent(actorSlug) + '/run-sync-get-dataset-items?token=' + encodeURIComponent(token);
+  var res = UrlFetchApp.fetch(url, {
+    method: 'post',
+    contentType: 'application/json',
+    payload: JSON.stringify(payload),
+    muteHttpExceptions: true
+  });
+  return JSON.parse(res.getContentText());
+}
+
+/**
+ * Enriches a domain with Emails, Phones, Social Profiles, SPF &amp; Tech Stack ($0.50/1k).
+ * @param {string} domain The domain to enrich (e.g. "stripe.com").
+ * @param {string} apiToken Optional Apify API token override.
+ * @return Horizontal row: [Emails, Phones, Tech Stack, SPF Status, Title]
+ * @customfunction
+ */
+function LUCACELLI_ENRICH(domain, apiToken) {
+  if (!domain) return '';
+  var clean = String(domain).replace(/^https?:\/\//i, '').split('/')[0].trim();
+  var items = callLucacelliActor_('b2b-domain-contact-tech-enricher', { domains: [clean] }, apiToken);
+  if (!Array.isArray(items) || !items.length || !items[0].domain) return items;
+  var r = items[0];
+  return [[
+    (r.emails || []).join(', '),
+    (r.phones || []).join(', '),
+    (r.technologies || r.techStack || []).join(', '),
+    r.hasSpf ? 'SPF Valid' : 'No SPF',
+    r.title || ''
+  ]];
+}
+
+/**
+ * Audits a URL for Technical SEO, Broken Links, Schema.org &amp; Security Headers ($0.50/1k).
+ * @param {string} url The webpage URL (e.g. "https://stripe.com").
+ * @param {string} apiToken Optional Apify API token override.
+ * @return Horizontal row: [SEO Score/Status, Title, Word Count, Schema Types, Broken Links]
+ * @customfunction
+ */
+function LUCACELLI_SEO(url, apiToken) {
+  if (!url) return '';
+  var clean = String(url).trim();
+  if (clean.indexOf('http') !== 0) clean = 'https://' + clean;
+  var items = callLucacelliActor_('seo-technical-audit-broken-link-schema-analyzer', { urls: [clean] }, apiToken);
+  if (!Array.isArray(items) || !items.length) return items;
+  var r = items[0];
+  return [[
+    r.seoScore || r.statusCode || 200,
+    r.title || '',
+    r.wordCount || 0,
+    (r.schemaTypes || []).join(', '),
+    r.brokenLinksCount || 0
+  ]];
+}
+
+/**
+ * Detects WordPress Themes, Plugins &amp; WooCommerce Store Signals ($0.80/1k).
+ * @param {string} domain Domain to inspect (e.g. "techcrunch.com").
+ * @param {string} apiToken Optional Apify API token override.
+ * @return Horizontal row: [Is WordPress, Theme, Detected Plugins, Is WooCommerce]
+ * @customfunction
+ */
+function LUCACELLI_WP_SPY(domain, apiToken) {
+  if (!domain) return '';
+  var clean = String(domain).replace(/^https?:\/\//i, '').split('/')[0].trim();
+  var items = callLucacelliActor_('wordpress-woocommerce-site-spy', { domains: [clean] }, apiToken);
+  if (!Array.isArray(items) || !items.length) return items;
+  var r = items[0];
+  return [[
+    Boolean(r.isWordPress),
+    r.themeName || r.theme || 'N/A',
+    (r.plugins || []).join(', '),
+    Boolean(r.isWooCommerce)
+  ]];
+}
+
+/**
+ * Extracts Shopify Store Products, Prices, Stock &amp; Merchant Contacts ($0.80/1k).
+ * @param {string} domain Shopify store domain (e.g. "gymshark.com").
+ * @param {string} apiToken Optional Apify API token override.
+ * @return Horizontal row: [Store Title, Product Count, Average Price, Sample Products]
+ * @customfunction
+ */
+function LUCACELLI_SHOPIFY(domain, apiToken) {
+  if (!domain) return '';
+  var clean = String(domain).replace(/^https?:\/\//i, '').split('/')[0].trim();
+  var items = callLucacelliActor_('shopify-store-product-contact-spy', { domains: [clean], maxProductsPerStore: 5 }, apiToken);
+  if (!Array.isArray(items) || !items.length) return items;
+  var r = items[0];
+  return [[
+    r.storeName || r.domain || clean,
+    r.productCount || items.length,
+    r.averagePrice || r.price || '',
+    r.title || (r.products ? r.products.map(function(p){return p.title;}).join('; ') : '')
+  ]];
+}
+
+/**
+ * Scrapes Google Maps Places, Emails, Phone Numbers &amp; Reviews directly into rows ($1.50/1k).
+ * @param {string} query Search query (e.g. "dentists in Austin TX").
+ * @param {number} maxResults Number of leads to return (default 5).
+ * @param {string} apiToken Optional Apify API token override.
+ * @return Multi-row table of [Title, Phone, Email/Website, Rating, Address]
+ * @customfunction
+ */
+function LUCACELLI_GMAPS(query, maxResults, apiToken) {
+  if (!query) return '';
+  var items = callLucacelliActor_('google-maps-scraper-places-emails-contacts-reviews', {
+    queries: [String(query)],
+    maxResultsPerQuery: Number(maxResults) || 5
+  }, apiToken);
+  if (!Array.isArray(items) || !items.length) return items;
+  var rows = [['Business Name', 'Phone', 'Website / Email', 'Rating', 'Address']];
+  for (var i = 0; i &lt; items.length; i++) {
+    var x = items[i];
+    rows.push([
+      x.title || x.name || '',
+      x.phone || '',
+      (x.emails &amp;&amp; x.emails.length ? x.emails.join(', ') : (x.website || '')),
+      x.rating || x.totalScore || '',
+      x.address || ''
+    ]);
+  }
+  return rows;
+}
+
+function enrichSelectedRows() {
+  var sheet = SpreadsheetApp.getActiveSheet();
+  var range = sheet.getActiveRange();
+  var values = range.getValues();
+  var domains = [];
+  for (var i = 0; i &lt; values.length; i++) {
+    if (values[i][0]) domains.push(String(values[i][0]).replace(/^https?:\/\//i, '').split('/')[0].trim());
+  }
+  if (!domains.length) return;
+  var items = callLucacelliActor_('b2b-domain-contact-tech-enricher', { domains: domains });
+  if (!Array.isArray(items)) return;
+  var startRow = range.getRow();
+  var startCol = range.getColumn() + 1;
+  for (var j = 0; j &lt; items.length; j++) {
+    var r = items[j];
+    sheet.getRange(startRow + j, startCol, 1, 4).setValues([[
+      (r.emails || []).join(', '),
+      (r.phones || []).join(', '),
+      (r.technologies || r.techStack || []).join(', '),
+      r.hasSpf ? 'SPF Valid' : 'No SPF'
+    ]]);
+  }
+}
+</pre>
+    </div>
+  </div>
+  <script>
+    function copyGsCode() {
+      const code = document.getElementById('gsCodeBlock').innerText;
+      navigator.clipboard.writeText(code);
+      const btn = document.getElementById('copyGsBtn');
+      btn.textContent = '✅ Copied Apps Script to Clipboard!';
+      setTimeout(() => { btn.textContent = '📋 Copy Apps Script Code (1-Click)'; }, 2000);
+    }
+  </script>
+</body>
+</html>

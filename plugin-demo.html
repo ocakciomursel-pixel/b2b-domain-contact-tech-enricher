@@ -78,7 +78,202 @@
   </div>
 
   <script>
-    const ACTORS = [{"slug":"google-maps-scraper-places-emails-contacts-reviews","title":"Google Maps Places, Emails & Reviews Pro","price":"$1.50 / 1,000 places","freeMonthlyQuota":"3,333 places/mo free","defaultPayload":{"searchQueries":["dentist in Miami FL","medspa in Austin TX"],"maxPlacesPerQuery":20,"enrichWebsiteData":true}},{"slug":"b2b-domain-contact-tech-enricher","title":"B2B Domain Contact, Email, DNS & Tech Enricher","price":"$0.80 / 1,000 domains","freeMonthlyQuota":"6,250 domains/mo free","defaultPayload":{"domains":["stripe.com","shopify.com","hubspot.com","linear.app","vercel.com"],"crawlContactPages":true}},{"slug":"shopify-store-product-contact-spy","title":"Shopify Store Product, Pricing & Merchant Spy","price":"$0.50 / 1,000 products","freeMonthlyQuota":"10,000 products/mo free","defaultPayload":{"stores":["gymshark.com","allbirds.com"],"maxProductsPerStore":25,"extractMerchantContacts":true}},{"slug":"ai-ready-website-to-markdown-rag-crawler","title":"Website to Clean Markdown, RAG Chunks & llms.txt","price":"$0.50 / 1,000 pages","freeMonthlyQuota":"10,000 pages/mo free","defaultPayload":{"urls":["https://docs.apify.com/platform/actors","https://crawlee.dev/docs/quick-start"],"chunkSizeTokens":500}},{"slug":"seo-technical-audit-broken-link-schema-analyzer","title":"45-Point Technical SEO, Broken Link & Schema Auditor","price":"$0.80 / 1,000 pages","freeMonthlyQuota":"6,250 pages/mo free","defaultPayload":{"urls":["https://apify.com","https://stripe.com","https://shopify.com"],"checkBrokenLinks":true}},{"slug":"github-developer-recruiter-lead-enricher","title":"GitHub Developer, Stargazer & Commit Email Enricher","price":"$0.80 / 1,000 developers","freeMonthlyQuota":"6,250 devs/mo free","defaultPayload":{"repositories":["apify/crawlee","n8n-io/n8n"],"maxDevelopersPerRepo":10}},{"slug":"ats-job-board-hiring-signal-scraper","title":"Greenhouse & Lever ATS Job & Hiring Signal Scraper","price":"$0.50 / 1,000 jobs","freeMonthlyQuota":"10,000 jobs/mo free","defaultPayload":{"greenhouseBoards":["stripe","cloudflare","vercel"],"maxJobsPerCompany":25}},{"slug":"reddit-community-pain-point-trend-miner","title":"Reddit Subreddit, Buyer Intent & Pain-Point Miner","price":"$0.50 / 1,000 posts","freeMonthlyQuota":"10,000 posts/mo free","defaultPayload":{"subreddits":["SaaS","Entrepreneur","startups"],"intentKeywords":["looking for","alternative to"]}},{"slug":"wordpress-woocommerce-site-spy","title":"WordPress & WooCommerce Theme & Plugin Spy","price":"$0.80 / 1,000 sites","freeMonthlyQuota":"6,250 sites/mo free","defaultPayload":{"domains":["techcrunch.com","wordpress.org","woocommerce.com","yoast.com"]}},{"slug":"hackernews-tech-launch-lead-monitor","title":"Hacker News Launch, Show HN & Founder Monitor","price":"$0.50 / 1,000 stories","freeMonthlyQuota":"10,000 stories/mo free","defaultPayload":{"queries":["Show HN: AI","MCP"],"maxStoriesPerQuery":15}},{"slug":"sitemap-url-inventory-content-freshness-auditor","title":"XML Sitemap URL Inventory & Freshness Auditor","price":"$0.50 / 1,000 sitemaps","freeMonthlyQuota":"10,000 sitemaps/mo free","defaultPayload":{"domains":["apify.com","cloudflare.com","stripe.com"],"maxUrlsSample":25}},{"slug":"saas-pricing-page-tier-feature-extractor","title":"SaaS Pricing Page, Plan Tiers & Feature Spy","price":"$0.80 / 1,000 pages","freeMonthlyQuota":"6,250 pages/mo free","defaultPayload":{"pricingUrls":["https://apify.com/pricing","https://stripe.com/pricing","https://linear.app/pricing"]}},{"slug":"clinical-trials-fda-drug-safety-intel","title":"ClinicalTrials.gov & OpenFDA Biotech Enricher","price":"$0.80 / 1,000 trials","freeMonthlyQuota":"6,250 trials/mo free","defaultPayload":{"conditions":["oncology immunotherapy","GLP-1 obesity"],"maxStudies":15}},{"slug":"scientific-literature-citation-author-lead-miner","title":"Scientific Paper, Author Email & Lab Lead Miner","price":"$0.50 / 1,000 papers","freeMonthlyQuota":"10,000 papers/mo free","defaultPayload":{"searchQueries":["CRISPR base editing","mRNA lipid nanoparticle"],"maxPapers":15}}];
+    const ACTORS = [
+  {
+    "slug": "b2b-domain-contact-tech-enricher",
+    "name": "B2B Domain Contact, Email, DNS & Tech Stack Enricher",
+    "category": "Live Public Apify Store Actor",
+    "price": "$0.50 / 1,000 results",
+    "freeMonthlyQuota": "10,000 enriched domains / mo FREE",
+    "defaultPayload": {
+      "domains": [
+        "stripe.com",
+        "shopify.com",
+        "linear.app"
+      ]
+    }
+  },
+  {
+    "slug": "google-maps-scraper-places-emails-contacts-reviews",
+    "name": "Google Maps Scraper: Places, Emails, Contacts & Reviews Pro",
+    "category": "Live Public Apify Store Actor",
+    "price": "$1.50 / 1,000 results",
+    "freeMonthlyQuota": "3,333 Google Maps leads / mo FREE",
+    "defaultPayload": {
+      "queries": [
+        "dentists in Austin TX",
+        "roofing contractors in Miami FL"
+      ],
+      "maxResultsPerQuery": 5
+    }
+  },
+  {
+    "slug": "shopify-store-product-contact-spy",
+    "name": "Shopify Store Product, Pricing, Stock & Merchant Contact Spy",
+    "category": "Live Public Apify Store Actor",
+    "price": "$0.80 / 1,000 results",
+    "freeMonthlyQuota": "6,250 Shopify products & stores / mo FREE",
+    "defaultPayload": {
+      "domains": [
+        "gymshark.com",
+        "allbirds.com"
+      ],
+      "maxProductsPerStore": 5
+    }
+  },
+  {
+    "slug": "wordpress-woocommerce-site-spy",
+    "name": "WordPress & WooCommerce Theme, Plugin & Agency Lead Spy",
+    "category": "Live Public Apify Store Actor",
+    "price": "$0.80 / 1,000 results",
+    "freeMonthlyQuota": "6,250 WP/WooCommerce audits / mo FREE",
+    "defaultPayload": {
+      "domains": [
+        "techcrunch.com",
+        "yoast.com",
+        "woocommerce.com"
+      ]
+    }
+  },
+  {
+    "slug": "seo-technical-audit-broken-link-schema-analyzer",
+    "name": "Technical SEO, Broken Link, Schema.org & Security Auditor",
+    "category": "Live Public Apify Store Actor",
+    "price": "$0.50 / 1,000 results",
+    "freeMonthlyQuota": "10,000 technical SEO audits / mo FREE",
+    "defaultPayload": {
+      "urls": [
+        "https://stripe.com",
+        "https://cloudflare.com"
+      ]
+    }
+  },
+  {
+    "slug": "ai-ready-website-to-markdown-rag-crawler",
+    "name": "Website to Clean Markdown, Vector RAG Chunks & llms.txt",
+    "category": "Live Public Apify Store Actor",
+    "price": "$0.50 / 1,000 results",
+    "freeMonthlyQuota": "10,000 AI Markdown pages / mo FREE",
+    "defaultPayload": {
+      "urls": [
+        "https://stripe.com/docs",
+        "https://docs.apify.com"
+      ]
+    }
+  },
+  {
+    "slug": "saas-pricing-page-tier-feature-extractor",
+    "name": "SaaS Pricing Page, Plan Tiers & Competitor Feature Spy",
+    "category": "Live Public Apify Store Actor",
+    "price": "$0.80 / 1,000 results",
+    "freeMonthlyQuota": "6,250 SaaS pricing pages / mo FREE",
+    "defaultPayload": {
+      "urls": [
+        "https://stripe.com/pricing",
+        "https://linear.app/pricing"
+      ]
+    }
+  },
+  {
+    "slug": "sitemap-url-inventory-content-freshness-auditor",
+    "name": "XML Sitemap URL Inventory, SEO Freshness & Content Auditor",
+    "category": "Live Public Apify Store Actor",
+    "price": "$0.50 / 1,000 results",
+    "freeMonthlyQuota": "10,000 sitemap audits / mo FREE",
+    "defaultPayload": {
+      "domains": [
+        "apify.com",
+        "cloudflare.com"
+      ],
+      "maxUrlsPerDomain": 25
+    }
+  },
+  {
+    "slug": "github-developer-recruiter-lead-enricher",
+    "name": "GitHub Developer, Stargazer & Contributor Lead Enricher",
+    "category": "Live Public Apify Store Actor",
+    "price": "$1.50 / 1,000 results",
+    "freeMonthlyQuota": "3,333 developer profiles / mo FREE",
+    "defaultPayload": {
+      "usernames": [
+        "sindresorhus",
+        "torvalds",
+        "yyx990803"
+      ]
+    }
+  },
+  {
+    "slug": "ats-job-board-hiring-signal-scraper",
+    "name": "Greenhouse & Lever Company Job Board & Hiring Signal Scraper",
+    "category": "Live Public Apify Store Actor",
+    "price": "$1.50 / 1,000 results",
+    "freeMonthlyQuota": "3,333 company hiring signals / mo FREE",
+    "defaultPayload": {
+      "companies": [
+        "stripe",
+        "cloudflare",
+        "figma"
+      ],
+      "maxJobsPerCompany": 5
+    }
+  },
+  {
+    "slug": "reddit-community-pain-point-trend-miner",
+    "name": "Reddit Subreddit, Buyer Intent & Pain-Point Lead Miner",
+    "category": "Live Public Apify Store Actor",
+    "price": "$0.80 / 1,000 results",
+    "freeMonthlyQuota": "6,250 Reddit buyer-intent posts / mo FREE",
+    "defaultPayload": {
+      "subreddits": [
+        "SaaS",
+        "entrepreneur"
+      ],
+      "limitPerSubreddit": 5
+    }
+  },
+  {
+    "slug": "hackernews-tech-launch-lead-monitor",
+    "name": "Hacker News Launch, Show HN & Tech Founder Lead Monitor",
+    "category": "Live Public Apify Store Actor",
+    "price": "$0.80 / 1,000 results",
+    "freeMonthlyQuota": "6,250 HackerNews founder leads / mo FREE",
+    "defaultPayload": {
+      "keywords": [
+        "Show HN",
+        "AI agent"
+      ],
+      "hitsPerKeyword": 5
+    }
+  },
+  {
+    "slug": "scientific-literature-citation-author-lead-miner",
+    "name": "Scientific Paper, Author Email & Lab Research Lead Miner",
+    "category": "Live Public Apify Store Actor",
+    "price": "$1.50 / 1,000 results",
+    "freeMonthlyQuota": "3,333 academic/biotech leads / mo FREE",
+    "defaultPayload": {
+      "queries": [
+        "CRISPR gene editing",
+        "mRNA lipid nanoparticle"
+      ],
+      "maxResultsPerQuery": 5
+    }
+  },
+  {
+    "slug": "clinical-trials-fda-drug-safety-intel",
+    "name": "ClinicalTrials.gov & OpenFDA Biotech / Pharma Lead Enricher",
+    "category": "Live Public Apify Store Actor",
+    "price": "$1.50 / 1,000 results",
+    "freeMonthlyQuota": "3,333 clinical trial & FDA records / mo FREE",
+    "defaultPayload": {
+      "conditions": [
+        "nsclc",
+        "glioblastoma"
+      ],
+      "maxTrialsPerCondition": 5
+    }
+  }
+];
     const sel = document.getElementById('demoActorSelect');
     sel.innerHTML = ACTORS.map((a, i) => `<option value="${i}">${a.title} (${a.price} — ${a.freeMonthlyQuota})</option>`).join('');
 
