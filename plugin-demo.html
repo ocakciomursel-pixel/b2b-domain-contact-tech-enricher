@@ -244,8 +244,18 @@ linear.app</textarea>
     }
 
     function buildPayload(actor, lines) {
-      const cleanDomains = lines.map(d => d.replace(/^https?:\/\//i, '').split('/')[0].trim());
+      const cleanDomains = lines.map(d => d.replace(/^https?:\/\//i, '').split('/')[0].replace(/\s+/g, '').trim());
       const cleanUrls = lines.map(u => u.startsWith('http') ? u : 'https://' + u);
+      if (actor.slug === 'google-maps-scraper-places-emails-contacts-reviews') {
+        const first = lines[0] || 'dentist in Istanbul, Turkey';
+        const parts = first.split(/\s+\b(?:in|near|around|at)\b\s+/i);
+        return {
+          searchStringsArray: [parts[0] || first],
+          locationQuery: parts[1] || 'Turkey',
+          maxCrawledPlacesPerSearch: 10,
+          queries: lines
+        };
+      }
       if (actor.inputType === 'urls') return { urls: cleanUrls };
       if (actor.inputType === 'queries') return { queries: lines, maxResultsPerQuery: 5 };
       if (actor.inputType === 'usernames') return { usernames: lines };
@@ -275,7 +285,8 @@ linear.app</textarea>
     }
 
     async function enrichDomainLive(rawDomain) {
-      const d = rawDomain.replace(/^https?:\/\//i, '').split('/')[0].trim() || 'stripe.com';
+      let d = rawDomain.replace(/^https?:\/\//i, '').split('/')[0].replace(/\s+/g, '').trim() || 'stripe.com';
+      if (!d.includes('.')) d = d + '.com';
       const [txtRes, mxRes, aRes, dmarcRes] = await Promise.all([
         fetch('https://dns.google/resolve?name=' + encodeURIComponent(d) + '&type=TXT').then(r => r.json()).catch(() => ({})),
         fetch('https://dns.google/resolve?name=' + encodeURIComponent(d) + '&type=MX').then(r => r.json()).catch(() => ({})),
@@ -413,20 +424,47 @@ linear.app</textarea>
       }
 
       if (actor.slug === 'google-maps-scraper-places-emails-contacts-reviews') {
-        const q = lines[0] || 'dentists in Austin TX';
-        const r = await fetch('https://nominatim.openstreetmap.org/search?format=json&limit=5&q=' + encodeURIComponent(q)).then(x => x.json()).catch(() => ([]));
-        if (Array.isArray(r) && r.length) {
-          return r.map((p, idx) => ({
-            searchQuery: q,
-            rank: idx + 1,
-            placeName: (p.display_name || '').split(',')[0],
-            fullAddress: p.display_name,
-            latitude: p.lat,
-            longitude: p.lon,
-            categoryType: p.type,
-            enrichedContactCheck: 'Ready for Apify Full Email/Phone Deep Crawl ($1.50/1k)'
-          }));
+        const out = [];
+        for (const rawQ of lines.slice(0, 3)) {
+          const normalized = rawQ
+            .replace(/\b(in|near|around|at)\b/gi, ' ')
+            .replace(/\b(dentists)\b/gi, 'dentist')
+            .replace(/\b(doctors|clinics)\b/gi, 'clinic')
+            .replace(/\b(lawyers|attorneys)\b/gi, 'lawyer')
+            .replace(/\b(restaurants)\b/gi, 'restaurant')
+            .replace(/\b(hotels)\b/gi, 'hotel')
+            .replace(/\b(cafes|coffee shops)\b/gi, 'cafe')
+            .replace(/\b(contractors|roofers)\b/gi, 'office')
+            .replace(/\b(pharmacies)\b/gi, 'pharmacy')
+            .replace(/\s+/g, ' ')
+            .trim();
+          const r = await fetch('https://photon.komoot.io/api/?q=' + encodeURIComponent(normalized) + '&limit=8').then(x => x.json()).catch(() => ({}));
+          const features = Array.isArray(r.features) ? r.features : [];
+          features.forEach((f, idx) => {
+            const p = f.properties || {};
+            const coords = f.geometry?.coordinates || [0, 0];
+            const bName = p.name || normalized;
+            const slugDom = bName.toLowerCase().replace(/ğ/g,'g').replace(/ü/g,'u').replace(/ş/g,'s').replace(/ı/g,'i').replace(/ö/g,'o').replace(/ç/g,'c').replace(/[^a-z0-9]+/g, '').slice(0, 18) || 'clinic';
+            const cc = (p.countrycode || 'com').toLowerCase() === 'tr' ? '.com.tr' : '.com';
+            const addrParts = [p.street, p.housenumber, p.district, p.city, p.state, p.postcode, p.country].filter(Boolean);
+            out.push({
+              searchQuery: rawQ,
+              rank: idx + 1,
+              title: bName,
+              categoryName: p.osm_value || p.osm_key || 'Local Business',
+              address: addrParts.join(', '),
+              city: p.city || p.district || '',
+              state: p.state || '',
+              countryCode: p.countrycode || '',
+              postalCode: p.postcode || '',
+              location: { lat: coords[1], lng: coords[0] },
+              suggestedDomain: `${slugDom}${cc}`,
+              suggestedContacts: [`info@${slugDom}${cc}`, `iletisim@${slugDom}${cc}`],
+              googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(bName + ' ' + addrParts.join(' '))
+            });
+          });
         }
+        return out;
       }
 
       // Default: run live multi-domain DNS/MX/SPF/DMARC/Tech enrichment across entered lines
