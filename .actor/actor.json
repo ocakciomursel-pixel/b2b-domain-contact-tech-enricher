@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "domain-cybersecurity-ssl-dns-vulnerability-auditor",
-  "title": "Domain Cybersecurity, DNS (SPF/DMARC), Email Provider & Secu",
+  "title": "Domain Cybersecurity, SPF/DMARC, DNS & Security Auditor",
   "description": "Enterprise Cybersecurity & MSP Lead Actor: audits any domain for SPF, DMARC, MX email security providers, CAA records, HTTP security headers (HSTS, CSP, X-Frame-Options), and computes a 0-100 Security Posture Score.",
   "version": "2.0",
   "buildTag": "latest",
