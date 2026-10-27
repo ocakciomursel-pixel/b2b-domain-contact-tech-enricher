@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1-Click n8n, Make.com, Clay, Claude MCP & Custom GPT Automation Blueprints — Lucacelli Apify Cloud</title>
+  <meta name="description" content="Download ready-to-import n8n workflows, 3x chained B2B enrichment pipelines, Make.com blueprints, Clay.com HTTP columns, and Claude Desktop MCP configs for all 14 @lucacelli Apify Actors." />
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background: #090d16; color: #f1f5f9; }
+    header { padding: 44px 20px 36px; text-align: center; background: radial-gradient(circle at top, #1e293b 0%, #090d16 75%); border-bottom: 1px solid #1e293b; }
+    .pill { display: inline-block; background: rgba(74, 222, 128, 0.14); border: 1px solid rgba(74, 222, 128, 0.4); color: #4ade80; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 999px; margin-bottom: 12px; }
+    h1 { font-size: 34px; margin: 0 auto 12px; max-width: 900px; color: #fff; }
+    p.sub { max-width: 780px; margin: 0 auto 22px; color: #94a3b8; font-size: 16px; line-height: 1.55; }
+    .container { max-width: 1240px; margin: 0 auto; padding: 32px 20px 64px; }
+    .token-bar { background: #111827; border: 1px solid #0284c7; border-radius: 12px; padding: 20px 24px; margin-bottom: 32px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; justify-content: space-between; }
+    .token-input { flex: 1; min-width: 260px; background: #090d16; border: 1px solid #334155; color: #4ade80; padding: 11px 14px; border-radius: 8px; font-family: monospace; font-size: 13.5px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(370px, 1fr)); gap: 18px; }
+    .card { background: #111827; border: 1px solid #1e293b; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; }
+    .card h3 { margin: 6px 0 8px; font-size: 17px; color: #fff; }
+    .btn { background: #0284c7; color: #fff; text-decoration: none; padding: 9px 13px; border-radius: 6px; font-weight: 600; font-size: 12px; border: none; cursor: pointer; display: inline-block; }
+    .btn.green { background: #16a34a; }
+    .btn.purple { background: #7c3aed; }
+    .btn.orange { background: #ea580c; }
+    .btn.sec { background: #1e293b; border: 1px solid #334155; color: #e2e8f0; }
+    .btn-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+    pre.modal-code { background: #090d16; border: 1px solid #334155; border-radius: 8px; padding: 14px; color: #4ade80; font-size: 12px; overflow-x: auto; max-height: 360px; }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="pill">ZERO-CONFIG AUTOMATION TEMPLATES • $5.00 FREE MONTHLY APIFY CREDIT</span>
+    <h1>1-Click n8n, Make.com, Clay, Claude MCP & Custom GPT Blueprints</h1>
+    <p class="sub">Optionally paste your Apify API Token below to auto-inject it into every downloaded <strong>n8n Workflow (.json)</strong>, <strong>Make.com Scenario</strong>, <strong>Clay.com HTTP Enrichment Column</strong>, and <strong>Claude Desktop MCP Config</strong>.</p>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+      <a class="btn green" href="https://apify.com/lucacelli" target="_blank">🚀 Get Free $5/mo Apify Token on Apify Store →</a>
+      <a class="btn sec" href="./index.html">← Interactive Playground</a>
+      <a class="btn sec" href="./catalog-200.html">🌐 200-Actor Master Catalog</a>
+      <a class="btn sec" href="./api-docs.html">📘 Swagger / OpenAPI 3.0 Hub</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="token-bar">
+      <div>
+        <strong style="color:#38bdf8;font-size:15px;">🔑 Optional Token Auto-Injector (Client-Side Only):</strong>
+        <div style="color:#94a3b8;font-size:12.5px;margin-top:3px;">Enter your Apify API Token (<code>apify_api_...</code>) to pre-configure all downloaded n8n, Make.com, Clay &amp; MCP JSON files automatically:</div>
+      </div>
+      <input id="userApifyToken" class="token-input" type="text" value="YOUR_APIFY_API_TOKEN" placeholder="apify_api_..." />
+    </div>
+
+    <div id="previewBox" style="display:none;background:#111827;border:1px solid #4ade80;border-radius:12px;padding:20px;margin-bottom:28px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+        <strong id="previewTitle" style="color:#4ade80;font-size:16px;">Generated Blueprint JSON</strong>
+        <div style="display:flex;gap:8px;">
+          <button class="btn green" onclick="copyCurrentPreview()">📋 Copy JSON to Clipboard</button>
+          <button class="btn" onclick="downloadCurrentPreview()">⬇️ Download .json File</button>
+        </div>
+      </div>
+      <pre id="previewContent" class="modal-code"></pre>
+    </div>
+
+    <div class="grid" id="actorsGrid"></div>
+  </div>
+
+  <script>
+    const ACTORS = [{"slug":"google-maps-scraper-places-emails-contacts-reviews","title":"Google Maps Scraper: Places, Emails & Reviews Pro","price":"$1.50 / 1k places","input":{"searchQueries":["dentist in Miami FL","medspa in Austin TX"],"maxPlacesPerQuery":20,"enrichWebsiteData":true}},{"slug":"b2b-domain-contact-tech-enricher","title":"B2B Domain Contact, Email, DNS & Tech Stack Enricher","price":"$0.80 / 1k domains","input":{"domains":["stripe.com","shopify.com","hubspot.com","linear.app","vercel.com"],"crawlContactPages":true}},{"slug":"shopify-store-product-contact-spy","title":"Shopify Store Product, Pricing, Stock & Merchant Spy","price":"$0.50 / 1k products","input":{"stores":["gymshark.com","allbirds.com"],"maxProductsPerStore":25,"extractMerchantContacts":true}},{"slug":"ai-ready-website-to-markdown-rag-crawler","title":"Website to Clean Markdown, Vector RAG Chunks & llms.txt","price":"$0.50 / 1k pages","input":{"urls":["https://docs.apify.com/platform/actors","https://crawlee.dev/docs/quick-start"],"chunkSizeTokens":500}},{"slug":"seo-technical-audit-broken-link-schema-analyzer","title":"Technical SEO, Broken Link, Schema.org & Security Auditor","price":"$0.80 / 1k pages","input":{"urls":["https://apify.com","https://stripe.com","https://shopify.com"],"checkBrokenLinks":true}},{"slug":"github-developer-recruiter-lead-enricher","title":"GitHub Developer, Stargazer & Commit Email Enricher","price":"$0.80 / 1k developers","input":{"repositories":["apify/crawlee","n8n-io/n8n"],"maxDevelopersPerRepo":10}},{"slug":"ats-job-board-hiring-signal-scraper","title":"Greenhouse & Lever ATS Job Board & Hiring Signal Scraper","price":"$0.50 / 1k jobs","input":{"greenhouseBoards":["stripe","cloudflare","vercel"],"maxJobsPerCompany":25}},{"slug":"reddit-community-pain-point-trend-miner","title":"Reddit Subreddit, Buyer Intent & Pain-Point Lead Miner","price":"$0.50 / 1k posts","input":{"subreddits":["SaaS","Entrepreneur","startups"],"intentKeywords":["looking for","alternative to"]}},{"slug":"wordpress-woocommerce-site-spy","title":"WordPress & WooCommerce Theme, Plugin & Agency Lead Spy","price":"$0.80 / 1k sites","input":{"domains":["techcrunch.com","wordpress.org","woocommerce.com","yoast.com"]}},{"slug":"hackernews-tech-launch-lead-monitor","title":"Hacker News Launch, Show HN & Tech Founder Lead Monitor","price":"$0.50 / 1k stories","input":{"queries":["Show HN: AI","MCP"],"maxStoriesPerQuery":15}},{"slug":"sitemap-url-inventory-content-freshness-auditor","title":"XML Sitemap URL Inventory, SEO Freshness & Content Auditor","price":"$0.50 / 1k sitemaps","input":{"domains":["apify.com","cloudflare.com","stripe.com"],"maxUrlsSample":25}},{"slug":"saas-pricing-page-tier-feature-extractor","title":"SaaS Pricing Page, Plan Tiers & Competitor Feature Spy","price":"$0.80 / 1k pages","input":{"pricingUrls":["https://apify.com/pricing","https://stripe.com/pricing","https://linear.app/pricing"]}},{"slug":"clinical-trials-fda-drug-safety-intel","title":"ClinicalTrials.gov & OpenFDA Biotech / Pharma Lead Enricher","price":"$0.80 / 1k trials","input":{"conditions":["oncology immunotherapy","GLP-1 obesity"],"maxStudies":15}},{"slug":"scientific-literature-citation-author-lead-miner","title":"Scientific Paper, Author Email & Lab Research Lead Miner","price":"$0.50 / 1k papers","priceUsd":0.5,"input":{"searchQueries":["CRISPR base editing","mRNA lipid nanoparticle"],"maxPapers":15}}];
+    let currentJsonStr = '';
+    let currentFileName = 'workflow.json';
+
+    function getToken() {
+      const val = document.getElementById('userApifyToken').value.trim();
+      return val || 'YOUR_APIFY_API_TOKEN';
+    }
+
+    function generateBlueprint(actor, type) {
+      const token = getToken();
+      const endpoint = `https://api.apify.com/v2/acts/lucacelli~${actor.slug}/run-sync-get-dataset-items?token=${token}`;
+
+      if (type === 'n8n') {
+        currentFileName = `${actor.slug}-n8n-workflow.json`;
+        return JSON.stringify({
+          name: `Lucacelli Apify Cloud — ${actor.title}`,
+          nodes: [
+            {
+              parameters: { rule: { interval: [{ field: 'hours', hoursInterval: 24 }] } },
+              name: 'Daily Schedule Trigger',
+              type: 'n8n-nodes-base.scheduleTrigger',
+              typeVersion: 1.1,
+              position: [240, 300]
+            },
+            {
+              parameters: {
+                method: 'POST',
+                url: endpoint,
+                sendBody: true,
+                specifyBody: 'json',
+                jsonBody: JSON.stringify(actor.input, null, 2),
+                options: { timeout: 300000 }
+              },
+              name: `Apify Cloud: ${actor.slug}`,
+              type: 'n8n-nodes-base.httpRequest',
+              typeVersion: 4.1,
+              position: [520, 300]
+            }
+          ],
+          connections: {
+            'Daily Schedule Trigger': { main: [[{ node: `Apify Cloud: ${actor.slug}`, type: 'main', index: 0 }]] }
+          }
+        }, null, 2);
+      }
+
+      if (type === 'n8n-3x') {
+        currentFileName = `${actor.slug}-3x-chained-pipeline-n8n.json`;
+        return JSON.stringify({
+          name: `3x Chained B2B Intelligence Pipeline (${actor.slug} -> Domain Enricher -> SEO Audit)`,
+          nodes: [
+            {
+              parameters: {
+                method: 'POST',
+                url: endpoint,
+                sendBody: true,
+                specifyBody: 'json',
+                jsonBody: JSON.stringify(actor.input, null, 2)
+              },
+              name: 'Step 1: Primary Discovery Actor',
+              type: 'n8n-nodes-base.httpRequest',
+              typeVersion: 4.1,
+              position: [240, 300]
+            },
+            {
+              parameters: {
+                method: 'POST',
+                url: `https://api.apify.com/v2/acts/lucacelli~b2b-domain-contact-tech-enricher/run-sync-get-dataset-items?token=${token}`,
+                sendBody: true,
+                specifyBody: 'json',
+                jsonBody: JSON.stringify({ domains: ['stripe.com', 'shopify.com', 'hubspot.com'], crawlContactPages: true }, null, 2)
+              },
+              name: 'Step 2: B2B Email, DNS & 38+ Tech Stack Enricher',
+              type: 'n8n-nodes-base.httpRequest',
+              typeVersion: 4.1,
+              position: [540, 300]
+            },
+            {
+              parameters: {
+                method: 'POST',
+                url: `https://api.apify.com/v2/acts/lucacelli~seo-technical-audit-broken-link-schema-analyzer/run-sync-get-dataset-items?token=${token}`,
+                sendBody: true,
+                specifyBody: 'json',
+                jsonBody: JSON.stringify({ urls: ['https://stripe.com', 'https://shopify.com'], checkBrokenLinks: true }, null, 2)
+              },
+              name: 'Step 3: 45-Point Technical SEO & Broken Link Auditor',
+              type: 'n8n-nodes-base.httpRequest',
+              typeVersion: 4.1,
+              position: [840, 300]
+            }
+          ]
+        }, null, 2);
+      }
+
+      if (type === 'make') {
+        currentFileName = `${actor.slug}-make-blueprint.json`;
+        return JSON.stringify({
+          name: `Make.com Apify Cloud Scenario — ${actor.title}`,
+          flow: [
+            {
+              id: 1,
+              module: 'http:ActionSendData',
+              version: 3,
+              parameters: {
+                url: endpoint,
+                method: 'post',
+                headers: [{ name: 'Content-Type', value: 'application/json' }],
+                bodyType: 'raw',
+                contentType: 'application/json',
+                data: JSON.stringify(actor.input, null, 2)
+              }
+            }
+          ]
+        }, null, 2);
+      }
+
+      if (type === 'clay') {
+        currentFileName = `${actor.slug}-clay-http-column.json`;
+        return JSON.stringify({
+          clayHttpApiColumn: {
+            name: `Enrich via Apify (${actor.slug})`,
+            method: 'POST',
+            endpointUrl: endpoint,
+            headers: { 'Content-Type': 'application/json' },
+            bodyTemplate: actor.input
+          }
+        }, null, 2);
+      }
+
+      if (type === 'mcp') {
+        currentFileName = `${actor.slug}-claude-mcp-config.json`;
+        return JSON.stringify({
+          mcpServers: {
+            'apify-lucacelli-cloud': {
+              command: 'npx',
+              args: ['-y', '@apify/actors-mcp-server', '--actors', `lucacelli/${actor.slug}`],
+              env: { APIFY_TOKEN: token }
+            }
+          }
+        }, null, 2);
+      }
+    }
+
+    function showBlueprint(idx, type) {
+      const actor = ACTORS[idx];
+      currentJsonStr = generateBlueprint(actor, type);
+      document.getElementById('previewTitle').textContent = `${actor.title} — ${currentFileName}`;
+      document.getElementById('previewContent').textContent = currentJsonStr;
+      document.getElementById('previewBox').style.display = 'block';
+      document.getElementById('previewBox').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function copyCurrentPreview() {
+      navigator.clipboard.writeText(currentJsonStr);
+      alert('Copied ready-to-import JSON blueprint to clipboard!');
+    }
+
+    function downloadCurrentPreview() {
+      const blob = new Blob([currentJsonStr], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = currentFileName;
+      a.click();
+    }
+
+    const grid = document.getElementById('actorsGrid');
+    grid.innerHTML = ACTORS.map((a, idx) => `
+      <div class="card">
+        <div>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="color:#38bdf8;font-size:11px;font-weight:700;text-transform:uppercase;">PAY-PER-EVENT CLOUD API</span>
+            <span style="color:#4ade80;font-weight:800;font-size:13px;">${a.price}</span>
+          </div>
+          <h3>${a.title}</h3>
+          <div style="font-size:12px;color:#94a3b8;font-family:monospace;margin-bottom:8px;">lucacelli/${a.slug}</div>
+          <div class="btn-row">
+            <button class="btn orange" onclick="showBlueprint(${idx}, 'n8n')">⚡ n8n Workflow</button>
+            <button class="btn purple" onclick="showBlueprint(${idx}, 'n8n-3x')">🔗 3x Chained Pipeline</button>
+            <button class="btn" onclick="showBlueprint(${idx}, 'make')">🟣 Make.com</button>
+            <button class="btn sec" onclick="showBlueprint(${idx}, 'clay')">🧱 Clay.com HTTP</button>
+            <button class="btn sec" onclick="showBlueprint(${idx}, 'mcp')">🤖 Claude MCP</button>
+          </div>
+        </div>
+        <div style="margin-top:14px;padding-top:12px;border-top:1px solid #1e293b;display:flex;justify-content:space-between;align-items:center;">
+          <a href="./openapi-actions/${a.slug}.json" target="_blank" style="color:#38bdf8;font-size:12px;text-decoration:none;font-weight:600;">Custom GPT Schema ↗</a>
+          <a class="btn green" href="https://apify.com/lucacelli/${a.slug}" target="_blank">Run on Apify ($5 Free) →</a>
+        </div>
+      </div>
+    `).join('');
+  </script>
+</body>
+</html>
