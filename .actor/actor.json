@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "wordpress-woocommerce-site-spy",
-  "title": "WordPress & WooCommerce Theme, Plugin & REST API Intelligenc",
+  "title": "WordPress & WooCommerce Theme, Plugin & REST API",
   "description": "Detect active WordPress themes, installed plugins, WooCommerce e-commerce status, REST API namespaces, and published metadata on any domain.",
   "version": "2.0",
   "buildTag": "latest",
