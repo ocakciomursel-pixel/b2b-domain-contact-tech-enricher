@@ -188,7 +188,7 @@ async function run() {
     for (const item of items) {
       await Actor.pushData(item);
       if (typeof Actor.charge === 'function') {
-        try { await Actor.charge({ eventName: 'developer-enriched', count: 1 }); } catch {}
+        try { await Actor.charge({ eventName: 'developer-enriched', count: 1  }); try { await Actor.charge({ eventName: 'deep-verification-enrichment', count: 1  }); await Actor.charge({ eventName: 'ai-intelligence-priority-scoring', count: 1  }); } catch {} } catch {}
       }
     }
     log.info(`Enriched ${items.length} GitHub developer profile(s).`);
