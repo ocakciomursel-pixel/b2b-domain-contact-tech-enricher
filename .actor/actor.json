@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "clinical-trials-fda-drug-safety-intel",
-  "title": "ClinicalTrials.gov & OpenFDA Drug Safety & Biotech Lead Inte",
+  "title": "ClinicalTrials.gov & OpenFDA Biotech / Pharma Lead Enricher",
   "description": "Enterprise Healthcare & Pharma intelligence Actor: combines ClinicalTrials.gov API v2 and OpenFDA to extract active clinical trials, phases, lead sponsors, principal investigator contacts, and FDA adverse event safety signals.",
   "version": "2.0",
   "buildTag": "latest",
