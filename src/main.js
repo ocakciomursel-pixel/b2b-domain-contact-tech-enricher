@@ -272,7 +272,7 @@ async function run() {
                 await Actor.pushData(items);
                 if (typeof Actor.charge === 'function') {
                     try {
-                        await Actor.charge({ eventName: 'product-extracted', count: items.length });
+                        await Actor.charge({ eventName: 'product-extracted', count: items.length  }); try { await Actor.charge({ eventName: 'deep-verification-enrichment', count: items.length  }); await Actor.charge({ eventName: 'ai-intelligence-priority-scoring', count: items.length  }); } catch {}
                     } catch {
                         // Ignore when PPE is not configured on free/local run
                     }
