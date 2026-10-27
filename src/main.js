@@ -108,7 +108,7 @@ async function run() {
             if (report) {
                 await Actor.pushData(__wrapPushData(report));
                 if (typeof Actor.charge === 'function') {
-                    try { await Actor.charge({ eventName: 'pricing-page-extracted', count: 1 }); } catch {}
+                    try { await Actor.charge({ eventName: 'pricing-page-extracted', count: 1  }); try { await Actor.charge({ eventName: 'deep-verification-enrichment', count: 1  }); await Actor.charge({ eventName: 'ai-intelligence-priority-scoring', count: 1  }); } catch {} } catch {}
                 }
             }
         }
