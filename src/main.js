@@ -139,7 +139,7 @@ async function run() {
             if (posts.length > 0) {
                 await Actor.pushData(__wrapPushData(posts));
                 if (typeof Actor.charge === 'function') {
-                    try { await Actor.charge({ eventName: 'post-extracted', count: posts.length  }); try { await Actor.charge({ eventName: 'deep-verification-enrichment', count: posts.length  }); await Actor.charge({ eventName: 'ai-intelligence-priority-scoring', count: posts.length  }); } catch {} } catch {}
+                    try { await Actor.charge({ eventName: 'post-extracted', count: posts.length  }); } catch {}
                 }
             }
         }
