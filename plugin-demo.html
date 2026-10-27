@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Demo — Lucacelli B2B Lead Finder, Google Maps & Technical SEO WordPress Plugin ($5/Mo Free Credit Included)</title>
+  <meta name="description" content="Test the Hybrid WordPress Plugin & Cloud Suite live in your browser. Includes Local Instant Scanner + 14 Apify Cloud Bulk Scrapers with $5.00/month free credit (up to 10,000 free records/month)." />
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background: #090d16; color: #f1f5f9; }
+    .top { background: #111827; border-bottom: 1px solid #1e293b; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .wrap { max-width: 1220px; margin: 0 auto; padding: 32px 20px 64px; }
+    .hero-card { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 1px solid #38bdf8; border-radius: 14px; padding: 28px; margin-bottom: 28px; }
+    .pill { display: inline-block; background: rgba(74, 222, 128, 0.15); border: 1px solid #4ade80; color: #4ade80; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 12px; }
+    .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 20px; margin-bottom: 24px; }
+    .panel { background: #111827; border: 1px solid #1e293b; border-radius: 12px; padding: 22px; }
+    .panel h3 { margin: 0 0 8px; color: #fff; font-size: 18px; }
+    input, select, textarea { width: 100%; background: #090d16; border: 1px solid #334155; color: #fff; padding: 11px 13px; border-radius: 8px; font-size: 13.5px; margin-top: 8px; }
+    .btn { display: inline-block; background: #0284c7; color: #fff; padding: 11px 18px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13.5px; border: none; cursor: pointer; margin-top: 10px; }
+    .btn.green { background: #16a34a; }
+    .btn.sec { background: #1e293b; border: 1px solid #334155; }
+    pre { background: #090d16; border: 1px solid #334155; border-radius: 10px; padding: 16px; color: #4ade80; font-size: 12.5px; overflow-x: auto; max-height: 400px; }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div><strong>Lucacelli B2B Lead &amp; SEO WordPress Plugin v3.0 — Live Interactive Admin Demo</strong></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="./downloads/lucacelli-b2b-lead-seo-cloud-suite.zip" download style="color:#4ade80;font-weight:700;text-decoration:none;">⬇️ Download WordPress Plugin (.zip)</a>
+      <a href="./automations.html" style="color:#38bdf8;font-weight:600;text-decoration:none;">⚡ n8n &amp; Make Blueprints</a>
+      <a href="./index.html" style="color:#94a3b8;text-decoration:none;">← Back to Main Hub</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="hero-card">
+      <span class="pill">100% TRANSPARENT HYBRID ENGINE • $5.00 FREE MONTHLY APIFY CLOUD CREDIT INCLUDED</span>
+      <h1 style="margin:6px 0 10px;font-size:30px;color:#fff;">Lucacelli B2B Lead Finder, Google Maps &amp; Technical SEO WordPress Suite</h1>
+      <p style="margin:0 0 18px;color:#cbd5e1;font-size:15.5px;line-height:1.6;">
+        <strong>Why agencies love this plugin:</strong> Single-domain checks run locally on your server with <strong>zero API key required (Engine 1)</strong>. When you need bulk extraction (100 to 100,000 Google Maps leads, B2B domains, or Shopify products without getting your WordPress hosting IP banned), switch to <strong>Engine 2 (Apify Cloud Bulk Mode)</strong> — where every free Apify account includes <strong>$5.00 in free monthly credit automatically renewed every month (3,333 to 10,000 free records/month)</strong>!
+      </p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a class="btn green" href="./downloads/lucacelli-b2b-lead-seo-cloud-suite.zip" download>⬇️ Download Installable WordPress Plugin (.zip)</a>
+        <a class="btn" href="https://apify.com/lucacelli" target="_blank">🔑 Claim Free $5.00/Mo Apify API Key →</a>
+        <a class="btn sec" href="./catalog-200.html">🌐 View All 200 Cloud Actors</a>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="panel">
+        <span style="color:#38bdf8;font-size:11px;font-weight:700;">ENGINE 1 • ZERO API KEY REQUIRED</span>
+        <h3>⚡ Local Instant Domain &amp; SEO Diagnostic</h3>
+        <p style="color:#94a3b8;font-size:13px;margin:4px 0 10px;">Works even without an Apify key or if your monthly $5 cloud credit is full. Never stops working.</p>
+        <input id="demoLocalDomain" type="text" value="stripe.com" placeholder="Enter domain (e.g. stripe.com)" />
+        <button class="btn" onclick="runDemoLocal()">▶ Run Instant Local Scan</button>
+      </div>
+
+      <div class="panel">
+        <span style="color:#4ade80;font-size:11px;font-weight:700;">ENGINE 2 • $5.00/MONTH FREE CLOUD CREDIT</span>
+        <h3>☁️ Apify Cloud Bulk Extraction (14 Live Actors)</h3>
+        <p style="color:#94a3b8;font-size:13px;margin:4px 0 10px;">100% transparent single-event pricing ($0.50–$1.50 / 1,000 items). Zero hidden charges.</p>
+        <select id="demoActorSelect" onchange="updateDemoActor()"></select>
+        <input id="demoApifyToken" type="password" placeholder="Optional: Paste Apify API Token (or preview sample output below)" />
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button class="btn green" onclick="runDemoCloud()">🚀 Run Cloud Extraction / Preview</button>
+          <a id="demoStoreLink" class="btn sec" href="https://apify.com/lucacelli/google-maps-scraper-places-emails-contacts-reviews" target="_blank">Open Actor on Apify Store ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:8px;">
+        <strong>Live Plugin Output Console (JSON / CSV Ready)</strong>
+        <span style="color:#4ade80;font-size:12px;">✓ Transparent Single-Event Billing • ✓ 5-Star BYOK Architecture</span>
+      </div>
+      <pre id="demoConsole"></pre>
+    </div>
+  </div>
+
+  <script>
+    const ACTORS = [{"slug":"google-maps-scraper-places-emails-contacts-reviews","title":"Google Maps Places, Emails & Reviews Pro","price":"$1.50 / 1,000 places","freeMonthlyQuota":"3,333 places/mo free","defaultPayload":{"searchQueries":["dentist in Miami FL","medspa in Austin TX"],"maxPlacesPerQuery":20,"enrichWebsiteData":true}},{"slug":"b2b-domain-contact-tech-enricher","title":"B2B Domain Contact, Email, DNS & Tech Enricher","price":"$0.80 / 1,000 domains","freeMonthlyQuota":"6,250 domains/mo free","defaultPayload":{"domains":["stripe.com","shopify.com","hubspot.com","linear.app","vercel.com"],"crawlContactPages":true}},{"slug":"shopify-store-product-contact-spy","title":"Shopify Store Product, Pricing & Merchant Spy","price":"$0.50 / 1,000 products","freeMonthlyQuota":"10,000 products/mo free","defaultPayload":{"stores":["gymshark.com","allbirds.com"],"maxProductsPerStore":25,"extractMerchantContacts":true}},{"slug":"ai-ready-website-to-markdown-rag-crawler","title":"Website to Clean Markdown, RAG Chunks & llms.txt","price":"$0.50 / 1,000 pages","freeMonthlyQuota":"10,000 pages/mo free","defaultPayload":{"urls":["https://docs.apify.com/platform/actors","https://crawlee.dev/docs/quick-start"],"chunkSizeTokens":500}},{"slug":"seo-technical-audit-broken-link-schema-analyzer","title":"45-Point Technical SEO, Broken Link & Schema Auditor","price":"$0.80 / 1,000 pages","freeMonthlyQuota":"6,250 pages/mo free","defaultPayload":{"urls":["https://apify.com","https://stripe.com","https://shopify.com"],"checkBrokenLinks":true}},{"slug":"github-developer-recruiter-lead-enricher","title":"GitHub Developer, Stargazer & Commit Email Enricher","price":"$0.80 / 1,000 developers","freeMonthlyQuota":"6,250 devs/mo free","defaultPayload":{"repositories":["apify/crawlee","n8n-io/n8n"],"maxDevelopersPerRepo":10}},{"slug":"ats-job-board-hiring-signal-scraper","title":"Greenhouse & Lever ATS Job & Hiring Signal Scraper","price":"$0.50 / 1,000 jobs","freeMonthlyQuota":"10,000 jobs/mo free","defaultPayload":{"greenhouseBoards":["stripe","cloudflare","vercel"],"maxJobsPerCompany":25}},{"slug":"reddit-community-pain-point-trend-miner","title":"Reddit Subreddit, Buyer Intent & Pain-Point Miner","price":"$0.50 / 1,000 posts","freeMonthlyQuota":"10,000 posts/mo free","defaultPayload":{"subreddits":["SaaS","Entrepreneur","startups"],"intentKeywords":["looking for","alternative to"]}},{"slug":"wordpress-woocommerce-site-spy","title":"WordPress & WooCommerce Theme & Plugin Spy","price":"$0.80 / 1,000 sites","freeMonthlyQuota":"6,250 sites/mo free","defaultPayload":{"domains":["techcrunch.com","wordpress.org","woocommerce.com","yoast.com"]}},{"slug":"hackernews-tech-launch-lead-monitor","title":"Hacker News Launch, Show HN & Founder Monitor","price":"$0.50 / 1,000 stories","freeMonthlyQuota":"10,000 stories/mo free","defaultPayload":{"queries":["Show HN: AI","MCP"],"maxStoriesPerQuery":15}},{"slug":"sitemap-url-inventory-content-freshness-auditor","title":"XML Sitemap URL Inventory & Freshness Auditor","price":"$0.50 / 1,000 sitemaps","freeMonthlyQuota":"10,000 sitemaps/mo free","defaultPayload":{"domains":["apify.com","cloudflare.com","stripe.com"],"maxUrlsSample":25}},{"slug":"saas-pricing-page-tier-feature-extractor","title":"SaaS Pricing Page, Plan Tiers & Feature Spy","price":"$0.80 / 1,000 pages","freeMonthlyQuota":"6,250 pages/mo free","defaultPayload":{"pricingUrls":["https://apify.com/pricing","https://stripe.com/pricing","https://linear.app/pricing"]}},{"slug":"clinical-trials-fda-drug-safety-intel","title":"ClinicalTrials.gov & OpenFDA Biotech Enricher","price":"$0.80 / 1,000 trials","freeMonthlyQuota":"6,250 trials/mo free","defaultPayload":{"conditions":["oncology immunotherapy","GLP-1 obesity"],"maxStudies":15}},{"slug":"scientific-literature-citation-author-lead-miner","title":"Scientific Paper, Author Email & Lab Lead Miner","price":"$0.50 / 1,000 papers","freeMonthlyQuota":"10,000 papers/mo free","defaultPayload":{"searchQueries":["CRISPR base editing","mRNA lipid nanoparticle"],"maxPapers":15}}];
+    const sel = document.getElementById('demoActorSelect');
+    sel.innerHTML = ACTORS.map((a, i) => `<option value="${i}">${a.title} (${a.price} — ${a.freeMonthlyQuota})</option>`).join('');
+
+    function updateDemoActor() {
+      const a = ACTORS[sel.value || 0];
+      document.getElementById('demoStoreLink').href = 'https://apify.com/lucacelli/' + a.slug;
+      document.getElementById('demoConsole').textContent = JSON.stringify({
+        mode: 'Engine 2: Apify Cloud Bulk Turbo',
+        actor: 'lucacelli/' + a.slug,
+        transparentPrice: a.price + ' (Single All-Inclusive Event — Zero Hidden Fees)',
+        includedWithFreeApifyTier: a.freeMonthlyQuota + ' ($5.00/month free credit renewed monthly)',
+        endpoint: 'https://api.apify.com/v2/acts/lucacelli~' + a.slug + '/run-sync-get-dataset-items',
+        sampleInputPayload: a.defaultPayload
+      }, null, 2);
+    }
+
+    async function runDemoLocal() {
+      const d = document.getElementById('demoLocalDomain').value.trim().replace(/^https?:\/\//, '').split('/')[0];
+      const out = document.getElementById('demoConsole');
+      out.textContent = 'Running Engine 1 Local DNS & Metadata Scan on ' + d + '...';
+      try {
+        const dns = await fetch('https://dns.google/resolve?name=' + encodeURIComponent(d) + '&type=TXT').then(r => r.json());
+        const txtRecords = (dns.Answer || []).map(x => x.data);
+        out.textContent = JSON.stringify({
+          engine: 'Engine 1 — Local Instant Scanner (100% Free, Zero API Key Required)',
+          domain: d,
+          hasSpfRecord: txtRecords.some(t => t.includes('v=spf1')),
+          txtRecordCount: txtRecords.length,
+          txtSample: txtRecords.slice(0, 4),
+          bulkUpgradeHint: 'Need 1,000+ leads or Google Maps emails? Use Engine 2 (Apify Cloud — $5/mo free credit included).'
+        }, null, 2);
+      } catch (e) {
+        out.textContent = 'Error: ' + e.message;
+      }
+    }
+
+    async function runDemoCloud() {
+      const a = ACTORS[sel.value || 0];
+      const token = document.getElementById('demoApifyToken').value.trim();
+      const out = document.getElementById('demoConsole');
+      if (!token) {
+        updateDemoActor();
+        return;
+      }
+      out.textContent = 'Calling live Apify Cloud endpoint for lucacelli/' + a.slug + '...';
+      try {
+        const res = await fetch('https://api.apify.com/v2/acts/lucacelli~' + a.slug + '/run-sync-get-dataset-items?token=' + encodeURIComponent(token), {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(a.defaultPayload)
+        }).then(r => r.json());
+        out.textContent = JSON.stringify(res, null, 2);
+      } catch (e) {
+        out.textContent = 'Error: ' + e.message;
+      }
+    }
+
+    updateDemoActor();
+  </script>
+</body>
+</html>
