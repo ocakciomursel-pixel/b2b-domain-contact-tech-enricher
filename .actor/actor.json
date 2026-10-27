@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "hackernews-tech-launch-lead-monitor",
-  "title": "Hacker News Show HN, Startup Launch & Tech Trend Intelligenc",
+  "title": "Hacker News Launch, Show HN & Tech Founder Lead Monitor",
   "description": "Monitor Hacker News (Show HN, Ask HN, and top tech stories) by keyword to discover newly launched startups, founder handles, outbound domains, and community traction.",
   "version": "2.0",
   "buildTag": "latest",
