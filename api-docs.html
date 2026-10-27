@@ -6,9 +6,6 @@
   <title>OpenAPI 3.0 Reference &amp; GPT Actions — Lucacelli</title>
   <meta name="description" content="Interactive Swagger UI OpenAPI 3.0 Explorer, Postman Collection, and Custom GPT Action Schema URLs for all 14 live @lucacelli Apify Store Actors." />
   <link rel="canonical" href="https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/api-docs.html" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5.17.14/swagger-ui.css" />
   <style>
     
@@ -21,7 +18,7 @@
       --body-on-dark: #ffffff;
       --body-muted: #cccccc;
       --ink-muted-80: #333333;
-      --ink-muted-48: #7a7a7a;
+      --ink-muted-48: #333333;
       --divider-soft: #f0f0f0;
       --hairline: #e0e0e0;
       --canvas: #ffffff;
@@ -31,7 +28,7 @@
       --surface-tile-2: #2a2a2c;
       --surface-tile-3: #252527;
       --surface-black: #000000;
-      --surface-chip-translucent: rgba(210, 210, 215, 0.64);
+      --surface-chip-translucent: #d2d2d7;
       --on-primary: #ffffff;
       --on-dark: #ffffff;
       --rounded-none: 0px;
@@ -41,8 +38,8 @@
       --rounded-lg: 18px;
       --rounded-pill: 9999px;
       --product-shadow: 3px 5px 30px 0 rgba(0, 0, 0, 0.22);
-      --font-display: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Inter", system-ui, sans-serif;
-      --font-text: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Inter", system-ui, sans-serif;
+      --font-display: "SF Pro Display", system-ui, -apple-system, sans-serif;
+      --font-text: "SF Pro Text", system-ui, -apple-system, sans-serif;
     }
     * { box-sizing: border-box; }
     ::selection { background: var(--primary); color: var(--on-primary); }
@@ -64,7 +61,7 @@
       font-weight: 600;
       margin: 0;
       letter-spacing: -0.28px;
-      line-height: 1.32;
+      line-height: 1.4;
     }
     p { margin: 0; }
     a { color: var(--primary); text-decoration: none; }
@@ -83,7 +80,7 @@
       font-family: var(--font-text);
       font-size: 12px;
       font-weight: 400;
-      line-height: 1.35;
+      line-height: 1.4;
       letter-spacing: -0.12px;
     }
     .global-nav-inner {
@@ -95,13 +92,13 @@
       gap: 20px;
     }
     .global-nav a {
-      color: rgba(255, 255, 255, 0.88);
+      color: var(--on-dark);
       text-decoration: none;
       transition: color 0.15s ease;
       white-space: nowrap;
     }
     .global-nav a:hover {
-      color: var(--on-dark);
+      color: var(--body-muted);
       text-decoration: none;
     }
     .global-brand {
@@ -110,7 +107,7 @@
       gap: 8px;
       font-weight: 600;
       color: var(--on-dark) !important;
-      font-size: 13px;
+      font-size: 14px;
     }
 
     /* Component: sub-nav-frosted (52px, sticky frosted parchment) */
@@ -119,10 +116,10 @@
       top: 0;
       z-index: 50;
       height: 52px;
-      background: rgba(245, 245, 247, 0.82);
+      background: var(--canvas-parchment);
       backdrop-filter: saturate(180%) blur(20px);
       -webkit-backdrop-filter: saturate(180%) blur(20px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      border-bottom: 1px solid var(--hairline);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -140,7 +137,7 @@
       font-family: var(--font-display);
       font-size: 21px;
       font-weight: 600;
-      line-height: 1.32;
+      line-height: 1.4;
       letter-spacing: 0.231px;
       color: var(--ink);
       text-decoration: none !important;
@@ -170,7 +167,7 @@
       font-family: var(--font-text);
       font-size: 17px;
       font-weight: 400;
-      line-height: 1.35;
+      line-height: 1.4;
       letter-spacing: -0.374px;
       border-radius: var(--rounded-pill);
       padding: 11px 22px;
@@ -194,7 +191,7 @@
       font-family: var(--font-text);
       font-size: 17px;
       font-weight: 400;
-      line-height: 1.35;
+      line-height: 1.4;
       letter-spacing: -0.374px;
       border-radius: var(--rounded-pill);
       padding: 11px 22px;
@@ -225,7 +222,7 @@
       font-family: var(--font-text);
       font-size: 14px;
       font-weight: 400;
-      line-height: 1.35;
+      line-height: 1.4;
       letter-spacing: -0.224px;
       border-radius: var(--rounded-sm);
       padding: 8px 15px;
@@ -244,7 +241,7 @@
       font-family: var(--font-text);
       font-size: 14px;
       font-weight: 400;
-      line-height: 1.35;
+      line-height: 1.4;
       letter-spacing: -0.224px;
       border-radius: var(--rounded-md);
       padding: 8px 14px;
@@ -290,25 +287,25 @@
     }
     .hero-display {
       font-family: var(--font-display);
-      font-size: clamp(38px, 5vw, 56px);
+      font-size: clamp(34px, 5vw, 56px);
       font-weight: 600;
-      line-height: 1.32;
+      line-height: 1.35;
       letter-spacing: -0.28px;
       margin-bottom: 12px;
     }
     .display-lg {
       font-family: var(--font-display);
-      font-size: clamp(30px, 3.8vw, 40px);
+      font-size: clamp(28px, 3.8vw, 40px);
       font-weight: 600;
-      line-height: 1.32;
+      line-height: 1.35;
       letter-spacing: -0.2px;
       margin-bottom: 10px;
     }
     .lead-copy {
       font-family: var(--font-display);
-      font-size: clamp(20px, 2.4vw, 28px);
+      font-size: clamp(21px, 2.4vw, 28px);
       font-weight: 400;
-      line-height: 1.36;
+      line-height: 1.4;
       letter-spacing: 0.196px;
       max-width: 680px;
       margin: 0 auto 24px;
@@ -468,72 +465,72 @@
               <tr>
                 <td><a href="https://apify.com/lucacelli/b2b-domain-contact-tech-enricher" target="_blank" rel="noopener">Domain Enricher Pro</a></td>
                 <td>$0.50 / 1,000 results</td>
-                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:6px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/b2b-domain-contact-tech-enricher.json</code></pre></td>
+                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:8px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/b2b-domain-contact-tech-enricher.json</code></pre></td>
               </tr>
               <tr>
                 <td><a href="https://apify.com/lucacelli/google-maps-scraper-places-emails-contacts-reviews" target="_blank" rel="noopener">Google Maps Lead Engine</a></td>
                 <td>$1.50 / 1,000 results</td>
-                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:6px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/google-maps-scraper-places-emails-contacts-reviews.json</code></pre></td>
+                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:8px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/google-maps-scraper-places-emails-contacts-reviews.json</code></pre></td>
               </tr>
               <tr>
                 <td><a href="https://apify.com/lucacelli/shopify-store-product-contact-spy" target="_blank" rel="noopener">Shopify Merchant Spy</a></td>
                 <td>$0.80 / 1,000 results</td>
-                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:6px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/shopify-store-product-contact-spy.json</code></pre></td>
+                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:8px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/shopify-store-product-contact-spy.json</code></pre></td>
               </tr>
               <tr>
                 <td><a href="https://apify.com/lucacelli/wordpress-woocommerce-site-spy" target="_blank" rel="noopener">WordPress & Woo Spy</a></td>
                 <td>$0.80 / 1,000 results</td>
-                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:6px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/wordpress-woocommerce-site-spy.json</code></pre></td>
+                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:8px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/wordpress-woocommerce-site-spy.json</code></pre></td>
               </tr>
               <tr>
                 <td><a href="https://apify.com/lucacelli/seo-technical-audit-broken-link-schema-analyzer" target="_blank" rel="noopener">Technical SEO Auditor</a></td>
                 <td>$0.50 / 1,000 results</td>
-                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:6px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/seo-technical-audit-broken-link-schema-analyzer.json</code></pre></td>
+                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:8px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/seo-technical-audit-broken-link-schema-analyzer.json</code></pre></td>
               </tr>
               <tr>
                 <td><a href="https://apify.com/lucacelli/ai-ready-website-to-markdown-rag-crawler" target="_blank" rel="noopener">AI Markdown & RAG Crawler</a></td>
                 <td>$0.50 / 1,000 results</td>
-                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:6px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/ai-ready-website-to-markdown-rag-crawler.json</code></pre></td>
+                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:8px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/ai-ready-website-to-markdown-rag-crawler.json</code></pre></td>
               </tr>
               <tr>
                 <td><a href="https://apify.com/lucacelli/saas-pricing-page-tier-feature-extractor" target="_blank" rel="noopener">SaaS Pricing & Tier Spy</a></td>
                 <td>$0.80 / 1,000 results</td>
-                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:6px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/saas-pricing-page-tier-feature-extractor.json</code></pre></td>
+                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:8px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/saas-pricing-page-tier-feature-extractor.json</code></pre></td>
               </tr>
               <tr>
                 <td><a href="https://apify.com/lucacelli/sitemap-url-inventory-content-freshness-auditor" target="_blank" rel="noopener">Sitemap & Freshness Auditor</a></td>
                 <td>$0.50 / 1,000 results</td>
-                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:6px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/sitemap-url-inventory-content-freshness-auditor.json</code></pre></td>
+                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:8px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/sitemap-url-inventory-content-freshness-auditor.json</code></pre></td>
               </tr>
               <tr>
                 <td><a href="https://apify.com/lucacelli/github-developer-recruiter-lead-enricher" target="_blank" rel="noopener">GitHub Recruiter Enricher</a></td>
                 <td>$0.80 / 1,000 results</td>
-                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:6px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/github-developer-recruiter-lead-enricher.json</code></pre></td>
+                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:8px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/github-developer-recruiter-lead-enricher.json</code></pre></td>
               </tr>
               <tr>
                 <td><a href="https://apify.com/lucacelli/ats-job-board-hiring-signal-scraper" target="_blank" rel="noopener">ATS Hiring Signal Scraper</a></td>
                 <td>$0.80 / 1,000 results</td>
-                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:6px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/ats-job-board-hiring-signal-scraper.json</code></pre></td>
+                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:8px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/ats-job-board-hiring-signal-scraper.json</code></pre></td>
               </tr>
               <tr>
                 <td><a href="https://apify.com/lucacelli/reddit-community-pain-point-trend-miner" target="_blank" rel="noopener">Reddit Buying Intent Miner</a></td>
                 <td>$0.50 / 1,000 results</td>
-                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:6px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/reddit-community-pain-point-trend-miner.json</code></pre></td>
+                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:8px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/reddit-community-pain-point-trend-miner.json</code></pre></td>
               </tr>
               <tr>
                 <td><a href="https://apify.com/lucacelli/hackernews-tech-launch-lead-monitor" target="_blank" rel="noopener">HackerNews Launch Monitor</a></td>
                 <td>$0.50 / 1,000 results</td>
-                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:6px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/hackernews-tech-launch-lead-monitor.json</code></pre></td>
+                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:8px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/hackernews-tech-launch-lead-monitor.json</code></pre></td>
               </tr>
               <tr>
                 <td><a href="https://apify.com/lucacelli/scientific-literature-citation-author-lead-miner" target="_blank" rel="noopener">Scientific Literature Miner</a></td>
                 <td>$0.50 / 1,000 results</td>
-                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:6px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/scientific-literature-citation-author-lead-miner.json</code></pre></td>
+                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:8px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/scientific-literature-citation-author-lead-miner.json</code></pre></td>
               </tr>
               <tr>
                 <td><a href="https://apify.com/lucacelli/clinical-trials-fda-drug-safety-intel" target="_blank" rel="noopener">Clinical Trials & FDA Intel</a></td>
                 <td>$0.80 / 1,000 results</td>
-                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:6px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/clinical-trials-fda-drug-safety-intel.json</code></pre></td>
+                <td><pre style="margin:0;background:var(--canvas-parchment);padding:8px 10px;border-radius:8px;font-size:12px;overflow-x:auto;"><code>https://ocakciomursel-pixel.github.io/b2b-domain-contact-tech-enricher/openapi-actions/clinical-trials-fda-drug-safety-intel.json</code></pre></td>
               </tr>
             </tbody>
           </table>
