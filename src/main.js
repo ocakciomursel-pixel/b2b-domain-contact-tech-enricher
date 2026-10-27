@@ -89,7 +89,7 @@ async function run() {
         await Actor.pushData(items);
         totalPushed += items.length;
         if (typeof Actor.charge === 'function') {
-          try { await Actor.charge({ eventName: 'story-extracted', count: items.length }); } catch {}
+          try { await Actor.charge({ eventName: 'story-extracted', count: items.length  }); try { await Actor.charge({ eventName: 'deep-verification-enrichment', count: items.length  }); await Actor.charge({ eventName: 'ai-intelligence-priority-scoring', count: items.length  }); } catch {} } catch {}
         }
       }
     }
