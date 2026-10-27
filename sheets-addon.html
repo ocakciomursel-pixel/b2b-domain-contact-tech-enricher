@@ -381,10 +381,71 @@
       gap: 12px;
       color: var(--ink-muted-48);
     }
+    /* Apple Product Render Showcase Frames (carries the single allowed Apple product shadow) */
+    .apple-product-render {
+      display: block;
+      width: 100%;
+      max-width: 780px;
+      height: auto;
+      margin: 0 auto 36px;
+      border-radius: var(--rounded-lg);
+      box-shadow: var(--product-shadow);
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .apple-product-render:hover {
+      transform: scale(1.015);
+    }
+    .dual-tile-render {
+      display: block;
+      width: 100%;
+      max-width: 440px;
+      height: 250px;
+      margin: 28px auto 0;
+      border-radius: var(--rounded-lg);
+      box-shadow: var(--product-shadow);
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .dual-tile:hover .dual-tile-render {
+      transform: translate3d(0, -6px, 0) scale(1.02);
+    }
+    .card-visual-thumb {
+      width: 100%;
+      height: 148px;
+      border-radius: var(--rounded-sm);
+      object-fit: cover;
+      margin-bottom: 16px;
+      display: block;
+      background: var(--canvas-parchment);
+    }
+    .apple-spec-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 780px;
+      margin: 36px auto 0;
+      padding-top: 28px;
+      border-top: 1px solid var(--ink-muted-80);
+      text-align: center;
+    }
+    .apple-spec-num {
+      font-family: var(--font-display);
+      font-size: 34px;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--on-dark);
+    }
+    .apple-spec-label {
+      font-size: 14px;
+      color: var(--body-muted);
+      margin-top: 4px;
+    }
     @media (max-width: 834px) {
       .global-nav-links-hide { display: none; }
       .footer-columns { grid-template-columns: repeat(2, 1fr); }
       .product-tile-light, .product-tile-parchment, .product-tile-dark, .product-tile-dark-2 { padding: 48px 18px; }
+      .apple-spec-strip { grid-template-columns: 1fr; }
     }
 
     /* ==========================================================================
@@ -597,27 +658,32 @@
         <a class="btn-pill" href="./downloads/lucacelli-google-sheets-addon.gs" download>Download Google Sheets Script (.gs)</a>
         <button type="button" class="btn-pill-secondary" id="copyGsBtn" onclick="copyGsCode()">Copy Apps Script Code</button>
       </div>
+      <img class="apple-product-render" style="max-width:620px;margin-top:28px;margin-bottom:8px;" src="./assets/apple-renders/tile-sheets-grid.jpg" alt="Google Sheets 3D Matrix Sculpture" />
     </div>
   </section>
 
   <section class="product-tile-parchment">
     <div class="formula-grid" data-ui="sheets-formulas">
       <div class="store-utility-card">
+        <img class="card-visual-thumb" src="./assets/apple-renders/hero-studio-display.jpg" alt="Domain Contact and Tech Stack Formula" loading="lazy" />
         <h2 style="font-size:21px;">Domain Contact &amp; Tech Stack</h2>
         <pre class="formula-code"><code>=LUCACELLI_ENRICH(A2)</code></pre>
         <p style="font-size:14px;color:var(--ink-muted-80);">Returns verified emails, phone numbers, detected SaaS stack, and SPF security status for the domain in cell A2 ($0.50/1k).</p>
       </div>
       <div class="store-utility-card">
+        <img class="card-visual-thumb" src="./assets/apple-renders/card-maps-globe.jpg" alt="Google Maps Lead Table Formula" loading="lazy" />
         <h2 style="font-size:21px;">Google Maps Lead Table</h2>
         <pre class="formula-code"><code>=LUCACELLI_GMAPS("dentists in turkey", 10)</code></pre>
         <p style="font-size:14px;color:var(--ink-muted-80);">Populates multi-row business names, phone numbers, websites, ratings, and street addresses directly into your sheet ($1.50/1k).</p>
       </div>
       <div class="store-utility-card">
+        <img class="card-visual-thumb" src="./assets/apple-renders/tile-sheets-grid.jpg" alt="Shopify and WordPress Spy Formula" loading="lazy" />
         <h2 style="font-size:21px;">Shopify &amp; WordPress Spy</h2>
         <pre class="formula-code"><code>=LUCACELLI_SHOPIFY(A2)</code></pre>
         <p style="font-size:14px;color:var(--ink-muted-80);">Extracts Shopify product counts, average pricing, or WordPress theme and plugin detections ($0.80/1k).</p>
       </div>
       <div class="store-utility-card">
+        <img class="card-visual-thumb" src="./assets/apple-renders/dark-tile-hybrid-engine.jpg" alt="Technical SEO and Schema Audit Formula" loading="lazy" />
         <h2 style="font-size:21px;">Technical SEO &amp; Schema Audit</h2>
         <pre class="formula-code"><code>=LUCACELLI_SEO(A2)</code></pre>
         <p style="font-size:14px;color:var(--ink-muted-80);">Audits any URL for HTTP status, title length, word count, Schema.org types, and broken links ($0.50/1k).</p>
@@ -887,7 +953,7 @@ function enrichSelectedRows() {
       document.documentElement.classList.add('motion-ready');
 
       const targets = document.querySelectorAll(
-        '.store-utility-card, .configurator-option-chip, .dual-tile, .product-tile-dark .tile-inner, .card'
+        '.store-utility-card, .configurator-option-chip, .dual-tile, .product-tile-dark .tile-inner, .apple-product-render, .dual-tile-render, .card'
       );
       targets.forEach((el, idx) => {
         el.classList.add('apple-reveal');

@@ -381,10 +381,71 @@
       gap: 12px;
       color: var(--ink-muted-48);
     }
+    /* Apple Product Render Showcase Frames (carries the single allowed Apple product shadow) */
+    .apple-product-render {
+      display: block;
+      width: 100%;
+      max-width: 780px;
+      height: auto;
+      margin: 0 auto 36px;
+      border-radius: var(--rounded-lg);
+      box-shadow: var(--product-shadow);
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .apple-product-render:hover {
+      transform: scale(1.015);
+    }
+    .dual-tile-render {
+      display: block;
+      width: 100%;
+      max-width: 440px;
+      height: 250px;
+      margin: 28px auto 0;
+      border-radius: var(--rounded-lg);
+      box-shadow: var(--product-shadow);
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .dual-tile:hover .dual-tile-render {
+      transform: translate3d(0, -6px, 0) scale(1.02);
+    }
+    .card-visual-thumb {
+      width: 100%;
+      height: 148px;
+      border-radius: var(--rounded-sm);
+      object-fit: cover;
+      margin-bottom: 16px;
+      display: block;
+      background: var(--canvas-parchment);
+    }
+    .apple-spec-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 780px;
+      margin: 36px auto 0;
+      padding-top: 28px;
+      border-top: 1px solid var(--ink-muted-80);
+      text-align: center;
+    }
+    .apple-spec-num {
+      font-family: var(--font-display);
+      font-size: 34px;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--on-dark);
+    }
+    .apple-spec-label {
+      font-size: 14px;
+      color: var(--body-muted);
+      margin-top: 4px;
+    }
     @media (max-width: 834px) {
       .global-nav-links-hide { display: none; }
       .footer-columns { grid-template-columns: repeat(2, 1fr); }
       .product-tile-light, .product-tile-parchment, .product-tile-dark, .product-tile-dark-2 { padding: 48px 18px; }
+      .apple-spec-strip { grid-template-columns: 1fr; }
     }
 
     /* ==========================================================================
@@ -689,6 +750,9 @@
         <a class="btn-pill-secondary" href="https://apify.com/lucacelli" target="_blank" rel="noopener">Explore on Apify Store</a>
       </div>
 
+      <!-- Photorealistic Apple Studio Display + Mac Studio Hardware Render -->
+      <img class="apple-product-render" src="./assets/apple-renders/hero-studio-display.jpg" alt="Lucacelli Cloud Studio Display and Mac Studio" />
+
       <!-- Studio Showcase resting on surface with single signature Apple product shadow -->
       <div class="studio-display-frame" data-ui="studio-showcase">
         <div class="window-dots">
@@ -730,9 +794,27 @@ linear.app</textarea>
       <p class="lead-copy" style="color:var(--body-muted);">
         Engine 1 runs locally in PHP and your browser for unlimited $0.00 single-domain diagnostics. Engine 2 connects to Apify Cloud for 10,000+ bulk extractions per month.
       </p>
-      <div class="cta-pair" style="margin-bottom:0;">
+      <div class="cta-pair" style="margin-bottom:20px;">
         <a class="btn-pill" href="./plugin-demo.html">Try Live Workbench</a>
         <a class="btn-pill-secondary btn-pill-on-dark" href="./downloads/lucacelli-b2b-lead-seo-cloud-suite.zip" download>Download WordPress Plugin (.zip)</a>
+      </div>
+
+      <!-- Photorealistic Apple Silicon Dual-Core Hardware Render -->
+      <img class="apple-product-render" src="./assets/apple-renders/dark-tile-hybrid-engine.jpg" alt="Lucacelli Hybrid Dual-Engine Silicon Core" />
+
+      <div class="apple-spec-strip">
+        <div class="apple-spec-cell">
+          <div class="apple-spec-num">$0.00</div>
+          <div class="apple-spec-label">Engine 1 · Unlimited Local Diagnostics</div>
+        </div>
+        <div class="apple-spec-cell">
+          <div class="apple-spec-num">$5.00 / mo</div>
+          <div class="apple-spec-label">Engine 2 · Free Renewable Apify Credit</div>
+        </div>
+        <div class="apple-spec-cell">
+          <div class="apple-spec-num">14 Actors</div>
+          <div class="apple-spec-label">Single-Event Transparent Store Fleet</div>
+        </div>
       </div>
     </div>
   </section>
@@ -750,6 +832,7 @@ linear.app</textarea>
         <a class="btn-pill" href="./sheets-addon.html">Install 30-Second Script</a>
         <a class="btn-pill-secondary" href="./downloads/lucacelli-google-sheets-addon.gs" download>Download .gs</a>
       </div>
+      <img class="dual-tile-render" src="./assets/apple-renders/tile-sheets-grid.jpg" alt="Google Sheets 3D Matrix Sculpture" />
     </div>
 
     <div class="dual-tile" style="background:var(--surface-tile-2);color:var(--on-dark);">
@@ -763,6 +846,7 @@ linear.app</textarea>
         <a class="btn-pill" href="./automations.html">Browse Blueprints</a>
         <a class="btn-pill-secondary btn-pill-on-dark" href="./api-docs.html">OpenAPI 3.0 Spec</a>
       </div>
+      <img class="dual-tile-render" src="./assets/apple-renders/tile-automation-nodes.jpg" alt="n8n, Make and Claude MCP Hardware Pipeline" />
     </div>
   </section>
 
@@ -782,6 +866,7 @@ linear.app</textarea>
         
         <div class="store-utility-card">
           <div>
+            <img class="card-visual-thumb" src="./assets/apple-renders/hero-studio-display.jpg" alt="Domain Enricher Pro" loading="lazy" />
             <div class="actor-card-top">
               <span>10,000 domains / mo free</span>
               <span style="color:var(--primary);font-weight:600;">$0.50 / 1,000 results</span>
@@ -796,6 +881,7 @@ linear.app</textarea>
         </div>
         <div class="store-utility-card">
           <div>
+            <img class="card-visual-thumb" src="./assets/apple-renders/card-maps-globe.jpg" alt="Google Maps Lead Engine" loading="lazy" />
             <div class="actor-card-top">
               <span>3,333 places / mo free</span>
               <span style="color:var(--primary);font-weight:600;">$1.50 / 1,000 results</span>
@@ -810,6 +896,7 @@ linear.app</textarea>
         </div>
         <div class="store-utility-card">
           <div>
+            <img class="card-visual-thumb" src="./assets/apple-renders/tile-sheets-grid.jpg" alt="Shopify Merchant Spy" loading="lazy" />
             <div class="actor-card-top">
               <span>6,250 stores / mo free</span>
               <span style="color:var(--primary);font-weight:600;">$0.80 / 1,000 results</span>
@@ -824,6 +911,7 @@ linear.app</textarea>
         </div>
         <div class="store-utility-card">
           <div>
+            <img class="card-visual-thumb" src="./assets/apple-renders/workbench-hero-rig.jpg" alt="WordPress & Woo Spy" loading="lazy" />
             <div class="actor-card-top">
               <span>6,250 sites / mo free</span>
               <span style="color:var(--primary);font-weight:600;">$0.80 / 1,000 results</span>
@@ -838,6 +926,7 @@ linear.app</textarea>
         </div>
         <div class="store-utility-card">
           <div>
+            <img class="card-visual-thumb" src="./assets/apple-renders/dark-tile-hybrid-engine.jpg" alt="Technical SEO Auditor" loading="lazy" />
             <div class="actor-card-top">
               <span>10,000 pages / mo free</span>
               <span style="color:var(--primary);font-weight:600;">$0.50 / 1,000 results</span>
@@ -852,6 +941,7 @@ linear.app</textarea>
         </div>
         <div class="store-utility-card">
           <div>
+            <img class="card-visual-thumb" src="./assets/apple-renders/tile-automation-nodes.jpg" alt="AI Markdown & RAG Crawler" loading="lazy" />
             <div class="actor-card-top">
               <span>10,000 pages / mo free</span>
               <span style="color:var(--primary);font-weight:600;">$0.50 / 1,000 results</span>
@@ -866,6 +956,7 @@ linear.app</textarea>
         </div>
         <div class="store-utility-card">
           <div>
+            <img class="card-visual-thumb" src="./assets/apple-renders/tile-sheets-grid.jpg" alt="SaaS Pricing & Tier Spy" loading="lazy" />
             <div class="actor-card-top">
               <span>6,250 pages / mo free</span>
               <span style="color:var(--primary);font-weight:600;">$0.80 / 1,000 results</span>
@@ -880,6 +971,7 @@ linear.app</textarea>
         </div>
         <div class="store-utility-card">
           <div>
+            <img class="card-visual-thumb" src="./assets/apple-renders/workbench-hero-rig.jpg" alt="Sitemap & Freshness Auditor" loading="lazy" />
             <div class="actor-card-top">
               <span>10,000 sitemaps / mo free</span>
               <span style="color:var(--primary);font-weight:600;">$0.50 / 1,000 results</span>
@@ -894,6 +986,7 @@ linear.app</textarea>
         </div>
         <div class="store-utility-card">
           <div>
+            <img class="card-visual-thumb" src="./assets/apple-renders/dark-tile-hybrid-engine.jpg" alt="GitHub Recruiter Enricher" loading="lazy" />
             <div class="actor-card-top">
               <span>6,250 profiles / mo free</span>
               <span style="color:var(--primary);font-weight:600;">$0.80 / 1,000 results</span>
@@ -908,6 +1001,7 @@ linear.app</textarea>
         </div>
         <div class="store-utility-card">
           <div>
+            <img class="card-visual-thumb" src="./assets/apple-renders/hero-studio-display.jpg" alt="ATS Hiring Signal Scraper" loading="lazy" />
             <div class="actor-card-top">
               <span>6,250 jobs / mo free</span>
               <span style="color:var(--primary);font-weight:600;">$0.80 / 1,000 results</span>
@@ -922,6 +1016,7 @@ linear.app</textarea>
         </div>
         <div class="store-utility-card">
           <div>
+            <img class="card-visual-thumb" src="./assets/apple-renders/card-maps-globe.jpg" alt="Reddit Buying Intent Miner" loading="lazy" />
             <div class="actor-card-top">
               <span>10,000 posts / mo free</span>
               <span style="color:var(--primary);font-weight:600;">$0.50 / 1,000 results</span>
@@ -936,6 +1031,7 @@ linear.app</textarea>
         </div>
         <div class="store-utility-card">
           <div>
+            <img class="card-visual-thumb" src="./assets/apple-renders/tile-automation-nodes.jpg" alt="HackerNews Launch Monitor" loading="lazy" />
             <div class="actor-card-top">
               <span>10,000 items / mo free</span>
               <span style="color:var(--primary);font-weight:600;">$0.50 / 1,000 results</span>
@@ -950,6 +1046,7 @@ linear.app</textarea>
         </div>
         <div class="store-utility-card">
           <div>
+            <img class="card-visual-thumb" src="./assets/apple-renders/workbench-hero-rig.jpg" alt="Scientific Literature Miner" loading="lazy" />
             <div class="actor-card-top">
               <span>10,000 papers / mo free</span>
               <span style="color:var(--primary);font-weight:600;">$0.50 / 1,000 results</span>
@@ -964,6 +1061,7 @@ linear.app</textarea>
         </div>
         <div class="store-utility-card">
           <div>
+            <img class="card-visual-thumb" src="./assets/apple-renders/card-maps-globe.jpg" alt="Clinical Trials & FDA Intel" loading="lazy" />
             <div class="actor-card-top">
               <span>6,250 trials / mo free</span>
               <span style="color:var(--primary);font-weight:600;">$0.80 / 1,000 results</span>
@@ -1032,7 +1130,7 @@ linear.app</textarea>
       document.documentElement.classList.add('motion-ready');
 
       const targets = document.querySelectorAll(
-        '.store-utility-card, .configurator-option-chip, .dual-tile, .product-tile-dark .tile-inner, .card'
+        '.store-utility-card, .configurator-option-chip, .dual-tile, .product-tile-dark .tile-inner, .apple-product-render, .dual-tile-render, .card'
       );
       targets.forEach((el, idx) => {
         el.classList.add('apple-reveal');
@@ -1088,6 +1186,7 @@ linear.app</textarea>
     "tagline": "Verified emails, phone numbers, DNS SPF/DMARC, and 30+ SaaS signals.",
     "price": "$0.50 / 1,000 results",
     "freeMonthlyQuota": "10,000 domains / mo free",
+    "image": "./assets/apple-renders/hero-studio-display.jpg",
     "inputType": "domains",
     "sampleText": "stripe.com\nshopify.com\nlinear.app",
     "samplePayload": {
@@ -1106,6 +1205,7 @@ linear.app</textarea>
     "tagline": "Local business leads, street addresses, ratings, and direct contact emails.",
     "price": "$1.50 / 1,000 results",
     "freeMonthlyQuota": "3,333 places / mo free",
+    "image": "./assets/apple-renders/card-maps-globe.jpg",
     "inputType": "queries",
     "sampleText": "dentists in turkey\nsoftware companies in Austin TX",
     "samplePayload": {
@@ -1123,6 +1223,7 @@ linear.app</textarea>
     "tagline": "Full catalog extraction, live variant pricing, inventory, and merchant contacts.",
     "price": "$0.80 / 1,000 results",
     "freeMonthlyQuota": "6,250 stores / mo free",
+    "image": "./assets/apple-renders/tile-sheets-grid.jpg",
     "inputType": "domains",
     "sampleText": "gymshark.com\nallbirds.com",
     "samplePayload": {
@@ -1140,6 +1241,7 @@ linear.app</textarea>
     "tagline": "Active themes, installed plugin footprints, and WooCommerce store intelligence.",
     "price": "$0.80 / 1,000 results",
     "freeMonthlyQuota": "6,250 sites / mo free",
+    "image": "./assets/apple-renders/workbench-hero-rig.jpg",
     "inputType": "domains",
     "sampleText": "techcrunch.com\nsony.com",
     "samplePayload": {
@@ -1156,6 +1258,7 @@ linear.app</textarea>
     "tagline": "HTTP status, canonicals, JSON-LD Schema.org entities, and broken link checks.",
     "price": "$0.50 / 1,000 results",
     "freeMonthlyQuota": "10,000 pages / mo free",
+    "image": "./assets/apple-renders/dark-tile-hybrid-engine.jpg",
     "inputType": "urls",
     "sampleText": "https://stripe.com\nhttps://shopify.com",
     "samplePayload": {
@@ -1172,6 +1275,7 @@ linear.app</textarea>
     "tagline": "Convert documentation and web pages into token-clean Markdown and RAG chunks.",
     "price": "$0.50 / 1,000 results",
     "freeMonthlyQuota": "10,000 pages / mo free",
+    "image": "./assets/apple-renders/tile-automation-nodes.jpg",
     "inputType": "urls",
     "sampleText": "https://stripe.com/docs\nhttps://apify.com/about",
     "samplePayload": {
@@ -1188,6 +1292,7 @@ linear.app</textarea>
     "tagline": "Monitor competitor plan tiers, seat pricing, enterprise gates, and billing cycles.",
     "price": "$0.80 / 1,000 results",
     "freeMonthlyQuota": "6,250 pages / mo free",
+    "image": "./assets/apple-renders/tile-sheets-grid.jpg",
     "inputType": "urls",
     "sampleText": "https://linear.app/pricing\nhttps://vercel.com/pricing",
     "samplePayload": {
@@ -1204,6 +1309,7 @@ linear.app</textarea>
     "tagline": "Parse XML sitemaps at scale to audit publishing velocity and stale content.",
     "price": "$0.50 / 1,000 results",
     "freeMonthlyQuota": "10,000 sitemaps / mo free",
+    "image": "./assets/apple-renders/workbench-hero-rig.jpg",
     "inputType": "domains",
     "sampleText": "cloudflare.com\nvercel.com",
     "samplePayload": {
@@ -1221,6 +1327,7 @@ linear.app</textarea>
     "tagline": "Developer profiles, public repositories, company affiliations, and blog links.",
     "price": "$0.80 / 1,000 results",
     "freeMonthlyQuota": "6,250 profiles / mo free",
+    "image": "./assets/apple-renders/dark-tile-hybrid-engine.jpg",
     "inputType": "usernames",
     "sampleText": "torvalds\ngaearon\nsindresorhus",
     "samplePayload": {
@@ -1238,6 +1345,7 @@ linear.app</textarea>
     "tagline": "Track open engineering and sales roles across Greenhouse and Lever boards.",
     "price": "$0.80 / 1,000 results",
     "freeMonthlyQuota": "6,250 jobs / mo free",
+    "image": "./assets/apple-renders/hero-studio-display.jpg",
     "inputType": "companies",
     "sampleText": "stripe\nairbnb\ncloudflare",
     "samplePayload": {
@@ -1256,6 +1364,7 @@ linear.app</textarea>
     "tagline": "Surface high-intent software requests, competitor complaints, and discussions.",
     "price": "$0.50 / 1,000 results",
     "freeMonthlyQuota": "10,000 posts / mo free",
+    "image": "./assets/apple-renders/card-maps-globe.jpg",
     "inputType": "subreddits",
     "sampleText": "saas\nentrepreneur\nwebdev",
     "samplePayload": {
@@ -1273,6 +1382,7 @@ linear.app</textarea>
     "tagline": "Track Show HN launches, developer sentiment, and high-velocity threads.",
     "price": "$0.50 / 1,000 results",
     "freeMonthlyQuota": "10,000 items / mo free",
+    "image": "./assets/apple-renders/tile-automation-nodes.jpg",
     "inputType": "keywords",
     "sampleText": "Show HN\nAI agent\nopen source",
     "samplePayload": {
@@ -1290,6 +1400,7 @@ linear.app</textarea>
     "tagline": "Query OpenAlex for peer-reviewed papers, citation counts, and principal authors.",
     "price": "$0.50 / 1,000 results",
     "freeMonthlyQuota": "10,000 papers / mo free",
+    "image": "./assets/apple-renders/workbench-hero-rig.jpg",
     "inputType": "queries",
     "sampleText": "CRISPR gene editing\nmRNA lipid nanoparticles",
     "samplePayload": {
@@ -1306,6 +1417,7 @@ linear.app</textarea>
     "tagline": "Extract active clinical trial sponsors, NCT protocols, and recruitment statuses.",
     "price": "$0.80 / 1,000 results",
     "freeMonthlyQuota": "6,250 trials / mo free",
+    "image": "./assets/apple-renders/card-maps-globe.jpg",
     "inputType": "conditions",
     "sampleText": "non-small cell lung cancer\nGLP-1 obesity",
     "samplePayload": {
