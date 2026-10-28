@@ -1,0 +1,37 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Global News, PR Mention, Event & Brand Sentiment Monitor",
+    "description": "PR, Media & Financial News intelligence Actor: monitors real-time Google News RSS feeds for any company, brand, or market keyword with automated sentiment scoring and corporate event classification.",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~global-news-pr-sentiment-mention-monitor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_global_news_pr_sentiment_mention_monitor",
+        "summary": "Google News Scraper: Brand Mention & PR Sentiment API",
+        "description": "Monitor real-time Google News mentions for any company or keyword with automated sentiment scoring & event classification ($0.50/1k articles).",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Extracted JSON dataset array"
+          }
+        }
+      }
+    }
+  }
+}

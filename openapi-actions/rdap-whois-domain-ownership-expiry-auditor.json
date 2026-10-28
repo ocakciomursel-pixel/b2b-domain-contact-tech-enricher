@@ -1,0 +1,37 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "RDAP & WHOIS Domain Ownership, Registrar & Expiry Auditor",
+    "description": "Domain portfolio & brand protection intelligence: queries official IANA RDAP registries to extract domain registration dates, expiration dates, days until expiry, registrar details, and nameservers.",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~rdap-whois-domain-ownership-expiry-auditor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_rdap_whois_domain_ownership_expiry_auditor",
+        "summary": "Bulk RDAP WHOIS Domain Lookup, Expiry Date & Registrar",
+        "description": "Extract domain registration dates, expiration countdowns, registrar names, DNSSEC status, nameservers, and abuse contacts via official RDAP protocol.",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Extracted JSON dataset array"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "SSL Certificate Transparency & Subdomain Discoverer",
+    "description": "Attack surface & OSINT reconnaissance tool: queries Certificate Transparency (CT) logs to discover subdomains, SSL/TLS certificate issuers, validity periods, and expired certificates for any target domain.",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~ssl-certificate-transparency-subdomain-discoverer/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_ssl_certificate_transparency_subdomain_discoverer",
+        "summary": "Subdomain Finder & SSL Certificate Transparency Scanner",
+        "description": "Discover subdomains, wildcard SSL certificates, issuing certificate authorities, and expiry dates for any domain using Certificate Transparency logs.",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Extracted JSON dataset array"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "IP to ASN, Cloud Hosting, ISP & Geolocation Enricher",
+    "description": "Network & infrastructure enrichment tool: resolves domains or IPs and extracts ASN, ISP/Cloud hosting organization, country, city, coordinates, and timezone.",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~ip-asn-bgp-cloud-hosting-provider-enricher/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_ip_asn_bgp_cloud_hosting_provider_enricher",
+        "summary": "Bulk IP Geolocation, ASN, ISP & Cloud Datacenter Lookup Tool",
+        "description": "Enrich IP addresses or domains with Autonomous System Number (ASN), ISP/cloud provider, country/city geolocation, coordinates, and timezone ($2.00/1k).",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Extracted JSON dataset array"
+          }
+        }
+      }
+    }
+  }
+}
