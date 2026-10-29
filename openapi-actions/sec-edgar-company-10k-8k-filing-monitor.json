@@ -1,0 +1,37 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "SEC EDGAR Public Company CIK, SIC & Regulatory Tracker",
+    "description": "Financial & corporate compliance intelligence: maps US public company tickers and names to official SEC EDGAR CIK identifiers and regulatory filing histories.",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~sec-edgar-company-10k-8k-filing-monitor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_sec_edgar_company_10k_8k_filing_monitor",
+        "summary": "SEC EDGAR Company Lookup, CIK Finder & Ticker Intelligence",
+        "description": "Search US public companies in SEC EDGAR by ticker or name to extract CIK identifiers, official corporate names, and SEC filing links ($4.00/1k).",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Extracted JSON dataset array"
+          }
+        }
+      }
+    }
+  }
+}

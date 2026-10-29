@@ -1,0 +1,37 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "World Bank Global Macroeconomic & Country GDP Risk Enricher",
+    "description": "International expansion & sovereign risk intelligence: queries the official World Bank API for country income levels, lending types, regional classifications, and geographic coordinates.",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~global-macro-economic-country-risk-indicator/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_global_macro_economic_country_risk_indicator",
+        "summary": "World Bank Macroeconomic Data & Country GDP Growth Scraper",
+        "description": "Extract official World Bank country metadata, income classifications, capital cities, regions, and lending risk categories for global market expansion.",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Extracted JSON dataset array"
+          }
+        }
+      }
+    }
+  }
+}

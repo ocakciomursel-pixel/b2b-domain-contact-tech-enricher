@@ -1,0 +1,37 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Crypto Market Cap, Volume, ATH Drawdown & Valuation Scanner",
+    "description": "Digital asset market intelligence: extracts live spot prices, 24h volume-to-market-cap ratios, supply inflation metrics, and all-time-high drawdown percentages for top crypto assets.",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~crypto-exchange-spot-funding-arbitrage-scanner/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_crypto_exchange_spot_funding_arbitrage_scanner",
+        "summary": "CoinGecko Crypto Market Data, Volume & Valuation Ratio",
+        "description": "Extract real-time cryptocurrency prices, 24h trading volumes, market cap rankings, circulating supply ratios, and ATH drawdowns ($2.00/1k).",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Extracted JSON dataset array"
+          }
+        }
+      }
+    }
+  }
+}

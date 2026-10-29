@@ -1,0 +1,37 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Security.txt, Bug Bounty Program & CISO Contact Finder",
+    "description": "Cybersecurity B2B lead & bug bounty discovery tool: scans target domains for RFC 9116 security.txt files to extract security contacts, policy links, encryption keys, and hiring pages.",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~bug-bounty-security-txt-responsible-disclosure-finder/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_bug_bounty_security_txt_responsible_disclosure_finder",
+        "summary": "Security.txt Scraper & Bug Bounty Contact Finder for",
+        "description": "Scan company domains for RFC 9116 security.txt files to extract security team contact emails, bug bounty policy URLs, PGP keys, and hiring links ($4.00/1k).",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Extracted JSON dataset array"
+          }
+        }
+      }
+    }
+  }
+}
