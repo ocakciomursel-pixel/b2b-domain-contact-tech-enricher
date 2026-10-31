@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "saas-pricing-page-tier-feature-extractor",
-  "title": "SaaS Pricing Page, Plan Tiers & Competitor Feature Spy",
-  "description": "Locate and analyze SaaS competitor /pricing pages to extract detected price points, billing models (per-seat, usage-based, freemium, free trial), and enterprise tiers.",
+  "title": "Competitor Pricing Scraper — SaaS Plans, Tiers & Features",
+  "description": "Scrape SaaS and competitor pricing pages to extract plan names, monthly/annual prices, free trial flags, enterprise tiers, and feature lists. Automate competitive intelligence and pricing monitor workflows ($4/1k pricing pages).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -106,5 +106,11 @@
       }
     }
   },
-  "output": "./output_schema.json"
+  "output": "./output_schema.json",
+  "categories": [
+    "AI",
+    "BUSINESS",
+    "ECOMMERCE",
+    "MARKETING"
+  ]
 }
