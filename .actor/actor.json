@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "ssl-certificate-transparency-subdomain-discoverer",
-  "title": "SSL Certificate Transparency & Subdomain Discoverer",
-  "description": "Attack surface & OSINT reconnaissance tool: queries Certificate Transparency (CT) logs to discover subdomains, SSL/TLS certificate issuers, validity periods, and expired certificates for any target domain.",
+  "title": "Subdomain Finder & SSL Certificate Scraper (crt.sh OSINT)",
+  "description": "Discover subdomains and SSL/TLS certificates for any company domain via Certificate Transparency (crt.sh) logs. Extract wildcard subdomains, issuer CAs, validity dates, and shadow IT assets for cybersecurity recon and OSINT ($0.50/1k certs).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -38,5 +38,10 @@
         }
       }
     }
-  }
+  },
+  "categories": [
+    "AI",
+    "DEVELOPER_TOOLS",
+    "SECURITY"
+  ]
 }

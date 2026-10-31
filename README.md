@@ -1,4 +1,4 @@
-# SSL Certificate Transparency & Subdomain Discoverer
+# Subdomain Finder & SSL Certificate Scraper (crt.sh OSINT)
 
 > **Subdomain Finder & SSL Certificate Transparency Scanner (crt.sh)** — Attack surface & OSINT reconnaissance tool: queries Certificate Transparency (CT) logs to discover subdomains, SSL/TLS certificate issuers, validity periods, and expired certificates for any target domain.
 
@@ -20,3 +20,7 @@
   "maxItemsPerTarget": 10
 }
 ```
+
+
+---
+**Search Keywords:** subdomain finder, crt.sh scraper, ssl certificate scraper, osint subdomain enumeration, attack surface discovery
