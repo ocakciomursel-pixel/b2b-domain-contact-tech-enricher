@@ -1,4 +1,4 @@
-# DexScreener On-Chain Token Liquidity, Volume & Pair Monitor
+# DexScreener Scraper — Token Pairs, Liquidity & Volume API
 
 > **DexScreener Scraper | On-Chain Liquidity, FDV & Buy/Sell Volume** — On-chain DeFi & DEX market intelligence: extracts live decentralized exchange trading pairs, pool liquidity in USD, 24-hour buy vs. sell transaction counts, and fully diluted valuation (FDV).
 
@@ -20,3 +20,7 @@
   "maxItemsPerTarget": 10
 }
 ```
+
+
+---
+**Search Keywords:** dexscreener scraper, dexscreener api, solana token scraper, crypto liquidity monitor, onchain dex pairs
