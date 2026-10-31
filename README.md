@@ -1,4 +1,4 @@
-# Browser Add-on & Extension Active Users, Rating & Developer Spy
+# Chrome & Firefox Extension Scraper — Users, Reviews & Leads
 
 > **Browser Extension Scraper | Active Daily Users, Ratings & Developer Emails** — Browser extension competitive intelligence & B2B lead tool: extracts active daily users, review ratings, developer websites, and support contacts for browser add-ons.
 

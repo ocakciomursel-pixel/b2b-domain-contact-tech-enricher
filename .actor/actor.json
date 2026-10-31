@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "chrome-firefox-addon-extension-publisher-spy",
-  "title": "Browser Add-on & Extension Active Users, Rating & Developer",
-  "description": "Browser extension competitive intelligence & B2B lead tool: extracts active daily users, review ratings, developer websites, and support contacts for browser add-ons.",
+  "title": "Chrome & Firefox Extension Scraper — Users, Reviews & Leads",
+  "description": "Scrape browser extensions and add-ons: extract active user counts, star ratings, version history, permissions, publisher websites, and developer support emails for SaaS acquisition & outreach ($0.50/1k items).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -38,5 +38,11 @@
         }
       }
     }
-  }
+  },
+  "categories": [
+    "AI",
+    "DEVELOPER_TOOLS",
+    "LEAD_GENERATION",
+    "ECOMMERCE"
+  ]
 }
