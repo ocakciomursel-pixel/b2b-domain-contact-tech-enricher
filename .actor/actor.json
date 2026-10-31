@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "wordpress-woocommerce-site-spy",
-  "title": "WordPress & WooCommerce Theme, Plugin & REST API",
-  "description": "Detect active WordPress themes, installed plugins, WooCommerce e-commerce status, REST API namespaces, and published metadata on any domain.",
+  "title": "Shopify & WooCommerce Store Leads Scraper — Themes & Emails",
+  "description": "Scrape WooCommerce, WordPress, and e-commerce stores to extract store leads, verified merchant emails, phone numbers, active plugins, themes, product counts, and social links. Ideal for B2B e-commerce agency prospecting ($3/1k stores). No API key required.",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -101,5 +101,11 @@
       }
     }
   },
-  "output": "./output_schema.json"
+  "output": "./output_schema.json",
+  "categories": [
+    "ECOMMERCE",
+    "LEAD_GENERATION",
+    "AI",
+    "BUSINESS"
+  ]
 }
