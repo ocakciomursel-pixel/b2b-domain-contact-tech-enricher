@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "b2b-domain-contact-tech-enricher",
-  "title": "B2B Domain Contact, Email, DNS & Tech Stack Enricher",
-  "description": "Enterprise B2B lead enrichment Actor: extracts verified business emails, phone numbers, live MX/SPF/DMARC email provider intelligence, 38+ SaaS & Ad Pixel signatures, B2B Lead Scores (0-100), SaaS Spend Tiers, and personalized cold email icebreakers from any list of company domains.",
+  "title": "Company Email, Phone & Social Media Scraper (by Domain)",
+  "description": "Extract verified B2B company emails, phone numbers, LinkedIn/X/Instagram/YouTube profiles, career page links, and 20+ tech stack signatures from any list of company domains. Fast Clay, n8n, Make & Apollo alternative ($4/1k domains). No proxies needed.",
   "version": "2.0.0",
   "meta": {
     "templateId": "ts-crawlee-cheerio"
@@ -69,13 +69,17 @@
             "title": "Emails",
             "description": "Extracted or MX-verified business emails",
             "type": "array",
-            "items": { "type": "string" }
+            "items": {
+              "type": "string"
+            }
           },
           "phones": {
             "title": "Phones",
             "description": "Extracted phone numbers",
             "type": "array",
-            "items": { "type": "string" }
+            "items": {
+              "type": "string"
+            }
           },
           "emailProvider": {
             "title": "Email Infrastructure",
@@ -86,13 +90,17 @@
             "title": "Active Ad Pixels",
             "description": "Detected paid acquisition pixels",
             "type": "array",
-            "items": { "type": "string" }
+            "items": {
+              "type": "string"
+            }
           },
           "techStack": {
             "title": "Tech Stack",
             "description": "Detected technologies",
             "type": "array",
-            "items": { "type": "string" }
+            "items": {
+              "type": "string"
+            }
           },
           "coldEmailIcebreaker": {
             "title": "Cold Email Icebreaker",
@@ -103,5 +111,11 @@
       }
     }
   },
-  "output": "./output_schema.json"
+  "output": "./output_schema.json",
+  "categories": [
+    "LEAD_GENERATION",
+    "AI",
+    "BUSINESS",
+    "MARKETING"
+  ]
 }
