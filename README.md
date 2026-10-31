@@ -1,4 +1,4 @@
-# Workable ATS Company Career Page & SMB Hiring Signal Scraper
+# Workable Jobs Scraper — Company Career Page & Leads API
 
 > **Workable ATS Job Scraper | SMB Hiring Signals & Open Roles** — SMB & mid-market hiring signal intelligence: queries public Workable career widget endpoints to extract open positions, locations, and remote work indicators.
 

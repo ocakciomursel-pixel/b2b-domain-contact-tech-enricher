@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "workable-company-career-page-job-extractor",
-  "title": "Workable ATS Company Career Page & SMB Hiring Signal Scraper",
-  "description": "SMB & mid-market hiring signal intelligence: queries public Workable career widget endpoints to extract open positions, locations, and remote work indicators.",
+  "title": "Workable Jobs Scraper — Company Career Page & Leads API",
+  "description": "Scrape public job openings from Workable (apply.workable.com) company career portals: extract job descriptions, locations, remote status, departments, and hiring signals for staffing agencies and B2B outreach ($0.50/1k jobs).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -38,5 +38,11 @@
         }
       }
     }
-  }
+  },
+  "categories": [
+    "JOBS",
+    "AI",
+    "LEAD_GENERATION",
+    "BUSINESS"
+  ]
 }
