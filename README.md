@@ -1,4 +1,4 @@
-# Apple App Store ASO, Competitor Metadata & User Complaint Miner (MCP Ready)
+# Apple App Store Scraper — iOS App Reviews, Ratings & ASO
 
 > **Apple App Store Scraper | ASO Keyword Research & 1-Star Review Miner** — Mobile App & Gaming intelligence Actor: extracts iOS App Store ratings, version velocity, developer websites, and mines recent user reviews to identify 1-2 star bug/complaint themes.
 
@@ -114,3 +114,7 @@ Yes. Every run stores structured records in an Apify Dataset that can be exporte
 
 ### Keywords & Tags
 `Apple App Store scraper, iOS review scraper, ASO competitor research, mobile app lead generation, user complaint analysis, SensorTower alternative`
+
+
+---
+**Search Keywords:** app store scraper, ios app reviews scraper, apple app store api, mobile aso tool, app competitor research

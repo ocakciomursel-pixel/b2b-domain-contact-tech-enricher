@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "apple-appstore-aso-competitor-review-intel",
-  "title": "Apple App Store ASO, Competitor Metadata & Review Miner",
-  "description": "Mobile App & Gaming intelligence Actor: extracts iOS App Store ratings, version velocity, developer websites, and mines recent user reviews to identify 1-2 star bug/complaint themes.",
+  "title": "Apple App Store Scraper — iOS App Reviews, Ratings & ASO",
+  "description": "Scrape Apple iOS App Store apps, user reviews, star ratings, version history, pricing, bundle IDs, and publisher contact links. Extract 1-3 star pain points for mobile ASO, competitor research, and app agency lead generation ($2/1k records).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -111,5 +111,11 @@
       }
     }
   },
-  "output": "./output_schema.json"
+  "output": "./output_schema.json",
+  "categories": [
+    "AI",
+    "ECOMMERCE",
+    "MARKETING",
+    "LEAD_GENERATION"
+  ]
 }
