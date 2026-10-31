@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "ats-job-board-hiring-signal-scraper",
-  "title": "Greenhouse & Lever Company Job Board & Hiring Signal Scraper",
-  "description": "Extract active job openings, departments, remote status, locations, and B2B hiring intent signals directly from Greenhouse and Lever company job boards.",
+  "title": "Greenhouse & Lever Jobs Scraper — Startup Job Board & Leads",
+  "description": "Scrape live job postings directly from Greenhouse and Lever ATS company career boards. Extract job titles, departments, remote status, salary ranges, tech stack keywords, and B2B hiring intent signals for recruiting agencies and sales teams ($2/1k jobs).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -111,5 +111,11 @@
       }
     }
   },
-  "output": "./output_schema.json"
+  "output": "./output_schema.json",
+  "categories": [
+    "JOBS",
+    "AI",
+    "LEAD_GENERATION",
+    "BUSINESS"
+  ]
 }
