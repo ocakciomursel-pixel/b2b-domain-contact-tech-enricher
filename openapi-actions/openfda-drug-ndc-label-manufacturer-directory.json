@@ -1,0 +1,37 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "OpenFDA Pharmaceutical NDC Directory & Drug Manufacturer Spy",
+    "description": "Pharmaceutical supply-chain & B2B intelligence: extracts registered drug products, labeler company names, generic/brand names, dosage forms, and active ingredients from the FDA NDC Directory.",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~openfda-drug-ndc-label-manufacturer-directory/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_openfda_drug_ndc_label_manufacturer_directory",
+        "summary": "FDA NDC Drug Directory Scraper & Pharma Manufacturer Lead",
+        "description": "Extract FDA National Drug Code (NDC) records, pharmaceutical labeler companies, active ingredients, dosage forms, and marketing categories ($4.00/1k).",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Extracted JSON dataset array"
+          }
+        }
+      }
+    }
+  }
+}

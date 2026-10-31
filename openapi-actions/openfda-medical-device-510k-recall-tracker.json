@@ -1,0 +1,37 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "OpenFDA Medical Device 510(k) Clearance & Applicant Lead Spy",
+    "description": "MedTech B2B sales & regulatory intelligence: queries OpenFDA 510(k) clearances to extract medical device manufacturers, applicant contact details, addresses, and FDA clearance dates.",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~openfda-medical-device-510k-recall-tracker/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_openfda_medical_device_510k_recall_tracker",
+        "summary": "FDA 510(k) Medical Device Scraper & MedTech Manufacturer",
+        "description": "Extract FDA 510(k) medical device clearances, MedTech applicant companies, contact names, street addresses, decision dates, and device classifications.",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Extracted JSON dataset array"
+          }
+        }
+      }
+    }
+  }
+}

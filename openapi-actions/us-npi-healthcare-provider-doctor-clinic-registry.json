@@ -1,0 +1,37 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "US NPI Registry Doctor, Clinic & Healthcare Provider Lead",
+    "description": "Healthcare B2B lead generation: queries the official US National Plan and Provider Enumeration System (NPPES NPI Registry) for verified physicians, clinics, taxonomy specialties, addresses, and phone numbers.",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~us-npi-healthcare-provider-doctor-clinic-registry/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_us_npi_healthcare_provider_doctor_clinic_registry",
+        "summary": "US NPI Healthcare Provider Scraper | Doctor & Clinic Phone",
+        "description": "Query the official US CMS NPI Registry by specialty, city, or state to extract verified doctors, medical clinics, NPI numbers, practice addresses, and phone.",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Extracted JSON dataset array"
+          }
+        }
+      }
+    }
+  }
+}

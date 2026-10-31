@@ -1,0 +1,37 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "PubMed NCBI Biomedical Study, Journal & Author Lead Miner",
+    "description": "Healthcare & life-sciences research tool: queries NCBI Entrez E-utilities (PubMed) to extract biomedical study metadata, journal sources, author lists, and DOIs.",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~pubmed-biomedical-literature-clinical-author-miner/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_pubmed_biomedical_literature_clinical_author_miner",
+        "summary": "PubMed Scraper | NCBI Biomedical Papers, PMIDs & Author",
+        "description": "Search NCBI PubMed for peer-reviewed medical studies, PMIDs, publication dates, journal titles, authors, and DOI links ($3.00/1k).",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Extracted JSON dataset array"
+          }
+        }
+      }
+    }
+  }
+}

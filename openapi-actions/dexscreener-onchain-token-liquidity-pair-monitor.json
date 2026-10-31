@@ -1,0 +1,37 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "DexScreener On-Chain Token Liquidity, Volume & Pair Monitor",
+    "description": "On-chain DeFi & DEX market intelligence: extracts live decentralized exchange trading pairs, pool liquidity in USD, 24-hour buy vs. sell transaction counts, and fully diluted valuation (FDV).",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~dexscreener-onchain-token-liquidity-pair-monitor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_dexscreener_onchain_token_liquidity_pair_monitor",
+        "summary": "DexScreener Scraper | On-Chain Liquidity, FDV & Buy/Sell",
+        "description": "Search on-chain DEX trading pairs across Solana, Ethereum, Base, and Arbitrum for liquidity USD, 24h buy/sell transactions, FDV, and price action.",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Extracted JSON dataset array"
+          }
+        }
+      }
+    }
+  }
+}
