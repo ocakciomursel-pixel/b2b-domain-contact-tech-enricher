@@ -1,4 +1,4 @@
-# Local Business, Hotel, Clinic & Real Estate Schema.org Contact Extractor (MCP Ready)
+# Local Business Leads Scraper — Hotel, Clinic & Restaurant
 
 > **Local Business Contact Scraper | Hotel, Clinic & Restaurant Schema Extractor** — Hospitality, Healthcare & Local Business lead Actor: extracts Schema.org LocalBusiness/Hotel/Restaurant/Clinic structured data, street addresses, GPS coordinates, ratings, phones, and emails.
 
@@ -111,3 +111,7 @@ Yes. Every run stores structured records in an Apify Dataset that can be exporte
 
 ### Keywords & Tags
 `Local business lead scraper, hotel contact extractor, restaurant email finder, medical clinic directory scraper, Schema.org LocalBusiness parser`
+
+
+---
+**Search Keywords:** local business scraper, hotel restaurant leads scraper, dental clinic email finder, schema.org localbusiness extractor

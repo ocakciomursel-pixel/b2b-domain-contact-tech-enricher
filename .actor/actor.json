@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "local-business-hotel-restaurant-schema-extractor",
-  "title": "Local Business, Hotel, Clinic & Schema Contact Extractor",
-  "description": "Hospitality, Healthcare & Local Business lead Actor: extracts Schema.org LocalBusiness/Hotel/Restaurant/Clinic structured data, street addresses, GPS coordinates, ratings, phones, and emails.",
+  "title": "Local Business Leads Scraper — Hotel, Clinic & Restaurant",
+  "description": "Extract verified local business leads directly from hotel, clinic, dentist, lawyer, and restaurant websites: scrape Schema.org LocalBusiness JSON-LD, emails, phone numbers, street addresses, geo coordinates, and opening hours ($3/1k businesses).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -111,5 +111,11 @@
       }
     }
   },
-  "output": "./output_schema.json"
+  "output": "./output_schema.json",
+  "categories": [
+    "LEAD_GENERATION",
+    "AI",
+    "BUSINESS",
+    "TRAVEL"
+  ]
 }
