@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "vscode-marketplace-extension-publisher-spy",
-  "title": "VS Code & OpenVSX Extension Publisher, Downloads & Repo Spy",
-  "description": "Developer tools & IDE market intelligence: extracts extension install counts, ratings, publisher identities, and source code repositories from the OpenVSX registry.",
+  "title": "VS Code Marketplace Scraper — Extension Publishers & Install",
+  "description": "Scrape Visual Studio Code Marketplace extensions: extract install counts, ratings, publisher profiles, GitHub repos, and support contacts for DevTools GTM and competitor intelligence ($0.50/1k items).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -38,5 +38,10 @@
         }
       }
     }
-  }
+  },
+  "categories": [
+    "AI",
+    "DEVELOPER_TOOLS",
+    "LEAD_GENERATION"
+  ]
 }

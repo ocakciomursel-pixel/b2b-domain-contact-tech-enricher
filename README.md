@@ -1,4 +1,4 @@
-# VS Code & OpenVSX Extension Publisher, Downloads & Repo Spy
+# VS Code Marketplace Scraper — Extension Publishers & Installs
 
 > **VS Code & OpenVSX Extension Scraper | Publisher Leads & Install Counts** — Developer tools & IDE market intelligence: extracts extension install counts, ratings, publisher identities, and source code repositories from the OpenVSX registry.
 
