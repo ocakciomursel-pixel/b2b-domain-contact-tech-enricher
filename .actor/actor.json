@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "youtube-channel-rss-video-metadata-lead-monitor",
-  "title": "YouTube Video & Channel Metadata, Thumbnail & Creator Enrich",
-  "description": "Creator economy & video marketing intelligence: extracts YouTube video titles, creator channel names, channel links, and high-res thumbnails with zero API key setup.",
+  "title": "YouTube Channel & Video Scraper — Creator Emails & Stats API",
+  "description": "Scrape YouTube channels and videos without YouTube Data API quota limits: extract video titles, view counts, publish dates, descriptions, sponsor links, and creator contact leads ($0.50/1k videos).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -38,5 +38,11 @@
         }
       }
     }
-  }
+  },
+  "categories": [
+    "AI",
+    "SOCIAL_MEDIA",
+    "LEAD_GENERATION",
+    "MARKETING"
+  ]
 }
