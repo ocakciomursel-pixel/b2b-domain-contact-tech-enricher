@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "open-source-package-maintainer-security-intel",
-  "title": "NPM & PyPI Package Maintainer Email & Supply-Chain Spy",
-  "description": "DevTools & Supply-Chain intelligence Actor: extracts NPM and PyPI package download volume, maintainer direct email addresses, license compliance, dependency counts, and release freshness.",
+  "title": "NPM & PyPI Package Scraper — Maintainer Emails & Downloads",
+  "description": "Scrape NPM and PyPI package registries to extract maintainer names, verified developer emails, GitHub repository URLs, license types, dependencies, and download metrics for developer recruiting and DevTools GTM ($2/1k packages).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -106,5 +106,10 @@
       }
     }
   },
-  "output": "./output_schema.json"
+  "output": "./output_schema.json",
+  "categories": [
+    "AI",
+    "DEVELOPER_TOOLS",
+    "LEAD_GENERATION"
+  ]
 }

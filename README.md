@@ -1,4 +1,4 @@
-# NPM & PyPI Package Maintainer Email, Download & Supply-Chain Intelligence (MCP Ready)
+# NPM & PyPI Package Scraper — Maintainer Emails & Downloads
 
 > **NPM & PyPI Package Scraper | Maintainer Emails & Download Stats** — DevTools & Supply-Chain intelligence Actor: extracts NPM and PyPI package download volume, maintainer direct email addresses, license compliance, dependency counts, and release freshness.
 
@@ -115,3 +115,7 @@ Yes. Every run stores structured records in an Apify Dataset that can be exporte
 
 ### Keywords & Tags
 `NPM package scraper, PyPI maintainer email finder, open source supply chain audit, DevTools developer outreach, license compliance scanner`
+
+
+---
+**Search Keywords:** npm scraper, pypi scraper, developer email finder, open source maintainer leads, package registry api
