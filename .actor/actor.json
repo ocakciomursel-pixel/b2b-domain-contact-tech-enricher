@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "seo-technical-audit-broken-link-schema-analyzer",
-  "title": "Technical SEO, Broken Link, Schema.org & Security Auditor",
-  "description": "Perform a 45-point technical SEO & web readiness audit on any URL list: HTTP latency, Title/Meta lengths, Canonical & Robots/llms.txt files, Security Headers (HSTS/CSP), H1-H3 structure, Image alt coverage, Schema.org JSON-LD validation, and live broken link detection with a 0-100 SEO Score and Letter Grade.",
+  "title": "Website SEO Audit & Broken Link Scraper — Schema & llms.txt",
+  "description": "Run a 40-point technical SEO audit on any URL list: scrape title/meta tags, H1-H6 headings, canonicals, missing image alt text, Schema.org JSON-LD, broken links, and HTTP response times with a 0-100 SEO score ($5/1k pages). Ideal for SEO agencies.",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -41,23 +41,74 @@
           "display": {
             "component": "table",
             "properties": {
-              "url": { "label": "URL", "format": "link" },
-              "seoScore": { "label": "SEO Score (0-100)", "format": "number" },
-              "seoGrade": { "label": "Grade", "format": "text" },
-              "statusCode": { "label": "HTTP Status", "format": "number" },
-              "responseTimeMs": { "label": "Latency (ms)", "format": "number" },
-              "title": { "label": "Page Title", "format": "text" },
-              "metaDescription": { "label": "Meta Description", "format": "text" },
-              "h1Count": { "label": "H1 Count", "format": "number" },
-              "imagesMissingAlt": { "label": "Imgs Missing Alt", "format": "number" },
-              "schemaTypes": { "label": "Schema.org Types", "format": "array" },
-              "hasRobotsTxt": { "label": "robots.txt", "format": "boolean" },
-              "hasLlmsTxt": { "label": "llms.txt", "format": "boolean" },
-              "hasHsts": { "label": "HSTS Header", "format": "boolean" },
-              "internalLinksCount": { "label": "Internal Links", "format": "number" },
-              "externalLinksCount": { "label": "External Links", "format": "number" },
-              "brokenLinksCount": { "label": "Broken Links", "format": "number" },
-              "issues": { "label": "Actionable SEO Issues", "format": "array" }
+              "url": {
+                "label": "URL",
+                "format": "link"
+              },
+              "seoScore": {
+                "label": "SEO Score (0-100)",
+                "format": "number"
+              },
+              "seoGrade": {
+                "label": "Grade",
+                "format": "text"
+              },
+              "statusCode": {
+                "label": "HTTP Status",
+                "format": "number"
+              },
+              "responseTimeMs": {
+                "label": "Latency (ms)",
+                "format": "number"
+              },
+              "title": {
+                "label": "Page Title",
+                "format": "text"
+              },
+              "metaDescription": {
+                "label": "Meta Description",
+                "format": "text"
+              },
+              "h1Count": {
+                "label": "H1 Count",
+                "format": "number"
+              },
+              "imagesMissingAlt": {
+                "label": "Imgs Missing Alt",
+                "format": "number"
+              },
+              "schemaTypes": {
+                "label": "Schema.org Types",
+                "format": "array"
+              },
+              "hasRobotsTxt": {
+                "label": "robots.txt",
+                "format": "boolean"
+              },
+              "hasLlmsTxt": {
+                "label": "llms.txt",
+                "format": "boolean"
+              },
+              "hasHsts": {
+                "label": "HSTS Header",
+                "format": "boolean"
+              },
+              "internalLinksCount": {
+                "label": "Internal Links",
+                "format": "number"
+              },
+              "externalLinksCount": {
+                "label": "External Links",
+                "format": "number"
+              },
+              "brokenLinksCount": {
+                "label": "Broken Links",
+                "format": "number"
+              },
+              "issues": {
+                "label": "Actionable SEO Issues",
+                "format": "array"
+              }
             }
           }
         }
@@ -66,20 +117,70 @@
         "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
         "properties": {
-          "url": { "type": "string", "title": "url", "description": "Extracted url" },
-          "seoScore": { "type": "number", "title": "seoScore", "description": "Extracted seoScore" },
-          "seoGrade": { "type": "string", "title": "seoGrade", "description": "Letter Grade (A+ to D)" },
-          "statusCode": { "type": "number", "title": "statusCode", "description": "Extracted statusCode" },
-          "responseTimeMs": { "type": "number", "title": "responseTimeMs", "description": "Extracted responseTimeMs" },
-          "title": { "type": "string", "title": "title", "description": "Extracted title" },
-          "h1Count": { "type": "number", "title": "h1Count", "description": "Extracted h1Count" },
-          "imagesMissingAlt": { "type": "number", "title": "imagesMissingAlt", "description": "Extracted imagesMissingAlt" },
-          "schemaTypes": { "type": "array", "title": "schemaTypes", "description": "Detected Schema.org types" },
-          "brokenLinksCount": { "type": "number", "title": "brokenLinksCount", "description": "Extracted brokenLinksCount" },
-          "issues": { "type": "array", "title": "issues", "description": "Extracted issues" }
+          "url": {
+            "type": "string",
+            "title": "url",
+            "description": "Extracted url"
+          },
+          "seoScore": {
+            "type": "number",
+            "title": "seoScore",
+            "description": "Extracted seoScore"
+          },
+          "seoGrade": {
+            "type": "string",
+            "title": "seoGrade",
+            "description": "Letter Grade (A+ to D)"
+          },
+          "statusCode": {
+            "type": "number",
+            "title": "statusCode",
+            "description": "Extracted statusCode"
+          },
+          "responseTimeMs": {
+            "type": "number",
+            "title": "responseTimeMs",
+            "description": "Extracted responseTimeMs"
+          },
+          "title": {
+            "type": "string",
+            "title": "title",
+            "description": "Extracted title"
+          },
+          "h1Count": {
+            "type": "number",
+            "title": "h1Count",
+            "description": "Extracted h1Count"
+          },
+          "imagesMissingAlt": {
+            "type": "number",
+            "title": "imagesMissingAlt",
+            "description": "Extracted imagesMissingAlt"
+          },
+          "schemaTypes": {
+            "type": "array",
+            "title": "schemaTypes",
+            "description": "Detected Schema.org types"
+          },
+          "brokenLinksCount": {
+            "type": "number",
+            "title": "brokenLinksCount",
+            "description": "Extracted brokenLinksCount"
+          },
+          "issues": {
+            "type": "array",
+            "title": "issues",
+            "description": "Extracted issues"
+          }
         }
       }
     }
   },
-  "output": "./output_schema.json"
+  "output": "./output_schema.json",
+  "categories": [
+    "AI",
+    "MARKETING",
+    "SEO_TOOLS",
+    "DEVELOPER_TOOLS"
+  ]
 }

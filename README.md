@@ -1,4 +1,4 @@
-# Technical SEO, Broken Link, Schema.org & Security Auditor
+# Website SEO Audit & Broken Link Scraper — Schema & llms.txt
 
 > 🎁 **RUN FOR FREE WITH YOUR $5.00 APIFY MONTHLY CREDIT:** Every Apify account automatically receives **$5.00 in free platform usage every month** — enough to extract **3,300 to 10,000 verified records every single month for $0.00 out of pocket!** Click the green **Start** button above to test immediately.
 
@@ -108,3 +108,7 @@ for item in client.dataset(run["defaultDatasetId"]).iterate_items():
 | **[SaaS Pricing Page, Plan Tiers & Competitor Feature Spy](https://apify.com/lucacelli/saas-pricing-page-tier-feature-extractor)** | **$0.80 / 1k pages** | *Klue / Crayon ($500+/mo)* | [🚀 Run Actor →](https://apify.com/lucacelli/saas-pricing-page-tier-feature-extractor) |
 | **[ClinicalTrials.gov & OpenFDA Biotech / Pharma Lead Enricher](https://apify.com/lucacelli/clinical-trials-fda-drug-safety-intel)** | **$0.80 / 1k trials** | *Citeline / GlobalData Pharma ($500+/mo)* | [🚀 Run Actor →](https://apify.com/lucacelli/clinical-trials-fda-drug-safety-intel) |
 | **[Scientific Paper, Author Email & Lab Research Lead Miner](https://apify.com/lucacelli/scientific-literature-citation-author-lead-miner)** | **$0.50 / 1k papers** | *Dimensions.ai / SciLeads ($300+/mo)* | [🚀 Run Actor →](https://apify.com/lucacelli/scientific-literature-citation-author-lead-miner) |
+
+
+---
+**Search Keywords:** seo audit scraper, broken link checker, technical seo crawler, schema.org validator, meta tag scraper, screaming frog alternative
