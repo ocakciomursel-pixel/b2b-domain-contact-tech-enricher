@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "substack-newsletter-author-archive-lead-scraper",
-  "title": "Substack Newsletter Archive, Author & Content Velocity Scrap",
-  "description": "Newsletter sponsorship & media PR intelligence: extracts recent posts, author names, publishing dates, and links from Substack publications.",
+  "title": "Substack Scraper — Newsletter Authors, Posts & Creator Leads",
+  "description": "Scrape Substack newsletters, publication archives, author profiles, social links, and post metadata. Build targeted creator, journalist, and newsletter sponsorship lead lists ($0.50/1k records).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -38,5 +38,11 @@
         }
       }
     }
-  }
+  },
+  "categories": [
+    "AI",
+    "SOCIAL_MEDIA",
+    "LEAD_GENERATION",
+    "MARKETING"
+  ]
 }
