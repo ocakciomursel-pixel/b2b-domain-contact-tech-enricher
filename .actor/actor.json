@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "hackernews-tech-launch-lead-monitor",
-  "title": "Hacker News Launch, Show HN & Tech Founder Lead Monitor",
-  "description": "Monitor Hacker News (Show HN, Ask HN, and top tech stories) by keyword to discover newly launched startups, founder handles, outbound domains, and community traction.",
+  "title": "Hacker News Scraper — Show HN, Tech Founders & Comments",
+  "description": "Scrape Hacker News (Y Combinator) front-page stories, Show HN startup launches, Ask HN threads, comments, points, and founder profiles via Algolia HN API. Track developer trends, AI launches, and startup founder leads in real time ($1/1k stories).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -106,5 +106,11 @@
       }
     }
   },
-  "output": "./output_schema.json"
+  "output": "./output_schema.json",
+  "categories": [
+    "AI",
+    "SOCIAL_MEDIA",
+    "LEAD_GENERATION",
+    "DEVELOPER_TOOLS"
+  ]
 }
