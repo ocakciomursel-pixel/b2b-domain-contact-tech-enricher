@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "reddit-community-pain-point-trend-miner",
-  "title": "Reddit Subreddit, Buyer Intent & Pain-Point Lead Miner",
-  "description": "Mine Reddit subreddits for high-intent buyer questions, software alternatives discussions, pain points, upvote velocity, and engagement signals.",
+  "title": "Reddit Search & Comments Scraper — Brand & Leads ($0.50/1k)",
+  "description": "Scrape Reddit posts, comments, subreddits, keyword search results, buying intent signals, and user leads without Reddit API keys. Export Reddit threads to CSV/Excel/JSON or connect to Claude/Cursor MCP & n8n. Pay-per-event ($2/1k posts). No login required.",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -101,5 +101,11 @@
       }
     }
   },
-  "output": "./output_schema.json"
+  "output": "./output_schema.json",
+  "categories": [
+    "AI",
+    "SOCIAL_MEDIA",
+    "LEAD_GENERATION",
+    "BUSINESS"
+  ]
 }
