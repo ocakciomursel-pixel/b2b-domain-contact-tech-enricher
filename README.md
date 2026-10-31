@@ -1,4 +1,4 @@
-# AshbyHQ Startup Job Board, Compensation & Hiring Signal Scraper
+# Ashby Jobs Scraper — Startup Job Board & Hiring Leads API
 
 > **AshbyHQ Job Scraper | YC Startup Hiring Signals & Salary Ranges** — B2B sales intent & recruiting intelligence: queries public AshbyHQ posting APIs for fast-growing tech startups to extract active job openings, departments, and locations.
 

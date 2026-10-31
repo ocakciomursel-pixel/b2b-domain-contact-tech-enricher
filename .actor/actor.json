@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "ashby-company-job-board-hiring-velocity-scraper",
-  "title": "AshbyHQ Startup Job Board, Compensation & Hiring Signal Scra",
-  "description": "B2B sales intent & recruiting intelligence: queries public AshbyHQ posting APIs for fast-growing tech startups to extract active job openings, departments, and locations.",
+  "title": "Ashby Jobs Scraper — Startup Job Board & Hiring Leads API",
+  "description": "Scrape live startup job postings from Ashby (jobs.ashbyhq.com) career boards: extract job titles, departments, remote locations, compensation ranges, and hiring velocity signals for recruiting agencies and B2B sales ($0.50/1k jobs).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -38,5 +38,11 @@
         }
       }
     }
-  }
+  },
+  "categories": [
+    "JOBS",
+    "AI",
+    "LEAD_GENERATION",
+    "BUSINESS"
+  ]
 }
