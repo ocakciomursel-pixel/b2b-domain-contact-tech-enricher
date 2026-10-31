@@ -1,4 +1,4 @@
-# Global News, PR Mention, Event Classifier & Brand Sentiment Monitor (MCP Ready)
+# Google News & Brand Mention Scraper — PR & Sentiment API
 
 > **Google News Scraper, Brand Mention Monitor & PR Sentiment Analyzer** — PR, Media & Financial News intelligence Actor: monitors real-time Google News RSS feeds for any company, brand, or market keyword with automated sentiment scoring and corporate event classification.
 
@@ -112,3 +112,7 @@ Yes. Every run stores structured records in an Apify Dataset that can be exporte
 
 ### Keywords & Tags
 `Google News scraper, PR media monitoring, brand sentiment analysis, company trigger events, funding announcement tracker, Meltwater alternative`
+
+
+---
+**Search Keywords:** google news scraper, brand mention monitor, pr sentiment analyzer, news rss scraper, media monitoring api
