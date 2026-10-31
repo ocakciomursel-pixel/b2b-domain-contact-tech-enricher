@@ -1,4 +1,4 @@
-# WooCommerce Store Product Catalog, SKU & Pricing Extractor
+# WooCommerce Store & Product Scraper — Prices, SKUs & Emails
 
 > **WooCommerce Product Scraper | Store Catalog, Prices & Stock Status** — E-commerce competitive intelligence: scans WooCommerce storefronts via public Store REST API and HTML product markup to extract product titles, prices, and URLs.
 

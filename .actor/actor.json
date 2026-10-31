@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "woocommerce-public-store-product-catalog-scraper",
-  "title": "WooCommerce Store Product Catalog, SKU & Pricing Extractor",
-  "description": "E-commerce competitive intelligence: scans WooCommerce storefronts via public Store REST API and HTML product markup to extract product titles, prices, and URLs.",
+  "title": "WooCommerce Store & Product Scraper — Prices, SKUs & Emails",
+  "description": "Scrape any public WooCommerce e-commerce store catalog via Store API & HTML: extract product names, prices, sale discounts, SKUs, categories, stock status, and merchant contact details ($0.50/1k products).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -38,5 +38,11 @@
         }
       }
     }
-  }
+  },
+  "categories": [
+    "ECOMMERCE",
+    "AI",
+    "LEAD_GENERATION",
+    "BUSINESS"
+  ]
 }
