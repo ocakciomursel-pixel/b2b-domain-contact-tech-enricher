@@ -1,4 +1,4 @@
-# SmartRecruiters Enterprise Company Job Board & Hiring Spy
+# SmartRecruiters Jobs Scraper — Enterprise Job Openings API
 
 > **SmartRecruiters Job Scraper | Enterprise Hiring Intent & Openings** — Enterprise B2B sales intent & recruiting tool: queries SmartRecruiters public posting APIs to extract corporate job openings, locations, and departments.
 

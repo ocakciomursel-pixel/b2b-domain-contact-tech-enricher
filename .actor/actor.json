@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "smartrecruiters-enterprise-job-opening-scraper",
-  "title": "SmartRecruiters Enterprise Company Job Board & Hiring Spy",
-  "description": "Enterprise B2B sales intent & recruiting tool: queries SmartRecruiters public posting APIs to extract corporate job openings, locations, and departments.",
+  "title": "SmartRecruiters Jobs Scraper — Enterprise Job Openings API",
+  "description": "Scrape enterprise job postings from SmartRecruiters company career pages: extract job titles, locations, experience levels, departments, and direct application links for recruiting automation ($0.50/1k jobs).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -38,5 +38,11 @@
         }
       }
     }
-  }
+  },
+  "categories": [
+    "JOBS",
+    "AI",
+    "LEAD_GENERATION",
+    "BUSINESS"
+  ]
 }
