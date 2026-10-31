@@ -1,4 +1,4 @@
-# Hugging Face Model Hub Downloads, License & Publisher Tracker
+# HuggingFace Scraper — AI Models, Datasets & Org Leads API
 
 > **Hugging Face Hub Scraper | Model Downloads, Likes & Organization Leads** — Machine learning ecosystem intelligence: queries Hugging Face Hub API to track model adoption, download velocity, community likes, task categories, and publisher organizations.
 

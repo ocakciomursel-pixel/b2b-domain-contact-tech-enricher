@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "huggingface-ai-model-dataset-org-intelligence",
-  "title": "Hugging Face Model Hub Downloads, License & Publisher Tracke",
-  "description": "Machine learning ecosystem intelligence: queries Hugging Face Hub API to track model adoption, download velocity, community likes, task categories, and publisher organizations.",
+  "title": "HuggingFace Scraper — AI Models, Datasets & Org Leads API",
+  "description": "Scrape Hugging Face Hub models, datasets, spaces, downloads, likes, license tags, and AI organization profiles. Track trending open-source LLMs and AI engineering teams ($0.50/1k items).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -38,5 +38,10 @@
         }
       }
     }
-  }
+  },
+  "categories": [
+    "AI",
+    "DEVELOPER_TOOLS",
+    "LEAD_GENERATION"
+  ]
 }
