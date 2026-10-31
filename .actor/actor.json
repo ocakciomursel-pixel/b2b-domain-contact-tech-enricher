@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "sitemap-url-inventory-content-freshness-auditor",
-  "title": "XML Sitemap URL Inventory, SEO Freshness & Content Auditor",
-  "description": "Discover robots.txt and XML sitemaps for any domain, extract complete URL inventories, categorize site sections (/blog, /docs, /products), and measure content publishing velocity.",
+  "title": "XML Sitemap Scraper & URL Extractor — Website Page Inventory",
+  "description": "Parse any website XML sitemap, sitemap index, or robots.txt to extract all page URLs, lastmod timestamps, content freshness stats, and category breakdowns. Fast URL discovery for RAG pipelines, SEO audits, and competitor monitoring ($2/1k sitemaps).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -96,5 +96,10 @@
       }
     }
   },
-  "output": "./output_schema.json"
+  "output": "./output_schema.json",
+  "categories": [
+    "AI",
+    "SEO_TOOLS",
+    "DEVELOPER_TOOLS"
+  ]
 }
