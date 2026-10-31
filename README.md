@@ -1,4 +1,4 @@
-# Brand Reputation, Aggregate Rating & Review Schema Extractor
+# Trustpilot Reviews & Company Rating Scraper — Reputation API
 
 > **Company Reputation & AggregateRating Schema Scraper for Brands** — Reputation management & B2B agency prospecting tool: extracts structured review ratings, aggregate scores, and trust signals from target URLs.
 

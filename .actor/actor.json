@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "trustpilot-public-business-rating-review-schema-spy",
-  "title": "Brand Reputation, Aggregate Rating & Review Schema Extractor",
-  "description": "Reputation management & B2B agency prospecting tool: extracts structured review ratings, aggregate scores, and trust signals from target URLs.",
+  "title": "Trustpilot Reviews & Company Rating Scraper — Reputation API",
+  "description": "Extract public business ratings, review counts, star distributions, Schema.org review snippets, and customer sentiment signals for reputation monitoring and B2B agency lead generation ($0.50/1k results).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -38,5 +38,11 @@
         }
       }
     }
-  }
+  },
+  "categories": [
+    "AI",
+    "LEAD_GENERATION",
+    "BUSINESS",
+    "MARKETING"
+  ]
 }
