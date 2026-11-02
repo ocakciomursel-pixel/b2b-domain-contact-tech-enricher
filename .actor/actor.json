@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "company-press-kit-brand-asset-media-contact-finder",
-  "title": "Company Newsroom, Press Kit & PR Media Contact Email Finder",
-  "description": "PR agency & journalist outreach tool: automatically locates company newsrooms and press pages, extracting media relations emails and press kit resources.",
+  "title": "Company Newsroom, Press Kit & PR Media Email Scraper API",
+  "description": "Scrape company websites to discover official press rooms, media kits, brand guidelines, PR agency contacts, and press@ email addresses for PR outreach and brand intelligence ($0.50/1k domains).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -38,5 +38,10 @@
         }
       }
     }
-  }
+  },
+  "categories": [
+    "LEAD_GENERATION",
+    "MCP_SERVERS",
+    "AGENTS"
+  ]
 }

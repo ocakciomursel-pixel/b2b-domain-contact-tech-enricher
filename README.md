@@ -1,4 +1,4 @@
-# Company Newsroom, Press Kit & PR Media Contact Email Finder
+# Company Newsroom, Press Kit & PR Media Email Scraper API
 
 > **Press Kit & Media Contact Scraper | PR Emails & Newsroom Finder** — PR agency & journalist outreach tool: automatically locates company newsrooms and press pages, extracting media relations emails and press kit resources.
 
