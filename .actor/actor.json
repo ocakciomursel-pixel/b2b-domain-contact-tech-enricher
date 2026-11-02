@@ -78,37 +78,58 @@
         "type": "object",
         "properties": {
           "name": {
-            "type": "string",
+            "type": [
+              "string",
+              "null"
+            ],
             "title": "name",
             "description": "Extracted name"
           },
           "symbol": {
-            "type": "string",
+            "type": [
+              "string",
+              "null"
+            ],
             "title": "symbol",
             "description": "Extracted symbol"
           },
           "category": {
-            "type": "string",
+            "type": [
+              "string",
+              "null"
+            ],
             "title": "category",
             "description": "Extracted category"
           },
           "tvlUsd": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "title": "tvlUsd",
             "description": "Extracted tvlUsd"
           },
           "mcapToTvlRatio": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "title": "mcapToTvlRatio",
             "description": "Extracted mcapToTvlRatio"
           },
           "change1dPct": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "title": "change1dPct",
             "description": "Extracted change1dPct"
           },
           "chains": {
-            "type": "array",
+            "type": [
+              "array",
+              "null"
+            ],
             "title": "chains",
             "description": "Extracted chains"
           }

@@ -156,19 +156,19 @@ async function analyzeDefiProtocols(categoryFilter, chainFilter, minTvlUsd, maxP
                     if (chainKw && !chains.some((c) => c.toLowerCase().includes(chainKw))) continue;
 
                     const mcap = Number(p.mcap) || null;
-                    const mcapToTvl = mcap && tvl > 0 ? Number((mcap / tvl).toFixed(3)) : null;
+                    const mcapToTvl = mcap && tvl > 0 ? Number((mcap / tvl).toFixed(3)) : 0;
 
                     out.push({
                         name: p.name,
                         slug: p.slug,
-                        symbol: p.symbol || null,
-                        category: p.category || null,
+                        symbol: p.symbol || 'N/A',
+                        category: p.category || 'DeFi',
                         tvlUsd: Math.round(tvl),
-                        mcapUsd: mcap ? Math.round(mcap) : null,
+                        mcapUsd: mcap ? Math.round(mcap) : 0,
                         mcapToTvlRatio: mcapToTvl,
-                        change1hPct: p.change_1h !== undefined && p.change_1h !== null ? Number(Number(p.change_1h).toFixed(2)) : null,
-                        change1dPct: p.change_1d !== undefined && p.change_1d !== null ? Number(Number(p.change_1d).toFixed(2)) : null,
-                        change7dPct: p.change_7d !== undefined && p.change_7d !== null ? Number(Number(p.change_7d).toFixed(2)) : null,
+                        change1hPct: p.change_1h !== undefined && p.change_1h !== null ? Number(Number(p.change_1h).toFixed(2)) : 0,
+                        change1dPct: p.change_1d !== undefined && p.change_1d !== null ? Number(Number(p.change_1d).toFixed(2)) : 0,
+                        change7dPct: p.change_7d !== undefined && p.change_7d !== null ? Number(Number(p.change_7d).toFixed(2)) : 0,
                         chains: chains.slice(0, 15),
                         auditsCount: Number(p.audits) || 0,
                         auditLinks: Array.isArray(p.audit_links) ? p.audit_links : [],
@@ -181,7 +181,7 @@ async function analyzeDefiProtocols(categoryFilter, chainFilter, minTvlUsd, maxP
                 }
             }
         }
-    } catch {} finally {
+    } catch {} catch (e) { console.error('Run error:', e.message); } finally {
         clearTimeout(timer);
     }
 
