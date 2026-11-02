@@ -1,4 +1,4 @@
-# Dental & Medical Clinic Online Booking & Patient Portal Detector
+# Dental & Medical Clinic Leads Scraper — Emails & Phones AP
 
 > **Dental & Medical Clinic Scraper | Detect NexHealth, Zocdoc & Contacts** — Healthcare marketing agency & practice management SaaS lead tool: detects online scheduling tools and contact points on clinic websites.
 
