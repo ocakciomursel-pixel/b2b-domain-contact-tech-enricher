@@ -1,4 +1,4 @@
-# YouTube Channel & Video Scraper — Creator Emails & Stats API
+# YouTube Channel & Video Scraper — Creator Emails & Stats
 
 > **YouTube Metadata Scraper | Channel Name, Author URL & Video Details** — Creator economy & video marketing intelligence: extracts YouTube video titles, creator channel names, channel links, and high-res thumbnails with zero API key setup.
 
