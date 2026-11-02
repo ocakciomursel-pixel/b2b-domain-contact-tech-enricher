@@ -31,7 +31,7 @@ const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
 const MODE = "youtubeoembed";
 const INPUT_PROP = "videoUrls";
 const DEFAULT_LIST = ["https://www.youtube.com/watch?v=dQw4w9WgXcQ"];
-const EVENT_NAME = "video-enriched";
+const EVENT_NAME = "fx-rate-extracted";
 
 async function safeFetchJson(url, headers = {}) {
     const controller = new AbortController();
