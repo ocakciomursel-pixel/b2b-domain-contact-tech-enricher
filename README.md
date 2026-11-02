@@ -1,4 +1,4 @@
-# Landing Page CRO, CTA, Live Chat & Conversion Funnel Auditor
+# Landing Page CRO, CTA & Funnel Scraper — Agency Lead Tool
 
 > **Landing Page CRO Analyzer | CTA Buttons, Forms & Live Chat Detector** — CRO agency & growth marketing intelligence: analyzes landing pages for call-to-action density, form fields, live chat widgets, video embeds, and conversion readiness score.
 
