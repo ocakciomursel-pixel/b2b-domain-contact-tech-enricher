@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "defi-protocol-yield-tvl-whale-intel",
-  "title": "DeFi Protocol TVL, Capital Flow & Yield Pool Intelligence",
-  "description": "Institutional Crypto & DeFi intelligence Actor: tracks protocol TVL, 1d/7d/30d capital inflows/outflows, multi-chain exposure, Mcap/TVL valuation multiples, and audit status via DeFiLlama.",
+  "title": "DeFiLlama Scraper — Crypto Protocol TVL, Yields & Chains",
+  "description": "Scrape DeFiLlama protocol TVL, APY yield pools, chain liquidity inflows, and Web3 project metadata across Ethereum, Solana, Base, and Arbitrum ($0.50/1k records).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -116,5 +116,10 @@
       }
     }
   },
-  "output": "./output_schema.json"
+  "output": "./output_schema.json",
+  "categories": [
+    "LEAD_GENERATION",
+    "MCP_SERVERS",
+    "AGENTS"
+  ]
 }
