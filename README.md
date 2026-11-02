@@ -1,4 +1,4 @@
-# Bulk Email Verifier (Syntax, Live DNS MX, Disposable & Role)
+# Bulk Email Verifier — Syntax, DNS MX & Disposable Checker
 
 > **Bulk Email Verifier & MX Checker | Clean Cold Email Lists Fast** — Essential cold email deliverability hygiene tool: validates email syntax, detects role accounts (info@, admin@) and temp-mail providers, and verifies live DNS MX records.
 

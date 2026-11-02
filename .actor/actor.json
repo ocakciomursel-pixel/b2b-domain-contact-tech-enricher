@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
-  "name": "bulk-email-syntax-mx-disposable-role-verifier",
-  "title": "Bulk Email Verifier (Syntax, Live DNS MX, Disposable & Role)",
-  "description": "Essential cold email deliverability hygiene tool: validates email syntax, detects role accounts (info@, admin@) and temp-mail providers, and verifies live DNS MX records.",
+  "name": "bulk-email-verifier-mx-syntax",
+  "title": "Bulk Email Verifier — Syntax, DNS MX & Disposable Checker",
+  "description": "Verify business and personal email lists in bulk: check RFC syntax, live DNS MX records, mail server providers (Google Workspace/Microsoft 365), disposable domain detection, and role-account flags ($0.50/1k emails).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -38,5 +38,10 @@
         }
       }
     }
-  }
+  },
+  "categories": [
+    "LEAD_GENERATION",
+    "MCP_SERVERS",
+    "AGENTS"
+  ]
 }
