@@ -31,7 +31,7 @@ const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
 const MODE = "huggingface";
 const INPUT_PROP = "queries";
 const DEFAULT_LIST = ["embedding"];
-const EVENT_NAME = "model-analyzed";
+const EVENT_NAME = "drug-record-extracted";
 
 async function safeFetchJson(url, headers = {}) {
     const controller = new AbortController();
