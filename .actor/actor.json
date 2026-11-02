@@ -73,37 +73,58 @@
         "type": "object",
         "properties": {
           "trackName": {
-            "type": "string",
+            "type": [
+              "string",
+              "null"
+            ],
             "title": "trackName",
             "description": "Extracted trackName"
           },
           "sellerName": {
-            "type": "string",
+            "type": [
+              "string",
+              "null"
+            ],
             "title": "sellerName",
             "description": "Extracted sellerName"
           },
           "averageUserRating": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "title": "averageUserRating",
             "description": "Extracted averageUserRating"
           },
           "userRatingCount": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "title": "userRatingCount",
             "description": "Extracted userRatingCount"
           },
           "lowStarComplaintsCount": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "title": "lowStarComplaintsCount",
             "description": "Extracted lowStarComplaintsCount"
           },
           "complaintThemes": {
-            "type": "array",
+            "type": [
+              "array",
+              "null"
+            ],
             "title": "complaintThemes",
             "description": "Extracted complaintThemes"
           },
           "sellerUrl": {
-            "type": "string",
+            "type": [
+              "string",
+              "null"
+            ],
             "title": "sellerUrl",
             "description": "Extracted sellerUrl"
           }

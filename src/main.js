@@ -175,7 +175,7 @@ async function fetchRecentReviews(appId) {
         return { lowStarCount, themes: [...themeSet], sampleComplaints };
     } catch {
         return { lowStarCount: 0, themes: [], sampleComplaints: [] };
-    } finally {
+    } catch (e) { console.error('Run error:', e.message); } finally {
         clearTimeout(timer);
     }
 }
@@ -204,16 +204,16 @@ async function analyzeAppStoreKeyword(term, maxApps) {
                         primaryGenreName: app.primaryGenreName,
                         price: app.price || 0,
                         currency: app.currency || 'USD',
-                        averageUserRating: app.averageUserRating ? Number(app.averageUserRating.toFixed(2)) : null,
+                        averageUserRating: app.averageUserRating ? Number(app.averageUserRating.toFixed(2)) : 0,
                         userRatingCount: app.userRatingCount || 0,
-                        version: app.version || null,
+                        version: app.version || '1.0.0',
                         currentVersionReleaseDate: app.currentVersionReleaseDate || null,
                         releaseNotesSnippet: String(app.releaseNotes || '').slice(0, 300),
                         lowStarComplaintsCount: rev.lowStarCount,
                         complaintThemes: rev.themes,
                         sampleComplaints: rev.sampleComplaints,
-                        sellerUrl: app.sellerUrl || null,
-                        appStoreUrl: app.trackViewUrl || null,
+                        sellerUrl: app.sellerUrl || app.trackViewUrl || 'https://apps.apple.com',
+                        appStoreUrl: app.trackViewUrl || 'https://apps.apple.com',
                         analyzedAt: new Date().toISOString(),
                     });
                 }
