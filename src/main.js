@@ -181,7 +181,7 @@ async function analyzeDefiProtocols(categoryFilter, chainFilter, minTvlUsd, maxP
                 }
             }
         }
-    } catch {} catch (e) { console.error('Run error:', e.message); } finally {
+    } catch {} finally {
         clearTimeout(timer);
     }
 
