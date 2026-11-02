@@ -31,7 +31,7 @@ const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
 const MODE = "substack";
 const INPUT_PROP = "publications";
 const DEFAULT_LIST = ["https://on.substack.com"];
-const EVENT_NAME = "newsletter-post-extracted";
+const EVENT_NAME = "country-analyzed";
 
 async function safeFetchJson(url, headers = {}) {
     const controller = new AbortController();
