@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
-  "name": "vscode-marketplace-extension-publisher-spy",
-  "title": "VS Code Marketplace Scraper — Extension Publishers & Install",
+  "name": "vscode-marketplace-scraper",
+  "title": "VS Code Marketplace Scraper — Publishers, Installs & Leads",
   "description": "Scrape Visual Studio Code Marketplace extensions: extract install counts, ratings, publisher profiles, GitHub repos, and support contacts for DevTools GTM and competitor intelligence ($0.50/1k items).",
   "version": "2.0",
   "buildTag": "latest",
@@ -41,7 +41,7 @@
   },
   "categories": [
     "AI",
-    "DEVELOPER_TOOLS",
+    "MCP_SERVERS",
     "LEAD_GENERATION"
   ]
 }
