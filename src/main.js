@@ -31,7 +31,7 @@ const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
 const MODE = "domlead";
 const INPUT_PROP = "domains";
 const DEFAULT_LIST = ["compass.com"];
-const EVENT_NAME = "brokerage-enriched";
+const EVENT_NAME = "company-filing-extracted";
 
 const DISPOSABLE_DOMAINS = new Set(['mailinator.com', 'guerrillamail.com', '10minutemail.com', 'tempmail.com', 'yopmail.com', 'trashmail.com', 'sharklasers.com']);
 const ROLE_PREFIXES = new Set(['info', 'admin', 'support', 'sales', 'contact', 'office', 'billing', 'help', 'careers', 'hr', 'press', 'legal', 'security', 'noreply', 'no-reply']);
