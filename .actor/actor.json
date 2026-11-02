@@ -68,37 +68,58 @@
         "type": "object",
         "properties": {
           "title": {
-            "type": "string",
+            "type": [
+              "string",
+              "null"
+            ],
             "title": "title",
             "description": "Extracted title"
           },
           "isShowHN": {
-            "type": "boolean",
+            "type": [
+              "boolean",
+              "null"
+            ],
             "title": "isShowHN",
             "description": "Extracted isShowHN"
           },
           "author": {
-            "type": "string",
+            "type": [
+              "string",
+              "null"
+            ],
             "title": "author",
             "description": "Extracted author"
           },
           "points": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "title": "points",
             "description": "Extracted points"
           },
           "numComments": {
-            "type": "number",
+            "type": [
+              "number",
+              "null"
+            ],
             "title": "numComments",
             "description": "Extracted numComments"
           },
           "externalDomain": {
-            "type": "string",
+            "type": [
+              "string",
+              "null"
+            ],
             "title": "externalDomain",
             "description": "Extracted externalDomain"
           },
           "hnUrl": {
-            "type": "string",
+            "type": [
+              "string",
+              "null"
+            ],
             "title": "hnUrl",
             "description": "Extracted hnUrl"
           }

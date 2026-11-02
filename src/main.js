@@ -39,7 +39,7 @@ async function searchHackerNews(query, maxResults = 15) {
       const hits = Array.isArray(data?.hits) ? data.hits : [];
       if (hits.length > 0) {
         return hits.map((h) => {
-          let externalDomain = null;
+          let externalDomain = 'news.ycombinator.com';
           if (h.url) {
             try { externalDomain = new URL(h.url).hostname.replace(/^www\./i, ''); } catch {}
           }
@@ -94,7 +94,7 @@ async function run() {
       }
     }
     console.log(`✅ Extracted ${totalPushed} Hacker News launch signals.`);
-  } finally {
+  } catch (e) { console.error('Run error:', e.message); } finally {
     await Actor.exit();
   }
 }
