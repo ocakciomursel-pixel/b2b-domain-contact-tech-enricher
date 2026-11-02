@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
-  "name": "real-estate-brokerage-idx-mls-tech-lead-enricher",
-  "title": "Real Estate Brokerage IDX/MLS Tech, Agent Email & Phone Spy",
-  "description": "PropTech B2B sales & real estate marketing agency lead tool: extracts contact emails, phone numbers, and social links from brokerage domains.",
+  "name": "real-estate-agent-leads-scraper",
+  "title": "Real Estate Agent & Brokerage Leads Scraper — Emails API",
+  "description": "Scrape real estate brokerage and property management websites to extract agent emails, phone numbers, social media profiles, IDX/MLS platform providers, and lead capture widgets ($0.50/1k domains).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -38,5 +38,10 @@
         }
       }
     }
-  }
+  },
+  "categories": [
+    "LEAD_GENERATION",
+    "MCP_SERVERS",
+    "AGENTS"
+  ]
 }

@@ -1,4 +1,4 @@
-# Real Estate Brokerage IDX/MLS Tech, Agent Email & Phone Spy
+# Real Estate Agent & Brokerage Leads Scraper — Emails API
 
 > **Real Estate Brokerage Website Scraper | Agent Emails, Phones & IDX Tech** — PropTech B2B sales & real estate marketing agency lead tool: extracts contact emails, phone numbers, and social links from brokerage domains.
 
