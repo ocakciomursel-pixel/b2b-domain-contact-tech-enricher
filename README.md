@@ -1,4 +1,4 @@
-# llms.txt Validator & Automated Website llms.txt Map Generator
+# llms.txt Generator & Website AI Readiness Scraper API
 
 > **llms.txt Checker & Generator | Audit or Build llms.txt for Any Website** — Modern web visibility & developer documentation tool: audits existing /llms.txt files and generates a ready-to-deploy llms.txt markdown map for any domain.
 

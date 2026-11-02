@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
-  "name": "llms-txt-website-auditor-and-markdown-generator",
-  "title": "llms.txt Validator & Automated Website llms.txt Map Generato",
-  "description": "Modern web visibility & developer documentation tool: audits existing /llms.txt files and generates a ready-to-deploy llms.txt markdown map for any domain.",
+  "name": "llms-txt-generator-scraper",
+  "title": "llms.txt Generator & Website AI Readiness Scraper API",
+  "description": "Audit any website for /llms.txt and /llms-full.txt standards or automatically generate a clean, structured llms.txt Markdown index from site navigation and docs for Claude, ChatGPT, Perplexity & Cursor ($0.50/1k sites).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -38,5 +38,10 @@
         }
       }
     }
-  }
+  },
+  "categories": [
+    "AI",
+    "MCP_SERVERS",
+    "AGENTS"
+  ]
 }
