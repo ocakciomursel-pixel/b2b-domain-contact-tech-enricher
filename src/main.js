@@ -31,7 +31,7 @@ const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
 const MODE = "clinictech";
 const INPUT_PROP = "domains";
 const DEFAULT_LIST = ["onedental.com"];
-const EVENT_NAME = "clinic-tech-detected";
+const EVENT_NAME = "paper-enriched";
 
 const DISPOSABLE_DOMAINS = new Set(['mailinator.com', 'guerrillamail.com', '10minutemail.com', 'tempmail.com', 'yopmail.com', 'trashmail.com', 'sharklasers.com']);
 const ROLE_PREFIXES = new Set(['info', 'admin', 'support', 'sales', 'contact', 'office', 'billing', 'help', 'careers', 'hr', 'press', 'legal', 'security', 'noreply', 'no-reply']);
