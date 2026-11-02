@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "reddit-community-pain-point-trend-miner",
-  "title": "Reddit Search & Comments Scraper — Brand & Leads ($0.50/1k)",
-  "description": "Scrape Reddit posts, comments, subreddits, keyword search results, buying intent signals, and user leads without Reddit API keys. Export Reddit threads to CSV/Excel/JSON or connect to Claude/Cursor MCP & n8n. Pay-per-event ($2/1k posts). No login required.",
+  "title": "Reddit Scraper — Search, Comments, Subreddits & Leads API",
+  "description": "Scrape Reddit search results, posts, comments, subreddits, brand mentions, and buyer intent leads without Reddit API keys. Fast HTTP Reddit scraper for B2B lead generation, market research, and AI agents ($0.50/1k). No login required.",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -103,9 +103,8 @@
   },
   "output": "./output_schema.json",
   "categories": [
-    "AI",
     "SOCIAL_MEDIA",
-    "LEAD_GENERATION",
-    "BUSINESS"
+    "MCP_SERVERS",
+    "LEAD_GENERATION"
   ]
 }

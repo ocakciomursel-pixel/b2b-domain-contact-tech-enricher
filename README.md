@@ -1,4 +1,4 @@
-# Reddit Search & Comments Scraper — Brand & Leads ($0.50/1k)
+# Reddit Scraper — Search, Comments, Subreddits & Leads API
 
 > 🎁 **RUN FOR FREE WITH YOUR $5.00 APIFY MONTHLY CREDIT:** Every Apify account automatically receives **$5.00 in free platform usage every month** — enough to extract **3,300 to 10,000 verified records every single month for $0.00 out of pocket!** Click the green **Start** button above to test immediately.
 
