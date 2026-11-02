@@ -113,9 +113,8 @@
   },
   "output": "./output_schema.json",
   "categories": [
-    "AI",
     "ECOMMERCE",
-    "MARKETING",
-    "LEAD_GENERATION"
+    "MCP_SERVERS",
+    "AGENTS"
   ]
 }
