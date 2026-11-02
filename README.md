@@ -1,4 +1,4 @@
-# Steam Store PC Game Pricing, Discount & Studio Intelligence Spy
+# Steam Store Scraper — PC Game Prices, Reviews & Publishers
 
 > **Steam Store Scraper | Game Prices, Discounts & Game Studio Leads** — Gaming industry & publisher market intelligence: extracts Steam game pricing, active sale discounts, platform support (Windows/Mac/Linux), and store metadata.
 

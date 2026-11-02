@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "steam-store-pc-game-pricing-player-review-spy",
-  "title": "Steam Store PC Game Pricing, Discount & Studio Intelligence",
-  "description": "Gaming industry & publisher market intelligence: extracts Steam game pricing, active sale discounts, platform support (Windows/Mac/Linux), and store metadata.",
+  "title": "Steam Store Scraper — PC Game Prices, Reviews & Publishers",
+  "description": "Scrape Steam PC game store listings: extract prices, sale discounts, player review scores, release dates, genres, and game studio/publisher metadata ($0.50/1k games).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -38,5 +38,10 @@
         }
       }
     }
-  }
+  },
+  "categories": [
+    "ECOMMERCE",
+    "MCP_SERVERS",
+    "LEAD_GENERATION"
+  ]
 }
