@@ -175,7 +175,7 @@ async function fetchRecentReviews(appId) {
         return { lowStarCount, themes: [...themeSet], sampleComplaints };
     } catch {
         return { lowStarCount: 0, themes: [], sampleComplaints: [] };
-    } catch (e) { console.error('Run error:', e.message); } finally {
+    } finally {
         clearTimeout(timer);
     }
 }
