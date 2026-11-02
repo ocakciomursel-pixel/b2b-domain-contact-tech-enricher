@@ -114,8 +114,7 @@
   "output": "./output_schema.json",
   "categories": [
     "LEAD_GENERATION",
-    "AI",
-    "BUSINESS",
-    "TRAVEL"
+    "MCP_SERVERS",
+    "AGENTS"
   ]
 }
