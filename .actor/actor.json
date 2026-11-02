@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
-  "name": "restaurant-pos-toast-opentable-doordash-link-detector",
-  "title": "Restaurant POS (Toast/Square), OpenTable & Delivery Detector",
-  "description": "Hospitality SaaS & restaurant marketing agency #1 lead qualifier: detects POS ordering links, reservation widgets, and contact details on restaurant sites.",
+  "name": "restaurant-toast-opentable-leads-scraper",
+  "title": "Restaurant Leads Scraper — Toast POS, OpenTable & DoorDash",
+  "description": "Scrape restaurant, cafe, and hospitality websites to extract owner/manager contact emails, phone numbers, POS systems (Toast, Square, Clover), reservation links (OpenTable, Resy), and delivery platforms (DoorDash, UberEats).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -38,5 +38,10 @@
         }
       }
     }
-  }
+  },
+  "categories": [
+    "LEAD_GENERATION",
+    "MCP_SERVERS",
+    "ECOMMERCE"
+  ]
 }

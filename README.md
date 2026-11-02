@@ -1,4 +1,4 @@
-# Restaurant POS (Toast/Square), OpenTable & Delivery Detector
+# Restaurant Leads Scraper — Toast POS, OpenTable & DoorDash
 
 > **Restaurant Tech Stack Scraper | Detect Toast POS, OpenTable & DoorDash** — Hospitality SaaS & restaurant marketing agency #1 lead qualifier: detects POS ordering links, reservation widgets, and contact details on restaurant sites.
 
