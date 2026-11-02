@@ -1,4 +1,4 @@
-# Cold Email Personalization Hook, Value Prop & News Extractor
+# Cold Email Icebreaker & B2B Personalization Scraper (Clay)
 
 > **Cold Email Icebreaker Scraper | Extract Company Value Props & Hooks** — Built for Clay, Instantly, and Smartlead workflows: extracts a company’s H1 headline, meta pitch, key offerings, and contact links for hyper-personalized outreach.
 

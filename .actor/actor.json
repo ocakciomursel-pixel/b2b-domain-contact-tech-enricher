@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
-  "name": "cold-email-personalization-first-line-icebreaker-miner",
-  "title": "Cold Email Personalization Hook, Value Prop & News Extractor",
-  "description": "Built for Clay, Instantly, and Smartlead workflows: extracts a company’s H1 headline, meta pitch, key offerings, and contact links for hyper-personalized outreach.",
+  "name": "cold-email-icebreaker-scraper",
+  "title": "Cold Email Icebreaker & B2B Personalization Scraper (Clay)",
+  "description": "Scrape any company domain to extract B2B value propositions, recent announcements, case studies, pricing model hints, and ready-to-send cold email first-line icebreakers for Clay, Instantly, Smartlead & n8n ($0.50/1k domains).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -38,5 +38,10 @@
         }
       }
     }
-  }
+  },
+  "categories": [
+    "LEAD_GENERATION",
+    "MCP_SERVERS",
+    "AGENTS"
+  ]
 }
