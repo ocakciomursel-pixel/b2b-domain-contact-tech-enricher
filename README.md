@@ -1,4 +1,4 @@
-# Substack Scraper — Newsletter Authors, Posts & Creator Leads
+# Substack Scraper — Newsletter Authors, Posts & Creator Lea
 
 > **Substack Newsletter Scraper | Posts, Authors & Publishing Frequency** — Newsletter sponsorship & media PR intelligence: extracts recent posts, author names, publishing dates, and links from Substack publications.
 
