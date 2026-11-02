@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "dockerhub-container-image-publisher-lead-spy",
-  "title": "Docker Hub Container Image, Pull Velocity & Publisher Spy",
-  "description": "Cloud-native & DevOps market intelligence: queries Docker Hub v2 registry API to extract container image adoption metrics, pull counts, star counts, and publisher namespaces.",
+  "title": "DockerHub Scraper — Container Images, Pulls & Leads API",
+  "description": "Scrape Docker Hub container repositories: extract pull counts, star ratings, architectures, tags, and publisher organization leads for DevOps and cloud security sales ($0.50/1k images).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -38,5 +38,10 @@
         }
       }
     }
-  }
+  },
+  "categories": [
+    "AI",
+    "MCP_SERVERS",
+    "LEAD_GENERATION"
+  ]
 }

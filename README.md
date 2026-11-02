@@ -1,4 +1,4 @@
-# Docker Hub Container Image, Pull Velocity & Publisher Spy
+# DockerHub Scraper — Container Images, Pulls & Leads API
 
 > **Docker Hub Scraper | Container Pull Counts, Stars & Publisher Leads** — Cloud-native & DevOps market intelligence: queries Docker Hub v2 registry API to extract container image adoption metrics, pull counts, star counts, and publisher namespaces.
 
