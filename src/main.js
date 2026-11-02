@@ -31,7 +31,7 @@ const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
 const MODE = "mozillaaddons";
 const INPUT_PROP = "queries";
 const DEFAULT_LIST = ["seo"];
-const EVENT_NAME = "addon-analyzed";
+const EVENT_NAME = "pubmed-article-extracted";
 
 async function safeFetchJson(url, headers = {}) {
     const controller = new AbortController();
