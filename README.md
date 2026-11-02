@@ -1,4 +1,4 @@
-# B2B Partner, Affiliate Program & Referral Platform Detector
+# Affiliate & Partner Program Scraper — SaaS Commissions API
 
 > **SaaS Affiliate & Partner Program Finder (PartnerStack, Impact, FirstPromoter)** — Affiliate marketing & B2B partnerships lead tool: discovers company partner/affiliate pages and detects underlying partner tracking platforms.
 

@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "b2b-partner-affiliate-program-commission-finder",
-  "title": "B2B Partner, Affiliate Program & Referral Platform Detector",
-  "description": "Affiliate marketing & B2B partnerships lead tool: discovers company partner/affiliate pages and detects underlying partner tracking platforms.",
+  "title": "Affiliate & Partner Program Scraper — SaaS Commissions API",
+  "description": "Scan any list of SaaS and e-commerce domains to detect active affiliate, partner, and referral programs (PartnerStack, Impact, Rewardful, FirstPromoter, Tolt) and extract signup links ($0.50/1k domains).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -38,5 +38,10 @@
         }
       }
     }
-  }
+  },
+  "categories": [
+    "LEAD_GENERATION",
+    "MCP_SERVERS",
+    "ECOMMERCE"
+  ]
 }
