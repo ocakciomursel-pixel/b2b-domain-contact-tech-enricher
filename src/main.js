@@ -31,7 +31,7 @@ const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
 const MODE = "openvsx";
 const INPUT_PROP = "queries";
 const DEFAULT_LIST = ["python"];
-const EVENT_NAME = "extension-analyzed";
+const EVENT_NAME = "device-clearance-extracted";
 
 async function safeFetchJson(url, headers = {}) {
     const controller = new AbortController();
