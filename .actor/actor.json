@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "shopify-store-product-contact-spy",
-  "title": "Shopify Store & Product Scraper — Emails, Prices & Leads",
-  "description": "Scrape any Shopify store: extract full product catalogs, prices, variants, SKUs, stock availability, merchant emails, phone numbers, and Instagram/TikTok links. Fast HTTP Shopify scraper with no headless browser overhead ($2/1k products). Export to CSV/Excel/JSON.",
+  "title": "Shopify Scraper — Store Leads, Products, Prices & Emails",
+  "description": "Scrape any Shopify store: extract full product catalogs, prices, variants, SKUs, stock status, merchant emails, phone numbers, and Instagram/TikTok links. Fast HTTP Shopify product & store leads scraper with no browser overhead ($0.50/1k).",
   "version": "2.0",
   "buildTag": "latest",
   "meta": {
@@ -184,8 +184,7 @@
   "output": "./output_schema.json",
   "categories": [
     "ECOMMERCE",
-    "AI",
-    "LEAD_GENERATION",
-    "BUSINESS"
+    "MCP_SERVERS",
+    "LEAD_GENERATION"
   ]
 }
