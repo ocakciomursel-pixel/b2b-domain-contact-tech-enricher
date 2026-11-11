@@ -1,0 +1,37 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Global University & Higher-Education Official Domain",
+    "description": "EdTech B2B sales & academic verification tool: extracts accredited university names, official academic domains (.edu / .ac), and web portals by country or keyword. | Free $5/mo Credit • 1-Click n8n, Make, Sheets & MCP Ready.",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~universities-global-higher-ed-domain-directory/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_universities_global_higher_ed_domain_directory",
+        "summary": "Global University Scraper | Official .edu Domains & Country",
+        "description": "Search universities and higher-education institutions worldwide by country or name to extract official academic domains, websites, and country codes.",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Extracted JSON dataset array"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "YouTube Channel Videos, Views & Creator Contact Scraper",
+    "description": "Scrape YouTube channels and videos without YouTube Data API quota limits: extract video titles, view counts, publish dates, descriptions, sponsor links, and creator contact leads ($0.50/1k videos). | Free $5/mo Credit • 1-Click n8n, Make, Sheets & MCP Ready.",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~youtube-channel-rss-video-metadata-lead-monitor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_youtube_channel_rss_video_metadata_lead_monitor",
+        "summary": "YouTube Channel Videos, Views & Creator Contact Scraper",
+        "description": "Scrape YouTube channels and videos without YouTube Data API quota limits: extract video titles, view counts, publish dates, descriptions, sponsor links, an",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Extracted JSON dataset array"
+          }
+        }
+      }
+    }
+  }
+}

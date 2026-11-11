@@ -1,0 +1,37 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Wikipedia & Wikidata Entity Summary, Logo & Knowledge Graph",
+    "description": "Entity enrichment & knowledge graph builder: retrieves verified encyclopedic summaries, Wikidata item IDs, short descriptions, and image URLs for any company, person, or concept. | Free $5/mo Credit • 1-Click n8n, Make, Sheets & MCP Ready.",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~wikipedia-wikidata-company-entity-knowledge-graph/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_wikipedia_wikidata_company_entity_knowledge_graph",
+        "summary": "Wikipedia & Wikidata Entity Scraper | Summaries, Q-IDs",
+        "description": "Extract structured entity summaries, Wikidata Q-IDs, canonical descriptions, coordinates, and thumbnail images from Wikipedia REST API ($2.00/1k).",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Extracted JSON dataset array"
+          }
+        }
+      }
+    }
+  }
+}

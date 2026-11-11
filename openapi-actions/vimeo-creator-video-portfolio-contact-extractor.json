@@ -1,0 +1,37 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Vimeo Video Production Agency & Creator Leads Scraper",
+    "description": "Creative agency & video production lead tool: extracts creator names, studio profile links, durations, and dimensions from Vimeo video URLs. | Free $5/mo Credit • 1-Click n8n, Make, Sheets & MCP Ready.",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2"
+    }
+  ],
+  "paths": {
+    "/acts/lucacelli~vimeo-creator-video-portfolio-contact-extractor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_vimeo_creator_video_portfolio_contact_extractor",
+        "summary": "Vimeo Video Production Agency & Creator Leads Scraper",
+        "description": "Extract Vimeo video titles, director/studio names, creator profile URLs, video durations, upload dates, and thumbnails via Vimeo oEmbed ($2.00/1k).",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Extracted JSON dataset array"
+          }
+        }
+      }
+    }
+  }
+}
