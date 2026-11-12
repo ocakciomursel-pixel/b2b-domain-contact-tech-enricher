@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Instant Checkout — Lucacelli B2B Lead Vaults, Clay.com Waterfalls & n8n Agency Pipelines</title>
-  <meta name="description" content="Download the Complete Pro Agency Outbound Vault (Clay 25x + 7x n8n + CLI) and 1,125 Live-Verified US B2B Leads (SEC Form D Funded Startups, YC Hiring, High-MRR Skool Creators & Agencies)." />
+  <title>Instant Auto-Download Checkout — Lucacelli B2B Lead Vaults, Clay.com Waterfalls &amp; n8n Pipelines</title>
+  <meta name="description" content="100% Automated Instant .ZIP Download: Unlock the Pro Agency Outbound Vault (Clay 25x + 7x n8n + CLI) and 1,125 Live-Verified US B2B Leads via Card, Apple Pay, or Google Pay." />
   <style>
     :root {
       --bg: #070b14;
@@ -16,7 +16,7 @@
       --accent: #38bdf8;
       --emerald: #10b981;
       --amber: #f59e0b;
-      --violet: #8b5cf6;
+      --rose: #f43f5e;
     }
     * { box-sizing: border-box; }
     body {
@@ -27,16 +27,71 @@
       line-height: 1.55;
     }
     a { color: var(--accent); text-decoration: none; }
-    .container { max-width: 1160px; margin: 0 auto; padding: 32px 20px 80px; }
-    .top-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; flex-wrap: wrap; gap: 12px; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 28px 20px 90px; }
+    .top-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
     .pill {
-      display: inline-flex; align-items: center; gap: 6px;
+      display: inline-flex; align-items: center; gap: 7px;
       padding: 6px 14px; border-radius: 999px; font-size: 12.5px; font-weight: 700;
-      background: rgba(16, 185, 129, 0.14); border: 1px solid rgba(16, 185, 129, 0.4); color: #a7f3d0;
+      background: rgba(16, 185, 129, 0.14); border: 1px solid rgba(16, 185, 129, 0.45); color: #a7f3d0;
+    }
+    .pulse-dot {
+      width: 8px; height: 8px; border-radius: 50%; background: #10b981;
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
     }
     h1 { font-size: clamp(26px, 3.8vw, 40px); margin: 0 0 10px; letter-spacing: -0.02em; }
-    .sub { color: var(--muted); font-size: 16.5px; max-width: 820px; margin: 0 0 32px; }
-    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 22px; margin-bottom: 34px; }
+    .sub { color: var(--muted); font-size: 16px; max-width: 850px; margin: 0 0 24px; }
+
+    /* Instant Auto-Delivery Console */
+    .console-card {
+      background: linear-gradient(145deg, rgba(16, 185, 129, 0.10), rgba(17, 24, 39, 0.96));
+      border: 1.5px solid rgba(56, 189, 248, 0.45);
+      border-radius: 18px;
+      padding: 20px 22px;
+      margin-bottom: 28px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    }
+    .console-card.unlocked {
+      border-color: var(--emerald);
+      background: linear-gradient(145deg, rgba(16, 185, 129, 0.22), rgba(17, 24, 39, 0.96));
+    }
+    .console-header {
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;
+    }
+    .status-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13.5px; font-weight: 700; color: #e0f2fe;
+      background: rgba(14, 165, 233, 0.15); border: 1px solid rgba(56, 189, 248, 0.35);
+      padding: 6px 13px; border-radius: 999px;
+    }
+    .status-badge.confirmed {
+      background: rgba(245, 158, 11, 0.18); border-color: rgba(245, 158, 11, 0.55); color: #fde68a;
+    }
+    .status-badge.fulfilled {
+      background: rgba(16, 185, 129, 0.22); border-color: var(--emerald); color: #a7f3d0;
+    }
+    .key-row {
+      display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-top: 10px;
+    }
+    .key-input {
+      flex: 1; min-width: 260px;
+      background: #060a12; border: 1px solid #334155; color: #fde68a;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 13px; font-weight: 700; padding: 11px 14px; border-radius: 10px;
+      outline: none;
+    }
+    .toast-banner {
+      display: none; margin-top: 12px; padding: 12px 15px; border-radius: 11px;
+      background: rgba(16, 185, 129, 0.16); border: 1px solid rgba(16, 185, 129, 0.5);
+      color: #d1fae5; font-size: 13.5px; font-weight: 600;
+    }
+
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 22px; margin-bottom: 32px; }
     .tier {
       background: var(--panel);
       border: 1px solid var(--border);
@@ -69,40 +124,87 @@
     ul li { margin-bottom: 8px; }
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      width: 100%; padding: 14px 18px; border-radius: 11px; font-weight: 800; font-size: 15px;
+      width: 100%; padding: 14px 18px; border-radius: 11px; font-weight: 800; font-size: 14.5px;
       border: none; cursor: pointer; text-align: center; transition: 0.15s ease;
     }
     .btn-bmc { background: #FFDD00; color: #0b0f19; }
     .btn-bmc:hover { filter: brightness(1.06); transform: translateY(-1px); }
     .btn-emerald { background: linear-gradient(135deg, #10b981, #059669); color: #fff; }
-    .btn-outline { background: var(--panel-2); border: 1px solid var(--border); color: var(--text); font-weight: 600; font-size: 13.5px; padding: 10px 16px; width: auto; }
+    .btn-emerald:hover { filter: brightness(1.07); }
+    .btn-outline {
+      background: var(--panel-2); border: 1px solid var(--border); color: var(--text);
+      font-weight: 600; font-size: 13px; padding: 10px 14px; width: auto; border-radius: 10px; cursor: pointer;
+    }
+    .btn-outline:hover { border-color: var(--accent); }
     .steps-box {
       background: rgba(26, 36, 56, 0.75);
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 22px;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
-    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 12px; }
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-top: 12px; }
     .step-item { background: #0b1120; border: 1px solid #1e293b; border-radius: 12px; padding: 14px; font-size: 13.5px; }
     .step-item strong { display: block; color: #38bdf8; margin-bottom: 4px; }
+    .restore-panel { display: none; margin-top: 12px; padding-top: 12px; border-top: 1px solid #1e293b; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="top-nav">
-      <a class="btn btn-outline" href="./index.html">← Back to Interactive Cloud Playground</a>
-      <span class="pill">🔒 Instant Card, Apple Pay &amp; Google Pay Checkout Active</span>
+      <a class="btn-outline" href="./index.html">← Back to Interactive Cloud Playground</a>
+      <span class="pill"><span class="pulse-dot"></span> 100% Automated Instant .ZIP Browser Delivery Active</span>
     </div>
 
     <h1>Unlock Turnkey B2B Automation Vaults &amp; Verified US Lead Packs</h1>
     <p class="sub">
-      One-time payment, zero recurring subscriptions. Pay securely via Visa, Mastercard, Amex, Apple Pay, or Google Pay, or test our free 30-row live verified CSV sample first.
+      One-time payment, zero recurring subscriptions, <strong>zero waiting for emails</strong>. Your browser generates an end-to-end encrypted Instant Unlock Key below — paste it at checkout and your <code>.ZIP</code> downloads automatically right on this page within seconds!
     </p>
 
-    <div style="margin-bottom: 26px; display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
-      <a class="btn btn-outline" style="border-color:rgba(16,185,129,0.5); color:#a7f3d0;" href="./sample-leads-30-verified.csv" download>📥 Download Free 30-Row Sample CSV First (SEC Funded + Skool MRR + YC)</a>
-      <a class="btn btn-outline" href="https://apify.com/lucacelli" target="_blank" rel="noopener">⚡ Or Run Self-Serve on Apify Cloud ($3.50–$4.50/1k) →</a>
+    <div style="margin-bottom: 22px; display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+      <a class="btn-outline" style="border-color:rgba(16,185,129,0.5); color:#a7f3d0;" href="./sample-leads-30-verified.csv" download>📥 Download Free 30-Row Sample CSV First (SEC Funded + Skool MRR + YC)</a>
+      <a class="btn-outline" href="https://apify.com/lucacelli" target="_blank" rel="noopener">⚡ Or Run Self-Serve on Apify Cloud ($3.50–$4.50/1k) →</a>
+    </div>
+
+    <!-- AUTOMATED INSTANT .ZIP DELIVERY CONSOLE -->
+    <div id="deliveryConsole" class="console-card">
+      <div class="console-header">
+        <div style="font-size:15.5px; font-weight:800; color:#f8fafc;">
+          🔐 Step 1 — Your Personal Instant .ZIP Unlock Key (Auto-Copied When You Click Pay)
+        </div>
+        <div id="liveStatusBadge" class="status-badge">
+          <span class="pulse-dot"></span>
+          <span id="liveStatusText">Listening for payment (auto-checks every 4s)...</span>
+        </div>
+      </div>
+
+      <div style="font-size:13.5px; color:#cbd5e1;">
+        Paste this key into the <strong>"Say something nice"</strong> box during Card / Apple Pay checkout (<strong>keep "Make message private" unchecked</strong> so our instant verifier sees your anonymous cryptographic key — no email required!):
+      </div>
+
+      <div class="key-row">
+        <input id="orderCodeInput" class="key-input" type="text" readonly value="Generating encrypted browser key..." onclick="this.select()" />
+        <button type="button" class="btn-outline" onclick="copyOrderKey(false)" style="border-color:#38bdf8; color:#e0f2fe; font-weight:700;">📋 Copy Key</button>
+        <button type="button" class="btn-outline" onclick="checkFulfillmentNow(true)" style="border-color:#10b981; color:#a7f3d0; font-weight:700;">🔄 Verify &amp; Download .ZIP Now</button>
+        <button type="button" class="btn-outline" onclick="saveRecoveryFile()" title="Save backup key in case you clear browser data">💾 Backup Key</button>
+        <button type="button" class="btn-outline" onclick="toggleRestorePanel()">🔑 Restore</button>
+      </div>
+
+      <div id="copyToast" class="toast-banner"></div>
+
+      <div id="unlockedDownloadBox" style="display:none; margin-top:16px;">
+        <button id="redownloadBtn" type="button" class="btn btn-emerald" style="font-size:16px; padding:16px;">
+          📥 Download Your Unlocked .ZIP Vault Now
+        </button>
+      </div>
+
+      <div id="restorePanel" class="restore-panel">
+        <div style="font-size:12.5px; color:#94a3b8; margin-bottom:8px;">Paste a previously saved Backup Recovery JSON to restore &amp; re-download your purchased .ZIP on any device:</div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <input id="restoreJsonInput" class="key-input" style="color:#cbd5e1; font-weight:400;" placeholder='{"orderCode":"LUC-...","privateJwk":{...}}' />
+          <button type="button" class="btn-outline" onclick="restoreFromBackupJson()">Restore &amp; Download</button>
+        </div>
+      </div>
     </div>
 
     <div class="pricing-grid">
@@ -112,14 +214,14 @@
           <div style="font-size:12.5px; font-weight:700; color:#38bdf8; text-transform:uppercase;">Tier 1 • Clay.com Starter</div>
           <h2 style="margin:6px 0; font-size:20px;">Clay.com 25-Column HTTP API Waterfall Pack</h2>
           <div class="price">$10 <span>one-time</span></div>
-          <div class="unit-hint">Select <strong>2 units (2 × $5)</strong> at checkout</div>
+          <div class="unit-hint">Select <strong>2 units (2 × $5)</strong> + paste your <code>LUC-...</code> key</div>
           <ul>
             <li><strong>25 Pre-Built Clay.com HTTP API Columns</strong> (.JSON) — replace expensive Clay credit waterfalls in 60 seconds</li>
             <li>Apollo Alternative Email, MX/SPF/DMARC, Ad Pixels, Tech Stack &amp; Booking Funnel columns</li>
             <li>Includes 1-Click API Token Injector &amp; Setup Guide</li>
           </ul>
         </div>
-        <a class="btn btn-bmc" href="https://buymeacoffee.com/gyGASwCvy0" target="_blank" rel="noopener">💳 Pay $10 via Card / Apple Pay →</a>
+        <button type="button" class="btn btn-bmc" onclick="startCheckout(1, 2, 10)">💳 Copy Key &amp; Pay $10 (Instant .ZIP) →</button>
       </div>
 
       <!-- TIER 2: $20 -->
@@ -129,7 +231,7 @@
           <div style="font-size:12.5px; font-weight:700; color:#34d399; text-transform:uppercase;">Tier 2 • Pro Agency Vault v2.1</div>
           <h2 style="margin:6px 0; font-size:20px;">Complete Clay + 7x n8n + MCP Pro Agency Vault</h2>
           <div class="price">$20 <span>one-time</span></div>
-          <div class="unit-hint">Select <strong>4 units (4 × $5)</strong> at checkout</div>
+          <div class="unit-hint">Select <strong>4 units (4 × $5)</strong> + paste your <code>LUC-...</code> key</div>
           <ul>
             <li>Everything in Tier 1 (<strong>25-Column Clay HTTP API Pack</strong>)</li>
             <li><strong>7 Production Chained Multi-Actor n8n Pipelines</strong> (Google Maps, Paid Ads Spy, Dental/MedSpa, Hiring Signals, Shopify, SEO)</li>
@@ -137,7 +239,7 @@
             <li><strong>12 High-Converting B2B Cold Email Sequences</strong> + 34-Tool OpenAPI 3.1 Spec</li>
           </ul>
         </div>
-        <a class="btn btn-bmc" href="https://buymeacoffee.com/gyGASwCvy0" target="_blank" rel="noopener">💳 Pay $20 via Card / Apple Pay →</a>
+        <button type="button" class="btn btn-bmc" onclick="startCheckout(2, 4, 20)">💳 Copy Key &amp; Pay $20 (Instant .ZIP) →</button>
       </div>
 
       <!-- TIER 3: $30 -->
@@ -147,7 +249,7 @@
           <div style="font-size:12.5px; font-weight:700; color:#fbbf24; text-transform:uppercase;">Tier 3 • Leads + Automation Bundle</div>
           <h2 style="margin:6px 0; font-size:20px;">1,125 Live-Verified US B2B Leads CSV + Full Pro Vault</h2>
           <div class="price">$30 <span>one-time</span></div>
-          <div class="unit-hint">Select <strong>6 units (6 × $5)</strong> at checkout</div>
+          <div class="unit-hint">Select <strong>6 units (6 × $5)</strong> + paste your <code>LUC-...</code> key</div>
           <ul>
             <li><strong>Full Tier 2 Pro Agency Vault v2.1 Included</strong></li>
             <li><strong>121 Newly Funded US Startups (SEC Form D)</strong> with exact USD funding raised, CEO/Executive names &amp; phones (.CSV)</li>
@@ -156,30 +258,337 @@
             <li><strong>221 B2B Marketing, SEO &amp; Dev Agencies</strong> (.CSV)</li>
           </ul>
         </div>
-        <a class="btn btn-bmc" href="https://buymeacoffee.com/gyGASwCvy0" target="_blank" rel="noopener">💳 Pay $30 via Card / Apple Pay →</a>
+        <button type="button" class="btn btn-bmc" onclick="startCheckout(3, 6, 30)">💳 Copy Key &amp; Pay $30 (Instant .ZIP) →</button>
       </div>
     </div>
 
     <div class="steps-box">
-      <div style="font-size:16px; font-weight:800;">⚡ How Instant Delivery Works (Takes 30 Seconds):</div>
+      <div style="font-size:16px; font-weight:800;">⚡ How Zero-Touch Instant Auto-Download Works (100% Automated 24/7):</div>
       <div class="steps-grid">
         <div class="step-item">
-          <strong>1. Choose Your Package Units</strong>
-          Click the yellow payment button above (or the floating payment icon at bottom-right) and pick <strong>2</strong> ($10), <strong>4</strong> ($20), or <strong>6</strong> ($30) units.
+          <strong>1. Click Any Yellow Payment Button</strong>
+          Your browser automatically copies your encrypted <code>LUC-...</code> Unlock Key to your clipboard and opens secure Stripe / Apple Pay / Google Pay checkout.
         </div>
         <div class="step-item">
-          <strong>2. Include Your Delivery Email</strong>
-          Type your email + tier name in the payment message box (e.g. <code>Tier 3 $30 - alex@agency.io</code>) and pay with Card, Apple Pay, or Google Pay.
+          <strong>2. Select Units &amp; Paste Your Key</strong>
+          Choose <strong>2</strong> ($10), <strong>4</strong> ($20), or <strong>6</strong> ($30) units, paste (<code>Ctrl+V</code> / <code>⌘+V</code>) your <code>LUC-...</code> key into the message box (leave Private unchecked), and pay.
         </div>
         <div class="step-item">
-          <strong>3. Receive Full .ZIP Download</strong>
-          Your complete <code>.ZIP</code> vault is dispatched straight to your email inbox (or click <a href="mailto:ocakciomursel@gmail.com?subject=Instant%20Vault%20Delivery%20Confirmation">ocakciomursel@gmail.com</a> anytime for priority custom runs).
+          <strong>3. Automatic Browser Decryption &amp; .ZIP Download</strong>
+          Keep this tab open — our 24/7 cloud verifier detects your payment within seconds, encrypts your exact <code>.ZIP</code> for your browser key, and downloads it automatically!
         </div>
       </div>
     </div>
   </div>
 
+  <script>
+    const BMC_URL = 'https://buymeacoffee.com/gyGASwCvy0';
+    const BMC_COFFEES_API = 'https://app.buymeacoffee.com/api/creators/slug/gyGASwCvy0/coffees?page=1&per_page=25';
+    const KVS_STORE_ID = 'hFnCI0MRQdMPLxiWI';
+    const STORAGE_KEY = 'lucacelli_vault_order_v1';
+
+    let currentSession = null; // { orderCode, claimId, privateJwk, privateKey }
+    let unlockedBlobUrl = null;
+    let unlockedFilename = null;
+    let autoDownloadedTier = 0;
+    let pollBusy = false;
+
+    function toB64Url(bytes) {
+      let bin = '';
+      const arr = bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes);
+      for (let i = 0; i < arr.length; i++) bin += String.fromCharCode(arr[i]);
+      return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+    }
+
+    function fromB64Url(str) {
+      const pad = str.length % 4 === 0 ? '' : '='.repeat(4 - (str.length % 4));
+      const bin = atob(str.replace(/-/g, '+').replace(/_/g, '/') + pad);
+      const out = new Uint8Array(bin.length);
+      for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+      return out;
+    }
+
+    function fromBase64(str) {
+      const bin = atob(str);
+      const out = new Uint8Array(bin.length);
+      for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+      return out;
+    }
+
+    async function sha256Hex(text) {
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text.trim()));
+      return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    async function computeClaimKey(orderCode) {
+      const hex = await sha256Hex(orderCode);
+      return 'CLAIM_' + hex.slice(0, 24);
+    }
+
+    async function initOrderSession() {
+      try {
+        const savedRaw = localStorage.getItem(STORAGE_KEY);
+        if (savedRaw) {
+          const parsed = JSON.parse(savedRaw);
+          if (parsed && parsed.orderCode && parsed.privateJwk) {
+            const privKey = await crypto.subtle.importKey(
+              'jwk',
+              parsed.privateJwk,
+              { name: 'ECDH', namedCurve: 'P-256' },
+              true,
+              ['deriveBits']
+            );
+            const claimId = await computeClaimKey(parsed.orderCode);
+            currentSession = {
+              orderCode: parsed.orderCode,
+              claimId,
+              privateJwk: parsed.privateJwk,
+              privateKey: privKey,
+            };
+            autoDownloadedTier = Number(parsed.autoDownloadedTier || 0);
+          }
+        }
+      } catch (e) {
+        console.warn('Creating fresh order session:', e);
+      }
+
+      if (!currentSession) {
+        const kp = await crypto.subtle.generateKey({ name: 'ECDH', namedCurve: 'P-256' }, true, ['deriveBits']);
+        const rawPub65 = new Uint8Array(await crypto.subtle.exportKey('raw', kp.publicKey));
+        const comp33 = new Uint8Array(33);
+        comp33[0] = (rawPub65[64] & 1) ? 0x03 : 0x02;
+        comp33.set(rawPub65.slice(1, 33), 1);
+
+        const orderCode = 'LUC-' + toB64Url(comp33);
+        const claimId = await computeClaimKey(orderCode);
+        const privateJwk = await crypto.subtle.exportKey('jwk', kp.privateKey);
+
+        currentSession = { orderCode, claimId, privateJwk, privateKey: kp.privateKey };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          orderCode,
+          claimId,
+          privateJwk,
+          createdAt: new Date().toISOString(),
+          autoDownloadedTier: 0
+        }));
+      }
+
+      document.getElementById('orderCodeInput').value = currentSession.orderCode;
+      await checkFulfillmentNow(false);
+    }
+
+    function showToast(htmlMsg) {
+      const el = document.getElementById('copyToast');
+      el.innerHTML = htmlMsg;
+      el.style.display = 'block';
+    }
+
+    async function copyOrderKey(silent) {
+      if (!currentSession) return;
+      try {
+        await navigator.clipboard.writeText(currentSession.orderCode);
+      } catch {
+        const inp = document.getElementById('orderCodeInput');
+        inp.select();
+        document.execCommand('copy');
+      }
+      if (!silent) {
+        showToast('✅ <strong>Copied!</strong> Paste <code>' + currentSession.orderCode + '</code> into the Buy Me a Coffee message box (leave Private unchecked). Your <code>.ZIP</code> will auto-download right here!');
+      }
+    }
+
+    async function startCheckout(tier, units, usd) {
+      await copyOrderKey(true);
+      showToast(
+        '✅ <strong>Step 1 Done — Unlock Key Copied to Clipboard!</strong><br>' +
+        '👉 On the checkout tab that just opened: pick <strong>' + units + ' units ($' + usd + ')</strong>, press <strong>Ctrl+V / ⌘+V</strong> in the message box (keep Private unchecked), and pay with Card / Apple Pay. Return here for automatic <code>.ZIP</code> download!'
+      );
+      window.open(BMC_URL, '_blank', 'noopener');
+    }
+
+    function triggerBrowserDownload(blobUrl, filename) {
+      const a = document.createElement('a');
+      a.href = blobUrl;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    async function decryptPayloadToZipBlob(payload) {
+      const srvPubBytes = fromB64Url(payload.epk);
+      const importedSrvPub = await crypto.subtle.importKey(
+        'raw',
+        srvPubBytes,
+        { name: 'ECDH', namedCurve: 'P-256' },
+        false,
+        []
+      );
+      const sharedBits = await crypto.subtle.deriveBits(
+        { name: 'ECDH', public: importedSrvPub },
+        currentSession.privateKey,
+        256
+      );
+      const hkdfKey = await crypto.subtle.importKey('raw', sharedBits, 'HKDF', false, ['deriveKey']);
+      const aesKey = await crypto.subtle.deriveKey(
+        {
+          name: 'HKDF',
+          hash: 'SHA-256',
+          salt: fromB64Url(payload.salt),
+          info: new TextEncoder().encode('lucacelli-vault-v1')
+        },
+        hkdfKey,
+        { name: 'AES-GCM', length: 256 },
+        false,
+        ['decrypt']
+      );
+      const plainBuf = await crypto.subtle.decrypt(
+        { name: 'AES-GCM', iv: fromB64Url(payload.iv) },
+        aesKey,
+        fromBase64(payload.ct)
+      );
+      return new Blob([plainBuf], { type: 'application/zip' });
+    }
+
+    async function checkFulfillmentNow(isManualClick) {
+      if (!currentSession || pollBusy) return;
+      pollBusy = true;
+      const badge = document.getElementById('liveStatusBadge');
+      const statusText = document.getElementById('liveStatusText');
+
+      try {
+        if (isManualClick) {
+          statusText.textContent = 'Checking live payment & encrypted vault status...';
+        }
+
+        // 1. Check encrypted KVS claim record first
+        const kvsUrl = 'https://api.apify.com/v2/key-value-stores/' + KVS_STORE_ID + '/records/' + currentSession.claimId + '?t=' + Date.now();
+        const kvsRes = await fetch(kvsUrl, { cache: 'no-store' });
+
+        if (kvsRes.ok) {
+          const payload = await kvsRes.json();
+          if (payload && payload.status === 'fulfilled' && payload.ct) {
+            const zipBlob = await decryptPayloadToZipBlob(payload);
+            if (unlockedBlobUrl) URL.revokeObjectURL(unlockedBlobUrl);
+            unlockedBlobUrl = URL.createObjectURL(zipBlob);
+            unlockedFilename = payload.filename || ('Lucacelli_Tier' + payload.tier + '_Vault.zip');
+
+            document.getElementById('deliveryConsole').classList.add('unlocked');
+            badge.className = 'status-badge fulfilled';
+            statusText.textContent = '✅ Tier ' + payload.tier + ' Unlocked (' + unlockedFilename + ')!';
+
+            const dlBox = document.getElementById('unlockedDownloadBox');
+            const dlBtn = document.getElementById('redownloadBtn');
+            dlBox.style.display = 'block';
+            dlBtn.textContent = '📥 Download ' + unlockedFilename + ' (' + Math.round(zipBlob.size / 1024) + ' KB)';
+            dlBtn.onclick = () => triggerBrowserDownload(unlockedBlobUrl, unlockedFilename);
+
+            if (Number(payload.tier) > autoDownloadedTier || isManualClick) {
+              autoDownloadedTier = Number(payload.tier);
+              try {
+                const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+                saved.autoDownloadedTier = autoDownloadedTier;
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+              } catch {}
+              triggerBrowserDownload(unlockedBlobUrl, unlockedFilename);
+            }
+            pollBusy = false;
+            return;
+          }
+
+          if (payload && payload.status === 'partial') {
+            badge.className = 'status-badge confirmed';
+            statusText.textContent = '⚠️ $' + payload.paidUsd + ' (1 unit) detected — add 1 more unit ($5) with the same key to unlock Tier 1 ($10)!';
+            pollBusy = false;
+            return;
+          }
+        }
+
+        // 2. Direct real-time check on BMC public feed so buyer gets <1s feedback right after paying!
+        const bmcRes = await fetch(BMC_COFFEES_API, { cache: 'no-store' }).catch(() => null);
+        if (bmcRes && bmcRes.ok) {
+          const bmcJson = await bmcRes.json();
+          const items = Array.isArray(bmcJson.data) ? bmcJson.data : [];
+          let matchedCoffees = 0;
+          for (const it of items) {
+            const text = [it.support_note || '', it.supporter_name || '', it.support_message || ''].join(' ');
+            if (text.includes(currentSession.orderCode)) {
+              matchedCoffees += Math.max(1, Number(it.support_coffees || 1));
+            }
+          }
+          if (matchedCoffees >= 2) {
+            badge.className = 'status-badge confirmed';
+            statusText.textContent = '🎉 Payment of $' + (matchedCoffees * 5) + ' Verified! Encrypting & streaming your .ZIP right now (~10–45s)...';
+            pollBusy = false;
+            return;
+          } else if (matchedCoffees === 1) {
+            badge.className = 'status-badge confirmed';
+            statusText.textContent = '⚠️ $5 (1 unit) detected — add 1 more unit ($5) with same key to unlock Tier 1 ($10)!';
+            pollBusy = false;
+            return;
+          }
+        }
+
+        if (isManualClick) {
+          statusText.textContent = 'No completed payment found for this key yet — listening every 4s...';
+        } else {
+          statusText.textContent = 'Listening for payment (auto-checks every 4s)...';
+        }
+      } catch (err) {
+        console.warn('Fulfillment poll warning:', err);
+      } finally {
+        pollBusy = false;
+      }
+    }
+
+    function saveRecoveryFile() {
+      if (!currentSession) return;
+      const dataStr = JSON.stringify({
+        orderCode: currentSession.orderCode,
+        claimId: currentSession.claimId,
+        privateJwk: currentSession.privateJwk,
+        savedAt: new Date().toISOString()
+      });
+      const blob = new Blob([dataStr], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      triggerBrowserDownload(url, 'Lucacelli_Vault_Recovery_Key.json');
+      setTimeout(() => URL.revokeObjectURL(url), 5000);
+    }
+
+    function toggleRestorePanel() {
+      const p = document.getElementById('restorePanel');
+      p.style.display = p.style.display === 'block' ? 'none' : 'block';
+    }
+
+    async function restoreFromBackupJson() {
+      try {
+        const raw = document.getElementById('restoreJsonInput').value.trim();
+        const parsed = JSON.parse(raw);
+        if (!parsed.orderCode || !parsed.privateJwk) throw new Error('Missing orderCode or privateJwk');
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          orderCode: parsed.orderCode,
+          privateJwk: parsed.privateJwk,
+          autoDownloadedTier: 0
+        }));
+        currentSession = null;
+        autoDownloadedTier = 0;
+        await initOrderSession();
+        await checkFulfillmentNow(true);
+        showToast('✅ Backup key restored! Checked live vault status.');
+      } catch (e) {
+        alert('Invalid backup JSON: ' + e.message);
+      }
+    }
+
+    initOrderSession();
+    setInterval(() => {
+      if (!document.hidden || !unlockedBlobUrl) {
+        checkFulfillmentNow(false);
+      }
+    }, 4000);
+  </script>
+
   <!-- Official In-Page Buy Me a Coffee Stripe / Apple Pay Slide-Over Widget -->
-  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="gyGASwCvy0" data-description="Unlock Lucacelli B2B Lead Vaults & Agency Workflows!" data-message="Select 2 ($10 Clay), 4 ($20 Pro Vault), or 6 ($30 1,125 Leads + Vault) & include your email!" data-color="#FFDD00" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="gyGASwCvy0" data-description="Unlock Lucacelli B2B Lead Vaults & Agency Workflows!" data-message="Select 2 ($10), 4 ($20), or 6 ($30) units & paste your LUC-... Unlock Key for instant auto-download!" data-color="#FFDD00" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
 </body>
 </html>
