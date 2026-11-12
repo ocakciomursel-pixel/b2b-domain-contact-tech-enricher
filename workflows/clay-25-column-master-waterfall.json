@@ -1,0 +1,448 @@
+{
+  "packName": "Lucacelli 25-Column Clay.com HTTP API Master Waterfall Pack (v2.0)",
+  "savingsVsClayCredits": "85% to 98% cheaper ($0.50–$1.50 per 1,000 rows vs $75–$200 per 1,000 Clay credits)",
+  "freeMonthlyAllowance": "Every Apify account includes $5.00/month free compute credit (3,300 to 10,000 enriched rows/month free)",
+  "setupSteps": [
+    "1. Copy your Apify API token from https://console.apify.com/settings/integrations",
+    "2. In any Clay.com table, click Add Enrichment -> HTTP API",
+    "3. Set Method = POST, paste the column Endpoint URL below (replace YOUR_APIFY_TOKEN), and paste the Body JSON mapping your Clay column (e.g. /domain or /email).",
+    "4. Enable Conditional Run Formula so downstream columns only fire when upstream enrichment succeeds!"
+  ],
+  "columns": [
+    {
+      "columnNumber": 1,
+      "columnTitle": "Google Maps B2B Email & Places Scraper",
+      "mcpToolName": "scrape_google_maps_leads",
+      "pricePer1000RowsUsd": 1.5,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~google-maps-scraper-places-emails-contacts-reviews/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=1024&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "searchStringsArray": [
+          "{{search_query}}"
+        ],
+        "queries": [
+          "{{search_query}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    },
+    {
+      "columnNumber": 2,
+      "columnTitle": "B2B Company Domain Email, Phone & Tech Enricher",
+      "mcpToolName": "enrich_b2b_company_domain",
+      "pricePer1000RowsUsd": 0.8,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~b2b-domain-contact-tech-enricher/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "domains": [
+          "{{domain}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    },
+    {
+      "columnNumber": 3,
+      "columnTitle": "360° B2B Company Intelligence Dossier Builder",
+      "mcpToolName": "build_360_b2b_company_dossier",
+      "pricePer1000RowsUsd": 0.8,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~master-360-b2b-company-deep-dossier-enricher/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "domains": [
+          "{{domain}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    },
+    {
+      "columnNumber": 4,
+      "columnTitle": "Bulk Email MX, Syntax & Disposable Verifier",
+      "mcpToolName": "verify_bulk_emails_mx_syntax",
+      "pricePer1000RowsUsd": 0.5,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~bulk-email-verifier-mx-syntax/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "emails": [
+          "{{email}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{extracted_email}}"
+    },
+    {
+      "columnNumber": 5,
+      "columnTitle": "Cold Email Personalized Icebreaker Generator",
+      "mcpToolName": "generate_cold_email_icebreakers",
+      "pricePer1000RowsUsd": 0.5,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~cold-email-icebreaker-scraper/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "domains": [
+          "{{domain}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    },
+    {
+      "columnNumber": 6,
+      "columnTitle": "Meta, Google, TikTok & LinkedIn Ad Pixel Spy",
+      "mcpToolName": "detect_ad_spend_pixels",
+      "pricePer1000RowsUsd": 0.8,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~pixel-tag-manager-ad-spend-signal-detector/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "domains": [
+          "{{domain}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    },
+    {
+      "columnNumber": 7,
+      "columnTitle": "Calendly, HubSpot & Chili Piper Sales Funnel Spy",
+      "mcpToolName": "detect_b2b_sales_funnel_calendly_hubspot",
+      "pricePer1000RowsUsd": 0.8,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~calendly-hubspot-booking-funnel-sales-stack-detector/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "domains": [
+          "{{domain}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    },
+    {
+      "columnNumber": 8,
+      "columnTitle": "Shopify Store Product Catalog & Merchant Contact Spy",
+      "mcpToolName": "spy_shopify_store_products_contacts",
+      "pricePer1000RowsUsd": 0.5,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~shopify-store-product-contact-spy/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "stores": [
+          "{{domain}}"
+        ],
+        "maxProductsPerStore": 10
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    },
+    {
+      "columnNumber": 9,
+      "columnTitle": "45-Point Technical SEO, Schema & Broken Link Auditor",
+      "mcpToolName": "audit_technical_seo_broken_links",
+      "pricePer1000RowsUsd": 0.8,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~seo-technical-audit-broken-link-schema-analyzer/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "urls": [
+          "https://{{domain}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    },
+    {
+      "columnNumber": 10,
+      "columnTitle": "Website to Clean AI Markdown & llms.txt Converter",
+      "mcpToolName": "convert_website_to_ai_markdown_llms_txt",
+      "pricePer1000RowsUsd": 0.5,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~ai-ready-website-to-markdown-rag-crawler/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "urls": [
+          "https://{{domain}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    },
+    {
+      "columnNumber": 11,
+      "columnTitle": "Greenhouse, Lever & Ashby ATS Hiring Signal Scraper",
+      "mcpToolName": "scrape_ats_job_board_hiring_signals",
+      "pricePer1000RowsUsd": 0.5,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~ats-job-board-hiring-signal-scraper/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "companies": [
+          "{{company_slug}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    },
+    {
+      "columnNumber": 12,
+      "columnTitle": "Restaurant Toast POS, OpenTable & Delivery Spy",
+      "mcpToolName": "find_restaurant_toast_opentable_leads",
+      "pricePer1000RowsUsd": 0.5,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~restaurant-toast-opentable-leads-scraper/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "domains": [
+          "{{domain}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    },
+    {
+      "columnNumber": 13,
+      "columnTitle": "Dental & Medical Clinic Patient Booking Spy",
+      "mcpToolName": "find_dental_medical_clinic_leads",
+      "pricePer1000RowsUsd": 0.5,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~dental-clinic-leads-scraper/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "domains": [
+          "{{domain}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    },
+    {
+      "columnNumber": 14,
+      "columnTitle": "Salon, MedSpa & Fitness Mindbody/Vagaro Spy",
+      "mcpToolName": "find_salon_medspa_mindbody_leads",
+      "pricePer1000RowsUsd": 0.8,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~salon-spa-fitness-studio-mindbody-vagaro-booking-spy/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "domains": [
+          "{{domain}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    },
+    {
+      "columnNumber": 15,
+      "columnTitle": "Chrome & Firefox Extension Store Publisher Spy",
+      "mcpToolName": "spy_chrome_firefox_extensions",
+      "pricePer1000RowsUsd": 0.5,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~chrome-extension-store-scraper/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "searchStringsArray": [
+          "{{search_query}}"
+        ],
+        "queries": [
+          "{{search_query}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    },
+    {
+      "columnNumber": 16,
+      "columnTitle": "SaaS Competitor Pricing Tier & Feature Matrix Spy",
+      "mcpToolName": "extract_saas_competitor_pricing_matrix",
+      "pricePer1000RowsUsd": 0.8,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~saas-pricing-page-tier-feature-extractor/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "domains": [
+          "{{domain}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    },
+    {
+      "columnNumber": 17,
+      "columnTitle": "Accounting, CPA & Tax Advisory Firm Lead Enricher",
+      "mcpToolName": "find_accounting_cpa_firm_leads",
+      "pricePer1000RowsUsd": 0.8,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~accounting-cpa-tax-advisory-firm-lead-enricher/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "domains": [
+          "{{domain}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    },
+    {
+      "columnNumber": 18,
+      "columnTitle": "Solar, HVAC, Roofing & Home Services Contractor Spy",
+      "mcpToolName": "find_solar_hvac_contractor_leads",
+      "pricePer1000RowsUsd": 0.8,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~solar-hvac-home-services-contractor-lead-enricher/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "domains": [
+          "{{domain}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    },
+    {
+      "columnNumber": 19,
+      "columnTitle": "Hotel & Resort Direct Booking Engine & OTA Spy",
+      "mcpToolName": "spy_hotel_direct_booking_ota_parity",
+      "pricePer1000RowsUsd": 0.8,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~hotel-resort-direct-booking-engine-ota-parity-spy/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "domains": [
+          "{{domain}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    },
+    {
+      "columnNumber": 20,
+      "columnTitle": "B2B Competitor Case Study & Customer Logo Extractor",
+      "mcpToolName": "extract_b2b_case_studies_logos",
+      "pricePer1000RowsUsd": 0.8,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~b2b-case-study-customer-logo-testimonial-extractor/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "domains": [
+          "{{domain}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    },
+    {
+      "columnNumber": 21,
+      "columnTitle": "B2B SaaS Affiliate & Partner Program Finder",
+      "mcpToolName": "find_b2b_affiliate_partner_programs",
+      "pricePer1000RowsUsd": 0.8,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~b2b-partner-affiliate-program-commission-finder/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "domains": [
+          "{{domain}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    },
+    {
+      "columnNumber": 22,
+      "columnTitle": "Zapier, Make.com & n8n Integration Ecosystem Spy",
+      "mcpToolName": "spy_zapier_make_n8n_integrations",
+      "pricePer1000RowsUsd": 0.8,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~zapier-make-n8n-automation-integration-spy/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "domains": [
+          "{{domain}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    },
+    {
+      "columnNumber": 23,
+      "columnTitle": "Landing Page CRO, CTA, Form Field & Funnel Analyzer",
+      "mcpToolName": "analyze_landing_page_cro_funnel",
+      "pricePer1000RowsUsd": 0.8,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~landing-page-cro-cta-form-funnel-analyzer/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "urls": [
+          "https://{{domain}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    },
+    {
+      "columnNumber": 24,
+      "columnTitle": "Substack Newsletter & Creator Sponsor Lead Scraper",
+      "mcpToolName": "scrape_substack_newsletter_authors",
+      "pricePer1000RowsUsd": 0.5,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~substack-newsletter-scraper/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "publications": [
+          "{{substack_handle}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    },
+    {
+      "columnNumber": 25,
+      "columnTitle": "VS Code Marketplace Extension & Publisher Scraper",
+      "mcpToolName": "scrape_vscode_marketplace_extensions",
+      "pricePer1000RowsUsd": 0.5,
+      "method": "POST",
+      "endpointUrl": "https://api.apify.com/v2/acts/lucacelli~vscode-marketplace-scraper/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN&memory=256&timeout=120",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "sampleBodyJson": {
+        "searchStringsArray": [
+          "{{search_query}}"
+        ],
+        "queries": [
+          "{{search_query}}"
+        ]
+      },
+      "recommendedRunFormula": "!!{{domain}}"
+    }
+  ]
+}
