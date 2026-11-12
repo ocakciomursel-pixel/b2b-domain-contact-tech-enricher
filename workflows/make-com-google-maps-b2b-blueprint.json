@@ -1,0 +1,61 @@
+{
+  "name": "Lucacelli Google Maps + B2B Domain + Email Verifier Make.com Blueprint",
+  "flow": [
+    {
+      "id": 1,
+      "module": "http:ActionSendData",
+      "version": 3,
+      "parameters": {
+        "handleErrors": true
+      },
+      "mapper": {
+        "url": "https://api.apify.com/v2/acts/lucacelli~google-maps-scraper-places-emails-contacts-reviews/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "method": "post",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "bodyType": "raw",
+        "contentType": "application/json",
+        "data": "{\"searchQueries\":[\"solar installer in Phoenix AZ\",\"hvac contractor in Dallas TX\"],\"maxPlacesPerQuery\":25,\"enrichWebsiteData\":true}"
+      },
+      "metadata": {
+        "designer": {
+          "x": 0,
+          "y": 0,
+          "name": "Google Maps Scraper Pro v4.0"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "module": "http:ActionSendData",
+      "version": 3,
+      "parameters": {
+        "handleErrors": true
+      },
+      "mapper": {
+        "url": "https://api.apify.com/v2/acts/lucacelli~b2b-domain-contact-tech-enricher/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "method": "post",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "bodyType": "raw",
+        "contentType": "application/json",
+        "data": "{\"domains\":[\"stripe.com\",\"linear.app\"],\"crawlContactPages\":true}"
+      },
+      "metadata": {
+        "designer": {
+          "x": 300,
+          "y": 0,
+          "name": "B2B Domain Contact & Tech Enricher"
+        }
+      }
+    }
+  ]
+}

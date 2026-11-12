@@ -1,0 +1,111 @@
+{
+  "name": "Lucacelli 3x Technical SEO Audit, XML Sitemap & AI/RAG Markdown + llms.txt Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "seo-schedule",
+      "name": "Daily SEO & AI Readiness Monitor",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        200,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~seo-technical-audit-broken-link-schema-analyzer/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"urls\": [\n    \"https://apify.com\",\n    \"https://stripe.com\",\n    \"https://shopify.com\"\n  ],\n  \"checkBrokenLinks\": true\n}"
+      },
+      "id": "node-seo-audit",
+      "name": "1. 45-Point Technical SEO, Broken Link & Schema.org Auditor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~sitemap-url-inventory-content-freshness-auditor/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"domains\": [\n    \"apify.com\",\n    \"stripe.com\"\n  ],\n  \"maxUrlsSample\": 25\n}"
+      },
+      "id": "node-sitemap-audit",
+      "name": "2. XML Sitemap URL Inventory & Content Freshness Auditor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        760,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~ai-ready-website-to-markdown-rag-crawler/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"urls\": [\n    \"https://docs.apify.com/platform/actors\",\n    \"https://modelcontextprotocol.io/introduction\"\n  ],\n  \"chunkSizeTokens\": 500,\n  \"generateLlmsTxtEntry\": true\n}"
+      },
+      "id": "node-ai-rag",
+      "name": "3. Website to Clean AI Markdown, RAG Chunks & llms.txt Generator",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1040,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Daily SEO & AI Readiness Monitor": {
+      "main": [
+        [
+          {
+            "node": "1. 45-Point Technical SEO, Broken Link & Schema.org Auditor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "1. 45-Point Technical SEO, Broken Link & Schema.org Auditor": {
+      "main": [
+        [
+          {
+            "node": "2. XML Sitemap URL Inventory & Content Freshness Auditor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2. XML Sitemap URL Inventory & Content Freshness Auditor": {
+      "main": [
+        [
+          {
+            "node": "3. Website to Clean AI Markdown, RAG Chunks & llms.txt Generator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

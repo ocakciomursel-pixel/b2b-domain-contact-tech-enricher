@@ -1,0 +1,123 @@
+{
+  "name": "Lucacelli 3x Automated B2B Lead Engine (Google Maps + Domain Tech Spy + MX Verifier)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "node-schedule-trigger",
+      "name": "Daily Automated Lead Schedule",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~google-maps-scraper-places-emails-contacts-reviews/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"searchQueries\": [\n    \"dentist in Miami FL\",\n    \"medspa in Austin TX\",\n    \"roofing contractor in Dallas TX\"\n  ],\n  \"maxPlacesPerQuery\": 25,\n  \"enrichWebsiteData\": true,\n  \"verifyEmailDns\": true\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "node-apify-gmaps",
+      "name": "1. Google Maps Scraper Pro (Places, Emails, Tech Stack)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~b2b-domain-contact-tech-enricher/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"domains\": [ \"{{ $json.domain || $json.website }}\" ],\n  \"crawlContactPages\": true,\n  \"detectTechStack\": true\n}",
+        "options": {
+          "timeout": 180000
+        }
+      },
+      "id": "node-apify-b2b-domain",
+      "name": "2. B2B Domain Contact, DNS & Tech Enricher",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        760,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~bulk-email-verifier-mx-syntax/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"emails\": {{ JSON.stringify($json.emails || [$json.primaryEmail]) }}\n}",
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "id": "node-apify-email-verifier",
+      "name": "3. Bulk Email Verifier Pro (MX, SPF, DMARC & Disposable Check)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1040,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Daily Automated Lead Schedule": {
+      "main": [
+        [
+          {
+            "node": "1. Google Maps Scraper Pro (Places, Emails, Tech Stack)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "1. Google Maps Scraper Pro (Places, Emails, Tech Stack)": {
+      "main": [
+        [
+          {
+            "node": "2. B2B Domain Contact, DNS & Tech Enricher",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2. B2B Domain Contact, DNS & Tech Enricher": {
+      "main": [
+        [
+          {
+            "node": "3. Bulk Email Verifier Pro (MX, SPF, DMARC & Disposable Check)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

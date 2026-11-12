@@ -1,0 +1,139 @@
+{
+  "name": "Lucacelli 4x Local SaaS Vertical Outbound (Google Maps + Restaurant POS + Dental + MedSpa)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "cron-trigger",
+      "name": "Daily Automated Pipeline Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        180,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~google-maps-scraper-places-emails-contacts-reviews/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"queries\": [\n    \"dental clinics Austin TX\"\n  ],\n  \"maxResultsPerQuery\": 20\n}"
+      },
+      "id": "step-1",
+      "name": "1. Scrape Google Maps Local Businesses",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        460,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~dental-clinic-leads-scraper/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"domains\": [\n    \"aspendental.com\"\n  ]\n}"
+      },
+      "id": "step-2",
+      "name": "2. Enrich Dental Zocdoc/NexHealth Stack",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        740,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~salon-spa-fitness-studio-mindbody-vagaro-booking-spy/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"domains\": [\n    \"orangetheory.com\"\n  ]\n}"
+      },
+      "id": "step-3",
+      "name": "3. Enrich MedSpa Mindbody/Vagaro Stack",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1020,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~bulk-email-verifier-mx-syntax/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"emails\": [\n    \"info@aspendental.com\"\n  ]\n}"
+      },
+      "id": "step-4",
+      "name": "4. Verify Extracted Emails (MX & Syntax)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1300,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Daily Automated Pipeline Trigger": {
+      "main": [
+        [
+          {
+            "node": "1. Scrape Google Maps Local Businesses",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "1. Scrape Google Maps Local Businesses": {
+      "main": [
+        [
+          {
+            "node": "2. Enrich Dental Zocdoc/NexHealth Stack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2. Enrich Dental Zocdoc/NexHealth Stack": {
+      "main": [
+        [
+          {
+            "node": "3. Enrich MedSpa Mindbody/Vagaro Stack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "3. Enrich MedSpa Mindbody/Vagaro Stack": {
+      "main": [
+        [
+          {
+            "node": "4. Verify Extracted Emails (MX & Syntax)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

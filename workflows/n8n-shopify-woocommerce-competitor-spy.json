@@ -1,0 +1,111 @@
+{
+  "name": "Lucacelli 3x E-Commerce Competitor Price, Stock & Tech Spy (Shopify + WooCommerce + Pricing Matrix)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "ecom-schedule",
+      "name": "Daily Price & Stock Monitor Schedule",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        200,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~shopify-store-product-contact-spy/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"stores\": [\n    \"gymshark.com\",\n    \"allbirds.com\",\n    \"brooklinen.com\"\n  ],\n  \"maxProductsPerStore\": 25,\n  \"extractMerchantContacts\": true\n}"
+      },
+      "id": "node-shopify-spy",
+      "name": "1. Shopify Store Product, Price, SKU & Stock Spy",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~wordpress-woocommerce-site-spy/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"domains\": [\n    \"woocommerce.com\",\n    \"yoast.com\",\n    \"elementor.com\"\n  ]\n}"
+      },
+      "id": "node-woo-spy",
+      "name": "2. WooCommerce & WordPress Theme/Plugin Spy",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        760,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~saas-pricing-page-tier-feature-extractor/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"pricingUrls\": [\n    \"https://shopify.com/pricing\",\n    \"https://stripe.com/pricing\"\n  ]\n}"
+      },
+      "id": "node-pricing-spy",
+      "name": "3. Competitor Pricing Page & Tier Matrix Extractor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1040,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Daily Price & Stock Monitor Schedule": {
+      "main": [
+        [
+          {
+            "node": "1. Shopify Store Product, Price, SKU & Stock Spy",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "1. Shopify Store Product, Price, SKU & Stock Spy": {
+      "main": [
+        [
+          {
+            "node": "2. WooCommerce & WordPress Theme/Plugin Spy",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2. WooCommerce & WordPress Theme/Plugin Spy": {
+      "main": [
+        [
+          {
+            "node": "3. Competitor Pricing Page & Tier Matrix Extractor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

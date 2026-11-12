@@ -1,36 +1,58 @@
 {
-  "openapi": "3.0.3",
+  "openapi": "3.1.0",
   "info": {
-    "title": "Lucacelli Apify Cloud Intelligence Suite — 14 Live Synchronous REST APIs",
-    "version": "3.0.0",
-    "description": "Official OpenAPI 3.0 specification for all 14 live Pay-Per-Event Apify Store Actors by @lucacelli ($0.50 - $1.50 / 1,000 results). Includes $5.00 Free Monthly Apify Credit for every user.",
+    "title": "Lucacelli B2B Lead Generation, Enrichment & Competitive Intelligence Cloud API (25 Tools)",
+    "version": "2.0.0",
+    "description": "Import directly into OpenAI Custom GPT Actions, Dify, Relevance AI, n8n, Clay.com, or Postman. Authenticate with Bearer Auth using your Apify API Token ($5.00/mo free credit included at https://console.apify.com/settings/integrations).",
     "contact": {
-      "name": "Lucacelli Apify Store Profile",
-      "url": "https://apify.com/lucacelli"
+      "name": "Lucacelli Data Engineering (@lucacelli)",
+      "url": "https://ocakciomursel-pixel.github.io/lucacelli-b2b-mcp-server/"
     }
   },
   "servers": [
     {
       "url": "https://api.apify.com/v2",
-      "description": "Apify Cloud Synchronous REST API v2"
+      "description": "Apify Production Cloud API v2"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "ApifyBearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Paste your Apify API Token (apify_api_...) from https://console.apify.com/settings/integrations"
+      }
+    }
+  },
+  "security": [
+    {
+      "ApifyBearerAuth": []
     }
   ],
   "paths": {
     "/acts/lucacelli~google-maps-scraper-places-emails-contacts-reviews/run-sync-get-dataset-items": {
       "post": {
-        "operationId": "run_google_maps_scraper_places_emails_contacts_reviews",
-        "summary": "Google Maps Scraper: Places, Emails, Contacts & Reviews Pro ($1.50 / 1,000 places)",
-        "description": "Extract local businesses from Google Maps with verified website emails, phone numbers, social profiles, DNS MX/DMARC, and 38+ tech stack detections. Synchronous REST execution returning structured JSON dataset items directly.",
+        "operationId": "scrape_google_maps_leads",
+        "summary": "Google Maps B2B Email & Places Scraper",
+        "description": "Extract local business leads from Google Maps including verified website emails (MX/SPF/DMARC), phone numbers, Instagram/LinkedIn/Facebook links, ad pixels, ratings, and reviews ($1.50/1k all-inclusive).",
         "parameters": [
           {
-            "name": "token",
+            "name": "memory",
             "in": "query",
-            "required": true,
+            "required": false,
             "schema": {
-              "type": "string",
-              "default": "YOUR_APIFY_API_TOKEN"
-            },
-            "description": "Your Apify API Token (Get $5/month free credit at https://apify.com/lucacelli)"
+              "type": "integer",
+              "default": 1024
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
           }
         ],
         "requestBody": {
@@ -39,37 +61,41 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "example": {
-                  "searchQueries": [
-                    "dentist in Miami FL",
-                    "medspa in Austin TX",
-                    "roofing contractor in Dallas TX"
-                  ],
-                  "maxPlacesPerQuery": 20,
-                  "enrichWebsiteData": true
-                }
-              },
-              "example": {
-                "searchQueries": [
-                  "dentist in Miami FL",
-                  "medspa in Austin TX",
-                  "roofing contractor in Dallas TX"
-                ],
-                "maxPlacesPerQuery": 20,
-                "enrichWebsiteData": true
+                "properties": {
+                  "queries": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Search terms, e.g. [\"dental clinic\", \"medspa\", \"roofing contractor\"]"
+                  },
+                  "location": {
+                    "type": "string",
+                    "description": "Optional city, state, or country filter, e.g. \"Austin, TX, USA\""
+                  },
+                  "maxResultsPerQuery": {
+                    "type": "integer",
+                    "default": 20,
+                    "description": "Maximum places per search query (default 20)"
+                  }
+                },
+                "required": [
+                  "queries"
+                ]
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Array of extracted and enriched intelligence records from Apify dataset.",
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": true
                   }
                 }
               }
@@ -80,19 +106,27 @@
     },
     "/acts/lucacelli~b2b-domain-contact-tech-enricher/run-sync-get-dataset-items": {
       "post": {
-        "operationId": "run_b2b_domain_contact_tech_enricher",
-        "summary": "B2B Domain Contact, Email, DNS & Tech Stack Enricher ($0.80 / 1,000 domains)",
-        "description": "Extract decision-maker emails, phone numbers, social links, DNS MX/SPF/DMARC records, and 38+ technology signatures from any list of company domains. Synchronous REST execution returning structured JSON dataset items directly.",
+        "operationId": "enrich_b2b_company_domain",
+        "summary": "B2B Company Domain Email, Phone & Tech Enricher",
+        "description": "Enrich company domains with verified emails, phone numbers, LinkedIn/X/Instagram handles, DNS MX/SPF/DMARC records, and 38+ SaaS tech stack signatures ($0.80/1k).",
         "parameters": [
           {
-            "name": "token",
+            "name": "memory",
             "in": "query",
-            "required": true,
+            "required": false,
             "schema": {
-              "type": "string",
-              "default": "YOUR_APIFY_API_TOKEN"
-            },
-            "description": "Your Apify API Token (Get $5/month free credit at https://apify.com/lucacelli)"
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
           }
         ],
         "requestBody": {
@@ -101,51 +135,357 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "example": {
-                  "domains": [
-                    "stripe.com",
-                    "shopify.com",
-                    "hubspot.com",
-                    "linear.app",
-                    "vercel.com",
-                    "supabase.com",
-                    "retool.com",
-                    "intercom.com",
-                    "webflow.com",
-                    "notion.so"
-                  ],
-                  "crawlContactPages": true,
-                  "maxPagesPerDomain": 3
-                }
-              },
-              "example": {
-                "domains": [
-                  "stripe.com",
-                  "shopify.com",
-                  "hubspot.com",
-                  "linear.app",
-                  "vercel.com",
-                  "supabase.com",
-                  "retool.com",
-                  "intercom.com",
-                  "webflow.com",
-                  "notion.so"
-                ],
-                "crawlContactPages": true,
-                "maxPagesPerDomain": 3
+                "properties": {
+                  "domains": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Company domains, e.g. [\"stripe.com\", \"linear.app\"]"
+                  }
+                },
+                "required": [
+                  "domains"
+                ]
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Array of extracted and enriched intelligence records from Apify dataset.",
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~master-360-b2b-company-deep-dossier-enricher/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "build_360_b2b_company_dossier",
+        "summary": "360° B2B Company Intelligence Dossier Builder",
+        "description": "Generate a complete 360-degree B2B company intelligence dossier combining executive contacts, DNS/security posture, ad spend pixels, and tech stack ($0.80/1k).",
+        "parameters": [
+          {
+            "name": "memory",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "domains": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Target company domains"
+                  }
+                },
+                "required": [
+                  "domains"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~bulk-email-verifier-mx-syntax/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "verify_bulk_emails_mx_syntax",
+        "summary": "Bulk Email MX, Syntax & Disposable Verifier",
+        "description": "Verify email lists in bulk for RFC syntax, live DNS MX records, disposable providers, role accounts, and cold-email deliverability readiness ($0.50/1k).",
+        "parameters": [
+          {
+            "name": "memory",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "emails": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Email addresses to verify"
+                  }
+                },
+                "required": [
+                  "emails"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~cold-email-icebreaker-scraper/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "generate_cold_email_icebreakers",
+        "summary": "Cold Email Personalized Icebreaker Generator",
+        "description": "Crawl prospect websites and generate personalized B2B cold email first-line icebreakers, value-prop summaries, and Clay/Instantly/Smartlead outreach hooks ($0.50/1k).",
+        "parameters": [
+          {
+            "name": "memory",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "domains": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Prospect domains, e.g. [\"vercel.com\", \"supabase.com\"]"
+                  }
+                },
+                "required": [
+                  "domains"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~pixel-tag-manager-ad-spend-signal-detector/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "detect_ad_spend_pixels",
+        "summary": "Meta, Google, TikTok & LinkedIn Ad Pixel Spy",
+        "description": "Detect active paid ad spend signals on any website including Meta Pixel, Google Ads/GTM, TikTok Pixel, LinkedIn Insight Tag, and Microsoft Clarity ($0.80/1k).",
+        "parameters": [
+          {
+            "name": "memory",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "domains": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Domains to inspect for active ad pixels"
+                  }
+                },
+                "required": [
+                  "domains"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~calendly-hubspot-booking-funnel-sales-stack-detector/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "detect_b2b_sales_funnel_calendly_hubspot",
+        "summary": "Calendly, HubSpot & Chili Piper Sales Funnel Spy",
+        "description": "Detect Calendly, Chili Piper, HubSpot Meetings, Intercom, Drift, and high-intent B2B demo booking funnels across company websites ($0.80/1k).",
+        "parameters": [
+          {
+            "name": "memory",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "domains": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Target B2B domains"
+                  }
+                },
+                "required": [
+                  "domains"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
                   }
                 }
               }
@@ -156,19 +496,27 @@
     },
     "/acts/lucacelli~shopify-store-product-contact-spy/run-sync-get-dataset-items": {
       "post": {
-        "operationId": "run_shopify_store_product_contact_spy",
-        "summary": "Shopify Store Product, Pricing, Stock & Merchant Contact Spy ($0.50 / 1,000 products)",
-        "description": "Scrape Shopify storefront product catalogs, SKUs, variant prices, stock availability, installed Shopify apps, and merchant contact details. Synchronous REST execution returning structured JSON dataset items directly.",
+        "operationId": "spy_shopify_store_products_contacts",
+        "summary": "Shopify Store Product Catalog & Merchant Contact Spy",
+        "description": "Extract Shopify store product catalogs, live variant/SKU prices, stock availability, and merchant contact/social details ($0.50/1k).",
         "parameters": [
           {
-            "name": "token",
+            "name": "memory",
             "in": "query",
-            "required": true,
+            "required": false,
             "schema": {
-              "type": "string",
-              "default": "YOUR_APIFY_API_TOKEN"
-            },
-            "description": "Your Apify API Token (Get $5/month free credit at https://apify.com/lucacelli)"
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
           }
         ],
         "requestBody": {
@@ -177,111 +525,37 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "example": {
-                  "stores": [
-                    "gymshark.com",
-                    "allbirds.com",
-                    "brooklinen.com"
-                  ],
-                  "maxProductsPerStore": 25,
-                  "extractMerchantContacts": true
-                }
-              },
-              "example": {
-                "stores": [
-                  "gymshark.com",
-                  "allbirds.com",
-                  "brooklinen.com"
-                ],
-                "maxProductsPerStore": 25,
-                "extractMerchantContacts": true
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Array of extracted and enriched intelligence records from Apify dataset.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "object"
+                "properties": {
+                  "stores": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Shopify domains, e.g. [\"gymshark.com\", \"allbirds.com\"]"
+                  },
+                  "maxProductsPerStore": {
+                    "type": "integer",
+                    "default": 20,
+                    "description": "Max products per store (default 20)"
                   }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/acts/lucacelli~ai-ready-website-to-markdown-rag-crawler/run-sync-get-dataset-items": {
-      "post": {
-        "operationId": "run_ai_ready_website_to_markdown_rag_crawler",
-        "summary": "Website to Clean Markdown, Vector RAG Chunks & llms.txt ($0.50 / 1,000 pages)",
-        "description": "Convert any documentation site or URL list into clean LLM-ready Markdown, overlapping token-counted RAG vector chunks, and llms.txt index blocks. Synchronous REST execution returning structured JSON dataset items directly.",
-        "parameters": [
-          {
-            "name": "token",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "default": "YOUR_APIFY_API_TOKEN"
-            },
-            "description": "Your Apify API Token (Get $5/month free credit at https://apify.com/lucacelli)"
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "example": {
-                  "urls": [
-                    "https://docs.apify.com/platform/actors",
-                    "https://docs.apify.com/platform/storages",
-                    "https://docs.apify.com/platform/integrations",
-                    "https://docs.apify.com/sdk/js",
-                    "https://docs.apify.com/api/v2",
-                    "https://crawlee.dev/docs/quick-start",
-                    "https://modelcontextprotocol.io/introduction",
-                    "https://openai.com/policies/usage-policies"
-                  ],
-                  "chunkSizeTokens": 500,
-                  "chunkOverlapTokens": 50,
-                  "generateLlmsTxtEntry": true
-                }
-              },
-              "example": {
-                "urls": [
-                  "https://docs.apify.com/platform/actors",
-                  "https://docs.apify.com/platform/storages",
-                  "https://docs.apify.com/platform/integrations",
-                  "https://docs.apify.com/sdk/js",
-                  "https://docs.apify.com/api/v2",
-                  "https://crawlee.dev/docs/quick-start",
-                  "https://modelcontextprotocol.io/introduction",
-                  "https://openai.com/policies/usage-policies"
-                ],
-                "chunkSizeTokens": 500,
-                "chunkOverlapTokens": 50,
-                "generateLlmsTxtEntry": true
+                },
+                "required": [
+                  "stores"
+                ]
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Array of extracted and enriched intelligence records from Apify dataset.",
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": true
                   }
                 }
               }
@@ -292,19 +566,27 @@
     },
     "/acts/lucacelli~seo-technical-audit-broken-link-schema-analyzer/run-sync-get-dataset-items": {
       "post": {
-        "operationId": "run_seo_technical_audit_broken_link_schema_analyzer",
-        "summary": "Technical SEO, Broken Link, Schema.org & Security Auditor ($0.80 / 1,000 pages)",
-        "description": "Run a 45-point technical SEO, Core Web Vitals response latency, Schema.org JSON-LD, OpenGraph, security headers, and broken link audit on any URL list. Synchronous REST execution returning structured JSON dataset items directly.",
+        "operationId": "audit_technical_seo_broken_links",
+        "summary": "45-Point Technical SEO, Schema & Broken Link Auditor",
+        "description": "Run a 45-point technical SEO, broken link, JSON-LD Schema.org, OpenGraph, and security header audit on any URL ($0.80/1k).",
         "parameters": [
           {
-            "name": "token",
+            "name": "memory",
             "in": "query",
-            "required": true,
+            "required": false,
             "schema": {
-              "type": "string",
-              "default": "YOUR_APIFY_API_TOKEN"
-            },
-            "description": "Your Apify API Token (Get $5/month free credit at https://apify.com/lucacelli)"
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
           }
         ],
         "requestBody": {
@@ -313,51 +595,32 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "example": {
-                  "urls": [
-                    "https://apify.com",
-                    "https://stripe.com",
-                    "https://shopify.com",
-                    "https://cloudflare.com",
-                    "https://vercel.com",
-                    "https://linear.app",
-                    "https://supabase.com",
-                    "https://webflow.com",
-                    "https://notion.so",
-                    "https://github.com"
-                  ],
-                  "checkBrokenLinks": true,
-                  "maxLinksToVerifyPerPage": 15
-                }
-              },
-              "example": {
-                "urls": [
-                  "https://apify.com",
-                  "https://stripe.com",
-                  "https://shopify.com",
-                  "https://cloudflare.com",
-                  "https://vercel.com",
-                  "https://linear.app",
-                  "https://supabase.com",
-                  "https://webflow.com",
-                  "https://notion.so",
-                  "https://github.com"
-                ],
-                "checkBrokenLinks": true,
-                "maxLinksToVerifyPerPage": 15
+                "properties": {
+                  "urls": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Full webpage URLs to audit"
+                  }
+                },
+                "required": [
+                  "urls"
+                ]
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Array of extracted and enriched intelligence records from Apify dataset.",
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": true
                   }
                 }
               }
@@ -366,21 +629,29 @@
         }
       }
     },
-    "/acts/lucacelli~github-developer-recruiter-lead-enricher/run-sync-get-dataset-items": {
+    "/acts/lucacelli~ai-ready-website-to-markdown-rag-crawler/run-sync-get-dataset-items": {
       "post": {
-        "operationId": "run_github_developer_recruiter_lead_enricher",
-        "summary": "GitHub Developer, Stargazer & Contributor Lead Enricher ($0.80 / 1,000 developers)",
-        "description": "Extract active open-source contributors, public commit emails, top programming languages, candidate seniority scores, and recruiter outreach hooks. Synchronous REST execution returning structured JSON dataset items directly.",
+        "operationId": "convert_website_to_ai_markdown_llms_txt",
+        "summary": "Website to Clean AI Markdown & llms.txt Converter",
+        "description": "Convert webpages into clean LLM-ready Markdown, token-counted RAG chunks, and /llms.txt index entries ($0.50/1k).",
         "parameters": [
           {
-            "name": "token",
+            "name": "memory",
             "in": "query",
-            "required": true,
+            "required": false,
             "schema": {
-              "type": "string",
-              "default": "YOUR_APIFY_API_TOKEN"
-            },
-            "description": "Your Apify API Token (Get $5/month free credit at https://apify.com/lucacelli)"
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
           }
         ],
         "requestBody": {
@@ -389,29 +660,17 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "example": {
-                  "repositories": [
-                    "apify/crawlee",
-                    "langchain-ai/langchain",
-                    "n8n-io/n8n"
-                  ],
-                  "maxDevelopersPerRepo": 10,
-                  "usernames": [
-                    "jlowin",
-                    "unclecode"
-                  ]
-                }
-              },
-              "example": {
-                "repositories": [
-                  "apify/crawlee",
-                  "langchain-ai/langchain",
-                  "n8n-io/n8n"
-                ],
-                "maxDevelopersPerRepo": 10,
-                "usernames": [
-                  "jlowin",
-                  "unclecode"
+                "properties": {
+                  "urls": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Webpage URLs to convert to clean AI Markdown"
+                  }
+                },
+                "required": [
+                  "urls"
                 ]
               }
             }
@@ -419,13 +678,14 @@
         },
         "responses": {
           "200": {
-            "description": "Array of extracted and enriched intelligence records from Apify dataset.",
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": true
                   }
                 }
               }
@@ -436,19 +696,27 @@
     },
     "/acts/lucacelli~ats-job-board-hiring-signal-scraper/run-sync-get-dataset-items": {
       "post": {
-        "operationId": "run_ats_job_board_hiring_signal_scraper",
-        "summary": "Greenhouse & Lever Company Job Board & Hiring Signal Scraper ($0.50 / 1,000 jobs)",
-        "description": "Scrape active job openings, engineering/sales department growth velocity, remote flags, and tech stack hiring signals from Greenhouse and Lever ATS boards. Synchronous REST execution returning structured JSON dataset items directly.",
+        "operationId": "scrape_ats_job_board_hiring_signals",
+        "summary": "Greenhouse, Lever & Ashby ATS Hiring Signal Scraper",
+        "description": "Extract active job openings, department hiring velocity, and B2B buying signals from Greenhouse, Lever, and Ashby career boards ($0.50/1k).",
         "parameters": [
           {
-            "name": "token",
+            "name": "memory",
             "in": "query",
-            "required": true,
+            "required": false,
             "schema": {
-              "type": "string",
-              "default": "YOUR_APIFY_API_TOKEN"
-            },
-            "description": "Your Apify API Token (Get $5/month free credit at https://apify.com/lucacelli)"
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
           }
         ],
         "requestBody": {
@@ -457,181 +725,17 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "example": {
-                  "greenhouseBoards": [
-                    "stripe",
-                    "cloudflare",
-                    "vercel",
-                    "airtable",
-                    "figma"
-                  ],
-                  "leverBoards": [
-                    "palantir",
-                    "netflix"
-                  ],
-                  "maxJobsPerCompany": 25
-                }
-              },
-              "example": {
-                "greenhouseBoards": [
-                  "stripe",
-                  "cloudflare",
-                  "vercel",
-                  "airtable",
-                  "figma"
-                ],
-                "leverBoards": [
-                  "palantir",
-                  "netflix"
-                ],
-                "maxJobsPerCompany": 25
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Array of extracted and enriched intelligence records from Apify dataset.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "object"
+                "properties": {
+                  "companies": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Company slugs or career URLs, e.g. [\"stripe\", \"figma\"]"
                   }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/acts/lucacelli~reddit-community-pain-point-trend-miner/run-sync-get-dataset-items": {
-      "post": {
-        "operationId": "run_reddit_community_pain_point_trend_miner",
-        "summary": "Reddit Subreddit, Buyer Intent & Pain-Point Lead Miner ($0.50 / 1,000 posts)",
-        "description": "Mine targeted Reddit communities for high-intent B2B buyer questions, competitor switching signals, and SaaS pain points. Synchronous REST execution returning structured JSON dataset items directly.",
-        "parameters": [
-          {
-            "name": "token",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "default": "YOUR_APIFY_API_TOKEN"
-            },
-            "description": "Your Apify API Token (Get $5/month free credit at https://apify.com/lucacelli)"
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "example": {
-                  "subreddits": [
-                    "SaaS",
-                    "Entrepreneur",
-                    "smallbusiness",
-                    "startups",
-                    "agency"
-                  ],
-                  "intentKeywords": [
-                    "looking for",
-                    "alternative to",
-                    "recommend a tool",
-                    "how do you automate"
-                  ],
-                  "maxPostsPerSubreddit": 15
-                }
-              },
-              "example": {
-                "subreddits": [
-                  "SaaS",
-                  "Entrepreneur",
-                  "smallbusiness",
-                  "startups",
-                  "agency"
-                ],
-                "intentKeywords": [
-                  "looking for",
-                  "alternative to",
-                  "recommend a tool",
-                  "how do you automate"
-                ],
-                "maxPostsPerSubreddit": 15
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Array of extracted and enriched intelligence records from Apify dataset.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "object"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/acts/lucacelli~wordpress-woocommerce-site-spy/run-sync-get-dataset-items": {
-      "post": {
-        "operationId": "run_wordpress_woocommerce_site_spy",
-        "summary": "WordPress & WooCommerce Theme, Plugin & Agency Lead Spy ($0.80 / 1,000 sites)",
-        "description": "Detect active WordPress themes, installed plugins, WooCommerce store status, and wp-json REST namespaces on any list of domains. Synchronous REST execution returning structured JSON dataset items directly.",
-        "parameters": [
-          {
-            "name": "token",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "default": "YOUR_APIFY_API_TOKEN"
-            },
-            "description": "Your Apify API Token (Get $5/month free credit at https://apify.com/lucacelli)"
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "example": {
-                  "domains": [
-                    "techcrunch.com",
-                    "wordpress.org",
-                    "woocommerce.com",
-                    "yoast.com",
-                    "wpbeginner.com",
-                    "kinsta.com",
-                    "wpengine.com",
-                    "smashingmagazine.com",
-                    "css-tricks.com",
-                    "elementor.com"
-                  ]
-                }
-              },
-              "example": {
-                "domains": [
-                  "techcrunch.com",
-                  "wordpress.org",
-                  "woocommerce.com",
-                  "yoast.com",
-                  "wpbeginner.com",
-                  "kinsta.com",
-                  "wpengine.com",
-                  "smashingmagazine.com",
-                  "css-tricks.com",
-                  "elementor.com"
+                },
+                "required": [
+                  "companies"
                 ]
               }
             }
@@ -639,13 +743,14 @@
         },
         "responses": {
           "200": {
-            "description": "Array of extracted and enriched intelligence records from Apify dataset.",
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": true
                   }
                 }
               }
@@ -654,21 +759,29 @@
         }
       }
     },
-    "/acts/lucacelli~hackernews-tech-launch-lead-monitor/run-sync-get-dataset-items": {
+    "/acts/lucacelli~restaurant-toast-opentable-leads-scraper/run-sync-get-dataset-items": {
       "post": {
-        "operationId": "run_hackernews_tech_launch_lead_monitor",
-        "summary": "Hacker News Launch, Show HN & Tech Founder Lead Monitor ($0.50 / 1,000 stories)",
-        "description": "Monitor Hacker News (Show HN, Ask HN, Frontpage) for newly launched startups, founder handles, outbound domains, and community traction. Synchronous REST execution returning structured JSON dataset items directly.",
+        "operationId": "find_restaurant_toast_opentable_leads",
+        "summary": "Restaurant Toast POS, OpenTable & Delivery Spy",
+        "description": "Detect Toast POS, Square, OpenTable, Resy, DoorDash, UberEats, and contact emails across restaurant websites ($0.50/1k).",
         "parameters": [
           {
-            "name": "token",
+            "name": "memory",
             "in": "query",
-            "required": true,
+            "required": false,
             "schema": {
-              "type": "string",
-              "default": "YOUR_APIFY_API_TOKEN"
-            },
-            "description": "Your Apify API Token (Get $5/month free credit at https://apify.com/lucacelli)"
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
           }
         ],
         "requestBody": {
@@ -677,35 +790,32 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "example": {
-                  "queries": [
-                    "Show HN: AI",
-                    "MCP",
-                    "Show HN: SaaS"
-                  ],
-                  "maxStoriesPerQuery": 15
-                }
-              },
-              "example": {
-                "queries": [
-                  "Show HN: AI",
-                  "MCP",
-                  "Show HN: SaaS"
-                ],
-                "maxStoriesPerQuery": 15
+                "properties": {
+                  "domains": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Restaurant domains to enrich"
+                  }
+                },
+                "required": [
+                  "domains"
+                ]
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Array of extracted and enriched intelligence records from Apify dataset.",
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": true
                   }
                 }
               }
@@ -714,21 +824,29 @@
         }
       }
     },
-    "/acts/lucacelli~sitemap-url-inventory-content-freshness-auditor/run-sync-get-dataset-items": {
+    "/acts/lucacelli~dental-clinic-leads-scraper/run-sync-get-dataset-items": {
       "post": {
-        "operationId": "run_sitemap_url_inventory_content_freshness_auditor",
-        "summary": "XML Sitemap URL Inventory, SEO Freshness & Content Auditor ($0.50 / 1,000 sitemaps)",
-        "description": "Parse XML Sitemaps and Sitemap Indexes to audit total indexed URL counts, 30/90-day content freshness velocity, and top URL path structures. Synchronous REST execution returning structured JSON dataset items directly.",
+        "operationId": "find_dental_medical_clinic_leads",
+        "summary": "Dental & Medical Clinic Patient Booking Spy",
+        "description": "Extract dental, medspa, and clinic contact emails, phones, and patient booking software (Zocdoc, NexHealth, LocalMed) ($0.50/1k).",
         "parameters": [
           {
-            "name": "token",
+            "name": "memory",
             "in": "query",
-            "required": true,
+            "required": false,
             "schema": {
-              "type": "string",
-              "default": "YOUR_APIFY_API_TOKEN"
-            },
-            "description": "Your Apify API Token (Get $5/month free credit at https://apify.com/lucacelli)"
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
           }
         ],
         "requestBody": {
@@ -737,41 +855,162 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "example": {
-                  "domains": [
-                    "apify.com",
-                    "cloudflare.com",
-                    "stripe.com",
-                    "shopify.com",
-                    "vercel.com",
-                    "supabase.com"
-                  ],
-                  "maxUrlsSample": 25
-                }
-              },
-              "example": {
-                "domains": [
-                  "apify.com",
-                  "cloudflare.com",
-                  "stripe.com",
-                  "shopify.com",
-                  "vercel.com",
-                  "supabase.com"
-                ],
-                "maxUrlsSample": 25
+                "properties": {
+                  "domains": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Clinic domains to enrich"
+                  }
+                },
+                "required": [
+                  "domains"
+                ]
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Array of extracted and enriched intelligence records from Apify dataset.",
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~salon-spa-fitness-studio-mindbody-vagaro-booking-spy/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "find_salon_medspa_mindbody_leads",
+        "summary": "Salon, MedSpa & Fitness Mindbody/Vagaro Spy",
+        "description": "Detect Mindbody, Vagaro, Boulevard, Fresha, Zenoti, and owner contact leads across salons, spas, and fitness studios ($0.80/1k).",
+        "parameters": [
+          {
+            "name": "memory",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "domains": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Salon/MedSpa/Fitness studio domains"
+                  }
+                },
+                "required": [
+                  "domains"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~chrome-extension-store-scraper/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "spy_chrome_firefox_extensions",
+        "summary": "Chrome & Firefox Extension Store Publisher Spy",
+        "description": "Extract browser extension active users, ratings, versions, and publisher support emails by keyword or slug ($0.50/1k).",
+        "parameters": [
+          {
+            "name": "memory",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "queries": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Keywords or extension slugs, e.g. [\"seo\", \"crm\"]"
+                  }
+                },
+                "required": [
+                  "queries"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
                   }
                 }
               }
@@ -782,19 +1021,27 @@
     },
     "/acts/lucacelli~saas-pricing-page-tier-feature-extractor/run-sync-get-dataset-items": {
       "post": {
-        "operationId": "run_saas_pricing_page_tier_feature_extractor",
-        "summary": "SaaS Pricing Page, Plan Tiers & Competitor Feature Spy ($0.80 / 1,000 pages)",
-        "description": "Extract SaaS competitor pricing pages, plan tier names, monthly/annual price points, free trial flags, and enterprise sales gating signals. Synchronous REST execution returning structured JSON dataset items directly.",
+        "operationId": "extract_saas_competitor_pricing_matrix",
+        "summary": "SaaS Competitor Pricing Tier & Feature Matrix Spy",
+        "description": "Extract SaaS competitor pricing tiers, monthly/annual plan amounts, enterprise CTAs, and feature matrices ($0.80/1k).",
         "parameters": [
           {
-            "name": "token",
+            "name": "memory",
             "in": "query",
-            "required": true,
+            "required": false,
             "schema": {
-              "type": "string",
-              "default": "YOUR_APIFY_API_TOKEN"
-            },
-            "description": "Your Apify API Token (Get $5/month free credit at https://apify.com/lucacelli)"
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
           }
         ],
         "requestBody": {
@@ -803,29 +1050,17 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "example": {
-                  "pricingUrls": [
-                    "https://apify.com/pricing",
-                    "https://stripe.com/pricing",
-                    "https://linear.app/pricing",
-                    "https://vercel.com/pricing",
-                    "https://supabase.com/pricing",
-                    "https://webflow.com/pricing",
-                    "https://notion.so/pricing",
-                    "https://hubspot.com/pricing"
-                  ]
-                }
-              },
-              "example": {
-                "pricingUrls": [
-                  "https://apify.com/pricing",
-                  "https://stripe.com/pricing",
-                  "https://linear.app/pricing",
-                  "https://vercel.com/pricing",
-                  "https://supabase.com/pricing",
-                  "https://webflow.com/pricing",
-                  "https://notion.so/pricing",
-                  "https://hubspot.com/pricing"
+                "properties": {
+                  "domains": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Competitor SaaS domains or pricing URLs, e.g. [\"linear.app\", \"notion.so\"]"
+                  }
+                },
+                "required": [
+                  "domains"
                 ]
               }
             }
@@ -833,13 +1068,14 @@
         },
         "responses": {
           "200": {
-            "description": "Array of extracted and enriched intelligence records from Apify dataset.",
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": true
                   }
                 }
               }
@@ -848,21 +1084,29 @@
         }
       }
     },
-    "/acts/lucacelli~clinical-trials-fda-drug-safety-intel/run-sync-get-dataset-items": {
+    "/acts/lucacelli~accounting-cpa-tax-advisory-firm-lead-enricher/run-sync-get-dataset-items": {
       "post": {
-        "operationId": "run_clinical_trials_fda_drug_safety_intel",
-        "summary": "ClinicalTrials.gov & OpenFDA Biotech / Pharma Lead Enricher ($0.80 / 1,000 trials)",
-        "description": "Extract active Phase I-IV clinical trials, lead biotech/pharma sponsors, principal investigators, and OpenFDA regulatory safety intelligence. Synchronous REST execution returning structured JSON dataset items directly.",
+        "operationId": "find_accounting_cpa_firm_leads",
+        "summary": "Accounting, CPA & Tax Advisory Firm Lead Enricher",
+        "description": "Extract partner emails, client portal software (CCH, Thomson Reuters, QuickBooks, Xero, Canopy), and phone numbers from CPA and accounting firm domains ($0.80/1k).",
         "parameters": [
           {
-            "name": "token",
+            "name": "memory",
             "in": "query",
-            "required": true,
+            "required": false,
             "schema": {
-              "type": "string",
-              "default": "YOUR_APIFY_API_TOKEN"
-            },
-            "description": "Your Apify API Token (Get $5/month free credit at https://apify.com/lucacelli)"
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
           }
         ],
         "requestBody": {
@@ -871,35 +1115,32 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "example": {
-                  "conditions": [
-                    "oncology immunotherapy",
-                    "GLP-1 obesity",
-                    "CRISPR gene therapy"
-                  ],
-                  "maxStudies": 15
-                }
-              },
-              "example": {
-                "conditions": [
-                  "oncology immunotherapy",
-                  "GLP-1 obesity",
-                  "CRISPR gene therapy"
-                ],
-                "maxStudies": 15
+                "properties": {
+                  "domains": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Accounting or CPA firm domains"
+                  }
+                },
+                "required": [
+                  "domains"
+                ]
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Array of extracted and enriched intelligence records from Apify dataset.",
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": true
                   }
                 }
               }
@@ -908,21 +1149,29 @@
         }
       }
     },
-    "/acts/lucacelli~scientific-literature-citation-author-lead-miner/run-sync-get-dataset-items": {
+    "/acts/lucacelli~solar-hvac-home-services-contractor-lead-enricher/run-sync-get-dataset-items": {
       "post": {
-        "operationId": "run_scientific_literature_citation_author_lead_miner",
-        "summary": "Scientific Paper, Author Email & Lab Research Lead Miner ($0.50 / 1,000 papers)",
-        "description": "Mine peer-reviewed research papers, university lab affiliations, citation velocity, DOIs, and corresponding author leads. Synchronous REST execution returning structured JSON dataset items directly.",
+        "operationId": "find_solar_hvac_contractor_leads",
+        "summary": "Solar, HVAC, Roofing & Home Services Contractor Spy",
+        "description": "Detect ServiceTitan, Housecall Pro, Jobber, financing widgets, license numbers, and owner contacts across home-service contractor websites ($0.80/1k).",
         "parameters": [
           {
-            "name": "token",
+            "name": "memory",
             "in": "query",
-            "required": true,
+            "required": false,
             "schema": {
-              "type": "string",
-              "default": "YOUR_APIFY_API_TOKEN"
-            },
-            "description": "Your Apify API Token (Get $5/month free credit at https://apify.com/lucacelli)"
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
           }
         ],
         "requestBody": {
@@ -931,35 +1180,487 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "example": {
-                  "searchQueries": [
-                    "CRISPR base editing delivery",
-                    "mRNA lipid nanoparticle formulation",
-                    "spatial transcriptomics"
-                  ],
-                  "maxPapers": 15
-                }
-              },
-              "example": {
-                "searchQueries": [
-                  "CRISPR base editing delivery",
-                  "mRNA lipid nanoparticle formulation",
-                  "spatial transcriptomics"
-                ],
-                "maxPapers": 15
+                "properties": {
+                  "domains": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Solar, HVAC, plumbing, or roofing domains"
+                  }
+                },
+                "required": [
+                  "domains"
+                ]
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Array of extracted and enriched intelligence records from Apify dataset.",
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~hotel-resort-direct-booking-engine-ota-parity-spy/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "spy_hotel_direct_booking_ota_parity",
+        "summary": "Hotel & Resort Direct Booking Engine & OTA Spy",
+        "description": "Detect Cloudbeds, SynXis, Mews, SiteMinder, Booking.com/Expedia widgets, and hospitality GM/sales contacts across hotel websites ($0.80/1k).",
+        "parameters": [
+          {
+            "name": "memory",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "domains": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Hotel, resort, or boutique hospitality domains"
+                  }
+                },
+                "required": [
+                  "domains"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~b2b-case-study-customer-logo-testimonial-extractor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "extract_b2b_case_studies_logos",
+        "summary": "B2B Competitor Case Study & Customer Logo Extractor",
+        "description": "Extract named enterprise customers, case study URLs, client logo walls, and testimonial quotes from competitor B2B websites ($0.80/1k).",
+        "parameters": [
+          {
+            "name": "memory",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "domains": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Competitor B2B company domains"
+                  }
+                },
+                "required": [
+                  "domains"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~b2b-partner-affiliate-program-commission-finder/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "find_b2b_affiliate_partner_programs",
+        "summary": "B2B SaaS Affiliate & Partner Program Finder",
+        "description": "Discover PartnerStack, Impact, Rewardful, FirstPromoter, Tolt, commission percentages, and partnership contacts on SaaS domains ($0.80/1k).",
+        "parameters": [
+          {
+            "name": "memory",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "domains": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "SaaS or e-commerce domains"
+                  }
+                },
+                "required": [
+                  "domains"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~zapier-make-n8n-automation-integration-spy/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "spy_zapier_make_n8n_integrations",
+        "summary": "Zapier, Make.com & n8n Integration Ecosystem Spy",
+        "description": "Detect public webhooks, REST API docs, Zapier apps, Make modules, n8n nodes, and developer relations contacts on SaaS domains ($0.80/1k).",
+        "parameters": [
+          {
+            "name": "memory",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "domains": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "SaaS domains to inspect"
+                  }
+                },
+                "required": [
+                  "domains"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~landing-page-cro-cta-form-funnel-analyzer/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "analyze_landing_page_cro_funnel",
+        "summary": "Landing Page CRO, CTA, Form Field & Funnel Analyzer",
+        "description": "Audit landing page headlines, form field friction, CTA hierarchy, social proof density, and A/B testing scripts (VWO, Optimizely, PostHog) ($0.80/1k).",
+        "parameters": [
+          {
+            "name": "memory",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "urls": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Landing page URLs to analyze"
+                  }
+                },
+                "required": [
+                  "urls"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~substack-newsletter-scraper/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "scrape_substack_newsletter_authors",
+        "summary": "Substack Newsletter & Creator Sponsor Lead Scraper",
+        "description": "Extract Substack newsletter metadata, author profiles, recent post cadence, subscriber signals, and sponsorship contact links ($0.50/1k).",
+        "parameters": [
+          {
+            "name": "memory",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "publications": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Substack handles or URLs, e.g. [\"lennysnewsletter\", \"pragmaticengineer\"]"
+                  }
+                },
+                "required": [
+                  "publications"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~vscode-marketplace-scraper/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "scrape_vscode_marketplace_extensions",
+        "summary": "VS Code Marketplace Extension & Publisher Scraper",
+        "description": "Extract VS Code extension install counts, ratings, GitHub repo links, and developer/company publisher details by keyword ($0.50/1k).",
+        "parameters": [
+          {
+            "name": "memory",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "queries": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Search keywords, e.g. [\"copilot\", \"mcp\", \"terraform\"]"
+                  }
+                },
+                "required": [
+                  "queries"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
                   }
                 }
               }

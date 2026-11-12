@@ -1,0 +1,78 @@
+{
+  "packName": "Lucacelli Clay.com HTTP API Waterfall Enrichment Pack (Save 85% vs Clay Credits)",
+  "instructions": "In Clay.com, click Add Enrichment -> HTTP API -> POST, paste the endpoint URL (replace YOUR_APIFY_API_TOKEN), and paste bodyTemplate mapping /domain from your Clay table.",
+  "columns": [
+    {
+      "columnName": "1. Domain -> Emails, Phones, Socials & 38 SaaS Signatures ($0.80/1k)",
+      "method": "POST",
+      "endpoint": "https://api.apify.com/v2/acts/lucacelli~b2b-domain-contact-tech-enricher/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "bodyTemplate": "{\"domains\": [\"{{domain}}\"]}"
+    },
+    {
+      "columnName": "2. Domain -> Personalized AI Cold Email First-Line Icebreaker ($0.50/1k)",
+      "method": "POST",
+      "endpoint": "https://api.apify.com/v2/acts/lucacelli~cold-email-icebreaker-scraper/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "bodyTemplate": "{\"domains\": [\"{{domain}}\"]}"
+    },
+    {
+      "columnName": "3. Domain -> Active Paid Ad Spend Pixels (Meta, Google Ads, TikTok, LinkedIn) ($0.80/1k)",
+      "method": "POST",
+      "endpoint": "https://api.apify.com/v2/acts/lucacelli~pixel-tag-manager-ad-spend-signal-detector/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "bodyTemplate": "{\"domains\": [\"{{domain}}\"]}"
+    },
+    {
+      "columnName": "4. Domain -> Sales Funnel & Demo Booking Stack (Calendly, HubSpot, Intercom) ($0.80/1k)",
+      "method": "POST",
+      "endpoint": "https://api.apify.com/v2/acts/lucacelli~calendly-hubspot-booking-funnel-sales-stack-detector/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "bodyTemplate": "{\"domains\": [\"{{domain}}\"]}"
+    },
+    {
+      "columnName": "5. Email -> Live DNS MX, Syntax & Disposable Verification ($0.50/1k)",
+      "method": "POST",
+      "endpoint": "https://api.apify.com/v2/acts/lucacelli~bulk-email-verifier-mx-syntax/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "bodyTemplate": "{\"emails\": [\"{{email}}\"]}"
+    },
+    {
+      "columnName": "6. Company -> 360° Master B2B Dossier (Contacts + DNS + Tech + Socials) ($0.80/1k)",
+      "method": "POST",
+      "endpoint": "https://api.apify.com/v2/acts/lucacelli~master-360-b2b-company-deep-dossier-enricher/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "bodyTemplate": "{\"domains\": [\"{{domain}}\"]}"
+    },
+    {
+      "columnName": "7. Restaurant Domain -> Toast POS, Square, OpenTable & Delivery Stack ($0.80/1k)",
+      "method": "POST",
+      "endpoint": "https://api.apify.com/v2/acts/lucacelli~restaurant-toast-opentable-leads-scraper/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "bodyTemplate": "{\"domains\": [\"{{domain}}\"]}"
+    },
+    {
+      "columnName": "8. Clinic / MedSpa Domain -> Zocdoc, NexHealth, Mindbody & Owner Emails ($0.50/1k)",
+      "method": "POST",
+      "endpoint": "https://api.apify.com/v2/acts/lucacelli~dental-clinic-leads-scraper/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "bodyTemplate": "{\"domains\": [\"{{domain}}\"]}"
+    }
+  ]
+}

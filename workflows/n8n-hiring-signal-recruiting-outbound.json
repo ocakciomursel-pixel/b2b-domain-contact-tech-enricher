@@ -1,0 +1,139 @@
+{
+  "name": "Lucacelli 4x Hiring-Velocity B2B Outbound (Greenhouse/Ashby/Workable + Leadership + Icebreaker)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "cron-trigger",
+      "name": "Daily Automated Pipeline Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        180,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~ats-job-board-hiring-signal-scraper/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"companies\": [\n    \"stripe\",\n    \"vercel\"\n  ]\n}"
+      },
+      "id": "step-1",
+      "name": "1. Monitor Greenhouse, Lever & Ashby Hiring Velocity",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        460,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~b2b-leadership-team-about-page-executive-finder/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"domains\": [\n    \"stripe.com\",\n    \"vercel.com\"\n  ]\n}"
+      },
+      "id": "step-2",
+      "name": "2. Extract Leadership & Executive Team",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        740,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~b2b-domain-contact-tech-enricher/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"domains\": [\n    \"stripe.com\",\n    \"vercel.com\"\n  ]\n}"
+      },
+      "id": "step-3",
+      "name": "3. Enrich Company Emails & Tech Stack",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1020,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/lucacelli~cold-email-icebreaker-scraper/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"domains\": [\n    \"stripe.com\",\n    \"vercel.com\"\n  ]\n}"
+      },
+      "id": "step-4",
+      "name": "4. Generate Hiring-Signal Cold Email Hook",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1300,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Daily Automated Pipeline Trigger": {
+      "main": [
+        [
+          {
+            "node": "1. Monitor Greenhouse, Lever & Ashby Hiring Velocity",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "1. Monitor Greenhouse, Lever & Ashby Hiring Velocity": {
+      "main": [
+        [
+          {
+            "node": "2. Extract Leadership & Executive Team",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2. Extract Leadership & Executive Team": {
+      "main": [
+        [
+          {
+            "node": "3. Enrich Company Emails & Tech Stack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "3. Enrich Company Emails & Tech Stack": {
+      "main": [
+        [
+          {
+            "node": "4. Generate Hiring-Signal Cold Email Hook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
