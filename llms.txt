@@ -1,15 +1,16 @@
 # Lucacelli B2B Intelligence, Clay.com, n8n & MCP Cloud Ecosystem (@lucacelli)
-> 25 zero-dependency MCP tools + 89+ Apify Cloud B2B scrapers at $0.50–$1.50 per 1,000 verified records ($5.00/mo free Apify compute credit included).
+> 34 zero-dependency MCP tools + 94+ Apify Cloud B2B scrapers at $0.50–$1.50 per 1,000 verified records ($5.00/mo free Apify compute credit included).
 
 ## Quick Links
-- Interactive Token Injector & Clay ROI Hub: https://ocakciomursel-pixel.github.io/lucacelli-b2b-mcp-server/
+- Interactive Token Injector & Live Cloud Playground: https://ocakciomursel-pixel.github.io/lucacelli-b2b-mcp-server/
 - OpenAPI 3.1.0 Custom GPT Action Schema: https://ocakciomursel-pixel.github.io/lucacelli-b2b-mcp-server/openapi.json
 - GitHub MCP, CLI & Claude Skill Repo: https://github.com/ocakciomursel-pixel/lucacelli-b2b-mcp-server
 - Clay.com & Chained n8n Workflows Repo: https://github.com/ocakciomursel-pixel/clay-n8n-b2b-enrichment-workflows
-- Apify Store Profile (89+ Live Scrapers): https://apify.com/lucacelli
-- Pro Agency Vault ($19 One-Time): https://buy.polar.sh/polar_cl_j0IOeyioFqMjcNZRqTo0Cqk6HGslU1yArpHUV47NP1j
+- Apify Store Profile (94+ Live Scrapers): https://apify.com/lucacelli
+- Clay.com 25-Column Waterfall Pack ($9 One-Time): https://buy.polar.sh/polar_cl_lDIkQ1BPDRI7qCNwAxGz8U0HlRs2higwma1EL1EYP5C
+- Full Pro Agency Vault ($19 One-Time): https://buy.polar.sh/polar_cl_j0IOeyioFqMjcNZRqTo0Cqk6HGslU1yArpHUV47NP1j
 
-## 25 MCP / CLI / HTTP Tools
+## 34 MCP / CLI / HTTP Tools
 - `scrape_google_maps_leads` (`$1.50/1k`): Extract local business leads from Google Maps including verified website emails (MX/SPF/DMARC), phone numbers, Instagram/LinkedIn/Facebook links, ad pixels, ratings, and reviews ($1.50/1k all-inclusive). -> https://apify.com/lucacelli/google-maps-scraper-places-emails-contacts-reviews
 - `enrich_b2b_company_domain` (`$0.80/1k`): Enrich company domains with verified emails, phone numbers, LinkedIn/X/Instagram handles, DNS MX/SPF/DMARC records, and 38+ SaaS tech stack signatures ($0.80/1k). -> https://apify.com/lucacelli/b2b-domain-contact-tech-enricher
 - `build_360_b2b_company_dossier` (`$0.80/1k`): Generate a complete 360-degree B2B company intelligence dossier combining executive contacts, DNS/security posture, ad spend pixels, and tech stack ($0.80/1k). -> https://apify.com/lucacelli/master-360-b2b-company-deep-dossier-enricher
@@ -35,3 +36,12 @@
 - `analyze_landing_page_cro_funnel` (`$0.80/1k`): Audit landing page headlines, form field friction, CTA hierarchy, social proof density, and A/B testing scripts (VWO, Optimizely, PostHog) ($0.80/1k). -> https://apify.com/lucacelli/landing-page-cro-cta-form-funnel-analyzer
 - `scrape_substack_newsletter_authors` (`$0.50/1k`): Extract Substack newsletter metadata, author profiles, recent post cadence, subscriber signals, and sponsorship contact links ($0.50/1k). -> https://apify.com/lucacelli/substack-newsletter-scraper
 - `scrape_vscode_marketplace_extensions` (`$0.50/1k`): Extract VS Code extension install counts, ratings, GitHub repo links, and developer/company publisher details by keyword ($0.50/1k). -> https://apify.com/lucacelli/vscode-marketplace-scraper
+- `scrape_apollo_alternative_leads` (`$0.80/1k`): Cookie-free Apollo.io alternative: discover B2B companies by niche/city or enrich domains with verified emails, MX/SPF/DMARC status, executive names, LinkedIn URLs, phones, and 35+ tech stack signals ($0.80/1k). -> https://apify.com/lucacelli/apollo-b2b-leads-email-finder
+- `scrape_google_ads_transparency` (`$0.75/1k`): Audit competitor domains or niches for Google Ads Transparency URLs, Google Ads Conversion IDs (AW-), GTM tags, Meta/LinkedIn/TikTok pixels, ads.txt sellers, and marketing contacts ($0.75/1k). -> https://apify.com/lucacelli/google-ads-transparency-ad-spy-scraper
+- `scrape_g2_capterra_software_reviews` (`$0.80/1k`): Extract SaaS product star ratings, review counts, G2 & Capterra listing URLs, pricing pages, free-trial flags, and verified vendor contact emails ($0.80/1k). -> https://apify.com/lucacelli/g2-capterra-software-reviews-scraper
+- `scrape_wellfound_yc_startup_jobs` (`$0.75/1k`): Extract actively hiring startups from Wellfound & Y Combinator directories with startup domains, team sizes, batch/stage, ATS career links, LinkedIn URLs, and verified contact emails ($0.75/1k). -> https://apify.com/lucacelli/wellfound-startup-jobs-founders-scraper
+- `scrape_skool_communities_mrr` (`$0.80/1k`): Scrape Skool.com communities by keyword: extract member counts, monthly subscription price ($/mo), estimated Monthly Recurring Revenue (MRR), ratings, external links, and creator emails ($0.80/1k). -> https://apify.com/lucacelli/skool-community-creator-leads-scraper
+- `scrape_clutch_b2b_agency_leads` (`$0.80/1k`): Extract B2B marketing, SEO, web design & software agencies from Clutch.co profiles with verified ratings, official domains, emails, phones, booking funnels, and LinkedIn URLs ($0.80/1k). -> https://apify.com/lucacelli/clutch-b2b-agency-leads-scraper
+- `scrape_cargurus_auto_dealer_leads` (`$0.75/1k`): Extract auto dealerships by city/state with official dealer websites, CarGurus profile links, verified dealership emails, phone numbers, addresses, and automotive CRM/DMS software stack ($0.75/1k). -> https://apify.com/lucacelli/cargurus-auto-dealer-leads-scraper
+- `scrape_funded_startups_sec_form_d` (`$0.80/1k`): Find newly funded startups via real-time US SEC Form D filings + web enrichment: extract exact USD raised, founder/executive names, direct phone numbers, domains, and verified emails ($0.80/1k). -> https://apify.com/lucacelli/pitchbook-crunchbase-funded-startups-scraper
+- `scrape_whatnot_live_seller_leads` (`$0.75/1k`): Discover Whatnot live auction sellers and collectible/sneaker/vintage resellers with profile URLs, categories, external storefronts, social handles, and contact emails ($0.75/1k). -> https://apify.com/lucacelli/whatnot-ebay-live-seller-leads-scraper

@@ -1,8 +1,8 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Lucacelli B2B Lead Generation, Enrichment & Competitive Intelligence Cloud API (25 Tools)",
-    "version": "2.0.0",
+    "title": "Lucacelli B2B Lead Generation, Enrichment & Competitive Intelligence Cloud API (34 Tools)",
+    "version": "2.1.0",
     "description": "Import directly into OpenAI Custom GPT Actions, Dify, Relevance AI, n8n, Clay.com, or Postman. Authenticate with Bearer Auth using your Apify API Token ($5.00/mo free credit included at https://console.apify.com/settings/integrations).",
     "contact": {
       "name": "Lucacelli Data Engineering (@lucacelli)",
@@ -1646,6 +1646,654 @@
                 },
                 "required": [
                   "queries"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~apollo-b2b-leads-email-finder/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "scrape_apollo_alternative_leads",
+        "summary": "Apollo Alternative — B2B Lead, Email & Executive Finder",
+        "description": "Cookie-free Apollo.io alternative: discover B2B companies by niche/city or enrich domains with verified emails, MX/SPF/DMARC status, executive names, LinkedIn URLs, phones, and 35+ tech stack signals ($0.80/1k).",
+        "parameters": [
+          {
+            "name": "memory",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "queries": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Target B2B niche + city queries, e.g. [\"B2B SaaS Austin\", \"RevOps agency New York\"]"
+                  },
+                  "domains": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Optional direct company domains to enrich, e.g. [\"linear.app\", \"cal.com\"]"
+                  },
+                  "maxLeads": {
+                    "type": "integer",
+                    "default": 15,
+                    "description": "Maximum leads to return"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~google-ads-transparency-ad-spy-scraper/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "scrape_google_ads_transparency",
+        "summary": "Google Ads Transparency & Competitor Ad Pixel Spy",
+        "description": "Audit competitor domains or niches for Google Ads Transparency URLs, Google Ads Conversion IDs (AW-), GTM tags, Meta/LinkedIn/TikTok pixels, ads.txt sellers, and marketing contacts ($0.75/1k).",
+        "parameters": [
+          {
+            "name": "memory",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "domains": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Competitor or advertiser domains, e.g. [\"monday.com\", \"clickup.com\"]"
+                  },
+                  "queries": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Optional niche keywords to discover active advertisers"
+                  },
+                  "maxItems": {
+                    "type": "integer",
+                    "default": 15,
+                    "description": "Maximum advertiser records"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~g2-capterra-software-reviews-scraper/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "scrape_g2_capterra_software_reviews",
+        "summary": "G2 & Capterra Software Reviews, Ratings & Buyer Intent",
+        "description": "Extract SaaS product star ratings, review counts, G2 & Capterra listing URLs, pricing pages, free-trial flags, and verified vendor contact emails ($0.80/1k).",
+        "parameters": [
+          {
+            "name": "memory",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "queries": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Software product names or SaaS categories, e.g. [\"Calendly\", \"Pipedrive\", \"Intercom\"]"
+                  },
+                  "maxItems": {
+                    "type": "integer",
+                    "default": 15,
+                    "description": "Maximum SaaS review records"
+                  }
+                },
+                "required": [
+                  "queries"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~wellfound-startup-jobs-founders-scraper/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "scrape_wellfound_yc_startup_jobs",
+        "summary": "Wellfound & YC Startup Jobs, Founders & Hiring Leads",
+        "description": "Extract actively hiring startups from Wellfound & Y Combinator directories with startup domains, team sizes, batch/stage, ATS career links, LinkedIn URLs, and verified contact emails ($0.75/1k).",
+        "parameters": [
+          {
+            "name": "memory",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "queries": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Startup industry or role keywords, e.g. [\"AI agent\", \"Fintech\", \"Developer tools\"]"
+                  },
+                  "maxStartups": {
+                    "type": "integer",
+                    "default": 15,
+                    "description": "Maximum hiring startups"
+                  }
+                },
+                "required": [
+                  "queries"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~skool-community-creator-leads-scraper/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "scrape_skool_communities_mrr",
+        "summary": "Skool Community, Creator Emails & Monthly MRR Scraper",
+        "description": "Scrape Skool.com communities by keyword: extract member counts, monthly subscription price ($/mo), estimated Monthly Recurring Revenue (MRR), ratings, external links, and creator emails ($0.80/1k).",
+        "parameters": [
+          {
+            "name": "memory",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "queries": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Skool Discovery keywords, e.g. [\"ai agency\", \"saas founders\", \"ecommerce\"]"
+                  },
+                  "onlyPaidCommunities": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Return only paid recurring communities"
+                  },
+                  "maxCommunities": {
+                    "type": "integer",
+                    "default": 20,
+                    "description": "Maximum communities to return"
+                  }
+                },
+                "required": [
+                  "queries"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~clutch-b2b-agency-leads-scraper/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "scrape_clutch_b2b_agency_leads",
+        "summary": "Clutch.co B2B Agency Leads, Ratings & Verified Emails",
+        "description": "Extract B2B marketing, SEO, web design & software agencies from Clutch.co profiles with verified ratings, official domains, emails, phones, booking funnels, and LinkedIn URLs ($0.80/1k).",
+        "parameters": [
+          {
+            "name": "memory",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "queries": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Agency service + city queries, e.g. [\"SEO agency Austin\", \"PPC agency Miami\"]"
+                  },
+                  "maxAgencies": {
+                    "type": "integer",
+                    "default": 15,
+                    "description": "Maximum agency leads"
+                  }
+                },
+                "required": [
+                  "queries"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~cargurus-auto-dealer-leads-scraper/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "scrape_cargurus_auto_dealer_leads",
+        "summary": "CarGurus & Auto Dealership Leads, Inventory & Contacts",
+        "description": "Extract auto dealerships by city/state with official dealer websites, CarGurus profile links, verified dealership emails, phone numbers, addresses, and automotive CRM/DMS software stack ($0.75/1k).",
+        "parameters": [
+          {
+            "name": "memory",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "locations": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Target cities and states, e.g. [\"Austin, TX\", \"Dallas, TX\"]"
+                  },
+                  "maxDealers": {
+                    "type": "integer",
+                    "default": 15,
+                    "description": "Maximum dealership leads"
+                  }
+                },
+                "required": [
+                  "locations"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~pitchbook-crunchbase-funded-startups-scraper/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "scrape_funded_startups_sec_form_d",
+        "summary": "PitchBook & Crunchbase Alternative — SEC Form D Funded Startups",
+        "description": "Find newly funded startups via real-time US SEC Form D filings + web enrichment: extract exact USD raised, founder/executive names, direct phone numbers, domains, and verified emails ($0.80/1k).",
+        "parameters": [
+          {
+            "name": "memory",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "keywords": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Industry keywords in Form D filings, e.g. [\"Software\", \"Artificial Intelligence\"]"
+                  },
+                  "startDate": {
+                    "type": "string",
+                    "default": "2025-06-01",
+                    "description": "Minimum filing date (YYYY-MM-DD)"
+                  },
+                  "maxCompanies": {
+                    "type": "integer",
+                    "default": 15,
+                    "description": "Maximum funded startups"
+                  }
+                },
+                "required": [
+                  "keywords"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted & enriched JSON dataset array from Apify Cloud",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/lucacelli~whatnot-ebay-live-seller-leads-scraper/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "scrape_whatnot_live_seller_leads",
+        "summary": "Whatnot & Live Reseller Shop Leads, Ratings & Socials",
+        "description": "Discover Whatnot live auction sellers and collectible/sneaker/vintage resellers with profile URLs, categories, external storefronts, social handles, and contact emails ($0.75/1k).",
+        "parameters": [
+          {
+            "name": "memory",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 256
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "categories": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Live commerce category keywords, e.g. [\"pokemon cards\", \"sneakers\", \"vintage streetwear\"]"
+                  },
+                  "maxSellers": {
+                    "type": "integer",
+                    "default": 15,
+                    "description": "Maximum seller leads"
+                  }
+                },
+                "required": [
+                  "categories"
                 ]
               }
             }
